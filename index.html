@@ -680,24 +680,14 @@ a { color: inherit; text-decoration: none; }
   display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap;
 }
 .review-platform {
-  display: flex; align-items: center; gap: 14px;
-  padding: 20px 28px; background: var(--white);
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 24px; background: var(--white);
   border: 1px solid var(--gray-200); border-radius: var(--radius-md);
-  font-size: 14px; font-weight: 600; min-width: 200px;
+  font-size: 14px; font-weight: 600;
 }
-.review-platform .rp-info {
-  display: flex; flex-direction: column; gap: 2px;
-}
-.review-platform .score {
-  font-family: var(--font-display); font-size: 28px;
-  font-weight: 800; color: var(--green-700); line-height: 1.1;
-}
-.review-platform .rp-sub {
-  font-size: 12px; color: var(--gray-400); font-weight: 500;
-}
-.review-platform .stars {
-  color: var(--amber-deep); font-size: 13px; letter-spacing: 1px;
-}
+.review-platform .score { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--green-700); }
+.review-platform .stars { color: var(--amber-deep); }
+
 /* ============================================ */
 /* REVIEW COLLAGE                               */
 /* ============================================ */
@@ -939,6 +929,99 @@ a { color: inherit; text-decoration: none; }
   .partners-grid { gap: 16px; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+/* CSS PART*/
+.hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: visible;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* Hero Card */
+.hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: visible;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+  z-index: 1;
+}
+
+/* Carousel */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Images */
+.carousel-img {
+  position: absolute;
+  inset: 0;
+
+  width: 95%;
+  height: 95%;
+
+  object-fit: contain;
+  background: #f8fafc;
+
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  z-index: 1; /* Behind badges */
+}
+
+/* Active image */
+.carousel-img.active {
+  opacity: 1;
+}
+
+/* Floating badges - ALWAYS ON TOP */
+.hero-float {
+  position: absolute;
+  z-index: 10; /* Above images */
+  pointer-events: none; /* Optional: click through */
+}
+.hero-float {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  border-radius: 14px;
+}
+
+.hero-float {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+.hero-float-2 {
+  animation-delay: 1s;
+}
+
+.hero-float-3 {
+  animation-delay: 2s;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+
+
 </style>
 </head>
 <body>
@@ -985,115 +1068,285 @@ a { color: inherit; text-decoration: none; }
   <div class="hero-shape-1"></div>
   <div class="hero-shape-2"></div>
   <div class="hero-shape-3"></div>
+
   <div class="container">
     <div class="hero-inner">
+
+      <!-- ================= LEFT CONTENT ================= -->
       <div>
         <div class="hero-announce">
           <span class="hero-announce-badge">New</span>
           Now building Voice AI Agents & Agentic AI Systems
         </div>
-        <h1>We Build <span class="highlight">AI Agents</span> & Automations That Run Your Business 24/7</h1>
+
+        <h1>
+          We Build <span class="highlight">AI Agents</span> & Automations That Run Your Business 24/7
+        </h1>
+
         <p class="hero-desc">
-          From voice AI that handles phone calls to workflows that eliminate 40+ hours of manual work weekly — GrowwStacks turns your repetitive processes into intelligent, self-running systems.
+          From voice AI that handles phone calls to workflows that eliminate 40+ hours of manual work weekly — 
+          GrowwStacks turns your repetitive processes into intelligent, self-running systems.
         </p>
+
         <div class="hero-ctas">
-          <a href="#consultation" class="btn btn-accent">Get Free Automation Audit <span class="btn-arrow">→</span></a>
-          <a href="#cases" class="btn btn-outline">See Client Results</a>
+          <a href="#consultation" class="btn btn-accent">
+            Get Free Automation Audit <span class="btn-arrow">→</span>
+          </a>
+
+          <a href="#cases" class="btn btn-outline">
+            See Client Results
+          </a>
         </div>
+
         <div class="hero-trust">
           <div class="hero-trust-item">
             <span class="hero-trust-icon trust-green">✓</span>
             Make.com Platinum Partner
           </div>
+
           <div class="hero-trust-item">
             <span class="hero-trust-icon trust-amber">★</span>
             5.0 Google Rating
           </div>
+
           <div class="hero-trust-item">
             <span class="hero-trust-icon trust-sky">🌐</span>
             2000+ Projects Delivered
           </div>
         </div>
       </div>
+
+      <!-- ================= RIGHT IMAGE ================= -->
       <div class="hero-visual">
+
         <div class="hero-card">
-          <!-- ================================================ -->
-          <!-- REPLACE: Hero image / abstract visual             -->
-          <!-- Recommended: Dashboard screenshot, AI agent UI,   -->
-          <!-- or team photo — 600 x 380 px                      -->
-          <!-- ================================================ -->
-          <div class="hero-img-placeholder">
-            <strong>HERO IMAGE</strong>
-            AI Agent dashboard, automation workflow,<br>or team photo
-            <small>600 × 380 px — Upload to ImageKit</small>
+
+          <!-- HERO IMAGE CAROUSEL -->
+          <div class="hero-carousel">
+
+            <img
+              src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/3.png?tr=w-600,h-380,q-100"
+              alt="Make Platinum Partner Award"
+              class="carousel-img active"
+              
+            >
+
+            <img
+              src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/4.png?tr=w-600,h-380,q-100"
+              alt="GrowwStacks Team Celebration"
+              class="carousel-img"
+              
+            >
+
           </div>
+
         </div>
+
+        <!-- FLOATING CARDS -->
+
         <div class="hero-float hero-float-1">
           <div class="hero-float-icon float-green">🤖</div>
-          <div><div style="font-size:12px;color:var(--gray-400)">AI Agents</div><strong>Active 24/7</strong></div>
+          <div>
+            <div style="font-size:12px;color:var(--gray-400)">AI Agents</div>
+            <strong>Active 24/7</strong>
+          </div>
         </div>
+
         <div class="hero-float hero-float-2">
           <div class="hero-float-icon float-peach">📞</div>
-          <div><div style="font-size:12px;color:var(--gray-400)">Voice AI</div><strong>98% Answer Rate</strong></div>
+          <div>
+            <div style="font-size:12px;color:var(--gray-400)">Voice AI</div>
+            <strong>98% Answer Rate</strong>
+          </div>
         </div>
+
         <div class="hero-float hero-float-3">
           <div class="hero-float-icon float-lavender">⚡</div>
-          <div><div style="font-size:12px;color:var(--gray-400)">Automation</div><strong>60% Cost Saved</strong></div>
+          <div>
+            <div style="font-size:12px;color:var(--gray-400)">Automation</div>
+            <strong>60% Cost Saved</strong>
+          </div>
         </div>
+
       </div>
+
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const slides = document.querySelectorAll(".carousel-img");
+    let current = 0;
+
+    if (slides.length === 0) return;
+
+    setInterval(() => {
+
+      slides[current].classList.remove("active");
+
+      current = (current + 1) % slides.length;
+
+      slides[current].classList.add("active");
+
+    }, 3500); // 3.5 seconds
+
+  });
+</script>
+
+
 
 
 <!-- ============================= -->
 <!-- PARTNER BADGES                 -->
 <!-- ============================= -->
+<!-- =================== PARTNERS SECTION =================== -->
+<style>
+  .partners {
+    width: 100%;
+    padding: 60px 20px;
+  }
+  .partners-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .partners-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #9ca3af;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .partner-badge {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 170px;
+    min-height: 120px;
+    justify-content: center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .partner-badge:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+  .partner-badge-img {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .partner-badge-img img {
+    max-height: 38px;
+    max-width: 110px;
+    object-fit: contain;
+    display: block;
+  }
+  .partner-badge-text {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0d9488;
+    text-align: center;
+  }
+</style>
+
 <section class="partners">
   <div class="container partners-inner">
     <div class="partners-label">Officially Certified by Leading Platforms</div>
     <div class="partners-grid">
+        
+
+      <!-- Make.com -->
       <div class="partner-badge">
-        <!-- REPLACE: Make.com Platinum badge image -->
-        <div class="partner-badge-img">Make.com Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/make-color.png?updatedAt=1771322847653" alt="Make.com Logo"
+               onerror="this.src='https://cdn.worldvectorlogo.com/logos/make-formerly-integromat.svg'" />
+        </div>
         <div class="partner-badge-text">Platinum Partner</div>
       </div>
+
+      <!-- Monday.com -->
       <div class="partner-badge">
-        <div class="partner-badge-img">Monday.com Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://logo.clearbit.com/monday.com" alt="Monday.com Logo"
+               onerror="this.src='https://cdn.worldvectorlogo.com/logos/monday-1.svg'" />
+        </div>
         <div class="partner-badge-text">Master Partner</div>
       </div>
+
+      <!-- Zapier -->
       <div class="partner-badge">
-        <div class="partner-badge-img">Zapier Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://logo.clearbit.com/zapier.com" alt="Zapier Logo"
+               onerror="this.src='https://cdn.worldvectorlogo.com/logos/zapier.svg'" />
+        </div>
         <div class="partner-badge-text">Certified Expert</div>
       </div>
+
+      <!-- n8n -->
       <div class="partner-badge">
-        <div class="partner-badge-img">n8n Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://logo.clearbit.com/n8n.io" alt="n8n Logo"
+               onerror="this.src='https://n8n.io/favicon.ico'" />
+        </div>
         <div class="partner-badge-text">Integration Partner</div>
       </div>
+
+      <!-- Microsoft -->
       <div class="partner-badge">
-        <!-- REPLACE: Microsoft Partner logo -->
-        <div class="partner-badge-img">Microsoft Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Microsoft_logo.svg.png?updatedAt=1771323050579" alt="Microsoft Logo"
+               onerror="this.src='https://cdn.worldvectorlogo.com/logos/microsoft.svg'" />
+        </div>
         <div class="partner-badge-text">Microsoft Partner</div>
       </div>
+
+      <!-- Airtable -->
       <div class="partner-badge">
-        <!-- REPLACE: Airtable logo -->
-        <div class="partner-badge-img">Airtable Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/images.png?updatedAt=1771322869012" alt="Airtable Logo"
+               onerror="this.src='https://cdn.worldvectorlogo.com/logos/airtable.svg'" />
+        </div>
         <div class="partner-badge-text">Certified Expert</div>
       </div>
+
+      <!-- VAPI -->
       <div class="partner-badge">
-        <!-- REPLACE: VAPI logo -->
-        <div class="partner-badge-img">VAPI Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/email-logo.png?updatedAt=1771326474022" alt="VAPI Logo"
+               onerror="this.src='https://avatars.githubusercontent.com/u/119600686?s=200&v=4'" />
+        </div>
         <div class="partner-badge-text">Voice AI Partner</div>
       </div>
+
+      <!-- Retell AI -->
       <div class="partner-badge">
-        <!-- REPLACE: Retell AI logo -->
-        <div class="partner-badge-img">Retell Logo</div>
+        <div class="partner-badge-img">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/6726f234dc6305cc1dee884c_Retell-mark-black.png?updatedAt=1771326562198" alt="Retell AI Logo"
+               onerror="this.src='https://avatars.githubusercontent.com/u/128374519?s=200&v=4'" />
+        </div>
         <div class="partner-badge-text">Voice AI Partner</div>
       </div>
+
     </div>
   </div>
 </section>
-
 
 <!-- ============================= -->
 <!-- PLATFORM TICKER (2 rows)       -->
@@ -1104,74 +1357,80 @@ a { color: inherit; text-decoration: none; }
   <!-- Row 1: Left to Right -->
   <div class="ticker-row" style="margin-bottom: 12px;">
     <div class="ticker-track">
-      <!-- ================================================ -->
-      <!-- TICKER LOGOS: Replace each ticker-logo src with   -->
-      <!-- your ImageKit URL. Keep images at 20x20 px.       -->
-      <!-- ================================================ -->
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Make.com"> Make.com</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Zapier"> Zapier</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Slack"> Slack</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="HubSpot"> HubSpot</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Salesforce"> Salesforce</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Airtable"> Airtable</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="n8n"> n8n</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Monday.com"> Monday.com</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="WhatsApp"> WhatsApp</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Stripe"> Stripe</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="OpenAI"> OpenAI</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Shopify"> Shopify</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google Workspace"> Google Workspace</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Power Automate"> Power Automate</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/make.com" alt="Make.com" onerror="this.src='https://www.google.com/s2/favicons?domain=make.com&sz=32'"> Make.com</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/zapier.com" alt="Zapier" onerror="this.src='https://www.google.com/s2/favicons?domain=zapier.com&sz=32'"> Zapier</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/slack.com" alt="Slack" onerror="this.src='https://www.google.com/s2/favicons?domain=slack.com&sz=32'"> Slack</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/hubspot.com" alt="HubSpot" onerror="this.src='https://www.google.com/s2/favicons?domain=hubspot.com&sz=32'"> HubSpot</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/salesforce.com" alt="Salesforce" onerror="this.src='https://www.google.com/s2/favicons?domain=salesforce.com&sz=32'"> Salesforce</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/airtable.com" alt="Airtable" onerror="this.src='https://www.google.com/s2/favicons?domain=airtable.com&sz=32'"> Airtable</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/n8n.io" alt="n8n" onerror="this.src='https://www.google.com/s2/favicons?domain=n8n.io&sz=32'"> n8n</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/monday.com" alt="Monday.com" onerror="this.src='https://www.google.com/s2/favicons?domain=monday.com&sz=32'"> Monday.com</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/whatsapp.com" alt="WhatsApp" onerror="this.src='https://www.google.com/s2/favicons?domain=whatsapp.com&sz=32'"> WhatsApp</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/stripe.com" alt="Stripe" onerror="this.src='https://www.google.com/s2/favicons?domain=stripe.com&sz=32'"> Stripe</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/openai.com" alt="OpenAI" onerror="this.src='https://www.google.com/s2/favicons?domain=openai.com&sz=32'"> OpenAI</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/shopify.com" alt="Shopify" onerror="this.src='https://www.google.com/s2/favicons?domain=shopify.com&sz=32'"> Shopify</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google Workspace" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=32'"> Google Workspace</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/microsoft.com" alt="Power Automate" onerror="this.src='https://www.google.com/s2/favicons?domain=microsoft.com&sz=32'"> Power Automate</div>
       <!-- Duplicate for seamless loop -->
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Make.com"> Make.com</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Zapier"> Zapier</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Slack"> Slack</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="HubSpot"> HubSpot</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Salesforce"> Salesforce</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Airtable"> Airtable</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="n8n"> n8n</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Monday.com"> Monday.com</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="WhatsApp"> WhatsApp</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Stripe"> Stripe</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="OpenAI"> OpenAI</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Shopify"> Shopify</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google Workspace"> Google Workspace</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Power Automate"> Power Automate</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/make.com" alt="Make.com" onerror="this.src='https://www.google.com/s2/favicons?domain=make.com&sz=32'"> Make.com</div>
+      <div class="ticker-item">
+  <img
+    class="ticker-logo"
+    src="https://logo.clearbit.com/zapier.com"
+    alt="Zapier"
+    onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/zapier.svg';"
+  />
+  Zapier
+</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/slack.com" alt="Slack" onerror="this.src='https://www.google.com/s2/favicons?domain=slack.com&sz=32'"> Slack</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/hubspot.com" alt="HubSpot" onerror="this.src='https://www.google.com/s2/favicons?domain=hubspot.com&sz=32'"> HubSpot</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/salesforce.com" alt="Salesforce" onerror="this.src='https://www.google.com/s2/favicons?domain=salesforce.com&sz=32'"> Salesforce</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/airtable.com" alt="Airtable" onerror="this.src='https://www.google.com/s2/favicons?domain=airtable.com&sz=32'"> Airtable</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/n8n.io" alt="n8n" onerror="this.src='https://www.google.com/s2/favicons?domain=n8n.io&sz=32'"> n8n</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/monday.com" alt="Monday.com" onerror="this.src='https://www.google.com/s2/favicons?domain=monday.com&sz=32'"> Monday.com</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/whatsapp.com" alt="WhatsApp" onerror="this.src='https://www.google.com/s2/favicons?domain=whatsapp.com&sz=32'"> WhatsApp</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/stripe.com" alt="Stripe" onerror="this.src='https://www.google.com/s2/favicons?domain=stripe.com&sz=32'"> Stripe</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/openai.com" alt="OpenAI" onerror="this.src='https://www.google.com/s2/favicons?domain=openai.com&sz=32'"> OpenAI</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/shopify.com" alt="Shopify" onerror="this.src='https://www.google.com/s2/favicons?domain=shopify.com&sz=32'"> Shopify</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google Workspace" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=32'"> Google Workspace</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/microsoft.com" alt="Power Automate" onerror="this.src='https://www.google.com/s2/favicons?domain=microsoft.com&sz=32'"> Power Automate</div>
     </div>
   </div>
 
   <!-- Row 2: Right to Left -->
   <div class="ticker-row ticker-row-reverse">
     <div class="ticker-track">
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Telegram"> Telegram</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Notion"> Notion</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Zoom"> Zoom</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Calendly"> Calendly</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Twilio"> Twilio</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Meta"> Meta / Facebook</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Discord"> Discord</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Power BI"> Power BI</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="QuickBooks"> QuickBooks</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="AWS"> AWS</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Jira"> Jira</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Mailchimp"> Mailchimp</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google Sheets"> Google Sheets</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Power Apps"> Power Apps</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/telegram.org" alt="Telegram" onerror="this.src='https://www.google.com/s2/favicons?domain=telegram.org&sz=32'"> Telegram</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/notion.so" alt="Notion" onerror="this.src='https://www.google.com/s2/favicons?domain=notion.so&sz=32'"> Notion</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/zoom.us" alt="Zoom" onerror="this.src='https://www.google.com/s2/favicons?domain=zoom.us&sz=32'"> Zoom</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/calendly.com" alt="Calendly" onerror="this.src='https://www.google.com/s2/favicons?domain=calendly.com&sz=32'"> Calendly</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/twilio.com" alt="Twilio" onerror="this.src='https://www.google.com/s2/favicons?domain=twilio.com&sz=32'"> Twilio</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/meta.com" alt="Meta" onerror="this.src='https://www.google.com/s2/favicons?domain=meta.com&sz=32'"> Meta / Facebook</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/discord.com" alt="Discord" onerror="this.src='https://www.google.com/s2/favicons?domain=discord.com&sz=32'"> Discord</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/512px-New_Power_BI_Logo.svg.png"alt="Power BI"onerror="this.onerror=null; this.src='https://logo.clearbit.com/powerbi.microsoft.com';"/>Power BI
+      </div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/quickbooks.intuit.com" alt="QuickBooks"onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg';"/>QuickBooks</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/amazon.com" alt="AWS" onerror="this.src='https://www.google.com/s2/favicons?domain=amazon.com&sz=32'"> AWS</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/atlassian.com" alt="Jira" onerror="this.src='https://www.google.com/s2/favicons?domain=atlassian.com&sz=32'"> Jira</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/mailchimp.com" alt="Mailchimp" onerror="this.src='https://www.google.com/s2/favicons?domain=mailchimp.com&sz=32'"> Mailchimp</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png" alt="Google Sheets"onerror="this.onerror=null; this.src='https://logo.clearbit.com/sheets.google.com';"/>Google Sheets
+      </div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/microsoft.com" alt="Power Apps" onerror="this.src='https://www.google.com/s2/favicons?domain=microsoft.com&sz=32'"> Power Apps</div>
       <!-- Duplicate -->
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Telegram"> Telegram</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Notion"> Notion</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Zoom"> Zoom</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Calendly"> Calendly</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Twilio"> Twilio</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Meta"> Meta / Facebook</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Discord"> Discord</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Power BI"> Power BI</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="QuickBooks"> QuickBooks</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="AWS"> AWS</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Jira"> Jira</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Mailchimp"> Mailchimp</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google Sheets"> Google Sheets</div>
-      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Power Apps"> Power Apps</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/telegram.org" alt="Telegram" onerror="this.src='https://www.google.com/s2/favicons?domain=telegram.org&sz=32'"> Telegram</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/notion.so" alt="Notion" onerror="this.src='https://www.google.com/s2/favicons?domain=notion.so&sz=32'"> Notion</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/zoom.us" alt="Zoom" onerror="this.src='https://www.google.com/s2/favicons?domain=zoom.us&sz=32'"> Zoom</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/calendly.com" alt="Calendly" onerror="this.src='https://www.google.com/s2/favicons?domain=calendly.com&sz=32'"> Calendly</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/twilio.com" alt="Twilio" onerror="this.src='https://www.google.com/s2/favicons?domain=twilio.com&sz=32'"> Twilio</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/meta.com" alt="Meta" onerror="this.src='https://www.google.com/s2/favicons?domain=meta.com&sz=32'"> Meta / Facebook</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/discord.com" alt="Discord" onerror="this.src='https://www.google.com/s2/favicons?domain=discord.com&sz=32'"> Discord</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/microsoft.com" alt="Power BI" onerror="this.src='https://www.google.com/s2/favicons?domain=microsoft.com&sz=32'"> Power BI</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/intuit.com" alt="QuickBooks" onerror="this.src='https://www.google.com/s2/favicons?domain=intuit.com&sz=32'"> QuickBooks</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/amazon.com" alt="AWS" onerror="this.src='https://www.google.com/s2/favicons?domain=amazon.com&sz=32'"> AWS</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/atlassian.com" alt="Jira" onerror="this.src='https://www.google.com/s2/favicons?domain=atlassian.com&sz=32'"> Jira</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/mailchimp.com" alt="Mailchimp" onerror="this.src='https://www.google.com/s2/favicons?domain=mailchimp.com&sz=32'"> Mailchimp</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google Sheets" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=32'"> Google Sheets</div>
+      <div class="ticker-item"><img class="ticker-logo" src="https://logo.clearbit.com/microsoft.com" alt="Power Apps" onerror="this.src='https://www.google.com/s2/favicons?domain=microsoft.com&sz=32'"> Power Apps</div>
     </div>
   </div>
 </section>
@@ -1244,12 +1503,13 @@ a { color: inherit; text-decoration: none; }
   <div class="container">
     <div class="section-label">How We Work</div>
     <h2 class="section-title">From First Call to Live Automation in Weeks</h2>
-    <p class="section-desc">A proven process refined over 2000+ projects. No surprises, no scope creep, no excuses.</p>
+    <p class="section-desc" style="max-width:840px;">A proven process refined over 2000+ projects. No surprises, no scope creep, no excuses.</p>
 
-<div class="process-content">
+    <div class="process-content">
+      <!-- Video embed -->
       <!-- Video embed -->
       <div class="process-video">
-        <iframe width="100%" height="420" src="https://www.youtube.com/embed/x3RdjxHS2pI" title="GrowwStacks Delivery Process" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:12px;"></iframe>
+        <iframe width="100%" height="420" src="https://www.youtube.com/embed/x3RdjxHS2pI" title="How GrowwStacks Delivers Excellence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: var(--radius-lg);"></iframe>
       </div>
 
       <!-- Process steps -->
@@ -1316,9 +1576,9 @@ a { color: inherit; text-decoration: none; }
     <p class="section-desc">Every number below comes from actual client engagements — verified and documented.</p>
 
     <div class="cases-grid">
-    <div class="case-card">
+      <div class="case-card">
         <div class="case-img case-bg-peach">
-          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/AI%20Lead%20Qualification%20Agent%20for%20SaaS%20Platform.jpeg" alt="AI Lead Qualification Agent for SaaS Platform" style="width:100%;height:100%;object-fit:cover;">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/AI%20Lead%20Qualification%20Agent%20for%20SaaS%20Platform.jpeg?updatedAt=1771319768887" alt="AI Lead Qualification Agent for SaaS Platform" style="width:100%; height:100%; object-fit:cover;">
           <span class="case-tag" style="color:var(--peach-deep)">SaaS</span>
         </div>
         <div class="case-body">
@@ -1332,7 +1592,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="case-card">
         <div class="case-img case-bg-lavender">
-          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Voice%20AI%20for%20Patient%20Appointment%20Booking.png" alt="Voice AI for Patient Appointment Booking" style="width:100%;height:100%;object-fit:cover;">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Voice%20AI%20for%20Patient%20Appointment%20Booking.png?updatedAt=1771320381007" alt="Voice AI for Patient Appointment Booking" style="width:100%; height:100%; object-fit:cover;">
           <span class="case-tag" style="color:var(--lavender-deep)">Healthcare</span>
         </div>
         <div class="case-body">
@@ -1343,20 +1603,24 @@ a { color: inherit; text-decoration: none; }
             <div><div class="case-result-num">45%</div><div class="case-result-label">More Appointments</div></div>
           </div>
         </div>
-      </div>      <div class="case-card">
+      </div>
+      <div class="case-card">
         <div class="case-img case-bg-sky">
-          <div class="case-img-placeholder">
-            <strong>CASE STUDY IMAGE</strong>
-            <small>400 × 200 px</small>
-          </div>
+          <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/AI%20Chatbot%20+%20Social%20Media%20Automation%20for%20Real%20Estate.png?updatedAt=1771325461368" alt="AI Chatbot + Social Media Automation for Real Estate" style="width:100%; height:100%; object-fit:cover;">
           <span class="case-tag" style="color:var(--sky-deep)">Real Estate</span>
         </div>
         <div class="case-body">
           <h3>AI Chatbot + Social Media Automation</h3>
           <p>Deployed RAG-powered chatbot for property inquiries and automated social media publishing across 4 platforms.</p>
           <div class="case-results">
-            <div><div class="case-result-num">70%</div><div class="case-result-label">Time Saved</div></div>
-            <div><div class="case-result-num">5x</div><div class="case-result-label">Lead Volume</div></div>
+            <div>
+              <div class="case-result-num">70%</div>
+              <div class="case-result-label">Time Saved</div>
+            </div>
+            <div>
+              <div class="case-result-num">5x</div>
+              <div class="case-result-label">Lead Volume</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1439,7 +1703,7 @@ a { color: inherit; text-decoration: none; }
         <!-- Change VIDEO_ID to actual YouTube ID          -->
         <!-- ============================================ -->
         <div class="test-video">
-          <iframe src="https://www.youtube.com/embed/_wWlDFAXf4k" title="Andrey Avetov Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/VxRCbwp8HEY" title="Andrey Avetov Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="test-stars">★★★★★</div>
         <p class="test-quote">"They consistently met deadlines, communicated effectively, and delivered a high-quality automation solution. I highly recommend their services."</p>
@@ -1448,7 +1712,7 @@ a { color: inherit; text-decoration: none; }
           <!-- REPLACE: Andrey's photo URL from ImageKit    -->
           <!-- Upload 80x80px photo, replace src below      -->
           <!-- ============================================ -->
-          <img class="test-avatar-img" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-avatar.png" alt="Andrey Avetov">
+          <img class="test-avatar-img" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Andrey-Avatov-GrowwStacks-Client.png?updatedAt=1771326788524" alt="Andrey Avetov">
           <div>
             <div class="test-name">Andrey Avetov</div>
             <div class="test-role">Founder, Hall Technologies, UK</div>
@@ -1460,13 +1724,13 @@ a { color: inherit; text-decoration: none; }
         <span class="test-source">Client Review</span>
         <!-- REPLACE: YouTube video embed URL for Noor -->
         <div class="test-video">
-          <iframe src="https://www.youtube.com/embed/KxJCyKW120s" title="Noor Webbed Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/OkRWr5TL-QY" title="Noor Webbed Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="test-stars">★★★★★</div>
         <p class="test-quote">"Very knowledgeable around database automation using Make and GPT API integration. Works quickly and with integrity, good availability and decent communication."</p>
         <div class="test-author">
           <!-- REPLACE: Noor's photo URL from ImageKit -->
-          <img class="test-avatar-img" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-avatar.png" alt="Noor Webbed">
+          <img class="test-avatar-img" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Noor-Israel-GrowwStacks-Client.png?updatedAt=1771326788512" alt="Noor Webbed">
           <div>
             <div class="test-name">Noor Webbed</div>
             <div class="test-role">CMO, Louis Flow, Israel</div>
@@ -1478,13 +1742,13 @@ a { color: inherit; text-decoration: none; }
         <span class="test-source">Client Review</span>
         <!-- REPLACE: YouTube video embed URL for Ankit -->
         <div class="test-video">
-          <iframe src="https://www.youtube.com/embed/EP-otFFhuZU" title="Ankit Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/-GhflHmCmFM" title="Ankit Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"GrowwStacks automated our entire lead pipeline from capture to CRM entry. What used to take 4 hours daily now happens automatically. ROI was visible within the first month."</p>
+        <p class="test-quote">"GrowwStacks automated our entire lead pipeline from capture to CRM entry. What used to take 4 hours daily now happens automatically. ROI was visible within a month."</p>
         <div class="test-author">
           <!-- REPLACE: Ankit's photo URL from ImageKit -->
-          <img class="test-avatar-img" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-avatar.png" alt="Ankit">
+          <img class="test-avatar-img" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Ankit-GrowwStacks-Client.png?updatedAt=1771326788415" alt="Ankit">
           <div>
             <div class="test-name">Ankit</div>
             <div class="test-role">CEO, Hall Technologies, Australia</div>
@@ -1495,34 +1759,37 @@ a { color: inherit; text-decoration: none; }
     </div>
 
     <!-- Review platform badges with logo placeholders -->
-<div class="reviews-badge">
-  <div class="review-platform">
-    <img class="review-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png" alt="Google Reviews">
-    <div class="rp-info">
-      <div class="score">5.0</div>
-      <div class="stars">★★★★★</div>
+    <div class="reviews-badge">
+      <div class="review-platform">
+        <img class="review-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png" alt="Google Reviews">
+        <div class="rp-info">
+          <div class="score">5.0</div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <span class="rp-label">Google Reviews</span>
+      </div>
+      <div class="review-platform">
+        <img class="review-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork">
+        <div class="rp-info">
+          <div class="score">2000+</div>
+          <span class="rp-sub">Projects</span>
+        </div>
+        <span class="rp-label">Upwork</span>
+      </div>
+      <div class="review-platform">
+        <img class="review-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork Top Rated">
+        <div class="rp-info">
+          <div class="score">Top Rated</div>
+          <span class="rp-sub">Plus Badge</span>
+        </div>
+        <span class="rp-label">Upwork</span>
+      </div>
     </div>
-    <span class="rp-sub">Google Reviews</span>
-  </div>
-  <div class="review-platform">
-    <img class="review-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork">
-    <div class="rp-info">
-      <div class="score">2000+</div>
-      <span class="rp-sub">Projects</span>
-    </div>
-    <span class="rp-sub">Upwork</span>
-  </div>
-  <div class="review-platform">
-    <img class="review-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork Top Rated">
-    <div class="rp-info">
-      <div class="score">Top Rated</div>
-      <span class="rp-sub">Plus Badge</span>
-    </div>
-    <span class="rp-sub">Upwork</span>
-  </div>
-</div>
+
     <!-- ============================= -->
     <!-- REVIEW COLLAGE                 -->
+    <!-- ============================= -->
+<!-- REVIEW COLLAGE                 -->
     <!-- ============================= -->
     <div class="review-collage-wrapper">
       <div class="review-collage-header">
@@ -1530,14 +1797,7 @@ a { color: inherit; text-decoration: none; }
         <p>Real reviews from real businesses — across Google, Upwork, and direct feedback</p>
       </div>
 
-      <!-- Masonry-style review collage -->
       <div class="review-collage">
-
-        <!-- ========================================= -->
-        <!-- GOOGLE REVIEWS                             -->
-        <!-- Add/remove cards as you get new reviews    -->
-        <!-- The initials auto-generate from the name   -->
-        <!-- ========================================= -->
 
         <!-- Google Review 1 -->
         <div class="rc-card rc-google">
@@ -1546,8 +1806,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Suresh Kumar</div>
               <div class="rc-meta">
-                <!-- REPLACE: Google logo 14px -->
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png" alt="Google">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=16'">
                 <span>Google Review</span>
               </div>
             </div>
@@ -1563,7 +1822,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">James Morrison</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png" alt="Google">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=16'">
                 <span>Google Review</span>
               </div>
             </div>
@@ -1579,7 +1838,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Rajesh Patel</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png" alt="Google">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=16'">
                 <span>Google Review</span>
               </div>
             </div>
@@ -1595,7 +1854,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Sarah Chen</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png" alt="Google">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=16'">
                 <span>Google Review</span>
               </div>
             </div>
@@ -1611,7 +1870,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Michael Roberts</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png" alt="Google">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png?updatedAt=1771312395368" alt="Google" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=16'">
                 <span>Google Review</span>
               </div>
             </div>
@@ -1620,11 +1879,6 @@ a { color: inherit; text-decoration: none; }
           <p class="rc-text">"They built a Voice AI agent for our medical practice that handles appointment scheduling 24/7. Patient satisfaction went up 40% and we stopped missing calls completely."</p>
         </div>
 
-        <!-- ========================================= -->
-        <!-- UPWORK REVIEWS                             -->
-        <!-- Replace names, text with actual reviews     -->
-        <!-- ========================================= -->
-
         <!-- Upwork Review 1 -->
         <div class="rc-card rc-upwork">
           <div class="rc-header">
@@ -1632,8 +1886,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">David Lewis</div>
               <div class="rc-meta">
-                <!-- REPLACE: Upwork logo 14px -->
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270" alt="Upwork" onerror="this.src='https://www.google.com/s2/favicons?domain=upwork.com&sz=16'">
                 <span>Upwork</span>
               </div>
             </div>
@@ -1649,7 +1902,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Thomas Park</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270" alt="Upwork" onerror="this.src='https://www.google.com/s2/favicons?domain=upwork.com&sz=16'">
                 <span>Upwork</span>
               </div>
             </div>
@@ -1665,7 +1918,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Anna Martinez</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270" alt="Upwork" onerror="this.src='https://www.google.com/s2/favicons?domain=upwork.com&sz=16'">
                 <span>Upwork</span>
               </div>
             </div>
@@ -1681,7 +1934,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Kevin Wong</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270" alt="Upwork" onerror="this.src='https://www.google.com/s2/favicons?domain=upwork.com&sz=16'">
                 <span>Upwork</span>
               </div>
             </div>
@@ -1697,7 +1950,7 @@ a { color: inherit; text-decoration: none; }
             <div>
               <div class="rc-name">Laura Bennett</div>
               <div class="rc-meta">
-                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg" alt="Upwork">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270" alt="Upwork" onerror="this.src='https://www.google.com/s2/favicons?domain=upwork.com&sz=16'">
                 <span>Upwork</span>
               </div>
             </div>
@@ -1706,27 +1959,34 @@ a { color: inherit; text-decoration: none; }
           <p class="rc-text">"Needed a complex Power Automate + SharePoint integration for our enterprise. GrowwStacks handled it beautifully. The team is responsive, skilled, and genuinely cares about results."</p>
         </div>
 
-        <!-- ========================================= -->
-        <!-- ADD MORE REVIEWS: Copy any rc-card block   -->
-        <!-- Change: rc-google or rc-upwork class       -->
-        <!-- Change: avatar initials, name, text        -->
-        <!-- ========================================= -->
+        <!-- Upwork Review 6 -->
+        <div class="rc-card rc-upwork">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-10">LB</div>
+            <div>
+              <div class="rc-name">Ben McMillan</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270" alt="Upwork" onerror="this.src='https://www.google.com/s2/favicons?domain=upwork.com&sz=16'">
+                <span>Upwork</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"Manish and his team have consistently exceeded expectations in automating a previously time-consuming monthly task, resulting in significant cost savings of hundreds of dollars. Leveraging Make, they have implemented a system that automatically generates and distributes unique event ticket codes via email to our mailing list celebrating birthdays each month. While occasional errors may occur due to user input, Manish's team consistently resolves these issues within hours, providing comprehensive video tutorials to enhance user understanding and prevent future occurrences. Their expertise and responsiveness are highly recommended for any project."</p>
+        </div>
+
 
       </div>
 
-      <!-- Link to see all reviews -->
       <div class="review-collage-footer">
-        <!-- REPLACE: Your Google Business Profile review URL -->
-        <a href="https://g.page/growwstacks/review" class="btn btn-outline" target="_blank" rel="noopener">
+        <a href="https://share.google/e7U12GrP3UxuzJEGr" class="btn btn-outline" target="_blank" rel="noopener">
           See All Google Reviews →
         </a>
-        <!-- REPLACE: Your Upwork profile URL -->
-        <a href="https://www.upwork.com/agencies/growwstacks/" class="btn btn-outline" target="_blank" rel="noopener">
+        <a href="https://www.upwork.com/agencies/1631885072275017728" class="btn btn-outline" target="_blank" rel="noopener">
           See Upwork Profile →
         </a>
       </div>
     </div>
-  </div>
 </section>
 
 
@@ -2074,4 +2334,7 @@ document.getElementById('consultForm').addEventListener('submit', async function
 </script>
 
 </body>
+
 </html>
+<!-- CSS -->
+ 
