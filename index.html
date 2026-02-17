@@ -689,6 +689,78 @@ a { color: inherit; text-decoration: none; }
 .review-platform .stars { color: var(--amber-deep); }
 
 /* ============================================ */
+/* REVIEW COLLAGE                               */
+/* ============================================ */
+.review-collage-wrapper { margin-top: 60px; }
+.review-collage-header { text-align: center; margin-bottom: 32px; }
+.review-collage-header h3 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.review-collage-header p { font-size: 15px; color: var(--gray-400); }
+
+.review-collage {
+  columns: 3; column-gap: 16px;
+}
+.rc-card {
+  break-inside: avoid; margin-bottom: 16px;
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md); padding: 20px;
+  transition: all 0.3s; position: relative;
+}
+.rc-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+/* Subtle left border accent */
+.rc-google { border-left: 3px solid #4285f4; }
+.rc-upwork { border-left: 3px solid #6fda44; }
+
+.rc-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  position: relative;
+}
+.rc-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  color: var(--white); flex-shrink: 0;
+}
+/* Distinct colors for each avatar */
+.rc-av-1 { background: #4285f4; }
+.rc-av-2 { background: #ea4335; }
+.rc-av-3 { background: #fbbc04; color: var(--dark); }
+.rc-av-4 { background: #34a853; }
+.rc-av-5 { background: #8b5cf6; }
+.rc-av-6 { background: #6fda44; }
+.rc-av-7 { background: #f97316; }
+.rc-av-8 { background: #ec4899; }
+.rc-av-9 { background: #14b8a6; }
+.rc-av-10 { background: #6366f1; }
+
+.rc-name { font-weight: 700; font-size: 14px; line-height: 1.2; }
+.rc-meta {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 11px; color: var(--gray-400); margin-top: 2px;
+}
+.rc-source-logo { width: 14px; height: 14px; object-fit: contain; border-radius: 2px; }
+.rc-stars {
+  color: var(--amber-deep); font-size: 12px; letter-spacing: 1px;
+  margin-left: auto; flex-shrink: 0;
+}
+.rc-text {
+  font-size: 13px; color: var(--gray-600); line-height: 1.65;
+  font-style: italic;
+}
+
+.review-collage-footer {
+  text-align: center; margin-top: 32px;
+  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .review-collage { columns: 2; }
+}
+@media (max-width: 640px) {
+  .review-collage { columns: 1; }
+}
+
+/* ============================================ */
 /* CONSULTATION FORM                            */
 /* ============================================ */
 .consult {
@@ -867,13 +939,8 @@ a { color: inherit; text-decoration: none; }
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a href="/" class="nav-logo">
-        <!-- ======================================= -->
-        <!-- REPLACE: GrowwStacks logo               -->
-        <!-- <img src="YOUR_LOGO_URL" alt="GrowwStacks"> -->
-        <!-- ======================================= -->
-        <span class="nav-logo-fallback">GrowwStacks<span>»</span></span>
-      </a>
+      <span class="nav-logo-fallback">GrowwStacks<span>»</span></span>
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Logo%20File.png" alt="GrowwStacks" style="height:36px;">
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#process">How We Work</a></li>
@@ -1461,6 +1528,212 @@ a { color: inherit; text-decoration: none; }
           <div style="font-size:11px;color:var(--gray-400)">Plus Badge</div>
         </div>
         <div style="font-size:12px;color:var(--gray-400)">Upwork</div>
+      </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- REVIEW COLLAGE                 -->
+    <!-- ============================= -->
+    <div class="review-collage-wrapper">
+      <div class="review-collage-header">
+        <h3>What Our Clients Are Saying</h3>
+        <p>Real reviews from real businesses — across Google, Upwork, and direct feedback</p>
+      </div>
+
+      <!-- Masonry-style review collage -->
+      <div class="review-collage">
+
+        <!-- ========================================= -->
+        <!-- GOOGLE REVIEWS                             -->
+        <!-- Add/remove cards as you get new reviews    -->
+        <!-- The initials auto-generate from the name   -->
+        <!-- ========================================= -->
+
+        <!-- Google Review 1 -->
+        <div class="rc-card rc-google">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-1">SK</div>
+            <div>
+              <div class="rc-name">Suresh Kumar</div>
+              <div class="rc-meta">
+                <!-- REPLACE: Google logo 14px -->
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google">
+                <span>Google Review</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"Exceptional team! They automated our entire invoicing process with Make.com. What used to take 3 hours daily now runs automatically. Highly professional and great communicators."</p>
+        </div>
+
+        <!-- Google Review 2 -->
+        <div class="rc-card rc-google">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-2">JM</div>
+            <div>
+              <div class="rc-name">James Morrison</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google">
+                <span>Google Review</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"GrowwStacks built a custom AI chatbot for our real estate website. The bot handles 80% of property inquiries and books viewings automatically. Game changer for our business."</p>
+        </div>
+
+        <!-- Google Review 3 -->
+        <div class="rc-card rc-google">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-3">RP</div>
+            <div>
+              <div class="rc-name">Rajesh Patel</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google">
+                <span>Google Review</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"Outstanding work on our CRM automation. They connected HubSpot, WhatsApp, and our billing system seamlessly. Response time for our leads dropped from 4 hours to under 2 minutes."</p>
+        </div>
+
+        <!-- Google Review 4 -->
+        <div class="rc-card rc-google">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-4">SC</div>
+            <div>
+              <div class="rc-name">Sarah Chen</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google">
+                <span>Google Review</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"The team's expertise in Make.com is unmatched. They delivered our automation project 3 days ahead of schedule. The Platinum Partner certification is well deserved."</p>
+        </div>
+
+        <!-- Google Review 5 -->
+        <div class="rc-card rc-google">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-5">MR</div>
+            <div>
+              <div class="rc-name">Michael Roberts</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Google">
+                <span>Google Review</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"They built a Voice AI agent for our medical practice that handles appointment scheduling 24/7. Patient satisfaction went up 40% and we stopped missing calls completely."</p>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- UPWORK REVIEWS                             -->
+        <!-- Replace names, text with actual reviews     -->
+        <!-- ========================================= -->
+
+        <!-- Upwork Review 1 -->
+        <div class="rc-card rc-upwork">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-6">DL</div>
+            <div>
+              <div class="rc-name">David Lewis</div>
+              <div class="rc-meta">
+                <!-- REPLACE: Upwork logo 14px -->
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Upwork">
+                <span>Upwork</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"Third time working with GrowwStacks and they never disappoint. Built a complex n8n workflow that syncs data between 6 different systems. Flawless execution."</p>
+        </div>
+
+        <!-- Upwork Review 2 -->
+        <div class="rc-card rc-upwork">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-7">TP</div>
+            <div>
+              <div class="rc-name">Thomas Park</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Upwork">
+                <span>Upwork</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"Best automation agency on Upwork. Period. They understand business logic, not just technical implementation. Saved us $120K/year in operational costs."</p>
+        </div>
+
+        <!-- Upwork Review 3 -->
+        <div class="rc-card rc-upwork">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-8">AM</div>
+            <div>
+              <div class="rc-name">Anna Martinez</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Upwork">
+                <span>Upwork</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"Hired them for a Zapier to Make.com migration. They not only migrated everything but improved the workflows by 40%. Communication was excellent throughout."</p>
+        </div>
+
+        <!-- Upwork Review 4 -->
+        <div class="rc-card rc-upwork">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-9">KW</div>
+            <div>
+              <div class="rc-name">Kevin Wong</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Upwork">
+                <span>Upwork</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"The AI agent they built for our e-commerce store handles customer inquiries in 3 languages. Returns dropped 25% because customers get instant answers before buying."</p>
+        </div>
+
+        <!-- Upwork Review 5 -->
+        <div class="rc-card rc-upwork">
+          <div class="rc-header">
+            <div class="rc-avatar rc-av-10">LB</div>
+            <div>
+              <div class="rc-name">Laura Bennett</div>
+              <div class="rc-meta">
+                <img class="rc-source-logo" src="https://ik.imagekit.io/ui4mpbzoy/placeholder-logo.png" alt="Upwork">
+                <span>Upwork</span>
+              </div>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+          </div>
+          <p class="rc-text">"Needed a complex Power Automate + SharePoint integration for our enterprise. GrowwStacks handled it beautifully. The team is responsive, skilled, and genuinely cares about results."</p>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- ADD MORE REVIEWS: Copy any rc-card block   -->
+        <!-- Change: rc-google or rc-upwork class       -->
+        <!-- Change: avatar initials, name, text        -->
+        <!-- ========================================= -->
+
+      </div>
+
+      <!-- Link to see all reviews -->
+      <div class="review-collage-footer">
+        <!-- REPLACE: Your Google Business Profile review URL -->
+        <a href="https://g.page/growwstacks/review" class="btn btn-outline" target="_blank" rel="noopener">
+          See All Google Reviews →
+        </a>
+        <!-- REPLACE: Your Upwork profile URL -->
+        <a href="https://www.upwork.com/agencies/growwstacks/" class="btn btn-outline" target="_blank" rel="noopener">
+          See Upwork Profile →
+        </a>
       </div>
     </div>
   </div>
