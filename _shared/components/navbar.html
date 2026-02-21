@@ -13,35 +13,48 @@
       </ul>
     </div>
     <div class="nav-right">
-      <!-- <a href="{{SITE.phoneTel}}" class="nav-phone">📞 {{SITE.phone}}</a> -->
       <a href="#consultation" class="btn btn-primary nav-cta">Free Consultation <span class="btn-arrow">→</span></a>
     </div>
-    <button class="nav-mobile-toggle" aria-label="Open navigation menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+    <button class="nav-mobile-toggle" aria-label="Open navigation menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <script>
-// Dynamic navbar link builder — works at any page depth
 (function() {
   var pathSegments = window.location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
   var depth = pathSegments.length;
   var homePrefix = depth === 0 ? '' : Array(depth).fill('..').join('/') + '/';
-  
+
   var linkMap = {
-    'services': homePrefix + 'services/',
-    'process': homePrefix + '#process',
-    'case-studies': homePrefix + 'pages/case-studies/',
-    'industries': homePrefix + 'industries/',
-    'reviews': homePrefix + '#testimonials'
+    'services':     homePrefix + 'services/',
+    'process':      homePrefix + '#process',
+    'case-studies': homePrefix + 'case-studies/',
+    'industries':   homePrefix + 'industries/',
+    'reviews':      homePrefix + '#testimonials'
   };
-  
+
   document.querySelectorAll('a[data-nav-link]').forEach(function(link) {
     var key = link.getAttribute('data-nav-link');
-    if (linkMap[key]) {
-      link.href = linkMap[key];
-    }
+    if (linkMap[key]) link.href = linkMap[key];
   });
+
+  // Mobile toggle — button is already in DOM when this script runs
+  var btn = document.querySelector('.nav-mobile-toggle');
+  var links = document.querySelector('.nav-links');
+  if (btn && links) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      links.classList.toggle('show');
+      btn.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-inner') && links.classList.contains('show')) {
+        links.classList.remove('show');
+        btn.classList.remove('open');
+      }
+    });
+  }
 })();
 </script>
