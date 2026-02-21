@@ -976,3 +976,98 @@ body.page-lead-qual {
   .cs-flow-outcome-wrap { flex-direction: row; flex-wrap: wrap; justify-content: center; }
   .cs-flow-outcome { min-width: calc(50% - 8px); }
 }
+
+/* ============================================ */
+/* PATCH — Navbar offset + Mobile improvements  */
+/* Append to bottom of _shared/case-studies.css */
+/* ============================================ */
+
+/* ── Navbar offset (was inline on every page) ── */
+body.cs-page { margin-top: 72px; }
+body.cs-page #gs-navbar:not(:empty) { margin-top: -72px; }
+
+/* ── Mobile: hero ──────────────────────────── */
+@media (max-width: 768px) {
+  .cs-hero { padding: 32px 0 40px; }
+  .cs-hero h1 { font-size: clamp(22px, 5.5vw, 32px); }
+  .cs-hero-sub { font-size: 15px; line-height: 1.65; }
+  .cs-hero-logos { gap: 6px; }
+  .cs-hero-logo { font-size: 12px; padding: 5px 10px; height: auto; }
+  .cs-hero-logo img { height: 16px; }
+  .cs-breadcrumb { font-size: 12px; flex-wrap: wrap; row-gap: 4px; }
+  .cs-hero-tags { gap: 6px; }
+  .cs-tag { font-size: 10px; padding: 4px 10px; }
+  .cs-hero-media { margin-top: 28px; border-radius: 12px; }
+}
+
+/* ── Mobile: results strip ─────────────────── */
+@media (max-width: 640px) {
+  .cs-result-num { font-size: clamp(28px, 7vw, 38px); }
+  .cs-result-label { font-size: 12px; }
+}
+
+/* ── Mobile: article ───────────────────────── */
+@media (max-width: 768px) {
+  .cs-content { padding: 48px 0; }
+  .cs-article h2 { font-size: clamp(19px, 4.5vw, 26px); margin: 36px 0 12px; }
+  .cs-article h3 { font-size: clamp(17px, 4vw, 22px); }
+  .cs-article p,
+  .cs-article li { font-size: 15px; line-height: 1.75; }
+  .cs-img-block { margin: 24px 0; }
+  .cs-img-caption { font-size: 12px; }
+  .cs-highlight { padding: 16px 18px; font-size: 14px; }
+}
+
+/* ── Mobile: feature grid ──────────────────── */
+@media (max-width: 640px) {
+  .cs-features { grid-template-columns: 1fr; gap: 12px; }
+  .cs-feature { padding: 18px; }
+}
+
+/* ── Mobile: sidebar ───────────────────────── */
+@media (max-width: 768px) {
+  .cs-sidebar-card { padding: 18px; }
+  .cs-sidebar-tools { gap: 6px; }
+  .cs-tool-tag { font-size: 12px; padding: 5px 10px; }
+  .cs-sidebar-cta { padding: 22px 18px; }
+  .cs-sidebar-cta h4 { font-size: 16px; }
+}
+@media (max-width: 480px) {
+  .cs-sidebar-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 10px 0;
+  }
+  .cs-sidebar-value { font-size: 15px; }
+}
+
+/* ── Mobile: FAQ ───────────────────────────── */
+@media (max-width: 768px) {
+  .cs-faq { padding: 48px 0; }
+  .cs-faq h2 { font-size: clamp(22px, 5vw, 30px); }
+  .cs-faq-subtitle { font-size: 14px; margin-bottom: 32px; }
+  .faq-q { font-size: 15px; padding: 18px 8px; }
+  .faq-a-inner { font-size: 14px; }
+}
+
+/* ── Mobile: bottom CTA buttons ────────────── */
+@media (max-width: 600px) {
+  .cs-bottom-cta { padding: 48px 0; }
+  .cs-bottom-cta h2 { font-size: clamp(20px, 5.5vw, 28px); }
+  .cs-bottom-cta p { font-size: 15px; }
+  .cs-bottom-cta .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cs-bottom-cta .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+/* ── Mobile: container padding ─────────────── */
+@media (max-width: 480px) {
+  .container { padding-left: 16px; padding-right: 16px; }
+}
