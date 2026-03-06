@@ -1,1 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation for eCommerce Stores | Scale Without Hiring | GrowwStacks</title>
+<meta name="description" content="GrowwStacks automates eCommerce operations — order processing, inventory sync, customer support, email flows, and ad reporting — so you scale revenue without scaling headcount.">
+<meta property="og:title" content="eCommerce Automation | GrowwStacks">
+<meta property="og:description" content="Automate Shopify/WooCommerce operations: order management, inventory sync, customer service, and marketing workflows. Free automation audit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://growwstacks.com/industries/ecommerce/">
+<link rel="canonical" href="https://growwstacks.com/industries/ecommerce/">
+<link rel="icon" type="image/png" data-image-key="BRANDING.favicon" href="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What eCommerce operations can be automated with AI and Make.com?","acceptedAnswer":{"@type":"Answer","text":"eCommerce automation covers: order processing and fulfillment routing, inventory sync across Shopify/WooCommerce/Amazon/eBay channels, customer support (AI chatbot for order status, returns, FAQs), post-purchase email flows, review request sequences, low-stock alerts and reorder triggers, ad spend reporting, and supplier communication. A $5M eCommerce brand typically recovers 25–40 hours per week."}},
+    {"@type":"Question","name":"How does eCommerce automation integrate with Shopify, WooCommerce, Amazon, and Klaviyo?","acceptedAnswer":{"@type":"Answer","text":"Shopify has a robust GraphQL and REST API with native Make.com integration. WooCommerce REST API is fully supported. Amazon Seller Central connects via MWS/SP-API. Klaviyo integrates bidirectionally for customer segmentation and triggered flows. We build connectors that sync order, customer, and inventory data across all platforms in real time."}},
+    {"@type":"Question","name":"How much does eCommerce automation cost and what is the ROI?","acceptedAnswer":{"@type":"Answer","text":"Single workflow projects range $4,000–$8,000. Core operations stack (order routing + inventory + support) costs $10,000–$18,000. Comprehensive automation runs $18,000–$30,000. A $3M–$10M eCommerce brand typically saves $80K–$150K annually through recovered headcount and improved conversion. Payback periods typically run 45–90 days."}},
+    {"@type":"Question","name":"Can eCommerce automation handle multi-channel inventory sync across Shopify, Amazon, and eBay?","acceptedAnswer":{"@type":"Answer","text":"Yes. We build central inventory management systems where a single inventory source of truth (Airtable, Google Sheets, or your ERP) syncs to all sales channels in real time. When a unit sells on Amazon, Shopify and eBay inventory decrements immediately. Low-stock alerts and automated reorder triggers prevent stockouts on your best sellers."}}
+  ]
+}
+</script>
+
+<style>
+:root{--green-900:#0d3b1a;--green-800:#145a27;--green-700:#1a6e30;--green-600:#1f8a3c;--green-500:#22a447;--green-400:#4cbc6b;--green-100:#dcf5e3;--green-50:#f0faf3;--peach:#ffe8d6;--peach-deep:#f4a261;--lavender:#e8dff5;--lavender-deep:#8b5cf6;--sky:#dbeafe;--sky-deep:#3b82f6;--mint:#d1fae5;--rose:#ffe4e6;--rose-deep:#f43f5e;--amber:#fef3c7;--amber-deep:#f59e0b;--teal:#ccfbf1;--teal-deep:#0d9488;--dark:#0f1117;--dark-800:#1a1d27;--dark-700:#2a2d37;--gray-600:#4b5563;--gray-500:#6b7280;--gray-400:#9ca3af;--gray-300:#d1d5db;--gray-200:#e5e7eb;--gray-100:#f3f4f6;--gray-50:#f9fafb;--white:#ffffff;--cs-accent:#e8590c;--cs-accent-light:#f97316;--cs-accent-pale:#fff7ed;--font-display:'Bricolage Grotesque',serif;--font-body:'Plus Jakarta Sans',sans-serif;--shadow-sm:0 2px 8px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--shadow-lg:0 8px 32px rgba(0,0,0,.10);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--nav-h:72px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.65;overflow-x:hidden;padding-top:var(--nav-h)}
+body:has(.ind-hero){padding-top:0}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.15;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid var(--gray-200);transition:box-shadow .3s;height:var(--nav-h)}
+.nav.scrolled{box-shadow:var(--shadow-md)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-left{display:flex;align-items:center;gap:48px}
+.nav-logo img{height:36px}
+.nav-logo-fallback{font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--green-700)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--gray-600);transition:color .2s}
+.nav-right{display:flex;align-items:center;gap:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:15px;cursor:pointer;transition:all .25s ease;border:2px solid transparent;text-decoration:none}
+.btn-accent{background:var(--cs-accent);color:var(--white);border-color:var(--cs-accent)}
+.btn-accent:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(232,89,12,.25)}
+.btn-outline{background:transparent;color:#c2410c;border-color:#c2410c}
+.btn-outline:hover{background:var(--cs-accent);color:var(--white)}
+.btn-lg{padding:16px 36px;font-size:16px}
+
+/* ── eCommerce Hero — teal/sky theme ── */
+.ind-hero{padding:calc(var(--nav-h) + 56px) 0 80px;background:linear-gradient(135deg,#f0fdfa 0%,#fef9f0 50%,#f0f7ff 100%);position:relative;overflow:hidden}
+.ind-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--gray-200) 1px,transparent 1px);background-size:32px 32px;opacity:.3;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 70%)}
+.ind-hero-shape-1{position:absolute;top:60px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,var(--teal),transparent 70%);opacity:.5;filter:blur(60px)}
+.ind-hero-shape-2{position:absolute;bottom:-40px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--sky),transparent 70%);opacity:.4;filter:blur(50px)}
+.ind-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ind-hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal);border:1px solid #99f6e4;padding:6px 14px;border-radius:var(--radius-full);font-size:12px;font-weight:700;color:#0f766e;margin-bottom:20px;text-transform:uppercase;letter-spacing:.5px}
+.ind-hero h1{font-size:clamp(36px,4.5vw,52px);font-weight:800;color:var(--dark);margin-bottom:20px}
+.ind-hero h1 .highlight{position:relative;display:inline}
+.ind-hero h1 .highlight::after{content:'';position:absolute;bottom:3px;left:0;right:0;height:10px;background:var(--teal);border-radius:2px;z-index:-1}
+.ind-hero-desc{font-size:18px;color:var(--gray-500);margin-bottom:32px;max-width:520px;line-height:1.75}
+.ind-hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.ind-hero-trust{display:flex;flex-wrap:wrap;gap:20px}
+.ind-hero-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--gray-600)}
+.ind-hero-visual{position:relative}
+.ind-hero-card{background:var(--white);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-lg);border:1px solid var(--gray-200)}
+.ind-hero-card-title{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--dark);margin-bottom:20px}
+.ind-stat-row{display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--gray-100)}
+.ind-stat-row:last-child{border-bottom:none}
+.ind-stat-val{font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--teal-deep);min-width:80px}
+.ind-stat-desc{font-size:14px;color:var(--gray-600);line-height:1.4}
+
+/* Stats Strip */
+.ind-stats-strip{background:var(--dark);padding:52px 0}
+.ind-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1)}
+.ind-stat-item{background:var(--dark);padding:32px 24px;text-align:center}
+.ind-stat-num{font-family:var(--font-display);font-size:42px;font-weight:800;color:var(--white);margin-bottom:6px;line-height:1}
+.ind-stat-num span{font-size:24px;color:#5eead4}
+.ind-stat-label{font-size:13px;color:var(--gray-400);line-height:1.5;max-width:140px;margin:0 auto}
+
+/* Sections */
+.section{padding:80px 0}
+.section-tag{display:inline-block;background:var(--teal);color:var(--teal-deep);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:6px 14px;border-radius:var(--radius-full);margin-bottom:16px}
+.section-title{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--dark);margin-bottom:16px}
+.section-sub{font-size:17px;color:var(--gray-500);max-width:580px;line-height:1.7}
+
+/* Pain Points */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.pain-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal-deep)}
+.pain-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.pain-icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.pain-icon-teal{background:var(--teal)}
+.pain-icon-sky{background:var(--sky)}
+.pain-icon-amber{background:var(--amber)}
+.pain-icon-peach{background:var(--peach)}
+.pain-icon-mint{background:var(--mint)}
+.pain-icon-lavender{background:var(--lavender)}
+.pain-title{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--dark);margin-bottom:10px}
+.pain-desc{font-size:14px;color:var(--gray-600);line-height:1.6}
+.pain-cost{margin-top:12px;padding:8px 12px;background:var(--rose);border-radius:var(--radius-sm);font-size:12px;font-weight:700;color:#be123c}
+
+/* Solutions */
+.solutions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:48px}
+.solution-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:36px;transition:all .3s}
+.solution-card:hover{box-shadow:var(--shadow-lg);border-color:var(--teal)}
+.solution-icon{width:56px;height:56px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px}
+.solution-icon-teal{background:linear-gradient(135deg,var(--teal),var(--sky))}
+.solution-icon-amber{background:linear-gradient(135deg,var(--amber),var(--peach))}
+.solution-icon-mint{background:linear-gradient(135deg,var(--mint),var(--teal))}
+.solution-icon-lavender{background:linear-gradient(135deg,var(--lavender),var(--sky))}
+.solution-title{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px}
+.solution-desc{font-size:15px;color:var(--gray-600);line-height:1.65;margin-bottom:20px}
+.solution-tools{display:flex;flex-wrap:wrap;gap:8px}
+.solution-tool{padding:4px 12px;background:var(--gray-100);border-radius:var(--radius-full);font-size:12px;font-weight:600;color:var(--gray-600)}
+.solution-result{margin-top:16px;padding:14px;background:var(--teal);border-radius:var(--radius-md);font-size:13px;font-weight:600;color:var(--teal-deep)}
+
+/* Process */
+.process-section{background:var(--dark);padding:80px 0;overflow:hidden}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);margin-top:48px}
+.process-step{background:var(--dark-800);padding:32px 24px;position:relative}
+.process-step-num{font-family:var(--font-display);font-size:48px;font-weight:800;color:rgba(94,234,212,.12);position:absolute;top:16px;right:20px;line-height:1}
+.process-step-icon{font-size:28px;margin-bottom:16px}
+.process-step-title{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--white);margin-bottom:10px}
+.process-step-desc{font-size:13px;color:var(--gray-400);line-height:1.6}
+.process-step-time{margin-top:12px;font-size:12px;font-weight:700;color:#5eead4}
+
+/* Integrations */
+.integrations-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:48px}
+.integration-item{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:20px 16px;text-align:center;transition:all .3s}
+.integration-item:hover{box-shadow:var(--shadow-md);border-color:var(--teal)}
+.integration-logo{width:40px;height:40px;margin:0 auto 8px;border-radius:8px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:20px}
+.integration-name{font-size:11px;font-weight:600;color:var(--gray-600)}
+
+/* FAQ */
+.faq-list{max-width:800px;margin:48px auto 0}
+.faq-item{border:1px solid var(--gray-200);border-radius:var(--radius-lg);margin-bottom:12px;overflow:hidden;transition:all .3s}
+.faq-item.open{border-color:var(--teal-deep);box-shadow:0 0 0 3px rgba(13,148,136,.08)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:var(--white);font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--dark);cursor:pointer;border:none;text-align:left;gap:16px}
+.faq-q:hover{background:var(--gray-50)}
+.faq-arrow{font-size:18px;transition:transform .3s;flex-shrink:0;color:var(--teal-deep)}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:1200px}
+.faq-a-inner{padding:0 24px 24px;font-size:15px;color:var(--gray-600);line-height:1.7}
+.faq-a-inner p{margin-bottom:12px}
+.faq-a-inner ul,
+.faq-a-inner ol{margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px}
+.faq-a-inner strong{color:var(--dark)}
+
+@media(max-width:768px){
+  .ind-hero-inner{grid-template-columns:1fr}
+  .ind-hero-visual{display:none}
+  .ind-stats-grid{grid-template-columns:repeat(2,1fr)}
+  .pain-grid{grid-template-columns:1fr}
+  .solutions-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .integrations-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+<div id="gs-navbar"></div>
+<main>
+
+<!-- ══ HERO ══ -->
+<section class="ind-hero">
+  <div class="ind-hero-shape-1"></div>
+  <div class="ind-hero-shape-2"></div>
+  <div class="container">
+    <div class="ind-hero-inner">
+      <div class="ind-hero-left">
+        <div class="ind-hero-badge">🛒 eCommerce Automation</div>
+        <h1>Scale to <span class="highlight">$10M+ Revenue</span> Without Scaling Your Team</h1>
+        <p class="ind-hero-desc">GrowwStacks automates eCommerce operations — order routing, inventory sync, customer support, post-purchase flows, and ad reporting — so your team focuses on growth, not firefighting.</p>
+        <div class="ind-hero-ctas">
+          <a href="#consultation" class="btn btn-accent btn-lg">Get Free eComm Audit →</a>
+          <a href="/case-studies/" class="btn btn-outline btn-lg">See Store Results</a>
+        </div>
+        <div class="ind-hero-trust">
+          <div class="ind-hero-trust-item">✓ <span>Shopify, WooCommerce & Amazon expertise</span></div>
+          <div class="ind-hero-trust-item">✓ <span>Make.com Platinum Partner</span></div>
+          <div class="ind-hero-trust-item">✓ <span>Multi-channel inventory sync</span></div>
+        </div>
+      </div>
+      <div class="ind-hero-visual">
+        <div class="ind-hero-card">
+          <div class="ind-hero-card-title">Weekly Ops Hours Recovered — $5M Store</div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">14h</div>
+            <div class="ind-stat-desc">Saved on order processing, routing & exception handling</div>
+          </div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">10h</div>
+            <div class="ind-stat-desc">Saved on inventory updates, stockout prevention & reorders</div>
+          </div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">12h</div>
+            <div class="ind-stat-desc">Saved on customer support tickets, returns & status queries</div>
+          </div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">36h</div>
+            <div class="ind-stat-desc"><strong>Total saved → $90K/year in ops overhead eliminated</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS STRIP ══ -->
+<div class="ind-stats-strip">
+  <div class="container">
+    <div class="ind-stats-grid">
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">36h<span>/wk</span></div>
+        <div class="ind-stat-label">Average operations hours recovered per $5M store</div>
+      </div>
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">34%<span>↓</span></div>
+        <div class="ind-stat-label">Average reduction in customer support ticket volume</div>
+      </div>
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">99%<span>+</span></div>
+        <div class="ind-stat-label">Inventory accuracy across all channels after sync automation</div>
+      </div>
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">60<span>days</span></div>
+        <div class="ind-stat-label">Typical payback period for core eCommerce automation stack</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAIN POINTS ══ -->
+<section class="section" style="background:var(--gray-50)">
+  <div class="container">
+    <div class="section-tag">The Hidden Cost of Manual Operations</div>
+    <h2 class="section-title">Your Team Is Doing $25/hr Work That Should Cost $0.001 to Automate</h2>
+    <p class="section-sub">eCommerce brands between $1M–$20M revenue are the most over-staffed in operations and under-automated in the industry.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-teal">📦</div>
+        <div class="pain-title">Manual Order Processing</div>
+        <div class="pain-desc">Staff manually routing orders to fulfillment centers, updating tracking in multiple systems, handling exception orders, and sending shipping confirmations one by one.</div>
+        <div class="pain-cost">⚠ 10–18 hours per week across ops team</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-sky">🏪</div>
+        <div class="pain-title">Multi-Channel Inventory Chaos</div>
+        <div class="pain-desc">Selling on Shopify, Amazon, eBay, and Etsy with inventory updated manually across platforms — leading to oversells, stockouts, and hours of daily reconciliation.</div>
+        <div class="pain-cost">⚠ Oversells average $8,000/month in refunds</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-amber">💬</div>
+        <div class="pain-title">Repetitive Customer Support</div>
+        <div class="pain-desc">"Where's my order?", "Can I return this?", "What's your refund policy?" — 60–70% of support tickets are questions that automation can answer instantly 24/7.</div>
+        <div class="pain-cost">⚠ $4–$8 per ticket handled manually</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-peach">📧</div>
+        <div class="pain-title">Post-Purchase Email Gaps</div>
+        <div class="pain-desc">No automated review requests. No win-back sequences for lapsed buyers. No upsell flows for complementary products. Revenue left on the table from existing customers.</div>
+        <div class="pain-cost">⚠ 30% of eCommerce revenue from repeat buyers</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-mint">📊</div>
+        <div class="pain-title">Ad Reporting Blind Spots</div>
+        <div class="pain-desc">Meta, Google, and TikTok ad performance reported separately, manually compiled into spreadsheets each week. No unified ROAS view, no automated budget alerts.</div>
+        <div class="pain-cost">⚠ 5–8 hours per week on manual reporting</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-lavender">🚚</div>
+        <div class="pain-title">Supplier & Reorder Delays</div>
+        <div class="pain-desc">Stock levels watched manually. Reorder decisions made reactively after stockouts. Supplier POs sent manually with no tracking of lead times against sales velocity.</div>
+        <div class="pain-cost">⚠ Avg 14% of SKUs out of stock at any time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOLUTIONS ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag">Automation Solutions</div>
+    <h2 class="section-title">What We Automate for eCommerce Brands</h2>
+    <p class="section-sub">Built on Make.com, n8n, and AI — integrated into your Shopify, Amazon, and marketing stack.</p>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-teal">⚡</div>
+        <div class="solution-title">Order Processing & Fulfillment Routing</div>
+        <div class="solution-desc">New order → instant fulfillment routing based on SKU, location, and carrier rules → tracking number synced back to Shopify → branded shipping confirmation email sent. Exceptions flagged automatically. Zero manual touches for standard orders.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">Make.com</span>
+          <span class="solution-tool">Shopify</span>
+          <span class="solution-tool">ShipStation</span>
+          <span class="solution-tool">EasyPost</span>
+        </div>
+        <div class="solution-result">⚡ 14 hours/week saved on order ops</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-amber">🔄</div>
+        <div class="solution-title">Multi-Channel Inventory Sync</div>
+        <div class="solution-desc">Central inventory source of truth (Airtable or your ERP) syncs to Shopify, Amazon, eBay, and Walmart in real time. Low-stock alerts fire at configurable thresholds. Automated reorder POs sent to suppliers when inventory hits reorder point.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">Make.com</span>
+          <span class="solution-tool">Shopify</span>
+          <span class="solution-tool">Amazon SP-API</span>
+          <span class="solution-tool">Airtable</span>
+        </div>
+        <div class="solution-result">⚡ 99%+ inventory accuracy across channels</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-mint">🤖</div>
+        <div class="solution-title">AI Customer Support Agent</div>
+        <div class="solution-desc">AI chatbot trained on your product catalog, return policy, and FAQs handles "where's my order?", return requests, and common questions 24/7. Complex issues escalated to human agent with full context. 60–70% of tickets resolved without staff touch.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">GPT-4o</span>
+          <span class="solution-tool">n8n</span>
+          <span class="solution-tool">Gorgias</span>
+          <span class="solution-tool">Shopify</span>
+        </div>
+        <div class="solution-result">⚡ 34% support ticket volume reduction</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-lavender">📈</div>
+        <div class="solution-title">Post-Purchase Revenue Flows</div>
+        <div class="solution-desc">Automated review request sequences (5-day post-delivery), cross-sell product recommendations, 30/60/90-day win-back flows for lapsed buyers, and SMS/email loyalty sequences — all triggered by purchase behavior and segmented by product category.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">Klaviyo</span>
+          <span class="solution-tool">Make.com</span>
+          <span class="solution-tool">Postscript</span>
+          <span class="solution-tool">Shopify</span>
+        </div>
+        <div class="solution-result">⚡ 22% average repeat purchase rate lift</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="process-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-tag" style="background:rgba(94,234,212,.12);color:#5eead4">How We Work</div>
+      <h2 class="section-title" style="color:var(--white)">Live in 2–3 Weeks. ROI Visible in Week 2.</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <div class="process-step-icon">🔍</div>
+        <div class="process-step-title">eComm Ops Audit</div>
+        <div class="process-step-desc">We map your current order, inventory, support, and marketing workflows — identify the 3 highest-ROI automation opportunities with time and cost savings estimates.</div>
+        <div class="process-step-time">Week 0 — Free</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <div class="process-step-icon">🏗️</div>
+        <div class="process-step-title">Highest-ROI First</div>
+        <div class="process-step-desc">Order automation or inventory sync built, tested, and live in Week 1. You start recovering hours before the full project is complete.</div>
+        <div class="process-step-time">Week 1</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <div class="process-step-icon">🔗</div>
+        <div class="process-step-title">Stack Integration</div>
+        <div class="process-step-desc">Support AI, post-purchase flows, and ad reporting connected to your Shopify, Klaviyo, and ad platforms. All channels talking to each other.</div>
+        <div class="process-step-time">Weeks 2–3</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">04</div>
+        <div class="process-step-icon">📊</div>
+        <div class="process-step-title">Monitor & Optimise</div>
+        <div class="process-step-desc">30 days post-launch support included. Monitoring dashboards set up. Optional retainer for ongoing optimisation as your store scales.</div>
+        <div class="process-step-time">Week 4 + ongoing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INTEGRATIONS ══ -->
+<section class="section" style="background:var(--gray-50)">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-tag">Integrations</div>
+      <h2 class="section-title">Works With Your Entire eCommerce Stack</h2>
+      <p class="section-sub" style="margin:0 auto">We connect all your platforms — no migration required.</p>
+    </div>
+    <div class="integrations-grid">
+      <div class="integration-item"><div class="integration-logo">🛍️</div><div class="integration-name">Shopify</div></div>
+      <div class="integration-item"><div class="integration-logo">🛒</div><div class="integration-name">WooCommerce</div></div>
+      <div class="integration-item"><div class="integration-logo">📦</div><div class="integration-name">Amazon</div></div>
+      <div class="integration-item"><div class="integration-logo">🏪</div><div class="integration-name">eBay</div></div>
+      <div class="integration-item"><div class="integration-logo">📧</div><div class="integration-name">Klaviyo</div></div>
+      <div class="integration-item"><div class="integration-logo">💬</div><div class="integration-name">Gorgias</div></div>
+      <div class="integration-item"><div class="integration-logo">🚚</div><div class="integration-name">ShipStation</div></div>
+      <div class="integration-item"><div class="integration-logo">📊</div><div class="integration-name">Airtable</div></div>
+      <div class="integration-item"><div class="integration-logo">🤖</div><div class="integration-name">Make.com</div></div>
+      <div class="integration-item"><div class="integration-logo">⚡</div><div class="integration-name">n8n</div></div>
+      <div class="integration-item"><div class="integration-logo">🎯</div><div class="integration-name">Meta Ads</div></div>
+      <div class="integration-item"><div class="integration-logo">🔍</div><div class="integration-name">Google Ads</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-tag">Frequently Asked Questions</div>
+      <h2 class="section-title">Everything eCommerce Brands Ask Before Automating</h2>
+      <p class="section-sub" style="margin:0 auto">Detailed answers to the questions eCommerce founders and ops managers ask most about workflow automation</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">What eCommerce operations can be automated with AI and Make.com? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>eCommerce brands between $1M–$20M have the widest range of automatable operations. The key workflows:</p>
+          <ul>
+            <li><strong>Order processing and fulfillment routing</strong> — new order triggers, fulfillment center routing based on SKU and location rules, tracking sync back to your store, exception flagging</li>
+            <li><strong>Multi-channel inventory sync</strong> — real-time inventory updates across Shopify, Amazon, eBay, and Walmart from a central source of truth</li>
+            <li><strong>Customer support</strong> — AI agents trained on your product catalog and policies handle "where's my order?", return requests, and FAQs 24/7</li>
+            <li><strong>Post-purchase marketing</strong> — review requests, cross-sell sequences, win-back flows, and loyalty programs triggered by purchase behavior</li>
+            <li><strong>Supplier and reorder management</strong> — low-stock alerts and automated POs sent to suppliers at configurable reorder points</li>
+            <li><strong>Ad reporting</strong> — unified ROAS dashboard pulling from Meta, Google, and TikTok with automated daily spend alerts</li>
+          </ul>
+          <p>A $5M eCommerce brand typically recovers 35–40 hours per week across these workflows.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does eCommerce automation integrate with Shopify, WooCommerce, Amazon, and Klaviyo? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Each platform has different API capabilities, and we build accordingly:</strong></p>
+          <ul>
+            <li><strong>Shopify</strong> — robust GraphQL and REST API with native Make.com integration. Orders, products, inventory, customers, and fulfillments all accessible bidirectionally.</li>
+            <li><strong>WooCommerce</strong> — REST API fully supported for orders, products, and customer data. Webhooks trigger Make.com scenarios on order events.</li>
+            <li><strong>Amazon</strong> — Selling Partner API (SP-API) covers orders, inventory, and fulfillment. FBA inventory sync is particularly impactful for multi-channel sellers.</li>
+            <li><strong>Klaviyo</strong> — bidirectional integration for customer segmentation, triggered flow enrollment, and event tracking from any platform action</li>
+            <li><strong>Gorgias</strong> — order data, ticket creation, and resolution automation with Shopify context injected into every support ticket automatically</li>
+          </ul>
+          <p>The key architecture principle: all platforms connect to a central Make.com orchestration layer, so data flows correctly regardless of where events originate.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can eCommerce automation handle multi-channel inventory sync across Shopify, Amazon, and eBay? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Multi-channel inventory sync is one of the highest-ROI automations for any brand selling on more than one platform.</strong> Here's how it works:</p>
+          <ol>
+            <li>A central inventory source of truth is established — Airtable, Google Sheets, or your ERP</li>
+            <li>Make.com monitors all sales channels for order events in real time</li>
+            <li>When a unit sells on any channel, the central inventory decrements and all other channel listings update within 60–90 seconds</li>
+            <li>When inventory falls below configurable reorder thresholds, alerts fire and supplier POs can be generated automatically</li>
+          </ol>
+          <p>The result: oversell incidents drop to near-zero. Brands typically see a 40–60% reduction in the ops time spent on manual inventory reconciliation, and customers stop receiving cancellation emails for out-of-stock items.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does an AI customer support agent work for an eCommerce store? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>An eCommerce AI support agent is trained on your specific store data</strong> — product catalog, return policy, shipping zones, FAQs, and common edge cases — and handles customer inquiries 24/7 via chat widget, email, or SMS.</p>
+          <p><strong>What it handles automatically:</strong></p>
+          <ul>
+            <li><strong>"Where's my order?"</strong> — agent pulls live tracking data from ShipStation/EasyPost and provides real-time status</li>
+            <li><strong>Return and refund requests</strong> — agent verifies eligibility against your policy, generates return labels if approved, and creates the refund</li>
+            <li><strong>Product questions</strong> — agent answers questions about sizing, materials, compatibility using your product data</li>
+            <li><strong>Policy questions</strong> — shipping timelines, warranty terms, discount code issues handled instantly</li>
+          </ul>
+          <p>Complex issues (damaged goods, disputes, escalations) are handed to human agents with full conversation context. Brands consistently see 60–70% of tickets resolved without human touch — reducing support costs $40,000–$80,000 annually for a mid-size eCommerce operation.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How much does eCommerce automation cost, and what's the ROI for a $3M–$10M store? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Investment range by scope:</strong></p>
+          <ul>
+            <li><strong>Single workflow (e.g., order automation only):</strong> $4,000–$8,000, live in 1–2 weeks</li>
+            <li><strong>Core operations stack (order + inventory + support AI):</strong> $10,000–$18,000, live in 2–3 weeks</li>
+            <li><strong>Full stack including marketing automation and reporting:</strong> $18,000–$30,000, live in 4–5 weeks</li>
+          </ul>
+          <p><strong>Typical ROI for a $5M eCommerce brand:</strong> Order ops savings ($45K) + inventory accuracy improvement ($30K) + support automation ($50K) + post-purchase email lift ($40K) = $165,000 annually. Most builds pay back within 45–90 days.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What post-purchase email and SMS automations generate the most revenue? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The three highest-ROI post-purchase automation sequences for eCommerce:</strong></p>
+          <ul>
+            <li><strong>Review request flow</strong> — sent 5–7 days after delivery confirmation. Review rates from automated sequences average 8–15% vs 1–2% for manual outreach. Reviews compound into higher conversion on product pages.</li>
+            <li><strong>Win-back sequence</strong> — automated 30/60/90-day sequences for customers who haven't repurchased. Personalized based on initial purchase category with relevant product recommendations. Brands typically see 8–12% win-back rates on lapsed buyers.</li>
+            <li><strong>Cross-sell/upsell flow</strong> — triggered by specific product purchase with complementary product recommendations pulled dynamically from your catalog. Sent at 7 and 14 days post-purchase. Average order value lift of 18–24% on customers who engage.</li>
+          </ul>
+          <p>All flows integrate with Klaviyo or your existing ESP and are personalized based on purchase history, product category, and customer lifetime value.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do we automate multi-platform ad reporting across Meta, Google, and TikTok? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Unified ad reporting automation pulls spend, impression, click, and conversion data from all platforms daily</strong> and compiles it into a single dashboard or Slack/email report — eliminating hours of manual spreadsheet work each week.</p>
+          <p><strong>What we build:</strong></p>
+          <ul>
+            <li>Daily automated pulls from Meta Ads API, Google Ads API, and TikTok Ads API</li>
+            <li>Data normalised into a unified format and pushed to a Google Sheet or Looker Studio dashboard</li>
+            <li>Automated Monday morning performance report delivered to your team's Slack or email</li>
+            <li>Budget alert triggers — if daily spend exceeds threshold or ROAS drops below target, instant Slack alert fires</li>
+            <li>Anomaly detection — automated flag when any campaign's CPC or conversion rate shifts more than 20% from 7-day average</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Will eCommerce automation break if Shopify or Amazon updates their API? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>API updates are the most common maintenance requirement for eCommerce automation — and it's exactly what our support retainer covers.</strong> Here's what happens when a platform updates its API:</p>
+          <ul>
+            <li>Make.com's native Shopify and Amazon integrations are maintained by Make.com — major platform updates are handled automatically at the connector layer</li>
+            <li>For custom API integrations (SP-API, TikTok), we monitor API deprecation announcements and update affected scenarios before breaking changes take effect</li>
+            <li>Every automation includes error notifications — if any step fails, you receive an immediate alert rather than a silent failure</li>
+          </ul>
+          <p>All projects include 30 days of post-launch support at no additional cost. Clients on a monthly retainer get proactive monitoring and are covered for all platform API updates as they occur.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="gs-consult-section"></div>
+
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/page-builder.js" defer></script>
+<script src="../../_shared/site-config.js" defer></script>
+<script src="/analytics-loader.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+});
+</script>
+</body>
+</html>

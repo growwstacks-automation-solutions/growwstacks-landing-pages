@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation for Law Firms & Legal Practices | GrowwStacks</title>
+<meta name="description" content="GrowwStacks helps law firms automate client intake, contract drafting, document management, billing, and case tracking — saving 30–50 hours per week. Make.com Platinum Partner.">
+<meta property="og:title" content="AI Automation for Law Firms | GrowwStacks">
+<meta property="og:description" content="Automate legal client intake, document generation, billing, and case workflows. Free automation audit for law firms.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://growwstacks.com/industries/legal/">
+<link rel="canonical" href="https://growwstacks.com/industries/legal/">
+<link rel="icon" type="image/png" data-image-key="BRANDING.favicon" href="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What legal workflows can be automated at a law firm?","acceptedAnswer":{"@type":"Answer","text":"Law firms can automate: client intake (online forms synced to Clio/MyCase), engagement letters via DocuSign, contract drafting using AI templates, document management (auto-folder creation, naming, filing), billing (time entry reminders, invoice generation, AR follow-up), deadline and calendar tracking, court date reminders, and matter status communications. A 10-attorney firm typically recovers 30–50 hours per week."}},
+    {"@type":"Question","name":"How does legal automation integrate with Clio, MyCase, PracticePanther, and Smokeball?","acceptedAnswer":{"@type":"Answer","text":"Clio and MyCase both have robust REST APIs that connect natively with Make.com. PracticePanther and Smokeball support API integrations for contact, matter, and billing data. We automate bidirectional syncing: intake data flows into your practice management system, and matter updates trigger downstream workflows without manual data entry."}},
+    {"@type":"Question","name":"Is legal automation compliant with attorney-client privilege and bar association rules?","acceptedAnswer":{"@type":"Answer","text":"Yes. Client data flows exclusively through your existing approved, confidential systems. We never route privileged communications through non-compliant third parties. DocuSign and Adobe Sign are attorney-compliant eSignature platforms. Document storage stays in your existing NetDocuments, iManage, or Google Workspace environment. Every build includes data flow documentation for your ethics review."}},
+    {"@type":"Question","name":"How much does law firm workflow automation cost and what is the ROI?","acceptedAnswer":{"@type":"Answer","text":"Single workflow projects range $5,000–$9,000. Core admin stack (intake + documents + billing) costs $12,000–$20,000. Comprehensive automation runs $20,000–$35,000. A 10-attorney firm typically saves $100K–$180K annually through recovered billable hours and eliminated admin overhead. Payback periods typically run 60–120 days."}}
+  ]
+}
+</script>
+
+<style>
+:root{--green-900:#0d3b1a;--green-800:#145a27;--green-700:#1a6e30;--green-600:#1f8a3c;--green-500:#22a447;--green-400:#4cbc6b;--green-100:#dcf5e3;--green-50:#f0faf3;--peach:#ffe8d6;--peach-deep:#f4a261;--lavender:#e8dff5;--lavender-deep:#8b5cf6;--sky:#dbeafe;--sky-deep:#3b82f6;--mint:#d1fae5;--rose:#ffe4e6;--rose-deep:#f43f5e;--amber:#fef3c7;--amber-deep:#f59e0b;--indigo:#e0e7ff;--indigo-deep:#4f46e5;--dark:#0f1117;--dark-800:#1a1d27;--dark-700:#2a2d37;--gray-600:#4b5563;--gray-500:#6b7280;--gray-400:#9ca3af;--gray-300:#d1d5db;--gray-200:#e5e7eb;--gray-100:#f3f4f6;--gray-50:#f9fafb;--white:#ffffff;--cs-accent:#e8590c;--cs-accent-light:#f97316;--cs-accent-pale:#fff7ed;--font-display:'Bricolage Grotesque',serif;--font-body:'Plus Jakarta Sans',sans-serif;--shadow-sm:0 2px 8px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--shadow-lg:0 8px 32px rgba(0,0,0,.10);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--nav-h:72px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.65;overflow-x:hidden;padding-top:var(--nav-h)}
+body:has(.ind-hero){padding-top:0}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.15;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid var(--gray-200);transition:box-shadow .3s;height:var(--nav-h)}
+.nav.scrolled{box-shadow:var(--shadow-md)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-left{display:flex;align-items:center;gap:48px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:36px}
+.nav-logo-fallback{font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--green-700)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--gray-600);transition:color .2s}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{padding:10px 22px;font-size:14px}
+.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:15px;cursor:pointer;transition:all .25s ease;border:2px solid transparent;text-decoration:none}
+.btn-accent{background:var(--cs-accent);color:var(--white);border-color:var(--cs-accent)}
+.btn-accent:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(232,89,12,.25)}
+.btn-outline{background:transparent;color:#c2410c;border-color:#c2410c}
+.btn-outline:hover{background:var(--cs-accent);color:var(--white)}
+.btn-lg{padding:16px 36px;font-size:16px}
+
+/* ── Legal Hero — indigo/lavender theme ── */
+.ind-hero{padding:calc(var(--nav-h) + 56px) 0 80px;background:linear-gradient(135deg,#f5f3ff 0%,#fef9f0 50%,#f0f7ff 100%);position:relative;overflow:hidden}
+.ind-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--gray-200) 1px,transparent 1px);background-size:32px 32px;opacity:.3;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 70%)}
+.ind-hero-shape-1{position:absolute;top:60px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,var(--lavender),transparent 70%);opacity:.6;filter:blur(60px)}
+.ind-hero-shape-2{position:absolute;bottom:-40px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--indigo),transparent 70%);opacity:.4;filter:blur(50px)}
+.ind-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ind-hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--lavender);border:1px solid #c4b5fd;padding:6px 14px;border-radius:var(--radius-full);font-size:12px;font-weight:700;color:#6d28d9;margin-bottom:20px;text-transform:uppercase;letter-spacing:.5px}
+.ind-hero h1{font-size:clamp(36px,4.5vw,52px);font-weight:800;color:var(--dark);margin-bottom:20px}
+.ind-hero h1 .highlight{position:relative;display:inline}
+.ind-hero h1 .highlight::after{content:'';position:absolute;bottom:3px;left:0;right:0;height:10px;background:var(--lavender);border-radius:2px;z-index:-1}
+.ind-hero-desc{font-size:18px;color:var(--gray-500);margin-bottom:32px;max-width:520px;line-height:1.75}
+.ind-hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.ind-hero-trust{display:flex;flex-wrap:wrap;gap:20px}
+.ind-hero-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--gray-600)}
+.ind-hero-visual{position:relative}
+.ind-hero-card{background:var(--white);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-lg);border:1px solid var(--gray-200)}
+.ind-hero-card-title{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--dark);margin-bottom:20px}
+.ind-stat-row{display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--gray-100)}
+.ind-stat-row:last-child{border-bottom:none}
+.ind-stat-val{font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--indigo-deep);min-width:80px}
+.ind-stat-desc{font-size:14px;color:var(--gray-600);line-height:1.4}
+
+/* Stats Strip */
+.ind-stats-strip{background:var(--dark);padding:52px 0}
+.ind-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1)}
+.ind-stat-item{background:var(--dark);padding:32px 24px;text-align:center}
+.ind-stat-num{font-family:var(--font-display);font-size:42px;font-weight:800;color:var(--white);margin-bottom:6px;line-height:1}
+.ind-stat-num span{font-size:24px;color:#a5b4fc}
+.ind-stat-label{font-size:13px;color:var(--gray-400);line-height:1.5;max-width:140px;margin:0 auto}
+
+/* Sections */
+.section{padding:80px 0}
+.section-tag{display:inline-block;background:var(--lavender);color:#6d28d9;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:6px 14px;border-radius:var(--radius-full);margin-bottom:16px}
+.section-title{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--dark);margin-bottom:16px}
+.section-sub{font-size:17px;color:var(--gray-500);max-width:580px;line-height:1.7}
+
+/* Pain Points */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.pain-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--indigo-deep)}
+.pain-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.pain-icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.pain-icon-lavender{background:var(--lavender)}
+.pain-icon-indigo{background:var(--indigo)}
+.pain-icon-sky{background:var(--sky)}
+.pain-icon-amber{background:var(--amber)}
+.pain-icon-peach{background:var(--peach)}
+.pain-icon-mint{background:var(--mint)}
+.pain-title{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--dark);margin-bottom:10px}
+.pain-desc{font-size:14px;color:var(--gray-600);line-height:1.6}
+.pain-cost{margin-top:12px;padding:8px 12px;background:var(--rose);border-radius:var(--radius-sm);font-size:12px;font-weight:700;color:#be123c}
+
+/* Solutions */
+.solutions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:48px}
+.solution-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:36px;transition:all .3s}
+.solution-card:hover{box-shadow:var(--shadow-lg);border-color:var(--lavender)}
+.solution-icon{width:56px;height:56px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px}
+.solution-icon-lavender{background:linear-gradient(135deg,var(--lavender),var(--indigo))}
+.solution-icon-indigo{background:linear-gradient(135deg,var(--indigo),var(--sky))}
+.solution-icon-amber{background:linear-gradient(135deg,var(--amber),var(--peach))}
+.solution-icon-mint{background:linear-gradient(135deg,var(--mint),var(--sky))}
+.solution-title{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px}
+.solution-desc{font-size:15px;color:var(--gray-600);line-height:1.65;margin-bottom:20px}
+.solution-tools{display:flex;flex-wrap:wrap;gap:8px}
+.solution-tool{padding:4px 12px;background:var(--gray-100);border-radius:var(--radius-full);font-size:12px;font-weight:600;color:var(--gray-600)}
+.solution-result{margin-top:16px;padding:14px;background:var(--lavender);border-radius:var(--radius-md);font-size:13px;font-weight:600;color:#6d28d9}
+
+/* Process */
+.process-section{background:var(--dark);padding:80px 0;overflow:hidden}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);margin-top:48px}
+.process-step{background:var(--dark-800);padding:32px 24px;position:relative}
+.process-step-num{font-family:var(--font-display);font-size:48px;font-weight:800;color:rgba(165,180,252,.15);position:absolute;top:16px;right:20px;line-height:1}
+.process-step-icon{font-size:28px;margin-bottom:16px}
+.process-step-title{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--white);margin-bottom:10px}
+.process-step-desc{font-size:13px;color:var(--gray-400);line-height:1.6}
+.process-step-time{margin-top:12px;font-size:12px;font-weight:700;color:#a5b4fc}
+
+/* Case Studies */
+.case-study-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.case-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;transition:all .3s;position:relative}
+.case-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--lavender)}
+.case-card-tag{display:inline-block;padding:4px 12px;border-radius:var(--radius-full);font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:14px}
+.case-card-tag-lavender{background:var(--lavender);color:#6d28d9}
+.case-card-title{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.3}
+.case-card-desc{font-size:13px;color:var(--gray-600);line-height:1.6;margin-bottom:16px}
+.case-card-metrics{display:flex;gap:16px;flex-wrap:wrap}
+.case-metric{text-align:center}
+.case-metric-val{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--indigo-deep)}
+.case-metric-label{font-size:11px;color:var(--gray-500)}
+
+/* Integrations */
+.integrations-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:48px}
+.integration-item{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:20px 16px;text-align:center;transition:all .3s}
+.integration-item:hover{box-shadow:var(--shadow-md);border-color:var(--lavender)}
+.integration-logo{width:40px;height:40px;margin:0 auto 8px;border-radius:8px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:20px}
+.integration-name{font-size:11px;font-weight:600;color:var(--gray-600)}
+
+/* FAQ */
+.faq-list{max-width:800px;margin:48px auto 0}
+.faq-item{border:1px solid var(--gray-200);border-radius:var(--radius-lg);margin-bottom:12px;overflow:hidden;transition:all .3s}
+.faq-item.open{border-color:var(--indigo-deep);box-shadow:0 0 0 3px rgba(79,70,229,.08)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:var(--white);font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--dark);cursor:pointer;border:none;text-align:left;gap:16px}
+.faq-q:hover{background:var(--gray-50)}
+.faq-arrow{font-size:18px;transition:transform .3s;flex-shrink:0;color:var(--indigo-deep)}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:1200px}
+.faq-a-inner{padding:0 24px 24px;font-size:15px;color:var(--gray-600);line-height:1.7}
+.faq-a-inner p{margin-bottom:12px}
+.faq-a-inner p:last-child{margin-bottom:0}
+.faq-a-inner ul,
+.faq-a-inner ol{margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px}
+.faq-a-inner strong{color:var(--dark)}
+
+/* Responsive */
+@media(max-width:768px){
+  .ind-hero-inner{grid-template-columns:1fr}
+  .ind-hero-visual{display:none}
+  .ind-stats-grid{grid-template-columns:repeat(2,1fr)}
+  .pain-grid{grid-template-columns:1fr}
+  .solutions-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .case-study-grid{grid-template-columns:1fr}
+  .integrations-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+<div id="gs-navbar"></div>
+<main>
+
+<!-- ══ HERO ══ -->
+<section class="ind-hero">
+  <div class="ind-hero-shape-1"></div>
+  <div class="ind-hero-shape-2"></div>
+  <div class="container">
+    <div class="ind-hero-inner">
+      <div class="ind-hero-left">
+        <div class="ind-hero-badge">⚖️ Law Firm Automation</div>
+        <h1>Stop Billing <span class="highlight">$400/hr Staff</span> on $15/hr Admin Work</h1>
+        <p class="ind-hero-desc">GrowwStacks automates client intake, contract drafting, document management, deadline tracking, and billing for law firms — so your attorneys spend 90%+ of their time on billable work, not paperwork.</p>
+        <div class="ind-hero-ctas">
+          <a href="#consultation" class="btn btn-accent btn-lg">Get Free Legal Audit →</a>
+          <a href="/case-studies/" class="btn btn-outline btn-lg">See Firm Results</a>
+        </div>
+        <div class="ind-hero-trust">
+          <div class="ind-hero-trust-item">✓ <span>2,000+ automation builds delivered</span></div>
+          <div class="ind-hero-trust-item">✓ <span>Make.com Platinum Partner</span></div>
+          <div class="ind-hero-trust-item">✓ <span>Privilege-safe architecture</span></div>
+        </div>
+      </div>
+      <div class="ind-hero-visual">
+        <div class="ind-hero-card">
+          <div class="ind-hero-card-title">Weekly Time Recovery — 10-Attorney Firm</div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">18h</div>
+            <div class="ind-stat-desc">Saved on client intake, onboarding & engagement letters</div>
+          </div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">12h</div>
+            <div class="ind-stat-desc">Saved on document drafting, review routing & filing</div>
+          </div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">8h</div>
+            <div class="ind-stat-desc">Saved on billing, invoice follow-up & AR collection</div>
+          </div>
+          <div class="ind-stat-row">
+            <div class="ind-stat-val">38h</div>
+            <div class="ind-stat-desc"><strong>Total weekly hours recovered → $110K+ annual value</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS STRIP ══ -->
+<div class="ind-stats-strip">
+  <div class="container">
+    <div class="ind-stats-grid">
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">38h<span>/wk</span></div>
+        <div class="ind-stat-label">Average admin hours recovered per 10-attorney firm</div>
+      </div>
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">$110K<span>+</span></div>
+        <div class="ind-stat-label">Annual value recovered at $300/hr billing rate</div>
+      </div>
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">90<span>days</span></div>
+        <div class="ind-stat-label">Typical payback period for full automation build</div>
+      </div>
+      <div class="ind-stat-item">
+        <div class="ind-stat-num">2,000<span>+</span></div>
+        <div class="ind-stat-label">Automation workflows built across all industries</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAIN POINTS ══ -->
+<section class="section" style="background:var(--gray-50)">
+  <div class="container">
+    <div class="section-tag">The Hidden Cost of Manual Workflows</div>
+    <h2 class="section-title">Every Hour Your Attorney Spends on Admin Is Billed Time You're Losing</h2>
+    <p class="section-sub">Law firms have the highest cost-per-hour of any professional services business — and the most administrative overhead relative to value delivered.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-lavender">📋</div>
+        <div class="pain-title">Manual Client Intake</div>
+        <div class="pain-desc">Intake calls, questionnaires, conflict checks, engagement letter drafting, DocuSign, CRM entry — 3–5 hours per new client that generates zero revenue.</div>
+        <div class="pain-cost">⚠ $900–$1,500 in attorney time per client</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-indigo">📄</div>
+        <div class="pain-title">Contract & Document Drafting</div>
+        <div class="pain-desc">Paralegal hours spent on standard document variations — NDAs, retainer agreements, demand letters, pleading captions — that AI can generate in seconds.</div>
+        <div class="pain-cost">⚠ 8–15 attorney/paralegal hours per week</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-sky">📁</div>
+        <div class="pain-title">Document Management Chaos</div>
+        <div class="pain-desc">Inconsistent folder structures, manual file naming, version control failures, and documents stored across email, Drive, and NetDocuments with no single source of truth.</div>
+        <div class="pain-cost">⚠ 2–4 hours per week finding misfiled documents</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-amber">⏰</div>
+        <div class="pain-title">Deadline & Calendar Management</div>
+        <div class="pain-desc">Court dates, filing deadlines, statute of limitations, and response windows tracked manually in calendars — creating malpractice risk when something falls through the cracks.</div>
+        <div class="pain-cost">⚠ #1 source of malpractice claims nationally</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-peach">💰</div>
+        <div class="pain-title">Billing & Collections Leakage</div>
+        <div class="pain-desc">Unbilled time, late invoicing, manual AR follow-up, and 60+ day payment cycles leaving $50K–$200K in receivables aging every month.</div>
+        <div class="pain-cost">⚠ 18% of legal work goes unbilled on average</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon pain-icon-mint">📊</div>
+        <div class="pain-title">Matter Status & Reporting</div>
+        <div class="pain-desc">Partners spending hours pulling status on active matters across attorneys. Client update calls handled manually when automated status portals could do it instantly.</div>
+        <div class="pain-cost">⚠ 5+ partner hours per week on status reporting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOLUTIONS ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag">Automation Solutions</div>
+    <h2 class="section-title">What We Automate at Law Firms</h2>
+    <p class="section-sub">Every workflow below is built using Make.com, n8n, and AI — integrated into your existing practice management stack.</p>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-lavender">🎯</div>
+        <div class="solution-title">Automated Client Intake Pipeline</div>
+        <div class="solution-desc">Online intake form → conflict check alert → automated engagement letter via DocuSign → CRM record creation in Clio/MyCase → Google Drive matter folder → welcome email with portal access. New client onboarding from 4 hours to 8 minutes.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">Make.com</span>
+          <span class="solution-tool">Clio</span>
+          <span class="solution-tool">DocuSign</span>
+          <span class="solution-tool">Google Drive</span>
+          <span class="solution-tool">HubSpot</span>
+        </div>
+        <div class="solution-result">⚡ 18 hours saved per week</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-indigo">📝</div>
+        <div class="solution-title">AI Contract & Document Generation</div>
+        <div class="solution-desc">Practice-specific templates powered by GPT-4o. Fill a form, select document type, AI generates a complete first draft pre-populated with client details, jurisdiction-specific clauses, and firm formatting. Attorney reviews instead of drafts from scratch.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">GPT-4o</span>
+          <span class="solution-tool">n8n</span>
+          <span class="solution-tool">Google Docs</span>
+          <span class="solution-tool">NetDocuments</span>
+        </div>
+        <div class="solution-result">⚡ 70% reduction in drafting time</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-amber">⚖️</div>
+        <div class="solution-title">Deadline Tracking & Calendar Automation</div>
+        <div class="solution-desc">Matter events trigger automated deadline calculations based on jurisdiction rules. Critical dates sync to all attorney calendars with 30/14/7/1-day reminder sequences. Missed deadline risk eliminated through systematic tracking, not memory.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">Make.com</span>
+          <span class="solution-tool">Clio</span>
+          <span class="solution-tool">Google Calendar</span>
+          <span class="solution-tool">Slack</span>
+        </div>
+        <div class="solution-result">⚡ Zero deadline misses since implementation</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon solution-icon-mint">💳</div>
+        <div class="solution-title">Billing Automation & AR Recovery</div>
+        <div class="solution-desc">Time entry reminders at end of each day. Automated invoice generation on matter milestones. Payment reminder sequences at 7/14/30 days. Trust account reconciliation alerts. Weekly AR aging report delivered to managing partner every Monday morning.</div>
+        <div class="solution-tools">
+          <span class="solution-tool">Clio</span>
+          <span class="solution-tool">QuickBooks</span>
+          <span class="solution-tool">Make.com</span>
+          <span class="solution-tool">Stripe</span>
+        </div>
+        <div class="solution-result">⚡ AR cycle reduced from 55 to 21 days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="process-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0">
+      <div class="section-tag" style="background:rgba(165,180,252,.15);color:#a5b4fc">How We Work</div>
+      <h2 class="section-title" style="color:var(--white)">Live in 3–4 Weeks. Saving Hours in Week 2.</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <div class="process-step-icon">🔍</div>
+        <div class="process-step-title">Automation Audit</div>
+        <div class="process-step-desc">We map your current workflows, identify the top 3 highest-ROI automations, and deliver a prioritised build plan with time and cost estimates.</div>
+        <div class="process-step-time">Week 0 — Free</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <div class="process-step-icon">⚙️</div>
+        <div class="process-step-title">Priority Workflow First</div>
+        <div class="process-step-desc">Highest-ROI workflow built, tested, and deployed in Week 1. You start saving hours before the full project is complete.</div>
+        <div class="process-step-time">Week 1</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <div class="process-step-icon">🔗</div>
+        <div class="process-step-title">Full Stack Integration</div>
+        <div class="process-step-desc">Remaining workflows built and connected — intake, documents, billing, deadline tracking — all talking to your practice management system.</div>
+        <div class="process-step-time">Weeks 2–3</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">04</div>
+        <div class="process-step-icon">🚀</div>
+        <div class="process-step-title">Launch & Support</div>
+        <div class="process-step-desc">Staff training, monitoring setup, and 30 days post-launch support included. Ongoing retainer available for enhancements and updates.</div>
+        <div class="process-step-time">Week 4 + ongoing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INTEGRATIONS ══ -->
+<section class="section" style="background:var(--gray-50)">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-tag">Integrations</div>
+      <h2 class="section-title">Works With Your Existing Legal Stack</h2>
+      <p class="section-sub" style="margin:0 auto">We automate around your current systems — no platform migration required.</p>
+    </div>
+    <div class="integrations-grid">
+      <div class="integration-item"><div class="integration-logo">⚖️</div><div class="integration-name">Clio</div></div>
+      <div class="integration-item"><div class="integration-logo">📋</div><div class="integration-name">MyCase</div></div>
+      <div class="integration-item"><div class="integration-logo">🏛️</div><div class="integration-name">PracticePanther</div></div>
+      <div class="integration-item"><div class="integration-logo">💼</div><div class="integration-name">Smokeball</div></div>
+      <div class="integration-item"><div class="integration-logo">📄</div><div class="integration-name">NetDocuments</div></div>
+      <div class="integration-item"><div class="integration-logo">📁</div><div class="integration-name">iManage</div></div>
+      <div class="integration-item"><div class="integration-logo">✍️</div><div class="integration-name">DocuSign</div></div>
+      <div class="integration-item"><div class="integration-logo">📝</div><div class="integration-name">Adobe Sign</div></div>
+      <div class="integration-item"><div class="integration-logo">🤖</div><div class="integration-name">Make.com</div></div>
+      <div class="integration-item"><div class="integration-logo">⚡</div><div class="integration-name">n8n</div></div>
+      <div class="integration-item"><div class="integration-logo">🧠</div><div class="integration-name">GPT-4o</div></div>
+      <div class="integration-item"><div class="integration-logo">📊</div><div class="integration-name">QuickBooks</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-tag">Frequently Asked Questions</div>
+      <h2 class="section-title">Everything Law Firms Ask Before Automating</h2>
+      <p class="section-sub" style="margin:0 auto">Detailed answers to the questions managing partners and firm administrators ask most about legal workflow automation</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">What legal workflows can be automated at a law firm without compromising attorney judgment? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Legal automation focuses on the <strong>administrative and process layer</strong> — not attorney judgment, legal strategy, or client counseling. The key distinction: we automate repetitive steps in workflows that don't require legal analysis.</p>
+          <p>Workflows with the highest automation potential:</p>
+          <ul>
+            <li><strong>Client intake and onboarding</strong> — forms, conflict checks, engagement letters, CRM entry, folder creation</li>
+            <li><strong>Standard document generation</strong> — NDAs, retainer agreements, demand letters, pleading captions using AI templates that attorneys review and finalise</li>
+            <li><strong>Deadline calculation and calendar population</strong> — rule-based calculations from trigger events, synced to attorney calendars</li>
+            <li><strong>Billing workflows</strong> — time entry reminders, invoice generation on milestones, AR follow-up sequences</li>
+            <li><strong>Client communication</strong> — matter status updates, document request follow-ups, appointment reminders</li>
+          </ul>
+          <p>Attorneys continue to exercise all professional judgment. The automation handles the before and after — the intake, the paperwork, the billing, and the follow-up — so attorneys spend their time on the work that requires their expertise.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does legal workflow automation integrate with Clio, MyCase, PracticePanther, and other practice management systems? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Integration depth depends on what API access each practice management system provides:</strong></p>
+          <ul>
+            <li><strong>Clio</strong> has a robust REST API covering contacts, matters, documents, time entries, tasks, and billing — supported natively by Make.com. Bidirectional integration is fully supported.</li>
+            <li><strong>MyCase</strong> supports API access for contact and matter management. Webhooks notify Make.com when matters are created or updated.</li>
+            <li><strong>PracticePanther</strong> has an API covering contacts, matters, and events. Task and billing automation is well-supported.</li>
+            <li><strong>Smokeball</strong> integrates via its API for contact and matter data, with email automation handled through their native integration layer.</li>
+            <li><strong>Lawmatics, Filevine, and Litify</strong> all have APIs that support client intake and matter management automation.</li>
+          </ul>
+          <p>For practice management systems with limited API access, we build validated webhook and structured import workflows that achieve the same result without requiring direct API credentials.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is legal workflow automation compliant with attorney-client privilege and bar association ethics rules? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Confidentiality and privilege compliance is the primary design constraint in every legal automation build we deliver.</strong> The core principle: privileged communications and client data flow exclusively through your existing approved systems.</p>
+          <ul>
+            <li><strong>Client communications</strong> route through your firm email and practice management system — not through third-party platforms that lack appropriate confidentiality protections</li>
+            <li><strong>Document storage</strong> stays in your NetDocuments, iManage, or Google Workspace environment — systems already approved for privileged work product</li>
+            <li><strong>eSignature</strong> via DocuSign or Adobe Sign — both compliant with attorney e-signature requirements in all 50 states</li>
+            <li><strong>AI document generation</strong> via OpenAI API includes data processing opt-outs — submitted content is not retained or used for model training</li>
+          </ul>
+          <p>Every build includes a data flow diagram for your ethics review. We fully support that review process as part of standard delivery, and we can work with your firm's general counsel or ethics partner on the documentation.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How much does law firm automation cost, and what is the typical ROI? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Investment range by project scope:</strong></p>
+          <ul>
+            <li><strong>Single workflow (e.g., client intake only):</strong> $5,000–$9,000, delivered in 1–2 weeks</li>
+            <li><strong>Core admin stack (intake + documents + billing):</strong> $12,000–$20,000, delivered in 3–4 weeks</li>
+            <li><strong>Comprehensive automation (all workflows including AI drafting + deadline tracking):</strong> $20,000–$35,000, delivered in 5–6 weeks</li>
+          </ul>
+          <p><strong>Typical ROI for a 10-attorney firm:</strong> 38 hours per week recovered × $300 billing rate equivalent = $110,000+ annually. Payback period typically runs 60–120 days. The highest-ROI component for most firms is billing automation — recovering 18% of previously unbilled time at zero additional headcount.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the difference between AI document generation and standard document templates for law firms? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Standard document templates are static — you fill in blanks. AI document generation is dynamic — it produces a complete, contextually appropriate draft from structured inputs.</p>
+          <p><strong>How AI document generation works in practice:</strong></p>
+          <ol>
+            <li>Attorney or paralegal fills a structured form: client name, matter type, jurisdiction, key terms, special conditions</li>
+            <li>GPT-4o generates a complete first draft using your firm's approved clause library and document standards</li>
+            <li>The draft is delivered to the attorney in your preferred format (Google Doc, Word, iManage) for review and finalisation</li>
+            <li>Attorney reviews as editor, not drafter — reducing drafting time by 60–80%</li>
+          </ol>
+          <p>The AI is trained on your firm's document library and style preferences — not generic legal templates. It uses your clause language, your formatting standards, and your jurisdiction-specific boilerplate. The attorney's expertise goes into the review and judgment call — not the mechanical drafting.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does automated deadline tracking work for litigation and transactional matters? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Deadline automation works by converting trigger events into calculated deadline chains.</strong> When a matter event is logged (complaint served, contract signed, extension granted), automation calculates all downstream deadlines based on jurisdiction-specific rules.</p>
+          <p><strong>What this looks like in practice:</strong></p>
+          <ul>
+            <li>Complaint served in a California civil matter → automation calculates 30-day answer deadline, adds to Clio and all attorney Google Calendars with 14/7/3/1-day reminder sequence</li>
+            <li>Reminder fires at each interval via Slack and email with the specific deadline and current status of any response drafted</li>
+            <li>Deadline acknowledged by responsible attorney → confirmation logged, reminder sequence paused</li>
+            <li>Deadline not acknowledged after 48 hours → escalation alert sent to supervising partner</li>
+          </ul>
+          <p>This eliminates the "I thought someone else was tracking it" failure mode that drives malpractice claims. Nothing moves without explicit acknowledgment.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does billing automation recover unbilled time at law firms? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Research consistently shows <strong>15–20% of attorney work goes unbilled</strong> — not from write-offs, but because time simply never gets entered. The cause is friction: attorneys delay time entry until end-of-day or end-of-week, then forget or round down.</p>
+          <p><strong>Billing automation addresses three leakage points:</strong></p>
+          <ul>
+            <li><strong>Time entry reminders</strong> — automated prompts sent at 4pm and at day-end for any client matter that had activity but no time logged. Response rate from time entry prompts: typically 85–90%.</li>
+            <li><strong>Invoice generation on triggers</strong> — invoices drafted automatically when matter milestones occur (draft complete, hearing done, phase closed), rather than waiting for billing department to manually initiate</li>
+            <li><strong>AR follow-up sequences</strong> — payment reminders at 7, 14, and 30 days for unpaid invoices, with escalating copy as time passes. Average collection cycle drops from 55+ days to under 25 days.</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to implement legal workflow automation and what disruption should we expect? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Most law firm automation projects are live within 3–4 weeks with minimal disruption.</strong> We follow a phased approach: existing workflows continue operating while automation is built and tested in parallel. There is no cutover until the new workflow is validated to your satisfaction.</p>
+          <p><strong>Implementation sequence:</strong></p>
+          <ul>
+            <li><strong>Week 0:</strong> Free audit — workflow mapping, ROI estimates, prioritisation</li>
+            <li><strong>Week 1:</strong> Highest-priority workflow built and tested. You review with your team before anything goes live.</li>
+            <li><strong>Weeks 2–3:</strong> Remaining workflows built in order of priority</li>
+            <li><strong>Week 4:</strong> Staff training (typically 60-minute walkthrough session), monitoring setup, go-live</li>
+            <li><strong>Days 1–30 post-launch:</strong> Included support at no additional cost</li>
+          </ul>
+          <p>Staff adaptation is typically faster than firms expect. The most common feedback from support staff: "This is what I wanted for years."</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="gs-consult-section"></div>
+
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/page-builder.js" defer></script>
+<script src="../../_shared/site-config.js" defer></script>
+<script src="/analytics-loader.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+});
+</script>
+</body>
+</html>
