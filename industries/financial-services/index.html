@@ -22,6 +22,9 @@
 :root{--green-900:#0d3b1a;--green-800:#145a27;--green-700:#1a6e30;--green-600:#1f8a3c;--green-500:#22a447;--green-400:#4cbc6b;--green-100:#dcf5e3;--green-50:#f0faf3;--peach:#ffe8d6;--peach-deep:#f4a261;--lavender:#e8dff5;--lavender-deep:#8b5cf6;--sky:#dbeafe;--sky-deep:#3b82f6;--mint:#d1fae5;--rose:#ffe4e6;--rose-deep:#f43f5e;--amber:#fef3c7;--amber-deep:#f59e0b;--dark:#0f1117;--dark-800:#1a1d27;--dark-700:#2a2d37;--gray-600:#4b5563;--gray-500:#6b7280;--gray-400:#9ca3af;--gray-300:#d1d5db;--gray-200:#e5e7eb;--gray-100:#f3f4f6;--gray-50:#f9fafb;--white:#ffffff;--cs-accent:#e8590c;--cs-accent-light:#f97316;--cs-accent-pale:#fff7ed;--font-display:'Bricolage Grotesque',serif;--font-body:'Plus Jakarta Sans',sans-serif;--shadow-xs:0 1px 2px rgba(0,0,0,.04);--shadow-sm:0 2px 8px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--shadow-lg:0 8px 32px rgba(0,0,0,.10);--shadow-xl:0 16px 48px rgba(0,0,0,.12);--shadow-green:0 4px 20px rgba(34,164,71,.15);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--nav-h:72px}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+
+/* Industry hero handles own nav offset */
+body:has(.ind-hero){padding-top:0}
 body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.65;overflow-x:hidden;padding-top:var(--nav-h)}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.15;letter-spacing:-.02em}
 img{max-width:100%;display:block}
@@ -197,6 +200,20 @@ a{color:inherit;text-decoration:none}
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What business processes in a CPA firm can be automated with AI?","acceptedAnswer":{"@type":"Answer","text":"Accounting firms can automate: client onboarding and intake (DocuSign, CRM, folder setup), document collection (automated reminders for W-2s, 1099s, K-1s), AI data extraction from tax documents, client communication, billing and AR follow-up, and workflow tracking dashboards. A 10-person CPA firm typically recovers 35–50 hours per week."}},
+    {"@type":"Question","name":"How does CPA firm automation integrate with QuickBooks, Drake Tax, CCH Axcess, and ProConnect?","acceptedAnswer":{"@type":"Answer","text":"QuickBooks Online has a full REST API supported natively by Make.com. CCH Axcess and ProConnect support structured data imports — we automate import file preparation. Drake Tax uses a data bridge approach. The principle: we automate around your existing tax software, not instead of it."}},
+    {"@type":"Question","name":"What does it cost to automate a CPA or accounting firm's workflows?","acceptedAnswer":{"@type":"Answer","text":"Single workflow projects range $5,000–$8,000. Two to three workflows cost $10,000–$18,000. Comprehensive firm automation runs $18,000–$30,000. Typical ROI for a 10-person firm is $80K–$150K annually with 60–120 day payback periods."}},
+    {"@type":"Question","name":"Is client financial data secure when using Make.com and OpenAI for accounting automation?","acceptedAnswer":{"@type":"Answer","text":"Client data flows through your existing approved systems only. Make.com is SOC 2 Type II certified. OpenAI API calls include data processing opt-outs. n8n can be self-hosted for complete data sovereignty. Every build includes data flow documentation for compliance review."}},
+    {"@type":"Question","name":"How accurate is AI data extraction from W-2s, 1099s, and K-1s?","acceptedAnswer":{"@type":"Answer","text":"Our AI extraction pipeline achieves 97% accuracy using a three-stage process: document classification, format-matched extraction, and confidence-gated validation. Staff only review flagged exceptions (about 3–5% of documents), not all documents."}},
+    {"@type":"Question","name":"What is the difference between Zapier, Make.com, and n8n for accounting automation?","acceptedAnswer":{"@type":"Answer","text":"Zapier handles simple linear automations but struggles with complex accounting workflows. Make.com is ideal for most CPA firms — supports complex conditional logic, error recovery, and native QuickBooks integration. n8n can be self-hosted for complete data control and is used for AI document extraction pipelines."}}
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -550,29 +567,124 @@ a{color:inherit;text-decoration:none}
 ══════════════════════════════════════ -->
 <section class="section" id="faq">
   <div class="container">
-    <div class="section-tag" style="margin:0 auto 16px;display:block;width:fit-content">FAQ</div>
-    <h2 class="section-title" style="text-align:center">Common Questions from CPA Firms</h2>
-    <div class="faq-list" style="max-width:760px;margin:40px auto 0">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-tag">Frequently Asked Questions</div>
+      <h2 class="section-title">Everything Accounting Firms Ask Before Automating</h2>
+      <p class="section-sub" style="margin:0 auto">Detailed answers researched from the questions CPAs, accounting firm owners, and practice managers actually search for</p>
+    </div>
+    <div class="faq-list">
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will this work with our existing tax software (Drake, CCH, ProConnect)? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Yes. We build custom integration bridges for all major tax platforms. We don't replace your software — we automate the data flow around it, eliminating the manual steps before and after your tax prep software.</div>
+        <div class="faq-q">What business processes in a CPA firm can be automated with AI? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p>Accounting firms have some of the highest automation potential of any professional services business. The primary processes that can be fully or partially automated include:</p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Client onboarding and intake</strong> — engagement letters via DocuSign, intake questionnaires, CRM record creation, and folder setup in Google Drive or ShareFile</li>
+            <li><strong>Document collection</strong> — automated reminders for W-2s, 1099s, K-1s, and bank statements with real-time tracking of what's missing per client</li>
+            <li><strong>Data extraction from tax documents</strong> — AI-powered OCR that reads PDFs and extracts figures into structured formats ready for tax software import</li>
+            <li><strong>Client communication</strong> — status update emails, deadline reminders, and common question responses handled automatically</li>
+            <li><strong>Billing and AR follow-up</strong> — invoice generation on completion, automated payment reminders at 7/14/30 days, and AR aging reports</li>
+            <li><strong>Workflow tracking</strong> — live dashboards showing return status across all partners without manual updates</li>
+          </ul>
+          <p>A typical 10-person CPA firm can recover 35–50 hours per week across these workflows — the equivalent of one full-time employee — during tax season.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does implementation take? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Most accounting automation projects are live within 2–4 weeks. We start with your highest-pain workflow (usually document collection or onboarding) and expand from there, so you see ROI within the first month.</div>
+        <div class="faq-q">How does CPA firm workflow automation integrate with QuickBooks, Drake Tax, CCH Axcess, and ProConnect? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Integration approach depends on the specific software and what API access it provides:</strong></p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px">
+            <li><strong>QuickBooks Online</strong> has a full REST API supported by Make.com natively — invoices, contacts, transactions, and AR reports can all be read and written programmatically</li>
+            <li><strong>CCH Axcess and ProConnect</strong> support structured data imports — we automate the preparation and delivery of properly formatted import files, eliminating manual data entry without requiring direct API access</li>
+            <li><strong>Drake Tax</strong> uses a data bridge approach — we extract from source documents, format to Drake's import spec, and push files to the correct location automatically</li>
+            <li><strong>Karbon and Canopy</strong> both have APIs and are well-supported as workflow management layers</li>
+          </ul>
+          <p>The key principle: we automate <em>around</em> your existing tax software, not instead of it. Your CPAs continue working in the tools they know.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is our client data secure? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Absolutely. We build automations using your existing secure systems (ShareFile, SmartVault, OneDrive, etc.) as the data backbone. No client data passes through third-party servers outside your approved stack. We follow SOC 2 best practices in our workflow design.</div>
+        <div class="faq-q">What does it cost to automate a CPA or accounting firm's workflows, and what's the ROI? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Investment range by project scope:</strong></p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Single workflow (e.g., document collection only):</strong> $5,000–$8,000, delivered in 1–2 weeks</li>
+            <li><strong>Two to three workflows (intake + documents + billing):</strong> $10,000–$18,000, delivered in 3–4 weeks</li>
+            <li><strong>Comprehensive firm automation (4+ workflows):</strong> $18,000–$30,000, delivered in 4–6 weeks</li>
+          </ul>
+          <p><strong>Typical ROI for a 10-person CPA firm:</strong> 38–50 hours per week saved during tax season = $80,000–$150,000 in recovered annual capacity. Most firms achieve payback within 60–120 days.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the typical investment for a CPA firm automation project? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Most CPA firm automation projects range from $5,000–$25,000 depending on scope, with ongoing support retainers of $500–$2,000/month. Given average savings of $80K–$150K annually, the typical payback period is under 90 days.</div>
+        <div class="faq-q">Is client financial data secure when using Make.com, n8n, and OpenAI for accounting automation? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p>Security is the primary design constraint in every CPA automation we build. The core principle: <strong>client financial data flows through your existing approved, compliant infrastructure only</strong>.</p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px">
+            <li><strong>Make.com</strong> is SOC 2 Type II certified and processes data in transit without persistent storage of client files</li>
+            <li><strong>Google Workspace and ShareFile</strong> — your primary document repositories — both maintain SOC 2 certification</li>
+            <li><strong>OpenAI API</strong> calls are configured with data processing opt-outs so submitted content is never used for model training</li>
+            <li><strong>n8n</strong> can be self-hosted on your own infrastructure if you require zero third-party data transit</li>
+          </ul>
+          <p>Every build includes a data flow documentation deliverable you can present to your compliance officer, external auditor, or professional liability insurer.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do our staff need technical knowledge to use the automations? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">None. We build automations that run silently in the background. Your staff uses the same tools they already know — email, portal, CRM — the automation simply handles all the connective work between systems.</div>
+        <div class="faq-q">How accurate is AI data extraction from tax documents like W-2s, 1099s, and K-1s? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Our AI document extraction pipeline achieves 97% accuracy across diverse tax document types</strong> — consistently higher than manual data entry, which studies put at 90–96%.</p>
+          <p>The accuracy comes from a three-stage pipeline:</p>
+          <ol style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Document classification first:</strong> GPT-4o identifies the document type and issuer format variation before attempting extraction</li>
+            <li><strong>Format-matched extraction:</strong> Extraction templates specific to the classified document type are applied, targeting the correct field positions</li>
+            <li><strong>Confidence-gated validation:</strong> Any field below confidence threshold is flagged for staff review rather than passed through automatically</li>
+          </ol>
+          <p>Staff review time drops from "review everything" to "review only flagged exceptions" — about 3–5% of total document volume.</p>
+        </div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to implement automation for a CPA firm before tax season? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Standard delivery timeline is 2–4 weeks from kickoff to live production.</strong> For firms approaching tax season, we use a prioritised phased deployment:</p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Week 1:</strong> Document collection automation live — you start saving hours in week 2</li>
+            <li><strong>Week 2:</strong> Client onboarding pipeline deployed and validated</li>
+            <li><strong>Week 3:</strong> Billing automation and AR follow-up live</li>
+            <li><strong>Week 4:</strong> Partner dashboard, monitoring, and staff training complete</li>
+          </ul>
+          <p>You're generating measurable ROI before the full build is complete. Every phase is tested parallel to your existing workflows before cutover.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What's the difference between using Zapier, Make.com, and n8n for accounting automation? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Zapier</strong> is the easiest to set up but most limited for complex accounting workflows. Struggles with conditional logic, large data volumes, and multi-step error handling. Cost scales significantly with usage.</li>
+            <li><strong>Make.com</strong> (formerly Integromat) is our primary platform for CPA automation. Supports complex conditional routing, parallel branches, error recovery, and real-time monitoring. Significantly more cost-efficient than Zapier at volume. Native QuickBooks integration is strong.</li>
+            <li><strong>n8n</strong> can be self-hosted for complete data sovereignty — ideal for firms with strict data residency requirements. We use n8n specifically for AI document extraction pipelines where data must stay on-premises.</li>
+          </ul>
+          <p>For most CPA firms, Make.com handles 80%+ of automation needs with the best cost-to-capability ratio.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Will our staff need technical training to use automation in daily work? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>No technical knowledge is required from your staff.</strong> Automation runs in the background; your team uses the same tools they already know — HubSpot, QuickBooks, Google Drive, email.</p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px">
+            <li>New clients are automatically added to HubSpot and Google Drive — no manual folder creation</li>
+            <li>Document reminders go out automatically — no tracking spreadsheets</li>
+            <li>The Airtable dashboard shows every return's current status without manual updates</li>
+            <li>Invoices generate automatically when a return is completed</li>
+          </ul>
+          <p>We provide a custom training guide and a 60-minute walkthrough session during deployment. Staff are fully confident within 1–2 days. The most common reaction: "Why didn't we do this years ago?"</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -580,18 +692,9 @@ a{color:inherit;text-decoration:none}
 <!-- ══════════════════════════════════════
      CTA BANNER
 ══════════════════════════════════════ -->
-<section class="cta-banner" id="consultation">
-  <div class="container">
-    <div class="cta-banner-inner">
-      <h2>Ready to Save 40+ Hours a Week This Tax Season?</h2>
-      <p>Book a free 30-minute automation audit. We'll map your biggest workflow bottlenecks and show you exactly what can be automated — with cost savings estimates included.</p>
-      <div class="cta-banner-btns">
-        <a href="https://calendly.com/growwstacks" class="btn btn-white btn-lg">Book Free Audit <span>→</span></a>
-        <a href="mailto:project@growwstacks.com" class="btn btn-ghost btn-lg">Email Us</a>
-      </div>
-    </div>
-  </div>
-</section>
+
+<div id="gs-consult-section"></div>
+
 
 </main>
 

@@ -21,6 +21,9 @@
 :root{--green-900:#0d3b1a;--green-800:#145a27;--green-700:#1a6e30;--green-600:#1f8a3c;--green-500:#22a447;--green-400:#4cbc6b;--green-100:#dcf5e3;--green-50:#f0faf3;--peach:#ffe8d6;--peach-deep:#f4a261;--lavender:#e8dff5;--lavender-deep:#8b5cf6;--sky:#dbeafe;--sky-deep:#3b82f6;--mint:#d1fae5;--rose:#ffe4e6;--rose-deep:#f43f5e;--amber:#fef3c7;--amber-deep:#f59e0b;--dark:#0f1117;--dark-800:#1a1d27;--dark-700:#2a2d37;--gray-600:#4b5563;--gray-500:#6b7280;--gray-400:#9ca3af;--gray-300:#d1d5db;--gray-200:#e5e7eb;--gray-100:#f3f4f6;--gray-50:#f9fafb;--white:#ffffff;--cs-accent:#e8590c;--cs-accent-light:#f97316;--cs-accent-pale:#fff7ed;--font-display:'Bricolage Grotesque',serif;--font-body:'Plus Jakarta Sans',sans-serif;--shadow-sm:0 2px 8px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--shadow-lg:0 8px 32px rgba(0,0,0,.10);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--nav-h:72px}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+
+/* Industry hero handles own nav offset */
+body:has(.ind-hero){padding-top:0}
 body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.65;overflow-x:hidden;padding-top:var(--nav-h)}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.15;letter-spacing:-.02em}
 img{max-width:100%;display:block}
@@ -168,6 +171,19 @@ a{color:inherit;text-decoration:none}
   "areaServed": "US",
   "serviceType": "Healthcare Business Automation",
   "url": "https://growwstacks.com/industries/healthcare/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What healthcare practice workflows can be automated?","acceptedAnswer":{"@type":"Answer","text":"Healthcare automation covers: patient scheduling with AI voice agents (24/7), insurance eligibility verification (automated 48hrs before appointments), appointment reminders (SMS + email sequences reducing no-shows 34%), digital patient intake with EHR sync, billing submission and AR follow-up, and referral coordination tracking."}},
+    {"@type":"Question","name":"Are healthcare automation workflows HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. PHI flows exclusively through HIPAA-compliant systems. Make.com operates under BAA as a data processor. Patient data stays in your EHR. Voice AI handles scheduling conversations only. Every build includes data flow documentation for your HIPAA officer review."}},
+    {"@type":"Question","name":"How does healthcare automation integrate with Epic, athenahealth, Kareo, and AdvancedMD?","acceptedAnswer":{"@type":"Answer","text":"athenahealth has a robust REST API for direct bidirectional integration. Kareo and AdvancedMD have well-supported APIs for appointments and billing. Epic integrates via FHIR R4 API. For EHRs with limited API access, we build validated structured import workflows to eliminate manual data entry."}},
+    {"@type":"Question","name":"How effective is automated appointment reminder software at reducing medical no-shows?","acceptedAnswer":{"@type":"Answer","text":"Multi-channel automated reminders (SMS + email at 72hr, 24hr, 2hr) reduce no-show rates by 28–40% versus single phone call reminders. Two-way confirmation and auto waitlist fill maximize utilization. For a practice with 15% no-show rate, this typically recovers $50,000+ annually."}},
+    {"@type":"Question","name":"How much does healthcare practice automation cost?","acceptedAnswer":{"@type":"Answer","text":"Single workflow projects range $4,000–$8,000. Core administrative stack costs $10,000–$18,000. Comprehensive automation runs $18,000–$35,000. A 5-provider practice typically saves $90,000–$130,000 annually with 60–90 day payback periods."}}
+  ]
 }
 </script>
 </head>
@@ -504,46 +520,134 @@ a{color:inherit;text-decoration:none}
 <!-- FAQ -->
 <section class="section" id="faq">
   <div class="container">
-    <div class="section-tag" style="margin:0 auto 16px;display:block;width:fit-content">FAQ</div>
-    <h2 class="section-title" style="text-align:center">Common Questions from Healthcare Practices</h2>
-    <div class="faq-list" style="max-width:760px;margin:40px auto 0">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-tag section-tag-sky">Frequently Asked Questions</div>
+      <h2 class="section-title">Everything Healthcare Practices Ask Before Automating</h2>
+      <p class="section-sub" style="margin:0 auto">Detailed answers to the questions medical practice owners, office managers, and physicians ask most about healthcare workflow automation</p>
+    </div>
+    <div class="faq-list">
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are your automations HIPAA compliant? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">We design all healthcare automations using your existing HIPAA-compliant systems as the data backbone — we do not route PHI through non-compliant third-party services. We also include BAA (Business Associate Agreement) considerations in our project scoping process. That said, your compliance officer should review all workflows before go-live, which is standard practice.</div>
+        <div class="faq-q">What healthcare practice workflows can be automated without replacing clinical staff? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p>Healthcare automation focuses specifically on administrative workflows — the non-clinical tasks that consume clinical staff time. Key workflows that can be fully or substantially automated:</p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Patient scheduling</strong> — AI voice agents handle inbound calls 24/7, schedule appointments, and answer common questions without staff involvement</li>
+            <li><strong>Insurance eligibility verification</strong> — automated checks run 48 hours before every appointment, surfacing issues before the patient arrives</li>
+            <li><strong>Appointment reminders</strong> — multi-channel SMS + email sequences at 72hr, 24hr, and 2hr with two-way confirmation</li>
+            <li><strong>Patient intake</strong> — digital forms completed before the visit, with data flowing directly into your EHR</li>
+            <li><strong>Billing submission and AR follow-up</strong> — same-day claims submission, automated denial follow-up, and AR aging reporting</li>
+            <li><strong>Referral coordination</strong> — automated status updates to referring physicians and follow-up tracking for outbound referrals</li>
+          </ul>
+          <p>Clinical staff are liberated to focus on patient interaction and care delivery. Administrative tasks that previously consumed 2–4 hours per staff member per day are handled automatically.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will this integrate with our EHR (Epic, athenahealth, Kareo)? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Yes. We build integrations for the most common EHR platforms including athenahealth, Kareo, AdvancedMD, eClinicalWorks, and others. For systems with limited APIs, we build smart workarounds using available export/import pathways and webhook-based triggers.</div>
+        <div class="faq-q">Are healthcare automation workflows HIPAA compliant? How is patient data protected? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>HIPAA compliance is the primary design constraint in every healthcare automation build we deliver.</strong> The core principle: Protected Health Information (PHI) flows exclusively through your existing HIPAA-compliant systems.</p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>PHI storage</strong> remains in your EHR and existing HIPAA-compliant document systems — we never move PHI to non-BAA-covered platforms</li>
+            <li><strong>Make.com</strong> operates as a data processor under BAA; it routes information in transit but does not store PHI persistently</li>
+            <li><strong>Patient communication</strong> via SMS (Twilio) and email (SendGrid) carries appointment logistics only, not clinical details</li>
+            <li><strong>Voice AI (VAPI)</strong> is configured for scheduling conversations only — clinical questions are routed to staff</li>
+            <li><strong>Every data flow is documented</strong> in a diagram you can present to your HIPAA officer before go-live</li>
+          </ul>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How quickly can automations be live? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Most healthcare automation projects go live within 3–6 weeks. We start with the highest-impact workflow first (typically scheduling or no-show reduction), then layer in additional automations after you see the initial results.</div>
+        <div class="faq-q">How does healthcare practice automation integrate with EHR systems like Epic, athenahealth, Kareo, and AdvancedMD? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Integration depth depends on what API access your EHR provides:</strong></p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>athenahealth</strong> — robust REST API covering scheduling, patient demographics, insurance, and clinical notes. Direct bidirectional integration is possible.</li>
+            <li><strong>Kareo and AdvancedMD</strong> — well-supported APIs covering appointments, patient records, and billing</li>
+            <li><strong>Epic</strong> — FHIR R4 API available for Epic-connected systems. Integration scope depends on your Epic configuration and module access.</li>
+            <li><strong>eClinicalWorks, Practice Fusion, DrChrono</strong> — supported via API or validated structured import workflows depending on the specific EHR version</li>
+          </ul>
+          <p>For EHRs with limited API access, we build validated structured import workflows — automating the preparation and delivery of properly formatted import files to eliminate manual data entry.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the typical investment for a medical practice? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Healthcare automation projects typically range from $6,000–$30,000 depending on EHR complexity and scope, with monthly support retainers of $500–$2,500. Most practices see full payback within 60–90 days from reduced no-shows and billing efficiency alone.</div>
+        <div class="faq-q">How much does healthcare practice workflow automation cost, and what's the typical ROI? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Investment range by project scope:</strong></p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Single high-impact workflow (e.g., no-show reduction only):</strong> $4,000–$8,000, live in 1–2 weeks</li>
+            <li><strong>Core administrative stack (scheduling + verification + reminders):</strong> $10,000–$18,000, live in 3–4 weeks</li>
+            <li><strong>Comprehensive automation (all workflows including Voice AI and EHR intake sync):</strong> $18,000–$35,000, live in 5–6 weeks</li>
+          </ul>
+          <p><strong>Typical ROI for a 5-provider practice:</strong> No-show reduction alone ($50K+) + staff hours saved ($39K) + billing efficiency ($20–40K) = $90,000–$130,000 annually. Payback period typically 60–90 days.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can the Voice AI handle multilingual patients? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Yes. Our Voice AI solutions support Spanish and other languages natively. For practices serving multilingual communities, we can configure language detection and automatic routing to the appropriate language experience.</div>
+        <div class="faq-q">What is an AI Voice Agent for medical scheduling, and how does it work for patients? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>A medical scheduling Voice AI is a conversational phone agent</strong> that answers inbound patient calls, schedules appointments, handles common questions, and routes urgent clinical matters to staff — available 24/7 including evenings and weekends.</p>
+          <p><strong>How the patient experience works:</strong></p>
+          <ol style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li>Patient calls your existing phone number</li>
+            <li>Voice AI answers within 2 rings with a natural-sounding greeting personalised to your practice name</li>
+            <li>For new appointments: AI collects patient information and books directly in your scheduling system</li>
+            <li>For urgent clinical matters: AI recognises urgency signals and immediately routes to on-call staff</li>
+          </ol>
+          <p>Languages supported: English and Spanish natively; additional languages available. Language detection is automatic — the AI responds in the patient's detected language without requiring them to select an option.</p>
+        </div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How effective is automated appointment reminder software at reducing medical practice no-shows? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Multi-channel automated reminders consistently reduce medical practice no-show rates by 28–40%</strong> versus single-channel phone calls made the day before.</p>
+          <p><strong>What makes the difference:</strong></p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Multi-channel delivery</strong> — SMS + email reach patients where they actually respond</li>
+            <li><strong>Timing sequence</strong> — 72-hour, 24-hour, and 2-hour reminders catch different types of conflicts</li>
+            <li><strong>Two-way confirmation</strong> — patients can confirm, reschedule, or cancel by replying to the SMS, immediately opening the slot for rebooking</li>
+            <li><strong>Auto waitlist fill</strong> — cancellations trigger immediate waitlist contact rather than leaving slots empty</li>
+          </ul>
+          <p>For a practice with a 15% no-show rate at $300/slot, reducing to 9% recovers approximately $50,000+ annually in utilisation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can healthcare practice automation handle prior authorization workflow tracking? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <p><strong>Yes — prior authorization tracking is one of the highest-value healthcare automation use cases.</strong> What automation covers:</p>
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Auth requirement detection:</strong> When a procedure requiring prior auth is scheduled, the automation flags it and creates a tracking record automatically</li>
+            <li><strong>Submission routing:</strong> Auth requests are formatted per payer requirements and routed to the correct portal or fax workflow</li>
+            <li><strong>Status monitoring:</strong> Automated checks on submission status at days 3, 5, and 7 rather than relying on staff to remember</li>
+            <li><strong>Expiry alerts:</strong> Alerts fire 7 and 14 days before auth expiry, with auto-renewal triggered where the payer supports it</li>
+            <li><strong>Denial tracking:</strong> Denials are categorised and routed to the appropriate clinical staff member for appeal</li>
+          </ul>
+          <p>The average prior auth takes 2.5 staff hours manually. Automation reduces this to 20–30 minutes of exception handling — recovering 100+ hours monthly for a practice submitting 50 auths per month.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the difference between Make.com and n8n for healthcare automation? <span class="faq-arrow">&#9660;</span></div>
+        <div class="faq-a">
+          <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:8px">
+            <li><strong>Make.com</strong> is our primary platform for most healthcare automation. Native integrations for Kareo, AdvancedMD, Stripe, Twilio, SendGrid, and Google Workspace. SOC 2 Type II certified. Ideal for scheduling, reminders, billing, and referral workflows.</li>
+            <li><strong>n8n</strong> can be self-hosted on your own infrastructure — important for organisations with strict data residency policies. We use n8n specifically for workflows that process PHI and require zero third-party data transit.</li>
+          </ul>
+          <p>For most independent practices, Make.com handles all automation needs with the best cost-to-capability ratio. For hospital-affiliated practices or larger groups with enterprise security requirements, n8n's self-hosting option provides complete data sovereignty.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-banner" id="consultation">
-  <div class="container">
-    <div class="cta-banner-inner">
-      <h2>Ready to Give Your Staff Their Time Back?</h2>
-      <p>Book a free 30-minute automation audit. We'll identify your top 3 workflow bottlenecks and show you exactly what can be automated — with estimated time and cost savings included.</p>
-      <div class="cta-banner-btns">
-        <a href="https://calendly.com/growwstacks" class="btn btn-white btn-lg">Book Free Audit <span>→</span></a>
-        <a href="mailto:project@growwstacks.com" class="btn btn-ghost btn-lg">Email Us</a>
-      </div>
-    </div>
-  </div>
-</section>
+
+<div id="gs-consult-section"></div>
+
 
 </main>
 
