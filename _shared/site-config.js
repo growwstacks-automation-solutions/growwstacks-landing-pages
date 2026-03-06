@@ -323,7 +323,7 @@ logos: {
   vector:          favicon('vector.com'),
 
   // ── Special cases (direct icon URLs) ──
-  powerbi:         'https://powerbi.microsoft.com/favicon.ico',
+  powerbi:         'https://ik.imagekit.io/r2zdlyze2o/Logo/Power_BI.png',
   azure:           'https://portal.azure.com/favicon.ico',
   quickbooks:      'https://ik.imagekit.io/r2zdlyze2o/Logo/quickbooks.png',
   azureSql:        'https://symbols.getvecta.com/stencil_28/61_sql-database-generic.90b41636a8.jpg',
