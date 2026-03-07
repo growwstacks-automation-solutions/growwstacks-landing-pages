@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send updates about the position of the ISS every minute to a topic in ActiveMQ | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate real-time ISS position updates to ActiveMQ with this free n8n workflow template. Streamline space data monitoring for research teams and developers.">
+<link rel="canonical" href="https://growwstacks.com/workflows/265-send-updates-about-the-position-of-the-iss-every-minute-to-a-topic-in-activemq/">
+<meta property="og:title" content="Automate ISS Position Updates to ActiveMQ | Free n8n Template">
+<meta property="og:description" content="Download this free workflow to automatically send International Space Station position data to ActiveMQ every minute.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/265-send-updates-about-the-position-of-the-iss-every-minute-to-a-topic-in-activemq/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/762-send-updates-about-the-position-of-the-iss-every-minute-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate ISS Position Updates to ActiveMQ | Free n8n Template">
+<meta name="twitter:description" content="Download this free workflow to automatically send International Space Station position data to ActiveMQ every minute.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Send updates about the position of the ISS every minute to a topic in ActiveMQ","description":"Automate real-time ISS position updates to ActiveMQ with this free n8n workflow template. Streamline space data monitoring for research teams and developers.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://go.growwstacks.com"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/762-send-updates-about-the-position-of-the-iss-every-minute-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why would a business need real-time ISS position data?","acceptedAnswer":{"@type":"Answer","text":"Many businesses in aerospace, education, and research sectors need real-time ISS tracking for various applications. Satellite operators use it for collision avoidance, educational platforms display live ISS location, and research teams analyze orbital patterns. This automation eliminates manual data fetching, ensuring always-current position data for critical operations."}},{"@type":"Question","name":"What are the benefits of using ActiveMQ for space data?","acceptedAnswer":{"@type":"Answer","text":"ActiveMQ provides reliable message queuing perfect for space data applications. Its pub-sub model allows multiple systems to consume ISS position updates simultaneously. The platform handles high message volumes efficiently, offers message persistence, and ensures data delivery even during network interruptions - crucial for time-sensitive space data applications."}},{"@type":"Question","name":"How accurate is the ISS position data from this workflow?","acceptedAnswer":{"@type":"Answer","text":"The workflow uses NASA's official ISS position API, which provides highly accurate real-time telemetry. Position updates include latitude, longitude, altitude, and velocity with precision suitable for most commercial and research applications. The data refreshes every minute, matching the typical update frequency of public ISS tracking systems."}},{"@type":"Question","name":"Can this workflow be modified for other satellite tracking?","acceptedAnswer":{"@type":"Answer","text":"Yes, the core architecture can adapt to other satellite tracking needs. The workflow pattern of API polling + message queuing works for any spacecraft with public tracking data. You would simply replace the ISS API endpoint with another satellite tracking service and adjust the data formatting as needed."}},{"@type":"Question","name":"What security considerations exist for space data automation?","acceptedAnswer":{"@type":"Answer","text":"While ISS position data is public, proper security measures should protect your ActiveMQ instance. Use TLS encryption for message transport, implement authentication, and consider network isolation for sensitive deployments. The workflow should run in a secure environment since it handles credentials for both the API and message broker."}},{"@type":"Question","name":"How does this compare to commercial satellite tracking solutions?","acceptedAnswer":{"@type":"Answer","text":"This automation provides a cost-effective alternative to commercial solutions for basic ISS tracking needs. While specialized software offers advanced visualization and analytics, this workflow delivers core position data to your systems at minimal cost. It's ideal for teams needing raw data for custom applications rather than pre-built dashboards."}},{"@type":"Question","name":"Can I get a custom space data automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! GrowwStacks specializes in custom automation solutions for aerospace and research applications. Our team can build tailored workflows for specific satellite tracking needs, integrate with your existing systems, and handle complex data processing requirements. We've helped space startups, research labs, and educational platforms automate their data workflows."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://go.growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://go.growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"ISS Position Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>ISS Position Automation</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">ActiveMQ</span>
+          <span class="cs-tag">Space Data</span>
+          <span class="cs-tag">Real-time</span>
+        </div>
+        <h1>Automate ISS Position Updates to ActiveMQ</h1>
+        <p class="cs-hero-sub">This n8n workflow automatically fetches the International Space Station's current position every minute and publishes it to an ActiveMQ topic. Perfect for research teams, educational platforms, and aerospace applications needing real-time orbital data.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/762-send-updates-about-the-position-of-the-iss-every-minute-.json?ik-attachment=true" download="iss-position-automation.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/762-send-updates-about-the-position-of-the-iss-every-minute-.png" alt="n8n workflow for ISS position updates to ActiveMQ" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the challenge of manually tracking the International Space Station's position for applications that require real-time orbital data. The workflow connects to NASA's ISS position API, processes the telemetry data, and reliably delivers it to an ActiveMQ message queue every 60 seconds.</p>
+        <p>By automating this process, organizations can ensure their systems always have access to the latest ISS position without manual intervention. The data flows directly into your messaging infrastructure where it can be consumed by multiple applications simultaneously - from visualization dashboards to collision avoidance systems.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Scheduled API Trigger</h3>
+        <p>The workflow initiates every minute using n8n's scheduler. This regular interval ensures your systems receive timely updates about the ISS's changing position as it orbits Earth at 17,500 mph.</p>
+
+        <h3>2. Fetch Current ISS Position</h3>
+        <p>The workflow makes an API call to NASA's ISS Current Location endpoint. This returns precise coordinates including latitude, longitude, altitude, and velocity - all formatted in standardized JSON structure.</p>
+
+        <h3>3. Data Transformation</h3>
+        <p>The raw API response undergoes processing to extract the most relevant position metrics. The workflow can optionally enrich the data with additional calculations like ground speed or orbital phase.</p>
+
+        <h3>4. ActiveMQ Message Publishing</h3>
+        <p>The formatted position data gets published to your specified ActiveMQ topic. The message includes timestamps and all position details, ready for consumption by subscribed applications.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation serves multiple industries that benefit from real-time ISS tracking:</p>
+        <ul>
+          <li><strong>Research institutions</strong> studying orbital mechanics or conducting space experiments</li>
+          <li><strong>Educational platforms</strong> displaying live ISS tracking to students</li>
+          <li><strong>Aerospace companies</strong> needing collision avoidance data</li>
+          <li><strong>Amateur astronomer networks</strong> coordinating ISS observation events</li>
+          <li><strong>Data visualization teams</strong> creating real-time space tracking dashboards</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (cloud or self-hosted)</li>
+          <li>ActiveMQ broker with proper network access</li>
+          <li>Credentials for your ActiveMQ instance</li>
+          <li>Basic understanding of message queues (helpful but not required)</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON workflow file</li>
+          <li>Import into your n8n instance</li>
+          <li>Configure the ActiveMQ node with your broker details</li>
+          <li>Set your desired topic name</li>
+          <li>Test with manual execution</li>
+          <li>Activate the workflow for automated minute-by-minute updates</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminates manual data fetching</strong> - No more periodic API calls or spreadsheet updates. The workflow handles all data collection automatically.</p>
+        <p><strong>Scalable data distribution</strong> - ActiveMQ's pub-sub model lets multiple systems consume the same position updates simultaneously.</p>
+        <p><strong>Reliable delivery</strong> - Message queuing ensures position data reaches your systems even during temporary network issues.</p>
+        <p><strong>Precision timing</strong> - Minute-by-minute updates provide sufficiently fresh data for most ISS tracking applications.</p>
+        <p><strong>Customizable output</strong> - Easily modify the workflow to include additional calculations or format the data differently.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about space data integration and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why would a business need real-time ISS position data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Many businesses in aerospace, education, and research sectors need real-time ISS tracking for various applications. Satellite operators use it for collision avoidance, educational platforms display live ISS location, and research teams analyze orbital patterns.</p>
+          <p>This automation eliminates manual data fetching, ensuring always-current position data for critical operations. For example, a satellite communication company might use this data to schedule transmissions when the ISS passes over ground stations.</p>
+          <ul>
+            <li>Enables automated decision-making based on ISS position</li>
+            <li>Reduces latency in space data applications</li>
+            <li>Supports multiple concurrent data consumers</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of using ActiveMQ for space data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>ActiveMQ provides reliable message queuing perfect for space data applications. Its pub-sub model allows multiple systems to consume ISS position updates simultaneously. The platform handles high message volumes efficiently while maintaining low latency.</p>
+          <p>For space operations, message persistence ensures no position updates are lost during brief network outages. A research lab might have multiple systems subscribed - one for visualization, another for analytics, and a third for alerting - all receiving the same timely data.</p>
+          <ul>
+            <li>Guaranteed message delivery for critical data</li>
+            <li>Horizontal scalability as data needs grow</li>
+            <li>Flexible integration with various consumer systems</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is the ISS position data from this workflow?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow uses NASA's official ISS position API, which provides highly accurate real-time telemetry. Position updates include latitude, longitude, altitude, and velocity with precision suitable for most commercial and research applications.</p>
+          <p>While not intended for navigation-critical systems, the data is sufficiently precise for visualization, educational, and many operational uses. An astronomy app might use this data to predict visible ISS passes with accuracy within several kilometers.</p>
+          <ul>
+            <li>Data sourced directly from NASA's tracking systems</li>
+            <li>Updates every 60 seconds for near real-time tracking</li>
+            <li>Includes velocity vectors for predictive calculations</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow be modified for other satellite tracking?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the core architecture can adapt to other satellite tracking needs. The workflow pattern of API polling + message queuing works for any spacecraft with public tracking data. You would simply replace the ISS API endpoint with another satellite tracking service.</p>
+          <p>A weather satellite tracking company could modify this to monitor NOAA satellites, adding custom data fields specific to their needs. The ActiveMQ integration would remain unchanged, providing the same reliable message distribution.</p>
+          <ul>
+            <li>Same architecture works for most orbital objects</li>
+            <li>Custom data transformations can be added</li>
+            <li>Update frequency can be adjusted as needed</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What security considerations exist for space data automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>While ISS position data is public, proper security measures should protect your ActiveMQ instance. Use TLS encryption for message transport, implement authentication, and consider network isolation for sensitive deployments. The workflow should run in a secure environment since it handles credentials.</p>
+          <p>For organizations tracking proprietary satellites, additional security layers like VPN tunnels or private brokers may be necessary. A defense contractor might deploy this in an air-gapped network with enhanced authentication protocols.</p>
+          <ul>
+            <li>Always encrypt credentials in n8n</li>
+            <li>Restrict broker access to authorized systems</li>
+            <li>Monitor for unusual message patterns</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does this compare to commercial satellite tracking solutions?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This automation provides a cost-effective alternative to commercial solutions for basic ISS tracking needs. While specialized software offers advanced visualization and analytics, this workflow delivers core position data to your systems at minimal cost.</p>
+          <p>For teams needing to integrate ISS data with custom applications, this approach offers more flexibility than off-the-shelf solutions. A university might combine this with their existing research systems rather than pay for features they don't need in commercial packages.</p>
+          <ul>
+            <li>No recurring licensing fees</li>
+            <li>Direct integration with your systems</li>
+            <li>Full control over data processing</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom space data automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in custom automation solutions for aerospace and research applications. Our team can build tailored workflows for specific satellite tracking needs, integrate with your existing systems, and handle complex data processing requirements.</p>
+          <p>We've helped space startups, research labs, and educational platforms automate their data workflows. Whether you need enhanced security, specialized calculations, or integration with proprietary systems, we can develop a solution matching your exact requirements.</p>
+          <ul>
+            <li>Custom satellite tracking solutions</li>
+            <li>Integration with proprietary systems</li>
+            <li>Enhanced security configurations</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Space Data Integration?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

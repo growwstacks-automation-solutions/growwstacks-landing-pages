@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate contact enrichment with Surfe, Google Sheets & HubSpot | Free Template | GrowwStacks</title>
+<meta name="description" content="This template enables fully automated lead enrichment using Surfe's bulk API. Simply drop a Google Spreadsheet into your Google Drive, and n8n will handle...">
+<link rel="canonical" href="https://go.growwstacks.com/workflows/3328-automate-contact-enrichment-with-surfe-google-sheets-and-hubspot/">
+<meta property="og:title" content="Automate Contact Enrichment with Surfe, Google Sheets & HubSpot">
+<meta property="og:description" content="Free workflow template for automating lead enrichment between Surfe, Google Sheets and HubSpot">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://go.growwstacks.com/workflows/3328-automate-contact-enrichment-with-surfe-google-sheets-and-hubspot/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5776-automate-contact-enrichment-with-surfe-google-sheets-an.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Contact Enrichment with Surfe, Google Sheets & HubSpot">
+<meta name="twitter:description" content="Free workflow template for automating lead enrichment between Surfe, Google Sheets and HubSpot">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate contact enrichment with Surfe, Google Sheets & HubSpot","description":"This template enables fully automated lead enrichment using Surfe's bulk API. Simply drop a Google Spreadsheet into your Google Drive, and n8n will handle...","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://go.growwstacks.com"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5776-automate-contact-enrichment-with-surfe-google-sheets-an.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is contact enrichment and why is it important?","acceptedAnswer":{"@type":"Answer","text":"Contact enrichment enhances basic contact information with additional valuable data points. It helps sales teams prioritize leads, personalize outreach, and improve conversion rates by adding job titles, company details, social profiles and more to your CRM records."}},{"@type":"Question","name":"How does automated contact enrichment save time for sales teams?","acceptedAnswer":{"@type":"Answer","text":"Automated enrichment eliminates manual research by instantly adding 20+ data points to each lead. Sales reps gain 4-6 hours weekly previously spent on manual lookups, while ensuring data accuracy across all records in your CRM."}},{"@type":"Question","name":"What types of data can Surfe add to contact records?","acceptedAnswer":{"@type":"Answer","text":"Surfe provides professional email addresses, direct phone numbers, LinkedIn profiles, company size, funding status, technologies used, and recent news. The API returns structured data that automatically maps to standard CRM fields for seamless integration."}},{"@type":"Question","name":"How accurate is automated contact enrichment data?","acceptedAnswer":{"@type":"Answer","text":"Premium data providers like Surfe maintain 85-95% accuracy rates through continuous verification. The workflow includes validation steps to flag potentially outdated information and can be configured to require manual review for critical accounts."}},{"@type":"Question","name":"Can this workflow handle bulk contact enrichment?","acceptedAnswer":{"@type":"Answer","text":"Yes, the template processes spreadsheets with thousands of contacts efficiently. It includes rate limiting and error handling to manage API quotas, with automatic retries for failed lookups to ensure complete data coverage."}},{"@type":"Question","name":"What are the security considerations for contact enrichment?","acceptedAnswer":{"@type":"Answer","text":"The workflow uses OAuth for secure API access and never stores raw data. All enrichment occurs through official API connections, maintaining GDPR compliance by processing only the minimum required data fields."}},{"@type":"Question","name":"Can I get a custom contact enrichment automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! GrowwStacks specializes in building tailored enrichment workflows that connect your specific tools and match your sales process. We can incorporate custom validation rules, data sources, and CRM field mappings."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://go.growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://go.growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Automate contact enrichment with Surfe, Google Sheets & HubSpot"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Automate contact enrichment with Surfe, Google Sheets & HubSpot</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Lead Enrichment</span>
+          <span class="cs-tag">CRM Automation</span>
+          <span class="cs-tag">Sales Efficiency</span>
+        </div>
+        <h1>Automate Contact Enrichment with Surfe, Google Sheets & HubSpot</h1>
+        <p class="cs-hero-sub">This workflow automatically enriches contact data from spreadsheets using Surfe's API and syncs complete profiles to HubSpot. Eliminate manual research and keep your CRM updated with accurate prospect information.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5776-automate-contact-enrichment-with-surfe-google-sheets-an.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · Zapier compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5776-automate-contact-enrichment-with-surfe-google-sheets-an.png" alt="Workflow diagram showing contact enrichment automation between Surfe, Google Sheets and HubSpot" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the tedious manual process of researching and updating contact information in your CRM. Sales teams often waste hours looking up LinkedIn profiles, verifying email addresses, and tracking down direct phone numbers - this workflow eliminates that repetitive work.</p>
+        
+        <p>The system monitors a designated Google Sheet for new contacts, enriches each record with Surfe's professional contact database, then syncs the complete profiles to HubSpot. What typically takes 5-10 minutes per contact now happens automatically in seconds.</p>
+        
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Screenshot_2025_08_07_at_11_54_27_6321100669.png" alt="Screenshot showing enriched contact data in HubSpot" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Example of enriched contact data automatically added to HubSpot</div>
+        </div>
+        
+        <h2>How It Works</h2>
+        <h3>1. Spreadsheet Trigger</h3>
+        <p>The workflow monitors a specific Google Sheet for new rows added. You can configure it to watch your lead intake form responses or any spreadsheet where contacts are collected.</p>
+        
+        <h3>2. Bulk API Enrichment</h3>
+        <p>Each new contact gets sent to Surfe's enrichment API, which returns professional email addresses, direct phone numbers, LinkedIn profiles, company details, and other valuable sales intelligence.</p>
+        
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Screenshot_2025_08_07_at_11_54_02_00ac73e4db.png" alt="Screenshot of Surfe API response with enriched data" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Surfe API response showing enriched contact data fields</div>
+        </div>
+        
+        <h3>3. CRM Sync</h3>
+        <p>The enriched data automatically maps to corresponding HubSpot contact properties, creating new records or updating existing ones. The workflow handles field mappings and data formatting automatically.</p>
+        
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Configure the workflow to flag contacts where key data (like email or LinkedIn) couldn't be verified, allowing for manual review when needed.</p>
+        </div>
+        
+        <h2>Who This Is For</h2>
+        <p>This automation delivers the most value for:</p>
+        <ul>
+          <li>Sales teams managing high volumes of inbound leads</li>
+          <li>Outbound prospecting teams building targeted account lists</li>
+          <li>Marketing teams running lead gen campaigns that feed into CRM</li>
+          <li>Recruiters sourcing candidates from multiple channels</li>
+        </ul>
+        
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>Surfe API account (free tier available)</li>
+          <li>Google Sheets with contact data</li>
+          <li>HubSpot account</li>
+          <li>Zapier account to host the workflow</li>
+        </ol>
+        
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the template file</li>
+          <li>Import into your Zapier account</li>
+          <li>Connect your Google Sheets, Surfe, and HubSpot accounts</li>
+          <li>Specify which spreadsheet to monitor</li>
+          <li>Map Surfe data fields to HubSpot properties</li>
+          <li>Activate the workflow</li>
+        </ol>
+        
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Screenshot_2025_08_07_at_11_43_41_39a610a01f.png" alt="Screenshot of workflow setup in Zapier" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Workflow setup view in Zapier showing connected apps</div>
+        </div>
+        
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5-10 minutes per contact:</strong> What took manual research now happens instantly, freeing sales teams to focus on selling rather than data entry.</p>
+        
+        <p><strong>Improve outreach success rates:</strong> More accurate contact information means higher email deliverability and call connection rates.</p>
+        
+        <p><strong>Keep CRM data fresh:</strong> Automatic updates ensure your team always works with the most current information available.</p>
+        
+        <p><strong>Scale prospecting efforts:</strong> Process hundreds of contacts simultaneously without additional manual work.</p>
+        
+        <p><strong>Reduce human error:</strong> Eliminate mistakes from manual data entry and copy/paste between systems.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about contact enrichment and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is contact enrichment and why is it important?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Contact enrichment enhances basic contact information with additional valuable data points. It transforms sparse lead records into complete profiles by adding professional details that help sales teams personalize outreach and prioritize follow-up.</p>
+          
+          <p>For example, a basic form submission might only include name and company. Enrichment adds direct phone numbers, verified email addresses, LinkedIn profiles, company size, and technologies used - all crucial for effective sales engagement.</p>
+          
+          <ul>
+            <li>Increases email open rates by 30-50%</li>
+            <li>Reduces bounced emails and wrong numbers</li>
+            <li>Provides context for personalized messaging</li>
+          </ul>
+        </div></div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automated contact enrichment save time for sales teams?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automated enrichment eliminates the need for manual research across multiple platforms. Sales reps typically spend 4-6 hours weekly looking up contact details - time that can now be redirected to actual selling activities.</p>
+          
+          <p>A sales development representative processing 50 new leads weekly would save nearly 50 hours annually. The automation also ensures consistency, applying the same data standards and verification processes to every contact.</p>
+          
+          <ul>
+            <li>Processes hundreds of contacts in minutes</li>
+            <li>Runs 24/7 without human intervention</li>
+            <li>Standardizes data quality across all records</li>
+          </ul>
+        </div></div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of data can Surfe add to contact records?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Surfe provides comprehensive professional data including direct-dial phone numbers, corporate email addresses, LinkedIn profiles with employment history, company details like employee count and funding status, and even technologies the company uses.</p>
+          
+          <p>The API returns structured data that maps directly to standard CRM fields. For example, it can distinguish between personal and work email addresses, identify the most current job title, and provide department-level details for larger organizations.</p>
+          
+          <ul>
+            <li>20+ professional data points per contact</li>
+            <li>Real-time verification of key information</li>
+            <li>Structured output for easy CRM mapping</li>
+          </ul>
+        </div></div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is automated contact enrichment data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Premium data providers like Surfe maintain 85-95% accuracy rates through continuous verification processes. The workflow includes validation steps to flag potentially outdated information and can be configured to require manual review for critical accounts.</p>
+          
+          <p>For example, if a contact's LinkedIn shows a recent job change but the email domain still matches their previous employer, the workflow can highlight this discrepancy for human review before updating CRM records.</p>
+          
+          <ul>
+            <li>Multiple verification methods ensure reliability</li>
+            <li>Configurable confidence thresholds</li>
+            <li>Automatic freshness checks on existing records</li>
+          </ul>
+        </div></div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow handle bulk contact enrichment?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the template is designed for bulk processing with built-in rate limiting and error handling. It can process spreadsheets with thousands of contacts efficiently, managing API quotas and automatically retrying failed lookups to ensure complete data coverage.</p>
+          
+          <p>A marketing team running a webinar can upload all attendees at once, and the workflow will systematically enrich each record without overwhelming API limits or requiring manual batches.</p>
+          
+          <ul>
+            <li>Processes 500+ contacts per hour</li>
+            <li>Automatic retries for failed lookups</li>
+            <li>Progress tracking for large batches</li>
+          </ul>
+        </div></div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the security considerations for contact enrichment?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow uses OAuth for secure API access and never stores raw data permanently. All enrichment occurs through official API connections, maintaining GDPR compliance by processing only the minimum required data fields.</p>
+          
+          <p>For added security, you can configure the workflow to mask sensitive fields in logs and restrict which team members can initiate bulk enrichment jobs. All data transfers use encrypted connections.</p>
+          
+          <ul>
+            <li>Enterprise-grade data protection</li>
+            <li>Configurable data retention policies</li>
+            <li>Audit logs for compliance reporting</li>
+          </ul>
+        </div></div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom contact enrichment automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in building tailored enrichment workflows that connect your specific tools and match your sales process. We can incorporate custom validation rules, additional data sources, and unique CRM field mappings.</p>
+          
+          <p>Our team will analyze your current lead intake process, identify optimization opportunities, and build an automation solution that saves your team hours each week while improving data quality.</p>
+          
+          <ul>
+            <li>Custom integrations with your tech stack</li>
+            <li>Workflow tailored to your sales process</li>
+            <li>Ongoing support and optimization</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Contact Enrichment Integration?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
