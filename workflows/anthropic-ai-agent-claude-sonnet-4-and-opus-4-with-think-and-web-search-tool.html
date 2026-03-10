@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic AI agent: Claude Sonnet 4 and Opus 4 with Think and Web Search tool | Free n8n Workflow Template | GrowwStacks</title>
+<meta name="description" content="Automate intelligent AI responses by dynamically routing queries between Claude Opus 4 and Sonnet 4 models based on complexity, with web search capabilities">
+<link rel="canonical" href="https://growwstacks.com/workflows/2278-anthropic-ai-agent-claude-sonnet-4-and-opus-4-with-think-and-web-search-tool">
+<meta property="og:title" content="Anthropic AI Agent: Claude Sonnet 4 & Opus 4 with Web Search | n8n Template">
+<meta property="og:description" content="Free workflow template that intelligently routes queries between Claude AI models with web search integration">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/2278-anthropic-ai-agent-claude-sonnet-4-and-opus-4-with-think-and-web-search-tool">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4399-anthropic-ai-agent-claude-sonnet-4-and-opus-4-with-thin.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anthropic AI Agent: Claude Sonnet 4 & Opus 4 with Web Search | n8n Template">
+<meta name="twitter:description" content="Free workflow template that intelligently routes queries between Claude AI models with web search integration">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Anthropic AI Agent: Claude Sonnet 4 & Opus 4 with Web Search","description":"n8n workflow that intelligently routes queries between Claude AI models with web search capabilities","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://go.growwstacks.com"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4399-anthropic-ai-agent-claude-sonnet-4-and-opus-4-with-thin.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between Claude Opus 4 and Sonnet 4 models?","acceptedAnswer":{"@type":"Answer","text":"Claude Opus 4 is Anthropic's most advanced model for complex reasoning tasks, while Sonnet 4 balances performance and cost efficiency. Opus excels at nuanced analysis and creative tasks but costs more per token. Sonnet handles most business queries effectively at lower cost. This workflow automatically routes simple queries to Sonnet and complex ones to Opus."}},{"@type":"Question","name":"How does the web search tool enhance Claude's responses?","acceptedAnswer":{"@type":"Answer","text":"The web search tool allows Claude to retrieve current information beyond its training data cutoff. When a query requires up-to-date facts, the workflow automatically triggers a web search, processes the results, and incorporates them into Claude's response. This combines Claude's reasoning with real-time data for more accurate answers."}},{"@type":"Question","name":"What types of business queries work best with this workflow?","acceptedAnswer":{"@type":"Answer","text":"This workflow excels at handling customer support questions, market research queries, competitive analysis, and knowledge-intensive tasks. The model selection ensures cost-effective responses for routine inquiries while applying Opus's advanced capabilities to complex strategic questions. Common use cases include automated research assistants and intelligent customer service routing."}},{"@type":"Question","name":"How does the workflow decide which model to use?","acceptedAnswer":{"@type":"Answer","text":"The workflow analyzes query complexity using factors like length, technical terms, and required reasoning depth. Simple factual requests route to Sonnet, while multi-step reasoning or creative tasks use Opus. You can adjust the routing logic thresholds based on your cost/performance preferences and typical query types."}},{"@type":"Question","name":"Can I customize the prompts for different query types?","acceptedAnswer":{"@type":"Answer","text":"Yes, the workflow includes customizable prompt templates for different query categories. You can tailor instructions, tone, and response formats for your specific use case. The template includes examples for business analysis, customer support, and research tasks that you can modify to match your requirements."}},{"@type":"Question","name":"What are the cost savings of this dynamic routing approach?","acceptedAnswer":{"@type":"Answer","text":"Businesses typically see 30-50% cost reduction versus using Opus exclusively, while maintaining high-quality responses. The savings come from routing simpler queries to Sonnet, which costs about 1/3 the price of Opus per token. The workflow pays for itself quickly in high-volume AI applications."}},{"@type":"Question","name":"Can I get a custom Claude AI agent built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Our team specializes in building tailored AI automation solutions with Claude and other models. We can create custom agents for your specific workflows, integrate with your existing systems, and optimize model selection for your use case. Book a free consultation to discuss your requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://go.growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://go.growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Anthropic AI Agent Workflow"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Anthropic AI Agent</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">AI Automation</span>
+          <span class="cs-tag">Claude AI</span>
+          <span class="cs-tag">Web Search</span>
+        </div>
+        <h1>Anthropic AI agent: Claude Sonnet 4 and Opus 4 with Think and Web Search tool</h1>
+        <p class="cs-hero-sub">Intelligently route queries between Claude's most powerful models with automatic web research capabilities</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4399-anthropic-ai-agent-claude-sonnet-4-and-opus-4-with-thin.json?ik-attachment=true" download="anthropic-ai-agent-workflow.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4399-anthropic-ai-agent-claude-sonnet-4-and-opus-4-with-thin.png" alt="Anthropic AI agent workflow interface in n8n" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This intelligent automation solves the challenge of balancing AI performance and cost when using Anthropic's Claude models. Many businesses waste money running all queries through the premium Opus model when simpler requests could be handled effectively by the more economical Sonnet model.</p>
+        <p>The workflow automatically analyzes incoming queries and routes them to either Claude Opus 4 (for complex reasoning tasks) or Claude Sonnet 4 (for simpler requests). It also integrates web search capabilities to fetch current information when needed, combining Claude's reasoning with real-time data for more accurate responses.</p>
+        
+        <h2>How It Works</h2>
+        <h3>1. Query Analysis</h3>
+        <p>The workflow first evaluates each incoming query using several criteria including length, technical terms, and required reasoning depth. This determines whether the request is better suited for Sonnet or Opus.</p>
+        
+        <h3>2. Model Selection</h3>
+        <p>Simple factual requests and routine queries are routed to Claude Sonnet 4, which provides cost-effective responses. Complex analytical questions, creative tasks, and multi-step reasoning problems are sent to Claude Opus 4 for its advanced capabilities.</p>
+        
+        <h3>3. Web Search Integration</h3>
+        <p>When a query requires current information beyond Claude's training data, the workflow automatically triggers a web search. The results are processed and incorporated into Claude's response, ensuring up-to-date answers.</p>
+        
+        <h3>4. Response Generation</h3>
+        <p>The selected Claude model generates a response using your customized prompt templates. The workflow can format outputs for different channels (email, chat, etc.) and log all interactions for analysis.</p>
+        
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for businesses using AI for:</p>
+        <ul>
+          <li>Customer support automation</li>
+          <li>Market research and competitive analysis</li>
+          <li>Knowledge management systems</li>
+          <li>Content generation and editing</li>
+          <li>Technical documentation processing</li>
+        </ul>
+        <p>It's particularly valuable for companies handling high volumes of varied queries where optimizing AI costs is important.</p>
+        
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (cloud or self-hosted)</li>
+          <li>Anthropic API access with valid API keys</li>
+          <li>Web search API (such as SerpAPI or Google Programmable Search)</li>
+          <li>Basic familiarity with n8n workflows</li>
+        </ol>
+        
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import into your n8n instance</li>
+          <li>Configure your Anthropic API credentials</li>
+          <li>Set up your web search API connection</li>
+          <li>Adjust the query routing thresholds if needed</li>
+          <li>Test with sample queries and refine prompts</li>
+        </ol>
+        
+        <h2>Key Benefits</h2>
+        <p><strong>Cost optimization:</strong> Reduce your Claude API costs by 30-50% by automatically using Sonnet for simpler queries while reserving Opus for complex tasks.</p>
+        <p><strong>Improved response quality:</strong> Get the right level of AI capability for each query, with web search integration for current information.</p>
+        <p><strong>Customizable routing:</strong> Adjust the complexity thresholds to match your specific use case and cost/performance preferences.</p>
+        <p><strong>Scalable automation:</strong> Handle high volumes of varied queries efficiently without manual model selection.</p>
+        <p><strong>Actionable insights:</strong> The workflow logs all queries and model selections, providing data to optimize your AI strategy.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Claude AI integration and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the difference between Claude Opus 4 and Sonnet 4 models?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Claude Opus 4 is Anthropic's most advanced model for complex reasoning tasks, while Sonnet 4 balances performance and cost efficiency. Opus excels at nuanced analysis and creative tasks but costs more per token. Sonnet handles most business queries effectively at lower cost.</p>
+          <p>This workflow automatically analyzes each query to determine which model is most appropriate. For example, simple customer service FAQs would route to Sonnet, while strategic business analysis would use Opus. This ensures you get the right capability for each task without overpaying.</p>
+          <ul>
+            <li>Opus costs ~3x more than Sonnet per token</li>
+            <li>Sonnet is 80% as capable for many business tasks</li>
+            <li>Routing can be adjusted based on your priorities</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does the web search tool enhance Claude's responses?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The web search tool allows Claude to retrieve current information beyond its training data cutoff. When a query requires up-to-date facts, the workflow automatically triggers a search, processes the results, and incorporates them into Claude's response.</p>
+          <p>For example, if asked about today's stock prices or recent news events, Claude can fetch the latest data rather than relying solely on its knowledge. This combines Claude's reasoning with real-time information for more accurate answers to time-sensitive questions.</p>
+          <ul>
+            <li>Works with major search APIs like SerpAPI</li>
+            <li>Filters and summarizes search results automatically</li>
+            <li>Can be configured for specific trusted sources</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of business queries work best with this workflow?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This workflow excels at handling customer support questions, market research queries, competitive analysis, and knowledge-intensive tasks. The model selection ensures cost-effective responses for routine inquiries while applying Opus's advanced capabilities to complex strategic questions.</p>
+          <p>Common use cases include automated research assistants that can handle both simple fact-finding and deep analysis, or customer service systems that escalate complex technical issues to Opus while using Sonnet for basic FAQs. The flexibility allows adaptation to various business needs.</p>
+          <ul>
+            <li>Ideal for mixed-complexity query volumes</li>
+            <li>Works well for both internal and external use</li>
+            <li>Scales from small teams to enterprise deployments</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does the workflow decide which model to use?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow analyzes query complexity using factors like length, technical terms, and required reasoning depth. Simple factual requests route to Sonnet, while multi-step reasoning or creative tasks use Opus. Thresholds are adjustable based on your needs.</p>
+          <p>For instance, a short question like "What's your return policy?" would go to Sonnet, while "Analyze these sales figures and suggest three growth strategies" would route to Opus. The system learns from your corrections to improve routing over time.</p>
+          <ul>
+            <li>Multiple complexity factors are weighted</li>
+            <li>Routing rules can be customized</li>
+            <li>Manual override options available</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the prompts for different query types?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the workflow includes customizable prompt templates for different query categories. You can tailor instructions, tone, and response formats for your specific use case. The template includes examples you can modify.</p>
+          <p>For example, you might create different prompt templates for technical support versus sales inquiries, or adjust formality levels for B2B versus consumer interactions. The workflow can apply these automatically based on query analysis.</p>
+          <ul>
+            <li>Pre-built templates for common business uses</li>
+            <li>Easy to add your brand voice guidelines</li>
+            <li>Supports multi-step prompt chaining</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the cost savings of this dynamic routing approach?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Businesses typically see 30-50% cost reduction versus using Opus exclusively, while maintaining high-quality responses. The savings come from routing simpler queries to Sonnet, which costs about 1/3 the price of Opus per token.</p>
+          <p>For a company processing 10,000 queries monthly, this could mean saving thousands of dollars while still getting Opus-level answers for complex questions. The workflow pays for itself quickly in high-volume AI applications.</p>
+          <ul>
+            <li>Sonnet costs ~$0.75 per million tokens input</li>
+            <li>Opus costs ~$3.00 per million tokens input</li>
+            <li>Savings compound with query volume</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Claude AI agent built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. Our team specializes in building tailored AI automation solutions with Claude and other models. We can create custom agents for your specific workflows, integrate with your existing systems, and optimize model selection for your use case.</p>
+          <p>Whether you need a specialized customer support agent, research assistant, or internal knowledge management system, we'll design a solution that matches your requirements and budget. Custom integrations can connect Claude with your CRM, helpdesk, or other business tools.</p>
+          <ul>
+            <li>Free consultation to assess your needs</li>
+            <li>Enterprise-grade implementation</li>
+            <li>Ongoing optimization and support</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Claude AI Integration?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
