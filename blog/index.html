@@ -21,11 +21,8 @@
 
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
 
-  <!-- Exactly 2 preconnects — blog hub has no YouTube thumbnails -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Non-render-blocking fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
@@ -35,21 +32,15 @@
   <link rel="stylesheet" href="../../_shared/global.css">
   <link rel="stylesheet" href="../../_shared/case-studies.css">
 
-  <!-- CollectionPage + BreadcrumbList Schema -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"GrowwStacks Blog","description":"AI automation guides, n8n tutorials, Make.com walkthroughs, and business process automation insights for US SMBs.","url":"https://growwstacks.com/blog/","publisher":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com","logo":{"@type":"ImageObject","url":"https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png"}}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://growwstacks.com/blog/"}]}</script>
 
   <style>
-    /* ════════════════════════════════════════════
-       BLOG HUB — PAGE-SPECIFIC STYLES ONLY
-       All global tokens, navbar, footer, etc.
-       come from global.css + page-builder.js
-    ════════════════════════════════════════════ */
-
-    /* ── HERO SECTION ── */
+    /* ── HERO ── */
     .blog-hub-hero {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f5f3ff 100%);
-      padding: 72px 0 56px;
+      padding: 40px 0 56px;
+      padding-top: calc(72px + 40px);
       position: relative;
       overflow: hidden;
     }
@@ -67,30 +58,8 @@
       z-index: 1;
       max-width: 820px;
     }
-    .blog-hub-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid #e0f2fe;
-      border-radius: 40px;
-      padding: 6px 16px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #0369a1;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      margin-bottom: 20px;
-    }
-    .blog-hub-eyebrow-dot {
-      width: 7px; height: 7px;
-      background: #0369a1;
-      border-radius: 50%;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-    @keyframes pulse-dot {
-      0%,100%{opacity:1;transform:scale(1)}
-      50%{opacity:.5;transform:scale(1.4)}
+    .blog-hub-hero-inner .cs-breadcrumb {
+      margin-bottom: 28px;
     }
     .blog-hub-hero h1 {
       font-family: 'Bricolage Grotesque', sans-serif;
@@ -114,36 +83,19 @@
       max-width: 600px;
       margin-bottom: 28px;
     }
-    .blog-hub-stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-    .blog-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .blog-hub-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+    .blog-stat { display: flex; flex-direction: column; gap: 2px; }
     .blog-stat-num {
       font-family: 'Bricolage Grotesque', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #1e293b;
-      line-height: 1;
+      font-size: 1.6rem; font-weight: 800; color: #1e293b; line-height: 1;
     }
     .blog-stat-label {
-      font-size: 12px;
-      color: #64748b;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: .05em;
+      font-size: 12px; color: #64748b; font-weight: 500;
+      text-transform: uppercase; letter-spacing: .05em;
     }
 
-    /* ── MAIN LAYOUT ── */
-    .blog-hub-layout {
-      padding: 48px 0 80px;
-      background: #f8fafc;
-    }
+    /* ── LAYOUT ── */
+    .blog-hub-layout { padding: 48px 0 80px; background: #f8fafc; }
     .blog-hub-grid {
       display: grid;
       grid-template-columns: 260px 1fr;
@@ -152,10 +104,7 @@
     }
 
     /* ── SIDEBAR ── */
-    .blog-sidebar {
-      position: sticky;
-      top: 90px;
-    }
+    .blog-sidebar { position: sticky; top: 90px; }
     .blog-sidebar-section {
       background: #fff;
       border: 1px solid #e2e8f0;
@@ -164,30 +113,26 @@
       margin-bottom: 16px;
     }
     .blog-sidebar-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin: 0 0 14px;
+      font-size: 11px; font-weight: 700; color: #94a3b8;
+      text-transform: uppercase; letter-spacing: .08em; margin: 0 0 12px;
     }
 
-    /* Search box */
-    .blog-search-wrap {
-      position: relative;
-    }
+    /* ── SEARCH BOX ── */
+    .blog-search-wrap { position: relative; }
     .blog-search-wrap svg {
       position: absolute;
-      left: 11px;
+      right: 11px;
       top: 50%;
       transform: translateY(-50%);
-      width: 16px; height: 16px;
+      width: 15px; height: 15px;
       color: #94a3b8;
       pointer-events: none;
     }
     #blog-search {
+      display: block;
       width: 100%;
-      padding: 9px 12px 9px 34px;
+      height: 38px;
+      padding: 0 36px 0 12px;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       font-size: 14px;
@@ -204,385 +149,136 @@
       background: #fff;
     }
 
-    /* Tag filter pills */
-    .blog-tag-list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    /* ── TAG PILLS ── */
+    .blog-tag-list { display: flex; flex-direction: column; gap: 4px; }
     .blog-tag-pill {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 7px 12px;
-      border-radius: 8px;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      font-size: 13px;
-      font-family: inherit;
-      font-weight: 500;
-      color: #475569;
-      text-align: left;
-      transition: background .12s, color .12s;
-      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 7px 12px; border-radius: 8px; border: none; background: transparent;
+      cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 500;
+      color: #475569; text-align: left; transition: background .12s, color .12s; width: 100%;
     }
-    .blog-tag-pill:hover {
-      background: #f1f5f9;
-      color: #1e293b;
-    }
-    .blog-tag-pill.active {
-      background: #eff6ff;
-      color: #0369a1;
-      font-weight: 700;
-    }
+    .blog-tag-pill:hover { background: #f1f5f9; color: #1e293b; }
+    .blog-tag-pill.active { background: #eff6ff; color: #0369a1; font-weight: 700; }
     .blog-tag-count {
-      font-size: 11px;
-      font-weight: 600;
-      background: #e2e8f0;
-      color: #64748b;
-      padding: 2px 7px;
-      border-radius: 20px;
-      min-width: 24px;
-      text-align: center;
+      font-size: 11px; font-weight: 600; background: #e2e8f0; color: #64748b;
+      padding: 2px 7px; border-radius: 20px; min-width: 24px; text-align: center;
     }
-    .blog-tag-pill.active .blog-tag-count {
-      background: #0369a1;
-      color: #fff;
-    }
+    .blog-tag-pill.active .blog-tag-count { background: #0369a1; color: #fff; }
 
-    /* ── MAIN CONTENT AREA ── */
-    .blog-main-area {}
-
-    /* Top bar: results count + sort */
+    /* ── TOPBAR ── */
     .blog-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 24px; flex-wrap: wrap; gap: 12px;
     }
-    .blog-results-count {
-      font-size: 14px;
-      color: #64748b;
-    }
-    .blog-results-count strong {
-      color: #1e293b;
-      font-weight: 700;
-    }
-    .blog-sort-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: #64748b;
-    }
+    .blog-results-count { font-size: 14px; color: #64748b; }
+    .blog-results-count strong { color: #1e293b; font-weight: 700; }
+    .blog-sort-wrap { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #64748b; }
     #blog-sort {
-      border: 1px solid #e2e8f0;
-      border-radius: 7px;
-      padding: 5px 10px;
-      font-size: 13px;
-      font-family: inherit;
-      color: #334155;
-      background: #fff;
-      cursor: pointer;
-      outline: none;
+      border: 1px solid #e2e8f0; border-radius: 7px; padding: 5px 10px;
+      font-size: 13px; font-family: inherit; color: #334155; background: #fff; cursor: pointer; outline: none;
     }
 
     /* ── CARD GRID ── */
-    .blog-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+    .blog-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
-    /* ── INDIVIDUAL CARD ── */
+    /* ── CARD ── */
     .blog-card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      position: relative;
-      overflow: hidden;
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px;
+      display: flex; flex-direction: column; position: relative; overflow: hidden;
       transition: border-color .18s, box-shadow .18s, transform .18s;
-      text-decoration: none;
-      color: inherit;
+      text-decoration: none; color: inherit;
     }
-    .blog-card:hover {
-      border-color: #94a3b8;
-      box-shadow: 0 8px 32px rgba(0,0,0,.08);
-      transform: translateY(-2px);
-    }
-    /* Accent left bar — colour comes from tag data attribute on the card */
+    .blog-card:hover { border-color: #94a3b8; box-shadow: 0 8px 32px rgba(0,0,0,.08); transform: translateY(-2px); }
     .blog-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 20px; bottom: 20px;
-      width: 3px;
-      border-radius: 0 3px 3px 0;
-      background: var(--card-accent, #0369a1);
-      opacity: .7;
+      content: ''; position: absolute; left: 0; top: 20px; bottom: 20px;
+      width: 3px; border-radius: 0 3px 3px 0;
+      background: var(--card-accent, #0369a1); opacity: .7;
     }
-
-    /* Card header row */
-    .blog-card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .blog-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      flex: 1;
-    }
+    .blog-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .blog-card-tags { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; }
     .blog-card-tag {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      padding: 3px 9px;
-      border-radius: 20px;
-      background: var(--card-accent-pale, #eff6ff);
-      color: var(--card-accent, #0369a1);
-      white-space: nowrap;
+      font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+      padding: 3px 9px; border-radius: 20px; white-space: nowrap;
     }
-    /* "NEW" badge — shown on cards published within 30 days */
     .blog-card-new-badge {
-      font-size: 9px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      background: #10b981;
-      color: #fff;
-      padding: 3px 8px;
-      border-radius: 20px;
-      white-space: nowrap;
-      flex-shrink: 0;
+      font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
+      background: #10b981; color: #fff; padding: 3px 8px; border-radius: 20px;
+      white-space: nowrap; flex-shrink: 0;
     }
-
-    /* Title */
     .blog-card-title {
       font-family: 'Bricolage Grotesque', sans-serif;
-      font-size: clamp(0.95rem, 1.5vw, 1.08rem);
-      font-weight: 700;
-      color: #1e293b;
-      line-height: 1.38;
-      margin: 0 0 10px;
-      transition: color .15s;
+      font-size: clamp(0.95rem, 1.5vw, 1.08rem); font-weight: 700;
+      color: #1e293b; line-height: 1.38; margin: 0 0 10px; transition: color .15s;
     }
-    .blog-card:hover .blog-card-title {
-      color: #0369a1;
-    }
-
-    /* Description */
+    .blog-card:hover .blog-card-title { color: #0369a1; }
     .blog-card-desc {
-      font-size: 13.5px;
-      color: #475569;
-      line-height: 1.7;
-      margin: 0 0 16px;
-      /* Clamp to 3 lines */
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      flex: 1;
+      font-size: 13.5px; color: #475569; line-height: 1.7; margin: 0 0 16px;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+      overflow: hidden; flex: 1;
     }
-
-    /* Card footer */
     .blog-card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding-top: 14px;
-      border-top: 1px solid #f1f5f9;
-      margin-top: auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; padding-top: 14px; border-top: 1px solid #f1f5f9; margin-top: auto;
     }
-    .blog-card-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      color: #94a3b8;
-      flex-wrap: wrap;
-    }
-    .blog-card-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .blog-card-meta-item svg {
-      width: 13px; height: 13px;
-      flex-shrink: 0;
-    }
+    .blog-card-meta { display: flex; align-items: center; gap: 10px; font-size: 12px; color: #94a3b8; flex-wrap: wrap; }
+    .blog-card-meta-item { display: flex; align-items: center; gap: 4px; }
+    .blog-card-meta-item svg { width: 13px; height: 13px; flex-shrink: 0; }
     .blog-card-read-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #0369a1;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: gap .15s;
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 700; color: #0369a1;
+      text-decoration: none; white-space: nowrap; transition: gap .15s;
     }
     .blog-card-read-link:hover { gap: 8px; }
-    .blog-card-read-link svg {
-      width: 13px; height: 13px;
-    }
+    .blog-card-read-link svg { width: 13px; height: 13px; }
 
-    /* ── FEATURED CARD (first item) ── */
+    /* ── FEATURED ── */
     .blog-card.featured {
-      grid-column: 1 / -1;
-      flex-direction: row;
-      gap: 32px;
-      padding: 32px 32px 28px;
-      background: linear-gradient(135deg, #f0f9ff 0%, #eff6ff 100%);
-      border-color: #bae6fd;
+      grid-column: 1 / -1; flex-direction: row; gap: 32px; padding: 32px 32px 28px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #eff6ff 100%); border-color: #bae6fd;
     }
-    .blog-card.featured::before {
-      top: 28px; bottom: 28px;
-      width: 4px;
-    }
-    .blog-card.featured .blog-card-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-card.featured .blog-card-title {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      margin-bottom: 12px;
-    }
-    .blog-card.featured .blog-card-desc {
-      -webkit-line-clamp: 4;
-      font-size: 14.5px;
-    }
+    .blog-card.featured::before { top: 28px; bottom: 28px; width: 4px; }
+    .blog-card.featured .blog-card-body { flex: 1; display: flex; flex-direction: column; }
+    .blog-card.featured .blog-card-title { font-size: clamp(1.1rem, 2vw, 1.35rem); margin-bottom: 12px; }
+    .blog-card.featured .blog-card-desc { -webkit-line-clamp: 4; font-size: 14.5px; }
     .blog-card.featured .blog-card-aside {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 16px;
-      min-width: 140px;
+      display: flex; flex-direction: column; align-items: flex-end;
+      justify-content: space-between; gap: 16px; min-width: 140px;
     }
     .blog-card-featured-label {
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .09em;
-      color: #7c3aed;
-      background: #f5f3ff;
-      border: 1px solid #ddd6fe;
-      padding: 4px 10px;
-      border-radius: 20px;
+      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .09em;
+      color: #7c3aed; background: #f5f3ff; border: 1px solid #ddd6fe; padding: 4px 10px; border-radius: 20px;
     }
 
     /* ── PAGINATION ── */
-    .blog-pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
+    .blog-pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 40px; flex-wrap: wrap; }
     .blog-page-btn {
-      min-width: 38px;
-      height: 38px;
-      padding: 0 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      background: #fff;
-      font-size: 13px;
-      font-weight: 600;
-      color: #475569;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all .15s;
+      min-width: 38px; height: 38px; padding: 0 10px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 8px; border: 1px solid #e2e8f0; background: #fff;
+      font-size: 13px; font-weight: 600; color: #475569; cursor: pointer;
+      font-family: inherit; transition: all .15s;
     }
-    .blog-page-btn:hover:not(:disabled) {
-      border-color: #0369a1;
-      color: #0369a1;
-      background: #eff6ff;
-    }
-    .blog-page-btn.active {
-      background: #0369a1;
-      border-color: #0369a1;
-      color: #fff;
-    }
-    .blog-page-btn:disabled {
-      opacity: .4;
-      cursor: not-allowed;
-    }
-    .blog-page-btn svg {
-      width: 14px; height: 14px;
-    }
-    .blog-page-ellipsis {
-      font-size: 13px;
-      color: #94a3b8;
-      padding: 0 4px;
-      line-height: 38px;
-    }
+    .blog-page-btn:hover:not(:disabled) { border-color: #0369a1; color: #0369a1; background: #eff6ff; }
+    .blog-page-btn.active { background: #0369a1; border-color: #0369a1; color: #fff; }
+    .blog-page-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .blog-page-btn svg { width: 14px; height: 14px; }
+    .blog-page-ellipsis { font-size: 13px; color: #94a3b8; padding: 0 4px; line-height: 38px; }
 
     /* ── EMPTY STATE ── */
-    .blog-empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 64px 24px;
-      color: #94a3b8;
-    }
-    .blog-empty svg {
-      width: 48px; height: 48px;
-      margin: 0 auto 16px;
-      display: block;
-      opacity: .4;
-    }
+    .blog-empty { grid-column: 1 / -1; text-align: center; padding: 64px 24px; color: #94a3b8; }
+    .blog-empty svg { width: 48px; height: 48px; margin: 0 auto 16px; display: block; opacity: .4; }
     .blog-empty p { font-size: 15px; margin: 0; }
     .blog-empty strong { color: #475569; }
 
     /* ── ACTIVE FILTER BAR ── */
-    .blog-active-filter {
-      display: none;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
-      font-size: 13px;
-      color: #475569;
-    }
+    .blog-active-filter { display: none; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 13px; color: #475569; }
     .blog-active-filter.visible { display: flex; }
     .blog-filter-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #eff6ff;
-      border: 1px solid #bae6fd;
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #0369a1;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #eff6ff; border: 1px solid #bae6fd; border-radius: 20px;
+      padding: 4px 12px; font-size: 12px; font-weight: 600; color: #0369a1;
     }
-    .blog-filter-clear {
-      border: none;
-      background: none;
-      cursor: pointer;
-      color: #0369a1;
-      font-size: 14px;
-      line-height: 1;
-      padding: 0;
-      font-weight: 700;
-      opacity: .7;
-    }
+    .blog-filter-clear { border: none; background: none; cursor: pointer; color: #0369a1; font-size: 14px; line-height: 1; padding: 0; font-weight: 700; opacity: .7; }
     .blog-filter-clear:hover { opacity: 1; }
 
     /* ── RESPONSIVE ── */
@@ -608,16 +304,14 @@
 <!-- ═══ HERO ═══ -->
 <section class="blog-hub-hero">
   <div class="container">
-    <nav class="cs-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px">
-      <a href="/">Home</a>
-      <span aria-hidden="true">/</span>
-      <span>Blog</span>
-    </nav>
     <div class="blog-hub-hero-inner">
-      <div class="blog-hub-eyebrow">
-        <span class="blog-hub-eyebrow-dot" aria-hidden="true"></span>
-        Free Resources
-      </div>
+
+      <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span>Blog</span>
+      </nav>
+
       <h1>Automation & AI Guides<br>That <em>Actually</em> Work</h1>
       <p>Step-by-step tutorials on n8n, Make.com, AI agents, and voice automation — written for business owners and ops teams who want real results, not technical theory.</p>
       <div class="blog-hub-stats">
@@ -634,6 +328,7 @@
           <span class="blog-stat-label">Categories</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -646,24 +341,19 @@
       <!-- ── SIDEBAR ── -->
       <aside class="blog-sidebar" aria-label="Filter posts">
 
-        <!-- Search -->
         <div class="blog-sidebar-section">
-          <p class="blog-sidebar-title">Search</p>
+          <label for="blog-search" class="blog-sidebar-title" style="display:block;cursor:default">Search</label>
           <div class="blog-search-wrap">
+            <input type="search" id="blog-search" placeholder="Search articles…" autocomplete="off">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-            <label for="blog-search" class="visually-hidden">Search articles</label>
-            <input type="search" id="blog-search" placeholder="Search articles…" autocomplete="off">
           </div>
         </div>
 
-        <!-- Categories -->
         <div class="blog-sidebar-section">
           <p class="blog-sidebar-title">Categories</p>
-          <nav class="blog-tag-list" id="tag-filter-list" aria-label="Filter by category">
-            <!-- Injected by JS -->
-          </nav>
+          <nav class="blog-tag-list" id="tag-filter-list" aria-label="Filter by category"></nav>
         </div>
 
       </aside>
@@ -671,13 +361,11 @@
       <!-- ── ARTICLES ── -->
       <div class="blog-main-area" id="blog-main-area">
 
-        <!-- Active filter indicator -->
         <div class="blog-active-filter" id="active-filter-bar" aria-live="polite">
           Filtered by: <span class="blog-filter-chip" id="active-filter-chip"></span>
           <button class="blog-filter-clear" id="clear-filter-btn" aria-label="Clear filter">✕ Clear</button>
         </div>
 
-        <!-- Top bar -->
         <div class="blog-topbar">
           <p class="blog-results-count" id="results-count" aria-live="polite">
             Showing <strong id="count-shown">0</strong> of <strong id="count-total">0</strong> articles
@@ -692,15 +380,8 @@
           </div>
         </div>
 
-        <!-- Cards grid -->
-        <div class="blog-cards-grid" id="cards-grid" aria-label="Blog articles">
-          <!-- Injected by JS -->
-        </div>
-
-        <!-- Pagination -->
-        <nav class="blog-pagination" id="pagination" aria-label="Pagination">
-          <!-- Injected by JS -->
-        </nav>
+        <div class="blog-cards-grid" id="cards-grid" aria-label="Blog articles"></div>
+        <nav class="blog-pagination" id="pagination" aria-label="Pagination"></nav>
 
       </div>
     </div>
@@ -711,526 +392,218 @@
 </main>
 <div id="gs-footer"></div>
 
-<!-- ═══ BLOG DATA — Replace this array with your full 1000+ posts ═══ -->
 <script>
-/*
-  SCHEMA per post:
-  {
-    title:    "Post headline",
-    desc:     "2–3 sentence excerpt",
-    url:      "/blog/slug/",
-    tags:     ["n8n","AI Agents"],   // first tag drives card accent colour
-    date:     "2026-03-10",          // ISO date string
-    readTime: 7                      // minutes (integer)
-  }
-*/
 const BLOG_POSTS = [
-  {
-    title: "How to Post on X Every Day Without Writing a Single Word — n8n + AI",
-    desc: "Build a fully autonomous X posting system: n8n generates topics in your industry, writes posts in your voice, and publishes on schedule — completely hands-free after a 60-minute setup.",
-    url: "/blog/how-to-automate-social-media-posts-on-x-with-n8n/",
-    tags: ["n8n","Social Media","AI Agents"],
-    date: "2026-03-10",
-    readTime: 7
-  },
-  {
-    title: "Make.com vs n8n in 2026: Which Automation Platform Is Right for Your Business?",
-    desc: "A no-fluff comparison of the two most popular automation platforms for SMBs — covering pricing, complexity, AI capabilities, and which scenarios favour each tool.",
-    url: "/blog/make-com-vs-n8n-comparison/",
-    tags: ["Make.com","n8n","Comparison"],
-    date: "2026-03-08",
-    readTime: 9
-  },
-  {
-    title: "How CPA Firms Save 40+ Hours a Week Using AI Automation",
-    desc: "The exact automation stack that eliminates manual data entry, automates client reminders, and streamlines tax-season document collection for accounting firms.",
-    url: "/blog/cpa-firm-automation-save-time/",
-    tags: ["CPA & Accounting","AI Agents","Case Study"],
-    date: "2026-03-05",
-    readTime: 8
-  },
-  {
-    title: "Build an AI Customer Support Agent With n8n in Under 2 Hours",
-    desc: "Step-by-step walkthrough for creating an AI agent that answers FAQs, escalates complex issues, and logs every ticket — without a developer or a $500/month helpdesk subscription.",
-    url: "/blog/build-ai-customer-support-agent-n8n/",
-    tags: ["n8n","AI Agents","Customer Support"],
-    date: "2026-03-01",
-    readTime: 11
-  },
-  {
-    title: "The Complete Make.com Beginner Guide: Build Your First Workflow in 30 Minutes",
-    desc: "Everything a non-technical business owner needs to know about Make.com — from what scenarios are to how to connect your first two apps without writing a line of code.",
-    url: "/blog/make-com-beginner-guide/",
-    tags: ["Make.com","Beginner Guide"],
-    date: "2026-02-27",
-    readTime: 10
-  },
-  {
-    title: "Voice AI for Dental Practices: How to Automate Appointment Booking Calls",
-    desc: "A Vapi-powered voice agent that handles inbound appointment requests 24/7, reduces no-shows with SMS reminders, and integrates with your practice management software.",
-    url: "/blog/voice-ai-dental-practice-appointment-booking/",
-    tags: ["Voice AI","Healthcare","Vapi"],
-    date: "2026-02-24",
-    readTime: 8
-  },
-  {
-    title: "How to Automate Lead Follow-Up Emails With Make.com and GPT-4o",
-    desc: "Connect your CRM, a scheduling tool, and OpenAI to send personalised follow-up sequences automatically — triggered the moment a new lead fills in your contact form.",
-    url: "/blog/automate-lead-follow-up-emails-make-gpt/",
-    tags: ["Make.com","CRM & Sales","Email Automation"],
-    date: "2026-02-20",
-    readTime: 7
-  },
-  {
-    title: "n8n Self-Hosting Guide: Run Your Own Automation Server for $12/Month",
-    desc: "The exact setup process for hosting n8n on a VPS — covering server configuration, SSL, backups, and the one environment variable that trips up most beginners.",
-    url: "/blog/n8n-self-hosting-guide-vps/",
-    tags: ["n8n","Self-Hosting","DevOps"],
-    date: "2026-02-17",
-    readTime: 14
-  },
-  {
-    title: "How to Build an AI Content Repurposing Machine for Your Business",
-    desc: "One workflow that turns a single blog post into ten social media variants, an email newsletter, a YouTube script, and a LinkedIn article — using AI and zero additional writing time.",
-    url: "/blog/ai-content-repurposing-workflow/",
-    tags: ["AI Agents","Social Media","Content Marketing"],
-    date: "2026-02-13",
-    readTime: 9
-  },
-  {
-    title: "HIPAA-Compliant Automation: What Healthcare Providers Need to Know Before Automating",
-    desc: "A practical guide to building automation workflows that handle patient data legally — covering which platforms are HIPAA-eligible, what a BAA actually covers, and where most clinics unknowingly create risk.",
-    url: "/blog/hipaa-compliant-automation-healthcare/",
-    tags: ["Healthcare","HIPAA","Compliance"],
-    date: "2026-02-10",
-    readTime: 12
-  },
-  {
-    title: "How to Connect Airtable to Any App in 15 Minutes Using Make.com",
-    desc: "The fastest way to turn an Airtable base into a live operational database — synced automatically with your CRM, email tools, and internal dashboards without custom code.",
-    url: "/blog/connect-airtable-make-com/",
-    tags: ["Make.com","Airtable","Integration"],
-    date: "2026-02-06",
-    readTime: 6
-  },
-  {
-    title: "AI Invoice Processing for Small Law Firms: From Inbox to QuickBooks Automatically",
-    desc: "An n8n workflow that extracts invoice data from email attachments using GPT-4o, validates it, and posts it directly to QuickBooks — eliminating manual data entry entirely.",
-    url: "/blog/ai-invoice-processing-law-firm-quickbooks/",
-    tags: ["Legal","AI Agents","Finance Automation"],
-    date: "2026-02-03",
-    readTime: 8
-  },
-  {
-    title: "How to Automate Your Shopify Store: Order Processing, Inventory, and Returns",
-    desc: "The three automation workflows every Shopify merchant needs — covering order routing, low-stock alerts, and automated returns processing — all built on Make.com with no custom code.",
-    url: "/blog/shopify-automation-make-com/",
-    tags: ["eCommerce","Make.com","Shopify"],
-    date: "2026-01-30",
-    readTime: 10
-  },
-  {
-    title: "What Is an AI Agent? A Plain-English Explanation for Business Owners",
-    desc: "No jargon. A clear explanation of what AI agents actually do, how they differ from chatbots and RPA, and three real examples of agents saving businesses $50K+ per year.",
-    url: "/blog/what-is-an-ai-agent-business-owners/",
-    tags: ["AI Agents","Beginner Guide","Education"],
-    date: "2026-01-27",
-    readTime: 6
-  },
-  {
-    title: "Build a Real-Time Google Sheets Dashboard Fed by Make.com Automation",
-    desc: "Connect any tool — CRM, ad platforms, payment processors — to a Google Sheet that updates automatically, giving you a live operations dashboard that requires zero manual data collection.",
-    url: "/blog/google-sheets-dashboard-make-com-automation/",
-    tags: ["Make.com","Google Workspace","Analytics"],
-    date: "2026-01-24",
-    readTime: 7
-  },
-  {
-    title: "n8n Webhook Tutorial: Trigger Automations Instantly From Any External Event",
-    desc: "How webhooks work, how to configure them in n8n, and five practical trigger patterns — from new Stripe payments to GitHub pushes — that will save your team hours every week.",
-    url: "/blog/n8n-webhook-tutorial/",
-    tags: ["n8n","Webhooks","Developer Guide"],
-    date: "2026-01-21",
-    readTime: 8
-  },
-  {
-    title: "How Real Estate Agencies Use Automation to Respond to Leads in Under 60 Seconds",
-    desc: "The lead-response workflow that sends a personalised SMS and email within seconds of a new lead submitting a form — and automatically books a showing without agent involvement.",
-    url: "/blog/real-estate-lead-response-automation/",
-    tags: ["Real Estate","CRM & Sales","Voice AI"],
-    date: "2026-01-18",
-    readTime: 8
-  },
-  {
-    title: "Make.com Error Handling: Stop Your Automations From Silently Breaking",
-    desc: "The correct way to set up error routes, incomplete execution handling, and Slack alerts in Make.com — so a failed API call never stops your entire scenario without you knowing.",
-    url: "/blog/make-com-error-handling-guide/",
-    tags: ["Make.com","Advanced","Reliability"],
-    date: "2026-01-15",
-    readTime: 9
-  },
-  {
-    title: "How to Build an AI-Powered Recruitment Pipeline That Screens Candidates Automatically",
-    desc: "An AI agent that reads CVs, scores them against your job description, sends qualified candidates a screening questionnaire, and schedules interviews — without HR lifting a finger.",
-    url: "/blog/ai-recruitment-pipeline-automation/",
-    tags: ["AI Agents","HR Automation","n8n"],
-    date: "2026-01-12",
-    readTime: 11
-  },
-  {
-    title: "The ROI of Automation: How to Calculate What a Workflow Is Actually Worth",
-    desc: "A simple framework for calculating the real dollar value of any automation — covering time saved, error reduction, and revenue impact — so you can justify every implementation with hard numbers.",
-    url: "/blog/roi-of-automation-calculation-framework/",
-    tags: ["Business Strategy","ROI","Education"],
-    date: "2026-01-09",
-    readTime: 7
-  }
+ {
+  title: "How to Connect Veeqo to Make.com for Seamless Order Automation",
+  desc: "Learn step-by-step how to integrate Veeqo with Make.com to automate order processing, sync upsells, and eliminate manual data entry between platforms.",
+  url: "/blog/how-to-automate-veeqo-to-make-com",
+  tags: ["Make.com","eCommerce","Automation"],
+  date: "2026-03-10",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "How to Automate Voice Order Processing with Make.com and Google Sheets",
+  desc: "Learn how to connect Retell voice agents to Google Sheets using Make.com — creating a unified order system that works whether customers call or fill out a form.",
+  url: "/blog/automate-voice-orders-make-google-sheets",
+  tags: ["Make.com","Voice AI","CRM"],
+  date: "2024-03-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Stop Missing Important Emails — AI Gmail Sorting to Telegram with Make.com",
+  desc: "Tired of missing critical emails buried in your inbox? This Make.com automation scans Gmail for priority messages, summarizes them with AI, and pushes alerts to Telegram so you never miss important communications again.",
+  url: "/blog/ai-gmail-sorting-to-telegram-with-make",
+  tags: ["Make.com","Email Automation","AI Agents"],
+  date: "2026-03-10",
+  readTime: 6,
+  target: "_blank"
+},
+{
+  title: "How to Automate Google Slides from Google Sheets Using Make.com",
+  desc: "Stop manually copying data between spreadsheets and presentations. This Make.com automation pulls questions from Google Sheets and generates polished Google Slides decks automatically.",
+  url: "/blog/automate-google-slides-from-sheets-make-com",
+  tags: ["Make.com","Google Workspace","Automation"],
+  date: "2023-11-15",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Automate Your Morning: Build an AI Executive Brief Agent with Make.com (No-Code)",
+  desc: "Drowning in emails? This Make.com workflow creates an AI assistant that summarizes, prioritizes and categorizes your inbox into a daily executive brief - saving hours each week with no coding required.",
+  url: "/blog/automate-morning-executive-brief-make-com",
+  tags: ["Make.com","AI Agents","Productivity"],
+  date: "2024-03-15",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How to Connect Monday.com to Make.com: Two Simple Methods",
+  desc: "Learn two proven ways to integrate Monday.com with Make.com - including API connections and webhook setups - to automate your workflow between these powerful platforms.",
+  url: "/blog/connect-monday-com-to-make-com",
+  tags: ["Make.com","Workflow","CRM"],
+  date: "2023-11-15",
+  readTime: 6,
+  target: "_blank"
+},
+{
+  title: "How to Automatically Sort and Prioritize Emails with ChatGPT & Make.com",
+  desc: "Stop wasting hours manually sorting emails. This Make.com workflow uses ChatGPT to categorize incoming messages by priority, automatically labeling them so you can focus on what matters most.",
+  url: "/blog/automate-email-sorting-chatgpt-make-com",
+  tags: ["Make.com","Email Automation","AI Agents"],
+  date: "2024-03-15",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "How to Automate Etsy Listings from Google Sheets with Make.com (Zero Manual Work)",
+  desc: "Stop wasting hours manually uploading Etsy listings. This Make.com automation pulls product details from Google Sheets, uploads images/videos from Dropbox, creates drafts, and even auto-pins to Pinterest — all while you sleep.",
+  url: "/blog/automate-etsy-listings-make-google-sheets",
+  tags: ["Make.com","eCommerce","Google Sheets"],
+  date: "2026-03-10",
+  readTime: 6,
+  target: "_blank"
+},
+{
+  title: "How to Automate Your Entire Business in 2026 Using Make.com (Beginner's Guide)",
+  desc: "Stop wasting hours on repetitive tasks. This step-by-step Make.com tutorial shows how to automate contact forms, calendar scheduling, AI emails, and web scraping — all without writing code.",
+  url: "/blog/make-com-automation-tutorial-2026",
+  tags: ["Make.com","Automation","AI Agents"],
+  date: "2026-03-10",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "How to Connect Monday.com to Make.com with Webhooks (2026 Tutorial)",
+  desc: "Automatically sync task status changes from Monday.com to Make.com using webhooks - no manual updates required. Learn how to trigger Slack notifications and move completed tasks to a separate board automatically.",
+  url: "/blog/monday-com-make-com-webhook-integration-tutorial",
+  tags: ["Make.com","Workflow","CRM"],
+  date: "2026-03-10",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "What Make.com Needs Before AI Features (175 Production Scenarios Taught Me This)",
+  desc: "After managing 175 production scenarios, I've identified 7 critical usability improvements Make.com needs to implement before rolling out more AI features. These workflow optimizations would save hundreds of hours for power users.",
+  url: "/blog/what-make-com-needs-before-ai-features",
+  tags: ["Make.com","Automation","Productivity"],
+  date: "2026-03-10",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How AI-Powered Column Descriptions in Smartsheet Can Save You Hours of Manual Work",
+  desc: "Stop wasting time explaining complex Smartsheet columns to confused users. This Make.com + OpenAI automation generates clear, contextual descriptions automatically - cutting onboarding time by 80% while preserving your original tone.",
+  url: "/blog/ai-smartsheet-column-descriptions",
+  tags: ["Make.com","Smartsheet","AI Agents"],
+  date: "2024-03-15",
+  readTime: 8,
+  target: "_blank"
+},
 ];
 </script>
 
-<!-- ═══ ENGINE — Filtering, Pagination, Rendering ═══ -->
 <script>
-(function () {
+(function(){
   'use strict';
-
-  /* ── CONFIG ── */
-  const PER_PAGE   = 15;   // cards per page
-  const FEATURED_N = 1;    // first card gets featured treatment on page 1
-
-  /* ── TAG ACCENT PALETTE ── */
+  const PER_PAGE = 15;
   const TAG_PALETTE = {
-    'n8n':              { accent:'#059669', pale:'#ecfdf5' },
-    'Make.com':         { accent:'#0369a1', pale:'#f0f9ff' },
-    'AI Agents':        { accent:'#7c3aed', pale:'#f5f3ff' },
-    'Voice AI':         { accent:'#6d28d9', pale:'#faf5ff' },
-    'Vapi':             { accent:'#6d28d9', pale:'#faf5ff' },
-    'Social Media':     { accent:'#0891b2', pale:'#ecfeff' },
-    'CRM & Sales':      { accent:'#0369a1', pale:'#f0f9ff' },
-    'Email Automation': { accent:'#0369a1', pale:'#f0f9ff' },
-    'CPA & Accounting': { accent:'#b45309', pale:'#fffbeb' },
-    'Finance Automation':{ accent:'#b45309', pale:'#fffbeb' },
-    'Healthcare':       { accent:'#be185d', pale:'#fdf2f8' },
-    'HIPAA':            { accent:'#be185d', pale:'#fdf2f8' },
-    'Legal':            { accent:'#1e40af', pale:'#eff6ff' },
-    'eCommerce':        { accent:'#9d174d', pale:'#fff1f2' },
-    'Shopify':          { accent:'#9d174d', pale:'#fff1f2' },
-    'Real Estate':      { accent:'#0f766e', pale:'#f0fdfa' },
-    'HR Automation':    { accent:'#0f766e', pale:'#f0fdfa' },
-    'Google Workspace': { accent:'#1d4ed8', pale:'#eff6ff' },
-    'Airtable':         { accent:'#0369a1', pale:'#f0f9ff' },
-    'Beginner Guide':   { accent:'#374151', pale:'#f9fafb' },
-    'Case Study':       { accent:'#374151', pale:'#f9fafb' },
-    'Comparison':       { accent:'#374151', pale:'#f9fafb' },
-    'DevOps':           { accent:'#374151', pale:'#f9fafb' },
-    'Self-Hosting':     { accent:'#374151', pale:'#f9fafb' },
-    'Content Marketing':{ accent:'#d97706', pale:'#fffbeb' },
-    'Business Strategy':{ accent:'#374151', pale:'#f9fafb' },
-    'ROI':              { accent:'#374151', pale:'#f9fafb' },
-    'Webhooks':         { accent:'#059669', pale:'#ecfdf5' },
-    'Advanced':         { accent:'#374151', pale:'#f9fafb' },
-    'Reliability':      { accent:'#374151', pale:'#f9fafb' },
-    'Analytics':        { accent:'#1d4ed8', pale:'#eff6ff' },
-    'Integration':      { accent:'#0369a1', pale:'#f0f9ff' },
-    'Education':        { accent:'#374151', pale:'#f9fafb' },
-    'Developer Guide':  { accent:'#059669', pale:'#ecfdf5' },
-    'Compliance':       { accent:'#1e40af', pale:'#eff6ff' },
-    'Customer Support': { accent:'#7c3aed', pale:'#f5f3ff' },
+    'n8n':{ accent:'#059669',pale:'#ecfdf5' },'Make.com':{ accent:'#0369a1',pale:'#f0f9ff' },
+    'AI Agents':{ accent:'#7c3aed',pale:'#f5f3ff' },'Voice AI':{ accent:'#6d28d9',pale:'#faf5ff' },
+    'Vapi':{ accent:'#6d28d9',pale:'#faf5ff' },'Social Media':{ accent:'#0891b2',pale:'#ecfeff' },
+    'CRM & Sales':{ accent:'#0369a1',pale:'#f0f9ff' },'Email Automation':{ accent:'#0369a1',pale:'#f0f9ff' },
+    'CPA & Accounting':{ accent:'#b45309',pale:'#fffbeb' },'Finance Automation':{ accent:'#b45309',pale:'#fffbeb' },
+    'Healthcare':{ accent:'#be185d',pale:'#fdf2f8' },'HIPAA':{ accent:'#be185d',pale:'#fdf2f8' },
+    'Legal':{ accent:'#1e40af',pale:'#eff6ff' },'eCommerce':{ accent:'#9d174d',pale:'#fff1f2' },
+    'Shopify':{ accent:'#9d174d',pale:'#fff1f2' },'Real Estate':{ accent:'#0f766e',pale:'#f0fdfa' },
+    'HR Automation':{ accent:'#0f766e',pale:'#f0fdfa' },'Google Workspace':{ accent:'#1d4ed8',pale:'#eff6ff' },
+    'Airtable':{ accent:'#0369a1',pale:'#f0f9ff' },'Content Marketing':{ accent:'#d97706',pale:'#fffbeb' },
+    'Analytics':{ accent:'#1d4ed8',pale:'#eff6ff' },'Webhooks':{ accent:'#059669',pale:'#ecfdf5' },
+    'Developer Guide':{ accent:'#059669',pale:'#ecfdf5' },'Compliance':{ accent:'#1e40af',pale:'#eff6ff' },
+    'Customer Support':{ accent:'#7c3aed',pale:'#f5f3ff' },
   };
-  const DEFAULT_PALETTE = { accent:'#374151', pale:'#f9fafb' };
+  const DP = { accent:'#374151', pale:'#f9fafb' };
+  const pal = t => TAG_PALETTE[t] || DP;
 
-  function getPalette(tag) {
-    return TAG_PALETTE[tag] || DEFAULT_PALETTE;
+  let page=1, tag=null, q='', sort='newest';
+
+  const $ = id => document.getElementById(id);
+  const cardsGrid=$('cards-grid'), pagEl=$('pagination'), tagList=$('tag-filter-list'),
+        cShown=$('count-shown'), cTotal=$('count-total'), statTotal=$('stat-total'),
+        search=$('blog-search'), sortSel=$('blog-sort'),
+        fBar=$('active-filter-bar'), fChip=$('active-filter-chip'), fClear=$('clear-filter-btn');
+
+  const isNew = d => (Date.now()-new Date(d).getTime()) < 30*24*60*60*1000;
+  const fmtDate = d => new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+  function tagCounts(){ const c={}; BLOG_POSTS.forEach(p=>p.tags.forEach(t=>{c[t]=(c[t]||0)+1;})); return c; }
+
+  function renderTags(){
+    const c=tagCounts(), all=Object.entries(c).sort((a,b)=>b[1]-a[1]);
+    let h=`<button class="blog-tag-pill ${tag===null?'active':''}" data-tag="__all__" aria-pressed="${tag===null}"><span>All Articles</span><span class="blog-tag-count">${BLOG_POSTS.length}</span></button>`;
+    all.forEach(([t,n])=>{ h+=`<button class="blog-tag-pill ${tag===t?'active':''}" data-tag="${esc(t)}" aria-pressed="${tag===t}"><span>${esc(t)}</span><span class="blog-tag-count">${n}</span></button>`; });
+    tagList.innerHTML=h;
+    tagList.querySelectorAll('.blog-tag-pill').forEach(b=>b.addEventListener('click',()=>{ tag=b.dataset.tag==='__all__'?null:b.dataset.tag; page=1; render(); }));
   }
 
-  /* ── STATE ── */
-  let currentPage    = 1;
-  let activeTag      = null;
-  let searchQuery    = '';
-  let sortOrder      = 'newest';
-
-  /* ── DOM refs ── */
-  const cardsGrid      = document.getElementById('cards-grid');
-  const paginationEl   = document.getElementById('pagination');
-  const tagList        = document.getElementById('tag-filter-list');
-  const countShown     = document.getElementById('count-shown');
-  const countTotal     = document.getElementById('count-total');
-  const statTotal      = document.getElementById('stat-total');
-  const searchInput    = document.getElementById('blog-search');
-  const sortSelect     = document.getElementById('blog-sort');
-  const filterBar      = document.getElementById('active-filter-bar');
-  const filterChip     = document.getElementById('active-filter-chip');
-  const clearBtn       = document.getElementById('clear-filter-btn');
-
-  /* ── HELPERS ── */
-  function isNew(dateStr) {
-    const d = new Date(dateStr);
-    return (Date.now() - d.getTime()) < 30 * 24 * 60 * 60 * 1000;
-  }
-
-  function formatDate(dateStr) {
-    const d = new Date(dateStr + 'T00:00:00');
-    return d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
-  }
-
-  function escapeHtml(s) {
-    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  /* ── BUILD TAG COUNTS ── */
-  function buildTagCounts() {
-    const counts = {};
-    BLOG_POSTS.forEach(p => p.tags.forEach(t => { counts[t] = (counts[t]||0)+1; }));
-    return counts;
-  }
-
-  /* ── RENDER SIDEBAR TAGS ── */
-  function renderTags() {
-    const counts   = buildTagCounts();
-    const allTags  = Object.entries(counts).sort((a,b) => b[1]-a[1]);
-
-    let html = `
-      <button class="blog-tag-pill ${activeTag===null?'active':''}" data-tag="__all__" aria-pressed="${activeTag===null}">
-        <span>All Articles</span>
-        <span class="blog-tag-count">${BLOG_POSTS.length}</span>
-      </button>`;
-    allTags.forEach(([tag, count]) => {
-      html += `
-        <button class="blog-tag-pill ${activeTag===tag?'active':''}" data-tag="${escapeHtml(tag)}" aria-pressed="${activeTag===tag}">
-          <span>${escapeHtml(tag)}</span>
-          <span class="blog-tag-count">${count}</span>
-        </button>`;
-    });
-    tagList.innerHTML = html;
-    tagList.querySelectorAll('.blog-tag-pill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const t = btn.dataset.tag;
-        activeTag    = t === '__all__' ? null : t;
-        currentPage  = 1;
-        render();
-      });
-    });
-  }
-
-  /* ── FILTER + SORT DATA ── */
-  function getFiltered() {
-    let posts = BLOG_POSTS.slice();
-
-    if (activeTag) {
-      posts = posts.filter(p => p.tags.includes(activeTag));
+  function filtered(){
+    let p=BLOG_POSTS.slice();
+    if(tag) p=p.filter(x=>x.tags.includes(tag));
+    if(q){ const lq=q.toLowerCase(); p=p.filter(x=>x.title.toLowerCase().includes(lq)||x.desc.toLowerCase().includes(lq)||x.tags.some(t=>t.toLowerCase().includes(lq))); }
+    switch(sort){
+      case'oldest': p.sort((a,b)=>a.date.localeCompare(b.date)); break;
+      case'az':     p.sort((a,b)=>a.title.localeCompare(b.title)); break;
+      default:      p.sort((a,b)=>b.date.localeCompare(a.date));
     }
-
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      posts = posts.filter(p =>
-        p.title.toLowerCase().includes(q) ||
-        p.desc.toLowerCase().includes(q)  ||
-        p.tags.some(t => t.toLowerCase().includes(q))
-      );
-    }
-
-    switch(sortOrder) {
-      case 'oldest': posts.sort((a,b) => a.date.localeCompare(b.date)); break;
-      case 'az':     posts.sort((a,b) => a.title.localeCompare(b.title)); break;
-      default:       posts.sort((a,b) => b.date.localeCompare(a.date));
-    }
-
-    return posts;
+    return p;
   }
 
-  /* ── RENDER CARD HTML ── */
-  function renderCard(post, index, isPage1) {
-    const pal      = getPalette(post.tags[0]);
-    const featured = isPage1 && index === 0;
-    const newBadge = isNew(post.date);
-
-    const tagsHtml = post.tags.map(t => {
-      const p = getPalette(t);
-      return `<span class="blog-card-tag" style="background:${p.pale};color:${p.accent}">${escapeHtml(t)}</span>`;
-    }).join('');
-
-    const headerHtml = `
-      <div class="blog-card-header">
-        <div class="blog-card-tags">${tagsHtml}</div>
-        ${newBadge ? '<span class="blog-card-new-badge" aria-label="Recently published">New</span>' : ''}
-      </div>`;
-
-    const footerHtml = `
-      <div class="blog-card-footer">
-        <div class="blog-card-meta">
-          <span class="blog-card-meta-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-            <time datetime="${post.date}">${formatDate(post.date)}</time>
-          </span>
-          <span class="blog-card-meta-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-            ${post.readTime} min read
-          </span>
-        </div>
-        <span class="blog-card-read-link" aria-hidden="true">
-          Read article
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </span>
-      </div>`;
-
-    if (featured) {
-      return `
-        <a href="${escapeHtml(post.url)}"
-           class="blog-card featured"
-           style="--card-accent:${pal.accent};--card-accent-pale:${pal.pale}"
-           aria-label="${escapeHtml(post.title)}">
-          <div class="blog-card-body">
-            ${headerHtml}
-            <h2 class="blog-card-title">${escapeHtml(post.title)}</h2>
-            <p class="blog-card-desc">${escapeHtml(post.desc)}</p>
-            ${footerHtml}
-          </div>
-          <div class="blog-card-aside">
-            <span class="blog-card-featured-label">Featured</span>
-          </div>
-        </a>`;
-    }
-
-    return `
-      <a href="${escapeHtml(post.url)}"
-         class="blog-card"
-         style="--card-accent:${pal.accent};--card-accent-pale:${pal.pale}"
-         aria-label="${escapeHtml(post.title)}">
-        ${headerHtml}
-        <h2 class="blog-card-title">${escapeHtml(post.title)}</h2>
-        <p class="blog-card-desc">${escapeHtml(post.desc)}</p>
-        ${footerHtml}
-      </a>`;
+  function card(post,i,pg1){
+    const p=pal(post.tags[0]), feat=pg1&&i===0, nb=isNew(post.date);
+    const tgt=post.target?' target="'+esc(post.target)+'" rel="noopener"':'';
+    const tags=post.tags.map(t=>{ const pp=pal(t); return `<span class="blog-card-tag" style="background:${pp.pale};color:${pp.accent}">${esc(t)}</span>`; }).join('');
+    const hdr=`<div class="blog-card-header"><div class="blog-card-tags">${tags}</div>${nb?'<span class="blog-card-new-badge">New</span>':''}</div>`;
+    const ftr=`<div class="blog-card-footer"><div class="blog-card-meta"><span class="blog-card-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="${post.date}">${fmtDate(post.date)}</time></span><span class="blog-card-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${post.readTime} min read</span></div><span class="blog-card-read-link" aria-hidden="true">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>`;
+    if(feat) return `<a href="${esc(post.url)}"${tgt} class="blog-card featured" style="--card-accent:${p.accent};--card-accent-pale:${p.pale}" aria-label="${esc(post.title)}"><div class="blog-card-body">${hdr}<h2 class="blog-card-title">${esc(post.title)}</h2><p class="blog-card-desc">${esc(post.desc)}</p>${ftr}</div><div class="blog-card-aside"><span class="blog-card-featured-label">Featured</span></div></a>`;
+    return `<a href="${esc(post.url)}"${tgt} class="blog-card" style="--card-accent:${p.accent};--card-accent-pale:${p.pale}" aria-label="${esc(post.title)}">${hdr}<h2 class="blog-card-title">${esc(post.title)}</h2><p class="blog-card-desc">${esc(post.desc)}</p>${ftr}</a>`;
   }
 
-  /* ── RENDER PAGINATION ── */
-  function renderPagination(totalPages) {
-    if (totalPages <= 1) { paginationEl.innerHTML = ''; return; }
-
-    const WINDOW = 2;
-    let html = '';
-
-    // Prev
-    html += `<button class="blog-page-btn" ${currentPage===1?'disabled':''} data-page="${currentPage-1}" aria-label="Previous page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>`;
-
-    // Page numbers with ellipsis
-    const pages = [];
-    for (let i=1; i<=totalPages; i++) {
-      if (i===1 || i===totalPages || (i>=currentPage-WINDOW && i<=currentPage+WINDOW)) {
-        pages.push(i);
-      }
-    }
-    let prev = null;
-    pages.forEach(p => {
-      if (prev !== null && p - prev > 1) {
-        html += `<span class="blog-page-ellipsis" aria-hidden="true">…</span>`;
-      }
-      html += `<button class="blog-page-btn ${p===currentPage?'active':''}" data-page="${p}" aria-label="Page ${p}" ${p===currentPage?'aria-current="page"':''}>
-        ${p}
-      </button>`;
-      prev = p;
-    });
-
-    // Next
-    html += `<button class="blog-page-btn" ${currentPage===totalPages?'disabled':''} data-page="${currentPage+1}" aria-label="Next page">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>`;
-
-    paginationEl.innerHTML = html;
-    paginationEl.querySelectorAll('.blog-page-btn[data-page]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        currentPage = parseInt(btn.dataset.page, 10);
-        render();
-        // Smooth scroll to top of card area
-        document.getElementById('blog-main-area').scrollIntoView({ behavior:'smooth', block:'start' });
-      });
-    });
+  function renderPag(total){
+    if(total<=1){ pagEl.innerHTML=''; return; }
+    let h=`<button class="blog-page-btn" ${page===1?'disabled':''} data-page="${page-1}" aria-label="Previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>`;
+    const pages=[]; for(let i=1;i<=total;i++) if(i===1||i===total||(i>=page-2&&i<=page+2)) pages.push(i);
+    let prev=null; pages.forEach(p=>{ if(prev!==null&&p-prev>1) h+=`<span class="blog-page-ellipsis" aria-hidden="true">…</span>`; h+=`<button class="blog-page-btn ${p===page?'active':''}" data-page="${p}" aria-label="Page ${p}" ${p===page?'aria-current="page"':''}>${p}</button>`; prev=p; });
+    h+=`<button class="blog-page-btn" ${page===total?'disabled':''} data-page="${page+1}" aria-label="Next page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>`;
+    pagEl.innerHTML=h;
+    pagEl.querySelectorAll('.blog-page-btn[data-page]').forEach(b=>b.addEventListener('click',()=>{ page=parseInt(b.dataset.page,10); render(); document.getElementById('blog-main-area').scrollIntoView({behavior:'smooth',block:'start'}); }));
   }
 
-  /* ── MASTER RENDER ── */
-  function render() {
-    const filtered   = getFiltered();
-    const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
-    currentPage      = Math.min(currentPage, totalPages);
-
-    const start = (currentPage - 1) * PER_PAGE;
-    const slice = filtered.slice(start, start + PER_PAGE);
-
-    // Cards
-    if (slice.length === 0) {
-      cardsGrid.innerHTML = `
-        <div class="blog-empty">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <p>No articles match <strong>"${escapeHtml(searchQuery || activeTag || '')}"</strong>.<br>Try a different search or filter.</p>
-        </div>`;
-    } else {
-      cardsGrid.innerHTML = slice.map((p, i) => renderCard(p, i, currentPage===1)).join('');
-    }
-
-    // Counts
-    const showing = Math.min(PER_PAGE, filtered.length - start);
-    countShown.textContent = showing;
-    countTotal.textContent = filtered.length;
-    statTotal.textContent  = BLOG_POSTS.length.toLocaleString() + '+';
-
-    // Active filter bar
-    if (activeTag) {
-      filterBar.classList.add('visible');
-      filterChip.textContent = activeTag;
-    } else {
-      filterBar.classList.remove('visible');
-    }
-
-    // Sidebar tags (re-render to update active state)
+  function render(){
+    const f=filtered(), total=Math.max(1,Math.ceil(f.length/PER_PAGE));
+    page=Math.min(page,total);
+    const start=(page-1)*PER_PAGE, slice=f.slice(start,start+PER_PAGE);
+    cardsGrid.innerHTML=slice.length===0
+      ? `<div class="blog-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><p>No articles match <strong>"${esc(q||tag||'')}"</strong>.<br>Try a different search or filter.</p></div>`
+      : slice.map((p,i)=>card(p,i,page===1)).join('');
+    cShown.textContent=Math.min(PER_PAGE,f.length-start);
+    cTotal.textContent=f.length;
+    statTotal.textContent=BLOG_POSTS.length.toLocaleString()+'+';
+    if(tag){ fBar.classList.add('visible'); fChip.textContent=tag; } else { fBar.classList.remove('visible'); }
     renderTags();
-
-    // Pagination
-    renderPagination(totalPages);
+    renderPag(total);
   }
 
-  /* ── EVENT BINDINGS ── */
-  // Search — debounced 200ms
-  let searchTimer;
-  searchInput.addEventListener('input', function() {
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => {
-      searchQuery = this.value.trim();
-      currentPage = 1;
-      render();
-    }, 200);
-  });
-
-  // Sort
-  sortSelect.addEventListener('change', function() {
-    sortOrder   = this.value;
-    currentPage = 1;
-    render();
-  });
-
-  // Clear filter
-  clearBtn.addEventListener('click', () => {
-    activeTag   = null;
-    currentPage = 1;
-    render();
-  });
-
-  /* ── INIT ── */
+  let timer;
+  search.addEventListener('input',function(){ clearTimeout(timer); timer=setTimeout(()=>{ q=this.value.trim(); page=1; render(); },200); });
+  sortSel.addEventListener('change',function(){ sort=this.value; page=1; render(); });
+  fClear.addEventListener('click',()=>{ tag=null; page=1; render(); });
   render();
-
 })();
 </script>
 
-<!-- Scripts deferred to bottom — never in <head> -->
 <script src="/analytics-loader.js" defer></script>
 <script src="../../_shared/site-config.js" defer></script>
 <script src="../../assets/js/images-helper.js" defer></script>
