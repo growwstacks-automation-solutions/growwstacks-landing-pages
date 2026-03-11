@@ -456,9 +456,9 @@ SITE.images = {
 
   VIDEOS: {
     hero:   'https://i.ytimg.com/vi/x3RdjxHS2pI/mqdefault.jpg',
-    andrey: 'https://i.ytimg.com/vi/VxRCbwp8HEY/mqdefault.jpg',
-    noor:   'https://i.ytimg.com/vi/OkRWr5TL-QY/mqdefault.jpg',
-    ankit:  'https://i.ytimg.com/vi/-GhflHmCmFM/mqdefault.jpg'
+    andrey: 'https://i.ytimg.com/vi/FFxoaHm3MwM/mqdefault.jpg',
+    noor:   'https://i.ytimg.com/vi/v3cpr16oHGw/mqdefault.jpg',
+    ankit:  'https://i.ytimg.com/vi/lJ5Z52LX4j8/mqdefault.jpg'
   },
 
   REVIEW_BADGES: {

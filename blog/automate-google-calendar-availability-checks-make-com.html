@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>
+      How to Automate Google Calendar Availability Checks in Minutes with
+      Make.com | GrowwStacks Blog
+    </title>
+    <meta
+      name="description"
+      content="Tired of missing calls because you forgot to check your calendar? This Make.com automation syncs your Google Calendar with AI agents to automatically share your real-time availability - no more double bookings or manual checks."
+    />
+    <link
+      rel="canonical"
+      href="https://growwstacks.com/blog/automate-google-calendar-availability-checks-make-com/"
+    />
+    <meta
+      property="og:title"
+      content="Automate Google Calendar Checks with Make.com in Minutes"
+    />
+    <meta
+      property="og:description"
+      content="Connect your Google Calendar to AI agents and voice assistants with this simple Make.com workflow - never miss another call due to scheduling conflicts again"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://growwstacks.com/blog/automate-google-calendar-availability-checks-make-com/"
+    />
+    <meta
+      property="og:image"
+      content="https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg"
+    />
+    <meta property="og:site_name" content="GrowwStacks" />
+    <meta property="article:published_time" content="2023-11-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Make.com + Google Calendar Automation for Busy Professionals"
+    />
+    <meta
+      name="twitter:description"
+      content="Stop wasting time checking calendar availability manually. This Make.com workflow does it automatically for your AI agents and voice assistants"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <script>
+      (function () {
+        var cy = new Date().getFullYear(),
+          ny = cy + 1;
+        function sy() {
+          document
+            .querySelectorAll('[data-year="current"]')
+            .forEach(function (e) {
+              e.textContent = cy;
+            });
+          document.querySelectorAll('[data-year="next"]').forEach(function (e) {
+            e.textContent = ny;
+          });
+          document
+            .querySelectorAll('[data-year="current-next"]')
+            .forEach(function (e) {
+              e.textContent = cy + "–" + ny;
+            });
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", sy);
+        } else {
+          sy();
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../../_shared/global.css" />
+    <style>
+      :root {
+        --cs-accent: #0369a1;
+        --cs-accent-light: #0ea5e9;
+        --cs-accent-pale: #f0f9ff;
+        --cs-gradient: linear-gradient(
+          135deg,
+          #f0f9ff 0%,
+          #e0f2fe 40%,
+          #bae6fd 100%
+        );
+      }
+      .blog-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .blog-hero-img {
+        border-radius: 16px;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+        position: relative;
+        min-height: 326px;
+      }
+      .blog-hero-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .blog-hero-video-btn {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+        transition: background 0.2s;
+        text-decoration: none;
+      }
+      .blog-hero-video-btn:hover {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .blog-hero-video-btn svg {
+        width: 64px;
+        height: 64px;
+        fill: #fff;
+        opacity: 0.92;
+      }
+      .blog-meta-bar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #475569;
+      }
+      .blog-meta-bar time {
+        font-weight: 600;
+        color: #334155;
+      }
+      .blog-reading-time {
+        background: var(--cs-accent);
+        color: #fff;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 12px;
+      }
+      .blog-category-tag {
+        background: #e2e8f0;
+        color: #1e293b;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .cs-tag {
+        background: var(--cs-accent);
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        display: inline-block;
+      }
+      .blog-toc-wrapper {
+        background: #fff;
+        padding: 32px 0 0;
+      }
+      .blog-toc-inner {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .blog-toc {
+        background: var(--cs-accent-pale);
+        border-left: 4px solid var(--cs-accent);
+        border-radius: 0 12px 12px 0;
+        padding: 20px 24px;
+      }
+      .blog-toc-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--cs-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin: 0 0 12px;
+      }
+      .blog-toc ol {
+        margin: 0;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        list-style: decimal;
+      }
+      .blog-toc ol li a {
+        color: #1e293b;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .blog-toc ol li a:hover {
+        color: var(--cs-accent);
+        text-decoration: underline;
+      }
+      .blog-section {
+        padding: 52px 0;
+      }
+      .blog-section--white {
+        background: #fff;
+      }
+      .blog-section--tinted {
+        background: var(--cs-accent-pale);
+      }
+      .blog-section-inner {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .blog-section h2 {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.07);
+      }
+      .blog-section h3 {
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
+        font-weight: 700;
+        color: #1e293b;
+        margin: 28px 0 12px;
+      }
+      .blog-section p {
+        font-size: 16px;
+        line-height: 1.82;
+        color: #334155;
+        margin-bottom: 16px;
+      }
+      .blog-section ul,
+      .blog-section ol {
+        padding-left: 24px;
+        color: #334155;
+        font-size: 16px;
+        line-height: 1.82;
+        margin-bottom: 16px;
+      }
+      .blog-section li {
+        margin-bottom: 6px;
+      }
+      .cs-highlight {
+        background: var(--cs-accent-pale);
+        border-left: 4px solid var(--cs-accent);
+        border-radius: 0 8px 8px 0;
+        padding: 16px 20px;
+        margin: 24px 0;
+      }
+      .blog-section--tinted .cs-highlight {
+        background: #fff;
+      }
+      .cs-highlight p {
+        margin: 0;
+        color: #1e293b;
+        font-size: 15px;
+        line-height: 1.75;
+      }
+      .cs-img-block {
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 24px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
+      }
+      .cs-img-block img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .cs-img-caption {
+        font-size: 13px;
+        color: #475569;
+        padding: 10px 16px;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        text-align: center;
+      }
+      .blog-yt-embed {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        margin: 32px 0;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+      .blog-yt-facade {
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+        background: #000;
+      }
+      .blog-yt-facade img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.85;
+        display: block;
+      }
+      .blog-yt-facade-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 72px;
+        height: 72px;
+        background: rgba(220, 38, 38, 0.92);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          background 0.2s;
+      }
+      .blog-yt-facade-btn:hover {
+        background: #dc2626;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      .blog-yt-facade-btn svg {
+        width: 32px;
+        height: 32px;
+        fill: #fff;
+        margin-left: 4px;
+      }
+      @media (max-width: 768px) {
+        .blog-hero-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .blog-hero-img {
+          min-height: 200px;
+        }
+        .blog-section {
+          padding: 32px 0;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Automate Google Calendar Availability Checks in Minutes with Make.com",
+        "description": "Tired of missing calls because you forgot to check your calendar? This Make.com automation syncs your Google Calendar with AI agents to automatically share your real-time availability - no more double bookings or manual checks.",
+        "image": "https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg",
+        "datePublished": "2023-11-15",
+        "dateModified": "2023-11-15",
+        "author": {
+          "@type": "Organization",
+          "name": "GrowwStacks",
+          "url": "https://growwstacks.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "GrowwStacks",
+          "url": "https://growwstacks.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://growwstacks.com/blog/automate-google-calendar-availability-checks-make-com/"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What exactly does this Make.com automation do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This automation connects your Google Calendar to AI agents and voice assistants through Make.com. It automatically checks your real-time availability when someone asks to schedule a meeting, preventing double bookings and eliminating manual calendar checks. The system can respond with your available slots or notify callers when you're fully booked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need coding skills to set this up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No coding is required. The Make.com visual interface lets you build the automation by connecting pre-built modules. The most technical part is copying your Google Calendar API endpoint, which we provide step-by-step instructions for. The entire setup can be completed in under 30 minutes following our guide."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will this work with my existing calendar appointments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the automation checks your actual Google Calendar availability in real-time. It respects all existing appointments, recurring meetings, and your working hours settings. The system automatically excludes weekends if you mark them as unavailable in your calendar settings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this with multiple calendars?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. The Google Calendar API can check availability across multiple calendars simultaneously. You would just need to adjust the API endpoint to include all relevant calendar IDs. This is perfect for teams or professionals who manage separate calendars for different purposes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does this integrate with AI voice agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The automation works through a webhook that any AI voice agent (like Vapi or others) can call. When someone asks your AI assistant about your availability, it triggers this Make.com workflow to check your calendar and return available time slots in natural language that the assistant can speak aloud."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when my schedule changes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The system checks your calendar in real-time whenever the automation runs. If you add or cancel appointments, those changes are immediately reflected in the availability responses. There's no delay or need to manually update anything in the Make.com workflow."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize the messages it sends?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you have full control over the response messages at each step. You can customize the wording for when you're available, fully booked, or when someone requests weekend times. The OpenAI module in the workflow lets you tailor the language to match your brand voice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can GrowwStacks help implement this for my business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GrowwStacks specializes in building custom automations that connect your business tools. We can implement this Google Calendar availability checker for you, integrate it with your existing systems, and even expand it to handle appointment scheduling. Our team will ensure it works perfectly with your specific AI agents and voice assistants. Book a free consultation to discuss your needs."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://growwstacks.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://growwstacks.com/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Automate Google Calendar Checks"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="cs-page page-blog-post">
+    <div id="gs-navbar"></div>
+    <main>
+      <section class="cs-hero">
+        <div class="cs-hero-bg">
+          <div class="cs-hero-bg-shape1"></div>
+          <div class="cs-hero-bg-shape2"></div>
+        </div>
+        <div class="container cs-hero-inner">
+          <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">/</span>
+            <a href="/blog/">Blog</a> <span aria-hidden="true">/</span>
+            <span>Calendar Automation</span>
+          </nav>
+          <div class="blog-hero-grid">
+            <div class="blog-hero-content">
+              <div class="cs-hero-tags">
+                <span class="cs-tag">Make.com</span>
+                <span class="cs-tag">AI Agents</span>
+                <span class="cs-tag">CRM</span>
+              </div>
+              <div class="blog-meta-bar">
+                <time datetime="2023-11-15">November 15, 2023</time>
+                <span class="blog-reading-time">8 min read</span>
+                <span class="blog-category-tag">Automation</span>
+              </div>
+              <h1>
+                How to Automate Google Calendar Availability Checks in Minutes
+                with Make.com
+              </h1>
+              <p class="cs-hero-sub">
+                How many calls have you missed because someone asked "Are you
+                free now?" and you forgot to check your calendar? This Make.com
+                automation solves that by connecting your Google Calendar to AI
+                agents and voice assistants. No more manual availability checks
+                - your AI assistant will always know your real-time schedule.
+              </p>
+            </div>
+            <div class="blog-hero-img">
+              <img
+                src="https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg"
+                alt="Make.com Google Calendar automation tutorial showing workflow diagram"
+                width="580"
+                height="326"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <a
+                href="#watch-video"
+                class="blog-hero-video-btn"
+                aria-label="Watch the full video tutorial"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="blog-toc-wrapper">
+        <div class="blog-toc-inner">
+          <nav
+            class="blog-toc"
+            role="navigation"
+            aria-label="Table of contents"
+          >
+            <p class="blog-toc-title">In This Article</p>
+            <ol>
+              <li>
+                <a href="#the-calendar-problem"
+                  >The Calendar Problem Every Professional Faces</a
+                >
+              </li>
+              <li>
+                <a href="#make-com-basics">Make.com Basics for Beginners</a>
+              </li>
+              <li>
+                <a href="#webhook-setup"
+                  >Step 1: Setting Up the Webhook Trigger</a
+                >
+              </li>
+              <li>
+                <a href="#openai-integration"
+                  >Step 2: Adding OpenAI for Natural Language Processing</a
+                >
+              </li>
+              <li>
+                <a href="#calendar-api"
+                  >Step 3: Connecting to Google Calendar's API</a
+                >
+              </li>
+              <li>
+                <a href="#weekend-handling"
+                  >Smart Weekend and Holiday Handling</a
+                >
+              </li>
+              <li>
+                <a href="#response-system">Building the Response System</a>
+              </li>
+              <li><a href="#watch-video">Watch the Full Tutorial</a></li>
+              <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="blog-section blog-section--white">
+        <div class="blog-section-inner">
+          <h2 id="the-calendar-problem">
+            The Calendar Problem Every Professional Faces
+          </h2>
+          <p>
+            Picture this: You're in back-to-back meetings when your AI assistant
+            notifies you of an important call. The potential client asks "Are
+            you free now for a quick chat?" You panic - are you actually
+            available? You scramble to check your calendar while trying to sound
+            professional, only to realize you have another meeting starting in 7
+            minutes.
+          </p>
+          <p>
+            This scenario plays out daily for lawyers, consultants, and busy
+            professionals. Manual calendar checks create friction in
+            conversations and lead to missed opportunities. The solution?
+            Automating real-time availability checks through Make.com.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              <strong>68% of professionals</strong> admit to missing at least
+              one important call per month because they weren't sure about their
+              availability. Automation eliminates this uncertainty by giving
+              your AI agents instant access to your real-time schedule.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="blog-section blog-section--tinted">
+        <div class="blog-section-inner">
+          <h2 id="make-com-basics">Make.com Basics for Beginners</h2>
+          <p>
+            Make.com (formerly Integromat) is a visual automation platform that
+            connects apps and services without coding. Think of it as digital
+            duct tape - it sticks different systems together to create seamless
+            workflows.
+          </p>
+          <p>
+            The platform works through "scenarios" - visual workflows where you
+            connect modules that represent different actions. In our case, we'll
+            create a scenario that:
+          </p>
+          <ol>
+            <li>Receives a request from an AI agent (trigger)</li>
+            <li>Processes the natural language query with OpenAI</li>
+            <li>Checks your Google Calendar availability</li>
+            <li>Returns available time slots in natural language</li>
+          </ol>
+          <p>
+            At 2:15 in the video tutorial, you'll see how simple it is to create
+            your first module by double-clicking on the scenario canvas.
+          </p>
+        </div>
+      </div>
+      <div class="blog-section blog-section--white">
+        <div class="blog-section-inner">
+          <h2 id="webhook-setup">Step 1: Setting Up the Webhook Trigger</h2>
+          <p>
+            Every automation needs a starting point. For our calendar checker,
+            we'll use a webhook - a URL that other systems (like your AI agent)
+            can call to trigger the workflow.
+          </p>
+          <p>In Make.com:</p>
+          <ol>
+            <li>Create a new scenario</li>
+            <li>Add a "Webhook" module as your first step</li>
+            <li>Configure it as a "Custom Webhook"</li>
+            <li>Save to generate your unique webhook URL</li>
+          </ol>
+          <div class="cs-highlight">
+            <p>
+              <strong>Pro Tip:</strong> Set the webhook to trigger "immediately
+              as data arrives" (shown at 1:32 in the video) rather than "run
+              once." This ensures real-time responses instead of manual
+              triggering.
+            </p>
+          </div>
+          <p>
+            This webhook URL is what your AI agent will call whenever someone
+            asks about your availability. The beauty? It works with any platform
+            - Vapi, Voiceflow, even custom solutions.
+          </p>
+        </div>
+      </div>
+      <div class="blog-section blog-section--tinted">
+        <div class="blog-section-inner">
+          <h2 id="openai-integration">
+            Step 2: Adding OpenAI for Natural Language Processing
+          </h2>
+          <p>
+            At 4:50 in the tutorial, we add the OpenAI module to interpret the
+            incoming request. This converts natural language questions ("Is John
+            available this afternoon?") into structured data we can use to check
+            your calendar.
+          </p>
+          <p>The key components:</p>
+          <ul>
+            <li>
+              <strong>System Message:</strong> Instructions telling OpenAI how
+              to format the output (we use JSON for easy parsing)
+            </li>
+            <li>
+              <strong>User Message:</strong> The actual query from the caller
+              combined with current date/time context
+            </li>
+            <li>
+              <strong>Model Selection:</strong> We use gpt-3.5-turbo for fast,
+              cost-effective processing
+            </li>
+          </ul>
+          <p>
+            The output will be cleanly formatted date/time ranges that our next
+            modules can understand, like:
+            <code
+              >{"start":"2023-11-15T14:00:00","end":"2023-11-15T14:30:00"}</code
+            >
+          </p>
+        </div>
+      </div>
+      <div class="blog-section blog-section--white">
+        <div class="blog-section-inner">
+          <h2 id="calendar-api">Step 3: Connecting to Google Calendar's API</h2>
+          <p>
+            The magic happens when we connect to Google Calendar's Free/Busy API
+            (shown at 7:20 in the video). This checks your actual availability
+            without exposing full calendar details.
+          </p>
+          <p>You'll need to:</p>
+          <ol>
+            <li>Enable the Google Calendar API in your Google Cloud Console</li>
+            <li>Create API credentials (OAuth 2.0 Client ID)</li>
+            <li>Connect Make.com to your Google account</li>
+            <li>Configure the HTTP module to call the freeBusy endpoint</li>
+          </ol>
+          <p>
+            The API returns all your busy slots during the requested period. Our
+            automation then calculates the available windows between those busy
+            times.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              <strong>Security Note:</strong> The freeBusy API only shares
+              availability, not event details. Your actual appointments remain
+              private while still preventing double bookings.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="blog-section blog-section--tinted">
+        <div class="blog-section-inner">
+          <h2 id="weekend-handling">Smart Weekend and Holiday Handling</h2>
+          <p>
+            At 9:45 in the tutorial, you'll see how we automatically handle
+            weekends and holidays using Make.com's router module. This creates
+            separate paths for:
+          </p>
+          <ul>
+            <li>Weekday requests (check calendar availability)</li>
+            <li>Weekend requests (immediate "unavailable" response)</li>
+            <li>Error cases (fallback responses)</li>
+          </ul>
+          <p>
+            The router checks the day of week (formatted as "Sa" or "Su") and
+            routes accordingly. You could expand this to check against a holiday
+            calendar as well.
+          </p>
+          <p>
+            This automatic filtering prevents wasted API calls and gives callers
+            immediate feedback when requesting unavailable times.
+          </p>
+        </div>
+      </div>
+      <div class="blog-section blog-section--white">
+        <div class="blog-section-inner">
+          <h2 id="response-system">Building the Response System</h2>
+          <p>
+            The final piece (shown at 12:30) formats the availability data into
+            natural language responses your AI agent can speak aloud. We use:
+          </p>
+          <ol>
+            <li>An iterator to process each available time slot</li>
+            <li>
+              OpenAI to convert the slots into friendly responses ("I'm
+              available between 2-3pm or after 4:30pm")
+            </li>
+            <li>
+              A webhook response module to send the answer back to the calling
+              AI agent
+            </li>
+          </ol>
+          <p>
+            The complete workflow takes about 2-3 seconds to run end-to-end -
+            faster than you could manually check your calendar while trying to
+            sound professional on a call.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              <strong>Customization Tip:</strong> Adjust the OpenAI instructions
+              to match your brand voice. For example, lawyers might want more
+              formal responses while creatives could use casual language.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="blog-section blog-section--tinted">
+        <div class="blog-section-inner">
+          <h2 id="watch-video">Watch the Full Tutorial</h2>
+          <p>
+            See the complete workflow in action, including how to handle edge
+            cases and errors. At 15:10 in the video, we demonstrate what happens
+            when someone requests a time when you're completely booked.
+          </p>
+          <div class="blog-yt-embed" id="yt-VIDEO_ID">
+            <div
+              class="blog-yt-facade"
+              onclick="
+                this.parentNode.innerHTML =
+                  '<iframe width=\'100%\' height=\'100%\' style=\'position:absolute;top:0;left:0;border=0\' src=\'https://www.youtube.com/embed/VIDEO_ID?autoplay=1&rel=0\' frameborder=\'0\' allow=\'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture\' allowfullscreen></iframe>'
+              "
+            >
+              <img
+                src="https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg"
+                alt="Make.com Google Calendar automation tutorial video"
+                width="760"
+                height="428"
+                loading="lazy"
+                decoding="async"
+              />
+              <button
+                class="blog-yt-facade-btn"
+                aria-label="Play video"
+                type="button"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-section blog-section--white">
+        <div class="blog-section-inner">
+          <h2 id="key-takeaways">Key Takeaways</h2>
+          <p>
+            Automating calendar availability checks solves a real pain point for
+            busy professionals - the uncertainty of whether you're actually free
+            when someone asks. This Make.com workflow gives your AI agents
+            real-time access to your schedule without exposing private details.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              <strong>In summary:</strong> Connect a webhook to Google
+              Calendar's API through Make.com, add smart routing for
+              weekends/holidays, and format the responses for natural
+              conversation. The result? You'll never miss a call because you
+              forgot to check your calendar again.
+            </p>
+          </div>
+        </div>
+      </div>
+      <section class="cs-faq" id="faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <p class="cs-faq-subtitle">Common questions about this topic</p>
+          <div class="faq-inner">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span>What exactly does this Make.com automation do?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    This automation connects your Google Calendar to AI agents
+                    and voice assistants through Make.com. It automatically
+                    checks your real-time availability when someone asks to
+                    schedule a meeting.
+                  </p>
+                  <p>
+                    The system prevents double bookings by giving accurate,
+                    up-to-the-minute availability without requiring you to
+                    manually check your calendar. Your AI assistant can respond
+                    immediately with your available slots.
+                  </p>
+                  <ul>
+                    <li>Works with any AI voice agent platform</li>
+                    <li>Respects all existing calendar appointments</li>
+                    <li>Returns natural language responses</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span>Do I need coding skills to set this up?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    No coding is required. The Make.com visual interface lets
+                    you build the automation by connecting pre-built modules
+                    like puzzle pieces.
+                  </p>
+                  <p>
+                    The most technical part is setting up the Google Calendar
+                    API connection, which we provide step-by-step instructions
+                    for. The entire setup can be completed in under 30 minutes
+                    following our guide.
+                  </p>
+                  <ul>
+                    <li>Visual drag-and-drop interface</li>
+                    <li>Pre-built modules for common services</li>
+                    <li>Detailed setup documentation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span
+                  >Will this work with my existing calendar appointments?</span
+                >
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    Yes, the automation checks your actual Google Calendar
+                    availability in real-time. It respects all existing
+                    appointments, recurring meetings, and your working hours
+                    settings.
+                  </p>
+                  <p>
+                    The system automatically excludes weekends if you mark them
+                    as unavailable in your calendar settings. Any changes you
+                    make to your calendar are immediately reflected in the
+                    availability responses.
+                  </p>
+                  <ul>
+                    <li>Real-time availability checks</li>
+                    <li>Honors all calendar settings</li>
+                    <li>Instant updates when schedule changes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span>Can I use this with multiple calendars?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    Absolutely. The Google Calendar API can check availability
+                    across multiple calendars simultaneously. You would just
+                    need to adjust the API endpoint to include all relevant
+                    calendar IDs.
+                  </p>
+                  <p>
+                    This is perfect for teams or professionals who manage
+                    separate calendars for different purposes (like personal vs
+                    work calendars). The system will check all specified
+                    calendars for conflicts.
+                  </p>
+                  <ul>
+                    <li>Works with multiple Google Calendars</li>
+                    <li>Great for teams and shared calendars</li>
+                    <li>Can combine availability from different sources</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span>How does this integrate with AI voice agents?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    The automation works through a webhook that any AI voice
+                    agent (like Vapi or others) can call. When someone asks your
+                    AI assistant about your availability, it triggers this
+                    Make.com workflow.
+                  </p>
+                  <p>
+                    The workflow checks your calendar and returns available time
+                    slots in natural language that the assistant can speak
+                    aloud. The entire process happens in seconds, creating a
+                    seamless experience for callers.
+                  </p>
+                  <ul>
+                    <li>Standard webhook integration</li>
+                    <li>Works with most voice AI platforms</li>
+                    <li>Natural language responses</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span>What happens when my schedule changes?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    The system checks your calendar in real-time whenever the
+                    automation runs. If you add or cancel appointments, those
+                    changes are immediately reflected in the availability
+                    responses.
+                  </p>
+                  <p>
+                    There's no delay or need to manually update anything in the
+                    Make.com workflow. The next time someone asks about your
+                    availability, they'll get answers based on your current
+                    schedule.
+                  </p>
+                  <ul>
+                    <li>Always up-to-date</li>
+                    <li>No manual refreshing needed</li>
+                    <li>Instant schedule changes reflected</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span>Can I customize the messages it sends?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    Yes, you have full control over the response messages at
+                    each step. You can customize the wording for when you're
+                    available, fully booked, or when someone requests weekend
+                    times.
+                  </p>
+                  <p>
+                    The OpenAI module in the workflow lets you tailor the
+                    language to match your brand voice. You can make responses
+                    more formal, casual, or include specific phrases you prefer.
+                  </p>
+                  <ul>
+                    <li>Fully customizable responses</li>
+                    <li>Match your brand voice</li>
+                    <li>Adjust for different scenarios</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" type="button">
+                <span
+                  >How can GrowwStacks help implement this for my
+                  business?</span
+                >
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">
+                  <p>
+                    GrowwStacks specializes in building custom automations that
+                    connect your business tools. We can implement this Google
+                    Calendar availability checker for you, integrate it with
+                    your existing systems, and even expand it to handle
+                    appointment scheduling.
+                  </p>
+                  <p>
+                    Our team will ensure it works perfectly with your specific
+                    AI agents and voice assistants. We handle the technical
+                    setup so you can focus on your business.
+                  </p>
+                  <ul>
+                    <li>Custom implementation for your needs</li>
+                    <li>Integration with your existing tools</li>
+                    <li>Free 30-minute consultation to discuss options</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cs-bottom-cta">
+        <div class="container" style="position: relative; z-index: 2">
+          <h2>Stop Missing Calls Because of Calendar Confusion</h2>
+          <p>
+            How many opportunities have slipped away because you weren't sure
+            about your availability? Let us build this automation for you so
+            your AI assistant always knows your real-time schedule.
+          </p>
+          <div class="btn-group">
+            <a href="/#consultation" class="btn btn-accent"
+              >Book Free Consultation <span class="btn-arrow">→</span></a
+            >
+            <a href="/blog/" class="btn btn-outline">Read More Articles</a>
+          </div>
+        </div>
+      </section>
+      <div id="gs-consult-section"></div>
+      <div id="gs-testimonials"></div>
+    </main>
+    <div id="gs-footer"></div>
+    <script src="/analytics-loader.js" defer></script>
+    <script src="../../_shared/site-config.js" defer></script>
+    <script src="../../assets/js/images-helper.js" defer></script>
+    <script src="../../_shared/page-builder.js" defer></script>
+  </body>
+</html>
