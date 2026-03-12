@@ -1,4 +1,31 @@
 const BLOG_POSTS = [
+{
+  title: "How To Connect Google Sheets To Zapier In 5 Simple Steps (2024 Guide)",
+  desc: "Tired of manually copying data between Google Sheets and other apps? This step-by-step guide shows you exactly how to connect Google Sheets to Zapier, allowing you to automate spreadsheet tasks without writing a single line of code.",
+  url: "/blog/how-to-connect-google-sheets-to-zapier",
+  tags: ["Zapier","Workflow","General Business"],
+  date: "2024-05-15",
+  readTime: 6,
+  target: "_blank"
+},
+{
+  title: "How to Build a LinkedIn Job Scraper in 30 Minutes — n8n + Apify Tutorial (Free Template)",
+  desc: "Tired of manually searching LinkedIn jobs every day? This n8n workflow automatically scrapes LinkedIn job listings, uses AI to analyze which ones match your skills, and sends the best opportunities directly to your phone via Telegram.",
+  url: "/blog/how-to-build-linkedin-job-scraper-n8n-apify",
+  tags: ["n8n","AI Agents","Apify"],
+  date: "2026-03-10",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "How to Connect Your @gmail Account in Make.com — Complete Step-by-Step Guide",
+  desc: "Creating a Gmail connection in Make.com isn't straightforward with personal Gmail accounts. This guide walks you through the entire Google Cloud Console setup process to get your automation workflows accessing your Gmail inbox in under 20 minutes.",
+  url: "/blog/how-to-connect-gmail-account-in-make-com",
+  tags: ["Make.com","AI Agents","Productivity"],
+  date: "2023-07-15",
+  readTime: 10,
+  target: "_blank"
+},
  {
   title: "How to Connect Veeqo to Make.com for Seamless Order Automation",
   desc: "Learn step-by-step how to integrate Veeqo with Make.com to automate order processing, sync upsells, and eliminate manual data entry between platforms.",
