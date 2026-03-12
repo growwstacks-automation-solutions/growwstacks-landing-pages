@@ -108,3 +108,4 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 ];
+
