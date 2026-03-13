@@ -99,8 +99,8 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 {
-  title: "Zapier vs Make: The Truth About No-Code Automation in <span data-year="current"></span>",
-  desc: "Choosing between Zapier and Make isn't about finding the "best" tool—it's about matching the right automation approach to your team's needs. This breakdown reveals why experienced builders often use both platforms for different scenarios.",
+  title: "Zapier vs Make: The Truth About No-Code Automation in",
+  desc: "Choosing between Zapier and Make isn't about finding the best tool—it's about matching the right automation approach to your team's needs. This breakdown reveals why experienced builders often use both platforms for different scenarios.",
   url: "/blog/zapier-vs-make-comparison",
   tags: ["Make.com","General Business","Productivity"],
   date: "2023-11-15",
@@ -243,7 +243,7 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 {
-  title: "WPZap Review <span data-year="current"></span> + $43,000 Bonus | Lifetime WordPress Automation Plugin",
+  title: "WPZap Review  + $43,000 Bonus | Lifetime WordPress Automation Plugin",
   desc: "Stop paying monthly fees for WordPress automation. WPZap delivers Zapier-style workflows inside WordPress with a one-time payment, unlimited automations, and full data control — plus a $43,000 bonus bundle.",
   url: "/blog/wpzap-review-lifetime-wordpress-automation-plugin",
   tags: ["WordPress","Automation","Make.com"],
@@ -270,7 +270,7 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 {
-  title: "Gumloop vs Zapier vs Make (<span data-year="current"></span>) — Which Automation Tool Is Right for You?",
+  title: "Gumloop vs Zapier vs Make — Which Automation Tool Is Right for You?",
   desc: "Choosing between Gumloop, Zapier, and Make? This breakdown reveals which automation platform fits your business size, technical skills, and integration needs — plus when to upgrade.",
   url: "/blog/gumloop-vs-zapier-vs-make-comparison",
   tags: ["Make.com","Workflow","Automation"],
