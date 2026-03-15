@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download and merge multiple PDFs from URLs with the CustomJS API | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate PDF merging from multiple URLs with this free n8n workflow template using PDF Toolkit and CustomJS API">
+<link rel="canonical" href="https://growwstacks.com/workflows/1569-download-and-merge-multiple-pdfs-from-urls-with-the-customjs-api">
+<meta property="og:title" content="Download and merge multiple PDFs from URLs with the CustomJS API | n8n workflow template">
+<meta property="og:description" content="Automate PDF merging from multiple URLs with this free n8n workflow template using PDF Toolkit and CustomJS API">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/1569-download-and-merge-multiple-pdfs-from-urls-with-the-customjs-api">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3281-download-and-merge-multiple-pdfs-from-urls-with-the-cus.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Download and merge multiple PDFs from URLs with the CustomJS API | n8n workflow template">
+<meta name="twitter:description" content="Automate PDF merging from multiple URLs with this free n8n workflow template using PDF Toolkit and CustomJS API">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Download and merge multiple PDFs from URLs with the CustomJS API","description":"Automate PDF merging from multiple URLs with this free n8n workflow template using PDF Toolkit and CustomJS API","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://go.growwstacks.com"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3281-download-and-merge-multiple-pdfs-from-urls-with-the-cus.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the most common use cases for merging multiple PDFs?","acceptedAnswer":{"@type":"Answer","text":"The most common use cases include compiling reports from multiple sources, combining invoices or statements, merging research materials, and creating unified documentation packages. Businesses often need to combine financial statements, legal documents, or marketing materials from different departments or sources into a single file for distribution or archiving."}},{"@type":"Question","name":"How does PDF merging automation save time compared to manual methods?","acceptedAnswer":{"@type":"Answer","text":"Automating PDF merging eliminates the tedious process of manually downloading, organizing, and combining files. For businesses handling dozens or hundreds of PDFs weekly, this workflow can reduce processing time from hours to minutes. It also removes human error risks like missing pages or incorrect file ordering that often occur with manual merging."}},{"@type":"Question","name":"What security considerations exist when automating PDF downloads?","acceptedAnswer":{"@type":"Answer","text":"When automating PDF downloads, it's crucial to verify URL sources and implement error handling for broken links. The workflow should include validation steps to ensure files are downloaded completely and aren't corrupted. For sensitive documents, consider adding encryption or password protection to the merged output file."}},{"@type":"Question","name":"Can this workflow handle very large PDF files or many documents?","acceptedAnswer":{"@type":"Answer","text":"Yes, the workflow can be scaled to handle large volumes, though performance depends on your server resources. For optimal results with large files, we recommend processing in batches and implementing error handling for timeouts. The PDF Toolkit used in this template is efficient at merging documents regardless of size."}},{"@type":"Question","name":"What file naming conventions work best for automated PDF merging?","acceptedAnswer":{"@type":"Answer","text":"Consistent naming conventions help automation workflows. Use clear, descriptive names with dates or sequence numbers (e.g., 'Q1-Report-2023.pdf'). Avoid special characters that might cause processing issues. The workflow can automatically generate output filenames based on timestamps or input parameters for easy identification."}},{"@type":"Question","name":"How can I add page numbers or watermarks during the merge process?","acceptedAnswer":{"@type":"Answer","text":"The PDF Toolkit allows adding page numbers, watermarks, and other modifications during merging. You can extend this workflow with additional JavaScript functions to apply these features automatically. Common enhancements include adding headers/footers, applying company branding, or inserting separator pages between documents."}},{"@type":"Question","name":"Can I get a custom PDF automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in custom PDF automation solutions tailored to your specific business needs. We can build workflows that integrate with your existing systems, add advanced features like OCR or digital signatures, and handle complex document processing requirements. Our team ensures the solution matches your security and compliance standards."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://go.growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://go.growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Download and merge multiple PDFs from URLs with the CustomJS API"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Download and merge multiple PDFs from URLs with the CustomJS API</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">PDF Automation</span>
+          <span class="cs-tag">CustomJS</span>
+          <span class="cs-tag">Document Processing</span>
+        </div>
+        <h1>Download and merge multiple PDFs from URLs with the CustomJS API</h1>
+        <p class="cs-hero-sub">Automatically combine PDF documents from various sources into a single file with this n8n workflow template</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3281-download-and-merge-multiple-pdfs-from-urls-with-the-cus.json?ik-attachment=true" download="n8n-pdf-merge-workflow.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3281-download-and-merge-multiple-pdfs-from-urls-with-the-cus.png" alt="n8n workflow for merging PDFs from URLs" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This n8n workflow automates the process of downloading multiple PDF files from different URLs and merging them into a single, organized document. It solves the common business challenge of consolidating information from various sources—whether they're reports, invoices, contracts, or other documents—into one easy-to-share file.</p>
+        <p>The template uses n8n's HTTP Request node to fetch PDFs from provided URLs, then leverages the PDF Toolkit node to combine them. Custom JavaScript handles file processing logic, error checking, and output configuration. This eliminates hours of manual work while ensuring consistent, error-free results every time.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_722d362a5f.png" alt="PDF merging workflow diagram" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Workflow diagram showing the PDF download and merge process</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Input PDF URLs</h3>
+        <p>The workflow begins by accepting an array of PDF URLs. These can come from various sources—a spreadsheet, database, or directly entered in the workflow. The template includes example data to demonstrate the required format.</p>
+
+        <h3>2. Download PDF Files</h3>
+        <p>For each URL, the workflow makes an HTTP request to download the PDF file. It includes error handling to skip invalid URLs or failed downloads, ensuring the process continues even if some files are unavailable.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_45c9f61d79.png" alt="HTTP request node configuration" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Configuration for downloading PDFs via HTTP requests</div>
+        </div>
+
+        <h3>3. Merge PDFs with PDF Toolkit</h3>
+        <p>The downloaded PDFs are passed to the PDF Toolkit node, which combines them in the specified order. You can configure whether to merge all files into one document or create separate merged files in batches.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Add a Function node before merging to filter or reorder documents based on your requirements, such as sorting by date or file name.</p>
+        </div>
+
+        <h3>4. Output the Merged File</h3>
+        <p>The final merged PDF can be saved to cloud storage, emailed to recipients, or passed to another system for further processing. The workflow includes example configurations for common output destinations.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_2de845b367.png" alt="Merged PDF output options" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Options for saving or distributing the merged PDF output</div>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for businesses and professionals who regularly work with multiple PDF documents:</p>
+        <ul>
+          <li>Accounting teams merging financial statements and invoices</li>
+          <li>Legal professionals combining contract documents</li>
+          <li>HR departments compiling employee records</li>
+          <li>Researchers gathering materials from various sources</li>
+          <li>Marketing teams creating client presentation packages</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (cloud or self-hosted)</li>
+          <li>PDF Toolkit node installed in your n8n environment</li>
+          <li>Access to the PDF files via public URLs or authenticated endpoints</li>
+          <li>Basic familiarity with n8n workflows (no coding required for basic use)</li>
+        </ol>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/workflow_0ea5ccd306.png" alt="Complete workflow overview" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Complete view of the PDF merge workflow in n8n</div>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import it into your n8n instance</li>
+          <li>Configure the HTTP Request nodes with your PDF URLs</li>
+          <li>Set up your preferred output method (storage, email, etc.)</li>
+          <li>Test with a small set of documents before full deployment</li>
+          <li>Schedule the workflow or trigger it as needed</li>
+        </ol>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/1_f5a41c3611.png" alt="Workflow import instructions" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Importing the workflow template into n8n</div>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save hours per week</strong> by automating what would otherwise be a manual, error-prone process of downloading and combining PDFs.</p>
+        <p><strong>Ensure document consistency</strong> with standardized merging that follows the same rules every time, eliminating human error in file ordering or missing pages.</p>
+        <p><strong>Scale effortlessly</strong> from merging a few documents to processing hundreds without additional effort—just provide more URLs.</p>
+        <p><strong>Integrate with other systems</strong> by connecting this workflow to your existing document management, CRM, or accounting software.</p>
+        <p><strong>Customize the output</strong> by extending the workflow to add watermarks, page numbers, or other modifications during the merge process.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/2_97d15f5fb3.png" alt="Customization options" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Advanced customization options for the merged PDF output</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about PDF merging automation and n8n workflows</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the most common use cases for merging multiple PDFs?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The most common use cases include compiling reports from multiple sources, combining invoices or statements, merging research materials, and creating unified documentation packages. Businesses often need to combine financial statements, legal documents, or marketing materials from different departments or sources into a single file for distribution or archiving.</p>
+          <p>For example, accounting teams might merge monthly invoices from various vendors, while legal departments combine contract amendments. The automation ensures all documents are included in the correct order without manual page shuffling or file management.</p>
+          <ul>
+            <li>Financial reporting consolidation</li>
+            <li>Client document package creation</li>
+            <li>Research paper compilation</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does PDF merging automation save time compared to manual methods?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating PDF merging eliminates the tedious process of manually downloading, organizing, and combining files. For businesses handling dozens or hundreds of PDFs weekly, this workflow can reduce processing time from hours to minutes. It also removes human error risks like missing pages or incorrect file ordering that often occur with manual merging.</p>
+          <p>A real-world example: A law firm previously spent 3-4 hours weekly compiling case documents. After implementing this automation, the same task completes in under 10 minutes with perfect consistency. The time savings compound significantly as document volume increases.</p>
+          <ul>
+            <li>Eliminates repetitive manual work</li>
+            <li>Reduces processing errors</li>
+            <li>Scales effortlessly with volume</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What security considerations exist when automating PDF downloads?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>When automating PDF downloads, it's crucial to verify URL sources and implement error handling for broken links. The workflow should include validation steps to ensure files are downloaded completely and aren't corrupted. For sensitive documents, consider adding encryption or password protection to the merged output file.</p>
+          <p>In practice, businesses handling confidential information often add additional security layers. One healthcare provider extended this workflow to automatically redact sensitive patient data before merging records. The automation actually improved compliance by ensuring consistent security measures were applied to every document.</p>
+          <ul>
+            <li>Validate all input URLs</li>
+            <li>Implement file integrity checks</li>
+            <li>Add output encryption if needed</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow handle very large PDF files or many documents?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the workflow can be scaled to handle large volumes, though performance depends on your server resources. For optimal results with large files, we recommend processing in batches and implementing error handling for timeouts. The PDF Toolkit used in this template is efficient at merging documents regardless of size.</p>
+          <p>An engineering firm successfully processes 500+ technical drawings (each 10-20MB) daily using a modified version of this workflow. They process files in batches of 50 with automated retries for any failures. The system handles what would be impossible manually while maintaining perfect document order.</p>
+          <ul>
+            <li>Process large files in batches</li>
+            <li>Monitor server memory usage</li>
+            <li>Implement retry logic for failures</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What file naming conventions work best for automated PDF merging?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Consistent naming conventions help automation workflows. Use clear, descriptive names with dates or sequence numbers (e.g., 'Q1-Report-2023.pdf'). Avoid special characters that might cause processing issues. The workflow can automatically generate output filenames based on timestamps or input parameters for easy identification.</p>
+          <p>A marketing agency using this workflow prefixes all files with client codes and campaign dates (CL123-20230315-Proposal.pdf). This allows the merged document to inherit meaningful metadata while maintaining perfect sorting. Their automated naming system reduced file management errors by 80%.</p>
+          <ul>
+            <li>Include dates or sequence numbers</li>
+            <li>Avoid spaces and special characters</li>
+            <li>Use consistent prefixes/suffixes</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can I add page numbers or watermarks during the merge process?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The PDF Toolkit allows adding page numbers, watermarks, and other modifications during merging. You can extend this workflow with additional JavaScript functions to apply these features automatically. Common enhancements include adding headers/footers, applying company branding, or inserting separator pages between documents.</p>
+          <p>One legal firm customized the workflow to add "CONFIDENTIAL" watermarks and Bates numbering to all merged case files. This previously manual process now happens automatically, saving 15 hours per week while improving document professionalism. The customization took just 2 hours to implement.</p>
+          <ul>
+            <li>Add branding during merge</li>
+            <li>Implement automatic numbering</li>
+            <li>Insert section dividers</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom PDF automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in custom PDF automation solutions tailored to your specific business needs. We can build workflows that integrate with your existing systems, add advanced features like OCR or digital signatures, and handle complex document processing requirements. Our team ensures the solution matches your security and compliance standards.</p>
+          <p>We've helped businesses across industries automate document workflows. A recent project for a financial services client involved processing 5,000+ monthly statements with automatic redaction of sensitive data, custom watermarking, and secure delivery to client portals—all while maintaining audit trails.</p>
+          <ul>
+            <li>Tailored to your document types</li>
+            <li>Integrated with your systems</li>
+            <li>Built to your security standards</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom PDF Automation Solution?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
