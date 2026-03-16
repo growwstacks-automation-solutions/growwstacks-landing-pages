@@ -1,7 +1,7 @@
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a href="/" class="nav-logo">
+      <a href="/" class="nav-logo" target="_blank" rel="noopener">
         <span class="nav-logo-fallback">{{SITE.name}}<span>»</span></span>
       </a>
       <ul class="nav-links">
@@ -13,7 +13,7 @@
       </ul>
     </div>
     <div class="nav-right">
-      <a href="/#consultation" class="btn btn-primary nav-cta">Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/#consultation" class="btn btn-primary nav-cta" target="_blank" rel="noopener">Free Consultation <span class="btn-arrow">→</span></a>
     </div>
     <button class="nav-mobile-toggle" aria-label="Open navigation menu">
       <span></span><span></span><span></span>
@@ -37,10 +37,14 @@
 
   document.querySelectorAll('a[data-nav-link]').forEach(function(link) {
     var key = link.getAttribute('data-nav-link');
-    if (linkMap[key]) link.href = linkMap[key];
+    if (linkMap[key]) {
+      link.href = linkMap[key];
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
   });
 
-  // Mobile toggle — button is already in DOM when this script runs
+  // Mobile toggle
   var btn = document.querySelector('.nav-mobile-toggle');
   var links = document.querySelector('.nav-links');
   if (btn && links) {
