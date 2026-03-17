@@ -226,7 +226,7 @@ const BLOG_POSTS = [
 },
 {
   title: "Stop Chatting. Start Appointing: The AI Agent Revolution (2026 Guide)",
-  desc: "If you're still chatting with AI in <span data-year="current"></span>, you're already behind. Discover how agentic workflows outperform conversational AI and learn to build autonomous AI teams that execute without micromanagement.",
+  desc: "If you're still chatting with AI in 2026, you're already behind. Discover how agentic workflows outperform conversational AI and learn to build autonomous AI teams that execute without micromanagement.",
   url: "/blog/ai-agent-revolution-guide",
   tags: ["AI Agents","GPT","LLM"],
   date: "2026-03-10",
