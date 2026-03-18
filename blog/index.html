@@ -98,8 +98,8 @@
     .blog-hub-layout { padding: 48px 0 80px; background: #f8fafc; }
     .blog-hub-grid {
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 40px;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
       align-items: start;
     }
 
@@ -109,12 +109,12 @@
       background: #fff;
       border: 1px solid #e2e8f0;
       border-radius: 14px;
-      padding: 22px 20px;
-      margin-bottom: 16px;
+      padding: 18px 16px;
+      margin-bottom: 12px;
     }
     .blog-sidebar-title {
-      font-size: 11px; font-weight: 700; color: #94a3b8;
-      text-transform: uppercase; letter-spacing: .08em; margin: 0 0 12px;
+      font-size: 10px; font-weight: 700; color: #94a3b8;
+      text-transform: uppercase; letter-spacing: .08em; margin: 0 0 10px;
     }
 
     /* ── SEARCH BOX ── */
@@ -131,11 +131,11 @@
     #blog-search {
       display: block;
       width: 100%;
-      height: 38px;
+      height: 36px;
       padding: 0 36px 0 12px;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 13px;
       font-family: inherit;
       color: #1e293b;
       background: #f8fafc;
@@ -149,21 +149,38 @@
       background: #fff;
     }
 
-    /* ── TAG PILLS ── */
-    .blog-tag-list { display: flex; flex-direction: column; gap: 4px; }
+    /* ── TAG PILLS (COMPACT) ── */
+    .blog-tag-list { display: flex; flex-direction: column; gap: 1px; }
     .blog-tag-pill {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 7px 12px; border-radius: 8px; border: none; background: transparent;
-      cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 500;
+      padding: 5px 10px; border-radius: 6px; border: none; background: transparent;
+      cursor: pointer; font-size: 12px; font-family: inherit; font-weight: 500;
       color: #475569; text-align: left; transition: background .12s, color .12s; width: 100%;
+      line-height: 1.3;
     }
     .blog-tag-pill:hover { background: #f1f5f9; color: #1e293b; }
     .blog-tag-pill.active { background: #eff6ff; color: #0369a1; font-weight: 700; }
     .blog-tag-count {
-      font-size: 11px; font-weight: 600; background: #e2e8f0; color: #64748b;
-      padding: 2px 7px; border-radius: 20px; min-width: 24px; text-align: center;
+      font-size: 10px; font-weight: 600; background: #f1f5f9; color: #64748b;
+      padding: 1px 6px; border-radius: 20px; min-width: 22px; text-align: center;
+      line-height: 1.5;
     }
     .blog-tag-pill.active .blog-tag-count { background: #0369a1; color: #fff; }
+
+    /* ── SHOW MORE TOGGLE ── */
+    .blog-tag-overflow { display: none; flex-direction: column; gap: 1px; }
+    .blog-tag-overflow.expanded { display: flex; }
+    .blog-tag-toggle {
+      display: flex; align-items: center; gap: 4px;
+      margin-top: 6px; padding: 5px 10px; border: none; background: transparent;
+      cursor: pointer; font-size: 11px; font-weight: 600; color: #0369a1;
+      font-family: inherit; transition: color .15s;
+    }
+    .blog-tag-toggle:hover { color: #0c4a6e; }
+    .blog-tag-toggle svg {
+      width: 12px; height: 12px; transition: transform .2s;
+    }
+    .blog-tag-toggle.expanded svg { transform: rotate(180deg); }
 
     /* ── TOPBAR ── */
     .blog-topbar {
@@ -286,6 +303,7 @@
       .blog-hub-grid { grid-template-columns: 1fr; }
       .blog-sidebar { position: static; }
       .blog-tag-list { flex-direction: row; flex-wrap: wrap; }
+      .blog-tag-overflow { flex-direction: row; flex-wrap: wrap; }
       .blog-tag-pill { width: auto; }
     }
     @media(max-width:640px){
@@ -316,7 +334,7 @@
       <p>Step-by-step tutorials on n8n, Make.com, AI agents, and voice automation — written for business owners and ops teams who want real results, not technical theory.</p>
       <div class="blog-hub-stats">
         <div class="blog-stat">
-          <span class="blog-stat-num" id="stat-total">1,000+</span>
+          <span class="blog-stat-num" id="blog-total"></span>
           <span class="blog-stat-label">Articles</span>
         </div>
         <div class="blog-stat">
@@ -353,7 +371,18 @@
 
         <div class="blog-sidebar-section">
           <p class="blog-sidebar-title">Categories</p>
-          <nav class="blog-tag-list" id="tag-filter-list" aria-label="Filter by category"></nav>
+          <nav class="blog-tag-list" id="tag-filter-list" aria-label="Filter by category">
+            <!-- Top categories rendered here -->
+          </nav>
+          <div class="blog-tag-overflow" id="tag-overflow-list">
+            <!-- Overflow categories rendered here -->
+          </div>
+          <button class="blog-tag-toggle" id="tag-toggle-btn" aria-expanded="false">
+            <span id="tag-toggle-text">Show all</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
         </div>
 
       </aside>
@@ -397,7 +426,10 @@
 <script>
 (function(){
   'use strict';
-  const PER_PAGE = 15;
+  const PER_PAGE_FIRST = 15;
+  const PER_PAGE_REST = 16;
+  const MAX_VISIBLE_TAGS = 20;
+
   const TAG_PALETTE = {
     'n8n':{ accent:'#059669',pale:'#ecfdf5' },'Make.com':{ accent:'#0369a1',pale:'#f0f9ff' },
     'AI Agents':{ accent:'#7c3aed',pale:'#f5f3ff' },'Voice AI':{ accent:'#6d28d9',pale:'#faf5ff' },
@@ -411,16 +443,20 @@
     'Airtable':{ accent:'#0369a1',pale:'#f0f9ff' },'Content Marketing':{ accent:'#d97706',pale:'#fffbeb' },
     'Analytics':{ accent:'#1d4ed8',pale:'#eff6ff' },'Webhooks':{ accent:'#059669',pale:'#ecfdf5' },
     'Developer Guide':{ accent:'#059669',pale:'#ecfdf5' },'Compliance':{ accent:'#1e40af',pale:'#eff6ff' },
-    'Customer Support':{ accent:'#7c3aed',pale:'#f5f3ff' },
+    'Customer Support':{ accent:'#7c3aed',pale:'#f5f3ff' },'Automation':{ accent:'#059669',pale:'#ecfdf5' },
+    'CRM':{ accent:'#0369a1',pale:'#f0f9ff' },'Zapier':{ accent:'#ff4a00',pale:'#fff5f0' },
+    'GPT':{ accent:'#10b981',pale:'#ecfdf5' },'Productivity':{ accent:'#6366f1',pale:'#eef2ff' },
+    'Telephony':{ accent:'#6d28d9',pale:'#faf5ff' },'Retell AI':{ accent:'#6d28d9',pale:'#faf5ff' },
   };
   const DP = { accent:'#374151', pale:'#f9fafb' };
   const pal = t => TAG_PALETTE[t] || DP;
 
-  let page=1, tag=null, q='', sort='newest';
+  let page=1, tag=null, q='', sort='newest', tagsExpanded=false;
 
   const $ = id => document.getElementById(id);
   const cardsGrid=$('cards-grid'), pagEl=$('pagination'), tagList=$('tag-filter-list'),
-        cShown=$('count-shown'), cTotal=$('count-total'), statTotal=$('stat-total'),
+        tagOverflow=$('tag-overflow-list'), tagToggleBtn=$('tag-toggle-btn'), tagToggleText=$('tag-toggle-text'),
+        cShown=$('count-shown'), cTotal=$('count-total'), statTotal=$('blog-total'),
         search=$('blog-search'), sortSel=$('blog-sort'),
         fBar=$('active-filter-bar'), fChip=$('active-filter-chip'), fClear=$('clear-filter-btn');
 
@@ -430,13 +466,60 @@
 
   function tagCounts(){ const c={}; BLOG_POSTS.forEach(p=>p.tags.forEach(t=>{c[t]=(c[t]||0)+1;})); return c; }
 
+  function makeTagPill(t, n, isAll) {
+    const isActive = isAll ? tag === null : tag === t;
+    const dataTag = isAll ? '__all__' : esc(t);
+    const label = isAll ? 'All Articles' : esc(t);
+    return `<button class="blog-tag-pill ${isActive?'active':''}" data-tag="${dataTag}" aria-pressed="${isActive}"><span>${label}</span><span class="blog-tag-count">${n}</span></button>`;
+  }
+
   function renderTags(){
     const c=tagCounts(), all=Object.entries(c).sort((a,b)=>b[1]-a[1]);
-    let h=`<button class="blog-tag-pill ${tag===null?'active':''}" data-tag="__all__" aria-pressed="${tag===null}"><span>All Articles</span><span class="blog-tag-count">${BLOG_POSTS.length}</span></button>`;
-    all.forEach(([t,n])=>{ h+=`<button class="blog-tag-pill ${tag===t?'active':''}" data-tag="${esc(t)}" aria-pressed="${tag===t}"><span>${esc(t)}</span><span class="blog-tag-count">${n}</span></button>`; });
-    tagList.innerHTML=h;
-    tagList.querySelectorAll('.blog-tag-pill').forEach(b=>b.addEventListener('click',()=>{ tag=b.dataset.tag==='__all__'?null:b.dataset.tag; page=1; render(); }));
+
+    /* "All Articles" pill always first */
+    let topHTML = makeTagPill(null, BLOG_POSTS.length, true);
+    let overflowHTML = '';
+    let overflowCount = 0;
+
+    all.forEach(([t,n], i) => {
+      if (i < MAX_VISIBLE_TAGS) {
+        topHTML += makeTagPill(t, n, false);
+      } else {
+        overflowHTML += makeTagPill(t, n, false);
+        overflowCount++;
+      }
+    });
+
+    tagList.innerHTML = topHTML;
+    tagOverflow.innerHTML = overflowHTML;
+
+    /* Show/hide toggle button */
+    if (overflowCount > 0) {
+      tagToggleBtn.style.display = 'flex';
+      tagToggleText.textContent = tagsExpanded ? 'Show less' : `Show all (${all.length})`;
+      tagToggleBtn.classList.toggle('expanded', tagsExpanded);
+      tagOverflow.classList.toggle('expanded', tagsExpanded);
+      tagToggleBtn.setAttribute('aria-expanded', tagsExpanded);
+    } else {
+      tagToggleBtn.style.display = 'none';
+    }
+
+    /* Bind click handlers */
+    const bindPills = el => el.querySelectorAll('.blog-tag-pill').forEach(b =>
+      b.addEventListener('click', () => { tag = b.dataset.tag === '__all__' ? null : b.dataset.tag; page = 1; render(); })
+    );
+    bindPills(tagList);
+    bindPills(tagOverflow);
   }
+
+  /* Toggle expand/collapse */
+  tagToggleBtn.addEventListener('click', () => {
+    tagsExpanded = !tagsExpanded;
+    tagToggleText.textContent = tagsExpanded ? 'Show less' : `Show all (${Object.keys(tagCounts()).length})`;
+    tagToggleBtn.classList.toggle('expanded', tagsExpanded);
+    tagOverflow.classList.toggle('expanded', tagsExpanded);
+    tagToggleBtn.setAttribute('aria-expanded', tagsExpanded);
+  });
 
   function filtered(){
     let p=BLOG_POSTS.slice();
@@ -471,15 +554,22 @@
   }
 
   function render(){
-    const f=filtered(), total=Math.max(1,Math.ceil(f.length/PER_PAGE));
-    page=Math.min(page,total);
-    const start=(page-1)*PER_PAGE, slice=f.slice(start,start+PER_PAGE);
+    const f=filtered();
+function getStart(pg) {
+  if (pg <= 1) return 0;
+  return PER_PAGE_FIRST + (pg - 2) * PER_PAGE_REST;
+}
+function getPerPage(pg) { return pg === 1 ? PER_PAGE_FIRST : PER_PAGE_REST; }
+const totalItems = f.length;
+const total = totalItems <= PER_PAGE_FIRST ? 1 : Math.max(1, 1 + Math.ceil((totalItems - PER_PAGE_FIRST) / PER_PAGE_REST));
+page=Math.min(page,total);
+const start=getStart(page), perPage=getPerPage(page), slice=f.slice(start,start+perPage);
     cardsGrid.innerHTML=slice.length===0
       ? `<div class="blog-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><p>No articles match <strong>"${esc(q||tag||'')}"</strong>.<br>Try a different search or filter.</p></div>`
       : slice.map((p,i)=>card(p,i,page===1)).join('');
-    cShown.textContent=Math.min(PER_PAGE,f.length-start);
+    cShown.textContent=Math.min(perPage,f.length-start);
     cTotal.textContent=f.length;
-    statTotal.textContent=BLOG_POSTS.length.toLocaleString()+'+';
+    statTotal.textContent = (function(n){ return n < 100 ? String(n) : Math.floor(n/50)*50 + '+'; })(BLOG_POSTS.length);
     if(tag){ fBar.classList.add('visible'); fChip.textContent=tag; } else { fBar.classList.remove('visible'); }
     renderTags();
     renderPag(total);
@@ -492,6 +582,7 @@
   render();
 })();
 </script>
+
 
 <script src="/analytics-loader.js" defer></script>
 <script src="../../_shared/site-config.js" defer></script>

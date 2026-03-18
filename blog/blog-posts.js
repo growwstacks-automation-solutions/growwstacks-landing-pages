@@ -3285,15 +3285,6 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 {
-  title: "Cómo Automatizar Tu Negocio en 2026 con Make.com (Guía Paso a Paso)",
-  desc: "Descubre cómo automatizar procesos empresariales con Make.com, desde formularios de contacto hasta programación de reuniones y respuestas personalizadas con IA. Ahorra horas cada semana.",
-  url: "/blog/tutorial-make-com-para-principiantes-2026",
-  tags: ["Make.com","Automatización","IA"],
-  date: "2026-03-10",
-  readTime: 12,
-  target: "_blank"
-},
-{
   title: "How To Build a Telegram Bot with Make.com (No Code, Step-by-Step)",
   desc: "Create a fully functional Telegram bot without writing any code using Make.com. Receive messages, send automated replies, and lay the foundation for AI chatbots and notification systems.",
   url: "/blog/how-to-build-telegram-bot-make-com",
@@ -3327,15 +3318,6 @@ const BLOG_POSTS = [
   tags: ["Make.com","CRM","Sales"],
   date: "2024-03-15",
   readTime: 5,
-  target: "_blank"
-},
-{
-  title: "Bexio automatisieren mit Make.com – weniger Handarbeit, weniger Fehler",
-  desc: "Erfahren Sie, wie Sie manuelle Prozesse in Bexio durch Make.com-Automatisierung ersetzen können – von Kundenverwaltung bis Rechnungserstellung, ohne fehleranfällige manuelle Arbeit.",
-  url: "/blog/bexio-automatisieren-mit-make-com",
-  tags: ["Make.com","Bexio","Automation"],
-  date: "2024-03-15",
-  readTime: 7,
   target: "_blank"
 },
 {
