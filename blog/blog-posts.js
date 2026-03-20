@@ -119,7 +119,7 @@ const BLOG_POSTS = [
 {
   title: "How AI Automatically Routes IT Tickets to the Right Slack Channel (Make.com Demo)",
   desc: "Stop losing IT tickets in the shuffle. This Make.com workflow uses AI to analyze, classify and route tickets instantly to the correct Slack channel with priority levels and reasoning included.",
-  url: "/blog/ai-automated-it-ticket-routing-make-com",
+  url: "/blog/5-ai-automated-it-ticket-routing-make-com",
   tags: ["Make.com","AI Agents","IT Automation"],
   date: "2024-03-15",
   readTime: 5,
