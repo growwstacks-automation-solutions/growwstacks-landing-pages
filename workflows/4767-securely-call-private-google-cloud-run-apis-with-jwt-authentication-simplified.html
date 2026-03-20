@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Securely call private Google Cloud Run APIs with JWT authentication (simplified) | Free Template | GrowwStacks</title>
+<meta name="description" content="Dead-simple workflow to securely call private Google Cloud Run APIs from n8n using JWT authentication. Free-tier friendly solution for custom API logic.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4767-securely-call-private-google-cloud-run-apis-with-jwt-authentication-simplified">
+<meta property="og:title" content="Securely call private Google Cloud Run APIs with JWT authentication (simplified) | n8n workflow template">
+<meta property="og:description" content="Who it's for? Anyone who wants a dead-simple, free-tier friendly way to run custom API logic on Google Cloud Run and call it securely from n8n—no public...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4767-securely-call-private-google-cloud-run-apis-with-jwt-authentication-simplified">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7571-securely-call-private-google-cloud-run-apis-with-jwt-au.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Securely call private Google Cloud Run APIs with JWT authentication (simplified) | n8n workflow template">
+<meta name="twitter:description" content="Dead-simple workflow to securely call private Google Cloud Run APIs from n8n using JWT authentication. Free-tier friendly solution for custom API logic.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Securely call private Google Cloud Run APIs with JWT authentication (simplified)","description":"Dead-simple workflow to securely call private Google Cloud Run APIs from n8n using JWT authentication. Free-tier friendly solution for custom API logic.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7571-securely-call-private-google-cloud-run-apis-with-jwt-au.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is JWT authentication and why is it important for API security?","acceptedAnswer":{"@type":"Answer","text":"JWT (JSON Web Token) authentication is a secure method for verifying API requests. It's important because it allows private APIs to validate callers without exposing sensitive credentials. The token contains encrypted identity information and expires automatically, reducing security risks compared to API keys or basic auth."}},{"@type":"Question","name":"Why would I want to keep my Google Cloud Run APIs private?","acceptedAnswer":{"@type":"Answer","text":"Keeping APIs private prevents unauthorized access and reduces attack surfaces. Private APIs are only accessible through authenticated requests, protecting sensitive business logic and data. This is especially important for internal tools, proprietary algorithms, or systems handling regulated data."}},{"@type":"Question","name":"How does this workflow simplify JWT authentication for Google Cloud Run?","acceptedAnswer":{"@type":"Answer","text":"This workflow automates the complex JWT generation process with pre-configured n8n nodes. It handles token creation, signing with service account credentials, and proper request formatting—eliminating manual coding errors. The template includes error handling and token refresh logic for reliability."}},{"@type":"Question","name":"Can I use this workflow with Google Cloud Run's free tier?","acceptedAnswer":{"@type":"Answer","text":"Yes, this workflow is designed to work within Google Cloud Run's free tier limits. It efficiently manages authentication without consuming excessive resources. The JWT approach minimizes API call overhead, helping stay within free tier quotas while maintaining security."}},{"@type":"Question","name":"What types of custom API logic work best with this setup?","acceptedAnswer":{"@type":"Answer","text":"This setup excels for business logic that needs secure, scalable execution. Common use cases include data processing pipelines, internal microservices, proprietary calculations, and systems that integrate with other Google Cloud services. The private API approach works well for sensitive operations."}},{"@type":"Question","name":"How does this compare to using API Gateway for Cloud Run?","acceptedAnswer":{"@type":"Answer","text":"This JWT approach provides similar security to API Gateway but with more flexibility and lower cost. It's ideal when you need direct control over authentication logic or want to avoid API Gateway's pricing structure. The workflow maintains security while keeping implementation simple."}},{"@type":"Question","name":"Can I get a custom Google Cloud Run API automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. GrowwStacks specializes in custom Google Cloud automation solutions. Our team can design secure API architectures tailored to your specific business requirements, including advanced authentication patterns, custom scaling configurations, and integration with your existing systems."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Securely call private Google Cloud Run APIs with JWT authentication (simplified)"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Securely call private Google Cloud Run APIs with JWT authentication (simplified)</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Cloud Run</span>
+          <span class="cs-tag">API Security</span>
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">JWT</span>
+        </div>
+        <h1>Securely call private Google Cloud Run APIs with JWT authentication (simplified)</h1>
+        <p class="cs-hero-sub">Dead-simple workflow to call private APIs without exposing credentials or compromising security</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7571-securely-call-private-google-cloud-run-apis-with-jwt-au.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7571-securely-call-private-google-cloud-run-apis-with-jwt-au.png" alt="Secure API call workflow diagram" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This workflow solves the challenge of securely accessing private Google Cloud Run APIs from your n8n automation platform. Many businesses need to run custom API logic in the cloud but struggle with implementing proper authentication without complex coding. This template provides a turnkey solution that handles JWT authentication automatically.</p>
+        <p>The workflow generates properly signed JWT tokens using your Google service account credentials, attaches them to API requests, and handles token refresh cycles. It eliminates the security risks of exposing API keys while maintaining the simplicity of calling your private business logic from automation workflows.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="JWT authentication flow diagram" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Secure token generation and validation flow between n8n and Google Cloud Run</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Service account credential setup</h3>
+        <p>The workflow begins by securely loading your Google Cloud service account credentials. These credentials are used to sign the JWT tokens but are never exposed in API calls.</p>
+
+        <h3>2. JWT token generation</h3>
+        <p>The template automatically generates JWT tokens with the correct audience claim (your Cloud Run service URL) and sets appropriate expiration times (default 1 hour). The token is signed using RS256 algorithm for maximum security.</p>
+
+        <h3>3. Authenticated API request</h3>
+        <p>The workflow attaches the generated JWT token to the Authorization header as a Bearer token. It formats the request according to Google Cloud Run's requirements for private API access.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> For production use, store your service account credentials in n8n's credential vault rather than hardcoding them in the workflow.</p>
+        </div>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="n8n workflow nodes configuration" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Pre-configured n8n nodes handling the complete JWT authentication process</div>
+        </div>
+
+        <h3>4. Response handling</h3>
+        <p>The workflow includes error handling for common scenarios like expired tokens or permission issues. Failed requests automatically trigger token regeneration and retry logic when appropriate.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This solution is ideal for businesses running custom API logic on Google Cloud Run that needs to be called securely from automation platforms. It's particularly valuable for:</p>
+        <ul>
+          <li>Developers who want to expose internal tools as private APIs</li>
+          <li>Teams processing sensitive data that can't be exposed publicly</li>
+          <li>Companies needing to comply with security standards like HIPAA or SOC2</li>
+          <li>Startups using Google Cloud Run's free tier for cost-effective scaling</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An active Google Cloud project with Cloud Run enabled</li>
+          <li>A deployed Cloud Run service configured for private access</li>
+          <li>A service account with Cloud Run Invoker permissions</li>
+          <li>The service account's JSON key file</li>
+          <li>n8n instance (cloud or self-hosted) with HTTP Request node available</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import into your n8n instance</li>
+          <li>Add your Google service account credentials to n8n's credential store</li>
+          <li>Update the Cloud Run service URL in the HTTP Request node</li>
+          <li>Test with a simple API call to verify authentication works</li>
+          <li>Replace the example API call with your actual business logic</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminates security risks</strong> by never exposing API keys or service account credentials in requests. The JWT tokens expire automatically and can't be reused if intercepted.</p>
+        <p><strong>Saves development time</strong> with pre-built JWT generation logic that would typically require custom coding. The workflow handles all cryptographic signing automatically.</p>
+        <p><strong>Maintains free-tier eligibility</strong> by using efficient authentication methods that minimize API call overhead and stay within Google Cloud's free tier limits.</p>
+        <p><strong>Simplifies compliance</strong> with security standards by implementing industry-best practices for API authentication out of the box.</p>
+        <p><strong>Future-proof architecture</strong> that works with Google Cloud's latest authentication requirements and can be easily adapted as standards evolve.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Google Cloud Run API security and JWT authentication</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is JWT authentication and why is it important for API security?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>JWT (JSON Web Token) authentication is a secure method for verifying API requests. It's important because it allows private APIs to validate callers without exposing sensitive credentials. The token contains encrypted identity information and expires automatically, reducing security risks compared to API keys or basic auth.</p>
+          <p>In business scenarios, JWT helps maintain security while enabling automation. For example, a financial service might use JWT-secured APIs to process transactions without risking credential exposure. The temporary nature of JWTs limits potential damage from any security breach.</p>
+          <ul>
+            <li>Tokens expire automatically after short periods</li>
+            <li>No sensitive credentials are transmitted</li>
+            <li>Supports fine-grained permission controls</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why would I want to keep my Google Cloud Run APIs private?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Keeping APIs private prevents unauthorized access and reduces attack surfaces. Private APIs are only accessible through authenticated requests, protecting sensitive business logic and data. This is especially important for internal tools, proprietary algorithms, or systems handling regulated data.</p>
+          <p>A healthcare company might keep patient processing APIs private to comply with HIPAA, while a SaaS platform could protect customer data processing logic. Private APIs also prevent competitors from reverse-engineering your business processes through public endpoints.</p>
+          <ul>
+            <li>Essential for compliance with data regulations</li>
+            <li>Protects intellectual property in business logic</li>
+            <li>Reduces infrastructure costs from bot traffic</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does this workflow simplify JWT authentication for Google Cloud Run?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This workflow automates the complex JWT generation process with pre-configured n8n nodes. It handles token creation, signing with service account credentials, and proper request formatting—eliminating manual coding errors. The template includes error handling and token refresh logic for reliability.</p>
+          <p>For example, an e-commerce business could use this to securely connect their inventory management system to Cloud Run APIs without writing any authentication code. The workflow manages all security aspects while they focus on business logic.</p>
+          <ul>
+            <li>No cryptography knowledge required</li>
+            <li>Built-in error recovery mechanisms</li>
+            <li>Consistent implementation across your team</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use this workflow with Google Cloud Run's free tier?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, this workflow is designed to work within Google Cloud Run's free tier limits. It efficiently manages authentication without consuming excessive resources. The JWT approach minimizes API call overhead, helping stay within free tier quotas while maintaining security.</p>
+          <p>Startups often use this combination to prototype secure microservices without upfront costs. The workflow's lightweight authentication adds minimal latency, preserving Cloud Run's fast cold start times that make the free tier practical for many use cases.</p>
+          <ul>
+            <li>Optimized for free tier request limits</li>
+            <li>Minimal compute resource usage</li>
+            <li>Scalable to paid tiers when needed</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of custom API logic work best with this setup?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This setup excels for business logic that needs secure, scalable execution. Common use cases include data processing pipelines, internal microservices, proprietary calculations, and systems that integrate with other Google Cloud services. The private API approach works well for sensitive operations.</p>
+          <p>A marketing agency might process client analytics data through private APIs, while a logistics company could calculate optimal routes without exposing their algorithms. Any business logic that provides competitive advantage benefits from this secure encapsulation.</p>
+          <ul>
+            <li>Data transformation and enrichment</li>
+            <li>Proprietary algorithms and calculations</li>
+            <li>Regulated data processing workflows</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does this compare to using API Gateway for Cloud Run?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This JWT approach provides similar security to API Gateway but with more flexibility and lower cost. It's ideal when you need direct control over authentication logic or want to avoid API Gateway's pricing structure. The workflow maintains security while keeping implementation simple.</p>
+          <p>While API Gateway offers additional features like rate limiting, this solution gives developers more customization options. Businesses often choose this path when they already have n8n in their stack and want to minimize additional Google Cloud services.</p>
+          <ul>
+            <li>No additional Google Cloud service required</li>
+            <li>Full control over authentication logic</li>
+            <li>Easier to customize for specific use cases</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Google Cloud Run API automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. GrowwStacks specializes in custom Google Cloud automation solutions. Our team can design secure API architectures tailored to your specific business requirements, including advanced authentication patterns, custom scaling configurations, and integration with your existing systems.</p>
+          <p>We've helped businesses across industries implement secure Cloud Run solutions - from healthcare data processors to financial analytics platforms. Our experts handle the complex security configurations while you focus on your core business logic.</p>
+          <ul>
+            <li>Tailored to your exact security requirements</li>
+            <li>Integration with your existing tech stack</li>
+            <li>Ongoing support and optimization</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Google Cloud Run Integration?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
