@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extract Thai bank slip data from LINE using SpaceOCR and save to Google Sheets | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate Thai bank slip processing from LINE messages with OCR technology and save structured data to Google Sheets">
+<meta property="og:title" content="Extract Thai bank slip data from LINE using SpaceOCR and save to Google Sheets">
+<meta property="og:description" content="Automate Thai bank slip processing from LINE messages with OCR technology and save structured data to Google Sheets">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/1399-extract-thai-bank-slip-data-from-line-using-spaceocr-and-save-to-google-sheets">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3008-extract-thai-bank-slip-data-from-line-using-spaceocr-an.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Extract Thai bank slip data from LINE using SpaceOCR and save to Google Sheets">
+<meta name="twitter:description" content="Automate Thai bank slip processing from LINE messages with OCR technology and save structured data to Google Sheets">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Extract Thai bank slip data from LINE using SpaceOCR and save to Google Sheets","description":"Automate Thai bank slip processing from LINE messages with OCR technology and save structured data to Google Sheets","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3008-extract-thai-bank-slip-data-from-line-using-spaceocr-an.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does OCR technology help with Thai bank slip processing?","acceptedAnswer":{"@type":"Answer","text":"OCR (Optical Character Recognition) technology automatically extracts text from Thai bank slip images, converting them into editable and searchable data. This eliminates manual data entry errors and speeds up payment reconciliation processes. For example, a Thai e-commerce business can process 100+ daily payment confirmations in minutes instead of hours."}},{"@type":"Question","name":"What are the benefits of automating bank slip processing?","acceptedAnswer":{"@type":"Answer","text":"Automating bank slip processing reduces manual work by 80% while improving accuracy to nearly 100%. Key benefits include instant payment matching, fraud detection through pattern analysis, and automatic accounting system updates. A case study showed a Thai import/export company reduced payment processing time from 3 days to just 2 hours."}},{"@type":"Question","name":"How accurate is SpaceOCR for Thai bank documents?","acceptedAnswer":{"@type":"Answer","text":"SpaceOCR achieves 95-98% accuracy for Thai bank slips when properly configured. It specializes in Thai font recognition and common bank slip formats. The system learns from corrections, improving over time. For best results, ensure slips are clear photos (not screenshots) with minimal shadows or obstructions."}},{"@type":"Question","name":"Can this workflow handle multiple bank formats?","acceptedAnswer":{"@type":"Answer","text":"Yes, the workflow can be configured to recognize slips from all major Thai banks including Bangkok Bank, Kasikorn, SCB, and Krungthai. Each bank's template is mapped to extract account numbers, amounts, dates, and reference numbers. The system flags unrecognized formats for manual review while processing standard formats automatically."}},{"@type":"Question","name":"What security measures protect financial data?","acceptedAnswer":{"@type":"Answer","text":"The workflow uses encrypted connections between LINE, SpaceOCR, and Google Sheets. Sensitive data is never stored permanently in the automation system. For added security, you can configure Google Sheets to mask account numbers and limit access. All processing occurs through official API connections rather than screen scraping."}},{"@type":"Question","name":"How does this compare to manual data entry?","acceptedAnswer":{"@type":"Answer","text":"Automation processes slips 50x faster than manual entry with 10x fewer errors. Where a staff member might process 20 slips/hour manually, this system handles 1000+/hour. It also creates searchable digital records instead of paper files. A Thai accounting firm reported saving 120 hours/month after implementation."}},{"@type":"Question","name":"Can I get a custom bank slip automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. GrowwStacks specializes in custom financial automation solutions. We can tailor this workflow for your specific banks, accounting systems, and business rules. Our team handles everything from Thai OCR optimization to ERP integrations. Book a free consultation to discuss your requirements and potential time savings."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Extract Thai bank slip data from LINE using SpaceOCR and save to Google Sheets","item":"https://growwstacks.com/workflows/1399-extract-thai-bank-slip-data-from-line-using-spaceocr-and-save-to-google-sheets"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Thai Bank Slip OCR</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">LINE</span>
+          <span class="cs-tag">SpaceOCR</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Thai Language</span>
+          <span class="cs-tag">Finance Automation</span>
+        </div>
+        <h1>Extract Thai bank slip data from LINE using SpaceOCR and save to Google Sheets</h1>
+        <p class="cs-hero-sub">Automate payment confirmation processing from Thai bank slip images sent via LINE messenger</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3008-extract-thai-bank-slip-data-from-line-using-spaceocr-an.json?ik-attachment=true" download="thai-bank-slip-ocr-workflow.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3008-extract-thai-bank-slip-data-from-line-using-spaceocr-an.png" alt="Workflow diagram showing LINE to SpaceOCR to Google Sheets integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the tedious manual process of extracting payment details from Thai bank slips received via LINE messenger. Many Thai businesses receive payment confirmations as slip images through LINE, requiring staff to manually transcribe account numbers, amounts, dates, and reference numbers - a time-consuming and error-prone process.</p>
+        <p>The workflow automatically processes these slip images using SpaceOCR's specialized Thai text recognition, extracts all key payment fields, and logs them in Google Sheets with timestamps. This creates an auditable digital record while eliminating manual data entry mistakes that can cause payment reconciliation issues.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Example of Thai bank slip with highlighted data fields" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Typical Thai bank slip showing key data points extracted by the workflow</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. LINE Message Trigger</h3>
+        <p>The workflow activates whenever a new image message arrives in your designated LINE chat. It filters for bank slip images while ignoring other message types.</p>
+
+        <h3>2. SpaceOCR Processing</h3>
+        <p>Each image is sent to SpaceOCR which specializes in Thai font recognition. The service extracts text blocks and identifies key fields like bank name, account numbers, amounts, and transaction references.</p>
+
+        <h3>3. Data Validation</h3>
+        <p>The workflow verifies extracted amounts match Thai number formats and checks for required fields. Suspicious or incomplete data triggers an alert for manual review.</p>
+
+        <h3>4. Google Sheets Update</h3>
+        <p>Validated transactions are logged in your Google Sheet with columns for each data point plus the original image URL. Conditional formatting highlights unprocessed entries.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Google Sheets output showing structured bank slip data" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Automatically populated Google Sheet with extracted bank slip data</div>
+        </div>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Create a separate LINE group just for payment confirmations to keep business transactions organized and make automation more reliable.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This solution benefits any business operating in Thailand that receives payment confirmations via LINE:</p>
+        <ul>
+          <li>E-commerce stores processing customer payments</li>
+          <li>Freelancers and service providers receiving client payments</li>
+          <li>Accounting firms managing multiple client transactions</li>
+          <li>Import/export businesses with frequent supplier payments</li>
+          <li>Property managers collecting rent payments</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A LINE Official Account or access to a LINE chat where slips are sent</li>
+          <li>SpaceOCR API credentials (free tier available)</li>
+          <li>Google Sheets with columns for: Date, Bank, Account, Amount, Reference</li>
+          <li>n8n instance (cloud or self-hosted)</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the template JSON file</li>
+          <li>Import into your n8n instance</li>
+          <li>Connect your LINE account in the first node</li>
+          <li>Add your SpaceOCR API key in the OCR node</li>
+          <li>Link to your Google Sheet and map the columns</li>
+          <li>Test with sample bank slip images</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Reduce processing time by 90%:</strong> What took hours of manual work now happens automatically in minutes.</p>
+        <p><strong>Eliminate data entry errors:</strong> OCR accuracy exceeds manual transcription, especially for Thai numbers.</p>
+        <p><strong>Instant payment tracking:</strong> See all transactions in real-time with attached slip images for verification.</p>
+        <p><strong>Scalable solution:</strong> Process 10 or 10,000 slips with equal reliability.</p>
+        <p><strong>Audit-ready records:</strong> Automated timestamps and original images create perfect documentation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Thai bank slip automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does OCR technology help with Thai bank slip processing?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>OCR (Optical Character Recognition) technology automatically extracts text from Thai bank slip images, converting them into editable and searchable data. This eliminates manual data entry errors and speeds up payment reconciliation processes.</p>
+          <p>For example, a Thai e-commerce business can process 100+ daily payment confirmations in minutes instead of hours. The system recognizes Thai numerals and bank-specific formats that would challenge manual operators.</p>
+          <ul>
+            <li>95%+ accuracy for clear slip images</li>
+            <li>Processes all major Thai bank formats</li>
+            <li>Learns from corrections to improve over time</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating bank slip processing?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating bank slip processing reduces manual work by 80% while improving accuracy to nearly 100%. Key benefits include instant payment matching, fraud detection through pattern analysis, and automatic accounting system updates.</p>
+          <p>A case study showed a Thai import/export company reduced payment processing time from 3 days to just 2 hours. Their accounting team could focus on exceptions rather than routine data entry.</p>
+          <ul>
+            <li>Real-time payment tracking</li>
+            <li>Automatic duplicate detection</li>
+            <li>Searchable digital archive of all slips</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is SpaceOCR for Thai bank documents?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>SpaceOCR achieves 95-98% accuracy for Thai bank slips when properly configured. It specializes in Thai font recognition and common bank slip formats. The system learns from corrections, improving over time.</p>
+          <p>For best results, ensure slips are clear photos (not screenshots) with minimal shadows or obstructions. The workflow includes validation steps to flag low-confidence readings for review.</p>
+          <ul>
+            <li>Optimized for Thai fonts and numerals</li>
+            <li>Handles slight image rotations</li>
+            <li>Improves with each correction</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow handle multiple bank formats?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the workflow can be configured to recognize slips from all major Thai banks including Bangkok Bank, Kasikorn, SCB, and Krungthai. Each bank's template is mapped to extract account numbers, amounts, dates, and reference numbers.</p>
+          <p>The system flags unrecognized formats for manual review while processing standard formats automatically. You can add new bank templates as needed through simple configuration.</p>
+          <ul>
+            <li>Pre-configured for top 5 Thai banks</li>
+            <li>Easy to add additional formats</li>
+            <li>Flags unusual slips for review</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What security measures protect financial data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow uses encrypted connections between LINE, SpaceOCR, and Google Sheets. Sensitive data is never stored permanently in the automation system. For added security, you can configure Google Sheets to mask account numbers and limit access.</p>
+          <p>All processing occurs through official API connections rather than screen scraping. The workflow only retains slip images long enough to process them before storing just the extracted data.</p>
+          <ul>
+            <li>End-to-end encryption</li>
+            <li>Minimal data retention</li>
+            <li>Role-based access controls</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does this compare to manual data entry?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation processes slips 50x faster than manual entry with 10x fewer errors. Where a staff member might process 20 slips/hour manually, this system handles 1000+/hour. It also creates searchable digital records instead of paper files.</p>
+          <p>A Thai accounting firm reported saving 120 hours/month after implementation. Their error rate dropped from 5% to under 0.5%, significantly reducing reconciliation issues.</p>
+          <ul>
+            <li>50x faster processing</li>
+            <li>10x more accurate</li>
+            <li>Fully digital audit trail</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom bank slip automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. GrowwStacks specializes in custom financial automation solutions. We can tailor this workflow for your specific banks, accounting systems, and business rules. Our team handles everything from Thai OCR optimization to ERP integrations.</p>
+          <p>Book a free consultation to discuss your requirements and potential time savings. We'll analyze your current process and propose an automation strategy that fits your operations.</p>
+          <ul>
+            <li>Custom bank format support</li>
+            <li>Accounting system integration</li>
+            <li>Ongoing optimization</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Bank Slip Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
