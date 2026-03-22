@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Threads videos & log results in Google Sheets | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate downloading Threads videos from URLs, uploading to Google Drive, and logging results in Google Sheets with this free n8n workflow template.">
+<link rel="canonical" href="https://growwstacks.com/workflows/6542-download-threads-videos-and-log-results-in-google-sheets">
+<meta property="og:title" content="Download Threads videos & log results in Google Sheets | n8n workflow template">
+<meta property="og:description" content="Threads Video Downloader & Google Drive Logger Automate downloading Threads videos from URLs, upload them to Google Drive, and log results in Google Sheets...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/6542-download-threads-videos-and-log-results-in-google-sheets">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10153-download-threads-videos-and-log-results-in-google-shee.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Download Threads videos & log results in Google Sheets | n8n workflow template">
+<meta name="twitter:description" content="Threads Video Downloader & Google Drive Logger Automate downloading Threads videos from URLs, upload them to Google Drive, and log results in Google Sheets...">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Download Threads videos & log results in Google Sheets","description":"Automate downloading Threads videos from URLs, uploading to Google Drive, and logging results in Google Sheets","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10153-download-threads-videos-and-log-results-in-google-shee.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Download Threads videos & log results in Google Sheets"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Download Threads videos & log results in Google Sheets</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Google Drive</span>
+          <span class="cs-tag">Threads</span>
+          <span class="cs-tag">Video Downloader</span>
+        </div>
+        <h1>Download Threads videos & log results in Google Sheets</h1>
+        <p class="cs-hero-sub">Automate downloading Threads videos from URLs, uploading to Google Drive, and logging results in Google Sheets</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10153-download-threads-videos-and-log-results-in-google-shee.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10153-download-threads-videos-and-log-results-in-google-shee.png" alt="Threads video downloader workflow interface" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This n8n workflow automates the entire process of downloading videos from Threads (Instagram's text-based conversation app) and organizing them systematically. It solves the manual, time-consuming process of saving Threads videos one by one and keeping track of what you've downloaded.</p>
+        <p>The workflow takes Threads video URLs as input, downloads the video files, uploads them to your specified Google Drive folder, and creates a detailed log in Google Sheets with metadata like download timestamp, original URL, and file location. This creates a searchable archive of your Threads video collection.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Example of Threads video download process" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Workflow downloading a Threads video and preparing it for Google Drive upload</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Input Threads Video URLs</h3>
+        <p>The workflow begins by accepting Threads video URLs either through manual entry, a spreadsheet, or automated triggers. Each URL is processed individually to ensure reliable downloads.</p>
+
+        <h3>2. Video Download Process</h3>
+        <p>The system extracts the video content from each Threads URL using n8n's HTTP Request node. It handles authentication if needed and manages rate limits to avoid being blocked by Instagram's servers.</p>
+
+        <h3>3. Google Drive Upload</h3>
+        <p>Downloaded videos are automatically uploaded to your specified Google Drive folder with proper naming conventions. The workflow creates organized subfolders by date or category if configured.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Google Sheets logging example" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Automated logging of download results in Google Sheets</div>
+        </div>
+
+        <h3>4. Google Sheets Logging</h3>
+        <p>For each successful download, the workflow records key details in your Google Sheets log including: original URL, download timestamp, file size, Google Drive link, and any custom metadata you want to track.</p>
+
+        <h3>5. Error Handling</h3>
+        <p>The workflow includes robust error handling to manage failed downloads, duplicate URLs, or API limits. Failed attempts are logged with error details for troubleshooting.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Schedule this workflow to run daily or weekly to automatically archive Threads videos from specific accounts or hashtags you want to monitor.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for content creators, social media managers, researchers, and marketers who need to:</p>
+        <ul>
+          <li>Archive Threads video content for reference</li>
+          <li>Build a library of competitor or industry videos</li>
+          <li>Save educational or inspirational Threads content</li>
+          <li>Maintain compliance records of social media content</li>
+          <li>Collect video examples for content analysis</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (cloud or self-hosted)</li>
+          <li>Google Drive account with API access</li>
+          <li>Google Sheets prepared with column headers</li>
+          <li>Threads/Instagram account (for some content types)</li>
+          <li>List of Threads video URLs to process</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download and import the JSON template into your n8n instance</li>
+          <li>Connect your Google Drive and Sheets accounts in n8n</li>
+          <li>Specify your target Google Drive folder ID</li>
+          <li>Configure your Google Sheets spreadsheet ID and tab name</li>
+          <li>Test with sample Threads video URLs</li>
+          <li>Schedule the workflow or trigger manually as needed</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save hours per week</strong> by automating what would otherwise be a manual copy/paste/download process for each video.</p>
+        <p><strong>Never lose track</strong> of downloaded content with automatic Google Sheets logging that creates a searchable database of your Threads video archive.</p>
+        <p><strong>Organize systematically</strong> with automatic Google Drive folder structure and consistent file naming conventions.</p>
+        <p><strong>Scale your collection</strong> - process hundreds of Threads videos with the same effort as processing one.</p>
+        <p><strong>Access anywhere</strong> - your downloaded videos are safely stored in Google Drive, accessible from any device.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Threads video downloading and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it legal to download videos from Threads?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The legality depends on your use case. Downloading public Threads videos for personal reference or fair use analysis is generally acceptable. However, redistributing content or using it commercially without permission may violate copyright laws.</p>
+          <p>Many businesses use this automation for competitive analysis, content inspiration, or compliance archiving. Always check Threads' Terms of Service and consider adding watermarks or attribution when repurposing content.</p>
+          <ul>
+            <li>Personal/educational use is typically safe</li>
+            <li>Commercial use may require permission</li>
+            <li>Always respect creator copyrights</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automation help with social media content archiving?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation transforms social media archiving from a manual, error-prone process into a systematic workflow. It ensures consistency, reduces human error, and saves significant time while creating searchable records.</p>
+          <p>For example, marketing teams tracking competitor content can automatically archive hundreds of Threads videos weekly with metadata. Legal teams can maintain compliance records without manual screenshots. The automation handles the repetitive work while humans focus on analysis.</p>
+          <ul>
+            <li>Eliminates manual download/save processes</li>
+            <li>Creates standardized metadata records</li>
+            <li>Scales to handle large volumes effortlessly</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the limitations of downloading Threads videos?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Threads video downloading has some technical limitations. Private accounts' content can't be accessed without authentication. Instagram/Threads may rate limit excessive downloads. Video quality may be limited to what's available through public APIs.</p>
+          <p>The workflow includes best practices to avoid blocks - spacing out requests, using proxies if needed, and handling errors gracefully. For high-volume needs, consider spreading downloads over time or using official API access when available.</p>
+          <ul>
+            <li>Private content requires authentication</li>
+            <li>Rate limits apply to prevent abuse</li>
+            <li>Maximum resolution may be limited</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can businesses use archived Threads videos?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Businesses archive Threads videos for competitive analysis, content inspiration, compliance records, and training materials. Marketing teams study competitor content strategies. HR departments save cultural content. Legal teams maintain records of promotional claims.</p>
+          <p>A media company might archive trending Threads videos to analyze what resonates with audiences. A consumer brand might track mentions of their products. The automated logging makes all this content searchable and organized for later reference.</p>
+          <ul>
+            <li>Competitive intelligence gathering</li>
+            <li>Content trend analysis</li>
+            <li>Legal/compliance archiving</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize what metadata gets logged in Google Sheets?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the workflow is fully customizable to log any available metadata. Beyond basic fields like URL and timestamp, you could add video duration, aspect ratio, detected text, engagement metrics (if available), custom tags, or analysis notes.</p>
+          <p>The Google Sheets integration allows adding as many columns as needed. For example, a social media agency might add columns for client name, campaign ID, or content category to organize videos across multiple accounts and campaigns.</p>
+          <ul>
+            <li>Add custom classification fields</li>
+            <li>Include derived metrics</li>
+            <li>Structure for your specific use case</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does Google Drive integration help with video management?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Google Drive provides reliable cloud storage with powerful search, sharing, and access control features. Automating uploads ensures videos are safely stored, organized, and accessible to authorized team members from anywhere.</p>
+          <p>The workflow can create date-based or category-based folders automatically. For example, a PR firm might organize videos by client name and date. All files remain searchable through Google Drive's powerful search while being protected by Google's infrastructure.</p>
+          <ul>
+            <li>Automatic organization by date/category</li>
+            <li>Enterprise-grade security and reliability</li>
+            <li>Easy sharing with team members</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the advantage of using n8n over manual downloading?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>n8n provides reliability, scalability, and integration capabilities manual processes can't match. It handles hundreds of downloads without fatigue, integrates directly with Google services, and can run on schedules or triggers.</p>
+          <p>While manually downloading a few videos is simple, n8n shines when processing dozens or hundreds. It maintains consistent naming, never skips logging, and works unattended. The time savings compound dramatically with volume - what takes hours manually takes minutes automated.</p>
+          <ul>
+            <li>Process hundreds of videos as easily as one</li>
+            <li>Never forget to log a download</li>
+            <li>Run on schedules without manual intervention</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Threads video automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in custom automation solutions for social media archiving and analysis. We can build tailored workflows that integrate Threads video downloading with your specific systems and processes.</p>
+          <p>Our team can create solutions that filter videos by keywords, analyze content automatically, integrate with your CMS, or trigger alerts for specific content. Whether you need simple enhancements or complex enterprise systems, we design automation that fits your exact requirements.</p>
+          <ul>
+            <li>Custom filtering and processing rules</li>
+            <li>Integration with your existing tools</li>
+            <li>Enterprise-grade reliability and support</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Threads Video Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

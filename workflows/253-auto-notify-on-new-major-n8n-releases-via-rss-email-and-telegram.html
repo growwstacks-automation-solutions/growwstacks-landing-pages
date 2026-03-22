@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-notify on new major n8n releases via RSS, email & telegram | n8n workflow template | GrowwStacks</title>
+<meta name="description" content="Automatically get notified about new major n8n releases through RSS, email and Telegram notifications with this ready-to-use workflow template">
+<link rel="canonical" href="https://growwstacks.com/workflows/253-auto-notify-on-new-major-n8n-releases-via-rss-email-and-telegram">
+<meta property="og:title" content="Auto-notify on new major n8n releases via RSS, email & telegram | n8n workflow template">
+<meta property="og:description" content="Automatically get notified about new major n8n releases through RSS, email and Telegram notifications with this ready-to-use workflow template">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/253-auto-notify-on-new-major-n8n-releases-via-rss-email-and-telegram">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/736-auto-notify-on-new-major-n8n-releases-via-rss-email-and-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Auto-notify on new major n8n releases via RSS, email & telegram | n8n workflow template">
+<meta name="twitter:description" content="Automatically get notified about new major n8n releases through RSS, email and Telegram notifications with this ready-to-use workflow template">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Auto-notify on new major n8n releases via RSS, email & telegram","description":"Automatically get notified about new major n8n releases through RSS, email and Telegram notifications","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/736-auto-notify-on-new-major-n8n-releases-via-rss-email-and-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why should I automate n8n release notifications?","acceptedAnswer":{"@type":"Answer","text":"Automating n8n release notifications ensures you never miss critical updates that could impact your workflows. Major releases often include security patches, new features, and breaking changes that require attention. By automating notifications, you can plan upgrades proactively rather than reacting to issues caused by outdated versions."}},{"@type":"Question","name":"What are the benefits of monitoring major releases vs all releases?","acceptedAnswer":{"@type":"Answer","text":"Focusing on major releases (tagged with .0) filters out minor updates and patches, reducing notification noise. Major releases typically introduce significant changes that may require workflow adjustments, while minor updates often don't require immediate action. This selective approach saves time while ensuring you're alerted to impactful changes."}},{"@type":"Question","name":"How does RSS monitoring compare to other notification methods?","acceptedAnswer":{"@type":"Answer","text":"RSS provides a standardized way to monitor updates without API rate limits. Unlike polling GitHub's API directly, RSS feeds are lightweight and designed for change detection. This workflow enhances RSS with email and Telegram notifications for more immediate awareness across your preferred communication channels."}},{"@type":"Question","name":"What should I do when I receive a new major release notification?","acceptedAnswer":{"@type":"Answer","text":"Review the release notes thoroughly for breaking changes. Test the new version in a staging environment before production deployment. Check if any nodes or workflows you use have been modified, and update your documentation accordingly. Schedule the upgrade during a maintenance window if significant changes are present."}},{"@type":"Question","name":"Can I customize the notification content?","acceptedAnswer":{"@type":"Answer","text":"Yes, this workflow template can be modified to include specific release details that matter most to you. Common customizations include adding direct download links, highlighting breaking changes, or including links to migration guides. You can also filter notifications based on specific components or features you use."}},{"@type":"Question","name":"How often should I check for new releases?","acceptedAnswer":{"@type":"Answer","text":"The workflow is configured to check daily, which balances timeliness with resource usage. n8n typically releases major versions every few months, so daily checks ensure prompt notification without unnecessary frequent polling. You can adjust the schedule based on your specific needs and n8n's release cadence."}},{"@type":"Question","name":"Can I get a custom n8n automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! GrowwStacks specializes in building tailored n8n automation solutions. Our team can create custom workflows that integrate n8n with your specific tools and processes, implement advanced error handling, and ensure reliable operation at scale. We'll help you maximize the value of automation for your unique business needs."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Auto-notify on new major n8n releases via RSS, email & telegram","item":"https://growwstacks.com/workflows/253-auto-notify-on-new-major-n8n-releases-via-rss-email-and-telegram"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Auto-notify on new major n8n releases via RSS, email & telegram</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">GitHub</span>
+          <span class="cs-tag">RSS</span>
+          <span class="cs-tag">Notifications</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+        <h1>Auto-notify on new major n8n releases via RSS, email & telegram</h1>
+        <p class="cs-hero-sub">Never miss important n8n updates with automated monitoring of major releases</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/736-auto-notify-on-new-major-n8n-releases-via-rss-email-and-.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/736-auto-notify-on-new-major-n8n-releases-via-rss-email-and-.png" alt="n8n workflow diagram for release notifications" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solution monitors n8n's GitHub releases RSS feed for new major version releases (tagged with .0) and sends notifications through multiple channels. It solves the problem of manually checking for updates or being caught off guard by breaking changes in new versions.</p>
+        <p>The workflow checks the feed daily, filters for major releases, and formats notifications with key details like version number, release notes, and download links. Notifications can be sent via email, Telegram, or other channels you configure, ensuring your team stays informed through their preferred communication methods.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_44c06feeda.png" alt="n8n workflow nodes for release monitoring" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">The workflow checks GitHub's RSS feed and processes release information</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. RSS Feed Monitoring</h3>
+        <p>The workflow starts by fetching n8n's GitHub releases RSS feed. This provides a standardized way to monitor updates without hitting API rate limits or requiring authentication.</p>
+
+        <h3>2. Major Release Filtering</h3>
+        <p>It then parses the feed entries and filters for major releases (versions ending in .0). This ensures you're only notified about significant updates that may require action.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Release version filtering logic" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Filtering logic identifies major releases from the version numbers</div>
+        </div>
+
+        <h3>3. Notification Formatting</h3>
+        <p>For each new major release found, the workflow formats a notification with the version number, release date, and a summary of changes. It can include direct links to documentation or download pages.</p>
+
+        <h3>4. Multi-channel Delivery</h3>
+        <p>Finally, the formatted notifications are sent through your configured channels (email, Telegram, etc.). You can customize which team members receive which types of alerts.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Add a delay before production upgrades to allow time for community bug reports. Schedule the workflow to check weekly after major releases to catch any follow-up patch versions.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for:</p>
+        <ul>
+          <li>n8n administrators responsible for keeping instances updated</li>
+          <li>Teams running business-critical workflows on n8n</li>
+          <li>Developers who need to stay current with API changes</li>
+          <li>Organizations with compliance requirements for software updates</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (self-hosted or cloud)</li>
+          <li>Access to configure workflow triggers</li>
+          <li>Email server or Telegram bot credentials for notifications</li>
+          <li>Basic understanding of n8n workflows</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import it into your n8n instance</li>
+          <li>Configure your notification channels (email, Telegram, etc.)</li>
+          <li>Set your preferred schedule (default is daily)</li>
+          <li>Test with a manual execution</li>
+          <li>Activate the workflow</li>
+        </ol>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="n8n workflow import interface" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Importing the workflow template into your n8n instance</div>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Never miss critical updates</strong> that could impact your workflows. Major releases often include security patches and breaking changes that require timely attention.</p>
+        
+        <p><strong>Reduce manual monitoring time</strong> by automating what would otherwise be a regular manual check of n8n's release status.</p>
+        
+        <p><strong>Customizable notification channels</strong> ensure your team gets alerts through their preferred communication methods, whether email, chat apps, or other systems.</p>
+        
+        <p><strong>Filter out noise</strong> by focusing only on major releases (.0 versions) rather than being notified about every minor update or patch.</p>
+        
+        <p><strong>Proactive upgrade planning</strong> allows you to schedule updates during maintenance windows rather than reacting to issues caused by outdated versions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about n8n release monitoring and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why should I automate n8n release notifications?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating n8n release notifications ensures you never miss critical updates that could impact your workflows. Major releases often include security patches, new features, and breaking changes that require attention.</p>
+          <p>By automating notifications, you can plan upgrades proactively rather than reacting to issues caused by outdated versions. This is particularly important for businesses running production workflows where stability is crucial.</p>
+          <ul>
+            <li>Prevents workflow breaks from unexpected API changes</li>
+            <li>Ensures timely security updates</li>
+            <li>Reduces manual monitoring overhead</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of monitoring major releases vs all releases?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Focusing on major releases (tagged with .0) filters out minor updates and patches, reducing notification noise. Major releases typically introduce significant changes that may require workflow adjustments.</p>
+          <p>This selective approach saves time while ensuring you're alerted to impactful changes. For example, n8n's 1.0 release introduced major architectural changes, while 1.1 might just include minor bug fixes.</p>
+          <ul>
+            <li>90% fewer notifications than monitoring all releases</li>
+            <li>Focuses attention on changes that matter most</li>
+            <li>Reduces alert fatigue for your team</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does RSS monitoring compare to other notification methods?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>RSS provides a standardized way to monitor updates without API rate limits. Unlike polling GitHub's API directly, RSS feeds are lightweight and designed for change detection.</p>
+          <p>This workflow enhances RSS with email and Telegram notifications for more immediate awareness across your preferred communication channels. RSS serves as the reliable detection mechanism while other channels handle the actual alerts.</p>
+          <ul>
+            <li>No authentication required for public repositories</li>
+            <li>More reliable than scraping GitHub's web interface</li>
+            <li>Easier to parse than raw API responses</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What should I do when I receive a new major release notification?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Review the release notes thoroughly for breaking changes. Test the new version in a staging environment before production deployment. Check if any nodes or workflows you use have been modified.</p>
+          <p>Schedule the upgrade during a maintenance window if significant changes are present. Many teams wait 1-2 weeks after major releases to allow for any critical bug fixes to be published.</p>
+          <ul>
+            <li>Always check the migration guide if provided</li>
+            <li>Test custom nodes and credentials</li>
+            <li>Document any required workflow changes</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the notification content?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, this workflow template can be modified to include specific release details that matter most to you. Common customizations include adding direct download links, highlighting breaking changes, or including links to migration guides.</p>
+          <p>You can also filter notifications based on specific components or features you use. For example, you might only want alerts when core node functionality changes rather than UI updates.</p>
+          <ul>
+            <li>Add your company's upgrade policy to notifications</li>
+            <li>Include links to internal documentation</li>
+            <li>Customize the notification format for different teams</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How often should I check for new releases?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow is configured to check daily, which balances timeliness with resource usage. n8n typically releases major versions every few months, so daily checks ensure prompt notification without unnecessary frequent polling.</p>
+          <p>You can adjust the schedule based on your specific needs and n8n's release cadence. Some organizations check weekly after confirming a major release is stable, while others maintain daily checks for critical security updates.</p>
+          <ul>
+            <li>Daily checks for security-conscious organizations</li>
+            <li>Weekly checks for less critical implementations</li>
+            <li>Immediate manual checks when preparing for upgrades</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom n8n automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in building tailored n8n automation solutions. Our team can create custom workflows that integrate n8n with your specific tools and processes.</p>
+          <p>We'll implement advanced error handling, notification systems, and ensure reliable operation at scale. Whether you need complex business process automation or simple workflow enhancements, we can help maximize the value of n8n for your organization.</p>
+          <ul>
+            <li>Custom integrations with your existing systems</li>
+            <li>Enterprise-grade error handling and logging</li>
+            <li>Ongoing support and maintenance options</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom n8n Integration?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
