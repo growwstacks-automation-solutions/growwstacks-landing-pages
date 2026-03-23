@@ -403,11 +403,11 @@ SITE.images = {
   HERO: {
     carousel: [
       {
-        src: 'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/3.png?tr=w-520,h-330,q-80,f-auto',
+        src: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/3.png?tr=w-520,h-330,q-80,f-auto',
         alt: 'Make Platinum Partner Award'
       },
       {
-        src: 'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/4.png?tr=w-520,h-330,q-80,f-auto',
+        src: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/4.png?tr=w-520,h-330,q-80,f-auto',
         alt: 'GrowwStacks Team Celebration'
       }
     ]
@@ -418,21 +418,21 @@ SITE.images = {
   CASES: [
     {
       title:    'AI Lead Qualification Agent for SaaS Platform',
-      img:      'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/AI%20Lead%20Qualification%20Agent%20for%20SaaS%20Platform.jpeg?updatedAt=1771319768887',
+      img:      'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/AI%20Lead%20Qualification%20Agent%20for%20SaaS%20Platform.jpeg?updatedAt=1771319768887',
       alt:      'AI Lead Qualification Agent for SaaS Platform',
       category: 'SaaS',
       href:     '/case-studies/smart-lead-qualification-ai/'
     },
     {
       title:    'Voice AI for Patient Appointment Booking',
-      img:      'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Voice%20AI%20for%20Patient%20Appointment%20Booking.png?updatedAt=1771320381007',
+      img:      'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/Voice%20AI%20for%20Patient%20Appointment%20Booking.png?updatedAt=1771320381007',
       alt:      'Voice AI for Patient Appointment Booking',
       category: 'Healthcare',
       href:     '/case-studies/voice-ai-patient-appointment/'
     },
     {
       title:    'AI Chatbot + Social Media Automation for Real Estate',
-      img:      'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/AI%20Chatbot%20+%20Social%20Media%20Automation%20for%20Real%20Estate.png?updatedAt=1771325461368',
+      img:      'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/AI%20Chatbot%20+%20Social%20Media%20Automation%20for%20Real%20Estate.png?updatedAt=1771325461368',
       alt:      'AI Chatbot + Social Media Automation for Real Estate',
       category: 'Real Estate',
       href:     '/case-studies/ai-chatbot-real-estate/'
@@ -441,15 +441,15 @@ SITE.images = {
 
   TESTIMONIALS: {
     andrey: {
-      img: 'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Andrey-Avatov-GrowwStacks-Client.png?updatedAt=1771326788524',
+      img: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/Andrey-Avatov-GrowwStacks-Client.png?updatedAt=1771326788524',
       alt: 'Andrey Avetov'
     },
     noor: {
-      img: 'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Noor-Israel-GrowwStacks-Client.png?updatedAt=1771326788512',
+      img: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/Noor-Israel-GrowwStacks-Client.png?updatedAt=1771326788512',
       alt: 'Noor Webbed'
     },
     ankit: {
-      img: 'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/Ankit-GrowwStacks-Client.png?updatedAt=1771326788415',
+      img: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/Ankit-GrowwStacks-Client.png?updatedAt=1771326788415',
       alt: 'Ankit'
     }
   },
@@ -462,8 +462,8 @@ SITE.images = {
   },
 
   REVIEW_BADGES: {
-    google: 'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png',
-    upwork: 'https://ik.imagekit.io/r2zdlyze2o/GS%20Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270'
+    google: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png',
+    upwork: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270'
   },
 
   BRANDING: {
