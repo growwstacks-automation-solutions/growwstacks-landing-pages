@@ -13,7 +13,6 @@
 <meta property="og:url" content="https://growwstacks.com/about-us/">
 <link rel="icon" type="image/png" data-image-key="BRANDING.favicon" href="">
 
-
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,14 +85,93 @@ body.about-page{padding-top:0}
 .c-marquee::before,.c-marquee::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
 .c-marquee::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
 .c-marquee::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
-.c-track{display:flex;gap:16px;animation:c-scroll 50s linear infinite;flex-shrink:0}
+
+.c-track{
+  display:flex;
+  gap:16px;
+  flex-shrink:0;
+  width:max-content;
+  will-change:transform;
+  animation:c-scroll var(--marquee-duration,80s) linear infinite;
+}
+.c-marquee:hover .c-track{animation-play-state:paused}
 .c-track-rev{animation-direction:reverse}
-.c-item{flex-shrink:0;width:280px;height:200px;border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--gray-200);position:relative;transition:all .3s}
-.c-item:hover{transform:scale(1.03);box-shadow:var(--shadow-lg);border-color:var(--green-400)}
-.c-item img{width:100%;height:100%;object-fit:cover}
-.c-play{width:48px;height:48px;border-radius:50%;background:var(--green-600);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(34,164,71,.2);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2}
-.c-tag{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:5px 12px;border-radius:var(--radius-full);font-size:11px;font-weight:700;color:var(--dark);z-index:3}
-@keyframes c-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.c-item{
+  flex-shrink:0;
+  width:280px;
+  height:200px;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  border:2px solid var(--gray-200);
+  position:relative;
+  transition:all .3s;
+  background:var(--white);
+}
+.c-item:hover{transform:scale(1.03);box-shadow:var(--shadow-lg);border-color:var(--green-400);z-index:4}
+.c-item img,.c-item iframe{width:100%;height:100%;object-fit:cover;display:block;border:0}
+
+.c-play{width:48px;height:48px;border-radius:50%;background:var(--green-600);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(34,164,71,.2);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;transition:opacity .2s ease}
+
+.c-overlay{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:42px 12px 12px;
+  background:linear-gradient(transparent,rgba(15,17,23,.88));
+  z-index:3;
+}
+.c-title{
+  font-size:13px;
+  font-weight:700;
+  color:var(--white);
+  line-height:1.35;
+  margin-bottom:6px;
+}
+.c-meta{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.c-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
+}
+.c-pill-soft{
+  background:rgba(255,255,255,.16);
+  color:var(--white);
+  backdrop-filter:blur(8px);
+}
+.c-pill-solid{
+  background:rgba(255,255,255,.92);
+  color:var(--dark);
+}
+
+.c-video-frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+}
+.c-item-video.is-playing .c-video-frame{opacity:1;pointer-events:auto}
+.c-item-video.is-playing img,
+.c-item-video.is-playing .c-play,
+.c-item-video.is-playing .c-overlay{opacity:0}
+
+@keyframes c-scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(calc(-1 * var(--scroll-distance,50%)))}
+}
+
 .culture-social-row{display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap}
 .cs-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-full);font-size:14px;font-weight:600;color:var(--gray-600);transition:all .25s}
 .cs-link:hover{border-color:var(--green-400);color:var(--green-700);background:var(--green-50)}
@@ -175,7 +253,6 @@ body.about-page{padding-top:0}
 <div id="gs-navbar"></div>
 <main>
 
-<!-- ═══ HERO ═══ -->
 <section class="about-hero">
   <div class="container about-hero-inner">
     <div class="about-hero-label">About GrowwStacks</div>
@@ -190,7 +267,6 @@ body.about-page{padding-top:0}
   </div>
 </section>
 
-<!-- ═══ OUR STORY ═══ -->
 <section class="section">
   <div class="container about-story">
     <div class="about-story-grid">
@@ -212,7 +288,6 @@ body.about-page{padding-top:0}
   </div>
 </section>
 
-<!-- ═══ CREDENTIALS ═══ -->
 <section class="cred-strip">
   <div class="container">
     <div class="cred-grid">
@@ -224,7 +299,6 @@ body.about-page{padding-top:0}
   </div>
 </section>
 
-<!-- ═══ TEAM ═══ -->
 <section class="team-section">
   <div class="container">
     <div class="team-header">
@@ -236,7 +310,6 @@ body.about-page{padding-top:0}
   </div>
 </section>
 
-<!-- ═══ CULTURE ═══ -->
 <section class="culture-section">
   <div class="container">
     <div class="culture-header">
@@ -256,7 +329,6 @@ body.about-page{padding-top:0}
   </div>
 </section>
 
-<!-- ═══ VALUES ═══ -->
 <section class="values-section">
   <div class="container">
     <div class="values-header">
@@ -275,7 +347,6 @@ body.about-page{padding-top:0}
   </div>
 </section>
 
-<!-- ═══ CAREERS ═══ -->
 <section class="careers" id="careers">
   <div class="container">
     <div class="careers-inner">
@@ -313,7 +384,6 @@ body.about-page{padding-top:0}
   </div>
 </section>
 
-<!-- ═══ BOTTOM CTA ═══ -->
 <section class="mid-cta">
   <div class="container">
     <p>Ready to see what 35+ automation experts can do for your business?</p>
@@ -324,49 +394,47 @@ body.about-page{padding-top:0}
 </main>
 <div id="gs-footer"></div>
 
-<!-- Scripts — same pattern as homepage, paths adjusted for /pages/about-us/ -->
 <script src="../_shared/site-config.js"></script>
 <script src="../assets/js/images-helper.js"></script>
 <script src="../_shared/page-builder.js"></script>
 
 <script>
 !function(){
-  /* Team data — ordered by priority. Replace photo:"" with ImageKit URLs */
   var T=[
-    {o:1,  n:"Manish Mandot",           r:"Founder & Director",          p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Manish%20Sir%20.png?updatedAt=1771941276802", f:"☕ Runs on curiosity"},
-{o:2,  n:"Neha Jain",               r:"Head of Sales",                   p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Neha%20Jain.png?updatedAt=1771941276840", f:"🎮 Weekend gamer, weekday optimizer"},
-{o:3,  n:"Sachin Karma",            r:"Sales & Partnership Lead",        p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Sachin%20Karma%20%20(1).png?updatedAt=1771941276864", f:"🎵 Codes better with lo-fi beats"},
-{o:4,  n:"Faizal Khan",             r:"Admin & Operations Manager",      p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Faizal%20Sir.png?updatedAt=1771941276789", f:"🧩 Prompt engineering enthusiast"},
-{o:6,  n:"Ajay Singh Rathore",      r:"Senior Project Manager",          p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Ajay%20sir.png?updatedAt=1771941276806", f:"🍕 Pizza is a food group"},
-{o:7,  n:"Aanchal Temley",          r:"Project Coordinator",             p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Aanchal%20.png", f:"🏏 Cricket stats nerd"},
-{o:8,  n:"Akshat Singh Gour",       r:"Frontend Developer",              p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Akshat.png", f:"🎨 Pixel perfectionist"},
-{o:9,  n:"Aman Bhawsar",            r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Aman%20%20(1).png", f:"📸 Always has a camera nearby"},
-{o:10, n:"Aviral Dubey",            r:"Full Stack Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Aviral.png", f:"📚 Reads 2 books a week"},
-{o:11, n:"Dipika Richhariya",       r:"HR",                              p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Dipika.png", f:"🚀 Automates everything, even breakfast"},
-{o:12, n:"Divyanshu Sharma",        r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Divyanshu.png", f:"🎯 Zero-error mindset"},
-{o:13, n:"Harsh Rathore",           r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Harsh.png", f:"💡 Scenario optimization wizard"},
-{o:14, n:"Isha Malik",              r:"n8n Developer",                   p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Isha.png", f:"🔧 Self-hosted everything"},
-{o:15, n:"Ishika Parihar",          r:"Admin & Office Coordinator",      p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/ishika.png", f:"🎤 Keeps the office running smoothly"},
-{o:16, n:"Jeevan Devda",            r:"Video Editor",                    p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/jeevan.avif", f:"🎬 Thinks in transitions"},
-{o:17, n:"Kaivalyanshi Chaubey",    r:"Pre-Sales Project Manager",       p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Kaivalyanshi.png", f:"📊 Turns leads into projects"},
-{o:18, n:"Kapil Puri Goswami",      r:"Full Stack Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Kapil.png", f:"😊 Makes complex things simple"},
-{o:19, n:"Mahin Goyal",             r:"Project Coordinator",             p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Mahin.png", f:"🧪 Loves testing edge cases"},
-{o:20, n:"Mohit Vishwakarma",       r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Mohit.png", f:"⚡ Speed run champion"},
-{o:21, n:"Nidhi Patidar",           r:"HR & People Operations",          p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Nidhi.png", f:"🌙 Culture builder extraordinaire"},
-{o:22, n:"Nyasa Kag",               r:"Project Coordinator",             p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Nyasa%20(1).png", f:"🎧 Headphones = do not disturb"},
-{o:23, n:"Prayas Rathore",          r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Prayas.png", f:"🍵 Green tea powered"},
-{o:24, n:"Raghav Joshi",            r:"Integration Developer",           p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Raghav.png", f:"🏋️ Gym before Jira"},
-{o:25, n:"Ratna Choukadia",         r:"Project Manager",                 p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Ratna.png", f:"🔗 API whisperer"},
-{o:26, n:"Sarthak Punasiya",        r:"Marketing & Pre Sales",           p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/SArthak.png", f:"🌙 Culture builder extraordinaire"},
-{o:27, n:"Shreeya Asrani",          r:"Project Manager",                 p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Shreeya.png", f:"🗺️ Mapping data flows in sleep"},
-{o:28, n:"Shreya Dubey",            r:"Project Manager",                 p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/shreya.png", f:"🐛 Bug hunter extraordinaire"},
-{o:29, n:"Shubh Gupta",             r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Shubh.png", f:"📞 5-star code reviewer"},
-{o:30, n:"Shubham Patel",           r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Shubham%20Patel%20.png", f:"📋 Deadline guardian"},
-{o:31, n:"Udita Gupta",             r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Udita.png", f:"🎯 Closing bugs since day one"},
-{o:32, n:"Utkarsh Pandey",          r:"Integration Developer",           p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Utkarsh%20.png", f:"💬 Objection handling ninja"},
-{o:33, n:"Yashasvi Sharma",         r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/yashsvi.png", f:"🎉 Clean code enthusiast"},
-{o:34, n:"Yashraj Singh Sisodiya",  r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Yashraj.png", f:"🌱 Fast learner, future star"},
-{o:35, n:"Zaid Ullah",              r:"Automation Developer",            p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Zaid.png", f:"💻 First to fix, last to leave"},
+    {o:1,n:"Manish Mandot",r:"Founder & Director",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Manish%20Sir%20.png?updatedAt=1771941276802",f:"☕ Runs on curiosity"},
+    {o:2,n:"Neha Jain",r:"Head of Sales",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Neha%20Jain.png?updatedAt=1771941276840",f:"🎮 Weekend gamer, weekday optimizer"},
+    {o:3,n:"Sachin Karma",r:"Sales & Partnership Lead",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Sachin%20Karma%20%20(1).png?updatedAt=1771941276864",f:"🎵 Codes better with lo-fi beats"},
+    {o:4,n:"Faizal Khan",r:"Admin & Operations Manager",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Faizal%20Sir.png?updatedAt=1771941276789",f:"🧩 Prompt engineering enthusiast"},
+    {o:6,n:"Ajay Singh Rathore",r:"Senior Project Manager",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Ajay%20sir.png?updatedAt=1771941276806",f:"🍕 Pizza is a food group"},
+    {o:7,n:"Aanchal Temley",r:"Project Coordinator",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Aanchal%20.png",f:"🏏 Cricket stats nerd"},
+    {o:8,n:"Akshat Singh Gour",r:"Frontend Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Akshat.png",f:"🎨 Pixel perfectionist"},
+    {o:9,n:"Aman Bhawsar",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Aman%20%20(1).png",f:"📸 Always has a camera nearby"},
+    {o:10,n:"Aviral Dubey",r:"Full Stack Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Aviral.png",f:"📚 Reads 2 books a week"},
+    {o:11,n:"Dipika Richhariya",r:"HR",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Dipika.png",f:"🚀 Automates everything, even breakfast"},
+    {o:12,n:"Divyanshu Sharma",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Divyanshu.png",f:"🎯 Zero-error mindset"},
+    {o:13,n:"Harsh Rathore",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Harsh.png",f:"💡 Scenario optimization wizard"},
+    {o:14,n:"Isha Malik",r:"n8n Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Isha.png",f:"🔧 Self-hosted everything"},
+    {o:15,n:"Ishika Parihar",r:"Admin & Office Coordinator",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/ishika.png",f:"🎤 Keeps the office running smoothly"},
+    {o:16,n:"Jeevan Devda",r:"Video Editor",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/jeevan.avif",f:"🎬 Thinks in transitions"},
+    {o:17,n:"Kaivalyanshi Chaubey",r:"Pre-Sales Project Manager",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Kaivalyanshi.png",f:"📊 Turns leads into projects"},
+    {o:18,n:"Kapil Puri Goswami",r:"Full Stack Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Kapil.png",f:"😊 Makes complex things simple"},
+    {o:19,n:"Mahin Goyal",r:"Project Coordinator",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Mahin.png",f:"🧪 Loves testing edge cases"},
+    {o:20,n:"Mohit Vishwakarma",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Mohit.png",f:"⚡ Speed run champion"},
+    {o:21,n:"Nidhi Patidar",r:"HR & People Operations",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Nidhi.png",f:"🌙 Culture builder extraordinaire"},
+    {o:22,n:"Nyasa Kag",r:"Project Coordinator",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Nyasa%20(1).png",f:"🎧 Headphones = do not disturb"},
+    {o:23,n:"Prayas Rathore",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Prayas.png",f:"🍵 Green tea powered"},
+    {o:24,n:"Raghav Joshi",r:"Integration Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Raghav.png",f:"🏋️ Gym before Jira"},
+    {o:25,n:"Ratna Choukadia",r:"Project Manager",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Ratna.png",f:"🔗 API whisperer"},
+    {o:26,n:"Sarthak Punasiya",r:"Marketing & Pre Sales",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/SArthak.png",f:"🌙 Culture builder extraordinaire"},
+    {o:27,n:"Shreeya Asrani",r:"Project Manager",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Shreeya.png",f:"🗺️ Mapping data flows in sleep"},
+    {o:28,n:"Shreya Dubey",r:"Project Manager",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/shreya.png",f:"🐛 Bug hunter extraordinaire"},
+    {o:29,n:"Shubh Gupta",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Shubh.png",f:"📞 5-star code reviewer"},
+    {o:30,n:"Shubham Patel",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Shubham%20Patel%20.png",f:"📋 Deadline guardian"},
+    {o:31,n:"Udita Gupta",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Udita.png",f:"🎯 Closing bugs since day one"},
+    {o:32,n:"Utkarsh Pandey",r:"Integration Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Utkarsh%20.png",f:"💬 Objection handling ninja"},
+    {o:33,n:"Yashasvi Sharma",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/yashsvi.png",f:"🎉 Clean code enthusiast"},
+    {o:34,n:"Yashraj Singh Sisodiya",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Yashraj.png",f:"🌱 Fast learner, future star"},
+    {o:35,n:"Zaid Ullah",r:"Automation Developer",p:"https://ik.imagekit.io/r2zdlyze2o/Office%20/website-images%20/Zaid.png",f:"💻 First to fix, last to leave"}
   ];
 
   var BG=['#dcf5e3','#e8dff5','#dbeafe','#ffe8d6','#fef3c7','#ffe4e6','#d1fae5','#fce7f3','#e0edff','#f5f3ff','#fff7ed','#ecfdf5'];
@@ -382,60 +450,134 @@ body.about-page{padding-top:0}
     });
   }
 
-  /* Culture collage */
   var GR=['linear-gradient(135deg,#dcf5e3,#d1fae5)','linear-gradient(135deg,#e8dff5,#ddd6fe)','linear-gradient(135deg,#dbeafe,#bfdbfe)','linear-gradient(135deg,#ffe8d6,#fed7aa)','linear-gradient(135deg,#fef3c7,#fde68a)','linear-gradient(135deg,#ffe4e6,#fecdd3)','linear-gradient(135deg,#fce7f3,#fbcfe8)','linear-gradient(135deg,#f0fdf4,#bbf7d0)'];
-  var R1=[
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/1.png?updatedAt=1771941262873',  a:'Team Outing 2024',       l:''},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/5.png?updatedAt=1771941262844',  a:'Hackathon Day',          l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/9.png?updatedAt=1771941263088',  a:'Award Ceremony',         l:'LinkedIn'},
-  {t:'vid',s:'https://img.youtube.com/vi/10sQa-ze_Bs/hqdefault.jpg',                                           a:'Fun at Growwstacks',     v:'https://youtube.com/shorts/10sQa-ze_Bs'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/13.png?updatedAt=1771941262779', a:'Conference Talk',        l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/17.png?updatedAt=1771941262907', a:'Holi Celebration',       l:'Instagram'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/20.png?updatedAt=1771941262786', a:'Offsite Meetup',         l:'LinkedIn'},
-  {t:'vid',s:'https://img.youtube.com/vi/gJhS8aZtruw/hqdefault.jpg',                                           a:'Team Highlights',        v:'https://youtube.com/shorts/gJhS8aZtruw'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/23.png?updatedAt=1771941262891', a:'Product Launch',         l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/26.png?updatedAt=1771941262765', a:'Team Dinner',            l:'Instagram'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/29.png?updatedAt=1771941262909', a:'Eid Celebration',        l:''},
-  {t:'vid',s:'https://img.youtube.com/vi/QnMudS_eZaQ/hqdefault.jpg',                                           a:'Behind the Scenes',      v:'https://youtube.com/shorts/QnMudS_eZaQ'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/31.png?updatedAt=1771941262811', a:'Fresher Welcome',        l:''},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/33.png?updatedAt=1771941262757', a:'Knowledge Session',      l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/35.png?updatedAt=1771941262798', a:'Wellness Day',           l:''},
-  {t:'vid',s:'https://img.youtube.com/vi/SSgrZe2y4WI/hqdefault.jpg',                                           a:'Office Moments',         v:'https://youtube.com/shorts/SSgrZe2y4WI'},
-];
 
-var R2=[
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/38.png?updatedAt=1771941262805', a:'Workshop Day',           l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/41.png?updatedAt=1771941262822', a:'Automation Demo',        l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/44.png?updatedAt=1771941262830', a:'Lunch & Learn',          l:''},
-  {t:'vid',s:'https://img.youtube.com/vi/rq1ndQQJiV0/hqdefault.jpg',                                           a:'Team in Action',         v:'https://youtube.com/shorts/rq1ndQQJiV0'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/46.png?updatedAt=1771941262809', a:'Founders Day',           l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/49.png?updatedAt=1771941262896', a:'Standup Culture',        l:''},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/52.png?updatedAt=1771941262775', a:'Team Photoshoot',        l:'Instagram'},
-  {t:'vid',s:'https://img.youtube.com/vi/MzgKhbYV1TE/hqdefault.jpg',                                           a:'Day in the Life',        v:'https://youtube.com/shorts/MzgKhbYV1TE'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/55.png?updatedAt=1771941263081', a:'Weekend Hackathon',      l:'LinkedIn'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/58.png?updatedAt=1771941263010', a:'Campus Connect',         l:''},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/61.png?updatedAt=1771941263001', a:'Leadership Meet',        l:'LinkedIn'},
-  {t:'vid',s:'https://img.youtube.com/vi/Nvsk5Qwxu6Q/hqdefault.jpg',                                           a:'Team Spirit',            v:'https://youtube.com/shorts/Nvsk5Qwxu6Q'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/63.png?updatedAt=1771941263003', a:'Year End Party',         l:'Instagram'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/66.png?updatedAt=1771941263046', a:'Office Games',           l:'Instagram'},
-  {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/70.png?updatedAt=1771941263063', a:'Annual Meet 2024',       l:'LinkedIn'},
-  {t:'vid',s:'https://img.youtube.com/vi/nE6LCBUmafc/hqdefault.jpg',                                           a:'Life at Growwstacks',    v:'https://youtube.com/shorts/nE6LCBUmafc'},
-];
+  var R1=[
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/1.png?updatedAt=1771941262873',a:'Team Outing 2024',title:'Team Outing',day:'Day Out',l:''},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/5.png?updatedAt=1771941262844',a:'Hackathon Day',title:'Hackathon Day',day:'Innovation Day',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/9.png?updatedAt=1771941263088',a:'Award Ceremony',title:'Award Ceremony',day:'Celebration Day',l:'LinkedIn'},
+    {t:'vid',s:'https://img.youtube.com/vi/10sQa-ze_Bs/hqdefault.jpg',a:'Fun at Growwstacks',title:'Fun at GrowwStacks',day:'Culture Reel',v:'https://youtube.com/shorts/10sQa-ze_Bs?feature=share'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/13.png?updatedAt=1771941262779',a:'Conference Talk',title:'Conference Talk',day:'Event Day',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/17.png?updatedAt=1771941262907',a:'Holi Celebration',title:'Holi Celebration',day:'Festival Day',l:'Instagram'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/20.png?updatedAt=1771941262786',a:'Offsite Meetup',title:'Offsite Meetup',day:'Team Day',l:'LinkedIn'},
+    {t:'vid',s:'https://img.youtube.com/vi/UcX7O2_XTbk/hqdefault.jpg',a:'Team Highlights',title:'Team Highlights',day:'Highlights Reel',v:'https://youtube.com/shorts/UcX7O2_XTbk?feature=share'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/23.png?updatedAt=1771941262891',a:'Product Launch',title:'Product Launch',day:'Launch Day',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/26.png?updatedAt=1771941262765',a:'Team Dinner',title:'Team Dinner',day:'Dinner Night',l:'Instagram'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/29.png?updatedAt=1771941262909',a:'Eid Celebration',title:'Eid Celebration',day:'Festival Day',l:''},
+    {t:'vid',s:'https://img.youtube.com/vi/gJhS8aZtruw/hqdefault.jpg',a:'Behind the Scenes',title:'Behind the Scenes',day:'BTS Reel',v:'https://youtube.com/shorts/gJhS8aZtruw'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/31.png?updatedAt=1771941262811',a:'Fresher Welcome',title:'Fresher Welcome',day:'Welcome Day',l:''},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/33.png?updatedAt=1771941262757',a:'Knowledge Session',title:'Knowledge Session',day:'Learning Day',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/35.png?updatedAt=1771941262798',a:'Wellness Day',title:'Wellness Day',day:'Health Day',l:''},
+    {t:'vid',s:'https://img.youtube.com/vi/QnMudS_eZaQ/hqdefault.jpg',a:'Office Moments',title:'Office Moments',day:'Moments Reel',v:'https://youtube.com/shorts/QnMudS_eZaQ'}
+  ];
+
+  var R2=[
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/38.png?updatedAt=1771941262805',a:'Workshop Day',title:'Workshop Day',day:'Workshop',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/41.png?updatedAt=1771941262822',a:'Automation Demo',title:'Automation Demo',day:'Demo Day',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/44.png?updatedAt=1771941262830',a:'Lunch & Learn',title:'Lunch & Learn',day:'Learning Day',l:''},
+    {t:'vid',s:'https://img.youtube.com/vi/SSgrZe2y4WI/hqdefault.jpg',a:'Team in Action',title:'Team in Action',day:'Action Reel',v:'https://youtube.com/shorts/SSgrZe2y4WI'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/46.png?updatedAt=1771941262809',a:'Founders Day',title:'Founders Day',day:'Special Day',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/49.png?updatedAt=1771941262896',a:'Standup Culture',title:'Standup Culture',day:'Office Day',l:''},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/52.png?updatedAt=1771941262775',a:'Team Photoshoot',title:'Team Photoshoot',day:'Shoot Day',l:'Instagram'},
+    {t:'vid',s:'https://img.youtube.com/vi/5J9jwD3SDw4/hqdefault.jpg',a:'Day in the Life',title:'Day in the Life',day:'Daily Reel',v:'https://youtube.com/shorts/5J9jwD3SDw4?feature=share'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/55.png?updatedAt=1771941263081',a:'Weekend Hackathon',title:'Weekend Hackathon',day:'Hackathon Day',l:'LinkedIn'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/58.png?updatedAt=1771941263010',a:'Campus Connect',title:'Campus Connect',day:'Campus Day',l:''},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/61.png?updatedAt=1771941263001',a:'Leadership Meet',title:'Leadership Meet',day:'Leadership Day',l:'LinkedIn'},
+    {t:'vid',s:'https://img.youtube.com/vi/rq1ndQQJiV0/hqdefault.jpg',a:'Team Spirit',title:'Team Spirit',day:'Spirit Reel',v:'https://youtube.com/shorts/rq1ndQQJiV0?feature=share'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/63.png?updatedAt=1771941263003',a:'Year End Party',title:'Year End Party',day:'Party Night',l:'Instagram'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/66.png?updatedAt=1771941263046',a:'Office Games',title:'Office Games',day:'Games Day',l:'Instagram'},
+    {t:'img',s:'https://ik.imagekit.io/r2zdlyze2o/Office%20/Activity-Growwstacks/70.png?updatedAt=1771941263063',a:'Annual Meet 2024',title:'Annual Meet 2024',day:'Annual Day',l:'LinkedIn'},
+    {t:'vid',s:'https://img.youtube.com/vi/MzgKhbYV1TE/hqdefault.jpg',a:'Life at Growwstacks',title:'Life at GrowwStacks',day:'Culture Reel',v:'https://youtube.com/shorts/MzgKhbYV1TE?feature=share'},
+    {t:'vid',s:'https://img.youtube.com/vi/qWsfsW2WFa8/hqdefault.jpg',a:'Team Reel',title:'Team Reel',day:'Video Reel',v:'https://youtube.com/shorts/qWsfsW2WFa8?feature=share'},
+    {t:'vid',s:'https://img.youtube.com/vi/Nvsk5Qwxu6Q/hqdefault.jpg',a:'Office Vibes',title:'Office Vibes',day:'Vibes Reel',v:'https://youtube.com/shorts/Nvsk5Qwxu6Q?feature=share'},
+    {t:'vid',s:'https://img.youtube.com/vi/nE6LCBUmafc/hqdefault.jpg',a:'Culture Clip',title:'Culture Clip',day:'Culture Reel',v:'https://youtube.com/shorts/nE6LCBUmafc?feature=share'},
+    {t:'vid',s:'https://img.youtube.com/vi/ORcTixWcdtA/hqdefault.jpg',a:'Office Fun',title:'Office Fun',day:'Fun Reel',v:'https://youtube.com/shorts/ORcTixWcdtA?feature=share'},
+    {t:'vid',s:'https://img.youtube.com/vi/CbOxm06tYHQ/hqdefault.jpg',a:'Team Moments',title:'Team Moments',day:'Moments Reel',v:'https://youtube.com/shorts/CbOxm06tYHQ?feature=share'}
+  ];
+
+  function getYoutubeEmbed(url){
+    var m=url.match(/shorts\/([^?&/]+)/);
+    var id=m?m[1]:'';
+    return id?'https://www.youtube.com/embed/'+id+'?autoplay=1&mute=1&controls=1&loop=1&playlist='+id+'&modestbranding=1&rel=0':'';
+  }
+
+  function setupTrackSpeed(track,originalCount){
+    requestAnimationFrame(function(){
+      var items=track.querySelectorAll('.c-item');
+      if(!items.length)return;
+      var singleSetWidth=0;
+      for(var i=0;i<originalCount;i++){singleSetWidth+=items[i].offsetWidth}
+      singleSetWidth+=(originalCount-1)*16;
+      track.style.setProperty('--scroll-distance',singleSetWidth+'px');
+      var pxPerSecond=45;
+      var duration=Math.max(singleSetWidth/pxPerSecond,35);
+      track.style.setProperty('--marquee-duration',duration+'s');
+    });
+  }
 
   function renderTrack(id,items){
     var el=document.getElementById(id);if(!el)return;
-    var h='';items.forEach(function(it,i){
+    var h='';
+    items.forEach(function(it,i){
       var bg=it.s?'':'background:'+GR[i%GR.length]+';';
-      h+='<div class="c-item'+(it.t==='vid'?' c-item-video':'')+'" style="'+bg+'">';
+      var embed=it.t==='vid'?getYoutubeEmbed(it.v):'';
+      h+='<div class="c-item'+(it.t==='vid'?' c-item-video':'')+'" '+(embed?'data-embed="'+embed+'"':'')+' style="'+bg+'">';
       if(it.s)h+='<img src="'+it.s+'" alt="'+it.a+'" width="280" height="200" loading="lazy">';
       else h+='<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center;font-size:13px;color:rgba(15,17,23,.3);font-weight:600">'+it.a+'</div>';
-      if(it.t==='vid')h+='<div class="c-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>';
-      if(it.l)h+='<div class="c-tag">'+it.l+'</div>';
-      h+='</div>';
+
+      if(it.t==='vid'){
+        h+='<div class="c-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>';
+        h+='<iframe class="c-video-frame" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="'+(it.title||it.a)+'"></iframe>';
+      }
+
+      h+='<div class="c-overlay">';
+      h+='<div class="c-title">'+(it.title||it.a)+'</div>';
+      h+='<div class="c-meta">';
+      h+='<span class="c-pill c-pill-soft">'+(it.day||'Event Day')+'</span>';
+      if(it.l)h+='<span class="c-pill c-pill-solid">'+it.l+'</span>';
+      h+='</div></div></div>';
     });
     el.innerHTML=h+h;
+    setupTrackSpeed(el,items.length);
   }
-  renderTrack('ct1',R1);renderTrack('ct2',R2);
+
+  renderTrack('ct1',R1);
+  renderTrack('ct2',R2);
+
+  function stopAllVideos(){
+    document.querySelectorAll('.c-item-video.is-playing').forEach(function(card){
+      card.classList.remove('is-playing');
+      var frame=card.querySelector('.c-video-frame');
+      if(frame)frame.src='';
+    });
+  }
+
+  function bindVideoHover(){
+    document.querySelectorAll('.c-item-video').forEach(function(card){
+      card.addEventListener('mouseenter',function(){
+        stopAllVideos();
+        var frame=card.querySelector('.c-video-frame');
+        var embed=card.getAttribute('data-embed');
+        if(frame&&embed){
+          frame.src=embed;
+          card.classList.add('is-playing');
+        }
+      });
+
+      card.addEventListener('mouseleave',function(){
+        var frame=card.querySelector('.c-video-frame');
+        card.classList.remove('is-playing');
+        if(frame)frame.src='';
+      });
+    });
+  }
+
+  bindVideoHover();
+
+  window.addEventListener('resize',function(){
+    setupTrackSpeed(document.getElementById('ct1'),R1.length);
+    setupTrackSpeed(document.getElementById('ct2'),R2.length);
+  });
 }();
 </script>
 </body>
