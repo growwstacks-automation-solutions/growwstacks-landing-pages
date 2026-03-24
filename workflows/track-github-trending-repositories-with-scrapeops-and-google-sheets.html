@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track GitHub Trending Repositories with ScrapeOps & Google Sheets | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate GitHub trending repository tracking with this n8n workflow. Parse trending data and store in Google Sheets with automatic deduping for engineering research.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7379-track-github-trending-repositories-with-scrapeops-and-google-sheets">
+<meta property="og:title" content="Track GitHub Trending Repositories with ScrapeOps & Google Sheets">
+<meta property="og:description" content="Automate GitHub trending repository tracking with this n8n workflow. Parse trending data and store in Google Sheets with automatic deduping for engineering research.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7379-track-github-trending-repositories-with-scrapeops-and-google-sheets">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11706-track-github-trending-repositories-with-scrapeops-and-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Track GitHub Trending Repositories with ScrapeOps & Google Sheets">
+<meta name="twitter:description" content="Automate GitHub trending repository tracking with this n8n workflow. Parse trending data and store in Google Sheets with automatic deduping for engineering research.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Track GitHub Trending Repositories with ScrapeOps & Google Sheets","description":"Automate GitHub trending repository tracking with this n8n workflow. Parse trending data and store in Google Sheets with automatic deduping for engineering research.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11706-track-github-trending-repositories-with-scrapeops-and-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why automate GitHub trending repository tracking?","acceptedAnswer":{"@type":"Answer","text":"Automating GitHub trending tracking saves hours of manual work, provides structured data for analysis, and helps identify emerging projects before they become mainstream. It's valuable for tech scouting, competitive analysis, and staying ahead in developer tooling trends."}},{"@type":"Question","name":"How does this workflow prevent duplicate entries?","acceptedAnswer":{"@type":"Answer","text":"The workflow uses a unique dedupe_key for each repository entry. When new data is processed, it checks against existing records and only updates changed information, preventing duplicate rows while keeping data current."}},{"@type":"Question","name":"What's the advantage of using Google Sheets for this?","acceptedAnswer":{"@type":"Answer","text":"Google Sheets provides easy sharing across teams, built-in visualization tools, and accessibility from anywhere. The structured data can be used for dashboards, reports, or feeding into other business systems."}},{"@type":"Question","name":"Can I customize the trending time periods?","acceptedAnswer":{"@type":"Answer","text":"Yes, the workflow supports daily, weekly, and monthly trending views. You can configure it to track one or all time periods based on your needs."}},{"@type":"Question","name":"How often should I run this automation?","acceptedAnswer":{"@type":"Answer","text":"For most use cases, running daily provides good coverage of trending movements. For intensive research, you might run multiple times per day, being mindful of GitHub's rate limits."}},{"@type":"Question","name":"What if GitHub changes their trending page structure?","acceptedAnswer":{"@type":"Answer","text":"The workflow may need updating if GitHub significantly changes their HTML structure. The template includes error handling to alert you if parsing fails."}},{"@type":"Question","name":"Can I get a custom GitHub automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, our team can build fully customized GitHub automations tailored to your specific research needs, including additional data points, alerts, and integration with your internal systems."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"GitHub Trending Tracker"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>GitHub Trending Tracker</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">GitHub</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">ScrapeOps</span>
+          <span class="cs-tag">Market Research</span>
+        </div>
+        <h1>Track GitHub Trending Repositories with ScrapeOps & Google Sheets</h1>
+        <p class="cs-hero-sub">Automate trending repository tracking with structured data collection and automatic deduping</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11706-track-github-trending-repositories-with-scrapeops-and-.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11706-track-github-trending-repositories-with-scrapeops-and-.png" alt="GitHub trending repository tracking workflow diagram showing data flow from GitHub to Google Sheets" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the manual effort of tracking trending GitHub repositories across different time periods (daily, weekly, monthly). It reliably collects repository data including rank, stars, language, and other metrics, then stores it in Google Sheets with automatic deduplication.</p>
+        
+        <p>Teams use this to identify emerging open source projects, track competitor activity, and maintain a historical record of technology trends. The structured data enables analysis that would be impossible with manual tracking methods.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Scheduled Trigger</h3>
+        <p>The workflow runs on your preferred schedule (daily recommended) to capture trending repository snapshots.</p>
+        
+        <h3>2. ScrapeOps API Call</h3>
+        <p>ScrapeOps fetches the GitHub trending page HTML reliably, handling proxies and retries automatically.</p>
+        
+        <h3>3. Data Parsing</h3>
+        <p>The workflow extracts structured data from the HTML including repository name, stars, language, and ranking position.</p>
+        
+        <h3>4. Google Sheets Update</h3>
+        <p>Cleaned data is written to Google Sheets using a dedupe_key to prevent duplicates while updating changed information.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for:</p>
+        <ul>
+          <li>Developer relations teams tracking ecosystem trends</li>
+          <li>Engineering leaders researching new technologies</li>
+          <li>Product managers monitoring competitive tools</li>
+          <li>Open source maintainers analyzing project visibility</li>
+          <li>Technical content creators identifying trending topics</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A ScrapeOps account (free tier available)</li>
+          <li>Google Sheets with a designated worksheet</li>
+          <li>n8n instance (cloud or self-hosted)</li>
+          <li>Columns configured for: repository name, stars, language, rank, etc.</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Duplicate the provided Google Sheet template or create your own</li>
+          <li>Sign up for ScrapeOps and get your API key</li>
+          <li>Import the workflow JSON into your n8n instance</li>
+          <li>Configure the Google Sheets and ScrapeOps credentials</li>
+          <li>Set your preferred schedule (daily recommended)</li>
+          <li>Test with a manual trigger and verify data appears correctly</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5+ hours weekly</strong> by automating what would otherwise require daily manual checks and data entry.</p>
+        
+        <p><strong>Historical trend analysis</strong> becomes possible with consistent, structured data collection over time.</p>
+        
+        <p><strong>Team accessibility</strong> through Google Sheets means everyone can access the data without technical setup.</p>
+        
+        <p><strong>Customizable tracking</strong> lets you focus on specific languages or topics relevant to your work.</p>
+        
+        <p><strong>Reliable data collection</strong> with built-in error handling and retry logic for consistent results.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about GitHub trending automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why automate GitHub trending repository tracking?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating GitHub trending tracking saves hours of manual work, provides structured data for analysis, and helps identify emerging projects before they become mainstream. It's valuable for tech scouting, competitive analysis, and staying ahead in developer tooling trends.</p>
+          <p>The data can reveal patterns in technology adoption, highlight rising competitors, and inform technical content strategies - insights that are difficult to spot with occasional manual checks.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does this workflow prevent duplicate entries?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow uses a unique dedupe_key for each repository entry. When new data is processed, it checks against existing records and only updates changed information, preventing duplicate rows while keeping data current.</p>
+          <p>This approach maintains data integrity while allowing the tracking of metric changes over time, such as star count fluctuations or rank position movements.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the advantage of using Google Sheets for this?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Google Sheets provides easy sharing across teams, built-in visualization tools, and accessibility from anywhere. The structured data can be used for dashboards, reports, or feeding into other business systems.</p>
+          <p>For technical teams, Sheets offers a familiar interface while allowing non-technical stakeholders to access the data without special tools or training.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the trending time periods?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the workflow supports daily, weekly, and monthly trending views. You can configure it to track one or all time periods based on your needs.</p>
+          <p>Tracking multiple periods helps identify both short-term spikes and sustained trends in project popularity, giving a more complete picture of the ecosystem.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How often should I run this automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>For most use cases, running daily provides good coverage of trending movements. For intensive research, you might run multiple times per day, being mindful of GitHub's rate limits.</p>
+          <p>Consider your goals - daily captures broad trends while more frequent runs can track rapid changes in highly competitive categories.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What if GitHub changes their trending page structure?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow may need updating if GitHub significantly changes their HTML structure. The template includes error handling to alert you if parsing fails.</p>
+          <p>We monitor GitHub's changes and update our templates accordingly. Subscribers receive notifications when updates are available for downloaded workflows.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom GitHub automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, our team can build fully customized GitHub automations tailored to your specific research needs, including additional data points, alerts, and integration with your internal systems.</p>
+          <p>Custom solutions might include: tracking specific competitor repos, analyzing language trends, monitoring contributor activity, or integrating with your CRM/analytics tools.</p>
+          <ul>
+            <li>Tailored data collection for your tech stack</li>
+            <li>Integration with internal dashboards</li>
+            <li>Automated alerts for significant changes</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom GitHub Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

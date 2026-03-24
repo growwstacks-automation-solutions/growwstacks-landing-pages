@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fetch daily job postings from JSearch to Google Sheets and Telegram | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate daily job posting collection from JSearch API to Google Sheets with Telegram notifications. Eliminates duplicates and saves time for recruiters and job seekers.">
+<link rel="canonical" href="https://growwstacks.com/workflows/6985-fetch-daily-job-postings-from-jsearch-to-google-sheets-and-telegram/">
+<meta property="og:title" content="Automate Job Postings Collection from JSearch to Google Sheets">
+<meta property="og:description" content="Free workflow template to fetch, filter and save daily job postings with Telegram alerts">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/6985-fetch-daily-job-postings-from-jsearch-to-google-sheets-and-telegram/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10918-fetch-daily-job-postings-from-jsearch-to-google-sheets.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Job Postings Collection from JSearch to Google Sheets">
+<meta name="twitter:description" content="Free workflow template to fetch, filter and save daily job postings with Telegram alerts">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Fetch daily job postings from JSearch to Google Sheets and Telegram","description":"Automates collection of job postings from JSearch API to Google Sheets with Telegram notifications","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10918-fetch-daily-job-postings-from-jsearch-to-google-sheets.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can automation improve job posting collection?","acceptedAnswer":{"@type":"Answer","text":"Automation eliminates manual checking of job boards, ensures no duplicates, and provides structured data ready for analysis. This workflow saves recruiters 5-10 hours weekly by automatically collecting and organizing postings."}},{"@type":"Question","name":"What are the benefits of combining JSearch with Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Google Sheets provides real-time collaboration and easy filtering while JSearch offers comprehensive job listings. Together they create a powerful system for tracking opportunities across multiple platforms."}},{"@type":"Question","name":"How does Telegram integration enhance this workflow?","acceptedAnswer":{"@type":"Answer","text":"Telegram notifications provide immediate alerts about new postings without needing to check the spreadsheet, perfect for time-sensitive opportunities."}},{"@type":"Question","name":"What types of jobs can this workflow track?","acceptedAnswer":{"@type":"Answer","text":"The workflow can track any job type available through JSearch API including tech, marketing, healthcare and more. Filters can be customized for specific industries or keywords."}},{"@type":"Question","name":"How often does this workflow check for new postings?","acceptedAnswer":{"@type":"Answer","text":"The template runs daily but can be adjusted to hourly or weekly based on your needs. The schedule trigger makes frequency customization simple."}},{"@type":"Question","name":"What happens when duplicate jobs are found?","acceptedAnswer":{"@type":"Answer","text":"The workflow automatically identifies duplicates by job ID and skips them, ensuring your spreadsheet contains only unique opportunities."}},{"@type":"Question","name":"Can I customize the data collected for each job?","acceptedAnswer":{"@type":"Answer","text":"Yes, the workflow can be modified to capture additional fields like salary ranges, required skills, or company information beyond the default dataset."}},{"@type":"Question","name":"Can I get a custom job posting automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! GrowwStacks specializes in tailored recruitment automation solutions. We can build custom workflows for your specific job boards, applicant tracking systems, and notification preferences."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Job Posting Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Job Posting Automation</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Zapier</span>
+          <span class="cs-tag">Hiring</span>
+          <span class="cs-tag">Google Sheets</span>
+        </div>
+        <h1>Fetch daily job postings from JSearch to Google Sheets and Telegram</h1>
+        <p class="cs-hero-sub">Automate job posting collection with duplicate prevention and instant alerts</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10918-fetch-daily-job-postings-from-jsearch-to-google-sheets.json?ik-attachment=true" download="job-posting-automation-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10918-fetch-daily-job-postings-from-jsearch-to-google-sheets.png" alt="Job posting automation workflow interface showing JSearch API integration with Google Sheets" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This workflow solves the time-consuming process of manually checking multiple job boards by automating the entire collection process. It connects to the JSearch API to fetch the latest postings, checks against your existing Google Sheet to eliminate duplicates, and saves only new opportunities while sending you a Telegram summary.</p>
+        
+        <p>Recruiters and job seekers waste hours each week repeating this process manually. Our automation reduces this to minutes by handling the data collection, filtering, and organization automatically on a daily schedule.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Daily Job Posting Fetch</h3>
+        <p>The workflow starts by querying JSearch API with your predefined search parameters (location, job type, keywords etc.). It retrieves all matching postings from the past 24 hours.</p>
+        
+        <h3>2. Duplicate Checking</h3>
+        <p>Each job's unique identifier is checked against your existing Google Sheet. Only jobs not previously recorded proceed to the next steps.</p>
+        
+        <h3>3. Data Formatting</h3>
+        <p>Relevant fields (title, company, location, URL etc.) are extracted and formatted for clean spreadsheet entry.</p>
+        
+        <h3>4. Google Sheets Update</h3>
+        <p>New jobs are appended to your designated Google Sheet with all relevant details in organized columns.</p>
+        
+        <h3>5. Telegram Notification</h3>
+        <p>A summary message is sent to your Telegram with the count of new postings added and direct links to view them.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for:</p>
+        <ul>
+          <li>Recruitment agencies tracking multiple job sources</li>
+          <li>HR teams monitoring industry hiring trends</li>
+          <li>Job seekers wanting comprehensive opportunity tracking</li>
+          <li>Researchers analyzing job market data</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>JSearch API access (via RapidAPI)</li>
+          <li>Google Sheets account with edit permissions</li>
+          <li>Telegram bot token</li>
+          <li>n8n or Zapier account to run the workflow</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the template file</li>
+          <li>Import into your automation platform (n8n/Zapier)</li>
+          <li>Connect your JSearch, Google Sheets and Telegram credentials</li>
+          <li>Configure your search parameters in the workflow</li>
+          <li>Set your preferred schedule (daily recommended)</li>
+          <li>Run your first test collection</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5-10 hours weekly</strong> by eliminating manual job board checking. The automation handles the tedious collection work so you can focus on evaluating opportunities.</p>
+        
+        <p><strong>Never miss new postings</strong> with reliable daily checks. The system won't forget to look even during busy periods.</p>
+        
+        <p><strong>Eliminate duplicate entries</strong> with built-in checking against your existing records. Your spreadsheet stays clean and organized.</p>
+        
+        <p><strong>Get instant mobile alerts</strong> through Telegram when new matching jobs are found. No need to constantly check the spreadsheet.</p>
+        
+        <p><strong>Customizable search criteria</strong> lets you track exactly the types of positions you care about.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about job posting automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can automation improve job posting collection?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation eliminates manual checking of job boards, ensures no duplicates, and provides structured data ready for analysis. This workflow saves recruiters 5-10 hours weekly by automatically collecting and organizing postings.</p>
+          <p>The system runs consistently regardless of workload or staffing changes, ensuring no gaps in your monitoring coverage.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of combining JSearch with Google Sheets?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Google Sheets provides real-time collaboration and easy filtering while JSearch offers comprehensive job listings. Together they create a powerful system for tracking opportunities across multiple platforms.</p>
+          <p>Sheets allows easy sharing with team members and integration with other tools like CRM systems or applicant tracking software.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does Telegram integration enhance this workflow?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Telegram notifications provide immediate alerts about new postings without needing to check the spreadsheet, perfect for time-sensitive opportunities.</p>
+          <p>The mobile notifications ensure you see new matches immediately, with direct links to view details or share with colleagues.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of jobs can this workflow track?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow can track any job type available through JSearch API including tech, marketing, healthcare and more. Filters can be customized for specific industries or keywords.</p>
+          <p>Common configurations include tracking remote positions, specific salary ranges, or required skill sets.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How often does this workflow check for new postings?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The template runs daily but can be adjusted to hourly or weekly based on your needs. The schedule trigger makes frequency customization simple.</p>
+          <p>For most roles, daily checks provide optimal balance between freshness and avoiding API rate limits.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What happens when duplicate jobs are found?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow automatically identifies duplicates by job ID and skips them, ensuring your spreadsheet contains only unique opportunities.</p>
+          <p>This prevents cluttering your records with repeated listings from different job boards or refreshed postings.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the data collected for each job?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the workflow can be modified to capture additional fields like salary ranges, required skills, or company information beyond the default dataset.</p>
+          <p>Common additions include application deadlines, experience levels, or benefits information when available through the API.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom job posting automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in tailored recruitment automation solutions. We can build custom workflows for your specific job boards, applicant tracking systems, and notification preferences.</p>
+          <p>Our team will design a system that matches your exact workflow needs, whether you're tracking niche roles, managing high-volume hiring, or need specialized reporting.</p>
+          <ul>
+            <li>Integration with your existing HR systems</li>
+            <li>Custom filtering logic for your hiring criteria</li>
+            <li>Team collaboration features</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Job Posting Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
