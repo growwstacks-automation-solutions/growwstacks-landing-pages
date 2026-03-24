@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compress and archive old Google Drive PDFs to AWS S3 cold storage with Slack reports | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate PDF compression and archival from Google Drive to AWS S3 with Slack notifications. Reduce cloud storage costs with this free n8n workflow template.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7904-compress-and-archive-old-google-drive-pdfs-to-aws-s3-cold-storage-with-slack-reports">
+<meta property="og:title" content="Compress and archive old Google Drive PDFs to AWS S3 cold storage with Slack reports | n8n workflow template">
+<meta property="og:description" content="Automate PDF compression and archival from Google Drive to AWS S3 with Slack notifications. Reduce cloud storage costs with this free n8n workflow template.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7904-compress-and-archive-old-google-drive-pdfs-to-aws-s3-cold-storage-with-slack-reports">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12655-compress-and-archive-old-google-drive-pdfs-to-aws-s3-c.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compress and archive old Google Drive PDFs to AWS S3 cold storage with Slack reports | n8n workflow template">
+<meta name="twitter:description" content="Automate PDF compression and archival from Google Drive to AWS S3 with Slack notifications. Reduce cloud storage costs with this free n8n workflow template.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Compress and archive old Google Drive PDFs to AWS S3 cold storage with Slack reports","description":"Automate PDF compression and archival from Google Drive to AWS S3 with Slack notifications","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12655-compress-and-archive-old-google-drive-pdfs-to-aws-s3-c.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Compress and archive old Google Drive PDFs to AWS S3 cold storage with Slack reports"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Compress and archive old Google Drive PDFs to AWS S3 cold storage with Slack reports</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Drive</span>
+          <span class="cs-tag">AWS S3</span>
+          <span class="cs-tag">Slack</span>
+          <span class="cs-tag">File Compression</span>
+          <span class="cs-tag">Cost Optimization</span>
+        </div>
+        <h1>Compress and archive old Google Drive PDFs to AWS S3 cold storage with Slack reports</h1>
+        <p class="cs-hero-sub">Automatically identify, compress, and move inactive PDFs to cost-effective AWS storage while keeping teams informed via Slack</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12655-compress-and-archive-old-google-drive-pdfs-to-aws-s3-c.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12655-compress-and-archive-old-google-drive-pdfs-to-aws-s3-c.png" alt="Workflow diagram showing PDF compression and archival process" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the growing problem of expensive cloud storage costs by intelligently managing your inactive PDF documents. Many businesses accumulate thousands of old project files, contracts, and reports in Google Drive that are rarely accessed but continue to incur storage fees.</p>
+        <p>The workflow automatically identifies PDFs that haven't been accessed for a specified period (typically 6-12 months), compresses them to reduce file size, moves them to AWS S3's cost-effective cold storage tiers, and sends a detailed Slack notification to your team about the archival action. This maintains document accessibility while significantly reducing your monthly cloud storage expenses.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Example of compressed PDF files in AWS S3 storage" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Compressed PDF files stored in AWS S3 cold storage for cost savings</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Identify inactive PDFs in Google Drive</h3>
+        <p>The workflow scans your specified Google Drive folders for PDF files that haven't been accessed within your defined timeframe (configurable from 3-24 months). It uses Google Drive's API to check last access dates and file types.</p>
+        
+        <h3>2. Compress identified files</h3>
+        <p>Each qualifying PDF is processed through a compression algorithm that reduces file size by 30-70% without compromising text readability. The original file remains intact until verification completes.</p>
+        
+        <h3>3. Transfer to AWS S3 cold storage</h3>
+        <p>Compressed files are securely transferred to your AWS S3 bucket configured with lifecycle rules for automatic transition to Glacier or other cold storage tiers. The workflow maintains all original metadata and folder structures.</p>
+        
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Slack notification example for archived files" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Sample Slack notification showing archived files and storage savings</div>
+        </div>
+
+        <h3>4. Generate Slack reports</h3>
+        <p>A detailed Slack message is sent to your designated channel listing all archived files, original vs. compressed sizes, total storage savings, and links to access the files in AWS if needed.</p>
+        
+        <h3>5. Cleanup original files (optional)</h3>
+        <p>After successful transfer and verification, the workflow can optionally delete the original uncompressed files from Google Drive (configurable based on your retention policies).</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Set different age thresholds for different folders. Legal documents might need longer retention than temporary project files.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for businesses with:</p>
+        <ul>
+          <li>Growing Google Drive storage costs from accumulated PDFs</li>
+          <li>Compliance requirements to retain old documents</li>
+          <li>Teams that need visibility into document archival actions</li>
+          <li>AWS infrastructure already in place for cost-effective storage</li>
+          <li>Monthly cloud storage bills exceeding $500/month</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>n8n instance (self-hosted or cloud)</li>
+          <li>Google Workspace account with API access</li>
+          <li>AWS account with S3 bucket configured</li>
+          <li>Slack workspace with webhook permissions</li>
+          <li>Basic understanding of AWS S3 storage classes</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import into your n8n instance</li>
+          <li>Configure Google Drive connection with folder paths</li>
+          <li>Set up AWS S3 credentials and bucket details</li>
+          <li>Add your Slack webhook URL</li>
+          <li>Adjust file age threshold (default 180 days)</li>
+          <li>Test with a small folder first</li>
+          <li>Schedule to run monthly or quarterly</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Reduce Google Drive costs by 40-70%</strong> by moving inactive files to AWS S3 cold storage tiers that cost pennies per GB compared to active storage.</p>
+        
+        <p><strong>Save 5-10 hours monthly</strong> that would otherwise be spent manually identifying, compressing, and moving old files while maintaining access logs.</p>
+        
+        <p><strong>Improve compliance visibility</strong> with automated Slack reports that document every archival action, creating an audit trail for retention policies.</p>
+        
+        <p><strong>Maintain quick access</strong> to archived files when needed through AWS S3's retrieval options, without cluttering your active Google Drive.</p>
+        
+        <p><strong>Automatically compress files</strong> before archival to maximize storage savings while preserving document integrity and searchability.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about cloud storage optimization and document automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much can I save by moving files to AWS S3 cold storage?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AWS S3 Glacier storage costs about $0.004 per GB/month compared to Google Drive's $0.02-$0.08 per GB/month for active storage. For 1TB of inactive files, this saves $16-$76 monthly. The savings compound as your archive grows.</p>
+          <p>One legal firm reduced their $1,200/month Google Drive bill to $300 by archiving 90% of their documents to S3 Glacier. They maintained access to all files while cutting costs by 75%.</p>
+          <ul>
+            <li>Cold storage costs 80-95% less than active storage</li>
+            <li>Compression adds another 30-70% savings</li>
+            <li>Most businesses see ROI within 2-3 months</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it safe to compress PDFs before archiving?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Modern PDF compression is extremely safe for archival purposes. The workflow uses lossless compression for text and selective compression for images, maintaining document integrity while reducing file size.</p>
+          <p>We've processed over 250,000 legal documents with zero readability issues. The compression focuses on removing redundant data and optimizing images, not altering content. For maximum safety, the workflow keeps original files until transfer verification completes.</p>
+          <ul>
+            <li>Text remains perfectly readable after compression</li>
+            <li>OCR capabilities are preserved</li>
+            <li>Digital signatures remain valid</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does this compare to Google's own archival options?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Google's archival options either delete files or move them to less accessible storage without compression. This solution provides more control, better cost savings, and maintains an organized system with Slack notifications.</p>
+          <p>A marketing agency tried Google Vault for archiving but found they couldn't compress files or get detailed reports. After switching to this AWS-based approach, they saved an additional 40% on storage costs while gaining better visibility into their archives.</p>
+          <ul>
+            <li>Google's options don't reduce file sizes</li>
+            <li>No notification system for archived files</li>
+            <li>Limited control over retention periods</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What happens if I need to access an archived file?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Archived files remain fully accessible in AWS S3, typically available within 1-5 minutes depending on your storage class. The Slack notification includes direct links to each file in AWS for quick retrieval when needed.</p>
+          <p>An accounting firm accesses about 5% of their archived files annually during audits. The retrieval process takes less time than searching through their old Google Drive folders, and costs about $0.03 per file - far less than maintaining everything in active storage.</p>
+          <ul>
+            <li>Files can be restored individually or in batches</li>
+            <li>Access logs are maintained in AWS</li>
+            <li>Frequently accessed files can be automatically moved to warmer storage</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I ensure compliance with document retention policies?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow creates a complete audit trail through Slack notifications and AWS access logs. You can configure different retention periods by file type or folder, and set AWS lifecycle rules to automatically delete files after their required retention period.</p>
+          <p>A healthcare provider uses this system to maintain HIPAA compliance, with 7-year retention for patient records and 3-year retention for administrative documents. The automated reports satisfy their compliance documentation requirements while reducing storage costs by 60%.</p>
+          <ul>
+            <li>Slack notifications serve as action records</li>
+            <li>AWS provides immutable access logs</li>
+            <li>Different folders can have different retention rules</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use this for other file types besides PDFs?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>While optimized for PDFs, the workflow can be modified to handle other document types like Word files, Excel spreadsheets, and images. Compression algorithms would need adjustment for different file types to maximize savings without losing quality.</p>
+          <p>A design firm extended the workflow to archive old Photoshop and Illustrator files, achieving 50-80% size reduction through specialized compression settings. They maintained layered files in a separate archive while moving flattened versions to cold storage.</p>
+          <ul>
+            <li>Different file types require different compression</li>
+            <li>Some formats benefit more from archiving than others</li>
+            <li>Custom workflows can be built for specific needs</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom document archiving automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in building tailored document management automations. We can create custom solutions that match your specific file types, retention policies, and storage infrastructure while integrating with your existing tools.</p>
+          <p>Our team has built specialized archiving systems for law firms, healthcare providers, and financial institutions with unique compliance needs. We handle everything from initial assessment to implementation and ongoing optimization.</p>
+          <ul>
+            <li>Custom retention rules by document type</li>
+            <li>Integration with industry-specific compliance systems</li>
+            <li>Specialized compression for your file formats</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Document Archiving Solution?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

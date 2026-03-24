@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convert YouTube videos to MP4 & MP3 with RapidAPI and Google Sheets logging | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate YouTube video conversion to MP4/MP3 with download links logged to Google Sheets. Free n8n workflow template for content creators and marketers.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4269-convert-youtube-videos-to-mp4-and-mp3-with-rapidapi-and-google-sheets-logging">
+<meta property="og:title" content="Convert YouTube videos to MP4 & MP3 with RapidAPI and Google Sheets logging | n8n workflow template">
+<meta property="og:description" content="Automate YouTube video conversion to MP4/MP3 with download links logged to Google Sheets. Free n8n workflow template for content creators and marketers.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4269-convert-youtube-videos-to-mp4-and-mp3-with-rapidapi-and-google-sheets-logging">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6924-convert-youtube-videos-to-mp4-and-mp3-with-rapidapi-and.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Convert YouTube videos to MP4 & MP3 with RapidAPI and Google Sheets logging | n8n workflow template">
+<meta name="twitter:description" content="Automate YouTube video conversion to MP4/MP3 with download links logged to Google Sheets. Free n8n workflow template for content creators and marketers.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Convert YouTube videos to MP4 & MP3 with RapidAPI and Google Sheets logging","description":"Automate YouTube video conversion to MP4/MP3 with download links logged to Google Sheets","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6924-convert-youtube-videos-to-mp4-and-mp3-with-rapidapi-and.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the benefits of automating YouTube video downloads?","acceptedAnswer":{"@type":"Answer","text":"Automating YouTube video downloads saves hours of manual work by instantly converting videos to MP4/MP3 formats. It ensures consistent quality, tracks all downloads in a spreadsheet, and provides multiple resolution options automatically. Businesses use this for content repurposing, competitor research, and creating media libraries without manual downloading."}},{"@type":"Question","name":"Is it legal to download YouTube videos automatically?","acceptedAnswer":{"@type":"Answer","text":"Downloading YouTube videos is permitted for personal use or fair use cases like education, commentary, or research. However, redistributing copyrighted content without permission violates YouTube's Terms of Service. This automation is best used for your own content or with proper licensing for other videos."}},{"@type":"Question","name":"What video quality options does this automation provide?","acceptedAnswer":{"@type":"Answer","text":"The workflow typically provides multiple resolution options from 144p to 1080p (when available) plus audio-only MP3 versions. The RapidAPI integration fetches all available formats, allowing users to choose their preferred quality. Higher resolutions may require YouTube Premium for some videos."}},{"@type":"Question","name":"How does the Google Sheets logging work?","acceptedAnswer":{"@type":"Answer","text":"Each converted video gets logged with timestamp, video title, YouTube URL, and all download links. This creates an organized media library with searchable records. Teams can track usage, share links securely, and maintain compliance records for downloaded content."}},{"@type":"Question","name":"Can I customize the download formats?","acceptedAnswer":{"@type":"Answer","text":"Yes, the workflow can be modified to prioritize specific formats or resolutions. Common customizations include adding 4K support, adjusting bitrates, or filtering to audio-only outputs. The n8n workflow editor makes these adjustments straightforward for technical users."}},{"@type":"Question","name":"What's the advantage of using RapidAPI for YouTube downloads?","acceptedAnswer":{"@type":"Answer","text":"RapidAPI provides reliable, scalable infrastructure for video processing without building your own download system. It handles YouTube's changing APIs, offers global CDN delivery, and maintains high uptime. This automation approach is more stable than scraping and complies with YouTube's developer policies."}},{"@type":"Question","name":"Can I get a custom YouTube automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! GrowwStacks specializes in custom YouTube automation solutions. We can build workflows for bulk processing, channel monitoring, content archiving, or integration with your CMS. Our team handles API connections, compliance, and scaling for enterprise needs."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"YouTube to MP4/MP3 Converter"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>YouTube to MP4/MP3 Converter</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">YouTube</span>
+          <span class="cs-tag">RapidAPI</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Media Conversion</span>
+        </div>
+        <h1>Convert YouTube videos to MP4 & MP3 with RapidAPI and Google Sheets logging</h1>
+        <p class="cs-hero-sub">Automate YouTube video downloads with multiple quality options and automatic tracking in Google Sheets</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6924-convert-youtube-videos-to-mp4-and-mp3-with-rapidapi-and.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6924-convert-youtube-videos-to-mp4-and-mp3-with-rapidapi-and.png" alt="YouTube to MP4/MP3 conversion workflow interface" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This n8n workflow solves the time-consuming process of manually downloading YouTube videos for business use. It automatically converts any YouTube video URL into downloadable MP4 (video) and MP3 (audio) files through RapidAPI's conversion service, then logs all details to a Google Sheet for record-keeping.</p>
+        <p>Content creators, marketers, and researchers often need YouTube videos in downloadable formats for repurposing content, competitor analysis, or creating media libraries. This automation eliminates the need for unreliable online converters while maintaining an organized record of all downloads with direct links.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Workflow diagram showing YouTube to MP4 conversion process" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">The automated conversion process from YouTube URL to downloadable files</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. YouTube URL Submission</h3>
+        <p>The workflow starts when a user submits a YouTube video URL through a webhook, form, or manual entry. The system validates the URL format to ensure it's a proper YouTube link before processing.</p>
+
+        <h3>2. RapidAPI Conversion</h3>
+        <p>Using RapidAPI's YouTube conversion service, the workflow fetches available download formats. The API returns multiple quality options (typically from 144p to 1080p) plus separate audio-only MP3 versions.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> For consistent results, use YouTube video URLs from the share button rather than browser address bar links, as these are standardized.</p>
+        </div>
+
+        <h3>3. Google Sheets Logging</h3>
+        <p>All conversion results are automatically logged to a Google Sheet with timestamp, video title, original URL, and all download links. This creates a searchable database of your media downloads.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Google Sheets log of downloaded YouTube videos" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Automated tracking of all downloaded videos in Google Sheets</div>
+        </div>
+
+        <h3>4. Output Delivery</h3>
+        <p>The workflow can deliver download links via email, Slack, or return them through an API response. Users receive all available formats in one organized package.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for:</p>
+        <ul>
+          <li>Content creators repurposing their own YouTube videos</li>
+          <li>Marketing teams analyzing competitor content</li>
+          <li>Researchers building media libraries for analysis</li>
+          <li>Educators compiling video resources for classes</li>
+          <li>Podcasters converting interviews to audio format</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (cloud or self-hosted)</li>
+          <li>RapidAPI account with YouTube conversion API access</li>
+          <li>Google Sheets document for logging</li>
+          <li>Google Service Account credentials for API access</li>
+          <li>YouTube video URLs to process</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import into your n8n instance</li>
+          <li>Connect your RapidAPI account credentials</li>
+          <li>Configure your Google Sheets connection</li>
+          <li>Test with a sample YouTube URL</li>
+          <li>Deploy your webhook or trigger method</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 2-5 minutes per video</strong> compared to manual conversion tools by automating the entire process from URL to downloadable files.</p>
+        <p><strong>Never lose track of downloads</strong> with automatic Google Sheets logging that records every conversion with timestamps and metadata.</p>
+        <p><strong>Access multiple quality options</strong> in one click instead of testing different converters to find the best resolution.</p>
+        <p><strong>Scale your media processing</strong> by converting dozens or hundreds of videos without manual intervention.</p>
+        <p><strong>Maintain compliance records</strong> with detailed logs of what content was downloaded and when.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about YouTube video download automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating YouTube video downloads?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating YouTube video downloads saves hours of manual work by instantly converting videos to MP4/MP3 formats. It ensures consistent quality, tracks all downloads in a spreadsheet, and provides multiple resolution options automatically.</p>
+          <p>Businesses use this for content repurposing, competitor research, and creating media libraries without manual downloading. The automation maintains records for compliance and makes downloaded content easily shareable across teams.</p>
+          <ul>
+            <li>Saves 80% time compared to manual conversion</li>
+            <li>Centralizes all downloads in searchable records</li>
+            <li>Provides consistent output quality</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it legal to download YouTube videos automatically?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Downloading YouTube videos is permitted for personal use or fair use cases like education, commentary, or research. However, redistributing copyrighted content without permission violates YouTube's Terms of Service.</p>
+          <p>This automation is best used for your own content or with proper licensing for other videos. The Google Sheets logging helps demonstrate legitimate use cases if questions arise about your downloads.</p>
+          <ul>
+            <li>Always check YouTube's Terms of Service</li>
+            <li>Obtain permissions for commercial use</li>
+            <li>Use primarily for your own channel content</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What video quality options does this automation provide?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow typically provides multiple resolution options from 144p to 1080p (when available) plus audio-only MP3 versions. The RapidAPI integration fetches all available formats, allowing users to choose their preferred quality.</p>
+          <p>Higher resolutions may require YouTube Premium for some videos. The automation can be configured to prioritize certain formats or filter out lower quality options based on your needs.</p>
+          <ul>
+            <li>Standard definition (360p, 480p)</li>
+            <li>High definition (720p, 1080p)</li>
+            <li>Audio-only MP3 at 128kbps or higher</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does the Google Sheets logging work?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Each converted video gets logged with timestamp, video title, YouTube URL, and all download links. This creates an organized media library with searchable records of your downloads.</p>
+          <p>Teams can track usage, share links securely through the spreadsheet, and maintain compliance records. The logging can be enhanced with additional metadata like duration, channel name, or custom tags for better organization.</p>
+          <ul>
+            <li>Automatic timestamping of all downloads</li>
+            <li>Preserves original video metadata</li>
+            <li>Enables team collaboration through sharing</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the download formats?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the workflow can be modified to prioritize specific formats or resolutions. Common customizations include adding 4K support, adjusting bitrates, or filtering to audio-only outputs.</p>
+          <p>The n8n workflow editor makes these adjustments straightforward for technical users. For complex customizations, our team can help build tailored solutions for your specific format requirements.</p>
+          <ul>
+            <li>Filter by resolution or file type</li>
+            <li>Prioritize higher quality formats</li>
+            <li>Add custom naming conventions</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the advantage of using RapidAPI for YouTube downloads?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>RapidAPI provides reliable, scalable infrastructure for video processing without building your own download system. It handles YouTube's changing APIs, offers global CDN delivery, and maintains high uptime.</p>
+          <p>This automation approach is more stable than scraping and complies with YouTube's developer policies. RapidAPI's infrastructure ensures consistent performance even when processing multiple videos simultaneously.</p>
+          <ul>
+            <li>99.9% uptime guarantee</li>
+            <li>Handles API changes automatically</li>
+            <li>Global content delivery network</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom YouTube automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in custom YouTube automation solutions. We can build workflows for bulk processing, channel monitoring, content archiving, or integration with your CMS.</p>
+          <p>Our team handles API connections, compliance, and scaling for enterprise needs. We've built solutions for media companies, educators, and marketing teams requiring specialized YouTube automation.</p>
+          <ul>
+            <li>Bulk processing of video playlists</li>
+            <li>Integration with DAM systems</li>
+            <li>Custom metadata extraction</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom YouTube Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

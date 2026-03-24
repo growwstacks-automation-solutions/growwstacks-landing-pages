@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real-time public transport delay tracking with ScrapeGraphAI, Teams & Dropbox | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate public transport delay alerts with this n8n workflow integrating ScrapeGraphAI, Microsoft Teams, and Dropbox for real-time notifications and record keeping.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7336-real-time-public-transport-delay-tracking-with-scrapegraphai-teams-and-dropbox">
+<meta property="og:title" content="Real-time public transport delay tracking with ScrapeGraphAI, Teams & Dropbox">
+<meta property="og:description" content="Automate public transport delay alerts with this n8n workflow integrating ScrapeGraphAI, Microsoft Teams, and Dropbox for real-time notifications and record keeping.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7336-real-time-public-transport-delay-tracking-with-scrapegraphai-teams-and-dropbox">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11634-real-time-public-transport-delay-tracking-with-scrapeg.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Real-time public transport delay tracking with ScrapeGraphAI, Teams & Dropbox">
+<meta name="twitter:description" content="Automate public transport delay alerts with this n8n workflow integrating ScrapeGraphAI, Microsoft Teams, and Dropbox for real-time notifications and record keeping.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Real-time public transport delay tracking with ScrapeGraphAI, Teams & Dropbox","description":"Automate public transport delay alerts with this n8n workflow integrating ScrapeGraphAI, Microsoft Teams, and Dropbox for real-time notifications and record keeping.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11634-real-time-public-transport-delay-tracking-with-scrapeg.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can automation improve public transport operations?","acceptedAnswer":{"@type":"Answer","text":"Automation transforms public transport operations by providing real-time delay alerts, reducing manual monitoring, and improving response times. This workflow automatically scrapes schedule data, detects delays, and notifies teams instantly through Microsoft Teams while maintaining records in Dropbox. Transportation companies save hours of manual checking while improving service reliability and customer satisfaction."}},{"@type":"Question","name":"What are the benefits of integrating Teams with transport monitoring systems?","acceptedAnswer":{"@type":"Answer","text":"Microsoft Teams integration enables instant notifications to operations teams about delays, allowing faster response to service disruptions. Key benefits include: Immediate alerts to relevant channels, Mobile access for field staff, Discussion threads for incident resolution, and Historical records of all notifications. This reduces communication gaps during service disruptions."}},{"@type":"Question","name":"Why store transport delay data in Dropbox?","acceptedAnswer":{"@type":"Answer","text":"Dropbox provides secure, accessible storage for transport delay records with version history and easy sharing. Benefits include: Centralized record keeping for compliance, Access from any device for field teams, Automatic organization of delay reports, and Simple sharing with regulators or auditors. This creates an audit trail for service performance analysis."}},{"@type":"Question","name":"How does web scraping help with transport monitoring?","acceptedAnswer":{"@type":"Answer","text":"Web scraping automates data collection from transport authority websites that may not offer APIs. ScrapeGraphAI extracts schedule data reliably without manual checking. Advantages include: 24/7 monitoring without human oversight, Consistent data formatting for analysis, Immediate detection of schedule changes, and Integration with notification systems. This eliminates the need for staff to manually refresh websites."}},{"@type":"Question","name":"What metrics should transport operators track about delays?","acceptedAnswer":{"@type":"Answer","text":"Key delay metrics include frequency, duration, routes affected, and time of day patterns. This workflow helps track: Total delay minutes per route, Percentage of on-time performance, Most common delay times, and Recurring problem locations. Analyzing these trends helps optimize schedules and resource allocation to minimize disruptions."}},{"@type":"Question","name":"How can small transit agencies benefit from this automation?","acceptedAnswer":{"@type":"Answer","text":"Small agencies gain enterprise-level monitoring without expensive software. Benefits include: Affordable alternative to custom systems, Quick implementation with existing tools, Scalable as operations grow, and Professional reporting capabilities. Even small teams can provide reliable service updates to passengers with automated alerts."}},{"@type":"Question","name":"Can I get a custom public transport automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in custom transit automation solutions. We can build systems tailored to your specific routes, notification needs, and reporting requirements. Our solutions integrate with your existing tools and scale as your operations grow. We handle everything from initial consultation to ongoing support, ensuring reliable automation that meets your unique operational needs."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Real-time public transport delay tracking"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Real-time public transport delay tracking</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">ScrapeGraphAI</span>
+          <span class="cs-tag">Microsoft Teams</span>
+          <span class="cs-tag">Dropbox</span>
+          <span class="cs-tag">Transportation</span>
+        </div>
+        <h1>Real-time public transport delay tracking with ScrapeGraphAI, Teams & Dropbox</h1>
+        <p class="cs-hero-sub">Automate delay alerts and record keeping for public transport operations</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11634-real-time-public-transport-delay-tracking-with-scrapeg.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11634-real-time-public-transport-delay-tracking-with-scrapeg.png" alt="Public transport delay tracking workflow diagram" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solution solves the challenge of manually monitoring public transport schedules and communicating delays to staff and passengers. The workflow automatically scrapes transport authority websites for schedule changes using ScrapeGraphAI, detects delays, and instantly notifies operations teams via Microsoft Teams while maintaining comprehensive records in Dropbox.</p>
+        <p>Transport companies waste significant resources manually checking schedules and communicating delays. This workflow eliminates that inefficiency by providing real-time monitoring and automated notifications, ensuring faster response to service disruptions and better record-keeping for performance analysis.</p>
+
+        <div class="cs-img-block">
+          <img src="https://via.placeholder.com/800x400/4CAF50/FFFFFF?text=Public+Transport+Schedule+%26+Delay+Tracker+Workflow+Preview" alt="Workflow interface showing transport delay tracking steps" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">The workflow automatically checks schedules, detects delays, and triggers notifications</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Schedule Data Collection</h3>
+        <p>ScrapeGraphAI automatically extracts the latest schedule data from transport authority websites at regular intervals, even when no API is available. The scraper is configured to identify schedule changes and delays based on your specific route monitoring needs.</p>
+        
+        <h3>2. Delay Detection</h3>
+        <p>The workflow compares scraped data against expected schedules, applying your configured thresholds to identify significant delays. Custom logic filters minor variations while catching important disruptions that require notification.</p>
+        
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Configure different delay thresholds for peak vs. off-peak hours to avoid unnecessary alerts during typically congested periods.</p>
+        </div>
+
+        <h3>3. Teams Notification</h3>
+        <p>When delays are detected, the workflow posts detailed alerts to designated Microsoft Teams channels. Notifications include affected routes, expected delay duration, and alternative options when available. The system can @mention specific team members based on the route or severity.</p>
+        
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Example Teams notification about transport delays" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Sample delay notification in Microsoft Teams with route details</div>
+        </div>
+
+        <h3>4. Dropbox Record Keeping</h3>
+        <p>Every delay event is logged in Dropbox with a timestamped record containing all relevant details. These records are organized by date and route for easy reference, creating a searchable archive for performance reporting and regulatory compliance.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This solution benefits public transport operators, municipal transit authorities, school transportation departments, and private shuttle services. It's particularly valuable for:</p>
+        <ul>
+          <li>Operations managers needing real-time delay awareness</li>
+          <li>Customer service teams handling passenger inquiries</li>
+          <li>Transport planners analyzing service reliability trends</li>
+          <li>Small agencies without expensive monitoring systems</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>n8n instance (cloud or self-hosted)</li>
+          <li>Microsoft Teams with appropriate channel access</li>
+          <li>Dropbox account with API access</li>
+          <li>Transport authority websites to monitor (no API required)</li>
+          <li>Basic understanding of your schedule norms and delay thresholds</li>
+        </ol>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Transport operations center using the delay tracking system" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Operations team monitoring delays through the automated system</div>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import into your n8n instance</li>
+          <li>Configure ScrapeGraphAI with your target transport websites</li>
+          <li>Set up Microsoft Teams webhook for your notification channel</li>
+          <li>Connect your Dropbox account and specify the storage folder</li>
+          <li>Adjust delay thresholds and notification messages as needed</li>
+          <li>Test with known schedule changes to verify alerts</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Reduce manual monitoring by 80%</strong> by automating schedule checks that typically require staff to repeatedly refresh transport websites throughout the day.</p>
+        <p><strong>Cut delay response time in half</strong> with instant Teams notifications that reach all relevant personnel simultaneously, eliminating phone trees and email chains.</p>
+        <p><strong>Create audit-ready delay records</strong> automatically in Dropbox, organized by date and route for compliance reporting and performance analysis.</p>
+        <p><strong>Improve passenger satisfaction</strong> through faster communication of delays and more accurate estimated arrival times.</p>
+        <p><strong>Gain operational insights</strong> from aggregated delay data that reveals patterns and opportunities for schedule optimization.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about transport monitoring integration and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can automation improve public transport operations?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation transforms public transport operations by providing real-time delay alerts, reducing manual monitoring, and improving response times. This workflow automatically scrapes schedule data, detects delays, and notifies teams instantly through Microsoft Teams while maintaining records in Dropbox. Transportation companies save hours of manual checking while improving service reliability and customer satisfaction.</p>
+          <p>The system operates 24/7 without human intervention, catching delays that might otherwise go unnoticed during off-hours. Automated records provide accurate data for analyzing recurring issues and justifying schedule adjustments to transportation boards or city councils.</p>
+          <ul>
+            <li>Eliminates repetitive manual schedule checks</li>
+            <li>Provides consistent, unbiased delay recording</li>
+            <li>Enables data-driven service improvements</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of integrating Teams with transport monitoring systems?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Microsoft Teams integration enables instant notifications to operations teams about delays, allowing faster response to service disruptions. Key benefits include: Immediate alerts to relevant channels, Mobile access for field staff, Discussion threads for incident resolution, and Historical records of all notifications. This reduces communication gaps during service disruptions.</p>
+          <p>Teams becomes the central hub for delay management, where dispatchers can coordinate responses and update passengers. The integration supports @mentions to route alerts to specific personnel and allows attaching relevant documents like detour maps or alternate schedules directly in the notification thread.</p>
+          <ul>
+            <li>Reduces alert fatigue with targeted notifications</li>
+            <li>Maintains context with threaded conversations</li>
+            <li>Works seamlessly with mobile field teams</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why store transport delay data in Dropbox?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Dropbox provides secure, accessible storage for transport delay records with version history and easy sharing. Benefits include: Centralized record keeping for compliance, Access from any device for field teams, Automatic organization of delay reports, and Simple sharing with regulators or auditors. This creates an audit trail for service performance analysis.</p>
+          <p>The automated filing system ensures consistent documentation that withstands regulatory scrutiny. Managers can generate monthly performance reports directly from the archived data, identifying trends without manual data compilation. Dropbox's search capabilities make finding specific incidents quick and reliable.</p>
+          <ul>
+            <li>Eliminates lost or misfiled paper reports</li>
+            <li>Provides version control for edited records</li>
+            <li>Enables secure external sharing when needed</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does web scraping help with transport monitoring?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Web scraping automates data collection from transport authority websites that may not offer APIs. ScrapeGraphAI extracts schedule data reliably without manual checking. Advantages include: 24/7 monitoring without human oversight, Consistent data formatting for analysis, Immediate detection of schedule changes, and Integration with notification systems. This eliminates the need for staff to manually refresh websites.</p>
+          <p>The scraper adapts to website changes and extracts only relevant schedule information, filtering out advertisements and other page elements. It can handle complex scenarios like conditional delay messages and multi-route displays that vary by time of day, providing clean data for the monitoring system.</p>
+          <ul>
+            <li>Works with any public-facing schedule display</li>
+            <li>Adapts to website redesigns with minimal reconfiguration</li>
+            <li>Processes unstructured data into consistent formats</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What metrics should transport operators track about delays?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Key delay metrics include frequency, duration, routes affected, and time of day patterns. This workflow helps track: Total delay minutes per route, Percentage of on-time performance, Most common delay times, and Recurring problem locations. Analyzing these trends helps optimize schedules and resource allocation to minimize disruptions.</p>
+          <p>The system automatically calculates these metrics from raw delay data, providing actionable insights without spreadsheet work. Operators can identify whether delays cluster around specific intersections, time blocks, or vehicle types, enabling targeted infrastructure improvements or schedule adjustments.</p>
+          <ul>
+            <li>Focuses improvement efforts where most needed</li>
+            <li>Provides objective data for funding requests</li>
+            <li>Helps balance schedule realism with passenger expectations</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can small transit agencies benefit from this automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Small agencies gain enterprise-level monitoring without expensive software. Benefits include: Affordable alternative to custom systems, Quick implementation with existing tools, Scalable as operations grow, and Professional reporting capabilities. Even small teams can provide reliable service updates to passengers with automated alerts.</p>
+          <p>The solution levels the playing field, allowing small operators to match the service transparency of larger competitors. With limited staff, automation ensures no delay goes unaddressed due to human oversight. The system grows with the agency, easily accommodating additional routes or notification channels as needed.</p>
+          <ul>
+            <li>Requires no specialized IT staff to maintain</li>
+            <li>Delivers big-city reliability for small-town budgets</li>
+            <li>Builds passenger trust through consistent communication</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom public transport automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in custom transit automation solutions. We can build systems tailored to your specific routes, notification needs, and reporting requirements. Our solutions integrate with your existing tools and scale as your operations grow. We handle everything from initial consultation to ongoing support, ensuring reliable automation that meets your unique operational needs.</p>
+          <p>Our transportation automation experts will design a system that addresses your particular challenges, whether you need passenger-facing delay alerts, driver notifications, or detailed reporting for funding agencies. We implement with minimal disruption to your current workflows while maximizing the benefits of automation.</p>
+          <ul>
+            <li>Customized to your routes and schedules</li>
+            <li>Integrates with your current software stack</li>
+            <li>Includes training and ongoing support</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Transport Monitoring Integration?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

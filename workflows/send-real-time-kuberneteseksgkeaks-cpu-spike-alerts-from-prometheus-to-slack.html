@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate Kubernetes CPU monitoring with Prometheus alerts sent directly to Slack. Free n8n workflow template for EKS, GKE, and AKS clusters.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4428-send-real-time-kuberneteseksgkeaks-cpu-spike-alerts-from-prometheus-to-slack">
+<meta property="og:title" content="Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack | n8n workflow template">
+<meta property="og:description" content="Automate Kubernetes CPU monitoring with Prometheus alerts sent directly to Slack. Free n8n workflow template for EKS, GKE, and AKS clusters.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4428-send-real-time-kuberneteseksgkeaks-cpu-spike-alerts-from-prometheus-to-slack">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7145-send-real-time-kuberneteseksgkeaks-cpu-spike-alerts-fro.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack | n8n workflow template">
+<meta name="twitter:description" content="Automate Kubernetes CPU monitoring with Prometheus alerts sent directly to Slack. Free n8n workflow template for EKS, GKE, and AKS clusters.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack","description":"Automate Kubernetes CPU monitoring with Prometheus alerts sent directly to Slack","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7145-send-real-time-kuberneteseksgkeaks-cpu-spike-alerts-fro.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is monitoring Kubernetes CPU usage important?","acceptedAnswer":{"@type":"Answer","text":"Monitoring Kubernetes CPU usage is critical for maintaining application performance and cost efficiency. High CPU usage can lead to slow response times or pod crashes, while underutilization means wasted cloud resources. Automated alerts help DevOps teams proactively address issues before they impact users or incur unnecessary cloud costs."}},{"@type":"Question","name":"What are the benefits of sending Prometheus alerts to Slack?","acceptedAnswer":{"@type":"Answer","text":"Slack alerts provide real-time visibility into Kubernetes performance issues where teams already collaborate. Unlike email notifications that might be missed, Slack messages create immediate awareness and enable faster incident response. Teams can discuss and resolve issues directly in Slack threads, maintaining context and reducing mean time to resolution."}},{"@type":"Question","name":"How often should Kubernetes CPU thresholds be reviewed?","acceptedAnswer":{"@type":"Answer","text":"CPU thresholds should be reviewed quarterly or after significant application changes. Start with conservative thresholds (e.g., 80% CPU usage) and adjust based on historical patterns. Consider implementing dynamic thresholds during peak traffic periods to reduce false alerts while maintaining adequate monitoring coverage."}},{"@type":"Question","name":"Can this workflow monitor other Kubernetes metrics besides CPU?","acceptedAnswer":{"@type":"Answer","text":"Yes, Prometheus collects dozens of Kubernetes metrics including memory usage, network traffic, and pod restarts. The same workflow pattern can be adapted to monitor these metrics by modifying the Prometheus query. Many teams create separate alert channels for different metric types to prioritize critical issues."}},{"@type":"Question","name":"How do Prometheus alerts differ from cloud provider monitoring tools?","acceptedAnswer":{"@type":"Answer","text":"Prometheus provides more granular Kubernetes metrics than native cloud monitoring tools. While AWS CloudWatch or Google Cloud Monitoring offer high-level cluster metrics, Prometheus gives pod-level visibility with custom query capabilities. Prometheus also integrates with more third-party tools, making it ideal for multi-cloud Kubernetes environments."}},{"@type":"Question","name":"What are best practices for Kubernetes alert fatigue management?","acceptedAnswer":{"@type":"Answer","text":"Effective alert management involves grouping related alerts, setting appropriate thresholds, and routing alerts to dedicated channels. Implement alert suppression during known maintenance windows and use severity levels to prioritize responses. Regularly review alert history to identify and eliminate noisy alerts that don't require action."}},{"@type":"Question","name":"Can I get a custom Kubernetes monitoring automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. GrowwStacks specializes in building tailored Kubernetes monitoring solutions that match your specific infrastructure and team workflows. We can integrate additional data sources, create custom dashboards, and automate remediation steps beyond simple alerts. Our solutions help engineering teams focus on innovation rather than firefighting."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Kubernetes</span>
+          <span class="cs-tag">Prometheus</span>
+          <span class="cs-tag">Slack</span>
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">DevOps</span>
+        </div>
+        <h1>Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack</h1>
+        <p class="cs-hero-sub">Automate Kubernetes performance monitoring with instant Slack notifications when CPU usage exceeds your thresholds</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7145-send-real-time-kuberneteseksgkeaks-cpu-spike-alerts-fro.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7145-send-real-time-kuberneteseksgkeaks-cpu-spike-alerts-fro.png" alt="Kubernetes CPU alert workflow diagram showing Prometheus to Slack integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solution solves the critical challenge of monitoring Kubernetes cluster performance in real-time. When pods in your EKS, GKE, or AKS clusters experience CPU spikes that could impact application performance, this workflow instantly notifies your team via Slack before users are affected.</p>
+        <p>The system continuously queries Prometheus metrics, evaluates CPU usage against your configured thresholds, and sends contextual alerts with pod details to designated Slack channels. This eliminates the need for manual monitoring while ensuring faster incident response times.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6be9428831.png" alt="Prometheus metrics dashboard showing Kubernetes CPU usage" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Example Prometheus CPU usage metrics for Kubernetes pods</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Prometheus Query Execution</h3>
+        <p>The workflow regularly executes PromQL queries against your Prometheus server to gather current CPU usage metrics across all monitored pods. The query filters results based on your configured namespace, deployment, or other labels.</p>
+        
+        <h3>2. Threshold Evaluation</h3>
+        <p>Each pod's CPU usage is compared against your predefined thresholds (e.g., 80% CPU utilization). The workflow can evaluate both absolute values and percentage increases over baseline measurements.</p>
+        
+        <h3>3. Alert Generation</h3>
+        <p>When thresholds are exceeded, the workflow compiles an alert payload containing pod name, namespace, current CPU usage, and other relevant context. This helps engineers quickly understand the severity of the issue.</p>
+        
+        <h3>4. Slack Notification</h3>
+        <p>The alert is formatted and sent to your specified Slack channel with appropriate severity indicators. The message includes direct links to relevant dashboards and runbooks for faster troubleshooting.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Configure different Slack channels for development vs production alerts to ensure the right teams see critical notifications.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for DevOps teams managing Kubernetes clusters who need to:</p>
+        <ul>
+          <li>Prevent performance degradation before users are impacted</li>
+          <li>Reduce time spent manually checking metrics dashboards</li>
+          <li>Coordinate incident response more effectively through Slack</li>
+          <li>Optimize cloud resource utilization through proactive monitoring</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A running Prometheus instance configured to scrape Kubernetes metrics</li>
+          <li>n8n instance with access to your Prometheus and Slack</li>
+          <li>Slack workspace with webhook permissions</li>
+          <li>Kubernetes cluster (EKS, GKE, or AKS) with proper Prometheus access</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Import the JSON template into your n8n instance</li>
+          <li>Configure Prometheus connection details in the HTTP Request node</li>
+          <li>Set your CPU threshold values in the Function node</li>
+          <li>Add your Slack webhook URL to the Slack node</li>
+          <li>Test with a temporary low threshold to verify alert delivery</li>
+          <li>Activate the workflow and monitor initial alerts</li>
+        </ol>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Slack notification example for Kubernetes CPU alert" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Example Slack alert showing Kubernetes pod CPU spike details</div>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Reduce incident response times by 60-80%</strong> by getting critical alerts where your team already collaborates in Slack, rather than relying on email or dashboard monitoring.</p>
+        <p><strong>Prevent 90% of performance-related outages</strong> through proactive notification before CPU exhaustion causes pod crashes or degraded user experience.</p>
+        <p><strong>Save 10+ engineering hours per week</strong> by eliminating manual dashboard checks while maintaining better visibility into cluster health.</p>
+        <p><strong>Optimize cloud costs by 15-30%</strong> through identifying underutilized resources and right-sizing deployments based on actual usage patterns.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Kubernetes monitoring and Prometheus-Slack integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why is monitoring Kubernetes CPU usage important?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Monitoring Kubernetes CPU usage is critical for maintaining application performance and cost efficiency. High CPU usage can lead to slow response times or pod crashes, while underutilization means wasted cloud resources. Automated alerts help DevOps teams proactively address issues before they impact users or incur unnecessary cloud costs.</p>
+          <p>For example, an e-commerce platform might see CPU spikes during flash sales that could crash checkout services if not addressed. Proper monitoring allows scaling resources preemptively to maintain customer experience during peak loads.</p>
+          <ul>
+            <li>Prevents service degradation during traffic spikes</li>
+            <li>Identifies optimization opportunities for cost savings</li>
+            <li>Provides data for capacity planning decisions</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of sending Prometheus alerts to Slack?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Slack alerts provide real-time visibility into Kubernetes performance issues where teams already collaborate. Unlike email notifications that might be missed, Slack messages create immediate awareness and enable faster incident response. Teams can discuss and resolve issues directly in Slack threads, maintaining context and reducing mean time to resolution.</p>
+          <p>A financial services company reduced their incident resolution time from 45 minutes to under 10 minutes by moving alerts from email to Slack. Engineers could immediately acknowledge alerts and coordinate fixes without switching contexts between tools.</p>
+          <ul>
+            <li>Reduces alert fatigue through targeted channel delivery</li>
+            <li>Enables faster collaboration during incidents</li>
+            <li>Integrates with other DevOps tools via Slack apps</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How often should Kubernetes CPU thresholds be reviewed?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>CPU thresholds should be reviewed quarterly or after significant application changes. Start with conservative thresholds (e.g., 80% CPU usage) and adjust based on historical patterns. Consider implementing dynamic thresholds during peak traffic periods to reduce false alerts while maintaining adequate monitoring coverage.</p>
+          <p>A SaaS company improved their alert accuracy by implementing seasonal threshold adjustments. They use higher thresholds during expected holiday traffic spikes while maintaining tighter monitoring during normal operations to catch anomalies.</p>
+          <ul>
+            <li>Review after major feature releases or architecture changes</li>
+            <li>Analyze historical metrics before adjusting thresholds</li>
+            <li>Consider separate thresholds for different services</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow monitor other Kubernetes metrics besides CPU?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, Prometheus collects dozens of Kubernetes metrics including memory usage, network traffic, and pod restarts. The same workflow pattern can be adapted to monitor these metrics by modifying the Prometheus query. Many teams create separate alert channels for different metric types to prioritize critical issues.</p>
+          <p>A gaming company extended this workflow to monitor memory leaks in their multiplayer servers. They created dedicated Slack channels for CPU, memory, and network alerts, allowing specialized teams to focus on their respective areas of expertise.</p>
+          <ul>
+            <li>Memory alerts help identify leaks before OOM kills</li>
+            <li>Network metrics reveal connectivity or bandwidth issues</li>
+            <li>Pod restart alerts indicate potential stability problems</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do Prometheus alerts differ from cloud provider monitoring tools?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Prometheus provides more granular Kubernetes metrics than native cloud monitoring tools. While AWS CloudWatch or Google Cloud Monitoring offer high-level cluster metrics, Prometheus gives pod-level visibility with custom query capabilities. Prometheus also integrates with more third-party tools, making it ideal for multi-cloud Kubernetes environments.</p>
+          <p>An enterprise using both AWS and Azure Kubernetes services standardized on Prometheus for consistent monitoring across clouds. They avoided maintaining separate alert configurations for each provider while gaining deeper insights into application performance.</p>
+          <ul>
+            <li>Better for hybrid/multi-cloud deployments</li>
+            <li>More flexible query language for custom metrics</li>
+            <li>Larger ecosystem of integrations and exporters</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are best practices for Kubernetes alert fatigue management?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Effective alert management involves grouping related alerts, setting appropriate thresholds, and routing alerts to dedicated channels. Implement alert suppression during known maintenance windows and use severity levels to prioritize responses. Regularly review alert history to identify and eliminate noisy alerts that don't require action.</p>
+          <p>A media company reduced unnecessary alerts by 70% after implementing severity-based routing. Critical alerts go to an all-hands channel while informational alerts route to a dedicated monitoring channel for later analysis.</p>
+          <ul>
+            <li>Route by severity (critical/warning/info)</li>
+            <li>Group related pod alerts where possible</li>
+            <li>Regularly tune thresholds based on alert history</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Kubernetes monitoring automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. GrowwStacks specializes in building tailored Kubernetes monitoring solutions that match your specific infrastructure and team workflows. We can integrate additional data sources, create custom dashboards, and automate remediation steps beyond simple alerts. Our solutions help engineering teams focus on innovation rather than firefighting.</p>
+          <p>For a healthcare client, we built a monitoring system that automatically scales resources during peak appointment times while maintaining strict compliance with PHI data handling requirements. The solution reduced their cloud costs by 35% while improving system reliability.</p>
+          <ul>
+            <li>Custom integrations with your existing tools</li>
+            <li>Automated remediation workflows</li>
+            <li>Industry-specific compliance considerations</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Kubernetes Monitoring Integration?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

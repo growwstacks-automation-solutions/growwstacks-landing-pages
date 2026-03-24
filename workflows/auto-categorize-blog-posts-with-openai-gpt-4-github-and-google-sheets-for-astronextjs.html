@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-categorize blog posts with OpenAI GPT-4, GitHub, and Google Sheets for Astro/Next.js | Free Template | GrowwStacks</title>
+<meta name="description" content="Automatically Assign Categories and Tags to Blog Posts with AI. This workflow streamlines your content organization process by automatically analyzing new blog posts and assigning relevant categories and tags using OpenAI GPT-4.">
+<link rel="canonical" href="https://growwstacks.com/workflows/6425-auto-categorize-blog-posts-with-openai-gpt-4-github-and-google-sheets-for-astronextjs">
+<meta property="og:title" content="Auto-categorize blog posts with OpenAI GPT-4, GitHub, and Google Sheets for Astro/Next.js">
+<meta property="og:description" content="Automatically Assign Categories and Tags to Blog Posts with AI. This workflow streamlines your content organization process by automatically analyzing new blog posts and assigning relevant categories and tags using OpenAI GPT-4.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/6425-auto-categorize-blog-posts-with-openai-gpt-4-github-and-google-sheets-for-astronextjs">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/9983-auto-categorize-blog-posts-with-openai-gpt-4-github-and.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Auto-categorize blog posts with OpenAI GPT-4, GitHub, and Google Sheets for Astro/Next.js">
+<meta name="twitter:description" content="Automatically Assign Categories and Tags to Blog Posts with AI. This workflow streamlines your content organization process by automatically analyzing new blog posts and assigning relevant categories and tags using OpenAI GPT-4.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Auto-categorize blog posts with OpenAI GPT-4, GitHub, and Google Sheets for Astro/Next.js","description":"Automatically Assign Categories and Tags to Blog Posts with AI. This workflow streamlines your content organization process by automatically analyzing new blog posts and assigning relevant categories and tags using OpenAI GPT-4.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/9983-auto-categorize-blog-posts-with-openai-gpt-4-github-and.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does AI help with blog post categorization?","acceptedAnswer":{"@type":"Answer","text":"AI-powered categorization analyzes your blog content to automatically assign relevant categories and tags. OpenAI GPT-4 understands context and themes in your writing, then matches them to your existing taxonomy. This eliminates manual tagging while improving consistency across your content library."}},{"@type":"Question","name":"What are the benefits of automating blog post organization?","acceptedAnswer":{"@type":"Answer","text":"Automated categorization saves editors 2-3 hours per post while improving SEO through consistent tagging. It reduces human error in classification and helps maintain content standards across teams. The system also learns from your corrections to improve future suggestions."}},{"@type":"Question","name":"How accurate is AI at categorizing technical blog content?","acceptedAnswer":{"@type":"Answer","text":"GPT-4 achieves 85-90% accuracy for technical content when properly trained with examples. The workflow includes a human review step before finalizing categories. You can improve accuracy by providing your existing taxonomy and sample categorized posts during setup."}},{"@type":"Question","name":"Can this workflow handle multiple languages?","acceptedAnswer":{"@type":"Answer","text":"Yes, the OpenAI integration supports content analysis in dozens of languages. The system can categorize posts in different languages while maintaining a unified taxonomy. For best results, provide some examples of categorized posts in each language you'll be using."}},{"@type":"Question","name":"How does this compare to WordPress auto-tagging plugins?","acceptedAnswer":{"@type":"Answer","text":"This solution offers deeper content analysis than most plugins, understanding context rather than just keywords. It integrates directly with your GitHub-based workflow and provides structured data output to Google Sheets. The system is also fully customizable to your specific content strategy."}},{"@type":"Question","name":"What's the best way to implement AI categorization for a team?","acceptedAnswer":{"@type":"Answer","text":"Start with a pilot phase where AI suggests categories that editors approve or modify. Track corrections to improve the model. Gradually increase automation as accuracy improves. Maintain clear documentation of your taxonomy and review processes for new team members."}},{"@type":"Question","name":"Can I get a custom blog automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! GrowwStacks specializes in tailored content automation solutions. We can build a custom system that integrates with your existing CMS, follows your editorial guidelines, and adapts to your specific content strategy. Book a free consultation to discuss your requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Auto-categorize blog posts with OpenAI GPT-4, GitHub, and Google Sheets for Astro/Next.js"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Auto-categorize blog posts with OpenAI GPT-4, GitHub, and Google Sheets for Astro/Next.js</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">AI Content</span>
+          <span class="cs-tag">Blog Automation</span>
+          <span class="cs-tag">SEO Optimization</span>
+        </div>
+        <h1>Auto-categorize blog posts with OpenAI GPT-4, GitHub, and Google Sheets for Astro/Next.js</h1>
+        <p class="cs-hero-sub">Automatically analyze and categorize new blog posts with AI-powered classification</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/9983-auto-categorize-blog-posts-with-openai-gpt-4-github-and.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/9983-auto-categorize-blog-posts-with-openai-gpt-4-github-and.png" alt="Workflow diagram showing blog post categorization with OpenAI GPT-4" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the time-consuming challenge of manually categorizing and tagging blog posts in Astro/Next.js projects. When new content is pushed to GitHub, the workflow automatically analyzes the post using OpenAI GPT-4 to suggest relevant categories and tags based on the content's themes and topics.</p>
+        <p>The system maintains consistency across your blog by matching new posts to your existing taxonomy. It outputs the results to Google Sheets for easy review and integration with your CMS. This eliminates hours of manual work while improving SEO through consistent, relevant tagging.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_27d85e8ea8.png" alt="Screenshot of AI-generated category suggestions" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Example of AI-generated category suggestions for a technical blog post</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. GitHub Trigger</h3>
+        <p>The workflow activates when new markdown files are pushed to your blog repository. It extracts the post content and metadata for processing.</p>
+        
+        <h3>2. AI Analysis</h3>
+        <p>OpenAI GPT-4 analyzes the post content to identify key themes, topics, and technical concepts. The AI references your existing category structure to maintain consistency.</p>
+        
+        <h3>3. Category Assignment</h3>
+        <p>The system assigns primary and secondary categories based on content relevance scores. It also generates relevant tags for SEO optimization.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Workflow diagram showing the categorization process" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Visualization of the automated categorization workflow steps</div>
+        </div>
+
+        <h3>4. Google Sheets Output</h3>
+        <p>Results are logged in a Google Sheet with the post title, suggested categories, tags, and confidence scores. This creates an auditable record and allows for easy CMS integration.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Use the confidence scores to identify posts that might need manual review. Scores below 80% often benefit from human verification.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for:</p>
+        <ul>
+          <li>Technical content teams publishing multiple posts weekly</li>
+          <li>Developers maintaining documentation blogs</li>
+          <li>Marketing teams needing consistent SEO tagging</li>
+          <li>Editors managing contributor content</li>
+          <li>Teams transitioning between CMS platforms</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>n8n instance (cloud or self-hosted)</li>
+          <li>OpenAI API key</li>
+          <li>GitHub repository with blog content</li>
+          <li>Google Sheets for output</li>
+          <li>Existing category taxonomy (recommended)</li>
+        </ol>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Screenshot of the Google Sheets output" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Example Google Sheets output with categorized posts</div>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the JSON template file</li>
+          <li>Import into your n8n instance</li>
+          <li>Connect your GitHub, OpenAI, and Google Sheets accounts</li>
+          <li>Configure your repository path and output sheet</li>
+          <li>Optionally provide sample categorized posts to train the AI</li>
+          <li>Test with a new blog post commit</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Saves 2-3 hours per post</strong> by eliminating manual categorization work. Editors can focus on content quality rather than taxonomy management.</p>
+        <p><strong>Improves SEO consistency</strong> through standardized tagging across all posts. The AI maintains your category structure even as new contributors join.</p>
+        <p><strong>Reduces human error</strong> in classification. The system objectively analyzes content rather than relying on subjective human judgment.</p>
+        <p><strong>Creates audit trails</strong> in Google Sheets for tracking categorization decisions and model improvements over time.</p>
+        <p><strong>Adapts to your content</strong> by learning from corrections. The more you use it, the better it understands your specific taxonomy needs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about AI-powered blog categorization</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does AI help with blog post categorization?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI-powered categorization analyzes your blog content to automatically assign relevant categories and tags. OpenAI GPT-4 understands context and themes in your writing, then matches them to your existing taxonomy. This eliminates manual tagging while improving consistency across your content library.</p>
+          <p>The system goes beyond simple keyword matching to understand the relationships between concepts in your posts. For technical content, it can distinguish between tutorial, reference, and conceptual pieces even when they mention similar technologies.</p>
+          <ul>
+            <li>Maintains consistent tagging across multiple authors</li>
+            <li>Adapts to your specific content strategy</li>
+            <li>Reduces subjective classification decisions</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating blog post organization?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automated categorization saves editors 2-3 hours per post while improving SEO through consistent tagging. It reduces human error in classification and helps maintain content standards across teams. The system also learns from your corrections to improve future suggestions.</p>
+          <p>For teams publishing multiple posts weekly, this automation ensures new content is properly classified even when rushed. The Google Sheets output creates a searchable record of all categorization decisions for auditing and training purposes.</p>
+          <ul>
+            <li>Faster content publication cycles</li>
+            <li>Improved internal linking opportunities</li>
+            <li>Easier content audits and migrations</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is AI at categorizing technical blog content?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>GPT-4 achieves 85-90% accuracy for technical content when properly trained with examples. The workflow includes a human review step before finalizing categories. You can improve accuracy by providing your existing taxonomy and sample categorized posts during setup.</p>
+          <p>The system performs particularly well with framework-specific content (like Astro/Next.js posts) where terminology is well-defined. For broad conceptual pieces, it may need more guidance to match your preferred classification approach.</p>
+          <ul>
+            <li>Provide 10-20 sample posts for initial training</li>
+            <li>Review confidence scores below 80%</li>
+            <li>Update your taxonomy documentation regularly</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow handle multiple languages?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the OpenAI integration supports content analysis in dozens of languages. The system can categorize posts in different languages while maintaining a unified taxonomy. For best results, provide some examples of categorized posts in each language you'll be using.</p>
+          <p>The workflow handles language detection automatically, so you can maintain a single category structure across multilingual content. This is particularly valuable for technical documentation that needs consistent organization across language versions.</p>
+          <ul>
+            <li>Works with most European and Asian languages</li>
+            <li>Maintains one taxonomy across languages</li>
+            <li>Requires some training samples per language</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does this compare to WordPress auto-tagging plugins?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This solution offers deeper content analysis than most plugins, understanding context rather than just keywords. It integrates directly with your GitHub-based workflow and provides structured data output to Google Sheets. The system is also fully customizable to your specific content strategy.</p>
+          <p>Unlike plugin solutions tied to WordPress, this workflow works with any static site generator or headless CMS. The Google Sheets integration makes it easy to audit and modify categorization before it reaches your production site.</p>
+          <ul>
+            <li>Not limited to WordPress ecosystems</li>
+            <li>Provides confidence scores for review</li>
+            <li>Customizable to your exact taxonomy needs</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the best way to implement AI categorization for a team?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Start with a pilot phase where AI suggests categories that editors approve or modify. Track corrections to improve the model. Gradually increase automation as accuracy improves. Maintain clear documentation of your taxonomy and review processes for new team members.</p>
+          <p>For technical teams, involve your developers in defining the initial category structure based on your documentation needs. Schedule quarterly reviews of the AI's performance to identify areas needing additional training samples.</p>
+          <ul>
+            <li>Begin with high-confidence suggestions only</li>
+            <li>Document your taxonomy decisions</li>
+            <li>Review performance metrics regularly</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom blog automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in tailored content automation solutions. We can build a custom system that integrates with your existing CMS, follows your editorial guidelines, and adapts to your specific content strategy. Book a free consultation to discuss your requirements.</p>
+          <p>Our team has experience creating specialized automation for technical documentation, marketing blogs, and knowledge bases. We'll design a solution that fits seamlessly into your existing publishing workflow while maximizing the benefits of AI assistance.</p>
+          <ul>
+            <li>Custom integrations with any CMS</li>
+            <li>Tailored to your editorial process</li>
+            <li>Ongoing optimization support</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Blog Automation Solution?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

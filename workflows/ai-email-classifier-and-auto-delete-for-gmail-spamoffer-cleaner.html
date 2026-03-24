@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI email classifier & auto-delete for Gmail (SPAM/OFFER cleaner) | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automatically classify and delete spam/offer emails from Gmail using AI. Free workflow template for n8n to clean your inbox daily.">
+<link rel="canonical" href="https://growwstacks.com/workflows/2355-ai-email-classifier-and-auto-delete-for-gmail-spamoffer-cleaner">
+<meta property="og:title" content="AI email classifier & auto-delete for Gmail (SPAM/OFFER cleaner) | n8n workflow template">
+<meta property="og:description" content="Automatically classify and delete spam/offer emails from Gmail using AI. Free workflow template for n8n to clean your inbox daily.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/2355-ai-email-classifier-and-auto-delete-for-gmail-spamoffer-cleaner">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4507-ai-email-classifier-and-auto-delete-for-gmail-spamoffer.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI email classifier & auto-delete for Gmail (SPAM/OFFER cleaner) | n8n workflow template">
+<meta name="twitter:description" content="Automatically classify and delete spam/offer emails from Gmail using AI. Free workflow template for n8n to clean your inbox daily.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI email classifier & auto-delete for Gmail (SPAM/OFFER cleaner)","description":"Automatically classify and delete spam/offer emails from Gmail using AI","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4507-ai-email-classifier-and-auto-delete-for-gmail-spamoffer.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does AI email filtering work for Gmail?","acceptedAnswer":{"@type":"Answer","text":"AI email filtering analyzes message content using natural language processing to identify spam, promotions, or irrelevant content. The system learns from your email patterns and can be trained to recognize specific types of unwanted messages. For Gmail specifically, it works alongside (not replacing) Google's existing filters to provide an additional layer of protection against inbox clutter."}},{"@type":"Question","name":"What types of emails can this automation delete automatically?","acceptedAnswer":{"@type":"Answer","text":"This automation can target common unwanted email categories like promotional offers, newsletter subscriptions you no longer read, cold sales pitches, and low-priority notifications. The AI classifier can be customized to recognize specific patterns like discount codes, webinar invitations, or vendor solicitations. It preserves important messages by analyzing content contextually rather than just keywords."}},{"@type":"Question","name":"Is it safe to automatically delete emails without reviewing them?","acceptedAnswer":{"@type":"Answer","text":"The system includes multiple safeguards. First, it moves messages to trash rather than permanent deletion. Second, it provides a daily summary of what was removed. Third, you can set confidence thresholds - only deleting emails the AI is highly certain about. Most users start with a trial period where emails are just labeled before enabling auto-deletion."}},{"@type":"Question","name":"How accurate is AI at classifying different email types?","acceptedAnswer":{"@type":"Answer","text":"Modern AI classifiers achieve 85-95% accuracy for common email categories after initial training. The system improves over time as it learns from your corrections. For critical business communications, we recommend keeping human review for the first few weeks. The template includes an optional manual approval step you can enable during setup."}},{"@type":"Question","name":"Can I customize what counts as spam or promotional content?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The workflow allows you to define custom categories, add specific keywords or sender domains to watch for, and adjust sensitivity levels. You can create rules like 'always keep emails from these domains' or 'flag messages containing these phrases.' The system becomes more precise as you provide feedback on its classifications."}},{"@type":"Question","name":"What happens if the AI makes a mistake and deletes an important email?","acceptedAnswer":{"@type":"Answer","text":"Deleted emails go to your Gmail trash where they remain for 30 days. The workflow also sends a daily digest showing all removed messages with classification details. For critical accounts, we recommend keeping the 'important emails' label protected or setting up a secondary inbox for verification before permanent deletion."}},{"@type":"Question","name":"Can I get a custom email automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes! GrowwStacks specializes in building tailored email processing systems for businesses. We can create custom classifiers for your specific email patterns, integrate with your CRM or support tools, and set up multi-layer approval workflows. Our team will analyze your current inbox challenges and design a solution that fits your workflow perfectly."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"AI email classifier & auto-delete for Gmail"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>AI email classifier & auto-delete for Gmail</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Gmail</span>
+          <span class="cs-tag">AI Automation</span>
+          <span class="cs-tag">Email Management</span>
+        </div>
+        <h1>AI email classifier & auto-delete for Gmail (SPAM/OFFER cleaner)</h1>
+        <p class="cs-hero-sub">Automatically filter and remove unwanted messages from your inbox using AI-powered classification</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4507-ai-email-classifier-and-auto-delete-for-gmail-spamoffer.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4507-ai-email-classifier-and-auto-delete-for-gmail-spamoffer.png" alt="AI email classifier workflow interface in n8n" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the growing problem of inbox overload by using AI to automatically identify and remove spam, promotional offers, and low-value emails from your Gmail account. For freelancers and business owners receiving hundreds of messages daily, it eliminates the manual work of sorting through irrelevant content while ensuring important communications remain visible.</p>
+        <p>The system works 24/7 to analyze incoming emails, classify them based on your preferences, and either delete them immediately or flag them for review. Unlike basic Gmail filters, it understands context and can detect nuanced patterns in message content, making it far more effective than rule-based approaches alone.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Email classification process flow diagram" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">The AI analyzes email content and metadata to make classification decisions</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Email retrieval and preprocessing</h3>
+        <p>The workflow checks your Gmail inbox at regular intervals (configurable from 15 minutes to 24 hours) and retrieves new messages. It extracts key elements like subject lines, sender information, and message content while preserving the original email in your account.</p>
+
+        <h3>2. AI content analysis</h3>
+        <p>Each email is processed through a natural language understanding model that evaluates multiple factors: the writing style, embedded links, common promotional phrases, and your past interaction patterns. The system assigns confidence scores for different classification categories.</p>
+
+        <h3>3. Decision and action</h3>
+        <p>Based on your predefined thresholds, the workflow either moves messages to trash, applies labels for later review, or leaves them in your inbox. You receive a daily digest showing what was filtered and why, allowing you to provide feedback that improves future classifications.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with conservative settings that just label questionable emails rather than deleting them. After a week of reviewing the AI's decisions, you can confidently enable auto-deletion for categories it handles well.</p>
+        </div>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="Workflow configuration options in n8n" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Customizable settings for email classification sensitivity and actions</div>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This solution is ideal for:</p>
+        <ul>
+          <li>Freelancers drowning in cold pitches and service offers</li>
+          <li>Small business owners receiving vendor solicitations</li>
+          <li>Professionals subscribed to numerous newsletters</li>
+          <li>Teams wanting consistent email filtering across members</li>
+          <li>Anyone spending more than 30 minutes daily managing inbox clutter</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An active n8n instance (cloud or self-hosted)</li>
+          <li>Gmail account with API access enabled</li>
+          <li>Access to an AI/ML service (like OpenAI or Google's NLP API)</li>
+          <li>Basic understanding of n8n workflows (or willingness to learn)</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the template file and import it into your n8n instance</li>
+          <li>Connect your Gmail account via OAuth in the credential settings</li>
+          <li>Configure your AI service API keys in the designated nodes</li>
+          <li>Adjust classification thresholds in the filter nodes</li>
+          <li>Test with sample emails before enabling full automation</li>
+          <li>Schedule the workflow to run at your preferred frequency</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Recover 5+ hours weekly</strong> by eliminating manual email sorting. The average knowledge worker spends 28% of their workweek managing email - this automation reclaims most of that time.</p>
+        
+        <p><strong>Reduce decision fatigue</strong> by letting AI handle repetitive inbox judgments. Constant email triage drains mental energy better spent on high-value work.</p>
+        
+        <p><strong>Improve response times</strong> to important messages by removing visual clutter. When your inbox only shows relevant emails, you can focus and reply faster.</p>
+        
+        <p><strong>Customizable to your needs</strong> with adjustable sensitivity and multiple action options. Unlike one-size-fits-all solutions, this adapts to your specific email patterns.</p>
+        
+        <p><strong>Self-improving system</strong> that gets smarter as you use it. The more feedback you provide, the better it understands your preferences.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about AI email filtering and Gmail automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does AI email filtering work for Gmail?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI email filtering analyzes message content using natural language processing to identify spam, promotions, or irrelevant content. The system learns from your email patterns and can be trained to recognize specific types of unwanted messages. For Gmail specifically, it works alongside (not replacing) Google's existing filters to provide an additional layer of protection against inbox clutter.</p>
+          <p>Modern AI classifiers examine hundreds of features in each email, from word choice to structural patterns. They compare new messages against your historical email behavior to make personalized filtering decisions. This approach is particularly effective against sophisticated promotional emails that bypass traditional spam filters.</p>
+          <ul>
+            <li>Works with Gmail's existing labels and categories</li>
+            <li>Processes both text content and metadata patterns</li>
+            <li>Improves accuracy over time with user feedback</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of emails can this automation delete automatically?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This automation can target common unwanted email categories like promotional offers, newsletter subscriptions you no longer read, cold sales pitches, and low-priority notifications. The AI classifier can be customized to recognize specific patterns like discount codes, webinar invitations, or vendor solicitations. It preserves important messages by analyzing content contextually rather than just keywords.</p>
+          <p>In practice, businesses use this to automatically filter out repetitive service offers, recruitment messages, and industry newsletters that accumulate over time. One marketing agency reduced their inbox volume by 72% by automatically removing outdated SaaS trial offers and expired event invitations.</p>
+          <ul>
+            <li>Handles both obvious spam and gray-area promotions</li>
+            <li>Can be trained on your specific pain points</li>
+            <li>Creates audit logs of all filtering decisions</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it safe to automatically delete emails without reviewing them?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The system includes multiple safeguards. First, it moves messages to trash rather than permanent deletion. Second, it provides a daily summary of what was removed. Third, you can set confidence thresholds - only deleting emails the AI is highly certain about. Most users start with a trial period where emails are just labeled before enabling auto-deletion.</p>
+          <p>For legal or compliance needs, the workflow can be modified to archive rather than delete messages. Many professional services firms use this approach to maintain records while keeping inboxes clean. The template includes optional modules for extended retention policies and supervisory review steps.</p>
+          <ul>
+            <li>30-day recovery window from Gmail trash</li>
+            <li>Configurable safety buffers for uncertain cases</li>
+            <li>Optional human approval steps available</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is AI at classifying different email types?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Modern AI classifiers achieve 85-95% accuracy for common email categories after initial training. The system improves over time as it learns from your corrections. For critical business communications, we recommend keeping human review for the first few weeks. The template includes an optional manual approval step you can enable during setup.</p>
+          <p>Accuracy varies by email type - promotional content is typically identified with 90%+ precision, while personal correspondence requires more nuanced handling. The workflow allows you to set different confidence levels per category, giving you granular control over filtering strictness.</p>
+          <ul>
+            <li>Higher accuracy for structured content (receipts, alerts)</li>
+            <li>Improves 2-3% weekly with regular feedback</li>
+            <li>Provides confidence scores for each decision</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize what counts as spam or promotional content?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. The workflow allows you to define custom categories, add specific keywords or sender domains to watch for, and adjust sensitivity levels. You can create rules like 'always keep emails from these domains' or 'flag messages containing these phrases.' The system becomes more precise as you provide feedback on its classifications.</p>
+          <p>One ecommerce business created a "vendor negotiations" category to separate important supplier emails from general solicitations. Another client trained the system to recognize their unique project codes in subject lines, ensuring client communications bypassed all filters.</p>
+          <ul>
+            <li>Create unlimited custom categories</li>
+            <li>Import/export classification rules</li>
+            <li>Set different actions per category</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What happens if the AI makes a mistake and deletes an important email?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Deleted emails go to your Gmail trash where they remain for 30 days. The workflow also sends a daily digest showing all removed messages with classification details. For critical accounts, we recommend keeping the 'important emails' label protected or setting up a secondary inbox for verification before permanent deletion.</p>
+          <p>The system includes a "false positive" reporting feature that lets you flag errors. These reports immediately adjust the AI's future filtering decisions. Most users find the recovery process takes less time than manually sorting through hundreds of irrelevant messages daily.</p>
+          <ul>
+            <li>Full audit trail of all filtering actions</li>
+            <li>One-click error reporting</li>
+            <li>Optional backup forwarding address</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom email automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes! GrowwStacks specializes in building tailored email processing systems for businesses. We can create custom classifiers for your specific email patterns, integrate with your CRM or support tools, and set up multi-layer approval workflows. Our team will analyze your current inbox challenges and design a solution that fits your workflow perfectly.</p>
+          <p>Custom solutions might include integrating with your help desk system, adding sentiment analysis for customer emails, or creating specialized filters for industry-specific message types. We've helped law firms, healthcare providers, and ecommerce businesses develop email systems that save 10+ hours weekly while improving response quality.</p>
+          <ul>
+            <li>Industry-specific filtering models</li>
+            <li>Integration with existing business tools</li>
+            <li>Ongoing optimization and support</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Email Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

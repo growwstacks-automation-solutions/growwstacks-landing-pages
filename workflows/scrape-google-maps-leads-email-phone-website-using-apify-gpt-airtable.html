@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrape Google Maps leads (email, phone, website) using Apify + GPT + Airtable | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate lead generation from Google Maps with contact details extraction using Apify, GPT enrichment, and Airtable storage. Free n8n workflow template.">
+<link rel="canonical" href="https://growwstacks.com/workflows/3305-scrape-google-maps-leads-email-phone-website-using-apify-gpt-airtable">
+<meta property="og:title" content="Scrape Google Maps leads (email, phone, website) using Apify + GPT + Airtable | n8n workflow template">
+<meta property="og:description" content="Automate lead generation from Google Maps with contact details extraction using Apify, GPT enrichment, and Airtable storage. Free n8n workflow template.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/3305-scrape-google-maps-leads-email-phone-website-using-apify-gpt-airtable">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5743-scrape-google-maps-leads-email-phone-website-using-apif.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scrape Google Maps leads (email, phone, website) using Apify + GPT + Airtable | n8n workflow template">
+<meta name="twitter:description" content="Automate lead generation from Google Maps with contact details extraction using Apify, GPT enrichment, and Airtable storage. Free n8n workflow template.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Scrape Google Maps leads (email, phone, website) using Apify + GPT + Airtable","description":"Automate lead generation from Google Maps with contact details extraction using Apify, GPT enrichment, and Airtable storage","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5743-scrape-google-maps-leads-email-phone-website-using-apif.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can scraping Google Maps benefit my sales pipeline?","acceptedAnswer":{"@type":"Answer","text":"Google Maps scraping helps identify local businesses that match your ideal customer profile. By extracting contact details automatically, you can build targeted outreach lists faster than manual research. This workflow specifically enriches data with AI-powered insights and organizes leads in Airtable for immediate sales team follow-up."}},{"@type":"Question","name":"Is scraping Google Maps data legal?","acceptedAnswer":{"@type":"Answer","text":"Scraping publicly available business information from Google Maps is generally permitted for lead generation purposes, provided you comply with Google's Terms of Service. The key is using the data responsibly - don't spam contacts, respect privacy laws like GDPR, and limit request frequency to avoid IP blocking."}},{"@type":"Question","name":"What makes Apify better than other scraping tools for Google Maps?","acceptedAnswer":{"@type":"Answer","text":"Apify specializes in web scraping with pre-built actors for Google Maps that handle proxies, CAPTCHAs, and pagination automatically. Unlike generic scrapers, it extracts structured data (names, addresses, phones) reliably and scales to thousands of listings without getting blocked. The API integration makes it perfect for automation workflows."}},{"@type":"Question","name":"How does GPT enhance scraped lead data?","acceptedAnswer":{"@type":"Answer","text":"GPT analyzes scraped business profiles to add valuable context like company size estimates, industry classifications, and personalized outreach angles. It can also verify/standardize contact details and flag potentially outdated information - transforming raw data into actionable intelligence for your sales team."}},{"@type":"Question","name":"Why store leads in Airtable instead of a CRM?","acceptedAnswer":{"@type":"Answer","text":"Airtable provides flexible lead management before CRM import, allowing easy data cleaning, team collaboration, and segmentation. Its spreadsheet-database hybrid format is ideal for processing scraped data, while API connections let you push qualified leads to Salesforce, HubSpot, or other CRMs when ready."}},{"@type":"Question","name":"What's the best way to use these scraped leads for outreach?","acceptedAnswer":{"@type":"Answer","text":"Segment leads by location/industry and personalize outreach based on GPT-generated insights. Start with value-added touchpoints like local market reports before sales pitches. Track response rates to refine your targeting criteria in future scraping runs - creating a self-improving lead generation system."}},{"@type":"Question","name":"Can I get a custom Google Maps lead scraping automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! Our team specializes in building tailored lead generation systems that match your ideal customer profile, with custom filtering, enrichment, and CRM integration. We'll design a solution that fits your sales process and compliance requirements while maximizing lead quality."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Google Maps Lead Scraper"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Google Maps Lead Scraper</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Lead Generation</span>
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Apify</span>
+          <span class="cs-tag">GPT</span>
+          <span class="cs-tag">Airtable</span>
+        </div>
+        <h1>Scrape Google Maps leads (email, phone, website) using Apify + GPT + Airtable</h1>
+        <p class="cs-hero-sub">Automate local business lead generation with verified contact details and AI-powered enrichment</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5743-scrape-google-maps-leads-email-phone-website-using-apif.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5743-scrape-google-maps-leads-email-phone-website-using-apif.png" alt="Google Maps lead scraping workflow diagram" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the tedious, time-consuming process of manually searching Google Maps for local business leads and compiling their contact information. Sales teams and marketers often waste hours copying business names, phone numbers, and websites into spreadsheets - only to find much of the data incomplete or outdated.</p>
+        <p>The workflow automatically extracts structured lead data from Google Maps listings using Apify's specialized scraping tools, enhances the information with GPT-powered analysis to fill gaps and add context, then organizes everything in Airtable for immediate outreach. It transforms what would normally take days of manual work into a fully automated process that runs in minutes.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/baptiste_fort_leads_local_google_maps_n8n_b334f02e21.png" alt="Google Maps lead data extraction example" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Example of extracted lead data showing business names, phone numbers, and websites</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Google Maps scraping with Apify</h3>
+        <p>The workflow starts by sending your search parameters (location, business category, etc.) to Apify's Google Maps Scraper. This specialized tool handles all the technical challenges of extracting structured data from Maps listings, including pagination, proxy rotation, and CAPTCHA solving.</p>
+        
+        <h3>2. Data cleaning and validation</h3>
+        <p>Raw scraped data often contains inconsistencies. The workflow standardizes phone numbers, verifies website URLs, and removes duplicate entries automatically. This ensures your lead list is clean before enrichment.</p>
+        
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/baptiste_fort_recuperer_leads_n8n_google_maps_f93dc8c058.png" alt="Data cleaning process in n8n" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Data transformation steps that standardize phone numbers and website formats</div>
+        </div>
+
+        <h3>3. GPT-powered enrichment</h3>
+        <p>GPT analyzes each business profile to add valuable context like estimated company size, industry classification, and personalized outreach angles. It can also infer missing emails using common patterns when direct scraping doesn't find them.</p>
+        
+        <h3>4. Airtable organization</h3>
+        <p>The enriched leads flow into Airtable where they're automatically categorized by location, industry, and other filters you specify. This structured database becomes your team's centralized lead repository for outreach campaigns.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Schedule this workflow to run weekly to keep your lead database fresh with new businesses and updated contact information.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This automation delivers the most value for:</p>
+        <ul>
+          <li>B2B sales teams targeting local businesses</li>
+          <li>Marketing agencies offering local SEO services</li>
+          <li>Field service companies expanding to new territories</li>
+          <li>Franchise developers researching markets</li>
+          <li>Any business with geographically constrained customers</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (cloud or self-hosted)</li>
+          <li>Apify account with Google Maps Scraper credits</li>
+          <li>OpenAI API key for GPT enrichment</li>
+          <li>Airtable base with prepared lead table structure</li>
+          <li>Google Maps search parameters for your target leads</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download and import the JSON template into your n8n instance</li>
+          <li>Connect your Apify account in the first module</li>
+          <li>Configure your target search parameters (location, business type)</li>
+          <li>Add your OpenAI API key in the GPT enrichment step</li>
+          <li>Link to your Airtable base and map fields correctly</li>
+          <li>Test with a small sample search before full execution</li>
+        </ol>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/baptiste_fort_scraper_google_maps_n8n_leads_7022ffe2b9.png" alt="n8n workflow configuration" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Workflow configuration showing the connection between Apify, GPT, and Airtable</div>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>80% time reduction in lead list building</strong> - What took days of manual searching now happens automatically while you focus on selling.</p>
+        <p><strong>Higher quality contact data</strong> - AI enrichment fills information gaps that manual researchers often miss, giving your team better outreach materials.</p>
+        <p><strong>Always-updated lead database</strong> - Schedule weekly runs to keep your contacts current as businesses open, move, or change numbers.</p>
+        <p><strong>Scalable local targeting</strong> - Easily expand to new cities or verticals by simply changing search parameters in the workflow.</p>
+        <p><strong>CRM-ready structured data</strong> - Clean, categorized leads flow directly into your sales pipeline without manual data entry.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Google Maps lead generation and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can scraping Google Maps benefit my sales pipeline?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Google Maps scraping helps identify local businesses that match your ideal customer profile. By extracting contact details automatically, you can build targeted outreach lists faster than manual research. This workflow specifically enriches data with AI-powered insights and organizes leads in Airtable for immediate sales team follow-up.</p>
+          <p>For example, a commercial cleaning company could scrape all office buildings in their service area, with GPT adding estimated square footage and cleaning needs - creating pre-qualified leads before the first call.</p>
+          <ul>
+            <li>Eliminates hours of manual directory research</li>
+            <li>Provides context that helps personalize outreach</li>
+            <li>Creates measurable pipeline growth</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is scraping Google Maps data legal?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Scraping publicly available business information from Google Maps is generally permitted for lead generation purposes, provided you comply with Google's Terms of Service. The key is using the data responsibly - don't spam contacts, respect privacy laws like GDPR, and limit request frequency to avoid IP blocking.</p>
+          <p>Professional scraping tools like Apify implement rate limiting and proxy rotation to stay compliant while extracting data. The information collected (business names, addresses, phone numbers) is typically considered public directory data rather than personal information.</p>
+          <ul>
+            <li>Focus on business contact info, not personal profiles</li>
+            <li>Follow Google's automated access policies</li>
+            <li>Consult legal counsel for high-volume scraping</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What makes Apify better than other scraping tools for Google Maps?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Apify specializes in web scraping with pre-built actors for Google Maps that handle proxies, CAPTCHAs, and pagination automatically. Unlike generic scrapers, it extracts structured data (names, addresses, phones) reliably and scales to thousands of listings without getting blocked. The API integration makes it perfect for automation workflows.</p>
+          <p>Where DIY scrapers require constant maintenance as Google changes its layout, Apify's maintained actors adapt automatically. Their cloud execution also means you don't need to manage servers or worry about your IP getting banned during large scraping jobs.</p>
+          <ul>
+            <li>Higher success rates for complex sites</li>
+            <li>Built-in anti-blocking features</li>
+            <li>Direct API integration with n8n</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does GPT enhance scraped lead data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>GPT analyzes scraped business profiles to add valuable context like company size estimates, industry classifications, and personalized outreach angles. It can also verify/standardize contact details and flag potentially outdated information - transforming raw data into actionable intelligence for your sales team.</p>
+          <p>For instance, when scraping restaurants, GPT might identify which are part of chains versus independents, estimate seating capacity from photos, and suggest relevant outreach messages about patio furniture suppliers or POS systems based on visible decor.</p>
+          <ul>
+            <li>Turns data points into sales insights</li>
+            <li>Identifies hidden opportunities in listings</li>
+            <li>Creates natural language notes for reps</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why store leads in Airtable instead of a CRM?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Airtable provides flexible lead management before CRM import, allowing easy data cleaning, team collaboration, and segmentation. Its spreadsheet-database hybrid format is ideal for processing scraped data, while API connections let you push qualified leads to Salesforce, HubSpot, or other CRMs when ready.</p>
+          <p>Marketing teams often use Airtable as a "staging area" to enrich and validate leads before sales engagement. The visual interface makes it simple to spot patterns, tag leads by priority, and coordinate outreach timing across channels.</p>
+          <ul>
+            <li>Lower friction than CRM for early-stage leads</li>
+            <li>Better tools for data transformation</li>
+            <li>Easier collaboration across teams</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the best way to use these scraped leads for outreach?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Segment leads by location/industry and personalize outreach based on GPT-generated insights. Start with value-added touchpoints like local market reports before sales pitches. Track response rates to refine your targeting criteria in future scraping runs - creating a self-improving lead generation system.</p>
+          <p>For cold outreach, combine scraped phone numbers with LinkedIn to identify decision makers. Use the business websites to reference specific services in your emails. The enriched data helps craft messages that demonstrate you've researched their business specifically.</p>
+          <ul>
+            <li>Prioritize leads by estimated opportunity size</li>
+            <li>Reference scraped details in outreach</li>
+            <li>Measure what lead attributes convert best</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Google Maps lead scraping automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! Our team specializes in building tailored lead generation systems that match your ideal customer profile, with custom filtering, enrichment, and CRM integration. We'll design a solution that fits your sales process and compliance requirements while maximizing lead quality.</p>
+          <p>Customizations might include industry-specific data points, integration with your existing tech stack, or automated lead scoring based on your historical conversion data. We handle everything from initial consultation to ongoing maintenance.</p>
+          <ul>
+            <li>Tailored to your ideal customer profile</li>
+            <li>Seamless CRM integration</li>
+            <li>Ongoing optimization support</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Google Maps Lead Scraper?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

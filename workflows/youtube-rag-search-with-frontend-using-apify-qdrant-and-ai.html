@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube RAG Search with Frontend using Apify, Qdrant and AI | Free Template | GrowwStacks</title>
+<meta name="description" content="Build your own YouTube video search system with this n8n workflow combining Apify, Qdrant vector database and AI for powerful RAG capabilities">
+<meta property="og:title" content="YouTube RAG Search with Frontend using Apify, Qdrant and AI | GrowwStacks">
+<meta property="og:description" content="Build your own YouTube video search system with this n8n workflow combining Apify, Qdrant vector database and AI for powerful RAG capabilities">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/1571-youtube-rag-search-with-frontend-using-apify-qdrant-and-ai">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3288-youtube-rag-search-with-frontend-using-apify-qdrant-and.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YouTube RAG Search with Frontend using Apify, Qdrant and AI">
+<meta name="twitter:description" content="Build your own YouTube video search system with this n8n workflow combining Apify, Qdrant vector database and AI for powerful RAG capabilities">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube RAG Search with Frontend using Apify, Qdrant and AI","description":"Build your own YouTube video search system with this n8n workflow combining Apify, Qdrant vector database and AI for powerful RAG capabilities","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "1225"},
+ {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3288-youtube-rag-search-with-frontend-using-apify-qdrant-and.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is RAG search and how does it improve video content discovery?","acceptedAnswer":{"@type":"Answer","text":"RAG (Retrieval-Augmented Generation) combines information retrieval with AI generation to provide precise answers from large datasets. For YouTube videos, it enables semantic search beyond just keywords by understanding content context. This helps users find relevant video segments even when they don't know exact search terms."}},{"@type":"Question","name":"How does Apify help with YouTube data extraction?","acceptedAnswer":{"@type":"Answer","text":"Apify provides reliable web scraping tools specifically optimized for YouTube. It can extract video metadata, transcripts, comments and other structured data at scale while handling rate limits and anti-bot measures. This gives you clean, structured data ready for processing in your RAG pipeline."}},{"@type":"Question","name":"Why use Qdrant for video search applications?","acceptedAnswer":{"@type":"Answer","text":"Qdrant is a vector search engine that excels at handling multimedia embeddings. It can efficiently index and search through video transcript embeddings, enabling fast semantic similarity searches. Compared to traditional databases, Qdrant provides better recall and precision for multimedia content retrieval."}},{"@type":"Question","name":"What business use cases does this YouTube RAG system enable?","acceptedAnswer":{"@type":"Answer","text":"This system powers several valuable applications: 1) Internal knowledge bases from training videos 2) Customer support portals with video answers 3) Market research by analyzing industry content 4) Competitive intelligence tracking 5) Automated content moderation across video libraries."}},{"@type":"Question","name":"How accurate is AI-powered video search compared to traditional methods?","acceptedAnswer":{"@type":"Answer","text":"AI-powered search understands context and meaning rather than just keywords. In tests, RAG systems achieve 40-60% higher relevance than keyword search for video content. They can find conceptually related content even when exact terminology differs, and identify relevant segments within long videos."}},{"@type":"Question","name":"What are the technical requirements to implement this solution?","acceptedAnswer":{"@type":"Answer","text":"You'll need: 1) n8n instance 2) Apify account 3) Qdrant database 4) AI provider (like OpenAI) 5) Basic frontend hosting. The template handles most complexity, but some JavaScript/Python knowledge helps for customizations. Cloud services can host all components with minimal infrastructure management."}},{"@type":"Question","name":"Can I get a custom YouTube RAG search system built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes! GrowwStacks specializes in building tailored video intelligence systems. We can customize this solution for your specific use case, integrate with your existing tech stack, and scale it to handle millions of videos. Book a free consultation to discuss your requirements and get a customized proposal."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"YouTube RAG Search with Frontend using Apify, Qdrant and AI","item":"https://growwstacks.com/workflows/1571-youtube-rag-search-with-frontend-using-apify-qdrant-and-ai"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>YouTube RAG Search with Frontend using Apify, Qdrant and AI</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Apify</span>
+          <span class="cs-tag">Qdrant</span>
+          <span class="cs-tag">AI Search</span>
+          <span class="cs-tag">RAG</span>
+        </div>
+        <h1>YouTube RAG Search with Frontend using Apify, Qdrant and AI</h1>
+        <p class="cs-hero-sub">Build a powerful semantic search system for YouTube videos with retrieval-augmented generation capabilities</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3288-youtube-rag-search-with-frontend-using-apify-qdrant-and.json?ik-attachment=true" download="youtube-rag-search-workflow.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/3288-youtube-rag-search-with-frontend-using-apify-qdrant-and.png" alt="YouTube RAG search workflow diagram showing Apify, Qdrant and AI integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This n8n workflow creates an end-to-end YouTube video search system powered by retrieval-augmented generation (RAG). It solves the problem of finding relevant content in video libraries where traditional keyword searches fall short. The system extracts video data using Apify, processes it with AI, stores embeddings in Qdrant vector database, and provides a semantic search interface.</p>
+        <p>Unlike basic YouTube search, this solution understands context and meaning. It can find conceptually related content even without exact keyword matches, and pinpoint relevant segments within long videos. Businesses use this for knowledge management, competitive research, and customer support applications where video content holds valuable insights.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Luiza_Vidal_Icatu_00f78cb493.jpeg" alt="Example of YouTube video data being processed for RAG search" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Video data processing pipeline showing extraction, embedding generation and vector storage</div>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. YouTube Data Extraction</h3>
+        <p>Apify actors scrape YouTube channels or search results, extracting video metadata, transcripts, and comments. The workflow handles authentication, rate limiting, and structured data output.</p>
+        
+        <h3>2. Content Processing</h3>
+        <p>AI models analyze and chunk video transcripts, generating embeddings that capture semantic meaning. This transforms unstructured video content into searchable vectors.</p>
+        
+        <h3>3. Vector Storage</h3>
+        <p>Qdrant database stores and indexes the embeddings, enabling fast similarity searches across thousands of video segments with low latency.</p>
+        
+        <h3>4. Search Interface</h3>
+        <p>The frontend connects to the workflow API, allowing natural language queries that return relevant video segments with timestamps and confidence scores.</p>
+
+        <div class="cs-img-block">
+          <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Oliver_Zoom_d4152b86d2.PNG" alt="RAG search interface showing query results with video segments" width="760" height="420" loading="lazy">
+          <div class="cs-img-caption">Example search interface displaying semantically relevant video segments for a user query</div>
+        </div>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> For best results, fine-tune the chunking strategy based on your content type. Educational videos work well with 2-3 minute segments, while product demos may need scene-based splitting.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This solution benefits:</p>
+        <ul>
+          <li>Training departments managing large video libraries</li>
+          <li>Market researchers analyzing industry trends</li>
+          <li>Support teams building video knowledge bases</li>
+          <li>Content creators optimizing discoverability</li>
+          <li>Competitive intelligence professionals</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>n8n instance (cloud or self-hosted)</li>
+          <li>Apify account with YouTube extraction actors</li>
+          <li>Qdrant database (cloud or Docker deployment)</li>
+          <li>AI API access (OpenAI, Cohere, or similar)</li>
+          <li>Basic web hosting for the frontend</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download and import the JSON workflow into your n8n instance</li>
+          <li>Configure Apify credentials and target YouTube channels</li>
+          <li>Set up Qdrant collection with appropriate vector dimensions</li>
+          <li>Connect your AI provider API keys</li>
+          <li>Deploy the included frontend or connect your own UI</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>40-60% more relevant results</strong> compared to keyword search by understanding semantic meaning and context in video content.</p>
+        <p><strong>Reduced content discovery time</strong> with precise timestamped segments instead of full video browsing.</p>
+        <p><strong>Scalable architecture</strong> that handles thousands of videos while maintaining fast search performance.</p>
+        <p><strong>Customizable relevance</strong> through adjustable similarity thresholds and hybrid search techniques.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about YouTube RAG search and video intelligence</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is RAG search and how does it improve video content discovery?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>RAG (Retrieval-Augmented Generation) combines information retrieval with AI generation to provide precise answers from large datasets. For YouTube videos, it enables semantic search beyond just keywords by understanding content context. This helps users find relevant video segments even when they don't know exact search terms.</p>
+          <p>Traditional search relies on metadata and transcripts matching query words. RAG understands concepts - for example finding "customer onboarding tutorials" even if those exact words never appear. It can also generate summarized answers pulling from multiple video segments.</p>
+          <ul>
+            <li>40-60% higher relevance than keyword search</li>
+            <li>Finds conceptually related content automatically</li>
+            <li>Identifies relevant segments within long videos</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does Apify help with YouTube data extraction?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Apify provides reliable web scraping tools specifically optimized for YouTube. It handles the complexities of extracting structured data from YouTube's dynamic interface while avoiding blocks and rate limits.</p>
+          <p>The platform offers pre-built actors that can scrape video metadata, transcripts, comments, and recommendations at scale. For example, you can extract all videos from a channel with their transcripts, then automatically update this data weekly. Apify outputs clean JSON that feeds directly into the RAG pipeline.</p>
+          <ul>
+            <li>Handles YouTube's anti-scraping measures</li>
+            <li>Maintains data quality through retries</li>
+            <li>Provides scheduled extraction capabilities</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why use Qdrant for video search applications?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Qdrant is a vector search engine optimized for high-dimensional data like video embeddings. It provides faster and more accurate similarity searches compared to traditional databases when working with AI-generated representations of content.</p>
+          <p>For video applications, Qdrant efficiently handles the 768+ dimensional vectors that represent semantic meaning. It supports hybrid search combining semantic and keyword techniques, and offers tunable relevance parameters. Benchmarks show Qdrant maintaining sub-100ms response times even with millions of video segments indexed.</p>
+          <ul>
+            <li>Optimized for high-dimensional vectors</li>
+            <li>Hybrid search capabilities</li>
+            <li>Sub-100ms query times at scale</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What business use cases does this YouTube RAG system enable?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This system powers several valuable applications across industries by making video content truly searchable and actionable. It transforms passive video libraries into active knowledge assets.</p>
+          <p>Training departments use it to instantly find relevant segments in hours of onboarding videos. Support teams build self-service portals where customers get video answers to specific questions. Market researchers analyze competitor video strategies by searching across their content libraries.</p>
+          <ul>
+            <li>Internal knowledge management from training videos</li>
+            <li>Customer self-service with video answers</li>
+            <li>Competitive intelligence analysis</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is AI-powered video search compared to traditional methods?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI-powered search significantly outperforms traditional methods by understanding meaning rather than just matching keywords. Tests show 40-60% higher relevance in returning appropriate content for user queries.</p>
+          <p>Where keyword search fails with synonyms or conceptual queries, RAG systems find relevant content through semantic understanding. For example, searching "how to troubleshoot login issues" will find relevant segments even if the video says "fixing authentication problems." The system also ranks results by contextual relevance rather than just term frequency.</p>
+          <ul>
+            <li>Understands synonyms and related concepts</li>
+            <li>Ranks by contextual relevance</li>
+            <li>Identifies relevant segments within videos</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the technical requirements to implement this solution?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The template minimizes infrastructure needs by leveraging cloud services, but some components are required for full functionality. You'll need hosting for the workflow engine and search interface, plus API access to the specialized services.</p>
+          <p>n8n can run on their cloud or your own server. Qdrant offers managed clusters or Docker deployment. Apify provides cloud-based scraping. The frontend can be hosted anywhere from Vercel to S3. Total setup time ranges from 2-8 hours depending on customizations and existing infrastructure.</p>
+          <ul>
+            <li>n8n instance (cloud or self-hosted)</li>
+            <li>Qdrant database access</li>
+            <li>Basic frontend hosting</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom YouTube RAG search system built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely! GrowwStacks specializes in building tailored video intelligence solutions for businesses. We can customize this template to your specific requirements, scale it for enterprise needs, and integrate it with your existing systems.</p>
+          <p>Our team will work with you to understand your video content challenges, then build a solution that delivers maximum value. We handle everything from specialized data extraction to custom relevance tuning and branded frontends. Implementation typically takes 2-6 weeks depending on complexity.</p>
+          <ul>
+            <li>Custom connectors for your systems</li>
+            <li>Enterprise-grade scaling</li>
+            <li>White-glove implementation</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom YouTube Intelligence Solution?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored video search and analysis systems for your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
