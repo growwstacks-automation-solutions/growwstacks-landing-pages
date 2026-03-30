@@ -1,4 +1,4 @@
-const GALLERY_DATA = [
+var GALLERY_DATA = [
   {
     id: 1,
     type: "img",
