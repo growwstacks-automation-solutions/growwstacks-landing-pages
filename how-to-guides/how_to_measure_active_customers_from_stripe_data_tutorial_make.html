@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Measure Active Customers From Stripe Data [Tutorial] | GrowwStacks</title>
+<meta name="description" content="Learn how to measure active customers from Stripe data to gain crucial insights into your business's health. This tutorial guides you through setting up an automated system using Make.com, Google Sheets, and Slack.">
+<link rel="canonical" href="https://growwstacks.com/how_to_guide/how_to_measure_active_customers_from_stripe_data_tutorial_make">
+<meta property="og:title" content="How to Measure Active Customers From Stripe Data [Tutorial]">
+<meta property="og:description" content="Learn how to measure active customers from Stripe data to gain crucial insights into your business's health. This tutorial guides you through setting up an automated system using Make.com, Google Sheets, and Slack.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/how_to_guide/how_to_measure_active_customers_from_stripe_data_tutorial_make">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Make%20website%20Data/How%20to%20Guided/file_QipKRaf6DH.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Measure Active Customers From Stripe Data [Tutorial]">
+<meta name="twitter:description" content="Learn how to measure active customers from Stripe data to gain crucial insights into your business's health. This tutorial guides you through setting up an automated system using Make.com, Google Sheets, and Slack.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.cs-toc{background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #059669;border-radius:12px;padding:28px 32px;margin:40px 0 48px}
+.cs-toc-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin:0 0 14px}
+.cs-toc ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.cs-toc ol li{font-size:15px;line-height:1.5;color:#374151}
+.cs-toc ol li a{color:#059669;text-decoration:none;font-weight:500}
+.cs-toc ol li a:hover{text-decoration:underline}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.cs-toc{padding:20px 18px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Measure Active Customers From Stripe Data [Tutorial]","description":"Learn how to measure active customers from Stripe data to gain crucial insights into your business's health. This tutorial guides you through setting up an automated system using Make.com, Google Sheets, and Slack.","author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"publisher":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com","logo":{"@type":"ImageObject","url":"https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png"}},"image":"https://ik.imagekit.io/r2zdlyze2o/Make%20website%20Data/How%20to%20Guided/file_QipKRaf6DH.jpg","url":"https://growwstacks.com/how_to_guide/how_to_measure_active_customers_from_stripe_data_tutorial_make","datePublished":"2026-03-30T06:41:53.633Z"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"How-To Guides","item":"https://growwstacks.com/how_to_guide/"},{"@type":"ListItem","position":3,"name":"How to Measure Active Customers From Stripe Data"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is measuring active customers from Stripe data important?","acceptedAnswer":{"@type":"Answer","text":"Measuring active customers directly from Stripe data provides a real-time, accurate pulse on your business's health. It moves beyond estimations, offering concrete numbers that reflect actual engagement and revenue generation. This direct insight is crucial for making informed decisions about product development, marketing strategies, and overall business growth, especially in dynamic economic environments. It helps identify trends, understand customer retention, and pinpoint areas for improvement in your service or product offerings."}},{"@type":"Question","name":"What tools are needed to automate active customer measurement from Stripe?","acceptedAnswer":{"@type":"Answer","text":"To automate active customer measurement from Stripe, you'll primarily need a no-code automation platform like Make.com (formerly Integromat), a Google Sheets spreadsheet for data storage and analysis, and a communication tool like Slack for notifications. Stripe itself serves as the data source. This combination allows for seamless data extraction, organized storage, calculation of key metrics, and timely reporting, all without requiring complex coding knowledge."}},{"@type":"Question","name":"How does Make.com connect to Stripe and Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Make.com connects to Stripe using its built-in Stripe module, which requires your Stripe API key for authentication. This secure connection allows Make.com to retrieve customer data directly from your Stripe account. For Google Sheets, Make.com connects by linking your Google account, enabling it to add, retrieve, and update rows in your specified spreadsheets. The platform's visual builder makes it easy to map data fields between these applications, streamlining the integration process."}},{"@type":"Question","name":"Can I track customer churn or growth using this automation?","acceptedAnswer":{"@type":"Answer","text":"Yes, this automation is specifically designed to help you track customer churn and growth. By comparing the current month's active customer count with the previous month's data, the Google Sheet automatically calculates the percentage increase or decrease. This metric provides a clear indication of whether your customer base is expanding or contracting, offering valuable insights into the effectiveness of your customer acquisition and retention efforts. The Slack notification ensures you're immediately aware of these critical shifts."}},{"@type":"Question","name":"How frequently can this active customer report be generated?","acceptedAnswer":{"@type":"Answer","text":"The frequency of this active customer report is fully customizable within Make.com. You can schedule the scenario to run daily, weekly, or monthly, depending on your business needs. For many businesses, running it on the first day of each month provides a consistent and actionable overview of the previous month's performance. This flexibility ensures that you receive timely data without manual intervention, allowing you to react quickly to changes in customer activity."}},{"@type":"Question","name":"Is it possible to customize the data included in the report?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The beauty of using a platform like Make.com is its flexibility. You can customize which data points from Stripe are extracted and mapped to your Google Sheet. Additionally, the Slack message can be tailored to include specific metrics, summaries, or even links to the detailed Google Sheet. This customization ensures that the report is highly relevant to your team's needs and provides the most impactful information at a glance."}},{"@type":"Question","name":"Can I get custom active customer measurement automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom automation solutions tailored to your unique business requirements. If this tutorial provides a good starting point but you need more advanced features, integrations with other platforms, or a more complex reporting structure for measuring active customers, our experts can design and implement a bespoke automation workflow. This ensures that your active customer measurement system perfectly aligns with your operational goals and provides the precise insights you need."}}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/how_to_guide/">How-To Guides</a> <span aria-hidden="true">/</span>
+      <span>How to Measure Active Customers From Stripe Data</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Make.com</span>
+          <span class="cs-tag">Stripe</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Slack</span>
+          <span class="cs-tag">Customer Analytics</span>
+        </div>
+        <h1>How to Measure Active Customers From Stripe Data [Tutorial]</h1>
+        <p class="cs-hero-sub">Tired of vague approximations and endless number-crunching sessions? Learn how to measure active customers from Stripe data.</p>
+        <!-- NO button here. How-to guide pages have no hero CTA. -->
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/Make%20website%20Data/How%20to%20Guided/file_QipKRaf6DH.jpg" alt="Illustration of a dashboard showing active customer metrics derived from Stripe data" width="580" height="380" loading="eager" fetchpriority="high" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <div class="cs-toc">
+        <p class="cs-toc-title">In This Guide</p>
+        <ol>
+          <li><a href="#step-1-create-a-google-sheets-spreadsheet">Step 1: Create a Google Sheets spreadsheet</a></li>
+          <li><a href="#step-2-create-a-make-scenario-and-add-the-stripe-app">Step 2: Create a Make scenario and add the Stripe app</a></li>
+          <li><a href="#step-3-add-the-google-sheets-app-to-your-scenario">Step 3: Add the Google Sheets app to your scenario</a></li>
+          <li><a href="#step-4-add-a-filter-between-the-first-two-modules">Step 4: Add a filter between the first two modules</a></li>
+          <li><a href="#step-5-add-the-second-google-sheets-module">Step 5: Add the second Google Sheets module</a></li>
+          <li><a href="#step-6-add-the-third-google-sheets-module">Step 6: Add the third Google Sheets module</a></li>
+          <li><a href="#step-7-add-the-slack-module">Step 7: Add the Slack module</a></li>
+          <li><a href="#step-8-test-and-activate-the-scenario">Step 8: Test and activate the scenario</a></li>
+        </ol>
+      </div>
+      <article class="cs-article">
+
+        <p>Understanding the true number of active users is a critical concern for any startup CEO. In today's fast-paced business environment, relying on approximations or time-consuming manual data analysis is simply not sustainable. The ability to quickly and accurately gauge the pulse of your customer base is paramount for strategic decision-making and maintaining a competitive edge.</p>
+        <p>This tutorial offers a practical, automated solution to measure active customers directly from your Stripe data. By leveraging the power of Make.com, Google Sheets, and Slack, you can set up a robust system that provides real-time insights into your customer activity, all within an hour. This eliminates the need for complex coding or extensive data science expertise, putting crucial business intelligence directly at your fingertips.</p>
+        <p>If you're ready to move beyond guesswork and gain a clear, data-driven understanding of your active customer base, follow these steps to build your own automated reporting system. This setup will not only provide the raw numbers but also highlight trends in customer acquisition and retention, empowering you to make more informed business decisions.</p>
+
+        <h2 id="step-1-create-a-google-sheets-spreadsheet">Step 1: Create a Google Sheets spreadsheet</h2>
+        <p>The first foundational step in building this automated customer tracking system is to prepare a dedicated Google Sheets spreadsheet. This sheet will serve as the central repository for your active customer data, allowing for organized storage and easy analysis.</p>
+        <p>Your spreadsheet should be structured with specific columns to capture all necessary information. These columns include "Date" to timestamp each report, "Number of customers" to record the total active count, and "Percentage Increase/Decrease from the previous month" to highlight month-over-month changes. This structure not only tracks your active customer base but also provides immediate insights into growth or churn trends.</p>
+
+        <h2 id="step-2-create-a-make-scenario-and-add-the-stripe-app">Step 2: Create a Make scenario and add the Stripe app</h2>
+        <p>Once your Google Sheet is ready, the next step is to initiate the automation workflow within Make.com. Begin by logging into your Make account and navigating to the scenario builder. This visual canvas is where you will design and connect the various applications in your workflow.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/21202HQiy70OA592ibkyOe/4a49abf0c8834cf276aea074bf4b9b4d/Measure_active_customers_automation_-_1.png" alt="Make.com scenario builder interface" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">The Make.com scenario builder, where you'll begin building your automation.</div>
+        </div>
+        <p>Within the scenario builder, search for the Stripe application and select the "List All Customers" module. This module is designed to retrieve a comprehensive list of all customers from your Stripe account. Before proceeding, you will need to establish a connection between Make.com and your Stripe account by providing your Stripe API key. It's also crucial to set the 'Limit' parameter to a sufficiently high number to ensure that all active customer data is fetched during each execution of the scenario.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/5FyVvEFEFbfpNflCKZbuht/670d8d9dbc673040286c21e1c619b16c/Measure_active_customers_automation_-_2.png" alt="Configuring the Stripe 'List All Customers' module in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Connecting the Stripe module and setting the customer limit.</div>
+        </div>
+        <p>After successfully connecting your Stripe account and configuring the 'List All Customers' module, confirm your settings by clicking "OK." This completes the initial data extraction phase, preparing the customer information for subsequent processing and analysis within your Google Sheet.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/3Or2bEQs9RwWkgGOpsEmYc/7ee60d9d6736ec0a52bd9cf03b5a6266/Measure_active_customers_automation_-_3.png" alt="Stripe module configuration details" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Finalizing the Stripe module setup.</div>
+        </div>
+
+        <h2 id="step-3-add-the-google-sheets-app-to-your-scenario">Step 3: Add the Google Sheets app to your scenario</h2>
+        <p>With Stripe data extraction configured, the next logical step is to integrate Google Sheets into your Make.com scenario. This will allow the retrieved customer data to be systematically recorded in your prepared spreadsheet. Click the "Add another module" button in your scenario builder to search for and select the Google Sheets application.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/4Cv0SJ5aSMeQbCyRSxhOhk/0343073eacc5698a01c25de82db250d8/Measure_active_customers_automation_-_4.png" alt="Adding a new module to the Make.com scenario" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Adding the Google Sheets module to your automation.</div>
+        </div>
+        <p>From the Google Sheets options, choose the "Add a Row" module. This specific module will append new data as a new row in your spreadsheet each time the scenario runs. You'll need to connect your Google account to Make.com, following the on-screen prompts to grant the necessary permissions. After establishing the connection, select your Google Drive, locate the specific spreadsheet you created in Step 1, and then choose the relevant sheet within it.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/JrvhjUDcxB4Kk7uGhVsmg/a5baa518b2fcc86bb4a9572c0768ffa8/Measure_active_customers_automation_-_5.png" alt="Configuring the Google Sheets 'Add a Row' module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Selecting the Google Sheets 'Add a Row' module.</div>
+        </div>
+        <p>Once connected, the spreadsheet's columns will become visible for mapping. For the "Date" field, use the `formatDate` function with the `now` variable to automatically insert the current date in your desired format. For the "Number of customers" field, map the "Total number of bundles" data item from the Stripe module. This ensures that the total count of active customers is accurately recorded. Click "OK" to finalize this module's configuration.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/2AQRBVydMmVIt9gwdGvzVo/bb7db4e49b3be7bf75b2fc7581defa7c/Measure_active_customers_automation_-_6.png" alt="Connecting Google account to Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Authorizing Google Sheets access for Make.com.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/1wKvIp96kPyqd5PSfgD9nf/be800fa6f6be1aad3108bb7902fac9e2/Measure_active_customers_automation_-_7.png" alt="Mapping data fields in Google Sheets module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Selecting the target spreadsheet and sheet.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/1BQvtRVm2lYChqidWTxQW3/4860d0d195bd80c4972256ec75e2729c/Measure_active_customers_automation_-_8.png" alt="Mapping Stripe data to Google Sheets columns" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Mapping the 'Total number of bundles' to the 'Number of customers' column.</div>
+        </div>
+
+        <h2 id="step-4-add-a-filter-between-the-first-two-modules">Step 4: Add a filter between the first two modules</h2>
+        <p>A common challenge when retrieving customer data from Stripe is that it often returns individual customer records as separate "bundles" of data. If these bundles were directly passed to Google Sheets, each customer would create a new row, leading to an inflated and inaccurate count of active customers. Our goal is to record only the total number of active customers as a single entry per execution.</p>
+        <p>To address this, you need to implement a filter between the Stripe "List All Customers" module and the Google Sheets "Add a Row" module. This filter ensures that only one data bundle, representing the aggregated total, proceeds to the next step. Click on the link connecting these two modules to open the filter configuration menu.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/65KfKE1ssnQi7ryIVRZBOA/e2883fd1644c81ef021d54275478b32d/Measure_active_customers_automation_-_9.png" alt="Adding a filter between Stripe and Google Sheets modules" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Inserting a filter to process only one data bundle.</div>
+        </div>
+        <p>Configure the filter as follows: map the "Bundle order position" item to the top field. For the operator, select "Numeric operators: Equal to." In the bottom field, enter the value "1." This setup ensures that only the very first data bundle, which typically contains the aggregated count or is the first in a series, is allowed to pass through the filter. This effectively prevents multiple rows from being added for a single scenario run, maintaining the integrity of your active customer count. Click "OK" to apply the filter and proceed.</p>
+        <ul>
+          <li>Map the <strong>Bundle order position</strong> item to the top field</li>
+          <li>Select the <strong>Numeric operators: Equal to</strong> operator</li>
+          <li>Enter <strong>1</strong> in the bottom field so that only the first bundle passes through</li>
+        </ul>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/4fSVMlBquTWqEOmMvO5HKP/be6f5ef349bd85ec68fa1b21d73e5c52/Measure_active_customers_automation_-_10.png" alt="Configuring the filter to pass only the first bundle" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Setting up the filter to ensure only one row is added per run.</div>
+        </div>
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Filters are incredibly powerful for controlling data flow in Make.com. Always consider whether your data source might return multiple items when you only need a summary or a single record. Using a filter with 'Bundle order position' equal to 1 is a common pattern for such scenarios.</p>
+        </div>
+
+        <h2 id="step-5-add-the-second-google-sheets-module">Step 5: Add the second Google Sheets module</h2>
+        <p>To calculate the month-over-month percentage change in active customers, your automation needs access to the previous month's data. This requires adding a second Google Sheets module to your scenario, specifically designed to retrieve existing information from your spreadsheet.</p>
+        <p>Add the "Google Sheets - Get a Row" module to your scenario. Similar to the previous Google Sheets module, you will need to select the same spreadsheet and sheet. The key difference here is how you configure this module to fetch the correct data. You'll use a specific formula to retrieve the total number of customers from the previous month, which is typically stored in column B of your sheet. This ensures that your calculations are always based on historical data.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/qnyQlaUrlNraUrOOG0erT/4583a0de805e092efcee845ae729344d/Measure_active_customers_automation_-_11.png" alt="Configuring Google Sheets 'Get a Row' module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Retrieving previous month's customer data for comparison.</div>
+        </div>
+        <p>After entering the appropriate formula to target the previous month's customer count, click "OK" to complete the configuration of this module. This step is crucial for enabling the dynamic calculation of growth or decline in your active customer base, providing a more comprehensive view of your business's performance.</p>
+
+        <h2 id="step-6-add-the-third-google-sheets-module">Step 6: Add the third Google Sheets module</h2>
+        <p>The next critical step is to automate the calculation of the percentage increase or decrease in your active customer base. This is achieved by adding a third Google Sheets module to your Make.com scenario, specifically the "Update a Row" module. This module will take the current month's data and the previous month's data (retrieved in the prior step) to compute the change.</p>
+        <p>First, you need to map the "Row Number" from the initial "Add a Row" module to the "Row number" field in this "Update a Row" module. This ensures that the calculation is applied to the correct, newly added row for the current month. Then, to calculate the percentage change, you'll use a formula in the corresponding field: <code>{{sum(total number of bundles - value) / value * 100}}</code>. This formula effectively determines the percentage difference between the current and previous customer counts.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/4txcr0fkIBX5lqbvcJ2yeh/aaaaf9afdaf16aa36df592e85c6a89db/Measure_active_customers_automation_-_12.png" alt="Configuring Google Sheets 'Update a Row' module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Mapping the row number for updating the percentage change.</div>
+        </div>
+        <p>This formula will automatically populate the "Percentage Increase/Decrease" column in your Google Sheet, providing an immediate and clear indicator of your customer base's performance. After entering the formula and verifying the mapping, click "OK." With this module configured, your spreadsheet will now dynamically update with the calculated growth metrics, offering valuable insights without any manual computation.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/4WYg67oCLHTfUtIWGE4g81/05e38e16a7b2f14770f102a8b5aeb149/Measure_active_customers_automation_-_13.png" alt="Formula for percentage increase/decrease in active customers" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Implementing the percentage change calculation.</div>
+        </div>
+
+        <h2 id="step-7-add-the-slack-module">Step 7: Add the Slack module</h2>
+        <p>The final component of this automation workflow is to ensure that the relevant stakeholders are promptly informed of the active customer metrics. This is achieved by integrating a communication tool like Slack into your scenario. While this tutorial focuses on Slack, Make.com supports various other team communication platforms, offering flexibility based on your organization's preferences.</p>
+        <p>Add the "Slack - Create a Message" module to your scenario. You will need to connect your Slack account to Make.com, choosing either the "User" or "Bot" connection type depending on your Slack workspace's setup and desired message sender. Once the connection is established, configure the module by selecting "Select from the List" for the channel option, and then specify the user or channel where you want the notification to be sent.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/5IHZzog1OtHD8GkCfXTbGa/72471f3985089aabd390fe526bf15808/Measure_active_customers_automation_-_14.png" alt="Adding the Slack 'Create a Message' module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Integrating Slack for automated notifications.</div>
+        </div>
+        <p>Craft a clear and concise message that includes the total number of active users and the calculated percentage variation from the previous month. You can also embed additional details or even a direct link to your Google Sheet for quick access to the full report. This ensures that your team receives timely, actionable updates without having to manually check the spreadsheet. After composing your message, click "OK" to complete the Slack module configuration.</p>
+        <ul>
+          <li>Choose the <strong>Select from the List</strong> option</li>
+          <li>Select the <strong>Channel Type</strong></li>
+          <li>Select the <strong>User/Channel</strong> that you want to send the notification to</li>
+        </ul>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/7thu1EYbfJQFGrQio1Tpbw/11b2bb62f45222736ef253c0363c3661/Measure_active_customers_automation_-_15.png" alt="Configuring Slack message details" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Customizing the Slack notification message.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/3TVJWLkYKtmYEtOv6NH05s/a1e7d242dda0a9b46b11f9b069641157/Measure_active_customers_automation_-_16.png" alt="Sample Slack message with active customer data" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Example of a comprehensive Slack notification.</div>
+        </div>
+
+        <h2 id="step-8-test-and-activate-the-scenario">Step 8: Test and activate the scenario</h2>
+        <p>With all modules configured, the final step is to thoroughly test and then activate your automation scenario. It's crucial to perform a test run to ensure that all connections are working correctly, data is flowing as expected, and the calculations and notifications are accurate. Observe the scenario execution to confirm that each step processes data as intended, from Stripe extraction to Google Sheets updates and Slack notifications.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/26Bzn6e7cQ5W0CxlZYcHhJ/94cf45672834a3db4e8105c3d3cffb28/Measure_active_customers_automation_-_17_gif.gif" alt="Testing the Make.com scenario" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Visualizing the scenario's execution during testing.</div>
+        </div>
+        <p>Once you are satisfied with the test results, you can proceed to set a custom schedule for your scenario. For instance, scheduling it to run on the first day of every month ensures that you consistently receive fresh data for your active customer count, enabling timely strategic planning. After setting your desired schedule, save the scenario and switch it on. Your automated system for measuring active customers from Stripe data is now fully operational, providing continuous, accurate insights into your business's performance.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/5ByZeVsNVPcwk5TJqkrYAi/d8b7096bb26bd6d9c8e3f477b6849841/Measure_active_customers_automation_-_18.png" alt="Setting a custom schedule for the scenario" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Scheduling the automation to run monthly.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/3OTujy1On0baMOR3CUInRm/7f016f0f65cd15b089b36b2882267a70/Measure_active_customers_automation_-_19.png" alt="Saving and activating the Make.com scenario" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Final step: saving and activating your automated workflow.</div>
+        </div>
+
+      </article>
+
+      <section class="cs-faq" id="faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <p class="cs-faq-subtitle">Common questions about measuring active customers from Stripe data</p>
+          <div class="faq-inner">
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Why is measuring active customers from Stripe data important?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Measuring active customers directly from Stripe data provides a real-time, accurate pulse on your business's health. It moves beyond estimations, offering concrete numbers that reflect actual engagement and revenue generation. This direct insight is crucial for making informed decisions about product development, marketing strategies, and overall business growth, especially in dynamic economic environments.</p>
+                <p>It helps identify trends, understand customer retention, and pinpoint areas for improvement in your service or product offerings. Accurate data empowers you to allocate resources effectively and respond proactively to market changes.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What tools are needed to automate active customer measurement from Stripe?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>To automate active customer measurement from Stripe, you'll primarily need a no-code automation platform like Make.com (formerly Integromat), a Google Sheets spreadsheet for data storage and analysis, and a communication tool like Slack for notifications. Stripe itself serves as the data source.</p>
+                <p>This combination allows for seamless data extraction, organized storage, calculation of key metrics, and timely reporting, all without requiring complex coding knowledge. These tools work together to create an efficient and reliable reporting system.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>How does Make.com connect to Stripe and Google Sheets?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Make.com connects to Stripe using its built-in Stripe module, which requires your Stripe API key for authentication. This secure connection allows Make.com to retrieve customer data directly from your Stripe account. For Google Sheets, Make.com connects by linking your Google account, enabling it to add, retrieve, and update rows in your specified spreadsheets.</p>
+                <p>The platform's visual builder makes it easy to map data fields between these applications, streamlining the integration process. This drag-and-drop interface simplifies the setup, even for users without technical backgrounds.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Can I track customer churn or growth using this automation?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Yes, this automation is specifically designed to help you track customer churn and growth. By comparing the current month's active customer count with the previous month's data, the Google Sheet automatically calculates the percentage increase or decrease. This metric provides a clear indication of whether your customer base is expanding or contracting, offering valuable insights into the effectiveness of your customer acquisition and retention efforts.</p>
+                <p>The Slack notification ensures you're immediately aware of these critical shifts, allowing for prompt adjustments to your business strategies. This proactive approach can significantly impact your long-term success.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>How frequently can this active customer report be generated?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>The frequency of this active customer report is fully customizable within Make.com. You can schedule the scenario to run daily, weekly, or monthly, depending on your business needs. For many businesses, running it on the first day of each month provides a consistent and actionable overview of the previous month's performance.</p>
+                <p>This flexibility ensures that you receive timely data without manual intervention, allowing you to react quickly to changes in customer activity. You maintain full control over when and how often these vital insights are delivered.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Is it possible to customize the data included in the report?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Absolutely. The beauty of using a platform like Make.com is its flexibility. You can customize which data points from Stripe are extracted and mapped to your Google Sheet. For example, you might want to include customer segments, subscription tiers, or specific revenue metrics alongside the active customer count.</p>
+                <p>Additionally, the Slack message can be tailored to include specific metrics, summaries, or even links to the detailed Google Sheet. This customization ensures that the report is highly relevant to your team's needs and provides the most impactful information at a glance.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Can I get custom active customer measurement automation built for my business?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Yes, GrowwStacks specializes in building custom automation solutions tailored to your unique business requirements. If this tutorial provides a good starting point but you need more advanced features, integrations with other platforms, or a more complex reporting structure for measuring active customers, our experts can design and implement a bespoke automation workflow.</p>
+                <p>This ensures that your active customer measurement system perfectly aligns with your operational goals and provides the precise insights you need to drive growth and efficiency. Contact us for a free consultation to discuss your specific needs.</p>
+              </div></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <script>
+      (function(){
+        var items = document.querySelectorAll('.faq-item');
+        items.forEach(function(item){
+          var btn = item.querySelector('.faq-q');
+          var answer = item.querySelector('.faq-a');
+          btn.addEventListener('click', function(){
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            items.forEach(function(other){
+              other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+              other.querySelector('.faq-a').removeAttribute('style');
+              other.classList.remove('faq-item--open');
+            });
+            if(!expanded){
+              btn.setAttribute('aria-expanded','true');
+              answer.style.display = 'block';
+              item.classList.add('faq-item--open');
+            }
+          });
+        });
+      })();
+      </script>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need Custom Automation Help?</h2>
+    <p>This guide is a starting point. Our team builds fully tailored automation systems for your specific workflow needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" target="_blank" rel="noopener noreferrer" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/how_to_guide/" class="btn btn-outline">Browse More Guides</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Automate Procurement in Your Shopify Store - Part 1 | GrowwStacks</title>
+<meta name="description" content="Learn how to create a procurement automation system from scratch for your Shopify store, starting with tracking stock levels automatically.">
+<link rel="canonical" href="https://growwstacks.com/how_to_guide/how_to_automate_procurement_in_your_shopify_store_part_1_make/">
+<meta property="og:title" content="How to Automate Procurement in Your Shopify Store - Part 1">
+<meta property="og:description" content="Learn how to create a procurement automation system from scratch for your Shopify store, starting with tracking stock levels automatically.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/how_to_guide/how_to_automate_procurement_in_your_shopify_store_part_1_make/">
+<meta property="og:image" content="https://images.ctfassets.net/un655fb9wln6/blog-image-14305/dd2994b5fa993ad18b05c44df94e9357/how-to-automate-purchase-orders-for-your-ecommerece-business-_illustration.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Automate Procurement in Your Shopify Store - Part 1">
+<meta name="twitter:description" content="Learn how to create a procurement automation system from scratch for your Shopify store, starting with tracking stock levels automatically.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.cs-toc{background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #059669;border-radius:12px;padding:28px 32px;margin:40px 0 48px}
+.cs-toc-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin:0 0 14px}
+.cs-toc ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.cs-toc ol li{font-size:15px;line-height:1.5;color:#374151}
+.cs-toc ol li a{color:#059669;text-decoration:none;font-weight:500}
+.cs-toc ol li a:hover{text-decoration:underline}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.cs-toc{padding:20px 18px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Automate Procurement in Your Shopify Store - Part 1","description":"Learn how to create a procurement automation system from scratch for your Shopify store, starting with tracking stock levels automatically.","author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"publisher":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com","logo":{"@type":"ImageObject","url":"https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png"}},"image":"https://images.ctfassets.net/un655fb9wln6/blog-image-14305/dd2994b5fa993ad18b05c44df94e9357/how-to-automate-purchase-orders-for-your-ecommerece-business-_illustration.png","url":"https://growwstacks.com/how_to_guide/how_to_automate_procurement_in_your_shopify_store_part_1_make/","datePublished":"2026-03-30T09:26:01.281Z"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"How-To Guides","item":"https://growwstacks.com/how_to_guide/"},{"@type":"ListItem","position":3,"name":"Automate Shopify Procurement - Part 1"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/how_to_guide/">How-To Guides</a> <span aria-hidden="true">/</span>
+      <span>Automate Shopify Procurement - Part 1</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Make.com</span>
+          <span class="cs-tag">Shopify</span>
+          <span class="cs-tag">Procurement</span>
+          <span class="cs-tag">Inventory Management</span>
+        </div>
+        <h1>How to Automate Procurement in Your Shopify Store - Part 1</h1>
+        <p class="cs-hero-sub">Learn how to create a procurement automation system from scratch for your Shopify store, starting with tracking stock levels automatically.</p>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://images.ctfassets.net/un655fb9wln6/blog-image-14305/dd2994b5fa993ad18b05c44df94e9357/how-to-automate-purchase-orders-for-your-ecommerece-business-_illustration.png" alt="Illustration of automated purchase orders for an e-commerce business" width="580" height="380" loading="eager" fetchpriority="high" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <div class="cs-toc">
+        <p class="cs-toc-title">In This Guide</p>
+        <ol>
+          <li><a href="#a-simple-procurement-automation-system-for-shopify-vendors">A Simple Procurement Automation System for Shopify Vendors</a></li>
+          <li><a href="#step-1-creating-the-make-scenario">Step 1: Creating the Make Scenario</a></li>
+          <li><a href="#step-2-adding-the-shopify-module">Step 2: Adding the Shopify Module</a></li>
+          <li><a href="#step-3-adding-the-iterator">Step 3: Adding the Iterator</a></li>
+          <li><a href="#step-4-adding-the-airtable-app">Step 4: Adding the Airtable App</a></li>
+          <li><a href="#step-5-adding-the-modules-and-filters-on-the-routes">Step 5: Adding the Modules and Filters on the Routes</a></li>
+          <li><a href="#step-6-executing-the-scenario">Step 6: Executing the Scenario</a></li>
+        </ol>
+      </div>
+      <article class="cs-article">
+
+        <p>Managing procurement for an e-commerce store, especially one with a diverse product catalog, presents significant challenges for business owners and managers. Inefficient procurement directly leads to lost revenue and a subpar customer experience, two critical issues for any online business.</p>
+        <p>While the concept of an effective procurement system seems straightforward—knowing when product stock levels hit a certain threshold—its execution can be surprisingly complex. Factors like sudden demand surges, disorganized inventory systems, and supplier inconsistencies can quickly complicate matters. Even predictable events, such as an inventory manager being unavailable, can disrupt operations.</p>
+        <p>These complexities highlight the crucial role of procurement automation. This guide is the first in a four-part series designed to walk you through building a robust automated procurement system. We'll start by establishing automatic stock level tracking, a foundational element for any successful e-commerce operation.</p>
+        <p>Before diving into the technical details, let's outline what this automated procurement system will achieve. Understanding its capabilities will help you determine if it aligns with your current business needs and operational goals.</p>
+
+        <h2 id="a-simple-procurement-automation-system-for-shopify-vendors">A Simple Procurement Automation System for Shopify Vendors</h2>
+        <p>This comprehensive automated procurement system is designed to streamline various aspects of your e-commerce operations. It will leverage Make.com scenarios to connect several widely-used applications, including Shopify, Airtable, QuickBooks, and email, creating a seamless workflow.</p>
+        <p>Specifically, this system will enable you to:</p>
+        <ul>
+          <li>Keep track of Shopify inventory levels by adding products to Airtable</li>
+          <li>Check when stock levels for every product reach a certain point</li>
+          <li>Add products and suppliers to QuickBooks</li>
+          <li>Create a purchase order when predefined stock levels are reached</li>
+          <li>Send the purchase order to the corresponding supplier</li>
+          <li>Receive the invoice from the supplier and send it to the finance department for payment</li>
+        </ul>
+        <p>We've structured this tutorial into four parts for two main reasons. Firstly, to maintain clarity and manageability, as each scenario within the system involves multiple configuration steps. Presenting all this information at once would be overwhelming.</p>
+        <p>Secondly, and perhaps more importantly, each of the four scenarios can function independently or as part of the larger integrated system. This modular approach means you can implement specific automations, such as purchase order automation or stock level tracking, based on your immediate needs, or build out the full system over time.</p>
+        <p>With this overview in mind, let's begin building the first scenario. This initial setup will focus on automatically adding inventory data from Shopify to Airtable, laying the groundwork for effective stock level tracking.</p>
+        <p>To successfully create this first scenario, you will need active accounts for the following platforms:</p>
+        <ul>
+          <li>A Shopify account</li>
+          <li>An Airtable account</li>
+          <li>A Make.com account</li>
+        </ul>
+        <p>If you have these ready, let's proceed with the step-by-step instructions to get your Shopify inventory flowing into Airtable.</p>
+
+        <h2 id="step-1-creating-the-make-scenario">Step 1: Creating the Make Scenario</h2>
+        <p>Once you've logged into your Make.com account, you'll be directed to your main dashboard. This is your central hub for managing all your automation workflows.</p>
+        <p>To initiate a new automation, locate and click the "Create a new scenario" button, typically found in the upper right corner of your screen. This action will take you to the scenario builder interface.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-514a770122675e98d832c35ce5a353d9/5183221437f94bc74af987d7d59913b4/create-a-scenario-button.png" alt="Screenshot of the Make.com dashboard with 'Create a new scenario' button highlighted" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Click the "Create a new scenario" button to begin building your automation.</div>
+        </div>
+        <p>The scenario builder is your workspace for designing and configuring automated workflows. It's a visual interface where you'll connect different applications and define the sequence of actions.</p>
+
+        <h2 id="step-2-adding-the-shopify-module">Step 2: Adding the Shopify Module</h2>
+        <p>Within the scenario builder, click on the large plus sign located at the center of the canvas. This will open a pop-up menu where you can search for and select the applications you want to integrate into your scenario.</p>
+        <p>In the search bar, type "Shopify" and select the Shopify app from the results. Once selected, a list of available Shopify modules (also known as endpoints or actions) will appear, each representing a specific function you can perform with Shopify data.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-56063821cf5d74e962fba2dc0e21b64e/db1ff4b67ef453e38a046489990c6229/scenario-builder.gif" alt="GIF showing how to add the Shopify app and select a module in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Search for and select the Shopify app in the scenario builder.</div>
+        </div>
+        <p>From the list of Shopify modules, choose "Search for products." This module will allow your scenario to retrieve product information from your Shopify store. After selecting it, a configuration box will automatically appear on your screen, prompting you to set up the module's details.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-b5bb29b3ca654905dcb683ddb6a9922e/c73a808763b0b1ac49dfe4d79c42d83e/shopify-search-for-products.png" alt="Screenshot of Shopify 'Search for products' module selection" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Select the "Search for products" module to retrieve product data.</div>
+        </div>
+        <p>To enable Make.com to access your Shopify inventory data, you'll need to establish a connection between your Make.com account and your Shopify store. This is a one-time setup process that grants the necessary permissions.</p>
+        <p>Inside the module's configuration box, click the "Add" button. This will open a new window or prompt, guiding you through the connection setup. You can assign a descriptive name to this connection for easy identification in the future.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-ff4f0df88a855c693f3b917d24bbcb64/50412bd81ac36905f07cdac9f560eb78/shopify-connection.png" alt="Screenshot of Shopify connection setup in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Click "Add" to set up a new connection to your Shopify store.</div>
+        </div>
+        <p>To finalize the connection, you will be asked to enter the subdomain of your Shopify store. This is typically the first part of your Shopify store's URL (e.g., if your store is "mystore.myshopify.com", your subdomain is "mystore"). Provide this information to authenticate the connection.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-7c928fa66d7033f28107137b7458d8de/2ccb4473ec5a0b92b564e63f7fcbf09e/shopify-subdomain.png" alt="Screenshot showing where to enter the Shopify subdomain" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Enter your Shopify store's subdomain to complete the connection.</div>
+        </div>
+        <p>Once the connection is successfully established, the next step is to adjust the "Limit" field within the Shopify module's configuration. This field dictates the maximum number of products Make.com will retrieve each time the scenario runs.</p>
+        <p>To ensure that your entire inventory is processed and included in the automation, it's highly recommended to set a sufficiently high number in this "Limit" field. This prevents any products from being overlooked during the data retrieval process. After setting the limit, click the "OK" button to save your changes and proceed to the next stage of building your scenario.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-2555dcb9f952d41e8cf9bbcd0dd26995/de0e523c947e815b311b35e930536c53/shopify-module-configuration.png" alt="Screenshot of Shopify module configuration with 'Limit' field" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Configure the Shopify module by setting a high limit for product retrieval.</div>
+        </div>
+
+        <h2 id="step-3-adding-the-iterator">Step 3: Adding the Iterator</h2>
+        <p>Many Shopify stores manage products with multiple variants (e.g., different sizes, colors, or materials). When retrieving product data from Shopify, it's essential to ensure that all these variants are captured and processed correctly, not just the main product.</p>
+        <p>The Shopify module typically outputs product data, including a "Variants[]" array element. This array contains a collection of attributes for each variant, such as its title, price, and other relevant details. However, without additional configuration, Make.com might only process the first variant in this array, which isn't ideal for comprehensive inventory tracking.</p>
+        <p>To address this, you need a mechanism to split the variant data so that each individual variant can be processed as a separate item. This ensures that your Airtable base receives complete and accurate information for every product variant.</p>
+        <p>To achieve this, you will add an "Iterator" module to your scenario. The Iterator is a powerful tool found within the "Tools" menu at the bottom of the scenario builder. It's designed to process arrays of data, allowing you to iterate through each item within an array.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-908fdd5051ec4408221e351149dd591b/fc45c6fb27984369c906cbb3c841579b/iterator.png" alt="Screenshot showing the 'Iterator' module in Make.com's Tools menu" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Add an "Iterator" module from the Tools menu to process product variants.</div>
+        </div>
+        <p>After successfully adding the Iterator module and connecting it to your Shopify module, the next step is to map the "Variants[]" array. This mapping tells the Iterator which data collection it needs to process individually.</p>
+        <p>Simply drag and drop or select the "Variants[]" element from the Shopify module's output into the Iterator's configuration. This ensures that the Iterator correctly receives and processes each product variant, preparing the data for the next step in your automation. Once mapped, you're ready to move on.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-54798c1cd2411b28b51c34c551d1d6e6/c9b3f76dafb73ed4db559022ab36fe16/iterator-mapping.png" alt="Screenshot of mapping the Variants[] array to the Iterator module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Map the "Variants[]" array from the Shopify module to the Iterator.</div>
+        </div>
+
+        <h2 id="step-4-adding-the-airtable-app">Step 4: Adding the Airtable App</h2>
+        <p>For this automation, we'll be using a pre-configured Airtable base and table. You can access and copy this base to your own Airtable workspace by clicking <a href="https://airtable.com/shrAyxbKARNZYollo/tblHo9OvAWZck4dol/viwq7HM6roWXqqT2E?blocks=hide">here</a>. While you can customize it later, using this template ensures compatibility with the automation steps outlined in this guide.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-3de202d7177d68e21e9f90d4feb2a81d/dc8d6b08b8ac6e9d55cf7fbad20b129c/airtable-base-and-table.png" alt="Screenshot of the Airtable base and table structure" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">The pre-configured Airtable base and table for Shopify inventory.</div>
+        </div>
+        <p>A critical aspect of this automation is preventing duplicate product entries in your Airtable base. Each time the scenario runs, it should either add new products or update existing ones, not create redundant records. To achieve this, the scenario needs to first search the Airtable base to determine if a product or variant already exists.</p>
+        <p>If a product is not found, it will be added as a new record. Conversely, if the product is already present, only its inventory quantity will be updated, ensuring data accuracy and preventing clutter.</p>
+        <p>Now, let's integrate the Airtable app into your Make.com scenario. Click on the small "plus" sign located next to the Iterator module you just configured. This will again bring up the application search menu.</p>
+        <p>Search for "Airtable" and select it. From the list of Airtable modules, choose "Search Records." This module is essential for checking the existence of products in your Airtable base before any new data is written. After selecting it, the configuration panel for this module will appear.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-24bb349d25cb88ac91f9153b3b1d75fd/ad6eb7824d91e8a8d49dbfd4ff13e0cb/airtable-search-records-module.png" alt="Screenshot of selecting the 'Search Records' module for Airtable" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Add the "Search Records" module for Airtable to check for existing products.</div>
+        </div>
+        <p>To connect your Airtable account to Make.com, you'll need an Airtable API Token. If you're unsure how to obtain this token, click the small " ?" icon within the module's configuration box for detailed instructions. This token acts as a secure key, allowing Make.com to interact with your Airtable bases.</p>
+        <p>Once you have your API token, provide a name for your connection in Make.com, paste the token into the designated field, and click "Continue." This establishes the secure link between your Airtable and Make.com accounts.</p>
+        <p>After successfully connecting your Airtable account, the next step is to specify which Airtable base and table your scenario will interact with. Select the "Shopify Inventory" base and the "Inventory" table, which you copied earlier, from the dropdown menus in the module's configuration.</p>
+        <p>For accurate and reliable searching, it's more effective to search for products using their "Inventory Item IDs" rather than their names, as names can sometimes be inconsistent or change. You'll need to input a simple formula into the search field to utilize these IDs. The exact formula can be copied directly from the image provided in the original guide, ensuring correct syntax.</p>
+        <p>When configuring this search, ensure that the "Inventory Item ID" element is mapped from the Iterator module. This ensures that Make.com uses the unique ID for each variant as it processes them. You can select this element from the list that appears when you click into the formula field.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-24bb349d25cb88ac91f9153b3b1d75fd/ad6eb7824d91e8a8d49dbfd4ff13e0cb/airtable-search-records-module.png" alt="Screenshot of Airtable 'Search Records' module configuration" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Configure the Airtable module to search records by Inventory Item ID.</div>
+        </div>
+        <p>The "Search Records" module in Airtable can yield two primary outcomes, which are crucial for our automation logic:</p>
+        <ul>
+          <li>The Inventory Item ID is not found in the table, indicating that the product is new and needs to be added.</li>
+          <li>The Inventory Item ID is found in the table, meaning the product already exists, and only its inventory quantity needs to be updated.</li>
+        </ul>
+        <p>It's important to note that if a record containing the Inventory Item ID is found, the "Search Records" module will also output a "Record ID." This "Record ID" is a unique identifier for that specific record within Airtable. If no matching record is found, the "Record ID" will be empty.</p>
+        <p>To handle these two distinct outcomes within a single scenario, we'll utilize a native Make.com tool called a "Router." The Router allows you to split your scenario's flow into multiple paths, each designed to handle a different condition. You'll find the Router in the "Tools" section at the bottom of the visual builder. After attaching it to your scenario, click on the Router to add two new routes, one for each possible outcome.</p>
+
+        <h2 id="step-5-adding-the-modules-and-filters-on-the-routes">Step 5: Adding the Modules and Filters on the Routes</h2>
+        <p>With the Router in place, let's configure the top route to handle new products. This route should only activate if the product is not already present in your Airtable table. To enforce this condition, we'll use a "Filter," another essential native Make.com feature.</p>
+        <p>Recall the "Record ID" that the "Search Records" module outputs. The filter will check whether this "Record ID" exists. If the "Record ID" is empty (meaning the product was not found), the data will pass through this route, and the new product will be added to your Airtable table. To add a filter, click on the small wrench icon located on the line of the top route.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-a55a2272e9bae966ff983cb62e959ed5/dde97fc57d626ef8514107d127d806cb/route-between-modules.png" alt="Screenshot showing how to add a filter on a Make.com route" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Click the wrench icon on the route to add a filter.</div>
+        </div>
+        <p>Clicking the wrench icon will open the filter configuration box. Here, you'll first name your filter; for this route, "Add a product" is a suitable name. Next, map the "Record ID" output from the "Search Records" Airtable module to the top field in the filter configuration.</p>
+        <p>Then, from the dropdown menu, select the "Does not exist" basic operator. This ensures that the route only proceeds if no existing record was found for the product. Finally, click the "OK" button to save your filter configuration.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-6912f6602c4829740e2a899585caea7e/38ecbf41002b7a47a939e76fd0e945d4/add-a-product-filter-configuration.png" alt="Screenshot of the 'Add a product' filter configuration" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Configure the filter to check if the Record ID "Does not exist."</div>
+        </div>
+        <p>The final step for the top route is to add the "Airtable > Create a Record" module. This module will be responsible for adding new product entries to your Airtable base when the filter condition is met.</p>
+        <p>After selecting the same "Shopify Inventory" base and "Inventory" table as before, you'll need to map specific data elements from your Shopify and Iterator modules to the corresponding fields in the Airtable "Create a Record" module. Map the "Title" data element from the Shopify module to the "Product Name" field in Airtable. Then, map the relevant data from the Iterator module to the respective fields, as illustrated in the provided image.</p>
+        <p>A few important notes for mapping:</p>
+        <ul>
+          <li>For "Maximum Quantity" in the "Item" field: You can map the SKU element if you've used it in Shopify to store the maximum quantity for a variant, or use the "Inventory quantity" element, which typically holds the maximum amount when a new product is added.</li>
+          <li>For the "Unit price" field: The Shopify module usually outputs only the selling price. As a workaround, you can enter the cost price in the "Compare at price" field in Shopify (located near the regular price field). This field is not visible to customers. You can then map this "Compare at price" element to the "Unit price" field in Airtable. Once the item is in Airtable, you can remove this workaround from Shopify if desired.</li>
+        </ul>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-3aa739690682b10b387698c3979efe5f/5f16f7feb09e9c7f1c5fd9f0ffa669b7/airtable-create-a-record-module-configuration-new.png" alt="Screenshot of Airtable 'Create a Record' module configuration" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Map Shopify and Iterator data to the Airtable "Create a Record" module.</div>
+        </div>
+        <p>That concludes the setup for the top route! Now, let's configure the bottom route, which will handle updating existing product inventory totals. Set up a filter on this route as well, and name it "Update Inventory Total."</p>
+        <p>The key difference for this filter is that you will select the "Exists" basic operator instead of "Does not exist." This ensures that this route only activates when a matching "Record ID" is found, indicating an existing product that needs its inventory updated.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-e42365334256cbcb59233dbb6015d439/7da99a2e1e39b1d34553051d0b9cd807/update-inventory-total-filter-configuration.png" alt="Screenshot of the 'Update Inventory Total' filter configuration" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Configure the filter for the bottom route to check if the Record ID "Exists."</div>
+        </div>
+        <p>Since this route is dedicated to updating inventory totals, select the "Airtable > Update a Record" module and add it to the bottom route. As before, choose the correct "Shopify Inventory" base and "Inventory" table.</p>
+        <p>Crucially, map the "ID" from the "Search Records" Airtable module to the "Record ID" field in this "Update a Record" module. This tells Airtable precisely which existing record needs to be modified.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-dc6958a51288642aa92bcf303d86723d/30d9c32b5856bf6249d9c6f4d18136b8/airtable-update-a-record-module-id-mapping.png" alt="Screenshot of mapping Record ID in Airtable 'Update a Record' module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Map the Record ID to ensure the correct Airtable record is updated.</div>
+        </div>
+        <p>Product or variant names can occasionally change, and you'll want your Airtable base to always reflect the most current information. To ensure this, map the "Title" element from the "Shopify > Search Records" module to the "Product Name" field in Airtable. Additionally, map the "Title" element from the Iterator module to the "Variant Name" field.</p>
+        <p>The most vital part of this configuration is mapping the "Inventory quantity" element from the Iterator directly to the "Quantity" field in your Airtable "Update a Record" module. This ensures that your Airtable inventory accurately reflects the current stock levels from Shopify. Refer to the provided images for precise mapping guidance.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-f533bf7f6649de0891813be4a73c4c86/7d8104ef0caba00012ae296d592be64c/airtable-update-a-record-module-title-mapping-new.png" alt="Screenshot of mapping product and variant names in Airtable update module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Map product and variant titles for accurate updates in Airtable.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-46f4279fb5441b90170cb7d2fdc1a4b6/e0d37fbb36833a4eb762697fb245b4ba/airtable-update-a-record-module-inventory-quantity-mapping-new.png" alt="Screenshot of mapping inventory quantity in Airtable update module" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Map the "Inventory quantity" to the "Quantity" field in Airtable.</div>
+        </div>
+        <p>With all the modules and filters configured, your scenario is now fully set up. The next step is to test it to ensure everything works as expected.</p>
+
+        <h2 id="step-6-executing-the-scenario">Step 6: Executing the Scenario</h2>
+        <p>You've likely noticed the prominent blue "Play" button at the bottom of the Make.com scenario builder. This button is your gateway to testing your newly created automation. It's time to click it and observe your scenario in action.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-58068e9eb41436a35d3069b05a91b561/f912b20f7d5ecf24ee9927940577aaed/run-once-button.png" alt="Screenshot of the 'Play' button in Make.com scenario builder" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Click the "Play" button to execute your scenario.</div>
+        </div>
+        <p>Upon clicking "Play," the scenario will execute, and you should see a visual representation of the data flowing through each module. If the execution is successful, you'll observe products and their variants being added to or updated in your Airtable table, reflecting your Shopify inventory. This visual feedback confirms that your scenario is correctly configured and functioning as intended.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-f1c64a47da0cda595e34ebd6813c03c9/877100cb201e0d81e426caee93d96241/scenario-execution.gif" alt="GIF showing a Make.com scenario execution" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Observe the scenario execution to confirm data flow.</div>
+        </div>
+        <p>Once you've verified that the scenario successfully adds and updates products and variants from Shopify to Airtable, it's crucial to save your work. Locate the "Save" button, typically found within the controls menu of the scenario builder, and click it to preserve your configuration.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-5e7e4854612e92be69d6d2489cd29907/c52d70369e6f9cd70f7c30b001f3edd2/save-button.png" alt="Screenshot of the 'Save' button in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Save your scenario after successful testing.</div>
+        </div>
+        <p>The final step is to determine the frequency at which this scenario will run. This scheduling setting dictates how often Make.com will check your Shopify store for product, variant, and quantity changes, and then synchronize that information with Airtable. Whether you need daily, weekly, or monthly updates, you can configure this to match your business requirements.</p>
+        <p>To enable and set the schedule, toggle the scheduling switch to the "On" position. This action will open the schedule setting menu, where you can define the desired frequency for your scenario runs. Once your preferred schedule is set, click the "Activate" button to bring your automated inventory tracking system fully online.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-c772c487475ae203dcc06f5dd2615eea/8ce0f26bc9c0c00fea83d18885eba0ec/scheduling-switch.png" alt="Screenshot of the scheduling switch in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Toggle the scheduling switch to activate and set the scenario's run frequency.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-5072c9e2afb84c19cd24baa994a924a1/cab5b4f31c3b6db761fc8ee57cb8d516/scheduling-setting.png" alt="Screenshot of the scheduling setting menu in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;">
+          <div class="cs-img-caption">Configure the scheduling settings and click "Activate."</div>
+        </div>
+      </article>
+
+      <section class="cs-faq" id="faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <p class="cs-faq-subtitle">Common questions about Shopify Procurement Automation</p>
+          <div class="faq-inner">
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Why is procurement automation important for Shopify stores?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Procurement automation is crucial for Shopify stores to maintain optimal stock levels, prevent stockouts, and avoid overstocking. It streamlines the process of identifying when new inventory is needed, reducing manual errors and saving significant time for store owners.</p>
+                <p>By automating procurement, businesses can react quickly to changes in demand, ensuring products are always available for customers. This leads to improved customer satisfaction, increased sales, and more efficient use of capital by minimizing inventory holding costs.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What are the key benefits of tracking Shopify inventory in Airtable?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Tracking Shopify inventory in Airtable provides a centralized, flexible, and highly customizable database for your product data. It allows for advanced filtering, sorting, and visualization beyond Shopify's native capabilities, making it easier to manage complex product catalogs and variants.</p>
+                <p>This integration facilitates better data analysis, enabling you to identify trends, manage supplier information, and create custom views for different team members. It also serves as a robust foundation for building more complex procurement workflows and reporting.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>How does the Iterator module in Make.com handle product variants?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>The Iterator module in Make.com is essential for processing product variants by taking an array of variant data (like Shopify's "Variants[]" output) and breaking it down into individual bundles. This allows subsequent modules in the scenario to treat each variant as a separate item.</p>
+                <p>Without an Iterator, only the first variant of a product might be processed, leading to incomplete inventory tracking. By iterating through each variant, the automation ensures that every unique product option, regardless of its attributes, is accurately recorded and managed in Airtable.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What is the purpose of the "Search Records" module in Airtable for this automation?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>The "Search Records" module in Airtable plays a crucial role in preventing data duplication and ensuring data integrity. Before adding any new product or variant, this module checks if a record with the same unique identifier (like an Inventory Item ID) already exists in your Airtable base.</p>
+                <p>If a record is found, the automation proceeds to update its quantity. If no record is found, it triggers the creation of a new entry. This conditional logic is vital for maintaining an accurate and clean inventory database.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Why use a Router and Filters in Make.com for this procurement process?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Routers and Filters in Make.com are used to create conditional logic within your automation, allowing different actions based on specific criteria. In this procurement scenario, the Router splits the workflow into two paths: one for adding new products and another for updating existing ones.</p>
+                <p>Filters on each route then determine which path the data should take based on whether a product's "Record ID" exists in Airtable. This ensures that the system intelligently handles both new inventory additions and updates to current stock levels, optimizing efficiency and accuracy.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>How can I ensure all my Shopify products are included in the automation?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>To ensure all your Shopify products are included, you need to set a sufficiently high number in the "Limit" field of the Shopify "Search for products" module in Make.com. This field determines how many products Make.com retrieves during each scenario execution.</p>
+                <p>If your store has a large number of products, setting a high limit (e.g., 250 or more, depending on your total product count) will help ensure that no products are missed. Regularly monitoring your scenario's execution history can also help confirm that all expected data is being processed.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Can I get custom automation help for Shopify procurement?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Yes, GrowwStacks specializes in building custom automation solutions tailored to your specific business needs. While this guide provides a solid foundation, your Shopify store might have unique procurement processes or require integrations with other specialized tools.</p>
+                <p>Our experts can design, implement, and maintain a bespoke automation system that perfectly fits your workflow, ensuring maximum efficiency and accuracy for your procurement operations. Contact us for a free consultation to discuss your requirements.</p>
+              </div></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <script>
+      (function(){
+        var items = document.querySelectorAll('.faq-item');
+        items.forEach(function(item){
+          var btn = item.querySelector('.faq-q');
+          var answer = item.querySelector('.faq-a');
+          btn.addEventListener('click', function(){
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            items.forEach(function(other){
+              other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+              other.querySelector('.faq-a').removeAttribute('style');
+              other.classList.remove('faq-item--open');
+            });
+            if(!expanded){
+              btn.setAttribute('aria-expanded','true');
+              answer.style.display = 'block';
+              item.classList.add('faq-item--open');
+            }
+          });
+        });
+      })();
+      </script>
+
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need Custom Automation Help?</h2>
+    <p>This guide is a starting point. Our team builds fully tailored automation systems for your specific workflow needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" target="_blank" rel="noopener noreferrer" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/how_to_guide/" class="btn btn-outline">Browse More Guides</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

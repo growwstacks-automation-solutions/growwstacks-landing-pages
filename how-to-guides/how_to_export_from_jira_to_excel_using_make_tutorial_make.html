@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Export From Jira to Excel Using Make [Tutorial] | GrowwStacks</title>
+<meta name="description" content="Learn how to automatically export Jira issues to Excel using Make. This tutorial shows you how to set up two scenarios to connect Jira and Excel, and automate weekly report delivery.">
+<link rel="canonical" href="https://growwstacks.com/how_to_guide/how_to_export_from_jira_to_excel_using_make_tutorial_make/">
+<meta property="og:title" content="How to Export From Jira to Excel Using Make [Tutorial]">
+<meta property="og:description" content="Learn how to automatically export Jira issues to Excel using Make. This tutorial shows you how to set up two scenarios to connect Jira and Excel, and automate weekly report delivery.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/how_to_guide/how_to_export_from_jira_to_excel_using_make_tutorial_make/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Make%20website%20Data/How%20to%20Guided/file_XKeJlQ-59.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Export From Jira to Excel Using Make [Tutorial]">
+<meta name="twitter:description" content="Learn how to automatically export Jira issues to Excel using Make. This tutorial shows you how to set up two scenarios to connect Jira and Excel, and automate weekly report delivery.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.cs-toc{background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #059669;border-radius:12px;padding:28px 32px;margin:40px 0 48px}
+.cs-toc-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin:0 0 14px}
+.cs-toc ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.cs-toc ol li{font-size:15px;line-height:1.5;color:#374151}
+.cs-toc ol li a{color:#059669;text-decoration:none;font-weight:500}
+.cs-toc ol li a:hover{text-decoration:underline}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.cs-toc{padding:20px 18px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Export From Jira to Excel Using Make [Tutorial]","description":"Learn how to automatically export Jira issues to Excel using Make. This tutorial shows you how to set up two scenarios to connect Jira and Excel, and automate weekly report delivery.","author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"publisher":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com","logo":{"@type":"ImageObject","url":"https://ik.imagekit.io/ui4mpbzoy/growwstacks-favicon-logo.png"}},"image":"https://ik.imagekit.io/r2zdlyze2o/Make%20website%20Data/How%20to%20Guided/file_XKeJlQ-59.jpg","url":"https://growwstacks.com/how_to_guide/how_to_export_from_jira_to_excel_using_make_tutorial_make/","datePublished":"2026-03-30T06:57:34.758Z"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"How-To Guides","item":"https://growwstacks.com/how_to_guide/"},{"@type":"ListItem","position":3,"name":"Export Jira to Excel with Make"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/how_to_guide/">How-To Guides</a> <span aria-hidden="true">/</span>
+      <span>Export Jira to Excel with Make</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Make.com</span>
+          <span class="cs-tag">Jira</span>
+          <span class="cs-tag">Excel</span>
+          <span class="cs-tag">Automation</span>
+          <span class="cs-tag">Reporting</span>
+        </div>
+        <h1>How to Export From Jira to Excel Using Make [Tutorial]</h1>
+        <p class="cs-hero-sub">Discover how to seamlessly export your Jira issues into Excel and automate your reporting processes using Make.com. This comprehensive tutorial guides you through setting up two powerful scenarios to streamline your project management and data analysis workflows.</p>
+        <!-- NO button here. How-to guide pages have no hero CTA. -->
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/Make%20website%20Data/How%20to%20Guided/file_XKeJlQ-59.jpg" alt="A visual representation of Jira issues being exported to an Excel spreadsheet via Make.com" width="580" height="380" loading="eager" fetchpriority="high" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <div class="cs-toc">
+        <p class="cs-toc-title">In This Guide</p>
+        <ol>
+          <li><a href="#introduction">Introduction to Jira to Excel Automation</a></li>
+          <li><a href="#basic-requirements">Connecting Excel to Jira: Basic Requirements</a></li>
+          <li><a href="#scenario-1-jira-to-excel">First Scenario: Adding Jira Issues to Excel</a></li>
+          <li><a href="#step-1-create-scenario">Step 1: Creating the Scenario</a></li>
+          <li><a href="#step-2-configure-jira">Step 2: Configuring the Jira Module</a></li>
+          <li><a href="#step-3-configure-excel">Step 3: Configuring the Excel Module</a></li>
+          <li><a href="#step-4-test-scenario-1">Step 4: Testing the First Scenario</a></li>
+          <li><a href="#scenario-2-excel-reports">Second Scenario: Creating and Sending Excel Reports via Email</a></li>
+          <li><a href="#step-1-calculate-update">Step 1: Calculating and Updating the Worksheet with Totals</a></li>
+          <li><a href="#step-2-download-email">Step 2: Downloading and Emailing the Excel Workbook</a></li>
+          <li><a href="#step-3-test-scenario-2">Step 3: Testing and Scheduling the Scenario</a></li>
+        </ol>
+      </div>
+      <article class="cs-article">
+
+        <h2 id="introduction">Introduction to Jira to Excel Automation</h2>
+        <p>Many project managers and product owners face the ongoing challenge of exporting Jira issues to Excel for tracking and reporting. Manually generating and emailing these reports can be a tedious and time-consuming task, often feeling like a significant waste of valuable time.</p>
+        <p>However, this process doesn't have to be manual or boring. Modern automation solutions offer powerful ways to streamline this workflow. This guide will demonstrate how to leverage Make.com to automatically export Jira issues to Excel, transforming a manual chore into an efficient, automated process.</p>
+        <p>We will walk you through setting up two distinct Make scenarios. The first scenario focuses on automatically transferring new Jira issues into an Excel spreadsheet as they are created. The second scenario builds upon this by generating and emailing automated Excel reports on a weekly basis, ensuring stakeholders are always informed without any manual intervention. Before diving into the setup, let's review the essential tools you'll need.</p>
+
+        <h2 id="basic-requirements">Connecting Excel to Jira: Basic Requirements</h2>
+        <p>To successfully implement the automated scenarios outlined in this tutorial, you will need access to a few key accounts and tools. Ensuring you have these prerequisites in place will make the setup process smooth and efficient.</p>
+        <p>Here's a list of what you'll need:</p>
+        <ul>
+          <li>A Make.com account</li>
+          <li>A Jira account</li>
+          <li>A Microsoft account (which can include Excel Online)</li>
+          <li>An Excel spreadsheet configured for your data</li>
+        </ul>
+        <p>For simplicity, this guide uses a basic spreadsheet with minimal data for reporting. However, you are encouraged to customize your Excel spreadsheet to match your specific project tracking and reporting needs. While this tutorial is straightforward, it does require some dedicated time to configure. Feel free to grab a coffee before you begin!</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-9570977b70fe7c47a4829aae6d600fd4/c2ecd181a5a337231fc0f934baeca77e/excel-spreadsheet.png" alt="Example Excel spreadsheet for Jira data" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">A sample Excel spreadsheet ready to receive Jira data.</div>
+        </div>
+
+        <h2 id="scenario-1-jira-to-excel">First Scenario: Adding Jira Issues to Excel</h2>
+        <p>The initial Make scenario is designed to automate the core task of transferring new Jira issues directly into your Excel spreadsheet. Once this scenario is active, it will continuously monitor your Jira account for any newly created issues and automatically append them to your designated Excel sheet.</p>
+        <p>This automation eliminates the need for manual data entry, saving significant time and reducing the potential for errors. Let's walk through the steps to set up this foundational scenario.</p>
+
+        <h3 id="step-1-create-scenario">Step 1: Creating the Scenario</h3>
+        <p>To begin building your automation, log in to your Make.com account. Once you're on your dashboard, locate and click the "Create a new scenario" button, typically found in the top right corner of the screen.</p>
+        <p>This action will take you to the Make scenario builder, which is the canvas where you'll design and connect your automated workflows. Here, you'll start by adding the first module to your scenario.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-9177989cfc55814695f0e76633e73818/d300931bc6c4fb4f6373ff5ab5b0fd6f/create-a-scenario-button.png" alt="Make.com 'Create a new scenario' button" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Clicking the 'Create a new scenario' button on the Make.com dashboard.</div>
+        </div>
+        <p>Once inside the scenario builder, click on the large central circle to open a list of available applications. Search for "Jira" and select the "Jira Cloud Platform app" from the results. After selecting the app, a list of all available Make modules for Jira will appear.</p>
+        <p>Since the objective is to automatically add new Jira issues to your Excel spreadsheet, you should choose the "Watch Issues" module from this list. This module acts as a trigger, initiating the scenario whenever a new issue is detected in Jira.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-cf766a164a9c23f04221ef4e0e980acb/54868c8826654a13c65c3f0b1b4d5a40/scenario1-builder.gif" alt="Make.com scenario builder interface" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">The Make.com scenario builder showing the initial module selection.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-0f1009af9529bc7915598b97ae6c6a68/4a86ce2a6bc5ab63b54e7ec7576ce0c5/jira-modules.png" alt="Jira modules available in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">A list of Jira modules available in Make.com.</div>
+        </div>
+        <p>With the "Watch Issues" module selected, the next step is to configure it correctly to ensure it communicates effectively with your Jira account. This involves establishing a connection and setting up a webhook.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-1cb9ffc1c64665c8f76c91039a0cc9e9/a807829685611cf040437f8ec2aff251/jira-watch-issues-module.png" alt="Jira 'Watch Issues' module selected" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Selecting the 'Watch Issues' module for Jira.</div>
+        </div>
+
+        <h3 id="step-2-configure-jira">Step 2: Configuring the Jira Module</h3>
+        <p>To enable Make.com to access your Jira project data, you must first connect your Jira account and then create a webhook. Start by clicking the "Add" button located under the "Webhook" section within the Jira module's configuration. Following this, click the "Add" button next to the "Connection" selector.</p>
+        <p>This connection process will require you to provide your Jira API token, along with your Jira Service URL and Username. If you're unsure how to obtain your API token, Jira provides a helpful documentation page that can guide you through the process. Once these details are entered, Make.com will establish a secure link to your Jira instance.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-44427e4e645c037fa266a5aa6215859e/f1e8d846bb716a6442e0b2a6cb172dc2/jira-connection.png" alt="Jira connection setup in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Setting up the Jira connection within Make.com.</div>
+        </div>
+        <p>After successfully connecting your Jira account, you can proceed to create the webhook. This webhook is crucial as it allows Make.com to receive instant notifications whenever new issues are created in Jira. You can assign any name you prefer to the webhook.</p>
+        <p>Under the "Hook type" selector, choose "Issue," and then select the "Created" option from the "Events" list. This configuration ensures that the webhook specifically triggers when new issues are generated. Once these settings are applied, click "Save" to finalize the webhook setup. Your Jira module is now ready to detect new issues in real-time.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-5a7e8ce9a73d82bf133792948377bffd/a0a3da46f69ec9e469a1bf739971a5bb/jira-create-a-connection.png" alt="Jira API token and service URL input" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Entering Jira API token and service URL for connection.</div>
+        </div>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-0b157b33bd4d4c9f4760107e3635e8c9/9b74d9af30e5871f469051c34dc32dfc/jira-webhook-setup.png" alt="Jira webhook configuration for 'Created' events" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Configuring the Jira webhook to trigger on new issue creation.</div>
+        </div>
+
+        <h3 id="step-3-configure-excel">Step 3: Configuring the Excel Module</h3>
+        <p>With the Jira module set up, the next crucial step is to integrate Microsoft Excel into your scenario. In the Make scenario builder, you'll see a plus sign appear when you hover your cursor next to the Jira module. Click this plus sign to add a new module.</p>
+        <p>Search for the "Excel app" just as you did for Jira. From the list of Excel modules, select "Add a Worksheet Row." This module is responsible for taking the data from Jira and inserting it as a new row in your specified Excel sheet.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-4d6a5b1e3d3f98e4897058b28b6edf5e/df66795aea3f4e81d3f4eef61f68ff33/excel-modules.png" alt="Excel modules available in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Selecting the 'Add a Worksheet Row' module for Excel.</div>
+        </div>
+        <p>You will then need to establish a connection to your Microsoft account and grant the necessary permissions for Make.com to interact with your Excel files. If you've previously connected your Microsoft account for other scenarios, you can simply select the existing connection. Otherwise, follow the prompts to authenticate your account.</p>
+        <p>Once connected, select the specific workbook and worksheet where you want the Jira issues to be added. It's important to ensure that your Excel workbook and worksheet are already created and properly structured before configuring this module. This setup allows Make.com to accurately locate and populate your data.</p>
+        <div class="cs-img-block">
+          <img src="https://images.ctfassets.net/un655fb9wln6/asset-1ced1df0a9e0657fab6e05b188614e10/a398ce4d1446e63289354052ae4830f0/excel-connection.png" alt="Excel connection setup in Make.com" loading="lazy" style="display:block;max-width:100%;width:auto;height:auto;max-height:480px;margin:0 auto;" onerror="this.parentElement.style.display='none'">
+          <div class="cs-img-caption">Connecting to Excel and selecting the workbook.</div>
+        </div>
+        <p>The example worksheet used in this tutorial includes columns such as Issue ID, Date, Summary, Bugs, Total Bugs, Improvement, Total Improvements, New Features, Total New Features, and Assignee. The critical step here is to accurately map the data elements from the Jira module to their corresponding fields in your Excel module. Your sheet may have different fields, so adjust the mapping accordingly.</p>
+        <p>For instance, you would map "Issue: ID" from Jira to your "Issue ID" Excel field, the "Now variable" (from the Date and time tab) to your "Date" field, "Issue: fields: Summary" to your "Summary" field, and "Issue: fields: Assignee: displayName" to your "Assignee" field. For the "Bug," "Improvement," and "New Feature" fields, you'll use Make's built-in functions to conditionally enter "Yes" if the issue type matches, leaving other fields blank. The "Total" fields will be calculated in the second scenario.</p>
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> When mapping fields, always double-check that the data types align between Jira and Excel to prevent errors. For conditional entries like "Bug" or "New Feature," use Make's <code>IF</code> function to ensure accuracy.</p>
+        </div>
+
+        <h3 id="step-4-test-scenario-1">Step 4: Testing the First Scenario</h3>
+        <p>Once your Jira and Excel modules are configured, it's time to test the first scenario. Since this scenario uses a webhook, you need to click the "Run once" button located at the bottom left of your Make.com screen. This puts the scenario into a listening state, waiting for a trigger.</p>
+        <p>Next, navigate to your Jira account and create a new test issue. This action will trigger the webhook, and if your scenario is set up correctly, you should see the data flow from Jira to your Excel spreadsheet in Make.com's visual interface. Verify that the new issue details appear correctly in your Excel sheet.</p>
+        <p>If the test run is successful and you are satisfied with the results, you can activate the scenario. Simply toggle the switch button, usually found at the bottom of the scenario builder, to turn the automation on. Your first scenario is now live, automatically transferring new Jira issues and their relevant data to your Excel spreadsheet.</p>
+
+        <h2 id="scenario-2-excel-reports">Second Scenario: Creating and Sending Excel Reports via Email</h2>
+        <p>This second scenario enhances your automation by generating weekly reports from the Jira data collected in Excel and then automatically emailing them to designated recipients. This eliminates the manual effort of compiling and distributing reports, ensuring timely communication with stakeholders.</p>
+        <p>You have the flexibility to customize the scenario's details, such as adjusting the reporting frequency from weekly to bi-weekly or any other interval that suits your agile methodology or project requirements. Let's proceed with setting up this powerful reporting automation.</p>
+
+        <h3 id="step-1-calculate-update">Step 1: Calculating and Updating the Worksheet with Totals</h3>
+        <p>To create the second scenario, repeat the initial process: from your Make.com dashboard, create a new scenario. Add the "Excel" app and select the "Watch Worksheet Rows" module. This module will serve as the trigger for this scenario, fetching all new rows of data from the same Excel worksheet that receives issues from Jira.</p>
+        <p>Since your Microsoft account is already connected from the previous scenario, simply select your existing connection and the same Excel spreadsheet within this module. Ensure you tick the "Skip Empty Rows" option. In the "Limit" field, specify the maximum number of issues you expect to fetch during each scenario execution. This number should be high enough to accommodate the weekly volume of issues your team handles.</p>
+        <p>Following the "Watch Worksheet Rows" module, you'll add Make's built-in "Array aggregator" tool. This tool is essential for two reasons: it aggregates the new Row IDs, which are then used to correctly calculate totals in the subsequent module, and it ensures that a single email report is sent with aggregated results, rather than multiple emails for each new row. You can find the Array aggregator under the "Tools" menu at the bottom of the scenario builder.</p>
+        <p>When configuring the Array aggregator, make sure to tick both the "Row ID" and "Row" fields. Additionally, select "Show advanced settings" and enable the "Stop processing after an empty aggregation" option. After the Array Aggregator, add the "Excel > Update a Worksheet Row" module. In this module, you will dynamically calculate the "Total Bugs," "Total Improvements," and "Total New Features" using the COUNTA function. This dynamic calculation ensures that only new rows of data are included, preventing the recalculation of previously reported issues. To achieve this, select the "Formulas Local" option under "Types of Values Being Entered" and then choose "Row ID."</p>
+        <p>Finally, input the COUNTA formula into each of the "Total" fields. Map the "Array[1]: Row ID" after the column reference in the formula. This ensures that the count starts from the first new row identified by the Array aggregator. This meticulous setup guarantees accurate and up-to-date totals in your reports.</p>
+
+        <h3 id="step-2-download-email">Step 2: Downloading and Emailing the Excel Workbook</h3>
+        <p>Before proceeding to download the full Excel workbook, we will first generate a summarized report containing the totals directly within the email body. This provides recipients with a quick overview without needing to open the attached file. To achieve this, add the "Text aggregator" module to your scenario, which can be found in the "Tools" menu or by searching for it.</p>
+        <p>After connecting the "Text aggregator" to the "Excel > Update a Worksheet Row" module, configure it by ticking "Show advanced settings" and selecting "New Row" as the "Row separator." You will need to use some HTML code within this module to format the aggregated weekly totals for Bugs, Improvements, and New Features into a presentable table for the email. Customize this HTML to fit your specific reporting needs, then click "OK."</p>
+        <p>Next, add the "Excel > Download a workbook" module. In its configuration, choose the "By selecting from the path" option and then select your specific Workbook. Click "OK" to confirm. Finally, add the "Gmail > Send an email" module. Connect your Gmail business account (note that personal Gmail accounts may require additional steps). Use the "Now" variable in the "Subject" line to display the current date and time, ensuring your reports are clearly timestamped.</p>
+        <p>In the "Content" box of the Gmail module, embed the HTML table generated by the "Text Aggregator" module. If you prefer not to use the table, you can map other relevant data elements from the "Excel > Upload a workbook" module directly into the email body. To attach the downloaded workbook, click "Add an attachment" and select the output from the "Excel > Download a Workbook" module as the "Source file." This completes the setup for generating and sending your automated Excel reports.</p>
+
+        <h3 id="step-3-test-scenario-2">Step 3: Testing and Scheduling the Scenario</h3>
+        <p>Unlike the first scenario, this one does not rely on a webhook, so you can initiate a test run by simply clicking the "Run once" button. Observe the scenario's execution to ensure that the totals are calculated correctly, the summary table is generated, the Excel workbook is downloaded, and the email with the report and attachment is sent as expected. Visually inspect the received email to confirm everything is in order.</p>
+        <p>Once you've verified that the scenario functions correctly and you're satisfied with the output, it's time to activate it. Toggle the scenario switch to "On." Upon activation, the "Schedule settings" will appear. Here, you can define the frequency at which you want this scenario to run – whether it's once a week, every two weeks, or any other interval that aligns with your reporting cycle. After setting your preferred schedule, click the "Activate" button to finalize. With both scenarios now fully configured and active, you have successfully automated the export of Jira issues to Excel and the regular delivery of comprehensive reports to your stakeholders.</p>
+
+      </article>
+
+      <section class="cs-faq" id="faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <p class="cs-faq-subtitle">Common questions about Jira to Excel Automation</p>
+          <div class="faq-inner">
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Why should I automate Jira to Excel exports?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Automating Jira to Excel exports saves significant time and reduces manual errors. Project managers often spend hours manually compiling data, which can be better utilized for analysis and strategic planning. Automation ensures data consistency and accuracy, providing reliable reports for decision-making.</p>
+                <p>Beyond time savings, automated exports ensure that reports are always up-to-date and delivered on schedule, improving communication and transparency across teams. This allows for more proactive problem-solving and better resource allocation based on real-time data.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What are the basic requirements for setting up this automation?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>To implement this Jira to Excel automation, you'll need a Make.com account, a Jira account with appropriate access, a Microsoft account (which includes Excel Online), and a pre-configured Excel spreadsheet. The Excel sheet should have columns ready to receive the data you plan to export from Jira.</p>
+                <p>Having these accounts and a prepared spreadsheet ensures a smooth setup process. Make.com acts as the bridge between Jira and Excel, requiring access credentials for both platforms to facilitate the data transfer and reporting.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>How does Make.com connect to Jira?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Make.com connects to Jira using your Jira account credentials, including your Service URL, Username, and an API token. This API token is generated within your Jira account settings and provides secure access for external applications like Make.com to interact with your Jira data.</p>
+                <p>Once connected, Make.com utilizes webhooks to listen for specific events in Jira, such as the creation of a new issue. When such an event occurs, the webhook instantly notifies Make.com, triggering the automation scenario to process the new data.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Can I customize the data fields exported from Jira to Excel?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Yes, you can fully customize which data fields are exported from Jira to Excel. During the configuration of the Excel module in Make.com, you will map specific data elements from Jira (like Issue ID, Summary, Assignee, Issue Type) to the corresponding columns in your Excel spreadsheet.</p>
+                <p>This flexibility allows you to tailor your reports to include only the most relevant information for your stakeholders. You can also use Make.com's built-in functions to transform or conditionally populate data based on Jira issue properties, such as marking "Yes" for specific issue types.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>How do I set up conditional data entry in Excel based on Jira issue types?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>To set up conditional data entry, you'll use Make.com's built-in <code>IF</code> function within the Excel module configuration. For example, if you have columns for "Bugs," "Improvements," and "New Features," you can use the <code>IF</code> function to check the Jira issue type.</p>
+                <p>If the Jira issue type matches "Bug," the <code>IF</code> function will enter "Yes" in the "Bugs" column and leave the other type-specific columns blank. This ensures that your Excel sheet accurately categorizes issues without manual intervention.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Can I schedule the Excel reports to be sent at a specific frequency?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Absolutely. After setting up and testing your second scenario for generating and emailing reports, you can define its execution schedule. Make.com provides "Schedule settings" where you can choose how often the scenario should run, such as daily, weekly, bi-weekly, or monthly.</p>
+                <p>This feature ensures that your stakeholders receive timely updates without you needing to manually trigger the report generation and sending process. It's a key component of fully automating your reporting workflow.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Can I get custom automation help for Jira to Excel reporting?</span>
+                <span class="faq-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="faq-a"><div class="faq-a-inner">
+                <p>Yes, GrowwStacks specializes in building custom automation solutions tailored to your specific business needs. If this guide provides a good starting point but your Jira to Excel reporting requirements are more complex, our team can design and implement a bespoke automation workflow for you.</p>
+                <p>We can help integrate additional data sources, create advanced reporting dashboards, or set up intricate conditional logic to ensure your reports are exactly what you need, delivered precisely when you need them. Contact us for a free consultation to discuss your unique automation challenges.</p>
+              </div></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <script>
+      (function(){
+        var items = document.querySelectorAll('.faq-item');
+        items.forEach(function(item){
+          var btn = item.querySelector('.faq-q');
+          var answer = item.querySelector('.faq-a');
+          btn.addEventListener('click', function(){
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            items.forEach(function(other){
+              other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+              other.querySelector('.faq-a').removeAttribute('style');
+              other.classList.remove('faq-item--open');
+            });
+            if(!expanded){
+              btn.setAttribute('aria-expanded','true');
+              answer.style.display = 'block';
+              item.classList.add('faq-item--open');
+            }
+          });
+        });
+      })();
+      </script>
+
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need Custom Automation Help?</h2>
+    <p>This guide is a starting point. Our team builds fully tailored automation systems for your specific workflow needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" target="_blank" rel="noopener noreferrer" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/how_to_guide/" class="btn btn-outline">Browse More Guides</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
