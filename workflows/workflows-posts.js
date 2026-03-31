@@ -1,4 +1,5 @@
 var ALL_WORKFLOWS = [
+{u:'https://www.growwstacks.com/workflows/suspicious-login-detection',i:'https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1993-suspicious-login-detection.png',t:'Suspicious Login Detection'},
 {u:'https://www.growwstacks.com/workflows/website-downtime-alert-via-line-supabase-log',i:'https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4379-website-downtime-alert-via-line-supabase-log.png',t:'Website Downtime Alert Via Line Supabase Log'},
 {u:'https://www.growwstacks.com/workflows/generate-ai-videos-from-text-or-images-with-sora-2pro-and-gpt-5-enhancement',i:'https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10139-generate-ai-videos-from-text-or-images-with-sora-2pro-.png',t:'Generate AI Videos From Text Or Images With Sora 2Pro And Gpt 5 Enhancement'},
 {u:'https://www.growwstacks.com/workflows/qualify-mortgage-leads-and-collect-documents-with-gemini-gmail-drive-telegram-and-supabase',i:'https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13387-qualify-mortgage-leads-and-collect-documents-with-gemi.png',t:'Qualify Mortgage Leads And Collect Documents With Gemini Gmail Drive Telegram And Supabase'},
