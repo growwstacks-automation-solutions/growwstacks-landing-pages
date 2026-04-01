@@ -2,13 +2,13 @@
 
 export const widgetData = [
   {
-    "clientName": "Dr Aron",
-    "projectName": "MPP Academy",
+    "clientName": "Julian",
+    "projectName": "Wybalena Organic Farm.",
     "projectType": "Web",
-    "country": "US",
-    "city": "US",
-    "logoUrl": "https://v5.airtableusercontent.com/v3/u/51/51/1775052000000/X2AOJrNnq-_udSS6kwGJGw/JVqQD-BtDTdPZ4s_crSgMiyRMxw7UKLCPIqA9xeRFyxsCe47SFrry0GYew2goTx2kC0S3HkfueGbnXolWBw7cBEZpG2CrUlt6HW_rhwneCu0x-iQcXQQiee9ghB8593TSrtJY1WsW66Vi9Z4Cwm-IcsRjillTA59LCHnupmaSJe7OMTCrLGbOtz2AxK2Dajm/H9Gtwftctw9n3Zg34QUIRuggCHpAmG0H8UJ1gHQvgEs",
-    "mapimageUrl": "https://v5.airtableusercontent.com/v3/u/51/51/1775052000000/X2AOJrNnq-_udSS6kwGJGw/JVqQD-BtDTdPZ4s_crSgMiyRMxw7UKLCPIqA9xeRFyxsCe47SFrry0GYew2goTx2kC0S3HkfueGbnXolWBw7cBEZpG2CrUlt6HW_rhwneCu0x-iQcXQQiee9ghB8593TSrtJY1WsW66Vi9Z4Cwm-IcsRjillTA59LCHnupmaSJe7OMTCrLGbOtz2AxK2Dajm/H9Gtwftctw9n3Zg34QUIRuggCHpAmG0H8UJ1gHQvgEs",
+    "country": "Carmel",
+    "city": "CA",
+    "logoUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Julian/Org.png",
+    "mapimageUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Julian/Map.png",
     "ProjectStatus": "Active"
   }
 ];
