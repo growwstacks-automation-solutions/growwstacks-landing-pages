@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Screening with OpenAI, Google Sheets & Gmail | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate resume screening with AI. This free n8n workflow uses OpenAI GPT-4o to evaluate candidates, logs results to Google Sheets, and sends follow-ups via Gmail.">
+<link rel="canonical" href="https://growwstacks.com/workflows/3102-screen-resumes-and-send-follow-ups-with-openai-gpt-4o-google-sheets-and-gmail/">
+<meta property="og:title" content="AI Resume Screening with OpenAI, Google Sheets & Gmail | Free n8n Template">
+<meta property="og:description" content="Automate resume screening with AI. This free n8n workflow uses OpenAI GPT-4o to evaluate candidates, logs results to Google Sheets, and sends follow-ups via Gmail.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/3102-screen-resumes-and-send-follow-ups-with-openai-gpt-4o-google-sheets-and-gmail/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5464-screen-resumes-and-send-follow-ups-with-openai-gpt-4o-g.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Resume Screening with OpenAI, Google Sheets & Gmail | Free n8n Template">
+<meta name="twitter:description" content="Automate resume screening with AI. This free n8n workflow uses OpenAI GPT-4o to evaluate candidates, logs results to Google Sheets, and sends follow-ups via Gmail.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Resume Screening with OpenAI, Google Sheets & Gmail","description":"Automate resume screening with AI. This free n8n workflow uses OpenAI GPT-4o to evaluate candidates, logs results to Google Sheets, and sends follow-ups via Gmail.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5464-screen-resumes-and-send-follow-ups-with-openai-gpt-4o-g.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does AI improve the resume screening process?","acceptedAnswer":{"@type":"Answer","text":"AI automates the initial resume review by scoring candidates against predefined criteria like skills, experience, and qualifications. It eliminates unconscious bias in the first screening pass, ensures consistent evaluation of every applicant, and processes hundreds of resumes in minutes instead of hours. This allows recruiters to focus only on the most qualified candidates."}},{"@type":"Question","name":"What are the main benefits of automating recruitment workflows?","acceptedAnswer":{"@type":"Answer","text":"Automating recruitment workflows saves 70-80% of the time spent on manual screening, reduces hiring costs by speeding up time-to-fill, improves candidate experience with faster follow-ups, ensures compliance by logging all decisions, and creates a searchable talent database for future roles. It also provides data-driven insights into your hiring funnel."}},{"@type":"Question","name":"Can AI resume screening work for technical roles like software engineers?","acceptedAnswer":{"@type":"Answer","text":"Yes, AI screening is particularly effective for technical roles. You can configure it to evaluate specific programming languages, frameworks, project experience, GitHub contributions, and technical certifications mentioned in resumes. The system can parse complex technical jargon and match candidates against detailed technical requirements that would take hours to review manually."}},{"@type":"Question","name":"How accurate is AI at evaluating resumes compared to human recruiters?","acceptedAnswer":{"@type":"Answer","text":"AI provides consistent, objective evaluation against predefined criteria but should complement human judgment, not replace it entirely. For factual matching (skills, years of experience, certifications), AI is highly accurate. For cultural fit, soft skills, and nuanced experience interpretation, human review remains essential. The best approach uses AI for initial screening followed by human evaluation of top candidates."}},{"@type":"Question","name":"What data security considerations are important for AI recruitment automation?","acceptedAnswer":{"@type":"Answer","text":"Candidate data is highly sensitive. Ensure your automation platform offers encryption for data in transit and at rest, complies with GDPR/CCPA regulations, provides audit logs of all data access, allows data retention policies, and uses secure API connections. Avoid storing full resumes long-term—extract only the evaluation scores and anonymized candidate profiles after hiring decisions are made."}},{"@type":"Question","name":"How can small businesses implement AI recruitment without large budgets?","acceptedAnswer":{"@type":"Answer","text":"Small businesses can start with affordable AI tools like OpenAI's API combined with no-code automation platforms like n8n. Focus on automating specific high-volume tasks first, like initial resume screening for frequently hired roles. Use free tiers of tools where possible, and gradually expand automation as you scale. Many platforms offer pay-as-you-go pricing that's accessible for smaller teams."}},{"@type":"Question","name":"What metrics should I track to measure the success of automated recruitment?","acceptedAnswer":{"@type":"Answer","text":"Key metrics include time-to-screen (reduction in hours), candidate quality score (match rate to job requirements), hiring manager satisfaction, cost-per-hire reduction, candidate response rates to automated follow-ups, and diversity metrics in your applicant pool. Also track false positive/negative rates from AI screening to continuously refine your evaluation criteria."}},{"@type":"Question","name":"Can I get a custom AI recruitment automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom AI recruitment automations tailored to your specific hiring processes, ATS systems, and evaluation criteria. We'll analyze your current workflow, design a solution that integrates with your existing tools, train the AI on your ideal candidate profiles, and provide ongoing optimization. Book a free consultation to discuss your requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"AI Resume Screening"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>AI Resume Screening</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">AI Recruitment</span>
+          <span class="cs-tag">OpenAI GPT-4o</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Gmail</span>
+          <span class="cs-tag">n8n</span>
+        </div>
+        <h1>AI Resume Screening with OpenAI, Google Sheets & Gmail</h1>
+        <p class="cs-hero-sub">Automate candidate evaluation, score resumes with AI, log results, and send personalized follow-ups—all in one workflow.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5464-screen-resumes-and-send-follow-ups-with-openai-gpt-4o-g.png" alt="AI Resume Screening workflow diagram showing OpenAI evaluating resumes and sending results to Google Sheets and Gmail" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Manual resume screening is one of the most time-consuming tasks in recruitment. HR teams spend hours reviewing hundreds of applications, often leading to inconsistent evaluations, unconscious bias, and missed ideal candidates. This workflow solves that problem by automating the entire initial screening process with artificial intelligence.</p>
+        <p>The system extracts content from uploaded resumes (PDF format), sends it to OpenAI GPT-4o for intelligent evaluation against your specific job criteria, classifies candidates as accepted or rejected based on a configurable score threshold, logs detailed results to Google Sheets for audit trails, and automatically sends personalized follow-up emails via Gmail. It transforms a multi-hour manual process into a fully automated pipeline that runs in minutes.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Resume Submission & Extraction</h3>
+        <p>Candidates upload their resumes through a form interface. The workflow extracts text content from PDF files, preparing it for AI analysis while preserving formatting and structure.</p>
+        
+        <h3>2. AI Evaluation with OpenAI GPT-4o</h3>
+        <p>The extracted resume content is sent to OpenAI's GPT-4o model with a custom prompt that evaluates candidates against your specific criteria: must-have qualifications, technical skills, experience levels, and soft skills. The AI assigns a numerical score and provides detailed justification.</p>
+        
+        <h3>3. Classification & Decision Routing</h3>
+        <p>Based on your configured score threshold (e.g., 80/100), candidates are automatically classified as "Accepted" or "Rejected." The workflow routes each candidate to the appropriate next step without manual intervention.</p>
+        
+        <h3>4. Data Logging to Google Sheets</h3>
+        <p>All evaluation data—including candidate details, AI score, justification, and classification—is logged to Google Sheets. Accepted candidates go to an "Accepted" tab, rejected to a "Rejected" tab, creating a searchable talent database.</p>
+        
+        <h3>5. Automated Follow-up via Gmail</h3>
+        <p>Personalized emails are automatically sent: interview invitations to accepted candidates and polite rejection notices to rejected candidates. Templates can be customized with candidate-specific details from the evaluation.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with a conservative score threshold (like 75/100) and adjust based on the quality of candidates that pass through. You can always lower the threshold if you're not getting enough qualified applicants.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This workflow is ideal for recruitment agencies, HR departments in growing companies, tech startups hiring technical roles, and any business that receives more than 20 applications per position. It's particularly valuable for roles with specific technical requirements where manual screening is complex and time-consuming.</p>
+        <p>Small businesses can use it to compete with larger companies by implementing professional, automated recruitment processes without hiring additional staff. Enterprises can deploy it across multiple departments to ensure consistent, unbiased initial screening at scale.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>n8n instance</strong> (self-hosted version required for community nodes)</li>
+          <li><strong>OpenAI API key</strong> with GPT-4o access</li>
+          <li><strong>Google Sheets</strong> with "Accepted" and "Rejected" tabs prepared</li>
+          <li><strong>Gmail account</strong> or Google Workspace for sending emails</li>
+          <li><strong>Basic understanding</strong> of your hiring criteria and ideal candidate profile</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li><strong>Import the template</strong> into your n8n instance using the downloaded JSON file.</li>
+          <li><strong>Configure credentials</strong> for OpenAI, Google Sheets, and Gmail in n8n's credentials management.</li>
+          <li><strong>Customize the AI prompt</strong> by replacing placeholder tags with your company name, role details, evaluation criteria, and score threshold.</li>
+          <li><strong>Prepare your Google Sheet</strong> with columns for: Candidate Name, Email, Resume Summary, AI Score, Evaluation Justification, and Status.</li>
+          <li><strong>Test with sample resumes</strong> to ensure the AI scoring aligns with your expectations before going live.</li>
+          <li><strong>Deploy the workflow</strong> and connect it to your resume submission form (via webhook or form trigger).</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Create a "Maybe" category in your Google Sheets for candidates scoring within 5 points of your threshold. These are worth a quick manual review—sometimes the AI misses nuanced experience.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 10-15 hours per hiring round</strong> by eliminating manual resume screening. What previously took days now happens automatically while your team focuses on interviewing qualified candidates.</p>
+        <p><strong>Ensure consistent, unbiased evaluation</strong> with AI that applies the same criteria to every applicant. Remove unconscious bias from the initial screening process and build more diverse candidate pipelines.</p>
+        <p><strong>Improve candidate experience</strong> with immediate, personalized follow-ups. Candidates receive responses within minutes instead of weeks, significantly improving your employer brand.</p>
+        <p><strong>Build a searchable talent database</strong> in Google Sheets. Even rejected candidates are logged with their skills—perfect for future roles that might be a better fit.</p>
+        <p><strong>Gain data-driven hiring insights</strong> from AI evaluation patterns. Identify which qualifications correlate most with successful hires and refine your job descriptions accordingly.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about AI recruitment automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does AI improve the resume screening process?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI automates the initial resume review by scoring candidates against predefined criteria like skills, experience, and qualifications. It eliminates unconscious bias in the first screening pass, ensures consistent evaluation of every applicant, and processes hundreds of resumes in minutes instead of hours.</p>
+          <p>This allows recruiters to focus only on the most qualified candidates for interviews, dramatically reducing time-to-hire while improving the quality of shortlisted applicants. The AI can also identify transferable skills that human reviewers might overlook.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the main benefits of automating recruitment workflows?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating recruitment workflows saves 70-80% of the time spent on manual screening, reduces hiring costs by speeding up time-to-fill, improves candidate experience with faster follow-ups, ensures compliance by logging all decisions, and creates a searchable talent database for future roles.</p>
+          <p>Beyond efficiency gains, automation provides data-driven insights into your hiring funnel. You can track which sources yield the best candidates, identify bottlenecks in your process, and continuously optimize based on actual performance metrics rather than intuition.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can AI resume screening work for technical roles like software engineers?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, AI screening is particularly effective for technical roles. You can configure it to evaluate specific programming languages, frameworks, project experience, GitHub contributions, and technical certifications mentioned in resumes.</p>
+          <p>The system can parse complex technical jargon and match candidates against detailed technical requirements that would take hours to review manually. For example, it can distinguish between "experience with React" (basic) versus "built scalable React applications with Redux and TypeScript" (advanced).</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is AI at evaluating resumes compared to human recruiters?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI provides consistent, objective evaluation against predefined criteria but should complement human judgment, not replace it entirely. For factual matching (skills, years of experience, certifications), AI is highly accurate. For cultural fit, soft skills, and nuanced experience interpretation, human review remains essential.</p>
+          <p>The best approach uses AI for initial screening followed by human evaluation of top candidates. This hybrid model combines AI's speed and consistency with human intuition and contextual understanding, typically yielding better results than either method alone.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What data security considerations are important for AI recruitment automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Candidate data is highly sensitive. Ensure your automation platform offers encryption for data in transit and at rest, complies with GDPR/CCPA regulations, provides audit logs of all data access, allows data retention policies, and uses secure API connections.</p>
+          <p>Avoid storing full resumes long-term—extract only the evaluation scores and anonymized candidate profiles after hiring decisions are made. Regularly review which team members have access to candidate data and implement the principle of least privilege.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can small businesses implement AI recruitment without large budgets?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Small businesses can start with affordable AI tools like OpenAI's API combined with no-code automation platforms like n8n. Focus on automating specific high-volume tasks first, like initial resume screening for frequently hired roles.</p>
+          <p>Use free tiers of tools where possible, and gradually expand automation as you scale. Many platforms offer pay-as-you-go pricing that's accessible for smaller teams. The ROI is often immediate—saving just 10 hours of recruiter time per month typically covers the tool costs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What metrics should I track to measure the success of automated recruitment?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Key metrics include time-to-screen (reduction in hours), candidate quality score (match rate to job requirements), hiring manager satisfaction, cost-per-hire reduction, candidate response rates to automated follow-ups, and diversity metrics in your applicant pool.</p>
+          <p>Also track false positive/negative rates from AI screening to continuously refine your evaluation criteria. A/B test different scoring thresholds and prompts to optimize for both efficiency and quality of hires over time.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom AI recruitment automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom AI recruitment automations tailored to your specific hiring processes, ATS systems, and evaluation criteria. We'll analyze your current workflow, design a solution that integrates with your existing tools, train the AI on your ideal candidate profiles, and provide ongoing optimization.</p>
+          <p>Our custom solutions can include multi-stage evaluation pipelines, integration with your applicant tracking system, custom reporting dashboards, and specialized configurations for technical, sales, or executive roles. Book a free consultation to discuss your requirements.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom AI Recruitment Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
