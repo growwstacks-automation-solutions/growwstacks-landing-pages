@@ -34,11 +34,32 @@ export function initGrowwStacksWidget(config = {}) {
     return;
   }
 
-  let idx = 0;
   let interval;
+  let shuffledIndexes = [];
+  let currentPointer = 0;
+
+  function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function refillShuffledIndexes() {
+    shuffledIndexes = shuffleArray(records.map((_, i) => i));
+    currentPointer = 0;
+  }
 
   function showNext() {
-    const rec = records[idx++ % records.length];
+    if (currentPointer >= shuffledIndexes.length) {
+      refillShuffledIndexes();
+    }
+
+    const rec = records[shuffledIndexes[currentPointer]];
+    currentPointer++;
+
     const existing = root.querySelector(".gs-spw-card");
 
     if (existing) {
@@ -52,6 +73,7 @@ export function initGrowwStacksWidget(config = {}) {
     }
   }
 
+  refillShuffledIndexes();
   showNext();
   interval = setInterval(showNext, cycleTime);
 
