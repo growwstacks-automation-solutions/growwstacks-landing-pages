@@ -150,5 +150,45 @@ export const widgetData = [
     "logoUrl": "https://ik.imagekit.io/r2zdlyze2o/Growwstacks%20widget/image.png",
     "mapimageUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Map_Image/image_b_M7cpTZr.png",
     "ProjectStatus": "In Progress"
+  },
+  {
+    "clientName": "Shubham Mehta",
+    "projectName": "Voice AI & After-Sales Automation",
+    "projectType": "Automation",
+    "country": "India",
+    "city": "Pune",
+    "logoUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Shubham%20Mehta/image.png",
+    "mapimageUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Map_Image/image_XP6fSZ-dAx.png",
+    "ProjectStatus": "Completed"
+  },
+  {
+    "clientName": "Paul Chareth",
+    "projectName": "Staffify Client Transparency & VA Performance Portal",
+    "projectType": "Automation",
+    "country": "USA",
+    "city": "Los Angeles",
+    "logoUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Paul%20Chareth/image%20(3).jpg",
+    "mapimageUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Map_Image/image_yypZwtr0U.png",
+    "ProjectStatus": "Completed"
+  },
+  {
+    "clientName": "Ornella Hishaam (Josh)",
+    "projectName": "GoTo Intelligent Call Quality and Script Adherence Automation System",
+    "projectType": "Automation",
+    "country": "Sri Lanka",
+    "city": "Colombo",
+    "logoUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Ornella/image%20(2).jpg",
+    "mapimageUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Map_Image/image_f2_JWvgrB.png",
+    "ProjectStatus": "Complete - Payment Pending"
+  },
+  {
+    "clientName": "Amol Nagpal",
+    "projectName": "Order processing and vendor automation",
+    "projectType": "Automation",
+    "country": "India",
+    "city": "New Delhi",
+    "logoUrl": "https://ik.imagekit.io/r2zdlyze2o/Growwstacks%20widget/smta-logo1.png",
+    "mapimageUrl": "https://ik.imagekit.io/r2zdlyze2o/GS-Website/Widget/Map_Image/image_AEzcNtiT9.png",
+    "ProjectStatus": "Completed"
   }
 ];
