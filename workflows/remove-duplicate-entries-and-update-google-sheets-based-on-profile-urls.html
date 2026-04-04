@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Google Sheets Deduplication & Update | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n workflow template to automatically remove duplicate entries from Google Sheets based on profile URLs. Keep your lead lists, CRM data, and contact databases clean and up-to-date without manual work.">
+<link rel="canonical" href="https://growwstacks.com/workflows/5211-remove-duplicate-entries-and-update-google-sheets-based-on-profile-urls/">
+<meta property="og:title" content="Automate Google Sheets Deduplication & Update | Free n8n Template">
+<meta property="og:description" content="Free n8n workflow template to automatically remove duplicate entries from Google Sheets based on profile URLs. Keep your lead lists, CRM data, and contact databases clean and up-to-date without manual work.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/5211-remove-duplicate-entries-and-update-google-sheets-based-on-profile-urls/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8132-remove-duplicate-entries-and-update-google-sheets-based.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Google Sheets Deduplication & Update | Free n8n Template">
+<meta name="twitter:description" content="Free n8n workflow template to automatically remove duplicate entries from Google Sheets based on profile URLs. Keep your lead lists, CRM data, and contact databases clean and up-to-date without manual work.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Sheets Deduplication & Update Automation","description":"Free n8n workflow template to automatically remove duplicate entries from Google Sheets based on profile URLs. Keep your lead lists, CRM data, and contact databases clean and up-to-date without manual work.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8132-remove-duplicate-entries-and-update-google-sheets-based.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is data deduplication important for business operations?","acceptedAnswer":{"@type":"Answer","text":"Data deduplication is crucial because duplicate entries in your databases lead to wasted marketing spend, inaccurate reporting, and poor customer experiences. When you send the same email to a contact multiple times or track the same lead under different entries, you lose trust and waste resources. Automated deduplication ensures clean data for better decision-making."}},{"@type":"Question","name":"What are the most common sources of duplicate data in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"The most common sources include multiple form submissions, imported lists from different sources, manual data entry errors, and CRM sync issues. For example, a lead might submit a contact form twice, or sales reps might enter the same prospect information separately. Web scraping tools and data imports from LinkedIn or other platforms often create duplicates that need cleaning."}},{"@type":"Question","name":"How does automation improve data management compared to manual cleaning?","acceptedAnswer":{"@type":"Answer","text":"Automation transforms data management from a reactive, time-consuming task to a proactive, efficient process. Manual cleaning requires hours of spreadsheet work each week and is prone to human error. Automation runs consistently, catches duplicates immediately, and frees your team for higher-value work. It also ensures data quality standards are maintained without constant oversight."}},{"@type":"Question","name":"What business problems does duplicate data in Google Sheets cause?","acceptedAnswer":{"@type":"Answer","text":"Duplicate data causes inaccurate sales forecasting, wasted marketing budget on duplicate communications, poor customer experience from repeated contacts, and unreliable analytics. Sales teams might pursue the same lead multiple times, marketing might count the same person as two different contacts in campaigns, and leadership makes decisions based on inflated or inaccurate numbers."}},{"@type":"Question","name":"Can I deduplicate based on multiple criteria, not just profile URLs?","acceptedAnswer":{"@type":"Answer","text":"Yes, advanced deduplication can use multiple criteria like email addresses, phone numbers, company names, or custom identifiers. The most effective approach combines several fields to catch variations. For example, you might check email first, then name and company if email isn't available. This template's logic can be adapted to match your specific data structure and business rules."}},{"@type":"Question","name":"How often should I run deduplication automation on my Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Frequency depends on your data inflow. For active lead generation or daily form submissions, run automation daily. For weekly imports, run weekly. The key is to clean data before it's used in campaigns or sales outreach. Many businesses schedule deduplication nightly to ensure morning reports and daily activities work with clean data."}},{"@type":"Question","name":"Can I get a custom Google Sheets automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. GrowwStacks specializes in custom Google Sheets automation tailored to your specific business processes. We can build workflows that integrate with your CRM, marketing tools, and internal systems, handle complex deduplication logic, and automate entire data management pipelines. Our team analyzes your current processes and builds solutions that save hours weekly."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Google Sheets Deduplication Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Google Sheets Deduplication Automation</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Data Cleaning</span>
+          <span class="cs-tag">Automation</span>
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Free Template</span>
+        </div>
+        <h1>Automate Google Sheets Deduplication & Update</h1>
+        <p class="cs-hero-sub">Free n8n workflow to automatically remove duplicate entries from Google Sheets based on profile URLs. Keep lead lists, CRM data, and contact databases clean without manual work.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8132-remove-duplicate-entries-and-update-google-sheets-based.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8132-remove-duplicate-entries-and-update-google-sheets-based.png" alt="Google Sheets deduplication automation workflow interface showing data cleaning process" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Duplicate data in Google Sheets wastes time, causes communication errors, and leads to poor business decisions. This automation solves that problem by automatically identifying and removing duplicate entries based on profile URLs or other identifiers, then updating your sheet with clean, deduplicated data.</p>
+        <p>Whether you're managing lead lists from web forms, contact databases from multiple sources, or CRM data that needs regular cleaning, this workflow eliminates the manual spreadsheet work that consumes hours each week. It ensures your marketing campaigns reach unique contacts, your sales team pursues distinct leads, and your reports reflect accurate numbers.</p>
+        <p>The automation runs on demand or on a schedule, pulling data from your specified Google Sheet, applying deduplication logic, and writing back the cleaned dataset. It's particularly valuable for businesses that aggregate data from multiple channels and need to maintain a single source of truth.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow follows a logical sequence to ensure thorough cleaning while maintaining data integrity.</p>
+        
+        <h3>1. Trigger & Data Retrieval</h3>
+        <p>The workflow begins with a manual trigger or scheduled execution. It connects to your Google Sheets account using secure credentials and retrieves all rows from your specified spreadsheet and worksheet. This establishes the dataset that needs cleaning.</p>
+        
+        <h3>2. Duplicate Identification</h3>
+        <p>Using the "Remove Duplicates" node, the workflow scans retrieved data for duplicate entries based on your chosen field—typically profile URLs, email addresses, or custom identifiers. The node compares values and flags duplicates using configurable matching logic.</p>
+        
+        <h3>3. Data Processing & Cleaning</h3>
+        <p>Identified duplicates are processed according to your rules. You can choose to keep the first occurrence, last occurrence, or apply custom logic. The workflow preserves all unique entries while eliminating redundant data points that clutter your database.</p>
+        
+        <h3>4. File Conversion & Update</h3>
+        <p>The cleaned dataset is converted into a file format compatible with Google Sheets update operations. The workflow then connects to Google Drive (if needed) and writes the updated, deduplicated data back to your original sheet, replacing old content with clean information.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation template serves businesses and professionals who rely on Google Sheets for data management but struggle with duplicate entries. Marketing teams managing lead lists from webinars, forms, and campaigns will prevent sending duplicate communications. Sales teams tracking prospects can avoid pursuing the same lead multiple times.</p>
+        <p>Small business owners who aggregate customer data from various sources can maintain clean contact databases. Recruiters managing candidate pipelines can ensure they don't contact the same person through different channels. Researchers collecting data from multiple studies can maintain clean datasets for analysis.</p>
+        <p>Any organization using Google Sheets as a lightweight CRM, project management tool, or data repository will benefit from automated deduplication. It's especially valuable when multiple team members contribute to the same sheet or when importing data from external sources.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>n8n instance</strong> (cloud or self-hosted) with workflow execution capabilities</li>
+          <li><strong>Google Sheets account</strong> with the spreadsheet containing data to clean</li>
+          <li><strong>Google Drive access</strong> for file operations (if updating via file upload)</li>
+          <li><strong>Google Cloud credentials</strong> with Sheets and Drive API permissions enabled</li>
+          <li><strong>Clear deduplication criteria</strong> (which field to use for duplicate detection)</li>
+          <li><strong>Backup of original data</strong> (recommended before first run)</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Before running automation on production data, test with a copy of your sheet. Create a test spreadsheet with sample duplicate entries to verify the workflow identifies and removes them correctly according to your business rules.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Follow these steps to implement this deduplication automation in your n8n environment.</p>
+        <ol>
+          <li><strong>Download and import</strong> the template JSON file into your n8n instance using the workflow import function.</li>
+          <li><strong>Configure Google Sheets credentials</strong> in n8n's credentials management, ensuring proper API access to Sheets and Drive.</li>
+          <li><strong>Update spreadsheet IDs</strong> in the Google Sheets nodes with your actual spreadsheet and worksheet identifiers.</li>
+          <li><strong>Set deduplication field</strong> in the Remove Duplicates node to match your data structure (profileUrl, email, etc.).</li>
+          <li><strong>Test with sample data</strong> by executing the workflow once and verifying results match expectations.</li>
+          <li><strong>Schedule execution</strong> (optional) using n8n's schedule trigger for regular automated cleaning.</li>
+          <li><strong>Monitor and adjust</strong> based on initial results, refining matching logic if needed for your specific data.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5-10 hours monthly on manual data cleaning.</strong> What typically requires tedious spreadsheet sorting and filtering now happens automatically, freeing your team for strategic work rather than administrative tasks.</p>
+        <p><strong>Improve marketing campaign effectiveness by 15-25%.</strong> Clean contact lists mean no duplicate sends, better engagement rates, and more accurate conversion tracking from your campaigns.</p>
+        <p><strong>Enhance data accuracy for business decisions.</strong> Leadership makes decisions based on reliable numbers when duplicate entries aren't inflating counts or distorting trends in your reports.</p>
+        <p><strong>Reduce customer frustration from duplicate communications.</strong> Prospects and customers receive appropriate contact frequency instead of multiple identical messages that damage brand perception.</p>
+        <p><strong>Maintain compliance with data management standards.</strong> Regular deduplication supports GDPR and other privacy regulations by ensuring accurate records and appropriate communication frequency.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Google Sheets automation and data deduplication</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why is data deduplication important for business operations?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Data deduplication is crucial because duplicate entries in your databases lead to wasted marketing spend, inaccurate reporting, and poor customer experiences. When you send the same email to a contact multiple times or track the same lead under different entries, you lose trust and waste resources.</p>
+          <p>Automated deduplication ensures clean data for better decision-making. For example, sales teams can accurately forecast based on unique lead counts, and marketing can measure true campaign performance without duplicate conversions skewing results.</p>
+          <ul>
+            <li>Prevents wasted ad spend on duplicate audiences</li>
+            <li>Ensures accurate customer lifetime value calculations</li>
+            <li>Maintains brand reputation with appropriate communication frequency</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the most common sources of duplicate data in Google Sheets?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The most common sources include multiple form submissions, imported lists from different sources, manual data entry errors, and CRM sync issues. For example, a lead might submit a contact form twice, or sales reps might enter the same prospect information separately.</p>
+          <p>Web scraping tools and data imports from LinkedIn or other platforms often create duplicates that need cleaning. Integration between different business systems (like your website, CRM, and email platform) can also generate duplicate records when not properly synchronized.</p>
+          <ul>
+            <li>Multiple team members adding the same contact</li>
+            <li>Data imports from events, webinars, or partnerships</li>
+            <li>Form resubmissions when users refresh pages</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automation improve data management compared to manual cleaning?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation transforms data management from a reactive, time-consuming task to a proactive, efficient process. Manual cleaning requires hours of spreadsheet work each week and is prone to human error, especially with large datasets or complex matching rules.</p>
+          <p>Automation runs consistently, catches duplicates immediately, and frees your team for higher-value work. It also ensures data quality standards are maintained without constant oversight, applying the same logic every time regardless of who's managing the process.</p>
+          <ul>
+            <li>Eliminates human fatigue and oversight errors</li>
+            <li>Provides consistent results with audit trails</li>
+            <li>Scales effortlessly as your data volume grows</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What business problems does duplicate data in Google Sheets cause?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Duplicate data causes inaccurate sales forecasting, wasted marketing budget on duplicate communications, poor customer experience from repeated contacts, and unreliable analytics. Sales teams might pursue the same lead multiple times, creating internal confusion and prospect annoyance.</p>
+          <p>Marketing might count the same person as two different contacts in campaigns, and leadership makes decisions based on inflated or inaccurate numbers. Financial projections based on duplicate customer counts can lead to overestimation of market size or revenue potential.</p>
+          <ul>
+            <li>Inflated customer counts distorting growth metrics</li>
+            <li>Multiple teams contacting the same prospect simultaneously</li>
+            <li>Inaccurate lifetime value and cohort analysis</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I deduplicate based on multiple criteria, not just profile URLs?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, advanced deduplication can use multiple criteria like email addresses, phone numbers, company names, or custom identifiers. The most effective approach combines several fields to catch variations that single-field matching might miss.</p>
+          <p>This template's logic can be adapted to match your specific data structure and business rules. For example, you might check email first, then name and company if email isn't available, or use fuzzy matching for names with minor spelling differences.</p>
+          <ul>
+            <li>Combine email, phone, and name for comprehensive matching</li>
+            <li>Implement fuzzy logic for name variations and typos</li>
+            <li>Create custom matching rules for your industry data</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How often should I run deduplication automation on my Google Sheets?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Frequency depends on your data inflow. For active lead generation or daily form submissions, run automation daily. For weekly imports, run weekly. The key is to clean data before it's used in campaigns or sales outreach to prevent duplicate actions.</p>
+          <p>Many businesses schedule deduplication nightly to ensure morning reports and daily activities work with clean data. Consider your business cycle—if sales teams work leads immediately, clean data in real-time or hourly. For monthly reporting, weekly cleaning may suffice.</p>
+          <ul>
+            <li>Daily for active lead generation systems</li>
+            <li>Weekly for moderate data collection activities</li>
+            <li>Before major campaigns or reporting periods</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Google Sheets automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. GrowwStacks specializes in custom Google Sheets automation tailored to your specific business processes. We can build workflows that integrate with your CRM, marketing tools, and internal systems, handle complex deduplication logic, and automate entire data management pipelines.</p>
+          <p>Our team analyzes your current processes and builds solutions that save hours weekly. Whether you need advanced matching algorithms, integration with proprietary systems, or complete data pipeline automation, we create solutions that fit your exact requirements and scale with your business.</p>
+          <ul>
+            <li>Custom integration with your existing tech stack</li>
+            <li>Advanced matching logic for your specific data</li>
+            <li>Ongoing support and optimization as needs evolve</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Google Sheets Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

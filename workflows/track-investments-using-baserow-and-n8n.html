@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Investments Using Baserow & n8n | Free Automation Template</title>
+<meta name="description" content="Automate daily investment portfolio tracking. This free n8n workflow pulls live stock/ETF prices, calculates gains/losses from Baserow, and emails a summary.">
+<link rel="canonical" href="https://growwstacks.com/workflows/583-track-investments-using-baserow-and-n8n/">
+<meta property="og:title" content="Automate Investment Tracking with Baserow & n8n">
+<meta property="og:description" content="Free workflow template to automate daily portfolio updates. Track stocks, ETFs, and crypto with live prices and email reports.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/583-track-investments-using-baserow-and-n8n/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1785-track-investments-using-baserow-and-n8n.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Investment Tracking with Baserow & n8n">
+<meta name="twitter:description" content="Free workflow template to automate daily portfolio updates. Track stocks, ETFs, and crypto with live prices and email reports.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Track Investments Using Baserow & n8n","description":"Automate daily investment portfolio tracking. This free n8n workflow pulls live stock/ETF prices, calculates gains/losses from Baserow, and emails a summary.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1785-track-investments-using-baserow-and-n8n.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best way to automate investment portfolio tracking?","acceptedAnswer":{"@type":"Answer","text":"The most effective way is to use a low-code automation platform like n8n to connect your investment database (like Baserow or Airtable) with live financial data sources. Set up a scheduled workflow that runs daily or weekly to fetch current prices, calculate your portfolio value and performance, and send you a formatted report via email or Slack. This eliminates manual checking and ensures you always have up-to-date insights."}},{"@type":"Question","name":"Can I track cryptocurrencies with this type of automation?","acceptedAnswer":{"@type":"Answer","text":"Yes, absolutely. The same automation principles apply. You can replace the stock price API with a cryptocurrency API (like CoinGecko, CoinMarketCap, or an exchange API) to fetch real-time crypto prices. The workflow structure remains identical: pull your holdings from a database, fetch current prices, calculate values, and generate a report. This is perfect for tracking a diversified portfolio across stocks, ETFs, and crypto in one place."}},{"@type":"Question","name":"How accurate and timely is automated investment data?","acceptedAnswer":{"@type":"Answer","text":"Automated workflows provide near real-time accuracy when configured correctly. By pulling data directly from financial APIs or exchange websites at scheduled intervals (e.g., every morning at 9 AM), you get prices as current as the source provides. This is far more timely and accurate than manual spreadsheet updates, which are often delayed and prone to human error. For most personal investors, daily updates are perfectly sufficient for tracking performance."}},{"@type":"Question","name":"Is it safe to automate financial data fetching?","acceptedAnswer":{"@type":"Answer","text":"Yes, when done properly. The automation fetches publicly available price data only—it does not require or use your brokerage login credentials or account access. Your private holdings data (quantity, purchase price) stays securely in your own database (Baserow). The workflow only reads that data and matches it with public price APIs. No sensitive financial transactions or account details are exposed, making it a secure read-only monitoring system."}},{"@type":"Question","name":"What are the benefits of automating investment tracking vs. using a finance app?","acceptedAnswer":{"@type":"Answer","text":"Automation gives you complete control, customization, and data ownership. Unlike generic finance apps, you decide exactly what data points to track, how to calculate metrics (like personal ROI formulas), and where to store the data. You can integrate with any data source, format reports exactly how you want them, and avoid vendor lock-in. It’s also significantly cheaper than premium portfolio tracking software, especially for complex or unconventional assets."}},{"@type":"Question","name":"Can this automation alert me about price thresholds or big market moves?","acceptedAnswer":{"@type":"Answer","text":"Yes, that’s a powerful extension. Once you have the live price data in your workflow, you can add conditional logic to check if any holding has crossed a specific gain/loss percentage or absolute value threshold. The workflow can then send you an immediate alert via Telegram, SMS, or email when triggered. This turns passive tracking into active monitoring, helping you make timely decisions without constantly watching the markets."}},{"@type":"Question","name":"How difficult is it to set up this investment tracking automation?","acceptedAnswer":{"@type":"Answer","text":"With this pre-built template, setup takes about 30-60 minutes. You need a Baserow account (free tier works), an n8n instance (cloud or self-hosted), and a SendGrid account for emails (or swap for another email service). The template handles the complex logic—you just need to input your API keys, configure your Baserow table structure, and set your email recipients. No coding is required, just configuration following our step-by-step guide."}},{"@type":"Question","name":"Can I get a custom investment tracking automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored financial automation systems for businesses. We can create custom workflows that pull data from multiple brokerages, calculate advanced metrics like risk-adjusted returns, generate compliance-ready reports, and integrate with your internal dashboards or CRM. This is ideal for investment firms, family offices, or businesses managing corporate treasuries who need reliable, auditable, and scalable tracking beyond manual spreadsheets."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Track Investments Using Baserow & n8n"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Track Investments Using Baserow & n8n</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Baserow</span>
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Finance Automation</span>
+          <span class="cs-tag">Portfolio Tracking</span>
+          <span class="cs-tag">Email Reports</span>
+        </div>
+        <h1>Automate Your Investment Portfolio Tracking</h1>
+        <p class="cs-hero-sub">Free n8n workflow to pull live stock/ETF prices, calculate daily gains/losses from your Baserow database, and email a professional summary report.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1785-track-investments-using-baserow-and-n8n.png" alt="Automated investment tracking workflow diagram showing Baserow, n8n, and email integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Manually checking stock prices and updating spreadsheets is a tedious, error-prone task that wastes valuable time. This automation solves that by creating a hands-free system that monitors your investment portfolio daily.</p>
+        <p>The workflow connects your Baserow database (where you store your holdings) with live financial data sources. It automatically fetches current prices for each ETF, stock, or exchange-traded product, calculates your total portfolio value, determines daily profit/loss, and compiles everything into a clean, professional email report delivered to your inbox every morning.</p>
+        <p>You get a consistent, accurate snapshot of your investments without ever opening a brokerage app or touching a spreadsheet. It transforms reactive, manual tracking into proactive, automated insight.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow is triggered on a schedule and executes a series of steps to gather, process, and deliver your portfolio data.</p>
+
+        <h3>1. Scheduled Trigger</h3>
+        <p>A Cron node initiates the workflow daily before market open. You can adjust the schedule to weekly, hourly, or any interval that fits your strategy.</p>
+
+        <h3>2. Fetch Your Holdings</h3>
+        <p>The Baserow node retrieves your investment records. Each record typically includes the asset name, ticker/ISIN, quantity owned, and purchase price.</p>
+
+        <h3>3. Get Live Market Data</h3>
+        <p>For each holding, an HTTP Request node queries a financial data source (like a stock exchange website or API) to fetch the current trading price. The HTML Extract node then parses the response to isolate the precise price figure.</p>
+
+        <h3>4. Calculate Performance</h3>
+        <p>Set nodes process the raw data. They calculate current value (quantity × price), total gain/loss, and percentage change since purchase. This logic is fully customizable for different tax lots or averaging methods.</p>
+
+        <h3>5. Generate the Report</h3>
+        <p>A Function node builds a professional HTML email body, formatting the data into a readable table with clear highlights for top gainers, losers, and overall portfolio health.</p>
+
+        <h3>6. Deliver the Insights</h3>
+        <p>Finally, the SendGrid node (or your chosen email service) sends the formatted report directly to your specified recipients. You can easily adapt this to send to Slack, Teams, or a dashboard instead.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> You can extend this workflow to include additional metrics like dividend yield, sector allocation, or comparison to benchmark indices by adding more data processing steps after the price fetch.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for individual investors, financial advisors, small fund managers, and business owners who manage company investments. If you regularly check multiple tickers, maintain a personal investment spreadsheet, or need to report portfolio performance to stakeholders, this workflow eliminates the grunt work.</p>
+        <p>It's particularly valuable for those holding diverse assets across different brokerages, as it centralizes tracking into a single, consistent report. Freelancers and consultants managing their retirement accounts, as well as startups tracking their corporate treasury, will find immediate time savings.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An <strong>n8n instance</strong> (cloud or self-hosted).</li>
+          <li>A <strong>Baserow account</strong> with a table containing your investment data (columns for Asset, ISIN/Ticker, Quantity, Purchase Price).</li>
+          <li>A <strong>SendGrid account</strong> (or another email service provider like Gmail/Outlook configured in n8n).</li>
+          <li>Basic familiarity with navigating n8n's interface to paste API keys and configure node settings.</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Import and configure this template in under 15 minutes:</p>
+        <ol>
+          <li><strong>Download the template</strong> using the button above and open your n8n editor.</li>
+          <li><strong>Import the JSON file</strong> into n8n via the "Import from File" option in the workflow menu.</li>
+          <li><strong>Configure the Baserow node</strong> with your API key and specify the correct table and view IDs.</li>
+          <li><strong>Adjust the HTTP Request node</strong> if needed—the template uses Tradegate, but you can point it to any financial data source.</li>
+          <li><strong>Set up the SendGrid node</strong> with your API key and customize the "From" email and recipient list.</li>
+          <li><strong>Test the workflow</strong> with a manual trigger, then activate the schedule.</li>
+        </ol>
+        <p>Your first automated portfolio report will arrive at the next scheduled run.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Use n8n's "Test Workflow" feature step-by-step to verify each node pulls and transforms data correctly before enabling the schedule. This helps catch configuration issues early.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 2–3 hours per week</strong> previously spent manually checking prices and updating spreadsheets. The automation runs reliably in the background, giving you back time for analysis and decision-making.</p>
+        <p><strong>Eliminate human error</strong> in data entry and calculations. Automated price fetching and math ensure your portfolio values are consistently accurate, removing costly mistakes from manual updates.</p>
+        <p><strong>Gain consistent, timely insights</strong> with a report delivered at the same time each day. This creates discipline in your review process and helps you spot trends or issues early.</p>
+        <p><strong>Centralize disparate holdings</strong> from multiple brokerages or accounts into one unified view. No more logging into five different platforms to get the full picture.</p>
+        <p><strong>Fully customizable and extensible</strong> to match your specific strategy. Easily add alerts for price thresholds, integrate with accounting software, or push data to a real-time dashboard.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about investment tracking automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is the best way to automate investment portfolio tracking?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The most effective way is to use a low-code automation platform like n8n to connect your investment database (like Baserow or Airtable) with live financial data sources. Set up a scheduled workflow that runs daily or weekly to fetch current prices, calculate your portfolio value and performance, and send you a formatted report via email or Slack. This eliminates manual checking and ensures you always have up-to-date insights.</p>
+          <p>This approach is superior to manual tracking because it's consistent, scalable, and reduces emotional bias—you see the numbers automatically without having to log in during market volatility.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I track cryptocurrencies with this type of automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, absolutely. The same automation principles apply. You can replace the stock price API with a cryptocurrency API (like CoinGecko, CoinMarketCap, or an exchange API) to fetch real-time crypto prices.</p>
+          <p>The workflow structure remains identical: pull your holdings from a database, fetch current prices, calculate values, and generate a report. This is perfect for tracking a diversified portfolio across stocks, ETFs, and crypto in one place, giving you a complete picture of your digital asset allocation alongside traditional investments.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate and timely is automated investment data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automated workflows provide near real-time accuracy when configured correctly. By pulling data directly from financial APIs or exchange websites at scheduled intervals (e.g., every morning at 9 AM), you get prices as current as the source provides.</p>
+          <p>This is far more timely and accurate than manual spreadsheet updates, which are often delayed and prone to human error. For most personal investors, daily updates are perfectly sufficient for tracking performance. The automation ensures you never miss a data point due to forgetfulness or busy schedules.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it safe to automate financial data fetching?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, when done properly. The automation fetches publicly available price data only—it does not require or use your brokerage login credentials or account access. Your private holdings data (quantity, purchase price) stays securely in your own database (Baserow).</p>
+          <p>The workflow only reads that data and matches it with public price APIs. No sensitive financial transactions or account details are exposed, making it a secure read-only monitoring system. You maintain full control over where your data lives and how it's accessed.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating investment tracking vs. using a finance app?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation gives you complete control, customization, and data ownership. Unlike generic finance apps, you decide exactly what data points to track, how to calculate metrics (like personal ROI formulas), and where to store the data.</p>
+          <p>You can integrate with any data source, format reports exactly how you want them, and avoid vendor lock-in. It's also significantly cheaper than premium portfolio tracking software, especially for complex or unconventional assets. Plus, your data never leaves your infrastructure unless you choose to send it somewhere.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this automation alert me about price thresholds or big market moves?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, that's a powerful extension. Once you have the live price data in your workflow, you can add conditional logic to check if any holding has crossed a specific gain/loss percentage or absolute value threshold.</p>
+          <p>The workflow can then send you an immediate alert via Telegram, SMS, or email when triggered. This turns passive tracking into active monitoring, helping you make timely decisions without constantly watching the markets. You could set alerts for when a stock drops 10%, when your portfolio hits a milestone, or when unusual volume spikes occur.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How difficult is it to set up this investment tracking automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>With this pre-built template, setup takes about 30-60 minutes. You need a Baserow account (free tier works), an n8n instance (cloud or self-hosted), and a SendGrid account for emails (or swap for another email service).</p>
+          <p>The template handles the complex logic—you just need to input your API keys, configure your Baserow table structure, and set your email recipients. No coding is required, just configuration following our step-by-step guide. Most users have it running and receiving their first report within an hour of starting.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom investment tracking automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored financial automation systems for businesses. We can create custom workflows that pull data from multiple brokerages, calculate advanced metrics like risk-adjusted returns, generate compliance-ready reports, and integrate with your internal dashboards or CRM.</p>
+          <p>This is ideal for investment firms, family offices, or businesses managing corporate treasuries who need reliable, auditable, and scalable tracking beyond manual spreadsheets. We handle the technical complexity so you can focus on strategy and decision-making.</p>
+          <ul>
+            <li>Multi-account aggregation from various brokers</li>
+            <li>Custom performance calculations and benchmarks</li>
+            <li>Automated reporting for stakeholders or regulators</li>
+            <li>Integration with your existing accounting software</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Investment Tracking Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

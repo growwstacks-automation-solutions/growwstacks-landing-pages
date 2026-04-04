@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automated Stripe Dispute Alert & Case Tracking with Slack + ClickUp | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate payment dispute management. This free n8n workflow fetches Stripe disputes, sends Slack alerts, and creates ClickUp tasks to ensure you never miss a deadline.">
+<link rel="canonical" href="https://growwstacks.com/workflows/5792-automated-stripe-dispute-alert-and-case-tracking-with-slack-clickup/">
+<meta property="og:title" content="Automated Stripe Dispute Alert & Case Tracking with Slack + ClickUp">
+<meta property="og:description" content="Automate payment dispute management. This free n8n workflow fetches Stripe disputes, sends Slack alerts, and creates ClickUp tasks to ensure you never miss a deadline.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/5792-automated-stripe-dispute-alert-and-case-tracking-with-slack-clickup/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8952-automated-stripe-dispute-alert-and-case-tracking-with-s.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automated Stripe Dispute Alert & Case Tracking with Slack + ClickUp">
+<meta name="twitter:description" content="Automate payment dispute management. This free n8n workflow fetches Stripe disputes, sends Slack alerts, and creates ClickUp tasks to ensure you never miss a deadline.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automated Stripe Dispute Alert & Case Tracking with Slack + ClickUp","description":"Automate payment dispute management. This free n8n workflow fetches Stripe disputes, sends Slack alerts, and creates ClickUp tasks to ensure you never miss a deadline.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8952-automated-stripe-dispute-alert-and-case-tracking-with-s.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Stripe dispute automation and why is it important?","acceptedAnswer":{"@type":"Answer","text":"Stripe dispute automation is the process of automatically monitoring, categorizing, and responding to payment disputes (chargebacks) from your Stripe account. It's critical because manual dispute handling is slow, error-prone, and can lead to lost revenue and damaged merchant reputations. Automated systems ensure you meet strict evidence submission deadlines, prioritize high-value disputes, and maintain clear records, significantly increasing your win rate and saving countless hours of manual work."}},{"@type":"Question","name":"How does automating dispute alerts improve financial operations?","acceptedAnswer":{"@type":"Answer","text":"Automating dispute alerts transforms financial operations from reactive to proactive. Instead of finance teams logging into Stripe daily to check for new disputes, they receive instant notifications in Slack with all relevant details—customer info, amount, reason, and deadline. This immediate visibility allows teams to gather evidence and respond within the critical first 24-48 hours, which is often the difference between winning and losing a dispute, directly protecting revenue."}},{"@type":"Question","name":"Can I use this workflow for other payment processors besides Stripe?","acceptedAnswer":{"@type":"Answer","text":"The core logic of this workflow—detecting a financial event, assessing priority, alerting a team, and creating a task—is highly transferable. While this template uses Stripe's API, you could adapt the trigger to work with PayPal, Square, or other payment gateways that provide webhooks or APIs for dispute notifications. The Slack and ClickUp integration steps would remain largely the same, making it a flexible foundation for any payment dispute management system."}},{"@type":"Question","name":"What are the risks of not automating payment dispute management?","acceptedAnswer":{"@type":"Answer","text":"The primary risks are financial loss, increased fees, and damage to your merchant standing. Payment processors like Stripe charge non-refundable dispute fees (typically $15-$25 per case) regardless of the outcome. Missing evidence submission deadlines (usually 7-21 days) guarantees a lost dispute. Repeated losses can lead to higher processing fees, holds on your funds, or even termination of your merchant account. Automation mitigates these risks by ensuring no dispute is ever missed or responded to late."}},{"@type":"Question","name":"How does integrating Slack and ClickUp improve the dispute resolution process?","acceptedAnswer":{"@type":"Answer","text":"Integrating Slack and ClickUp creates a seamless workflow from detection to resolution. Slack provides instant, company-wide visibility, ensuring the right people (finance, support, management) are alerted immediately. ClickUp then creates a structured task with the dispute deadline, priority, and all relevant data, assigning ownership and tracking progress. This combination eliminates communication silos, prevents tasks from being forgotten, and creates an audit trail for every dispute, improving accountability and resolution speed."}},{"@type":"Question","name":"What kind of businesses benefit most from this automation?","acceptedAnswer":{"@type":"Answer","text":"This automation delivers the most value to SaaS companies, e-commerce stores, subscription businesses, and any organization processing a medium-to-high volume of online payments. Finance teams, payment operations specialists, and risk/compliance managers are the primary users. It's especially crucial for businesses scaling rapidly, where manual review becomes impossible, and for those in high-risk industries where dispute rates are inherently higher, making efficient management a competitive necessity."}},{"@type":"Question","name":"What data should I include in a dispute alert to make it actionable?","acceptedAnswer":{"@type":"Answer","text":"An actionable dispute alert should include the customer's name and email, the transaction amount and date, the unique dispute ID, the reason code (e.g., 'fraudulent', 'product_not_received'), the deadline for evidence submission, and a direct link to the dispute in your Stripe dashboard. This allows the assigned team member to immediately understand the case's urgency, access all necessary information, and begin gathering evidence without switching between multiple apps, saving precious time."}},{"@type":"Question","name":"Can I get a custom payment dispute automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. GrowwStacks specializes in building tailored automation systems that fit your specific business processes. While this template provides a solid foundation, we can customize it to integrate with your existing CRM (like Salesforce or HubSpot), add logic for your unique dispute categorization rules, connect to internal evidence storage systems, or even build a full dashboard for tracking dispute metrics and win rates. We work with you to design a system that matches your team's workflow perfectly."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Stripe Dispute Alert & Tracking"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Stripe Dispute Alert & Tracking</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Stripe</span>
+          <span class="cs-tag">Slack</span>
+          <span class="cs-tag">ClickUp</span>
+          <span class="cs-tag">Finance Automation</span>
+          <span class="cs-tag">n8n</span>
+        </div>
+        <h1>Automated Stripe Dispute Alert & Case Tracking</h1>
+        <p class="cs-hero-sub">Never miss a payment dispute deadline. Automatically fetch Stripe disputes, send priority Slack alerts, and create tracked ClickUp tasks—all in one workflow.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8952-automated-stripe-dispute-alert-and-case-tracking-with-s.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/8952-automated-stripe-dispute-alert-and-case-tracking-with-s.png" alt="Visual diagram showing Stripe dispute data flowing to Slack alerts and ClickUp task creation" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Payment disputes (chargebacks) are a major headache for any business that processes online transactions. They're time-sensitive, complex, and losing them costs you both the transaction amount and a hefty fee. Manual monitoring is inefficient and risky.</p>
+        <p>This automated workflow solves that by creating a seamless bridge between your Stripe account, your team's communication in Slack, and your project management in ClickUp. It continuously monitors for new disputes, intelligently assesses their urgency based on amount and deadline, and instantly routes them to the right people with all the context they need to act.</p>
+        <p>You move from a reactive, panic-driven process to a proactive, organized system. High-priority disputes get immediate attention in Slack, while all cases are logged as tasks in ClickUp with clear deadlines, ensuring nothing falls through the cracks and your evidence is submitted on time, every time.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow acts as your automated financial operations assistant, handling the entire dispute lifecycle from detection to task creation.</p>
+
+        <h3>1. Trigger & Data Fetch</h3>
+        <p>The workflow can be triggered on a schedule (e.g., every 4 hours) or manually. It connects to the Stripe API and retrieves a list of all active, open disputes in your account. It pulls essential data like customer details, transaction ID, amount, currency, reason code, and the critical evidence submission deadline.</p>
+
+        <h3>2. Data Validation & Enrichment</h3>
+        <p>It first checks if any new disputes exist. If not, it can send a simple "all clear" summary to a designated Slack channel for audit purposes. If disputes are found, it formats the raw data into a human-readable summary, calculating the time remaining until the deadline and converting amounts to your base currency if needed.</p>
+
+        <h3>3. Priority Assessment Logic</h3>
+        <p>This is the brain of the operation. Using simple "IF" conditions, the workflow categorizes each dispute. High-priority flags might be applied to disputes over a certain monetary threshold, those with "fraudulent" reason codes, or those with deadlines within the next 48 hours. This ensures your team focuses on what matters most.</p>
+
+        <h3>4. High-Priority Alert Path</h3>
+        <p>For urgent disputes, the workflow sends a formatted, attention-grabbing message to a specific Slack channel (e.g., #finance-alerts). The message includes all key details and a direct link to the Stripe dispute. Simultaneously, it creates a high-priority task in a designated ClickUp list, setting the due date to the Stripe deadline and populating the description with the dispute summary for immediate action.</p>
+
+        <h3>5. Standard Case Path</h3>
+        <p>For lower-priority or informational disputes, the workflow creates a standard-priority ClickUp task and may send a less urgent notification to a general updates channel in Slack. This maintains full visibility without causing alert fatigue for the team.</p>
+
+        <h3>6. Completion & Logging</h3>
+        <p>The workflow concludes by logging its actions, confirming that all discovered disputes have been processed and assigned. This creates a reliable audit trail for your finance team.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This template is built for finance teams, payment operations specialists, and founders in SaaS, e-commerce, and any business relying on Stripe for payments. If you're manually checking the Stripe dashboard for disputes, copying information into Slack, and then creating tasks manually, this automation will save you hours per week and significantly reduce financial risk.</p>
+        <p>It's also ideal for scaling companies where the volume of transactions makes manual dispute management impossible, and for compliance-conscious businesses that need a bulletproof record of every dispute action taken.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A running <strong>n8n instance</strong> (cloud or self-hosted).</li>
+          <li>A <strong>Stripe account</strong> with API keys (Secret Key).</li>
+          <li>A <strong>Slack workspace</strong> where you can create an app and webhook URL for a channel.</li>
+          <li>A <strong>ClickUp account</strong> with API access and a designated List/Space for tracking disputes.</li>
+          <li>Basic familiarity with n8n to paste API credentials into the respective nodes.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Create a dedicated #stripe-disputes channel in Slack and a "Payment Disputes" folder in ClickUp before setting up this workflow. This keeps everything organized from day one.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Import and configure this workflow in under 15 minutes.</p>
+        <ol>
+          <li><strong>Download & Import:</strong> Click the "Download Template" button above and import the JSON file into your n8n instance.</li>
+          <li><strong>Configure Stripe:</strong> In the 'Stripe' node, add your Stripe Secret Key from the Stripe Dashboard.</li>
+          <li><strong>Set Up Slack:</strong> Create a Slack App, enable incoming webhooks, and paste the generated Webhook URL into the 'Slack' node. Specify your channel name (e.g., #finance-alerts).</li>
+          <li><strong>Connect ClickUp:</strong> Generate a Personal API Token in your ClickUp settings and add it to the 'ClickUp' node. Enter the specific List ID where tasks should be created.</li>
+          <li><strong>Adjust Logic (Optional):</strong> Review the 'IF' node conditions. You may want to adjust the dollar amount or days-until-deadline that triggers a "High Priority" alert to match your business rules.</li>
+          <li><strong>Test & Activate:</strong> Click "Execute Workflow" to test. If a test dispute exists in Stripe, you should see an alert in Slack and a task in ClickUp. Once confirmed, activate the workflow to run on your desired schedule.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminate Missed Deadlines:</strong> Automated tracking ensures evidence is submitted before Stripe's cutoff, protecting your revenue from automatic losses.</p>
+        <p><strong>Save 5-10 Hours Per Week:</strong> No more manual dashboard checks, copying data, or creating tasks. The workflow handles the entire operational overhead.</p>
+        <p><strong>Improve Win Rates:</strong> Faster, more organized responses with all data in one place lead to stronger evidence compilation and higher dispute resolution success.</p>
+        <p><strong>Centralize Visibility:</strong> Everyone from finance to customer support sees the same status in ClickUp, eliminating confusion and duplicate work.</p>
+        <p><strong>Scale with Confidence:</strong> As your transaction volume grows, your dispute management process scales automatically without adding headcount or complexity.</p>
+
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about payment dispute automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is Stripe dispute automation and why is it important?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Stripe dispute automation is the process of automatically monitoring, categorizing, and responding to payment disputes (chargebacks) from your Stripe account. It's critical because manual dispute handling is slow, error-prone, and can lead to lost revenue and damaged merchant reputations.</p>
+          <p>Automated systems ensure you meet strict evidence submission deadlines, prioritize high-value disputes, and maintain clear records, significantly increasing your win rate and saving countless hours of manual work.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automating dispute alerts improve financial operations?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating dispute alerts transforms financial operations from reactive to proactive. Instead of finance teams logging into Stripe daily to check for new disputes, they receive instant notifications in Slack with all relevant details—customer info, amount, reason, and deadline.</p>
+          <p>This immediate visibility allows teams to gather evidence and respond within the critical first 24-48 hours, which is often the difference between winning and losing a dispute, directly protecting revenue.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use this workflow for other payment processors besides Stripe?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The core logic of this workflow—detecting a financial event, assessing priority, alerting a team, and creating a task—is highly transferable. While this template uses Stripe's API, you could adapt the trigger to work with PayPal, Square, or other payment gateways that provide webhooks or APIs for dispute notifications.</p>
+          <p>The Slack and ClickUp integration steps would remain largely the same, making it a flexible foundation for any payment dispute management system.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the risks of not automating payment dispute management?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The primary risks are financial loss, increased fees, and damage to your merchant standing. Payment processors like Stripe charge non-refundable dispute fees (typically $15-$25 per case) regardless of the outcome. Missing evidence submission deadlines (usually 7-21 days) guarantees a lost dispute.</p>
+          <p>Repeated losses can lead to higher processing fees, holds on your funds, or even termination of your merchant account. Automation mitigates these risks by ensuring no dispute is ever missed or responded to late.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does integrating Slack and ClickUp improve the dispute resolution process?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Integrating Slack and ClickUp creates a seamless workflow from detection to resolution. Slack provides instant, company-wide visibility, ensuring the right people (finance, support, management) are alerted immediately.</p>
+          <p>ClickUp then creates a structured task with the dispute deadline, priority, and all relevant data, assigning ownership and tracking progress. This combination eliminates communication silos, prevents tasks from being forgotten, and creates an audit trail for every dispute, improving accountability and resolution speed.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What kind of businesses benefit most from this automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This automation delivers the most value to SaaS companies, e-commerce stores, subscription businesses, and any organization processing a medium-to-high volume of online payments. Finance teams, payment operations specialists, and risk/compliance managers are the primary users.</p>
+          <p>It's especially crucial for businesses scaling rapidly, where manual review becomes impossible, and for those in high-risk industries where dispute rates are inherently higher, making efficient management a competitive necessity.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What data should I include in a dispute alert to make it actionable?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>An actionable dispute alert should include the customer's name and email, the transaction amount and date, the unique dispute ID, the reason code (e.g., 'fraudulent', 'product_not_received'), the deadline for evidence submission, and a direct link to the dispute in your Stripe dashboard.</p>
+          <p>This allows the assigned team member to immediately understand the case's urgency, access all necessary information, and begin gathering evidence without switching between multiple apps, saving precious time.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom payment dispute automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. GrowwStacks specializes in building tailored automation systems that fit your specific business processes. While this template provides a solid foundation, we can customize it to integrate with your existing CRM (like Salesforce or HubSpot), add logic for your unique dispute categorization rules, connect to internal evidence storage systems, or even build a full dashboard for tracking dispute metrics and win rates.</p>
+          <p>We work with you to design a system that matches your team's workflow perfectly, ensuring maximum efficiency and protection for your revenue.</p>
+          <ul>
+            <li>Connect to your internal databases or CRM for customer history.</li>
+            <li>Automate evidence gathering from support tickets or order systems.</li>
+            <li>Build custom reporting dashboards for dispute analytics.</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Payment Dispute Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

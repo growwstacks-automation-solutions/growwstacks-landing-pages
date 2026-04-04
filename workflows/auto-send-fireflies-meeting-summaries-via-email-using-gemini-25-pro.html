@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-send FireFlies Meeting Summaries via Email | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automatically process Fireflies.ai meeting recap emails, extract transcripts, generate AI summaries with Gemini, and send structured emails. Save hours weekly.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7271-auto-send-fireflies-meeting-summaries-via-email-using-gemini-25-pro/">
+<meta property="og:title" content="Auto-send FireFlies Meeting Summaries via Email | Free n8n Template">
+<meta property="og:description" content="Automatically process Fireflies.ai meeting recap emails, extract transcripts, generate AI summaries with Gemini, and send structured emails. Save hours weekly.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7271-auto-send-fireflies-meeting-summaries-via-email-using-gemini-25-pro/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11497-auto-send-fireflies-meeting-summaries-via-email-using-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Auto-send FireFlies Meeting Summaries via Email | Free n8n Template">
+<meta name="twitter:description" content="Automatically process Fireflies.ai meeting recap emails, extract transcripts, generate AI summaries with Gemini, and send structured emails. Save hours weekly.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Auto-send FireFlies Meeting Summaries via Email","description":"Automatically process Fireflies.ai meeting recap emails, extract transcripts, generate AI summaries with Gemini, and send structured emails. Save hours weekly.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11497-auto-send-fireflies-meeting-summaries-via-email-using-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the main benefits of automating meeting summaries?","acceptedAnswer":{"@type":"Answer","text":"Automating meeting summaries saves 2-3 hours per week per team member, ensures no action items are forgotten, creates consistent documentation for reference, and improves accountability by distributing clear notes immediately after meetings end."}},{"@type":"Question","name":"How does AI improve meeting summaries compared to manual notes?","acceptedAnswer":{"@type":"Answer","text":"AI can identify key decisions, action items, and discussion points that humans might miss. It structures information consistently, removes irrelevant chatter, and generates professional summaries faster than any human could manually transcribe and format."}},{"@type":"Question","name":"What types of meetings benefit most from automated summarization?","acceptedAnswer":{"@type":"Answer","text":"Client discovery calls, project kickoffs, weekly team syncs, strategic planning sessions, and compliance meetings benefit most. Any meeting where decisions are made, tasks assigned, or information needs to be documented for stakeholders is ideal for automation."}},{"@type":"Question","name":"How secure is the data when using AI for meeting summaries?","acceptedAnswer":{"@type":"Answer","text":"Reputable AI services like Google Gemini and OpenAI use enterprise-grade encryption and data handling policies. For sensitive meetings, you can use on-premise AI models or ensure your workflow redacts confidential information before sending data to external APIs."}},{"@type":"Question","name":"Can automated meeting summaries integrate with project management tools?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can extend the workflow to create tasks in Asana, Trello, or Jira from identified action items, post summaries to Slack channels, save transcripts to Google Drive, or update CRM notes. The automation becomes a central hub for meeting intelligence."}},{"@type":"Question","name":"What's the difference between Fireflies.ai and other meeting transcription services?","acceptedAnswer":{"@type":"Answer","text":"Fireflies.ai specializes in AI-powered meeting intelligence with native integrations to Zoom, Teams, and Google Meet. It provides structured data like speaker identification, topic tracking, and sentiment analysis that raw transcripts from other services don't offer."}},{"@type":"Question","name":"How much time does this automation actually save?","acceptedAnswer":{"@type":"Answer","text":"Teams report saving 15-30 minutes per meeting previously spent on manual note-taking and distribution. For a team with 10 meetings weekly, that's 2.5-5 hours saved. The automation also eliminates the mental load of remembering to send follow-ups."}},{"@type":"Question","name":"Can I get a custom meeting automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom meeting automation systems tailored to your specific tools, meeting types, and distribution needs. We can integrate with your existing CRM, project management, and communication platforms for seamless workflow."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Auto-send FireFlies Meeting Summaries"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Auto-send FireFlies Meeting Summaries</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Fireflies.ai</span>
+          <span class="cs-tag">Google Gemini</span>
+          <span class="cs-tag">Gmail</span>
+          <span class="cs-tag">AI Summarization</span>
+          <span class="cs-tag">n8n</span>
+        </div>
+        <h1>Auto-send FireFlies Meeting Summaries via Email</h1>
+        <p class="cs-hero-sub">Automatically process meeting recaps, extract transcripts, generate AI summaries with Gemini 2.5 Pro, and send professional emails—saving hours weekly.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11497-auto-send-fireflies-meeting-summaries-via-email-using-.png" alt="Automated meeting summary workflow diagram showing Fireflies.ai, Google Gemini AI, and Gmail integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the tedious, time-consuming task of manually processing meeting recordings and distributing actionable summaries. After a meeting ends, Fireflies.ai sends a recap email with the transcript. Instead of someone needing to open that email, read through the transcript, identify key points, and craft a summary email, this workflow handles everything automatically.</p>
+        <p>The system extracts the meeting transcript from the Fireflies email, uses Google Gemini 2.5 Pro to analyze the conversation, identifies decisions, action items, and discussion highlights, then generates a professionally formatted email that's immediately sent to designated recipients. This ensures stakeholders receive clear, structured meeting intelligence within minutes of the meeting concluding, not hours or days later.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Trigger on New Meeting Recap Emails</h3>
+        <p>The workflow monitors your Gmail inbox for new emails from Fireflies.ai with "Your meeting recap" in the subject line. When detected, it captures the full email content including the meeting link and transcript access.</p>
+        
+        <h3>2. Extract Meeting Data with AI</h3>
+        <p>An AI-powered information extractor identifies the precise Fireflies meeting URL from the email body. A custom code node then parses the URL to isolate the unique meeting ID needed for API access.</p>
+        
+        <h3>3. Retrieve Full Transcript & Summary</h3>
+        <p>Using the Fireflies.ai API, the workflow fetches the complete meeting transcript along with AI-generated short summaries and overviews that Fireflies creates automatically.</p>
+        
+        <h3>4. Generate Professional Email with Gemini</h3>
+        <p>Google Gemini 2.5 Pro analyzes the transcript and summary data to create a comprehensive meeting summary email. It structures the content with clear sections: meeting purpose, key decisions, action items (with owners), discussion highlights, and next steps.</p>
+        
+        <h3>5. Format and Send Email</h3>
+        <p>The AI-generated markdown content is converted to HTML for better email client compatibility, then sent via Gmail with an appropriate subject line and professional formatting to all specified recipients.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Customize the Gemini prompt to match your company's communication style. You can instruct it to use specific terminology, include/exclude certain sections, or format action items in a way that integrates with your project management tools.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for <strong>consulting teams</strong> who need to send client meeting recaps promptly, <strong>project managers</strong> coordinating across multiple stakeholders, <strong>remote teams</strong> requiring consistent documentation of decisions, and <strong>executive assistants</strong> managing leadership calendars and follow-ups. Any business that conducts regular meetings where accountability and clear communication are critical will benefit from eliminating manual summary work.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>Fireflies.ai account</strong> with API access enabled (paid plan required for API usage)</li>
+          <li><strong>Google Gemini API key</strong> from Google AI Studio (Gemini 2.5 Pro or similar model)</li>
+          <li><strong>Gmail account</strong> with OAuth2 credentials configured in n8n</li>
+          <li><strong>n8n instance</strong> (self-hosted or cloud) with workflow execution capabilities</li>
+          <li><strong>Basic understanding</strong> of API keys and OAuth authentication flows</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Follow these steps to implement this automation in under 30 minutes:</p>
+        <ol>
+          <li><strong>Download and import</strong> the JSON template into your n8n instance using the import workflow feature.</li>
+          <li><strong>Configure credentials</strong> for Gmail (OAuth2), Fireflies.ai (API key), and Google Gemini (API key) in n8n's credentials management.</li>
+          <li><strong>Update email filters</strong> in the trigger node if your Fireflies recap emails use different subject lines or sender addresses.</li>
+          <li><strong>Set recipient email</strong> in the final Gmail send node to the person or distribution list that should receive summaries.</li>
+          <li><strong>Test the workflow</strong> by sending a sample Fireflies recap to your connected Gmail account and verifying the summary email arrives correctly.</li>
+          <li><strong>Activate the workflow</strong> and let it run automatically—it will check for new recap emails hourly by default.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with a test email address as the recipient during setup. Once you confirm the formatting and content meet your standards, update it to the actual distribution list.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 2-3 hours weekly per team member</strong> previously spent on manual note-taking, transcription review, and email composition. This time can be redirected to higher-value strategic work.</p>
+        <p><strong>Ensure no action items are forgotten</strong> with systematic extraction and clear assignment in distributed summaries. The AI identifies tasks that might be missed in casual note-taking.</p>
+        <p><strong>Improve meeting accountability</strong> by providing all participants with identical, structured records of decisions and commitments immediately after meetings conclude.</p>
+        <p><strong>Create searchable knowledge base</strong> of meeting outcomes that can be archived to CRM, project management tools, or document storage for future reference.</p>
+        <p><strong>Scale meeting documentation</strong> across multiple teams without adding administrative overhead. The system handles any volume of meetings consistently.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about meeting automation and AI summarization</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the main benefits of automating meeting summaries?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating meeting summaries saves 2-3 hours per week per team member, ensures no action items are forgotten, creates consistent documentation for reference, and improves accountability by distributing clear notes immediately after meetings end.</p>
+          <p>Beyond time savings, automation eliminates the variability in note-taking quality between different team members and ensures all stakeholders receive identical information, reducing miscommunication and follow-up clarification emails.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does AI improve meeting summaries compared to manual notes?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI can identify key decisions, action items, and discussion points that humans might miss. It structures information consistently, removes irrelevant chatter, and generates professional summaries faster than any human could manually transcribe and format.</p>
+          <p>Modern AI models like Gemini 2.5 Pro understand context and nuance, allowing them to distinguish between casual conversation and substantive decisions. They can also maintain objectivity that human note-takers might struggle with during heated discussions.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of meetings benefit most from automated summarization?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Client discovery calls, project kickoffs, weekly team syncs, strategic planning sessions, and compliance meetings benefit most. Any meeting where decisions are made, tasks assigned, or information needs to be documented for stakeholders is ideal for automation.</p>
+          <p>Meetings with external participants particularly benefit because the automated summary serves as an official record of agreements. Sales calls, partnership discussions, and vendor negotiations all gain clarity through consistent documentation.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is the data when using AI for meeting summaries?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Reputable AI services like Google Gemini and OpenAI use enterprise-grade encryption and data handling policies. For sensitive meetings, you can use on-premise AI models or ensure your workflow redacts confidential information before sending data to external APIs.</p>
+          <p>Many organizations implement a two-tier approach: using cloud AI for general meetings while keeping highly sensitive discussions (legal, HR, financial) within internal systems with local AI processing or human review.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can automated meeting summaries integrate with project management tools?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, you can extend the workflow to create tasks in Asana, Trello, or Jira from identified action items, post summaries to Slack channels, save transcripts to Google Drive, or update CRM notes. The automation becomes a central hub for meeting intelligence.</p>
+          <p>With n8n's extensive integration library, you can connect meeting outcomes directly to your existing tools. For example, action items can become Jira tickets assigned to the right person with due dates extracted from the conversation.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the difference between Fireflies.ai and other meeting transcription services?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Fireflies.ai specializes in AI-powered meeting intelligence with native integrations to Zoom, Teams, and Google Meet. It provides structured data like speaker identification, topic tracking, and sentiment analysis that raw transcripts from other services don't offer.</p>
+          <p>Unlike basic transcription services, Fireflies provides pre-processed data including short summaries and key points, making it ideal for automation workflows. Its API delivers clean, structured JSON data that's easier to work with than raw transcript text.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much time does this automation actually save?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Teams report saving 15-30 minutes per meeting previously spent on manual note-taking and distribution. For a team with 10 meetings weekly, that's 2.5-5 hours saved. The automation also eliminates the mental load of remembering to send follow-ups.</p>
+          <p>The time savings compound when you consider reduced email threads asking "What did we decide?" and fewer meetings needed to revisit previous discussions because someone forgot an action item. The clarity provided prevents downstream inefficiencies.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom meeting automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom meeting automation systems tailored to your specific tools, meeting types, and distribution needs. We can integrate with your existing CRM, project management, and communication platforms for seamless workflow.</p>
+          <p>Our team will analyze your meeting processes, identify the optimal automation strategy, and build a solution that fits your security requirements and business objectives. We handle everything from initial consultation to deployment and training.</p>
+          <ul>
+            <li>Integration with your existing tech stack</li>
+            <li>Custom AI prompts matching your company voice</li>
+            <li>Security and compliance considerations</li>
+            <li>Ongoing support and optimization</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Meeting Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

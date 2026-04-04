@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Facebook Video Story Publishing | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n workflow template to automatically publish videos from Google Drive to your Facebook Page Stories. Queue videos in Google Sheets, automate uploads, and save hours weekly.">
+<link rel="canonical" href="https://growwstacks.com/workflows/6474-automate-video-story-publishing-to-facebook-page-using-google-drive-and-sheets/">
+<meta property="og:title" content="Automate Facebook Video Story Publishing from Google Drive">
+<meta property="og:description" content="Free n8n workflow template to automatically publish videos from Google Drive to your Facebook Page Stories. Queue videos in Google Sheets, automate uploads, and save hours weekly.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/6474-automate-video-story-publishing-to-facebook-page-using-google-drive-and-sheets/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10067-automate-video-story-publishing-to-facebook-page-using.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Facebook Video Story Publishing from Google Drive">
+<meta name="twitter:description" content="Free n8n workflow template to automatically publish videos from Google Drive to your Facebook Page Stories. Queue videos in Google Sheets, automate uploads, and save hours weekly.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate Facebook Video Story Publishing","description":"Free n8n workflow template to automatically publish videos from Google Drive to your Facebook Page Stories. Queue videos in Google Sheets, automate uploads, and save hours weekly.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10067-automate-video-story-publishing-to-facebook-page-using.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why should I automate Facebook Story publishing?","acceptedAnswer":{"@type":"Answer","text":"Automating Facebook Story publishing saves 5-10 hours weekly for social media managers by eliminating manual uploads. It ensures consistent posting schedules, reduces human error, and allows you to batch-create content while maintaining daily engagement with your audience through automated, timely video stories."}},{"@type":"Question","name":"What are the benefits of using Google Sheets as a content queue?","acceptedAnswer":{"@type":"Answer","text":"Using Google Sheets as a content queue provides a centralized, collaborative planning tool that non-technical team members can use. It creates an audit trail of what's been posted, allows for easy scheduling adjustments, and integrates seamlessly with Google Drive where your video assets are already stored."}},{"@type":"Question","name":"How does Facebook's video upload API work for Stories?","acceptedAnswer":{"@type":"Answer","text":"Facebook's video upload API uses a three-step process: first, you create an upload session and get a temporary URL; second, you upload the video file in chunks; third, you publish the uploaded video as a Story. This workflow automates all three steps, handling the technical complexity so you don't need to code API integrations."}},{"@type":"Question","name":"Can I schedule videos for specific times with this automation?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can schedule videos by adding timestamps to your Google Sheet queue. The workflow can check the sheet at regular intervals and only process videos whose scheduled time has arrived. This allows for precise timing of Stories to match your audience's peak engagement hours throughout the day."}},{"@type":"Question","name":"What video formats and sizes work best for Facebook Stories?","acceptedAnswer":{"@type":"Answer","text":"Facebook Stories work best with MP4 or MOV formats under 15 seconds in length. The optimal resolution is 1080x1920 pixels (9:16 aspect ratio). Videos should be under 4GB in size. This workflow automatically handles the upload regardless of format, but following these guidelines ensures best viewer experience."}},{"@type":"Question","name":"How do I secure my Facebook access token in automation workflows?","acceptedAnswer":{"@type":"Answer","text":"Never hardcode access tokens in workflows. Instead, use n8n's credential management to store tokens securely. Implement token rotation where possible, use Page Access Tokens instead of User Access Tokens for better security, and ensure tokens only have the minimum required permissions (pages_manage_posts, pages_read_engagement)."}},{"@type":"Question","name":"Can I get a custom Facebook automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom Facebook automation solutions tailored to your specific business needs. We can create workflows that integrate multiple platforms, add conditional logic for different content types, implement advanced scheduling, and ensure robust error handling for enterprise-scale social media operations."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Automate Facebook Video Story Publishing"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Automate Facebook Video Story Publishing</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Facebook</span>
+          <span class="cs-tag">Google Drive</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Social Media</span>
+          <span class="cs-tag">n8n</span>
+        </div>
+        <h1>Automate Facebook Video Story Publishing from Google Drive</h1>
+        <p class="cs-hero-sub">Free n8n workflow template to automatically publish videos from Google Drive to your Facebook Page Stories. Queue videos in Google Sheets, automate uploads, and save hours weekly.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/10067-automate-video-story-publishing-to-facebook-page-using.png" alt="Facebook video story publishing automation workflow diagram showing Google Drive to Facebook integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Manual video posting to Facebook Stories consumes valuable time and leads to inconsistent posting schedules. Social media managers often spend hours each week downloading videos, formatting them, and manually uploading to Facebook—missing optimal posting times and reducing content velocity.</p>
+        <p>This automation solves that by creating a seamless pipeline from Google Drive to Facebook Stories. Videos stored in Drive are automatically uploaded as Facebook Stories based on a queue managed in Google Sheets. The workflow checks for new videos every 2.5 hours, handles the complete Facebook API upload process, and updates the sheet with posting status—all without manual intervention.</p>
+        <p>Beyond simple automation, this system creates a content calendar that multiple team members can contribute to. Marketing teams can batch-create videos, add them to the queue with metadata, and trust that they'll publish at the right intervals, maintaining consistent audience engagement while freeing up creative time.</p>
+
+        <h2>How It Works</h2>
+        <h3>Step 1: Queue Management & Scheduling</h3>
+        <p>The workflow begins by checking your Google Sheet queue every 2 hours and 30 minutes. It looks for the first video where the "Stories" column is empty—indicating it hasn't been posted yet. This scheduled trigger ensures regular checking without overwhelming the systems.</p>
+        
+        <h3>Step 2: Video Retrieval & Validation</h3>
+        <p>Once a pending video is identified, the workflow validates that a valid Google Drive File ID exists. It then downloads the video file from Google Drive and calculates its size in bytes—critical information for the Facebook upload API which requires file size headers.</p>
+        
+        <h3>Step 3: Facebook API Three-Step Upload</h3>
+        <p>The core automation executes Facebook's three-step upload protocol: First, it initializes an upload session with Facebook's API to receive a temporary upload URL and video ID. Second, it streams the video binary data to that URL. Third, it publishes the uploaded video as a Facebook Story on your specified Page.</p>
+        
+        <h3>Step 4: Status Update & Logging</h3>
+        <p>After successful posting, the workflow updates the Google Sheet row, marking the video as processed. This creates an audit trail and prevents duplicate posting. Failed uploads are logged with error details for troubleshooting.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for social media managers, content creators, marketing agencies, and small business owners who regularly share video content on Facebook. Specifically, it benefits teams producing daily or weekly Stories content, businesses with multiple locations needing consistent posting, and agencies managing multiple client accounts where manual posting becomes unscalable.</p>
+        <p>Educational institutions, event promoters, and product-based businesses with regular video updates will find particular value. The system works equally well for solo entrepreneurs wanting to maintain professional social media presence and large teams needing collaborative content calendars.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>n8n instance</strong> (self-hosted or cloud)</li>
+          <li><strong>Google Drive account</strong> with videos to publish</li>
+          <li><strong>Google Sheets</strong> for the content queue (template provided)</li>
+          <li><strong>Facebook Page</strong> with admin access</li>
+          <li><strong>Facebook Page Access Token</strong> with pages_manage_posts permission</li>
+          <li><strong>Google OAuth credentials</strong> for Drive and Sheets API access</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Use a dedicated Google Drive folder for Facebook Stories content. This keeps your assets organized and makes permission management easier when multiple team members need access.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li><strong>Download and import</strong> the workflow JSON into your n8n instance</li>
+          <li><strong>Create your Google Sheet</strong> with columns for File ID, Stories status, and row_number</li>
+          <li><strong>Set up credentials</strong> for Google Drive, Google Sheets, and Facebook in n8n</li>
+          <li><strong>Configure the Schedule Trigger</strong> to your preferred checking frequency</li>
+          <li><strong>Add your Facebook Page ID</strong> and secure access token in the workflow nodes</li>
+          <li><strong>Test with one video</strong> to verify the complete pipeline works</li>
+          <li><strong>Activate the workflow</strong> and start adding videos to your queue</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5-10 hours weekly</strong> by eliminating manual video uploads. What used to be a daily 30-60 minute task becomes completely automated, freeing social media managers for strategic work.</p>
+        <p><strong>Ensure consistent posting</strong> even during weekends, holidays, or team absences. The automation runs 24/7, maintaining your Facebook presence without gaps in content delivery.</p>
+        <p><strong>Reduce human error</strong> like wrong video selection, incorrect formatting, or missed posting times. The systematic approach guarantees each video processes correctly through the entire pipeline.</p>
+        <p><strong>Enable team collaboration</strong> through a shared Google Sheet queue. Multiple contributors can add videos with notes, creating a transparent content calendar everyone can access.</p>
+        <p><strong>Scale content production</strong> without proportional increases in posting effort. Whether you post 5 videos weekly or 50, the automation handles the upload workload seamlessly.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Facebook video automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why should I automate Facebook Story publishing?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating Facebook Story publishing saves 5-10 hours weekly for social media managers by eliminating manual uploads. It ensures consistent posting schedules, reduces human error, and allows you to batch-create content while maintaining daily engagement with your audience through automated, timely video stories.</p>
+          <p>Beyond time savings, automation creates reliability in your social media presence. Your Stories publish at optimal times regardless of team availability, and you can maintain a consistent brand voice through scheduled content that aligns with marketing campaigns.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of using Google Sheets as a content queue?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Using Google Sheets as a content queue provides a centralized, collaborative planning tool that non-technical team members can use. It creates an audit trail of what's been posted, allows for easy scheduling adjustments, and integrates seamlessly with Google Drive where your video assets are already stored.</p>
+          <p>The spreadsheet approach enables advanced features like priority tagging, content categorization, and performance tracking. You can add columns for video descriptions, target audiences, or campaign tags—creating a rich metadata system that informs your content strategy beyond simple scheduling.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does Facebook's video upload API work for Stories?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Facebook's video upload API uses a three-step process: first, you create an upload session and get a temporary URL; second, you upload the video file in chunks; third, you publish the uploaded video as a Story. This workflow automates all three steps, handling the technical complexity so you don't need to code API integrations.</p>
+          <p>The API handles various video formats and sizes, but following Facebook's recommended specifications (MP4, 1080x1920, under 15 seconds) ensures best results. The automation manages error handling, retry logic, and progress tracking—critical for reliable production use.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I schedule videos for specific times with this automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, you can schedule videos by adding timestamps to your Google Sheet queue. The workflow can check the sheet at regular intervals and only process videos whose scheduled time has arrived. This allows for precise timing of Stories to match your audience's peak engagement hours throughout the day.</p>
+          <p>For advanced scheduling, you can modify the workflow to check for time-based conditions before processing each video. This enables day-parting strategies where different content types publish at optimal times—product demos during business hours, behind-the-scenes content evenings, etc.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What video formats and sizes work best for Facebook Stories?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Facebook Stories work best with MP4 or MOV formats under 15 seconds in length. The optimal resolution is 1080x1920 pixels (9:16 aspect ratio). Videos should be under 4GB in size. This workflow automatically handles the upload regardless of format, but following these guidelines ensures best viewer experience.</p>
+          <p>Vertical video (9:16) performs significantly better than horizontal in Stories format. Keep file sizes reasonable for mobile viewers—under 30MB for 15-second clips ensures quick loading. The automation will process any compatible format, but optimizing source videos improves engagement metrics.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I secure my Facebook access token in automation workflows?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Never hardcode access tokens in workflows. Instead, use n8n's credential management to store tokens securely. Implement token rotation where possible, use Page Access Tokens instead of User Access Tokens for better security, and ensure tokens only have the minimum required permissions (pages_manage_posts, pages_read_engagement).</p>
+          <p>Regularly audit token permissions and regenerate tokens quarterly. Consider implementing a secondary workflow that alerts you when tokens are nearing expiration. For enterprise use, explore Facebook's Business Manager system for centralized access control across multiple Pages and team members.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Facebook automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom Facebook automation solutions tailored to your specific business needs. We can create workflows that integrate multiple platforms, add conditional logic for different content types, implement advanced scheduling, and ensure robust error handling for enterprise-scale social media operations.</p>
+          <p>Our team works with you to understand your content strategy, team structure, and business goals—then builds automation that fits seamlessly into your workflow. We handle the technical complexity while you focus on creating great content and engaging your audience.</p>
+          <ul>
+            <li>Multi-platform publishing to Instagram Reels and TikTok</li>
+            <li>Content moderation and approval workflows</li>
+            <li>Performance analytics and optimization loops</li>
+            <li>Enterprise-grade security and compliance features</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Facebook Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

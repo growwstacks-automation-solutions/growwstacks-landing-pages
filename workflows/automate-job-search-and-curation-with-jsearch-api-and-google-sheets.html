@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Job Search with JSearch API & Google Sheets | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate job discovery and curation. This free n8n workflow pulls search criteria from Google Sheets, queries the JSearch API, and saves listings automatically.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4368-automate-job-search-and-curation-with-jsearch-api-and-google-sheets/">
+<meta property="og:title" content="Automate Job Search with JSearch API & Google Sheets">
+<meta property="og:description" content="Automate job discovery and curation. This free n8n workflow pulls search criteria from Google Sheets, queries the JSearch API, and saves listings automatically.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4368-automate-job-search-and-curation-with-jsearch-api-and-google-sheets/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7040-automate-job-search-and-curation-with-jsearch-api-and-g.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Job Search with JSearch API & Google Sheets">
+<meta name="twitter:description" content="Automate job discovery and curation. This free n8n workflow pulls search criteria from Google Sheets, queries the JSearch API, and saves listings automatically.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate Job Search with JSearch API & Google Sheets","description":"Automate job discovery and curation. This free n8n workflow pulls search criteria from Google Sheets, queries the JSearch API, and saves listings automatically.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7040-automate-job-search-and-curation-with-jsearch-api-and-g.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best way to automate job search and listing aggregation?","acceptedAnswer":{"@type":"Answer","text":"The most effective method is to use an automation platform like n8n to connect a job search API (like JSearch) with a spreadsheet or database. This allows you to define search criteria (position, location) in a Google Sheet, automatically fetch fresh listings daily, and store them in a structured format. This eliminates manual browsing across multiple job boards and ensures you never miss a relevant opportunity."}},{"@type":"Question","name":"How can I save time on recruiting and talent sourcing?","acceptedAnswer":{"@type":"Answer","text":"Automating the initial sourcing stage can save recruiters 5-10 hours per week. By setting up a workflow that continuously scans for candidates based on your criteria, you build a pipeline passively. The key is to filter results by experience level, salary range, and keywords before they hit your spreadsheet, so you only review high-potential matches. This transforms recruiting from a reactive task to a proactive strategy."}},{"@type":"Question","name":"Can I use Google Sheets as a simple recruitment database?","acceptedAnswer":{"@type":"Answer","text":"Yes, Google Sheets is an excellent lightweight database for recruitment when paired with automation. You can maintain a 'Search Criteria' tab where hiring managers input roles and locations, and an automated workflow populates a 'Candidates' tab with results. This creates a centralized, shareable source of truth that's accessible to non-technical team members, without the cost of a full ATS."}},{"@type":"Question","name":"What are the benefits of using an API for job searches instead of manual scraping?","acceptedAnswer":{"@type":"Answer","text":"Using a dedicated job search API like JSearch provides reliable, structured data and is legally compliant versus scraping websites. APIs deliver clean fields (job title, company, location, salary) and are updated in real-time. Manual scraping breaks frequently, violates terms of service, and produces messy data that requires hours of cleaning. An API integration is sustainable and professional."}},{"@type":"Question","name":"How do I ensure my automated job searches return high-quality, relevant results?","acceptedAnswer":{"@type":"Answer","text":"Quality depends on your filtering logic within the automation. Implement filters for minimum experience, exclude certain keywords, and prioritize listings from reputable companies. Schedule the workflow to run at optimal times (e.g., early morning when new posts are live). Regularly review and tweak your search parameters based on the quality of results you receive to continuously improve relevance."}},{"@type":"Question","name":"Is it possible to expand this automation to notify my team when new jobs are found?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. A robust automation can send instant notifications via Slack, email, or Microsoft Teams when new listings matching critical criteria are discovered. You can even set up different alerts for different roles or seniority levels. This turns the workflow into a real-time alert system, ensuring your team acts on opportunities while they're fresh."}},{"@type":"Question","name":"Can I get a custom job search and recruitment automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored recruitment automation systems. We can integrate multiple job boards, add advanced filtering with AI, connect to your ATS (like Greenhouse or Lever), and set up candidate scoring. Our consultants work with you to map your unique hiring workflow and build a system that saves dozens of hours monthly while improving candidate quality."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Automate Job Search with JSearch API & Google Sheets"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Automate Job Search</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">JSearch API</span>
+          <span class="cs-tag">Recruitment</span>
+          <span class="cs-tag">HR Automation</span>
+          <span class="cs-tag">n8n</span>
+        </div>
+        <h1>Automate Job Search & Curation with JSearch API & Google Sheets</h1>
+        <p class="cs-hero-sub">Stop manually browsing job boards. This workflow automatically finds and saves relevant job listings based on your search criteria, saving hours each week.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7040-automate-job-search-and-curation-with-jsearch-api-and-g.png" alt="Visual diagram of the automated job search workflow connecting Google Sheets, JSearch API, and data output" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Recruiters, hiring managers, and talent sourcers spend countless hours manually searching across LinkedIn, Indeed, and niche job boards. This repetitive process is not only time-consuming but also inconsistent—you might miss great candidates simply because you didn't check at the right time.</p>
+        <p>This automation solves that by turning your Google Sheet into a powerful job search command center. You define what you're looking for (job title, location, keywords), and the workflow queries the JSearch API—a comprehensive job search engine—to fetch live listings. It then cleans, structures, and saves the results back into your spreadsheet, marked with a status so you never process the same listing twice.</p>
+        <p>Think of it as your 24/7 recruitment assistant that never sleeps, constantly building your candidate pipeline while you focus on engaging with people.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow runs on a schedule you set (daily, hourly, etc.) and follows a clear, logical process.</p>
+
+        <h3>Step 1: Read Search Criteria</h3>
+        <p>The automation starts by checking your "Job Scraper" Google Sheet for any rows marked "Pending." Each row contains specific search parameters like "Position" (e.g., "Senior Python Developer") and "Location" (e.g., "Remote USA"). This allows non-technical team members to simply add a new row to trigger a search.</p>
+
+        <h3>Step 2: Query JSearch API</h3>
+        <p>Using the criteria from the sheet, the workflow sends a request to the JSearch API. This API aggregates millions of listings from thousands of sources, returning a rich set of data including job title, company, location, salary estimates, and job description.</p>
+
+        <h3>Step 3: Process & Filter Results</h3>
+        <p>The raw API response is parsed, and each job listing is extracted. The workflow can filter out irrelevant entries—for example, excluding internships if you're looking for senior roles, or removing duplicate postings. This ensures only clean, relevant data moves forward.</p>
+
+        <h3>Step 4: Write Results & Update Status</h3>
+        <p>Valid job listings are written to a separate "Job Listings" tab in your spreadsheet, with all key fields neatly organized. Crucially, the original "Pending" row in the source sheet is updated to "Scraped," preventing the same search from running again. This creates a reliable audit trail.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This template delivers immediate value for several roles and scenarios:</p>
+        <ul>
+          <li><strong>Recruitment Agencies:</strong> Manage multiple client searches simultaneously without increasing headcount.</li>
+          <li><strong>In-House Talent Acquisition Teams:</strong> Proactively build pipelines for hard-to-fill roles before a req is officially opened.</li>
+          <li><strong>Startups & SMBs:</strong> Access powerful sourcing tools without the cost of enterprise recruitment software.</li>
+          <li><strong>Executive Search Consultants:</strong> Continuously monitor the market for specific C-level or niche technical positions.</li>
+          <li><strong>HR Managers:</strong> Provide hiring managers with a curated, up-to-date list of market talent to inform compensation and strategy.</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>A Google Sheets document</strong> with two sheets: one for "Search Criteria" (with columns like Position, Location, Status) and one for "Job Listings" output.</li>
+          <li><strong>A JSearch API key</strong> (you can get a free tier from RapidAPI).</li>
+          <li><strong>An n8n instance</strong> (you can use the free, self-hosted version or n8n.cloud).</li>
+          <li><strong>Google Service Account credentials</strong> (to allow n8n to read/write to your Sheets securely).</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with broad searches to gauge volume, then refine your criteria. For example, first search "Software Engineer," then add filters for "Senior" and specific technologies. This helps you understand the market before narrowing down.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>You can have this automation running in under 15 minutes.</p>
+        <ol>
+          <li><strong>Download the template</strong> using the button above and import it into your n8n workspace.</li>
+          <li><strong>Create your Google Sheets</strong> with the required column structure as shown in the template notes.</li>
+          <li><strong>Configure the Google Sheets node</strong> by adding your Service Account JSON credentials and specifying your Sheet ID.</li>
+          <li><strong>Add your JSearch API key</strong> to the HTTP Request node's headers.</li>
+          <li><strong>Set the schedule trigger</strong> to your preferred frequency (e.g., every 24 hours).</li>
+          <li><strong>Test the workflow</strong> by adding a "Pending" row to your Search Criteria sheet and executing the workflow once manually.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5–10 hours per week per recruiter.</strong> Eliminate the daily ritual of manually checking multiple job boards. The automation works in the background, compiling results for you to review in a single, organized location.</p>
+        <p><strong>Improve candidate quality through consistency.</strong> Manual searches are prone to fatigue and inconsistency. An automated search applies the same criteria every time, ensuring you don't miss potential matches due to human error or time constraints.</p>
+        <p><strong>Build a valuable, searchable talent database.</strong> Over time, your output sheet becomes a historical database of candidates and market trends. You can analyze which roles are plentiful or scarce, track salary ranges, and identify companies that are actively hiring.</p>
+        <p><strong>Scale your sourcing efforts without scaling cost.</strong> Searching for 10 roles takes the same effort as searching for 1. Simply add more rows to your criteria sheet. This allows small teams to compete with larger organizations in sourcing speed and coverage.</p>
+        <p><strong>Gain a competitive edge in tight talent markets.</strong> By being notified of new listings faster than your competitors, you can be the first to reach out to top candidates, significantly increasing your response and engagement rates.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about job search automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is the best way to automate job search and listing aggregation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The most effective method is to use an automation platform like n8n to connect a job search API (like JSearch) with a spreadsheet or database. This allows you to define search criteria (position, location) in a Google Sheet, automatically fetch fresh listings daily, and store them in a structured format. This eliminates manual browsing across multiple job boards and ensures you never miss a relevant opportunity.</p>
+          <p>This approach is superior to manual methods because it's consistent, scalable, and creates a searchable historical record. You can start with simple searches and later add layers like AI filtering or notifications without rebuilding the core system.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can I save time on recruiting and talent sourcing?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating the initial sourcing stage can save recruiters 5-10 hours per week. By setting up a workflow that continuously scans for candidates based on your criteria, you build a pipeline passively. The key is to filter results by experience level, salary range, and keywords before they hit your spreadsheet, so you only review high-potential matches.</p>
+          <p>This transforms recruiting from a reactive task to a proactive strategy. Instead of starting from zero when a role opens, you have a pre-qualified list ready to engage. The time saved can be reinvested into candidate relationship building, which significantly improves placement rates.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use Google Sheets as a simple recruitment database?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, Google Sheets is an excellent lightweight database for recruitment when paired with automation. You can maintain a 'Search Criteria' tab where hiring managers input roles and locations, and an automated workflow populates a 'Candidates' tab with results.</p>
+          <p>This creates a centralized, shareable source of truth that's accessible to non-technical team members, without the cost of a full ATS. For many small to medium businesses, this combination provides 80% of the value of expensive recruitment software at a fraction of the cost and complexity.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of using an API for job searches instead of manual scraping?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Using a dedicated job search API like JSearch provides reliable, structured data and is legally compliant versus scraping websites. APIs deliver clean fields (job title, company, location, salary) and are updated in real-time.</p>
+          <p>Manual scraping breaks frequently when websites change their layout, violates terms of service, and produces messy data that requires hours of cleaning. An API integration is sustainable, professional, and designed for this exact purpose, ensuring long-term reliability.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I ensure my automated job searches return high-quality, relevant results?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Quality depends on your filtering logic within the automation. Implement filters for minimum experience, exclude certain keywords, and prioritize listings from reputable companies. Schedule the workflow to run at optimal times (e.g., early morning when new posts are live).</p>
+          <p>Regularly review and tweak your search parameters based on the quality of results you receive to continuously improve relevance. Start broad, then narrow down based on what you learn about which keywords and filters yield the best matches for your specific needs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it possible to expand this automation to notify my team when new jobs are found?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. A robust automation can send instant notifications via Slack, email, or Microsoft Teams when new listings matching critical criteria are discovered. You can even set up different alerts for different roles or seniority levels.</p>
+          <p>This turns the workflow into a real-time alert system, ensuring your team acts on opportunities while they're fresh. You can configure it to only notify for "urgent" roles or include a summary digest at the end of each day to minimize interruptions.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom job search and recruitment automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored recruitment automation systems. We can integrate multiple job boards, add advanced filtering with AI, connect to your ATS (like Greenhouse or Lever), and set up candidate scoring.</p>
+          <p>Our consultants work with you to map your unique hiring workflow and build a system that saves dozens of hours monthly while improving candidate quality. We handle the technical complexity so you can focus on hiring the right people.</p>
+          <ul>
+            <li>Integration with your existing HR tech stack</li>
+            <li>Custom dashboards and reporting</li>
+            <li>Ongoing support and optimization</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Job Search Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

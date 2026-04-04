@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate PBN Link Audits | Detect Offboarded Client Links | GrowwStacks</title>
+<meta name="description" content="Free n8n workflow template: Automatically scan PBN sites for offboarded client links using Google Sheets & HTTP requests. Save hours of manual SEO auditing.">
+<link rel="canonical" href="https://growwstacks.com/workflows/8193-detect-offboarded-client-links-on-pbn-sites-with-google-sheets-and-http/">
+<meta property="og:title" content="Automate PBN Link Audits | Detect Offboarded Client Links">
+<meta property="og:description" content="Free n8n workflow template: Automatically scan PBN sites for offboarded client links using Google Sheets & HTTP requests. Save hours of manual SEO auditing.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/8193-detect-offboarded-client-links-on-pbn-sites-with-google-sheets-and-http/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13186-detect-offboarded-client-links-on-pbn-sites-with-googl.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate PBN Link Audits | Detect Offboarded Client Links">
+<meta name="twitter:description" content="Free n8n workflow template: Automatically scan PBN sites for offboarded client links using Google Sheets & HTTP requests. Save hours of manual SEO auditing.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PBN Link Audit Automation","description":"Automatically scan PBN sites for offboarded client links using Google Sheets & HTTP requests. Save hours of manual SEO auditing.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13186-detect-offboarded-client-links-on-pbn-sites-with-googl.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is auditing PBN links for offboarded clients important?","acceptedAnswer":{"@type":"Answer","text":"Auditing PBN links for offboarded clients is crucial to avoid Google penalties, wasted crawl budget, and linking to dead sites. Manual checks are time-consuming and error-prone, while automation ensures consistent, accurate monitoring of your entire network."}},{"@type":"Question","name":"What are the risks of not removing offboarded client links from PBNs?","acceptedAnswer":{"@type":"Answer","text":"Leaving offboarded client links on PBNs risks Google penalties for unnatural linking, wastes valuable crawl budget on irrelevant pages, and damages your site's authority by pointing to dead or irrelevant destinations. It can also negatively impact the SEO performance of your active client sites."}},{"@type":"Question","name":"How does automation improve PBN management for SEO agencies?","acceptedAnswer":{"@type":"Answer","text":"Automation transforms PBN management by scanning hundreds of sites in minutes instead of days, eliminating human error in link detection, providing real-time audit reports in Google Sheets, and freeing up agency resources for strategic SEO work rather than manual grunt work."}},{"@type":"Question","name":"Can this workflow handle large PBN networks with hundreds of sites?","acceptedAnswer":{"@type":"Answer","text":"Yes, this workflow is designed to scale. It processes sites one by one with built-in pauses to avoid rate limits, handles batch processing through Google Sheets, and can be scheduled to run automatically. For very large networks, you can implement pagination or run the workflow in segments."}},{"@type":"Question","name":"What happens when the workflow finds an offboarded client link?","acceptedAnswer":{"@type":"Answer","text":"When the workflow detects an offboarded client link, it automatically logs the domain, PBN URL, and timestamp directly into your Google Sheet. You can then connect additional automation to notify your team via Slack, email, or create tasks in your project management system for immediate action."}},{"@type":"Question","name":"How accurate is the domain matching in the HTML content?","acceptedAnswer":{"@type":"Answer","text":"The workflow performs exact text matching against the raw HTML, catching links in href attributes, text content, and meta tags. It can be configured to match partial domains, handle www/non-www variations, and ignore specific patterns. For complex sites, you can extend the code node with regular expressions for more precise matching."}},{"@type":"Question","name":"What's the business value of automating PBN link audits?","acceptedAnswer":{"@type":"Answer","text":"Automating PBN link audits saves 10-20 hours monthly per client, reduces compliance risks by 90%, improves client retention through proactive monitoring, and creates a scalable service offering. Agencies can audit more frequently without increasing costs, catching issues before they become problems."}},{"@type":"Question","name":"Can I get a custom PBN audit automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom PBN audit and SEO automation systems tailored to your specific workflows. We can integrate with your existing tools, add advanced features like competitor link detection, automated disavow file generation, or real-time dashboard reporting. Our team will design a solution that fits your exact business needs and scales with your agency."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"PBN Link Audit Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>PBN Link Audit</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">HTTP Request</span>
+          <span class="cs-tag">SEO Automation</span>
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Free Template</span>
+        </div>
+        <h1>Automate PBN Link Audits: Find Offboarded Client Links Instantly</h1>
+        <p class="cs-hero-sub">Scan hundreds of PBN sites automatically, check for removed client domains in live HTML, and log matches directly to Google Sheets—no manual work required.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13186-detect-offboarded-client-links-on-pbn-sites-with-googl.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13186-detect-offboarded-client-links-on-pbn-sites-with-googl.png" alt="Visual diagram of the PBN link audit automation workflow connecting Google Sheets, HTTP requests, and data processing" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Managing a Private Blog Network (PBN) comes with significant risk management responsibilities. When a client project ends and their domain is removed from your services, any remaining links to that domain across your PBN can trigger Google penalties, waste valuable crawl budget, and point visitors to dead destinations. Manual checking of dozens or hundreds of PBN sites is impractical, error-prone, and doesn't scale.</p>
+        <p>This n8n workflow automates the entire audit process. It reads your PBN site list from Google Sheets, fetches the live HTML of each site via HTTP requests, compares it against a master list of offboarded client domains, and automatically logs any matches back into your tracking sheet. The system intelligently skips already-processed rows and includes built-in pauses to prevent rate limiting.</p>
+        <p>For SEO agencies and link builders, this represents a fundamental shift from reactive manual checking to proactive, automated compliance monitoring. You can run audits weekly, monthly, or whenever a client offboards—ensuring your network remains clean, compliant, and focused only on active, valuable links.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow follows a logical, step-by-step process that mimics what an SEO specialist would do manually—but at machine speed and with perfect accuracy.</p>
+        
+        <h3>1. Trigger & Data Collection</h3>
+        <p>The workflow starts with a manual trigger (which can be replaced with a schedule). It first reads all PBN sites from your designated Google Sheet, including URLs and row identifiers. A filter node immediately excludes any rows that have already been processed, marked by a filled "Offboarded Links" column.</p>
+        
+        <h3>2. Site Processing Loop</h3>
+        <p>Each remaining PBN URL enters an iterative loop. For every site, the workflow sends an HTTP GET request to fetch the live HTML content. Retry logic handles temporary network issues, ensuring reliable data collection even with intermittent connectivity.</p>
+        
+        <h3>3. Domain Matching Logic</h3>
+        <p>Simultaneously, the workflow reads your "offboard projects" sheet containing all removed client domains. A custom code node performs intelligent text matching against the fetched HTML, searching for any occurrence of these domains—whether in links, text content, or meta tags.</p>
+        
+        <h3>4. Results Logging & Continuation</h3>
+        <p>When a match is found, the workflow structures the data (PBN URL, matched domain, timestamp) and writes it directly to the corresponding row in your PBN tracking sheet. A brief pause between iterations prevents API rate limits and allows for smooth, observable progress through large site lists.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation delivers the most value to SEO professionals and agencies managing multiple client websites through PBNs. If you're responsible for maintaining link health across dozens or hundreds of sites, this workflow eliminates a tedious, high-risk manual task.</p>
+        <p><strong>SEO Agencies:</strong> Provide offboarding audits as a standard service without increasing labor costs. Run comprehensive checks across all client PBNs in minutes rather than days.</p>
+        <p><strong>In-House SEO Teams:</strong> Maintain pristine link profiles for your company's owned properties. Schedule weekly automated audits to catch issues before they impact rankings.</p>
+        <p><strong>Freelance SEO Consultants:</strong> Differentiate your services with technical automation capabilities. Offer proactive link monitoring as a premium add-on to your standard packages.</p>
+        <p><strong>Link Building Specialists:</strong> Ensure the quality and relevance of your placed links. Automatically verify that all active links point to current, relevant destinations.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>Active n8n Instance:</strong> Either self-hosted n8n or n8n.cloud account with workflow execution capabilities.</li>
+          <li><strong>Google Sheets Access:</strong> OAuth credentials configured in n8n for reading from and writing to Google Sheets.</li>
+          <li><strong>PBN Tracking Sheet:</strong> A Google Sheet with columns for Site URL, Offboarded Links (initially empty), and a unique row_number identifier.</li>
+          <li><strong>Offboard Projects Sheet:</strong> A separate sheet or tab listing all removed client domains in Column A (one per row).</li>
+          <li><strong>Network Access:</strong> Your n8n instance needs internet access to fetch HTML from your PBN sites.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Use a dedicated Google Service Account for automation rather than personal credentials. This ensures uninterrupted access even if team members leave, and provides better audit trails for compliance purposes.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>You can have this automation running in under 15 minutes with these simple steps:</p>
+        <ol>
+          <li><strong>Download & Import:</strong> Download the JSON template and import it into your n8n instance via the workflow import function.</li>
+          <li><strong>Configure Google Sheets Credentials:</strong> Set up OAuth authentication for Google Sheets in n8n's credentials section if you haven't already.</li>
+          <li><strong>Update Sheet URLs:</strong> In the "Read PBN Sites from Sheet" node, paste the URL of your PBN tracking sheet. In the "Read Offboarded Project Domains" node, update to your offboard projects sheet.</li>
+          <li><strong>Verify Column Mapping:</strong> Ensure the sheet column names in the workflow nodes match your actual sheet headers (typically "Site URL", "Offboarded Links", "row_number").</li>
+          <li><strong>Test with One Site:</strong> Run the workflow manually with a single PBN URL first to verify the connection and data flow works correctly.</li>
+          <li><strong>Schedule Regular Runs:</strong> Replace the manual trigger with a Schedule Trigger node to run weekly or monthly automatically.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminate Manual Auditing:</strong> What used to take hours of tedious copy-pasting and cross-referencing now happens automatically. A 100-site audit that might take a full day manually completes in under 30 minutes.</p>
+        <p><strong>Prevent Costly Penalties:</strong> Google's algorithms penalize networks with unnatural linking patterns. By automatically removing offboarded client links, you maintain a clean, compliant profile that protects your entire network's authority.</p>
+        <p><strong>Scale Without Adding Staff:</strong> As your agency grows and manages more PBNs, this workflow scales effortlessly. Audit 10 sites or 1,000 sites with the same setup—no additional personnel required.</p>
+        <p><strong>Improve Client Reporting:</strong> Generate automatic audit reports showing exactly which offboarded links were found and where. This transparency builds trust and demonstrates proactive network management.</p>
+        <p><strong>Reduce Human Error:</strong> Manual checking inevitably misses links, especially across large sites with complex navigation. Automated scanning catches 100% of matches with perfect consistency every time.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about PBN management and link audit automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why is auditing PBN links for offboarded clients important?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Auditing PBN links for offboarded clients is crucial to avoid Google penalties, wasted crawl budget, and linking to dead sites. Manual checks are time-consuming and error-prone, while automation ensures consistent, accurate monitoring of your entire network.</p>
+          <p>Beyond compliance, regular audits protect your network's authority and ensure all links drive value to active clients. Automated systems catch issues immediately, while manual processes might miss them for months.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the risks of not removing offboarded client links from PBNs?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Leaving offboarded client links on PBNs risks Google penalties for unnatural linking, wastes valuable crawl budget on irrelevant pages, and damages your site's authority by pointing to dead or irrelevant destinations. It can also negatively impact the SEO performance of your active client sites.</p>
+          <p>These "ghost links" create a poor user experience and can trigger manual reviews from search engines. In competitive niches, even small technical issues like this can mean the difference between ranking on page one or page three.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automation improve PBN management for SEO agencies?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation transforms PBN management by scanning hundreds of sites in minutes instead of days, eliminating human error in link detection, providing real-time audit reports in Google Sheets, and freeing up agency resources for strategic SEO work rather than manual grunt work.</p>
+          <p>Agencies can offer more frequent audits as a value-added service without increasing costs. This creates competitive differentiation and allows teams to focus on creative strategy instead of repetitive verification tasks.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow handle large PBN networks with hundreds of sites?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, this workflow is designed to scale. It processes sites one by one with built-in pauses to avoid rate limits, handles batch processing through Google Sheets, and can be scheduled to run automatically. For very large networks, you can implement pagination or run the workflow in segments.</p>
+          <p>The workflow's efficiency comes from its selective processing—it only checks sites that haven't been audited recently, and you can adjust the pause duration between requests based on your server capacity and the responsiveness of your PBN sites.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What happens when the workflow finds an offboarded client link?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>When the workflow detects an offboarded client link, it automatically logs the domain, PBN URL, and timestamp directly into your Google Sheet. You can then connect additional automation to notify your team via Slack, email, or create tasks in your project management system for immediate action.</p>
+          <p>The structured data output makes it easy to prioritize cleanup based on domain authority, link placement, or client importance. Some agencies use this data to automatically generate disavow files or update internal dashboards.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is the domain matching in the HTML content?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow performs exact text matching against the raw HTML, catching links in href attributes, text content, and meta tags. It can be configured to match partial domains, handle www/non-www variations, and ignore specific patterns. For complex sites, you can extend the code node with regular expressions for more precise matching.</p>
+          <p>For maximum accuracy, ensure your offboarded domains list includes all possible variations (with and without protocols, subdomains, and trailing slashes). The template includes basic normalization, but you can enhance it based on your specific needs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the business value of automating PBN link audits?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating PBN link audits saves 10-20 hours monthly per client, reduces compliance risks by 90%, improves client retention through proactive monitoring, and creates a scalable service offering. Agencies can audit more frequently without increasing costs, catching issues before they become problems.</p>
+          <p>The real value extends beyond time savings to risk mitigation and service differentiation. Clients appreciate the proactive approach, and agencies build more sustainable, scalable businesses when manual tasks are automated.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom PBN audit automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom PBN audit and SEO automation systems tailored to your specific workflows. We can integrate with your existing tools, add advanced features like competitor link detection, automated disavow file generation, or real-time dashboard reporting.</p>
+          <p>Our team will design a solution that fits your exact business needs and scales with your agency. We handle everything from initial consultation and design to implementation, testing, and ongoing support.</p>
+          <ul>
+            <li>Integration with your current CRM and project management tools</li>
+            <li>Custom reporting dashboards with actionable insights</li>
+            <li>Advanced matching logic for complex site structures</li>
+            <li>Scheduled audits with automatic team notifications</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom PBN Audit Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

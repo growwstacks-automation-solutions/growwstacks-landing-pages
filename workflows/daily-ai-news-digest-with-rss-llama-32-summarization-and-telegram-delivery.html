@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI News Digest with RSS & Telegram | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate your daily AI news briefing. This free n8n workflow template collects RSS feeds, summarizes articles locally with Llama 3.2, and delivers concise digests to Telegram.">
+<link rel="canonical" href="https://growwstacks.com/workflows/3532-daily-ai-news-digest-with-rss-llama-32-summarization-and-telegram-delivery/">
+<meta property="og:title" content="Free Daily AI News Digest Automation Template | GrowwStacks">
+<meta property="og:description" content="Set up a private, automated AI news digest system. Pull RSS feeds, summarize with local LLMs, and send to Telegram—no paid APIs required.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/3532-daily-ai-news-digest-with-rss-llama-32-summarization-and-telegram-delivery/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6011-daily-ai-news-digest-with-rss-llama-32-summarization-an.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Daily AI News Digest Automation Template | GrowwStacks">
+<meta name="twitter:description" content="Set up a private, automated AI news digest system. Pull RSS feeds, summarize with local LLMs, and send to Telegram—no paid APIs required.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Daily AI News Digest Automation Template","description":"Automate your daily AI news briefing. This free n8n workflow template collects RSS feeds, summarizes articles locally with Llama 3.2, and delivers concise digests to Telegram.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6011-daily-ai-news-digest-with-rss-llama-32-summarization-an.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the main benefits of automating a daily AI news digest?","acceptedAnswer":{"@type":"Answer","text":"Automating a daily AI news digest saves you hours of manual reading each week, ensures you never miss important updates, and delivers curated, summarized content directly to your preferred platform like Telegram. It filters out noise, focuses on your specific interests, and provides a consistent, private briefing without relying on third-party algorithms or paid APIs."}},{"@type":"Question","name":"How does using a local LLM like Llama 3.2 improve privacy for news summaries?","acceptedAnswer":{"@type":"Answer","text":"Using a local LLM like Llama 3.2 means your news articles are processed entirely on your own hardware, such as a Raspberry Pi or home server. No article content is sent to external cloud services like OpenAI or Google, eliminating data privacy concerns and API costs. You maintain full control over the data and the summarization process."}},{"@type":"Question","name":"Can I customize the RSS sources for my automated news digest?","acceptedAnswer":{"@type":"Answer","text":"Yes, absolutely. The workflow is designed to be fully customizable. You can add, remove, or modify the RSS feed URLs within the n8n canvas to pull news from any blog, news site, or platform that offers an RSS feed. This lets you tailor the digest to your exact industry, hobbies, or research interests."}},{"@type":"Question","name":"Is this workflow suitable for teams or just individual use?","acceptedAnswer":{"@type":"Answer","text":"It's excellent for both. An individual can use it for personal learning. For teams, you can configure the Telegram output to a group channel, providing the entire team with a shared, curated knowledge base. This fosters alignment and ensures everyone is updated on the latest AI developments relevant to your projects."}},{"@type":"Question","name":"What are the cost implications of running this automation?","acceptedAnswer":{"@type":"Answer","text":"The primary cost is the electricity for running a small device like a Raspberry Pi 5. There are no ongoing subscription fees for AI APIs, as it uses a local, open-source model. n8n itself is open-source and can be self-hosted for free. The only potential cost is if you choose to host n8n on a cloud server instead of local hardware."}},{"@type":"Question","name":"How difficult is it to set up and maintain this automation?","acceptedAnswer":{"@type":"Answer","text":"Setup involves a few clear steps: deploying n8n, installing Ollama with a model like Llama 3.2, and configuring a Telegram bot. Once running, the workflow is largely hands-off. Maintenance is minimal—occasionally updating the RSS feed list or the LLM model. The template provides clear instructions, making it accessible even for those new to automation."}},{"@type":"Question","name":"What other channels can I use besides Telegram for delivery?","acceptedAnswer":{"@type":"Answer","text":"While this template uses Telegram for its excellent bot support and formatting, n8n can easily be modified to deliver summaries via email, Slack, Discord, Microsoft Teams, or even save them to a Google Doc or Notion page. The core logic of fetching and summarizing remains the same; only the final output node needs to be changed."}},{"@type":"Question","name":"Can I get a custom AI news automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored automation solutions. We can create a custom system that aggregates news from industry-specific sources, applies your brand's tone in summaries, integrates with your internal knowledge base (like SharePoint or Confluence), and includes sentiment analysis or competitive intelligence alerts. Book a free consultation to discuss your needs."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Daily AI News Digest"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Daily AI News Digest</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Zapier</span>
+          <span class="cs-tag">AI Summarization</span>
+          <span class="cs-tag">Multimodal AI</span>
+          <span class="cs-tag">RSS</span>
+          <span class="cs-tag">Telegram</span>
+        </div>
+        <h1>Automated Daily AI News Digest with Local LLM & Telegram</h1>
+        <p class="cs-hero-sub">A privacy-focused, self-hosted automation that collects, summarizes, and delivers AI news—no paid APIs, no data leaks.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6011-daily-ai-news-digest-with-rss-llama-32-summarization-an.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6011-daily-ai-news-digest-with-rss-llama-32-summarization-an.png" alt="Visual diagram of the AI news digest automation workflow showing RSS feeds flowing into a summarization engine and output to Telegram" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Staying updated on AI breakthroughs is time-consuming. Scrolling through dozens of articles, blogs, and research papers daily distracts from deep work. This automation solves that by building your personal AI news curator.</p>
+        <p>The workflow acts as an intelligent, privacy-focused agent. It automatically collects the latest articles from your chosen RSS feeds, uses a local large language model (like Llama 3.2) to generate concise summaries, and delivers a formatted digest directly to your Telegram chat. It runs entirely on your own hardware, ensuring no data leaves your environment and incurring zero API costs.</p>
+        <p>Think of it as a research assistant that works overnight. You wake up to a clean, summarized briefing of everything important that happened in AI while you slept, ready to inform your day.</p>
+
+        <h2>How It Works</h2>
+        <p>The process is elegantly simple but powerful, combining scheduled triggers, data aggregation, and local AI processing.</p>
+
+        <h3>Step 1: Scheduled Trigger & RSS Collection</h3>
+        <p>A schedule trigger (set for daily morning) kicks off the workflow. It then fetches the latest articles from multiple pre-configured RSS feeds from leading AI blogs, research hubs, and news sites.</p>
+
+        <h3>Step 2: Date Filtering & Deduplication</h3>
+        <p>The workflow filters articles to include only those published "yesterday," ensuring you get a true daily digest without old news. It also checks for and removes duplicate entries from overlapping feeds.</p>
+
+        <h3>Step 3: Local AI Summarization</h3>
+        <p>Each article's content is sent to your locally running Ollama server hosting a model like Llama 3.2. The LLM reads the full text and generates a bullet-point summary, extracting key claims, methodologies, and implications. This happens offline on your Raspberry Pi 5 or server.</p>
+
+        <h3>Step 4: Formatting & Telegram Delivery</h3>
+        <p>The summarized points, along with the original article title, author, and link, are compiled into a clean, readable message. This message is then sent via the Telegram Bot API to your specified private chat or group channel, providing an instant, mobile-friendly briefing.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This template is ideal for AI researchers, developers, tech leaders, and content creators who need to stay informed efficiently. It's perfect for individuals who value privacy and want to avoid vendor lock-in with cloud AI services. Teams can also adapt it to create a shared knowledge feed, keeping everyone aligned on industry movements without scheduling a meeting.</p>
+        <p>If you're tired of information overload but don't want to miss critical updates, this automation gives you control back. It's also a great project for hobbyists interested in practical applications of local LLMs and self-hosted automation.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>A running n8n instance</strong> (cloud or self-hosted).</li>
+          <li><strong>Ollama installed locally</strong> on a machine (Raspberry Pi 5, home server, or cloud VM) with a downloaded language model (e.g., <code>llama3.2:1b</code>).</li>
+          <li><strong>A Telegram Bot Token</strong> created via <a href="https://t.me/botfather" target="_blank">BotFather</a>.</li>
+          <li><strong>Your Telegram Chat ID</strong> (numeric ID of your user or group).</li>
+          <li><strong>RSS feed URLs</strong> for your preferred AI news sources (the template includes examples).</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> For the best experience, run Ollama on a device with at least 8GB RAM. The 1B parameter models are surprisingly capable for summarization and run well on modest hardware.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Import the template and follow these steps to get your daily digest running in under 30 minutes.</p>
+        <ol>
+          <li><strong>Import the Template:</strong> Download the JSON file above and import it into your n8n instance.</li>
+          <li><strong>Configure RSS Feeds:</strong> In the "RSS Read" nodes, replace the example feed URLs with your own. You can add or remove nodes to control the number of sources.</li>
+          <li><strong>Set Up Ollama Credentials:</strong> Create an Ollama credential in n8n pointing to your local Ollama server (typically <code>http://localhost:11434</code>). Ensure your chosen model (e.g., llama3.2:1b) is pulled and ready.</li>
+          <li><strong>Configure Telegram:</strong> Create a Telegram bot via @BotFather to get your token. Use a bot like @userinfobot to find your numeric Chat ID. Enter both in the "Send News Digest to Telegram" node.</li>
+          <li><strong>Adjust Schedule:</strong> The trigger is set for daily at 8 AM. Modify the Schedule Trigger node to your preferred time.</li>
+          <li><strong>Activate & Test:</strong> Turn the workflow on. Manually trigger it once to receive a test digest and verify everything works.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5+ Hours Per Week:</strong> Eliminate manual browsing and reading. Get the signal without the noise, delivered on your schedule.</p>
+        <p><strong>Zero Ongoing Costs:</strong> Uses open-source tools (n8n, Ollama) and local processing. No paid API subscriptions for GPT-4 or Claude.</p>
+        <p><strong>Complete Data Privacy:</strong> Your reading habits and article content never leave your infrastructure. Ideal for sensitive or proprietary research topics.</p>
+        <p><strong>Fully Customizable:</strong> Control the sources, summary style, output format, and delivery channel. It adapts to your needs, not the other way around.</p>
+        <p><strong>Always-On Intelligence:</strong> Runs reliably in the background. You get consistent, high-quality updates without any daily effort.</p>
+
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about AI news automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the main benefits of automating a daily AI news digest?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating a daily AI news digest saves you hours of manual reading each week, ensures you never miss important updates, and delivers curated, summarized content directly to your preferred platform like Telegram. It filters out noise, focuses on your specific interests, and provides a consistent, private briefing without relying on third-party algorithms or paid APIs.</p>
+          <p>Beyond time savings, it transforms passive consumption into active knowledge management. You get a searchable archive of summaries and can spot trends over time, making you more informed and efficient in your work or research.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does using a local LLM like Llama 3.2 improve privacy for news summaries?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Using a local LLM like Llama 3.2 means your news articles are processed entirely on your own hardware, such as a Raspberry Pi or home server. No article content is sent to external cloud services like OpenAI or Google, eliminating data privacy concerns and API costs. You maintain full control over the data and the summarization process.</p>
+          <p>This is crucial for professionals handling sensitive topics, proprietary research, or anyone who wants to avoid their reading habits being logged by a third party. The summaries are generated in your own trusted environment.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the RSS sources for my automated news digest?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, absolutely. The workflow is designed to be fully customizable. You can add, remove, or modify the RSS feed URLs within the n8n canvas to pull news from any blog, news site, or platform that offers an RSS feed. This lets you tailor the digest to your exact industry, hobbies, or research interests.</p>
+          <p>You can mix general tech news with niche academic journals or specific company blogs. The system will aggregate them all into a single, coherent daily summary.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is this workflow suitable for teams or just individual use?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>It's excellent for both. An individual can use it for personal learning. For teams, you can configure the Telegram output to a group channel, providing the entire team with a shared, curated knowledge base. This fosters alignment and ensures everyone is updated on the latest AI developments relevant to your projects.</p>
+          <p>Teams can also modify the workflow to add a step that saves summaries to a shared Notion page or Confluence, creating a living knowledge repository.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the cost implications of running this automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The primary cost is the electricity for running a small device like a Raspberry Pi 5. There are no ongoing subscription fees for AI APIs, as it uses a local, open-source model. n8n itself is open-source and can be self-hosted for free. The only potential cost is if you choose to host n8n on a cloud server instead of local hardware.</p>
+          <p>Compared to using commercial AI summarization services that charge per article or per token, this setup has a near-zero marginal cost per digest after the initial setup.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How difficult is it to set up and maintain this automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Setup involves a few clear steps: deploying n8n, installing Ollama with a model like Llama 3.2, and configuring a Telegram bot. Once running, the workflow is largely hands-off. Maintenance is minimal—occasionally updating the RSS feed list or the LLM model. The template provides clear instructions, making it accessible even for those new to automation.</p>
+          <p>Most of the complexity is handled by the pre-built nodes. You're essentially connecting proven services together, not writing code from scratch.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What other channels can I use besides Telegram for delivery?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>While this template uses Telegram for its excellent bot support and formatting, n8n can easily be modified to deliver summaries via email, Slack, Discord, Microsoft Teams, or even save them to a Google Doc or Notion page. The core logic of fetching and summarizing remains the same; only the final output node needs to be changed.</p>
+          <p>You could even set up multiple outputs to cross-post to several channels, ensuring stakeholders in different departments or platforms all receive the update.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom AI news automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored automation solutions. We can create a custom system that aggregates news from industry-specific sources, applies your brand's tone in summaries, integrates with your internal knowledge base (like SharePoint or Confluence), and includes sentiment analysis or competitive intelligence alerts. Book a free consultation to discuss your needs.</p>
+          <p>We can scale this concept to monitor not just news, but also social sentiment, competitor product updates, regulatory changes, or academic preprint releases—delivering actionable intelligence directly to your team's workflow.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom AI News Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

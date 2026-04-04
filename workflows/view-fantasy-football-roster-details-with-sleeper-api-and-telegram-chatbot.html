@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fantasy Football Roster Chatbot | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n automation template: Build a Telegram chatbot that fetches your Sleeper fantasy football roster details. Get player names, positions, and team info instantly.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4076-view-fantasy-football-roster-details-with-sleeper-api-and-telegram-chatbot/">
+<meta property="og:title" content="Free Fantasy Football Roster Chatbot Template">
+<meta property="og:description" content="Automate your fantasy football team queries. This n8n workflow connects Sleeper API to Telegram for instant roster details.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4076-view-fantasy-football-roster-details-with-sleeper-api-and-telegram-chatbot/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6655-view-fantasy-football-roster-details-with-sleeper-api-a.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Fantasy Football Roster Chatbot Template">
+<meta name="twitter:description" content="Automate your fantasy football team queries. This n8n workflow connects Sleeper API to Telegram for instant roster details.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Fantasy Football Roster Chatbot","description":"Free n8n automation template: Build a Telegram chatbot that fetches your Sleeper fantasy football roster details. Get player names, positions, and team info instantly.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6655-view-fantasy-football-roster-details-with-sleeper-api-a.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best way to automate fantasy football team management?","acceptedAnswer":{"@type":"Answer","text":"The best approach is to use a workflow automation platform like n8n to connect your fantasy platform's API (like Sleeper) to a messaging app like Telegram. This creates a chatbot that can instantly provide roster details, player stats, and waiver wire updates on demand, saving you hours of manual checking each week."}},{"@type":"Question","name":"Can I use automation to get real-time fantasy football updates?","acceptedAnswer":{"@type":"Answer","text":"Yes, absolutely. By connecting the Sleeper API to a messaging platform via n8n, you can create automated alerts for player injuries, scoring updates, trade offers, and lineup deadlines. This gives you a competitive edge by providing information faster than manually refreshing apps or websites."}},{"@type":"Question","name":"How do fantasy football APIs work with automation tools?","acceptedAnswer":{"@type":"Answer","text":"Fantasy platforms like Sleeper provide public APIs that return structured data about leagues, rosters, players, and matchups. Automation tools like n8n can make HTTP requests to these APIs, process the JSON responses, and format the information for delivery via chat, email, or dashboards. This bridges the gap between raw data and actionable insights."}},{"@type":"Question","name":"What business value does fantasy football automation provide?","acceptedAnswer":{"@type":"Answer","text":"For serious fantasy players and commissioners, automation saves 3-5 hours weekly on team management, reduces missed opportunities, and improves decision-making with timely data. For businesses, it demonstrates practical API integration skills that translate directly to customer support chatbots, internal reporting tools, and real-time notification systems."}},{"@type":"Question","name":"Is it difficult to build a Telegram chatbot for fantasy sports?","acceptedAnswer":{"@type":"Answer","text":"With workflow automation platforms, it's surprisingly accessible. You don't need to code the entire chatbot from scratch. Instead, you use pre-built nodes for Telegram and HTTP requests, then connect them with logic nodes. The hardest part is understanding the API documentation, which this template helps you overcome with a working example."}},{"@type":"Question","name":"What other sports data can be automated with similar workflows?","acceptedAnswer":{"@type":"Answer","text":"This pattern works for any sport with available APIs: NBA, MLB, NHL, soccer (FPL), esports, and fantasy golf. You can automate draft analysis, injury reports, betting odds alerts, and social media posting. The same integration principles apply to business data like sales figures, inventory levels, or customer support tickets."}},{"@type":"Question","name":"Can I get a custom fantasy football automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored automation systems for fantasy sports platforms, media companies, and businesses wanting to engage sports fans. We can create custom chatbots, league management dashboards, real-time alert systems, and data pipelines that integrate with your existing tools and scale with your needs."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Fantasy Football Roster Chatbot"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Fantasy Football Roster Chatbot</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">n8n</span>
+          <span class="cs-tag">Telegram</span>
+          <span class="cs-tag">Sleeper API</span>
+          <span class="cs-tag">Fantasy Football</span>
+          <span class="cs-tag">Chatbot</span>
+        </div>
+        <h1>Fantasy Football Roster Chatbot</h1>
+        <p class="cs-hero-sub">Free n8n template: Query your Sleeper fantasy team via Telegram and get instant player details, positions, and team info.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6655-view-fantasy-football-roster-details-with-sleeper-api-a.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/6655-view-fantasy-football-roster-details-with-sleeper-api-a.png" alt="Screenshot of n8n workflow for fantasy football roster chatbot connecting Telegram and Sleeper API" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Managing a fantasy football team involves constant checking—player statuses, roster moves, waiver wires. This manual process eats into your time and can cause you to miss crucial updates. This automation solves that by creating a conversational interface to your team data.</p>
+        <p>The workflow builds a Telegram chatbot that connects directly to the Sleeper fantasy football API. When you send your Sleeper username to the bot, it automatically retrieves your user ID, finds your leagues, pulls your full roster, matches player IDs to detailed information, and returns a clean, formatted list of your players with their positions and NFL teams—all within seconds.</p>
+        <p>This transforms hours of weekly manual roster checking into a simple text command, giving you more time for strategy and less time on administrative tasks. It's perfect for commissioners managing multiple leagues or serious players who want instant access to their team composition.</p>
+
+        <h2>How It Works</h2>
+        <h3>Step 1: Telegram Trigger</h3>
+        <p>The workflow starts when a user sends a message to your Telegram bot containing their Sleeper username. The Telegram trigger node captures this input and passes it to the next stage of the automation.</p>
+        
+        <h3>Step 2: Sleeper User ID Lookup</h3>
+        <p>Using the HTTP Request node, the workflow calls the Sleeper API's user endpoint with the provided username. It retrieves the unique Sleeper user ID, which is required for all subsequent API calls to fetch league and roster data.</p>
+        
+        <h3>Step 3: League Retrieval</h3>
+        <p>The workflow then fetches all leagues associated with that user ID. By default, it selects the first league found, but this logic can be modified to handle multiple leagues or prompt the user for selection.</p>
+        
+        <h3>Step 4: Roster Data Extraction</h3>
+        <p>With the league ID obtained, the automation pulls the complete roster data for that league. This includes all teams and their player IDs, which are then filtered to find the specific roster owned by the requesting user.</p>
+        
+        <h3>Step 5: Player Information Enrichment</h3>
+        <p>The player IDs from the roster are matched against a database (like Airtable or Google Sheets) that contains full player details—name, position, NFL team, and other relevant information. This step transforms anonymous IDs into actionable player data.</p>
+        
+        <h3>Step 6: Formatted Response Delivery</h3>
+        <p>Finally, the Telegram node sends back a clean, readable message to the user listing all players on their roster with names, positions, and teams. The entire process happens in under 10 seconds, providing instant team insight.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This template is ideal for fantasy football enthusiasts, league commissioners, sports media companies, and developers looking to learn API integration patterns. It's particularly valuable for:</p>
+        <ul>
+          <li><strong>Fantasy Football Players</strong> who manage multiple teams and want quick access to roster details without logging into multiple apps.</li>
+          <li><strong>League Commissioners</strong> who need to quickly check team compositions for trade approvals or league management.</li>
+          <li><strong>Sports Content Creators</strong> who want to build engaging tools for their audience or automate content generation based on roster data.</li>
+          <li><strong>Developers & Automation Beginners</strong> looking for a practical project to understand API integration, chatbot development, and data transformation workflows.</li>
+          <li><strong>Businesses in Sports Tech</strong> exploring ways to engage users through conversational interfaces and real-time sports data.</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>A Telegram Bot</strong> created via BotFather with its API token.</li>
+          <li><strong>A Sleeper Fantasy Football account</strong> with at least one active league.</li>
+          <li><strong>A player database</strong> (Airtable, Google Sheets, or similar) containing player ID mappings to names, positions, and teams. The companion "Sleeper NFL Players Daily Sync" template can help build this.</li>
+          <li><strong>An n8n instance</strong> (cloud or self-hosted) to import and run the workflow.</li>
+          <li><strong>Basic understanding</strong> of how to set credentials in n8n for Telegram and your chosen database.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Run the "Sleeper NFL Players Daily Sync" workflow first to populate your player database with current NFL player information. Then connect that database to this chatbot template for a complete, self-updating system.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li><strong>Import the template</strong> into your n8n instance using the downloaded JSON file.</li>
+          <li><strong>Configure credentials</strong> for Telegram (your bot token) and your database (Airtable/Sheets API keys).</li>
+          <li><strong>Update the database reference</strong> to point to your player information table with the correct field names.</li>
+          <li><strong>Test the workflow</strong> by sending your exact Sleeper username to your Telegram bot.</li>
+          <li><strong>Customize as needed</strong>—adjust the league selection logic, add more player stats, or change the response format.</li>
+          <li><strong>Activate the workflow</strong> and start using your fantasy football chatbot immediately.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 3-5 hours weekly</strong> on manual fantasy football management by getting instant roster insights instead of navigating multiple apps and websites.</p>
+        <p><strong>Never miss a player update</strong> with on-demand access to your complete team composition, helping you make better lineup decisions faster.</p>
+        <p><strong>Learn practical automation skills</strong> that translate directly to business use cases like customer support chatbots, internal reporting tools, and API integration projects.</p>
+        <p><strong>Build a foundation for advanced sports analytics</strong> by starting with this basic roster checker, then adding features like player stats, matchup analysis, or waiver wire recommendations.</p>
+        <p><strong>Engage your league members</strong> with a shared tool that makes team management more interactive and accessible, especially for commissioners managing multiple teams.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about fantasy football automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is the best way to automate fantasy football team management?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The best approach is to use a workflow automation platform like n8n to connect your fantasy platform's API (like Sleeper) to a messaging app like Telegram. This creates a chatbot that can instantly provide roster details, player stats, and waiver wire updates on demand, saving you hours of manual checking each week.</p>
+          <p>This method eliminates the need to constantly refresh apps or websites. Instead, you get curated information delivered directly to your preferred communication channel whenever you need it.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use automation to get real-time fantasy football updates?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, absolutely. By connecting the Sleeper API to a messaging platform via n8n, you can create automated alerts for player injuries, scoring updates, trade offers, and lineup deadlines. This gives you a competitive edge by providing information faster than manually refreshing apps or websites.</p>
+          <p>You can set up triggers that monitor specific conditions—like when a player is marked "out" or when your opponent makes a roster move—and receive immediate notifications, ensuring you never miss a critical update.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do fantasy football APIs work with automation tools?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Fantasy platforms like Sleeper provide public APIs that return structured data about leagues, rosters, players, and matchups. Automation tools like n8n can make HTTP requests to these APIs, process the JSON responses, and format the information for delivery via chat, email, or dashboards. This bridges the gap between raw data and actionable insights.</p>
+          <p>The key advantage is that you don't need to build a full application from scratch. You simply connect pre-built nodes that handle the API communication, data transformation, and output delivery.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What business value does fantasy football automation provide?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>For serious fantasy players and commissioners, automation saves 3-5 hours weekly on team management, reduces missed opportunities, and improves decision-making with timely data. For businesses, it demonstrates practical API integration skills that translate directly to customer support chatbots, internal reporting tools, and real-time notification systems.</p>
+          <p>Beyond time savings, these automations create engaging user experiences that can differentiate sports media platforms, fantasy services, or community-building tools in a competitive market.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it difficult to build a Telegram chatbot for fantasy sports?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>With workflow automation platforms, it's surprisingly accessible. You don't need to code the entire chatbot from scratch. Instead, you use pre-built nodes for Telegram and HTTP requests, then connect them with logic nodes. The hardest part is understanding the API documentation, which this template helps you overcome with a working example.</p>
+          <p>Most users can have a basic version running in under an hour by following the setup guide, then gradually add complexity as they become more comfortable with the tools.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What other sports data can be automated with similar workflows?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This pattern works for any sport with available APIs: NBA, MLB, NHL, soccer (FPL), esports, and fantasy golf. You can automate draft analysis, injury reports, betting odds alerts, and social media posting. The same integration principles apply to business data like sales figures, inventory levels, or customer support tickets.</p>
+          <p>The skills you learn building this fantasy football chatbot directly transfer to automating business processes, making this both a fun project and professional development.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom fantasy football automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored automation systems for fantasy sports platforms, media companies, and businesses wanting to engage sports fans. We can create custom chatbots, league management dashboards, real-time alert systems, and data pipelines that integrate with your existing tools and scale with your needs.</p>
+          <p>Our team takes your specific requirements—whether it's integrating with proprietary data sources, adding advanced analytics, or creating white-label solutions—and delivers production-ready automations that drive engagement and efficiency.</p>
+          <ul>
+            <li>Custom fantasy sports dashboards with real-time data</li>
+            <li>Multi-platform notification systems (Discord, Slack, email)</li>
+            <li>Advanced analytics and prediction models</li>
+            <li>White-label solutions for sports media companies</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Fantasy Football Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

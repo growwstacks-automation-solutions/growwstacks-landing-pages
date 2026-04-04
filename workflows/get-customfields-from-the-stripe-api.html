@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Custom Fields from Stripe API | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automatically retrieve custom fields from Stripe Checkout Sessions. This free n8n workflow template solves the missing data problem for invoices and charges.">
+<link rel="canonical" href="https://growwstacks.com/workflows/931-get-customfields-from-the-stripe-api/">
+<meta property="og:title" content="Get Custom Fields from Stripe API | Free n8n Template">
+<meta property="og:description" content="Automatically retrieve custom fields from Stripe Checkout Sessions. This free n8n workflow template solves the missing data problem for invoices and charges.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/931-get-customfields-from-the-stripe-api/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/2359-get-customfields-from-the-stripe-api.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get Custom Fields from Stripe API | Free n8n Template">
+<meta name="twitter:description" content="Automatically retrieve custom fields from Stripe Checkout Sessions. This free n8n workflow template solves the missing data problem for invoices and charges.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Get Custom Fields from Stripe API","description":"Automatically retrieve custom fields from Stripe Checkout Sessions. This free n8n workflow template solves the missing data problem for invoices and charges.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/2359-get-customfields-from-the-stripe-api.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why are custom fields missing from Stripe invoices and charges?","acceptedAnswer":{"@type":"Answer","text":"Stripe's Invoice and Charge API endpoints are designed for core payment data and do not include custom metadata from the checkout session. This is a common architectural choice to keep those endpoints lean. To access the custom fields you added during checkout, you must query the Checkout Sessions API, which holds the complete session data, including all custom parameters submitted by the customer."}},{"@type":"Question","name":"What business problems does retrieving Stripe custom fields solve?","acceptedAnswer":{"@type":"Answer","text":"Retrieving custom fields unlocks powerful automation. You can automatically tag customers based on purchase details, route orders to specific fulfillment teams, trigger personalized onboarding emails, or sync purchase context to your CRM. Without this data, you're flying blind on customer intent, making segmentation, support, and post-purchase follow-up manual and error-prone."}},{"@type":"Question","name":"How often should I run this workflow to capture new Stripe data?","acceptedAnswer":{"@type":"Answer","text":"The ideal frequency depends on your sales volume and how time-sensitive your follow-up actions are. For most businesses, running this workflow hourly or every few hours is sufficient. For high-volume stores or time-critical processes (like digital delivery), you might run it every 15-30 minutes. The template is set to pull the last 7 days of sessions, so you won't miss data even if it runs less frequently."}},{"@type":"Question","name":"Can I use this workflow with other payment platforms besides Stripe?","acceptedAnswer":{"@type":"Answer","text":"The core logic of this workflow—fetching transaction data, extracting custom metadata, and routing it to other systems—is applicable to any payment platform. While this template is built for Stripe's specific API, you can adapt the HTTP Request node to call APIs from platforms like PayPal, Square, or Shopify. The data transformation and filtering steps would remain largely the same."}},{"@type":"Question","name":"What's the biggest mistake businesses make with Stripe custom fields?","acceptedAnswer":{"@type":"Answer","text":"The most common mistake is collecting custom data at checkout but never automating its use. Businesses add fields for 'Company Size' or 'Use Case', then that valuable data sits dormant in Stripe. This creates manual work for sales, support, and marketing teams who have to look up each order individually. The second mistake is not validating the custom field data, which can lead to errors in downstream systems."}},{"@type":"Question","name":"Is it safe to automate access to Stripe payment data?","acceptedAnswer":{"@type":"Answer","text":"Yes, when done correctly. Always use Stripe's restricted API keys with the minimum necessary permissions (read-only for checkout sessions). Run the automation on a secure server, not a public frontend. Never log full payment details. This template uses secure credential handling and follows Stripe's best practices for server-side automation. For added security, you can implement webhook signatures to verify data authenticity."}},{"@type":"Question","name":"What other systems should I connect with my Stripe custom field data?","acceptedAnswer":{"@type":"Answer","text":"The most valuable connections are CRM systems like HubSpot or Salesforce for customer profiling, email platforms like Mailchimp for segmented campaigns, project tools like Trello or Asana for order fulfillment, and internal databases for analytics. You can also connect to accounting software, help desks, or even Slack/Teams channels to notify specific teams about high-value or unusual orders."}},{"@type":"Question","name":"Can I get a custom Stripe automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. While this free template solves the specific problem of extracting custom fields, most businesses need tailored workflows that connect Stripe data to their unique stack. GrowwStacks specializes in building custom n8n automations that pull data from Stripe and push it exactly where you need it—whether that's your CRM, ERP, internal dashboards, or communication tools. We handle the API complexities, error handling, and scaling so you get reliable, hands-off automation."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Get Custom Fields from Stripe API"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Get Custom Fields from Stripe API</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Stripe</span>
+          <span class="cs-tag">Zapier</span>
+          <span class="cs-tag">Invoice Processing</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+        <h1>Get Custom Fields from Stripe API</h1>
+        <p class="cs-hero-sub">Automatically retrieve custom metadata from Stripe Checkout Sessions and sync it with your business systems. Solve the missing data gap between payment processing and customer management.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/2359-get-customfields-from-the-stripe-api.png" alt="n8n workflow diagram showing Stripe API integration for custom field extraction" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>If you use Stripe for payments, you've likely added custom fields to your checkout to capture vital customer information—project details, company size, referral source, or specific requirements. The frustrating reality is that this valuable data disappears from view after payment. Stripe's standard Invoice and Charge APIs don't include these custom fields, leaving you with incomplete customer records and manual data entry.</p>
+        <p>This n8n workflow solves that exact problem. It automatically queries Stripe's Checkout Sessions endpoint—the only place where custom field data is stored—retrieves the complete session details, transforms the complex API response into usable data, and lets you filter and route that information to any other system in your stack. Instead of manually digging through Stripe logs, you get clean, structured data flowing automatically to your CRM, project management tools, or internal databases.</p>
+        <p>The business value is immediate: eliminate hours of manual data lookup, ensure no customer context is lost between sales and fulfillment, and create automated triggers based on what customers actually told you during checkout. Whether you're a SaaS company, agency, or e-commerce store, this workflow turns Stripe custom fields from hidden metadata into actionable business intelligence.</p>
+
+        <h2>How It Works</h2>
+        <p>This workflow acts as a bridge between Stripe's raw API data and your business applications. It follows a logical sequence to extract, transform, and deliver the custom field information you need.</p>
+
+        <h3>Step 1: Fetch Recent Checkout Sessions</h3>
+        <p>The workflow starts by making an authenticated API call to Stripe's Checkout Sessions endpoint. It's configured to retrieve sessions from the last 7 days by default, ensuring you capture all recent transactions. The HTTP Request node handles pagination automatically, so you get complete results even with high-volume sales.</p>
+
+        <h3>Step 2: Transform Complex API Response</h3>
+        <p>Stripe's API returns nested JSON objects that can be difficult to work with directly. This workflow includes a Function or Set node that flattens the response, extracting the custom_fields array from each session and converting it into a clean, tabular format. This transformation is crucial for making the data usable in subsequent steps.</p>
+
+        <h3>Step 3: Filter and Route Data</h3>
+        <p>Once the data is structured, you can apply filters based on the custom field values. For example, you might route all purchases with "Company Size: Enterprise" to your sales team's Slack channel, or send "Product Type: Subscription" orders to your billing system. The Filter node gives you complete control over which data goes where.</p>
+
+        <h3>Step 4: Deliver to Destination Systems</h3>
+        <p>The final step sends the processed custom field data to your chosen destinations. This could be creating enriched customer records in HubSpot or Salesforce, generating tailored onboarding emails in Mailchimp, creating project tickets in Asana, or simply logging everything to a Google Sheet for reporting.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Set this workflow to run on a schedule (every hour or daily) to continuously sync new Stripe data. This creates a real-time bridge between your payment processing and customer management systems.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This template is essential for any business that uses Stripe checkout with custom fields and wants to automate their post-purchase processes. It's particularly valuable for:</p>
+        <p><strong>SaaS companies</strong> that need to know which plan features customers selected or their intended use case to personalize onboarding.</p>
+        <p><strong>Digital agencies and freelancers</strong> who collect project requirements during checkout and need that information automatically routed to their project management system.</p>
+        <p><strong>E-commerce stores</strong> selling customizable products where specific options chosen at checkout must be communicated to fulfillment teams.</p>
+        <p><strong>Membership and community platforms</strong> that capture member preferences during signup and want to use that data for segmentation and personalized communications.</p>
+        <p>If you're currently manually checking Stripe for custom field data or losing valuable customer context between payment and delivery, this automation will save you significant time and improve data accuracy.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A Stripe account with active checkout sessions containing custom fields</li>
+          <li>Stripe API keys (specifically a secret key with read access to checkout sessions)</li>
+          <li>Access to n8n (cloud or self-hosted) to import and run the workflow</li>
+          <li>Destination systems ready to receive the data (CRM, email platform, database, etc.)</li>
+          <li>Basic understanding of your custom field structure to configure filters and mappings</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Getting this workflow running takes about 15 minutes if you have your Stripe API keys ready.</p>
+        <p><strong>Step 1:</strong> Download the template JSON file using the button above and import it into your n8n instance.</p>
+        <p><strong>Step 2:</strong> Create a Stripe credential in n8n using your Stripe secret key. This allows the workflow to authenticate with Stripe's API.</p>
+        <p><strong>Step 3:</strong> Review the HTTP Request node configuration. By default, it fetches sessions from the last 7 days—adjust the timestamp if you need historical data.</p>
+        <p><strong>Step 4:</strong> Examine the data transformation step. The template includes a sample transformation, but you may want to modify it based on your specific custom field structure.</p>
+        <p><strong>Step 5:</strong> Configure the Filter node to route data based on your business rules. Set up conditions that match your custom field values.</p>
+        <p><strong>Step 6:</strong> Connect your destination systems. Replace the sample webhook or email nodes with connections to your actual CRM, project management, or notification systems.</p>
+        <p><strong>Step 7:</strong> Test with a recent transaction. Run the workflow once manually to verify it captures and processes your custom field data correctly.</p>
+        <p><strong>Step 8:</strong> Schedule it. Set the workflow to run automatically every hour, day, or week depending on your transaction volume and process urgency.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Important:</strong> Always use a restricted Stripe API key with only the permissions needed (read access to checkout sessions). Never use full-access keys in automation.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminate manual data entry:</strong> No more switching between Stripe dashboard and your other systems to copy-paste custom field information. The workflow automates this transfer, saving 2-5 minutes per transaction that would otherwise be spent on manual lookups.</p>
+        <p><strong>Improve data accuracy:</strong> Automated data transfer eliminates human error. Customer information flows directly from checkout to your systems exactly as entered, reducing mistakes from manual transcription and ensuring your records are always up-to-date.</p>
+        <p><strong>Enable personalized automation:</strong> With custom field data automatically available in your systems, you can trigger personalized follow-ups, onboarding sequences, or internal notifications based on what customers actually told you during purchase.</p>
+        <p><strong>Scale your operations:</strong> As transaction volume grows, manual processes break down. This workflow ensures you can handle 10 or 10,000 transactions per month with the same efficiency, maintaining customer experience without adding staff.</p>
+        <p><strong>Gain business insights:</strong> By systematically capturing custom field data, you can analyze trends in customer needs, preferences, and requirements that would otherwise be buried in individual Stripe transactions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about Stripe automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why are custom fields missing from Stripe invoices and charges?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Stripe's Invoice and Charge API endpoints are designed for core payment data and do not include custom metadata from the checkout session. This is a common architectural choice to keep those endpoints lean and focused on financial transactions rather than application-specific data.</p>
+          <p>To access the custom fields you added during checkout, you must query the Checkout Sessions API, which holds the complete session data including all custom parameters submitted by the customer. This separation ensures payment processing remains efficient while still allowing rich data collection.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What business problems does retrieving Stripe custom fields solve?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Retrieving custom fields unlocks powerful automation that transforms how you handle post-purchase processes. You can automatically tag customers based on purchase details, route orders to specific fulfillment teams, trigger personalized onboarding emails, or sync purchase context to your CRM.</p>
+          <p>Without this data, you're essentially flying blind on customer intent, making segmentation, support, and post-purchase follow-up manual and error-prone. For example, a digital agency can automatically create project briefs from checkout data, while a SaaS company can route enterprise customers to dedicated support.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How often should I run this workflow to capture new Stripe data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The ideal frequency depends on your sales volume and how time-sensitive your follow-up actions are. For most businesses, running this workflow hourly or every few hours is sufficient to maintain near-real-time data sync without overwhelming your systems.</p>
+          <p>For high-volume stores or time-critical processes (like instant digital delivery), you might run it every 15-30 minutes. The template is configured to pull the last 7 days of sessions, so even if it runs less frequently, you won't miss data—it will catch up on the next run.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use this workflow with other payment platforms besides Stripe?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The core logic of this workflow—fetching transaction data, extracting custom metadata, and routing it to other systems—is applicable to any payment platform. While this template is specifically built for Stripe's API structure, the pattern can be adapted.</p>
+          <p>You would modify the HTTP Request node to call APIs from platforms like PayPal, Square, or Shopify, then adjust the data transformation steps to match their response format. The filtering and destination connections would remain largely the same, making this a versatile pattern for any payment processor.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the biggest mistake businesses make with Stripe custom fields?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The most common mistake is collecting custom data at checkout but never automating its use. Businesses add fields for 'Company Size' or 'Use Case', then that valuable data sits dormant in Stripe, requiring manual lookups for every customer interaction.</p>
+          <p>The second major mistake is not validating the custom field data format, which can lead to errors in downstream systems. For example, if you expect a dropdown but get free text, your automation might break. Always include data validation and cleanup steps in your workflow.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it safe to automate access to Stripe payment data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, when implemented correctly with proper security measures. Always use Stripe's restricted API keys with the minimum necessary permissions—typically read-only access to checkout sessions. Never use full-access keys in automation.</p>
+          <p>Run the automation on a secure server environment, not a public-facing frontend. Implement proper error handling and never log full payment details or sensitive customer information. This template follows Stripe's security best practices for server-side automation.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What other systems should I connect with my Stripe custom field data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The most valuable connections are CRM systems like HubSpot or Salesforce for enriched customer profiling, email platforms like Mailchimp or ActiveCampaign for segmented marketing campaigns, and project management tools like Trello or Asana for automated order fulfillment.</p>
+          <p>Consider also connecting to accounting software for detailed revenue tracking, internal databases for analytics dashboards, or communication tools like Slack/Teams to notify specific teams about high-value or unusual orders. The key is to route data to where decisions are made.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom Stripe automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. While this free template solves the specific problem of extracting custom fields, most businesses need tailored workflows that connect Stripe data to their unique software stack and business processes. Generic templates often require customization to work with your specific field names, data formats, and destination systems.</p>
+          <p>GrowwStacks specializes in building custom n8n automations that pull data from Stripe and push it exactly where you need it—whether that's your CRM, ERP, internal dashboards, or communication tools. We handle the API complexities, error handling, and scaling so you get reliable, hands-off automation that fits your exact requirements.</p>
+          <ul>
+            <li>Integration with your specific CRM and marketing tools</li>
+            <li>Custom data transformation for your field structure</li>
+            <li>Error handling and alerting for failed transactions</li>
+            <li>Scheduled runs that match your business hours and volume</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Stripe Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create meeting minutes from Telegram messages with GPT-5 to Airtable Slack Gmail | Free Template | GrowwStacks</title>
+<meta name="description" content="Automate meeting documentation: Send a Telegram message or voice note, get AI-generated minutes saved to Airtable, Slack, and Gmail. Free n8n workflow template.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4777-create-meeting-minutes-from-telegram-messages-with-gpt-5-to-airtable-slack-gmail/">
+<meta property="og:title" content="Automate Meeting Minutes with AI & Telegram | Free n8n Template">
+<meta property="og:description" content="Turn post-meeting voice notes or texts into structured minutes, saved to Airtable and shared via Slack & Gmail automatically.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4777-create-meeting-minutes-from-telegram-messages-with-gpt-5-to-airtable-slack-gmail/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7582-create-meeting-minutes-from-telegram-messages-with-gpt-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Meeting Minutes with AI & Telegram | Free n8n Template">
+<meta name="twitter:description" content="Turn post-meeting voice notes or texts into structured minutes, saved to Airtable and shared via Slack & Gmail automatically.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Create meeting minutes from Telegram messages with GPT-5 to Airtable Slack Gmail","description":"Automate meeting documentation: Send a Telegram message or voice note, get AI-generated minutes saved to Airtable, Slack, and Gmail. Free n8n workflow template.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7582-create-meeting-minutes-from-telegram-messages-with-gpt-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the biggest time-wasters in meeting documentation?","acceptedAnswer":{"@type":"Answer","text":"The biggest time-wasters are manual note-taking, trying to remember action items, and the delay between the meeting and distributing minutes. Teams often spend 30-60 minutes after each meeting just documenting what was discussed, which delays follow-up actions and creates information silos."}},{"@type":"Question","name":"How can AI improve the quality of meeting minutes?","acceptedAnswer":{"@type":"Answer","text":"AI can identify key decisions, action items, and owners from conversation context, creating structured summaries that are more consistent and complete than human notes. It removes personal bias from documentation and ensures all critical points are captured, even if someone missed part of the discussion."}},{"@type":"Question","name":"Why integrate meeting notes with Airtable, Slack, and Gmail?","acceptedAnswer":{"@type":"Answer","text":"This creates a complete documentation and notification system. Airtable provides searchable archives, Slack gives immediate team visibility, and Gmail ensures formal distribution to external stakeholders. Each platform serves a different audience and purpose in the information flow."}},{"@type":"Question","name":"What types of meetings benefit most from automated documentation?","acceptedAnswer":{"@type":"Answer","text":"Client calls, project syncs, brainstorming sessions, and recurring team meetings benefit most. Any meeting where decisions are made, action items assigned, or information needs to be preserved for reference or compliance purposes can be transformed by automated documentation."}},{"@type":"Question","name":"How does voice-to-text automation compare to human transcription?","acceptedAnswer":{"@type":"Answer","text":"Modern AI transcription is 90-95% accurate for clear audio and works instantly versus hours for human services. The key advantage is integration—the text flows directly into your documentation system without manual copying, saving both time and the cost of transcription services."}},{"@type":"Question","name":"What security considerations are important for automated meeting documentation?","acceptedAnswer":{"@type":"Answer","text":"Consider where audio files are stored, who can access transcripts, and how minutes are shared. The workflow should use encrypted connections, limit data retention, and ensure sensitive discussions aren't automatically distributed beyond authorized personnel. Self-hosted automation provides more control."}},{"@type":"Question","name":"Can I get a custom meeting automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom meeting automation systems tailored to your specific tools, security requirements, and documentation workflows. We can integrate with your existing CRM, project management tools, and compliance systems to create a complete automated documentation pipeline."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Create meeting minutes from Telegram messages"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Create meeting minutes from Telegram messages</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Telegram</span>
+          <span class="cs-tag">AI</span>
+          <span class="cs-tag">Airtable</span>
+          <span class="cs-tag">Slack</span>
+          <span class="cs-tag">Gmail</span>
+        </div>
+        <h1>Automate Meeting Minutes with AI & Telegram</h1>
+        <p class="cs-hero-sub">Turn post-meeting voice notes or texts into structured minutes, saved to Airtable and shared via Slack & Gmail automatically.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7582-create-meeting-minutes-from-telegram-messages-with-gpt-.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7582-create-meeting-minutes-from-telegram-messages-with-gpt-.png" alt="Visual diagram showing Telegram message flowing to AI, then to Airtable, Slack, and Gmail" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves the universal problem of meeting documentation lag. After any meeting—client call, team sync, or project review—you simply send a message or voice note to a Telegram bot. The workflow automatically transcribes voice to text, uses AI to extract key decisions and action items, formats professional minutes, stores them in Airtable for searchable archives, notifies your team in Slack, and sends formal emails via Gmail to stakeholders.</p>
+        <p>It eliminates the 30-60 minutes typically spent after meetings on manual note-taking, formatting, and distribution. Instead of fragmented notes across different apps, you get consistent, structured documentation delivered instantly to all relevant systems. This ensures everyone works from the same information, action items are tracked, and nothing falls through the cracks between discussion and implementation.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow intelligently handles both text and voice inputs, processes them through AI, and distributes the results across your business tools.</p>
+        
+        <h3>1. Capture Meeting Content</h3>
+        <p>Immediately after a meeting, you send either a text summary or a voice recording to your dedicated Telegram bot. The workflow triggers instantly, detecting whether the input is text or audio.</p>
+        
+        <h3>2. Process & Structure with AI</h3>
+        <p>Voice notes are transcribed using OpenAI's speech-to-text. Both text and transcriptions are then sent to GPT models specifically prompted to extract: key decisions, action items with owners and deadlines, discussion highlights, and follow-up requirements. The AI formats this into professional meeting minutes.</p>
+        
+        <h3>3. Store in Central Database</h3>
+        <p>The structured minutes are automatically saved to your Airtable base with consistent fields: meeting date, participants, decisions, action items, and status. This creates a searchable archive of all meetings that integrates with your existing project management and CRM systems.</p>
+        
+        <h3>4. Distribute to Teams & Stakeholders</h3>
+        <p>Instant notifications go to relevant Slack channels with the minutes summary. Simultaneously, formal email versions are sent via Gmail to internal teams and external stakeholders, ensuring everyone receives documentation in their preferred communication channel.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for consulting firms, remote teams, project managers, sales teams, and any business that conducts frequent meetings where decisions need tracking. It's particularly valuable for agencies managing multiple client accounts, distributed teams across time zones, and compliance-sensitive industries requiring consistent documentation.</p>
+        <p>Teams that spend more than 5 hours weekly on meeting follow-up will see immediate productivity gains. Managers who need visibility into action item completion and executives who want searchable records of strategic discussions will find this workflow transforms how meeting intelligence is captured and utilized across the organization.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>Telegram account</strong> with a bot created via BotFather (free)</li>
+          <li><strong>OpenAI API key</strong> for GPT processing and voice transcription</li>
+          <li><strong>Airtable base</strong> with fields for: Email, Subject, Report, Date, Participants</li>
+          <li><strong>Slack workspace</strong> with appropriate channel access</li>
+          <li><strong>Gmail account</strong> connected via OAuth2 in n8n</li>
+          <li><strong>n8n instance</strong> (cloud or self-hosted) to run the workflow</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Import and configure this workflow in under 15 minutes with these steps:</p>
+        <ol>
+          <li><strong>Download & Import:</strong> Click the download button above, then import the JSON file into your n8n instance.</li>
+          <li><strong>Configure Telegram:</strong> Create a bot via @BotFather, get the token, and add it to the Telegram trigger node.</li>
+          <li><strong>Connect AI Services:</strong> Add your OpenAI API key to the transcription and GPT nodes.</li>
+          <li><strong>Link Airtable:</strong> Connect your Airtable account and select the base and table for storage.</li>
+          <li><strong>Set Up Notifications:</strong> Connect Slack and Gmail nodes, specifying channels and email templates.</li>
+          <li><strong>Test & Activate:</strong> Send a test message to your Telegram bot and verify the complete flow works.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Customize the GPT prompt in the workflow to match your specific meeting formats—add your company's terminology, required sections, or compliance language for consistent documentation.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5+ hours weekly per team</strong> by eliminating manual note-taking, transcription services, and distribution tasks. What used to take an hour per meeting now happens automatically in seconds.</p>
+        <p><strong>Improve meeting accountability</strong> with AI-identified action items and owners. Decisions don't get lost in translation, and follow-ups are automatically documented and trackable in your systems.</p>
+        <p><strong>Create searchable knowledge bases</strong> in Airtable that become institutional memory. Find any past decision, discussion, or commitment instantly instead of searching through emails and chat histories.</p>
+        <p><strong>Ensure consistent communication</strong> across all stakeholders with simultaneous distribution to Slack and Gmail. Internal teams get instant notifications while external parties receive formal documentation.</p>
+        <p><strong>Scale meeting intelligence</strong> across your organization without adding administrative staff. The system handles 10 meetings or 100 with the same efficiency, growing with your business needs.</p>
+
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about meeting automation and AI documentation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the biggest time-wasters in meeting documentation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The biggest time-wasters are manual note-taking, trying to remember action items, and the delay between the meeting and distributing minutes. Teams often spend 30-60 minutes after each meeting just documenting what was discussed, which delays follow-up actions and creates information silos.</p>
+          <p>This workflow eliminates those inefficiencies by capturing content immediately, processing it automatically, and distributing it instantly. The time saved compounds significantly for teams with multiple weekly meetings.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can AI improve the quality of meeting minutes?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI can identify key decisions, action items, and owners from conversation context, creating structured summaries that are more consistent and complete than human notes. It removes personal bias from documentation and ensures all critical points are captured, even if someone missed part of the discussion.</p>
+          <p>The AI is trained to recognize patterns in business conversations—identifying commitments, deadlines, and responsibilities that might be implied rather than explicitly stated. This creates more actionable documentation than verbatim transcripts.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why integrate meeting notes with Airtable, Slack, and Gmail?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This creates a complete documentation and notification system. Airtable provides searchable archives, Slack gives immediate team visibility, and Gmail ensures formal distribution to external stakeholders. Each platform serves a different audience and purpose in the information flow.</p>
+          <p>By automating distribution across all three, you ensure the right information reaches the right people in their preferred format without manual copying and pasting between systems.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of meetings benefit most from automated documentation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Client calls, project syncs, brainstorming sessions, and recurring team meetings benefit most. Any meeting where decisions are made, action items assigned, or information needs to be preserved for reference or compliance purposes can be transformed by automated documentation.</p>
+          <p>The system is particularly valuable for meetings with external parties where formal records are important, or for internal strategy sessions where tracking decisions over time provides strategic insight.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does voice-to-text automation compare to human transcription?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Modern AI transcription is 90-95% accurate for clear audio and works instantly versus hours for human services. The key advantage is integration—the text flows directly into your documentation system without manual copying, saving both time and the cost of transcription services.</p>
+          <p>Unlike human transcription that creates standalone documents, AI transcription integrates with your entire workflow, enabling immediate processing, analysis, and distribution of the content.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What security considerations are important for automated meeting documentation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Consider where audio files are stored, who can access transcripts, and how minutes are shared. The workflow should use encrypted connections, limit data retention, and ensure sensitive discussions aren't automatically distributed beyond authorized personnel. Self-hosted automation provides more control.</p>
+          <p>Best practices include using secure API connections, implementing access controls in Airtable, and configuring distribution rules based on meeting sensitivity. The template includes placeholders for these security measures.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom meeting automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom meeting automation systems tailored to your specific tools, security requirements, and documentation workflows. We can integrate with your existing CRM, project management tools, and compliance systems to create a complete automated documentation pipeline.</p>
+          <p>Our team designs solutions that match your meeting culture, industry regulations, and team collaboration patterns. We handle everything from initial consultation to implementation and ongoing support.</p>
+          <ul>
+            <li>Integration with your existing tools (Notion, Salesforce, Jira, etc.)</li>
+            <li>Custom AI prompts for your industry terminology</li>
+            <li>Compliance and security configuration</li>
+            <li>Team training and workflow optimization</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Meeting Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

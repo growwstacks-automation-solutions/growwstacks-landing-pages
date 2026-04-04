@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Security Incident Response: CrowdStrike, VirusTotal, Jira & Slack | Free n8n Template</title>
+<meta name="description" content="Free n8n workflow template to automate security incident response. Connects CrowdStrike, VirusTotal, Jira & Slack for automated IOC analysis, ticket creation & alerts.">
+<link rel="canonical" href="https://growwstacks.com/workflows/671-analyze-crowdstrike-detections-search-for-iocs-in-virustotal-create-a-ticket-in-jira-and-post-a-message-in-slack/">
+<meta property="og:title" content="Automate Security Incident Response: CrowdStrike, VirusTotal, Jira & Slack">
+<meta property="og:description" content="Free n8n workflow template to automate security incident response. Connects CrowdStrike, VirusTotal, Jira & Slack for automated IOC analysis, ticket creation & alerts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/671-analyze-crowdstrike-detections-search-for-iocs-in-virustotal-create-a-ticket-in-jira-and-post-a-message-in-slack/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1973-analyze-crowdstrike-detections-search-for-iocs-in-virus.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Security Incident Response: CrowdStrike, VirusTotal, Jira & Slack">
+<meta name="twitter:description" content="Free n8n workflow template to automate security incident response. Connects CrowdStrike, VirusTotal, Jira & Slack for automated IOC analysis, ticket creation & alerts.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate Security Incident Response: CrowdStrike, VirusTotal, Jira & Slack","description":"Free n8n workflow template to automate security incident response. Connects CrowdStrike, VirusTotal, Jira & Slack for automated IOC analysis, ticket creation & alerts.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1973-analyze-crowdstrike-detections-search-for-iocs-in-virus.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is security incident response automation?","acceptedAnswer":{"@type":"Answer","text":"Security incident response automation is the process of using software to automatically detect, analyze, and respond to security threats. This n8n template specifically automates the flow from CrowdStrike detection to VirusTotal IOC lookup, Jira ticket creation, and Slack notification, reducing manual work and response time from hours to minutes."}},{"@type":"Question","name":"Why integrate CrowdStrike with VirusTotal and Jira?","acceptedAnswer":{"@type":"Answer","text":"Integrating CrowdStrike with VirusTotal enriches threat intelligence by checking Indicators of Compromise (IOCs) against a global database. Connecting to Jira ensures incidents are tracked and assigned properly. This creates a closed-loop system where detections are automatically investigated, documented, and assigned for remediation."}},{"@type":"Question","name":"How much time can this automation save my security team?","acceptedAnswer":{"@type":"Answer","text":"This automation can save 15-45 minutes per security incident by eliminating manual steps. For teams handling 5-10 incidents daily, that's 6-40 hours saved weekly. The automation also ensures consistent response procedures and reduces human error in IOC lookup and ticket documentation."}},{"@type":"Question","name":"What are the benefits of automating security workflows?","acceptedAnswer":{"@type":"Answer","text":"Automating security workflows provides faster response times, consistent processes, reduced analyst fatigue, and comprehensive audit trails. It allows security teams to focus on complex analysis rather than repetitive tasks, improves compliance with documented procedures, and ensures critical alerts are never missed due to human oversight."}},{"@type":"Question","name":"Can this workflow be customized for different security tools?","acceptedAnswer":{"@type":"Answer","text":"Yes, n8n's flexible workflow design allows you to replace or add security tools. You could integrate with Splunk for log analysis, ServiceNow for IT service management, Microsoft Sentinel for SIEM, or PagerDuty for on-call alerts. The modular approach lets you build the exact security stack your organization uses."}},{"@type":"Question","name":"How does automation improve security compliance?","acceptedAnswer":{"@type":"Answer","text":"Automation ensures every security incident follows the same documented process, creating consistent audit trails. It automatically captures timestamps, investigation details, and response actions. This documented consistency helps meet compliance requirements for incident response procedures in standards like ISO 27001, SOC 2, and GDPR."}},{"@type":"Question","name":"What happens if the VirusTotal API is rate limited?","acceptedAnswer":{"@type":"Answer","text":"The workflow includes built-in rate limiting with wait nodes to prevent API throttling. For high-volume environments, you can implement queuing, batch processing, or premium API tiers. The template provides the foundation that you can enhance with error handling and retry logic specific to your security operations center's needs."}},{"@type":"Question","name":"Can I get a custom security automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom security automation solutions tailored to your specific tools, processes, and compliance requirements. We can integrate your existing SIEM, ticketing system, communication platforms, and threat intelligence feeds into a cohesive automated response system that matches your security team's workflow."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Security Incident Response Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Security Incident Response</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Security</span>
+          <span class="cs-tag">Incident Response</span>
+          <span class="cs-tag">CrowdStrike</span>
+          <span class="cs-tag">Jira</span>
+          <span class="cs-tag">Slack</span>
+        </div>
+        <h1>Automate Security Incident Response: CrowdStrike, VirusTotal, Jira & Slack</h1>
+        <p class="cs-hero-sub">Free n8n workflow template to automatically analyze security detections, enrich with threat intelligence, create tickets, and alert teams—reducing response time from hours to minutes.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1973-analyze-crowdstrike-detections-search-for-iocs-in-virus.json?ik-attachment=true" download="security-incident-response-automation.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/1973-analyze-crowdstrike-detections-search-for-iocs-in-virus.png" alt="Security incident response automation workflow connecting CrowdStrike, VirusTotal, Jira and Slack" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This security automation workflow transforms how your organization handles security incidents by creating a seamless pipeline from detection to resolution. When CrowdStrike identifies a potential threat, this n8n workflow automatically springs into action, eliminating manual investigation steps that typically delay response times.</p>
+        <p>The system fetches recent security detections, enriches each finding with threat intelligence from VirusTotal, creates detailed Jira tickets with all relevant context, and notifies your security team in Slack—all without human intervention. This ensures that every detection is properly documented, investigated according to consistent procedures, and assigned to the right personnel immediately.</p>
+        <p>By automating this critical security process, you reduce mean time to detection (MTTD) and mean time to response (MTTR), improve compliance with documented procedures, and free your security analysts to focus on complex threats rather than routine data gathering and ticket creation.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Scheduled Detection Collection</h3>
+        <p>The workflow triggers daily (configurable) to fetch recent security detections from CrowdStrike Falcon via API. It retrieves all new alerts within your specified timeframe, ensuring no potential incident goes unnoticed.</p>
+        
+        <h3>2. IOC Enrichment with VirusTotal</h3>
+        <p>Each detection is automatically checked against VirusTotal's global threat intelligence database. The workflow queries both SHA256 hashes and other Indicators of Compromise (IOCs), gathering reputation scores, detection ratios, and behavioral analysis to provide context for the security team.</p>
+        
+        <h3>3. Intelligent Batching & Processing</h3>
+        <p>Using n8n's Split in Batches node, the workflow processes detections efficiently while respecting API rate limits. A built-in wait node prevents overwhelming external services, ensuring reliable operation even during high-volume security events.</p>
+        
+        <h3>4. Comprehensive Ticket Creation</h3>
+        <p>For each enriched detection, the workflow creates a detailed Jira ticket with severity classification, host information, user context, threat intelligence findings, and direct links to both CrowdStrike and VirusTotal analyses. This creates a complete audit trail from the moment of detection.</p>
+        
+        <h3>5. Team Notification & Alerting</h3>
+        <p>Finally, the workflow posts a formatted message to your designated Slack channel, alerting the security team with actionable information including severity level, affected assets, and direct links to the newly created Jira ticket for immediate investigation.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for security operations centers (SOCs), IT security teams, and managed security service providers (MSSPs) who need to streamline their incident response processes. It's particularly valuable for organizations using CrowdStrike for endpoint protection that want to integrate their security stack without complex coding.</p>
+        <p>Companies with compliance requirements (ISO 27001, SOC 2, GDPR) benefit from the automated documentation and consistent response procedures. Teams experiencing alert fatigue or struggling with manual ticket creation will see immediate productivity gains and reduced human error.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>CrowdStrike Falcon</strong> instance with API access credentials</li>
+          <li><strong>VirusTotal</strong> API key (free tier available with rate limits)</li>
+          <li><strong>Jira</strong> instance with project access and API credentials</li>
+          <li><strong>Slack</strong> workspace with a webhook URL for your security channel</li>
+          <li><strong>n8n</strong> instance (self-hosted or cloud) with HTTP Request, Set, Split in Batches, Wait, and Item Lists nodes available</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with the free VirusTotal API tier to test the workflow. For production use with high-volume environments, consider upgrading to a paid tier to avoid rate limiting during security incidents.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>1. <strong>Download and import</strong> the JSON template into your n8n instance.</p>
+        <p>2. <strong>Configure credentials</strong> for each service in n8n's credentials management.</p>
+        <p>3. <strong>Adjust the schedule trigger</strong> to match your security team's review cadence (hourly, daily, or real-time via webhook).</p>
+        <p>4. <strong>Customize Jira fields</strong> to match your organization's incident tracking template and workflow states.</p>
+        <p>5. <strong>Test with sample data</strong> before connecting to production systems to ensure proper field mapping and notification formatting.</p>
+        <p>6. <strong>Deploy and monitor</strong> the workflow, reviewing initial runs to verify all connections and data transformations work correctly.</p>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Reduce incident response time by 80%:</strong> What previously took 30-60 minutes of manual investigation and documentation now happens automatically in under 5 minutes.</p>
+        <p><strong>Ensure consistent security procedures:</strong> Every detection follows the same enrichment and documentation process, eliminating human variability and ensuring compliance with security policies.</p>
+        <p><strong>Improve threat intelligence utilization:</strong> Automatically enrich every detection with VirusTotal data, providing analysts with context before they even begin investigation.</p>
+        <p><strong>Create comprehensive audit trails:</strong> Every action is automatically documented in Jira with timestamps, data sources, and analysis results for compliance reporting.</p>
+        <p><strong>Scale security operations without adding staff:</strong> Handle increasing alert volumes without proportional increases in analyst headcount by automating routine investigation steps.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about security incident response automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is security incident response automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Security incident response automation is the process of using software to automatically detect, analyze, and respond to security threats. This n8n template specifically automates the flow from CrowdStrike detection to VirusTotal IOC lookup, Jira ticket creation, and Slack notification, reducing manual work and response time from hours to minutes.</p>
+          <p>Instead of security analysts manually copying data between systems, the automation creates a seamless pipeline that ensures consistent handling of every alert while freeing up your team for higher-value threat hunting and analysis work.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why integrate CrowdStrike with VirusTotal and Jira?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Integrating CrowdStrike with VirusTotal enriches threat intelligence by checking Indicators of Compromise (IOCs) against a global database. Connecting to Jira ensures incidents are tracked and assigned properly. This creates a closed-loop system where detections are automatically investigated, documented, and assigned for remediation.</p>
+          <p>The combination provides context that neither system offers alone: CrowdStrike identifies the threat on endpoints, VirusTotal provides reputation and behavioral context, and Jira creates an actionable ticket with all information consolidated for your security team.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much time can this automation save my security team?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This automation can save 15-45 minutes per security incident by eliminating manual steps. For teams handling 5-10 incidents daily, that's 6-40 hours saved weekly. The automation also ensures consistent response procedures and reduces human error in IOC lookup and ticket documentation.</p>
+          <p>Beyond time savings, it reduces context switching between security tools and ensures no critical step is missed during high-stress incident response situations when manual processes are most likely to break down.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating security workflows?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating security workflows provides faster response times, consistent processes, reduced analyst fatigue, and comprehensive audit trails. It allows security teams to focus on complex analysis rather than repetitive tasks, improves compliance with documented procedures, and ensures critical alerts are never missed due to human oversight.</p>
+          <p>Additional benefits include standardized reporting for management, measurable metrics for process improvement, and the ability to handle increased alert volumes without additional staffing during security incidents or breaches.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow be customized for different security tools?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, n8n's flexible workflow design allows you to replace or add security tools. You could integrate with Splunk for log analysis, ServiceNow for IT service management, Microsoft Sentinel for SIEM, or PagerDuty for on-call alerts. The modular approach lets you build the exact security stack your organization uses.</p>
+          <p>The template serves as a foundation that can be extended with additional enrichment sources like threat intelligence platforms, internal vulnerability scanners, or custom databases of known malicious indicators specific to your industry or organization.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automation improve security compliance?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automation ensures every security incident follows the same documented process, creating consistent audit trails. It automatically captures timestamps, investigation details, and response actions. This documented consistency helps meet compliance requirements for incident response procedures in standards like ISO 27001, SOC 2, and GDPR.</p>
+          <p>For compliance audits, the automated workflow provides clear evidence of consistent security practices, reduces reliance on individual analyst documentation habits, and creates searchable records of all security events and responses for reporting requirements.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What happens if the VirusTotal API is rate limited?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow includes built-in rate limiting with wait nodes to prevent API throttling. For high-volume environments, you can implement queuing, batch processing, or premium API tiers. The template provides the foundation that you can enhance with error handling and retry logic specific to your security operations center's needs.</p>
+          <p>For production deployments, we recommend implementing exponential backoff for API calls, caching frequently queried IOCs locally, and setting up monitoring alerts for when rate limits are approached to prevent disruption during critical security incidents.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom security automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom security automation solutions tailored to your specific tools, processes, and compliance requirements. We can integrate your existing SIEM, ticketing system, communication platforms, and threat intelligence feeds into a cohesive automated response system that matches your security team's workflow.</p>
+          <p>Our security automation experts work with you to understand your current processes, identify automation opportunities, and build robust workflows that reduce mean time to response while maintaining the flexibility security teams need during investigations.</p>
+          <ul>
+            <li>Integration with your specific security tool stack</li>
+            <li>Custom alert prioritization and routing logic</li>
+            <li>Compliance-focused documentation and reporting</li>
+            <li>Ongoing support and optimization as threats evolve</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Security Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate Email Format from WordPress & Save to Mautic | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate lead data cleaning and validation from WordPress forms. This free n8n workflow formats names, validates emails, and creates contacts in Mautic, saving hours of manual work.">
+<link rel="canonical" href="https://growwstacks.com/workflows/817-validate-email-format-from-a-wordpress-form-and-save-a-contact-in-mautic/">
+<meta property="og:title" content="Automate WordPress Lead Validation & Mautic Integration | n8n Template">
+<meta property="og:description" content="Free n8n workflow to clean, validate, and sync WordPress form leads directly to Mautic. Eliminate manual data entry and ensure clean CRM data.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/817-validate-email-format-from-a-wordpress-form-and-save-a-contact-in-mautic/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/2184-validate-email-format-from-a-wordpress-form-and-save-a-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate WordPress Lead Validation & Mautic Integration | n8n Template">
+<meta name="twitter:description" content="Free n8n workflow to clean, validate, and sync WordPress form leads directly to Mautic. Eliminate manual data entry and ensure clean CRM data.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Validate Email Format from WordPress & Save to Mautic","description":"Automate lead data cleaning and validation from WordPress forms. This free n8n workflow formats names, validates emails, and creates contacts in Mautic, saving hours of manual work.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/2184-validate-email-format-from-a-wordpress-form-and-save-a-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is lead data validation important for marketing automation?","acceptedAnswer":{"@type":"Answer","text":"Lead data validation is crucial because it ensures the quality of your CRM database. Invalid emails or poorly formatted names lead to failed email campaigns, wasted marketing spend, and inaccurate reporting. Automated validation at the point of capture prevents bad data from entering your system, improving deliverability and segmentation accuracy."}},{"@type":"Question","name":"What are the benefits of connecting WordPress forms to Mautic?","acceptedAnswer":{"@type":"Answer","text":"Connecting WordPress forms to Mautic creates a seamless lead flow from acquisition to nurturing. It eliminates manual data entry, reduces errors, and allows for instant triggering of automated email sequences, lead scoring, and segmentation based on the form submission, significantly accelerating your marketing funnel."}},{"@type":"Question","name":"Can I validate more than just email format with this workflow?","acceptedAnswer":{"@type":"Answer","text":"Yes, absolutely. While this template focuses on email format and name capitalization, n8n's flexibility allows you to add validations for phone numbers, company URLs, data enrichment from third-party APIs, duplicate checking against your existing CRM, and even sentiment analysis of message fields before saving the contact."}},{"@type":"Question","name":"What happens if a lead's email fails validation?","acceptedAnswer":{"@type":"Answer","text":"The workflow can be configured to handle failures intelligently. Common actions include adding the lead to a 'Do Not Contact' list in Mautic, sending the submission details to a Slack channel for manual review, triggering a follow-up task in a project management tool, or sending an immediate reply to the user asking them to correct their email address."}},{"@type":"Question","name":"How does automating this process save time for my team?","acceptedAnswer":{"@type":"Answer","text":"Manually cleaning and importing leads can take 5-10 minutes per submission. For a business receiving 50 leads a week, that's over 40 hours of manual work annually. This automation reduces that to zero, freeing your team for higher-value tasks like sales calls and campaign strategy, while ensuring 100% data consistency."}},{"@type":"Question","name":"Can this workflow be extended for other CRM platforms?","acceptedAnswer":{"@type":"Answer","text":"Yes, the core logic of data validation and formatting is platform-agnostic. You can easily replace the Mautic node with connectors for HubSpot, Salesforce, Pipedrive, or any other CRM that has an API. The workflow structure remains the same, making it a reusable pattern for any marketing automation stack."}},{"@type":"Question","name":"What's the business impact of clean CRM data?","acceptedAnswer":{"@type":"Answer","text":"Clean CRM data directly impacts revenue. Studies show businesses lose 12% of revenue due to bad data. Clean data improves email deliverability by up to 30%, increases sales team productivity by 20%, and enables accurate ROI tracking on marketing campaigns. Automation ensures this cleanliness is maintained at scale."}},{"@type":"Question","name":"Can I get a custom WordPress to CRM automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored automation systems that connect your specific WordPress forms to your chosen CRM with custom validation rules, data enrichment, and multi-step nurturing sequences. We can handle complex scenarios like conditional logic based on form fields, integration with payment processors, and custom reporting dashboards."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"WordPress Mautic Integration"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>WordPress Mautic Integration</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">WordPress</span>
+          <span class="cs-tag">Mautic</span>
+          <span class="cs-tag">Lead Generation</span>
+          <span class="cs-tag">Data Validation</span>
+          <span class="cs-tag">n8n</span>
+        </div>
+        <h1>Automate WordPress Lead Validation & Sync to Mautic</h1>
+        <p class="cs-hero-sub">Capture, clean, and validate form submissions automatically. This free n8n workflow formats lead names, checks email validity, and creates perfectly structured contacts in your Mautic CRM—zero manual work required.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/2184-validate-email-format-from-a-wordpress-form-and-save-a-.png" alt="Visual diagram of the n8n automation workflow connecting WordPress forms to Mautic with data validation steps" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Every lead captured through your WordPress website holds potential revenue—but only if that data is accurate and actionable. Manual data entry is slow, error-prone, and creates a bottleneck between capturing a lead and engaging them. This automation solves that by acting as a smart bridge between your WordPress forms and Mautic marketing automation platform.</p>
+        <p>The workflow automatically receives new form submissions, applies intelligent data cleaning rules (like capitalizing names properly), validates email addresses to ensure they're deliverable, and then creates or updates the contact in Mautic. If the email fails validation, the lead is flagged for review instead of polluting your CRM, maintaining list hygiene automatically.</p>
+        <p>This end-to-end automation ensures your sales and marketing teams work with clean, reliable data from day one, enabling faster follow-ups, more effective email campaigns, and accurate reporting on lead sources and conversion rates.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow follows a logical sequence to transform raw form data into qualified CRM contacts.</p>
+        
+        <h3>1. WordPress Webhook Trigger</h3>
+        <p>The automation starts when a visitor submits any WordPress form (Contact Form 7, WPForms, Gravity Forms, etc.). The form is configured to send its data to a unique webhook URL generated by n8n, triggering the workflow instantly upon submission.</p>
+        
+        <h3>2. Data Cleaning & Formatting</h3>
+        <p>The raw form data passes through transformation nodes. The "Set" node capitalizes the first letter of the lead's first and last name (turning "john doe" into "John Doe"), trims unnecessary whitespace, and standardizes phone number formats if provided.</p>
+        
+        <h3>3. Email Validation Check</h3>
+        <p>A crucial "IF" node checks if the submitted email address matches a valid email format pattern (contains "@" and a domain). If the email fails this basic format validation, the workflow branches to handle the invalid entry—typically by logging it for review instead of sending it to Mautic.</p>
+        
+        <h3>4. Create Contact in Mautic</h3>
+        <p>For valid submissions, the workflow uses the Mautic node with your API credentials to create a new contact or update an existing one. The cleaned and formatted data (name, email, phone, custom fields) is mapped directly to corresponding fields in your Mautic instance.</p>
+        
+        <h3>5. Error Handling & Logging</h3>
+        <p>The workflow includes error-catching logic. If the Mautic API call fails (due to rate limits, incorrect field mapping, or server issues), the submission details are saved to a log for troubleshooting, ensuring no lead is ever lost due to technical glitches.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for marketing agencies, SaaS businesses, consultants, and any organization using WordPress for lead generation and Mautic for marketing automation. It's particularly valuable for teams that:</p>
+        <ul>
+          <li>Receive high volumes of form submissions daily</li>
+          <li>Have experienced email bounce-backs from invalid addresses</li>
+          <li>Waste time manually copying data from forms to their CRM</li>
+          <li>Want to trigger immediate follow-up sequences in Mautic based on form content</li>
+          <li>Need consistent data formatting for accurate segmentation and reporting</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A running n8n instance (cloud or self-hosted)</li>
+          <li>A WordPress website with any form plugin installed</li>
+          <li>An active Mautic instance with API access enabled</li>
+          <li>Your Mautic API credentials (base URL, username, and password)</li>
+          <li>Basic understanding of how to set up webhooks in your WordPress form plugin</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Before going live, test the workflow with your own email address to verify field mapping and ensure the contact appears correctly in Mautic. Use n8n's "Test Workflow" feature to simulate a form submission.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Import and configure this workflow in under 15 minutes:</p>
+        <ol>
+          <li><strong>Download & Import:</strong> Click the "Download Template" button above to get the JSON file. In your n8n dashboard, go to Workflows → Import from File and select the downloaded file.</li>
+          <li><strong>Configure Webhook:</strong> In the imported workflow, copy the Webhook node's unique URL. In your WordPress form plugin settings, add this URL as a "Webhook" or "HTTP Request" action to send submissions to n8n.</li>
+          <li><strong>Set Mautic Credentials:</strong> Click the Mautic node in your workflow. Add a new Mautic credential using your instance URL and API login details. Test the connection to ensure it's working.</li>
+          <li><strong>Map Your Form Fields:</strong> Adjust the "Set" node to match the exact field names from your WordPress form. The template uses common names like `firstName`, `email`, and `message`—update these to match your form's field IDs.</li>
+          <li><strong>Activate & Test:</strong> Turn the workflow ON in n8n. Submit a test form on your WordPress site and verify that a contact appears in your Mautic dashboard with properly formatted data.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminate Manual Data Entry:</strong> Save 5-10 minutes per lead by automating the transfer from WordPress to Mautic. For 50 leads per week, that's over 40 hours of saved labor annually.</p>
+        <p><strong>Improve Data Quality:</strong> Automated validation prevents invalid emails and poorly formatted names from entering your CRM, boosting email deliverability and segmentation accuracy.</p>
+        <p><strong>Accelerate Lead Response Time:</strong> Contacts are created in Mautic within seconds of form submission, allowing immediate triggering of welcome emails, lead scoring, and sales alerts.</p>
+        <p><strong>Maintain List Hygiene:</strong> Invalid submissions are automatically filtered out or flagged for review, keeping your Mautic database clean and your sender reputation high.</p>
+        <p><strong>Scale Without Adding Staff:</strong> Handle increasing form submission volumes without proportional increases in administrative work. The automation scales effortlessly with your business growth.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about WordPress to CRM automation and lead validation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why is lead data validation important for marketing automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Lead data validation is crucial because it ensures the quality of your CRM database. Invalid emails or poorly formatted names lead to failed email campaigns, wasted marketing spend, and inaccurate reporting. Automated validation at the point of capture prevents bad data from entering your system, improving deliverability and segmentation accuracy.</p>
+          <p>For example, a marketing team spending $1000 monthly on email campaigns could waste $300+ on undeliverable addresses without validation. Proper validation ensures your messages reach real prospects and your analytics reflect true engagement metrics.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of connecting WordPress forms to Mautic?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Connecting WordPress forms to Mautic creates a seamless lead flow from acquisition to nurturing. It eliminates manual data entry, reduces errors, and allows for instant triggering of automated email sequences, lead scoring, and segmentation based on the form submission, significantly accelerating your marketing funnel.</p>
+          <p>This integration turns a simple contact form into a powerful lead generation engine. When someone downloads your ebook, they can automatically be added to a "Content Nurture" campaign in Mautic, receive follow-up emails about related products, and be scored based on their engagement—all without manual intervention.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I validate more than just email format with this workflow?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, absolutely. While this template focuses on email format and name capitalization, n8n's flexibility allows you to add validations for phone numbers, company URLs, data enrichment from third-party APIs, duplicate checking against your existing CRM, and even sentiment analysis of message fields before saving the contact.</p>
+          <p>You could extend the workflow to verify business emails against company domains, check phone numbers for validity using services like Twilio Lookup, or enrich leads with firmographic data from Clearbit before they even reach your sales team.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What happens if a lead's email fails validation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow can be configured to handle failures intelligently. Common actions include adding the lead to a 'Do Not Contact' list in Mautic, sending the submission details to a Slack channel for manual review, triggering a follow-up task in a project management tool, or sending an immediate reply to the user asking them to correct their email address.</p>
+          <p>This proactive handling prevents bad data from polluting your CRM while ensuring no potential customer is completely lost. The failed submission remains in n8n's execution history for audit purposes, and your team can decide whether to manually correct and process it.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automating this process save time for my team?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Manually cleaning and importing leads can take 5-10 minutes per submission. For a business receiving 50 leads a week, that's over 40 hours of manual work annually. This automation reduces that to zero, freeing your team for higher-value tasks like sales calls and campaign strategy, while ensuring 100% data consistency.</p>
+          <p>The time savings compound as you scale. At 200 leads per week, you're saving over 160 hours annually—equivalent to a month of full-time work. This doesn't even account for the reduced errors and improved lead response times that directly impact conversion rates.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow be extended for other CRM platforms?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the core logic of data validation and formatting is platform-agnostic. You can easily replace the Mautic node with connectors for HubSpot, Salesforce, Pipedrive, or any other CRM that has an API. The workflow structure remains the same, making it a reusable pattern for any marketing automation stack.</p>
+          <p>Many businesses use this template as a starting point and then customize it for their specific CRM. The validation and data cleaning steps are universally valuable, regardless of where the clean data ultimately gets stored.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the business impact of clean CRM data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Clean CRM data directly impacts revenue. Studies show businesses lose 12% of revenue due to bad data. Clean data improves email deliverability by up to 30%, increases sales team productivity by 20%, and enables accurate ROI tracking on marketing campaigns. Automation ensures this cleanliness is maintained at scale.</p>
+          <p>Beyond the numbers, clean data builds trust. When your sales team knows every contact in the system is valid and properly categorized, they can personalize outreach effectively, leading to higher conversion rates and stronger customer relationships from the first touchpoint.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom WordPress to CRM automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored automation systems that connect your specific WordPress forms to your chosen CRM with custom validation rules, data enrichment, and multi-step nurturing sequences. We can handle complex scenarios like conditional logic based on form fields, integration with payment processors, and custom reporting dashboards.</p>
+          <p>Our team works with you to understand your unique business processes and builds automations that fit seamlessly into your operations. Whether you need advanced lead scoring, integration with multiple data sources, or custom error handling, we create solutions that save you time and increase revenue.</p>
+          <ul>
+            <li>Custom field mapping for your specific form and CRM structure</li>
+            <li>Multi-step validation using external verification services</li>
+            <li>Automated lead assignment rules based on form data</li>
+            <li>Real-time notifications to your team via Slack or email</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom WordPress to CRM Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

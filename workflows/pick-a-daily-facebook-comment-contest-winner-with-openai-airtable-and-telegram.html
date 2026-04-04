@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Facebook Contest Winner Selection with AI | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n workflow to automatically pick daily Facebook comment contest winners using OpenAI sentiment analysis, Airtable for tracking, and Telegram for alerts.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7774-pick-a-daily-facebook-comment-contest-winner-with-openai-airtable-and-telegram/">
+<meta property="og:title" content="Automate Facebook Contest Winner Selection with AI | Free n8n Template">
+<meta property="og:description" content="Free n8n workflow to automatically pick daily Facebook comment contest winners using OpenAI sentiment analysis, Airtable for tracking, and Telegram for alerts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7774-pick-a-daily-facebook-comment-contest-winner-with-openai-airtable-and-telegram/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12375-pick-a-daily-facebook-comment-contest-winner-with-open.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Facebook Contest Winner Selection with AI | Free n8n Template">
+<meta name="twitter:description" content="Free n8n workflow to automatically pick daily Facebook comment contest winners using OpenAI sentiment analysis, Airtable for tracking, and Telegram for alerts.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate Facebook Contest Winner Selection with AI","description":"Free n8n workflow to automatically pick daily Facebook comment contest winners using OpenAI sentiment analysis, Airtable for tracking, and Telegram for alerts.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12375-pick-a-daily-facebook-comment-contest-winner-with-open.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the business value of automating social media contests?","acceptedAnswer":{"@type":"Answer","text":"Automating social media contests saves 5-10 hours per week of manual work, ensures fairness by preventing repeat winners, and increases engagement by providing instant, consistent results. It also provides valuable data on community sentiment and participation trends."}},{"@type":"Question","name":"How does AI sentiment analysis improve contest fairness?","acceptedAnswer":{"@type":"Answer","text":"AI sentiment analysis filters out spam, low-effort comments, and negative entries, ensuring only genuine, positive participants are eligible to win. This improves contest quality and rewards authentic community engagement rather than random chance."}},{"@type":"Question","name":"Can I use this automation for platforms other than Facebook?","acceptedAnswer":{"@type":"Answer","text":"Yes, the core logic works for Instagram, YouTube, LinkedIn, or X (Twitter) by changing the data source node. The sentiment analysis, winner selection, and notification steps remain the same, making it adaptable to any social platform with an API."}},{"@type":"Question","name":"What are the main benefits of integrating Airtable with social media contests?","acceptedAnswer":{"@type":"Answer","text":"Airtable provides a searchable, filterable database of all past winners, preventing duplicate wins and creating a transparent audit trail. It also enables easy reporting, segmentation, and integration with other marketing tools for follow-up campaigns."}},{"@type":"Question","name":"How reliable is automated winner selection compared to manual picking?","acceptedAnswer":{"@type":"Answer","text":"Automated selection is more reliable as it eliminates human bias, works 24/7 without delays, and applies consistent rules every time. It also handles large volumes of comments that would be impractical to review manually."}},{"@type":"Question","name":"What security considerations are important for contest automation?","acceptedAnswer":{"@type":"Answer","text":"Key security steps include using API tokens with minimal permissions, encrypting sensitive data, implementing rate limiting to prevent abuse, and regularly auditing access logs. Always validate user input and implement fraud detection for high-value contests."}},{"@type":"Question","name":"Can I get a custom social media contest automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom social media automation solutions tailored to your specific platforms, rules, and integration needs. We can create multi-platform contest systems, complex scoring algorithms, and branded notification workflows."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Facebook Contest Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Facebook Contest Automation</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Facebook</span>
+          <span class="cs-tag">OpenAI</span>
+          <span class="cs-tag">Airtable</span>
+          <span class="cs-tag">Telegram</span>
+          <span class="cs-tag">Social Media</span>
+        </div>
+        <h1>Automate Daily Facebook Contest Winner Selection with AI</h1>
+        <p class="cs-hero-sub">Free n8n template to run fair, engaging social media giveaways—automatically fetch comments, analyze sentiment, pick winners, and notify your community.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="facebook-contest-winner-automation.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12375-pick-a-daily-facebook-comment-contest-winner-with-open.png" alt="Visual diagram showing Facebook comments flowing into AI sentiment analysis, then to winner selection and Telegram notification" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Running daily social media contests manually is time-consuming, prone to bias, and difficult to scale. This automation solves that by creating a completely hands-off system for managing Facebook comment contests. It ensures fairness, rewards genuine engagement, and saves community managers hours of repetitive work each week.</p>
+        <p>The workflow automatically monitors a specified Facebook post, collects all new comments, cross-references them against a blocklist of recent winners in Airtable, uses OpenAI to analyze sentiment and filter out spam, randomly selects a winner from positive entries, logs the winner to your database, and announces the result via Telegram—all on a daily schedule.</p>
+
+        <h2>How It Works</h2>
+        <h3>Step 1: Daily Trigger & Data Collection</h3>
+        <p>Each day at your specified time (e.g., 9 PM), the workflow activates. It simultaneously fetches fresh comments from your Facebook post via the Graph API and retrieves the list of past winners from your Airtable base.</p>
+        <h3>Step 2: Pre-Filtering & Blocklist Application</h3>
+        <p>A custom code node processes the data: it removes comments from users who have won in the last 30 days (configurable), filters out very short comments or single emojis, and prepares clean data for sentiment analysis.</p>
+        <h3>Step 3: AI-Powered Sentiment Analysis</h3>
+        <p>OpenAI's GPT model analyzes each eligible comment, classifying it as Positive, Neutral, or Negative. Only comments with genuinely positive sentiment proceed to the winner pool, ensuring your contests reward constructive engagement.</p>
+        <h3>Step 4: Random Winner Selection</h3>
+        <p>The system randomly selects one winner from the filtered positive comments. This randomization ensures fairness while the sentiment filter maintains quality standards.</p>
+        <h3>Step 5: Record Keeping & Notification</h3>
+        <p>The winner's details (name, Facebook ID, comment, timestamp) are saved to Airtable for permanent record-keeping. Simultaneously, a celebratory announcement is sent to your Telegram channel, notifying your community instantly.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for social media managers, community moderators, digital marketing agencies, brand owners running regular giveaways, influencers with active comment sections, and customer experience teams looking to reward positive feedback. If you spend more than 2-3 hours weekly managing contests or struggle with fairness complaints, this workflow will transform your process.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A running n8n instance (cloud or self-hosted)</li>
+          <li>Facebook Developer App with Graph API access token</li>
+          <li>Airtable base with a "Winners" table</li>
+          <li>OpenAI API key (GPT-4o-mini works well)</li>
+          <li>Telegram Bot token and channel ID</li>
+          <li>Basic understanding of API credentials (we guide you through setup)</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with a low-stakes contest to test the system. Once confident, scale to higher-value giveaways. The automation handles volume effortlessly—whether 50 or 5,000 comments.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Import the downloaded JSON file into your n8n instance.</li>
+          <li>Open the "Get FB Comments" node and add your Facebook Graph API credentials and Post ID.</li>
+          <li>Configure the "Get Past Winners" Airtable node with your base and table details.</li>
+          <li>Add your OpenAI API key to the sentiment analysis node.</li>
+          <li>Set up the Telegram node with your bot token and target channel ID.</li>
+          <li>Adjust the schedule trigger to your preferred daily time.</li>
+          <li>Activate the workflow—your first automated contest will run at the next trigger time.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Saves 5-10 hours weekly</strong> by eliminating manual comment reading, winner selection, and record-keeping. What used to be a daily chore becomes a completely automated process.</p>
+        <p><strong>Ensures contest fairness</strong> through automated blocklisting and random selection. No more accusations of bias or favoritism—the system applies consistent rules to every participant.</p>
+        <p><strong>Improves engagement quality</strong> by rewarding only positive, constructive comments. The AI sentiment filter discourages spam and encourages meaningful community interaction.</p>
+        <p><strong>Provides audit trail and insights</strong> through comprehensive Airtable logging. Track participation trends, winner demographics, and sentiment patterns over time.</p>
+        <p><strong>Scales effortlessly</strong> from small community contests to large brand campaigns. The same automation handles 50 comments or 5,000 without additional effort.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about social media contest automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is the business value of automating social media contests?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating social media contests saves 5-10 hours per week of manual work, ensures fairness by preventing repeat winners, and increases engagement by providing instant, consistent results. It also provides valuable data on community sentiment and participation trends.</p>
+          <p>Beyond time savings, automation transforms contests from administrative burdens into strategic marketing tools that build brand loyalty and generate authentic user-generated content at scale.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does AI sentiment analysis improve contest fairness?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI sentiment analysis filters out spam, low-effort comments, and negative entries, ensuring only genuine, positive participants are eligible to win. This improves contest quality and rewards authentic community engagement rather than random chance.</p>
+          <p>Traditional contests often reward the first comment or random selection, which can go to spam accounts. AI ensures your prizes go to users who actually contribute value to your community.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use this automation for platforms other than Facebook?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, the core logic works for Instagram, YouTube, LinkedIn, or X (Twitter) by changing the data source node. The sentiment analysis, winner selection, and notification steps remain the same, making it adaptable to any social platform with an API.</p>
+          <p>Many businesses run cross-platform contests using modified versions of this workflow, centralizing winner management while engaging audiences across multiple channels simultaneously.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the main benefits of integrating Airtable with social media contests?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Airtable provides a searchable, filterable database of all past winners, preventing duplicate wins and creating a transparent audit trail. It also enables easy reporting, segmentation, and integration with other marketing tools for follow-up campaigns.</p>
+          <p>Unlike spreadsheets, Airtable automatically updates with each contest, creates visual dashboards of participation trends, and can trigger email sequences or CRM updates for winner follow-up.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How reliable is automated winner selection compared to manual picking?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automated selection is more reliable as it eliminates human bias, works 24/7 without delays, and applies consistent rules every time. It also handles large volumes of comments that would be impractical to review manually.</p>
+          <p>Manual selection often suffers from fatigue, inconsistency, and scalability issues. Automation ensures every contest runs with the same fairness standards, regardless of volume or time of day.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What security considerations are important for contest automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Key security steps include using API tokens with minimal permissions, encrypting sensitive data, implementing rate limiting to prevent abuse, and regularly auditing access logs. Always validate user input and implement fraud detection for high-value contests.</p>
+          <p>For regulated industries or high-stakes giveaways, consider additional verification steps like email confirmation or CAPTCHA integration before winner announcement.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom social media contest automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom social media automation solutions tailored to your specific platforms, rules, and integration needs. We can create multi-platform contest systems, complex scoring algorithms, and branded notification workflows.</p>
+          <p>Our team handles everything from API integration to compliance checks, delivering a turnkey solution that aligns with your marketing objectives and technical environment.</p>
+          <ul>
+            <li>Multi-platform contest synchronization</li>
+            <li>Custom scoring and qualification rules</li>
+            <li>Branded notification templates and workflows</li>
+            <li>Comprehensive analytics and reporting dashboards</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Social Media Contest Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
