@@ -174,4 +174,38 @@ if (window.location.href.includes("how-to-guides")) {
   document.body.classList.add("cs-faq");
 }
 </script>
+ <!-- GrowwStacks Widget -->
+<div id="gs-spw"></div>
+
+<script>
+(function () {
+  if (window.__GS_WIDGET_INIT__) return;
+  window.__GS_WIDGET_INIT__ = true;
+
+  function getSharedPrefix() {
+    const pathSegments = window.location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+    const depth = pathSegments.length;
+    return depth === 0 ? './_shared/' : '../'.repeat(depth) + '_shared/';
+  }
+
+  function initWidget() {
+    const prefix = getSharedPrefix();
+
+    import(prefix + 'components/widget/growwstacks-widget.js')
+      .then((module) => {
+        if (module && typeof module.initGrowwStacksWidget === 'function') {
+          module.initGrowwStacksWidget();
+        } else {
+          console.warn('[footer] initGrowwStacksWidget not found.');
+        }
+      })
+      .catch((err) => {
+        console.warn('[footer] Widget failed to load:', err);
+      });
+  }
+
+  // Slight delay so footer DOM is fully injected first
+  setTimeout(initWidget, 100);
+})();
+</script>
 </footer>
