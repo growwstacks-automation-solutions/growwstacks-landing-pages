@@ -253,6 +253,424 @@ body.svc-page{padding-top:0}
   </div>
 </section>
 
+<!-- ═══ TECH STACK SECTION ═══ -->
+<!-- INSERT just before <section class="hww"> in services.html -->
+
+<style>
+/* ── Tech Stack Section ── */
+.tech-stack{padding:40px 0;background:#f8fffe}
+.tech-stack-header{text-align:center;max-width:720px;margin:0 auto 56px}
+.tech-stack-header .section-label{margin-bottom:14px}
+.tech-stack-header h2{font-size:clamp(28px,4vw,46px);font-weight:800;margin-bottom:16px;letter-spacing:-.03em;line-height:1.15;color:var(--dark)}
+.tech-stack-header h2 em{font-style:normal;color:var(--green-700)}
+.tech-stack-header p{font-size:16px;color:var(--gray-500);line-height:1.8;max-width:580px;margin:0 auto}
+
+.app-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(128px,1fr));
+  gap:14px;
+}
+
+.app-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  padding:22px 10px 16px;
+  background:#fff;
+  border:1px solid #e5e9f0;
+  border-radius:14px;
+  text-decoration:none;
+  color:inherit;
+  transition:all .3s cubic-bezier(.34,1.56,.64,1);
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+.app-card::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--green-600),var(--green-400));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+  border-radius:0 0 14px 14px;
+}
+.app-card:hover{
+  transform:translateY(-7px) scale(1.02);
+  box-shadow:0 16px 40px rgba(0,0,0,.1);
+  border-color:rgba(34,164,71,.25);
+}
+.app-card:hover::after{transform:scaleX(1)}
+
+.app-card-logo{
+  width:54px;
+  height:54px;
+  border-radius:12px;
+  object-fit:contain;
+  background:#f4f6f9;
+  padding:6px;
+  border:1px solid #eef0f4;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.app-card:hover .app-card-logo{transform:scale(1.12) rotate(-2deg)}
+
+.app-card-name{
+  font-size:12px;
+  font-weight:700;
+  color:#1a1d23;
+  text-align:center;
+  line-height:1.35;
+  letter-spacing:-.01em;
+}
+
+.app-card-arrow{
+  position:absolute;
+  top:9px;right:9px;
+  width:18px;height:18px;
+  border-radius:50%;
+  background:var(--green-600);
+  color:#fff;
+  font-size:9px;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;
+  transform:scale(.5) rotate(-45deg);
+  transition:all .22s ease;
+}
+.app-card:hover .app-card-arrow{
+  opacity:1;
+  transform:scale(1) rotate(0deg);
+}
+
+/* Count badge */
+.tech-stack-count{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:40px;
+  padding:16px 28px;
+  background:#fff;
+  border:1px solid #e5e9f0;
+  border-radius:var(--radius-full);
+  width:fit-content;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:14px;
+  color:var(--gray-500);
+  font-weight:600;
+}
+.tech-stack-count strong{color:var(--green-700);font-size:18px;font-weight:800}
+
+@media(max-width:768px){
+  .app-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
+  .app-card{padding:16px 8px 12px}
+  .app-card-logo{width:44px;height:44px}
+  .app-card-name{font-size:11px}
+}
+@media(max-width:480px){
+  .app-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+
+<section class="tech-stack">
+  <div class="container">
+
+    <div class="tech-stack-header">
+      <div class="section-label">Tech Stack</div>
+      <h2>We've Automated Workflows Across<br><em>Every App You're Already Using</em></h2>
+      <p>No matter what tools your business runs on — we've built production-grade automations for them. From CRMs and marketing platforms to AI tools and payment systems, we connect it all.</p>
+    </div>
+
+    <div class="app-grid">
+
+      <!-- Browse.ai -->
+      <a href="https://www.growwstacks.com/services/apps/browse-ai" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=browse.ai&sz=64" alt="Browse.ai">
+        <span class="app-card-name">Browse.ai</span>
+      </a>
+
+      <!-- RSS -->
+      <a href="https://www.growwstacks.com/services/apps/rss" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=rss.com&sz=64" alt="RSS">
+        <span class="app-card-name">RSS</span>
+      </a>
+
+      <!-- Go High Level -->
+      <a href="https://www.growwstacks.com/services/apps/go-high-level" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=64" alt="GoHighLevel">
+        <span class="app-card-name">GoHighLevel</span>
+      </a>
+
+      <!-- JotForm -->
+      <a href="https://www.growwstacks.com/services/apps/jotform" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=jotform.com&sz=64" alt="JotForm">
+        <span class="app-card-name">JotForm</span>
+      </a>
+
+      <!-- LearnWorlds -->
+      <a href="https://www.growwstacks.com/services/apps/learnworlds" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=learnworlds.com&sz=64" alt="LearnWorlds">
+        <span class="app-card-name">LearnWorlds</span>
+      </a>
+
+      <!-- Slack -->
+      <a href="https://www.growwstacks.com/services/apps/slack" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=slack.com&sz=64" alt="Slack">
+        <span class="app-card-name">Slack</span>
+      </a>
+
+      <!-- Frame.io -->
+      <a href="https://www.growwstacks.com/services/apps/frame-io" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=frame.io&sz=64" alt="Frame.io">
+        <span class="app-card-name">Frame.io</span>
+      </a>
+
+      <!-- Google Sheets -->
+      <a href="https://www.growwstacks.com/services/apps/google-sheets" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico" alt="Google Sheets">
+        <span class="app-card-name">Google Sheets</span>
+      </a>
+
+      <!-- Google Apps Script -->
+      <a href="https://www.growwstacks.com/services/apps/google-apps-script" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://ik.imagekit.io/r2zdlyze2o/Logo/google-apps-script.png" alt="Google Apps Script">
+        <span class="app-card-name">Apps Script</span>
+      </a>
+
+      <!-- Asana -->
+      <a href="https://www.growwstacks.com/services/apps/asana" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=asana.com&sz=64" alt="Asana">
+        <span class="app-card-name">Asana</span>
+      </a>
+
+      <!-- ManyChat -->
+      <a href="https://www.growwstacks.com/services/apps/manychat" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=manychat.com&sz=64" alt="ManyChat">
+        <span class="app-card-name">ManyChat</span>
+      </a>
+
+      <!-- OpenAI -->
+      <a href="https://www.growwstacks.com/services/apps/openai" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=openai.com&sz=64" alt="OpenAI">
+        <span class="app-card-name">OpenAI</span>
+      </a>
+
+      <!-- ActiveCampaign -->
+      <a href="https://www.growwstacks.com/services/apps/activecampaign" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=activecampaign.com&sz=64" alt="ActiveCampaign">
+        <span class="app-card-name">ActiveCampaign</span>
+      </a>
+
+      <!-- n8n -->
+      <a href="https://www.growwstacks.com/services/apps/n8n" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n">
+        <span class="app-card-name">n8n</span>
+      </a>
+
+      <!-- Calendly -->
+      <a href="https://www.growwstacks.com/services/apps/calendly" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=calendly.com&sz=64" alt="Calendly">
+        <span class="app-card-name">Calendly</span>
+      </a>
+
+      <!-- Salesforce -->
+      <a href="https://www.growwstacks.com/services/apps/salesforce" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=salesforce.com&sz=64" alt="Salesforce">
+        <span class="app-card-name">Salesforce</span>
+      </a>
+
+      <!-- Apollo.io -->
+      <a href="https://www.growwstacks.com/services/apps/apollo" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=apollo.io&sz=64" alt="Apollo.io">
+        <span class="app-card-name">Apollo.io</span>
+      </a>
+
+      <!-- Attio -->
+      <a href="https://www.growwstacks.com/services/apps/attio" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=attio.com&sz=64" alt="Attio">
+        <span class="app-card-name">Attio</span>
+      </a>
+
+      <!-- Clio -->
+      <a href="https://www.growwstacks.com/services/apps/clio" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=clio.com&sz=64" alt="Clio Manage">
+        <span class="app-card-name">Clio Manage</span>
+      </a>
+
+      <!-- Twilio -->
+      <a href="https://www.growwstacks.com/services/apps/twilio" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=twilio.com&sz=64" alt="Twilio">
+        <span class="app-card-name">Twilio</span>
+      </a>
+
+      <!-- Unleashed -->
+      <a href="https://www.growwstacks.com/services/apps/unleashed" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=unleashedsoftware.com&sz=64" alt="Unleashed">
+        <span class="app-card-name">Unleashed</span>
+      </a>
+
+      <!-- Amazon Seller Central -->
+      <a href="https://www.growwstacks.com/services/apps/amazon-seller-central" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=sellercentral.amazon.com&sz=64" alt="Amazon Seller Central">
+        <span class="app-card-name">Amazon Seller</span>
+      </a>
+
+      <!-- BigCommerce -->
+      <a href="https://www.growwstacks.com/services/apps/bigcommerce" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=bigcommerce.com&sz=64" alt="BigCommerce">
+        <span class="app-card-name">BigCommerce</span>
+      </a>
+
+      <!-- WordPress -->
+      <a href="https://www.growwstacks.com/services/apps/wordpress" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=wordpress.com&sz=64" alt="WordPress">
+        <span class="app-card-name">WordPress</span>
+      </a>
+
+      <!-- ElevenLabs -->
+      <a href="https://www.growwstacks.com/services/apps/elevenlabs" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://ik.imagekit.io/r2zdlyze2o/Logo/Elevenlabs.jpg" alt="ElevenLabs">
+        <span class="app-card-name">ElevenLabs</span>
+      </a>
+
+      <!-- WooCommerce -->
+      <a href="https://www.growwstacks.com/services/apps/woocommerce" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=woocommerce.com&sz=64" alt="WooCommerce">
+        <span class="app-card-name">WooCommerce</span>
+      </a>
+
+      <!-- Shopify -->
+      <a href="https://www.growwstacks.com/services/apps/shopify" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=shopify.com&sz=64" alt="Shopify">
+        <span class="app-card-name">Shopify</span>
+      </a>
+
+      <!-- Monday.com -->
+      <a href="https://www.growwstacks.com/services/apps/monday" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=monday.com&sz=64" alt="Monday.com">
+        <span class="app-card-name">Monday.com</span>
+      </a>
+
+      <!-- Gmail -->
+      <a href="https://www.growwstacks.com/services/apps/gmail" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico" alt="Gmail">
+        <span class="app-card-name">Gmail</span>
+      </a>
+
+      <!-- Klaviyo -->
+      <a href="https://www.growwstacks.com/services/apps/klaviyo" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=klaviyo.com&sz=64" alt="Klaviyo">
+        <span class="app-card-name">Klaviyo</span>
+      </a>
+
+      <!-- Xero -->
+      <a href="https://www.growwstacks.com/services/apps/xero" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=xero.com&sz=64" alt="Xero">
+        <span class="app-card-name">Xero</span>
+      </a>
+
+      <!-- ClickUp -->
+      <a href="https://www.growwstacks.com/services/apps/clickup" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=clickup.com&sz=64" alt="ClickUp">
+        <span class="app-card-name">ClickUp</span>
+      </a>
+
+      <!-- Close CRM -->
+      <a href="https://www.growwstacks.com/services/apps/close-crm" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=close.com&sz=64" alt="Close CRM">
+        <span class="app-card-name">Close CRM</span>
+      </a>
+
+      <!-- Smartlead -->
+      <a href="https://www.growwstacks.com/services/apps/smartlead" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=smartlead.ai&sz=64" alt="Smartlead">
+        <span class="app-card-name">Smartlead</span>
+      </a>
+
+      <!-- Airtable -->
+      <a href="https://www.growwstacks.com/services/apps/airtable" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=airtable.com&sz=64" alt="Airtable">
+        <span class="app-card-name">Airtable</span>
+      </a>
+
+      <!-- QuickBooks -->
+      <a href="https://www.growwstacks.com/services/apps/quickbooks" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://ik.imagekit.io/r2zdlyze2o/Logo/quickbooks.png" alt="QuickBooks">
+        <span class="app-card-name">QuickBooks</span>
+      </a>
+
+      <!-- ConvertKit -->
+      <a href="https://www.growwstacks.com/services/apps/convertkit" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=convertkit.com&sz=64" alt="ConvertKit">
+        <span class="app-card-name">ConvertKit</span>
+      </a>
+
+      <!-- Pipedrive -->
+      <a href="https://www.growwstacks.com/services/apps/pipedrive" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=pipedrive.com&sz=64" alt="Pipedrive">
+        <span class="app-card-name">Pipedrive</span>
+      </a>
+
+      <!-- Zapier -->
+      <a href="https://www.growwstacks.com/services/apps/zapier" target="_blank" class="app-card">
+        <div class="app-card-arrow">→</div>
+        <img class="app-card-logo" src="https://www.google.com/s2/favicons?domain=zapier.com&sz=64" alt="Zapier">
+        <span class="app-card-name">Zapier</span>
+      </a>
+
+    </div><!-- /.app-grid -->
+
+    <!-- Count badge -->
+    <div class="tech-stack-count">
+      <span>🔗</span>
+      <span>Integrated with <strong>38+</strong> platforms and counting — don't see yours? <a href="/#consultation" style="color:var(--green-700);font-weight:700;text-decoration:none">Let's talk →</a></span>
+    </div>
+
+  </div>
+</section>
+<!-- ═══ END TECH STACK SECTION ═══ -->
+
 <!-- ═══ HOW WE WORK — Timeline ═══ -->
 <section class="hww">
   <div class="container">
