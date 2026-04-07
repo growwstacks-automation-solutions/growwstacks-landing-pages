@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Facebook Comment Sentiment Analysis with AI | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n workflow to extract all Facebook post comments, analyze sentiment with Google Gemini AI, and store insights in Google Sheets. Automate brand monitoring.">
+<link rel="canonical" href="https://growwstacks.com/workflows/8219-extract-and-analyze-all-facebook-post-comments-with-sentiment-ai-using-gemini/">
+<meta property="og:title" content="Automate Facebook Comment Sentiment Analysis with AI">
+<meta property="og:description" content="Free n8n workflow to extract all Facebook post comments, analyze sentiment with Google Gemini AI, and store insights in Google Sheets.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/8219-extract-and-analyze-all-facebook-post-comments-with-sentiment-ai-using-gemini/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13234-extract-and-analyze-all-facebook-post-comments-with-se.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Facebook Comment Sentiment Analysis with AI">
+<meta name="twitter:description" content="Free n8n workflow to extract all Facebook post comments, analyze sentiment with Google Gemini AI, and store insights in Google Sheets.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate Facebook Comment Sentiment Analysis with AI","description":"Free n8n workflow to extract all Facebook post comments, analyze sentiment with Google Gemini AI, and store insights in Google Sheets. Automate brand monitoring.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13234-extract-and-analyze-all-facebook-post-comments-with-se.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is social media sentiment analysis and why is it important for businesses?","acceptedAnswer":{"@type":"Answer","text":"Social media sentiment analysis uses AI to automatically classify public comments and mentions as positive, negative, or neutral. It's crucial for businesses to understand brand perception, measure campaign impact, identify customer pain points, and track reputation in real-time without manually reading thousands of comments."}},{"@type":"Question","name":"How accurate is AI sentiment analysis for Facebook comments?","acceptedAnswer":{"@type":"Answer","text":"Modern AI models like Google Gemini achieve 85-95% accuracy in sentiment classification for social media text. They understand context, sarcasm, and emojis better than simple keyword matching. For business use, this accuracy is sufficient to identify trends, spot urgent issues, and gauge overall audience sentiment toward your brand or products."}},{"@type":"Question","name":"Can I analyze comments from multiple Facebook pages with one workflow?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can modify this template to monitor multiple Facebook pages or posts. The workflow can be scheduled to run periodically, collecting and analyzing comments from different sources into a centralized Google Sheet. This gives you a unified dashboard of sentiment across all your social media presence."}},{"@type":"Question","name":"What other data can I extract besides sentiment from Facebook comments?","acceptedAnswer":{"@type":"Answer","text":"Beyond basic sentiment, you can extract key topics, frequently mentioned products, common complaints, competitor mentions, and customer intent. Advanced workflows can categorize comments by issue type, identify influencers, track sentiment trends over time, and even trigger automated responses for specific comment types."}},{"@type":"Question","name":"How does automated sentiment analysis save time compared to manual monitoring?","acceptedAnswer":{"@type":"Answer","text":"Manual monitoring of hundreds or thousands of comments takes hours each week and is prone to human bias and fatigue. Automation processes the same volume in minutes, provides consistent analysis 24/7, and generates structured data ready for reporting. This frees up marketing teams to focus on strategy rather than data collection."}},{"@type":"Question","name":"What are the limitations of AI sentiment analysis for social media?","acceptedAnswer":{"@type":"Answer","text":"AI may struggle with heavy sarcasm, cultural references, or mixed emotions in a single comment. It also can't replace human judgment for nuanced customer service issues. The best approach combines AI automation for scale with human review for edge cases and strategic decision-making based on the insights generated."}},{"@type":"Question","name":"Can this workflow trigger alerts for negative sentiment spikes?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. You can extend this template to send Slack/Teams alerts, create support tickets, or notify your team via email when negative sentiment exceeds a threshold. This enables proactive reputation management—you can address issues before they escalate, rather than discovering problems days later."}},{"@type":"Question","name":"Can I get a custom social media monitoring automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes! GrowwStacks specializes in building tailored automation solutions. We can create custom workflows that monitor multiple platforms (Instagram, Twitter, LinkedIn), integrate with your CRM, generate executive dashboards, and trigger specific business actions based on sentiment patterns. Book a free consultation to discuss your specific monitoring needs and integration requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Facebook Comment Sentiment Analysis"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Facebook Comment Sentiment Analysis</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Facebook</span>
+          <span class="cs-tag">Google Gemini AI</span>
+          <span class="cs-tag">Sentiment Analysis</span>
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Marketing</span>
+        </div>
+        <h1>Automate Facebook Comment Sentiment Analysis with AI</h1>
+        <p class="cs-hero-sub">Extract all comments from your Facebook posts, analyze customer sentiment using Google Gemini AI, and store actionable insights in Google Sheets—fully automated.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="facebook-sentiment-analysis-workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13234-extract-and-analyze-all-facebook-post-comments-with-se.png" alt="Facebook comment sentiment analysis workflow diagram showing data flow from Facebook to AI analysis to Google Sheets" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Manual monitoring of Facebook comments is time-consuming, inconsistent, and misses critical insights buried in hundreds of responses. This n8n workflow solves that by automating the entire process of collecting, analyzing, and organizing Facebook post comments using AI-powered sentiment analysis.</p>
+        <p>The system connects to the Facebook Graph API to extract every comment from your specified posts, processes them through Google Gemini's advanced natural language model to determine sentiment (positive, negative, neutral), and stores the structured results in Google Sheets for easy reporting and trend analysis. It handles pagination automatically, ensuring no comment is missed, even on highly active posts.</p>
+        <p>Beyond simple sentiment scoring, this automation provides actionable business intelligence. Marketing teams can measure campaign reception, customer support can identify urgent issues, and brand managers can track reputation shifts—all without manual data collection or spreadsheet work.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow operates in two complementary modes, giving you flexibility for both ad-hoc analysis and ongoing monitoring.</p>
+        
+        <h3>1. Manual Execution Mode</h3>
+        <p>Start by entering a specific Facebook Post ID. The workflow fetches the post details, then retrieves all comments (including nested replies) using pagination handling. It batches comments for efficient processing and calls a sub-workflow to analyze each batch through Google Gemini's sentiment classification.</p>
+        
+        <h3>2. Triggered Execution Mode</h3>
+        <p>When activated by another workflow or scheduled trigger, it receives comment data directly, splits it into manageable batches, processes sentiment analysis, and updates your Google Sheet with "append or update" logic to prevent duplicates while allowing sentiment re-evaluation if comments are edited.</p>
+        
+        <h3>3. Data Storage & Output</h3>
+        <p>Each analyzed comment is saved with its Post ID, Comment ID, original text, sentiment classification, and timestamp. The Google Sheet becomes a searchable database of audience sentiment that can be connected to dashboards, alert systems, or CRM platforms for further action.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This template is ideal for social media managers, marketing teams, brand managers, customer support leads, and agencies managing multiple client accounts. If you regularly analyze Facebook engagement, track brand sentiment, measure campaign performance, or need to identify customer issues quickly, this automation eliminates hours of manual work each week.</p>
+        <p>Businesses running product launches, promotional campaigns, or community management will find particular value. The system scales effortlessly—whether you're monitoring a single post or dozens across multiple pages—providing consistent, unbiased sentiment analysis at any volume.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>Facebook Graph API Access:</strong> A Facebook App with Page access token and appropriate permissions (pages_read_engagement, pages_read_user_content).</li>
+          <li><strong>Google Gemini API Key:</strong> Access to Google's AI Studio or Vertex AI to generate an API key for sentiment analysis.</li>
+          <li><strong>Google Sheets:</strong> A spreadsheet (new or existing) with write permissions via Google OAuth credentials.</li>
+          <li><strong>n8n Instance:</strong> Self-hosted n8n or n8n.cloud account with workflow execution capabilities.</li>
+          <li><strong>Facebook Page ID:</strong> The numeric ID of the Facebook Page you want to monitor (found in Page settings).</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> For ongoing monitoring, schedule this workflow to run daily or weekly. Combine it with a dashboard tool like Google Data Studio or Tableau to visualize sentiment trends over time and share insights with stakeholders.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Import and configure this workflow in under 15 minutes:</p>
+        <ol>
+          <li><strong>Download & Import:</strong> Click the download button above to get the JSON file. In your n8n instance, create a new workflow and import the JSON.</li>
+          <li><strong>Configure Facebook Credentials:</strong> Add your Facebook Graph API credentials to both the "Get Fb Post" and "Get Fb comments" nodes. Test with a recent post ID.</li>
+          <li><strong>Set Up Google Gemini:</strong> Add your Google Gemini API key to the "Google Gemini Chat Model" node. Adjust the prompt if needed for your industry terminology.</li>
+          <li><strong>Connect Google Sheets:</strong> Authenticate with Google OAuth and specify your target spreadsheet ID. The workflow will create columns if they don't exist.</li>
+          <li><strong>Test & Schedule:</strong> Run the workflow manually with a test post ID. Once confirmed, add a Schedule Trigger node for automatic periodic execution.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 10+ hours weekly on manual comment monitoring.</strong> What previously required a team member to read and categorize hundreds of comments now happens automatically in minutes, freeing up resources for strategic work.</p>
+        <p><strong>Gain real-time brand sentiment visibility.</strong> Instead of quarterly sentiment reports, get daily or weekly insights that let you respond to emerging issues before they escalate, protecting brand reputation.</p>
+        <p><strong>Eliminate human bias in sentiment classification.</strong> AI applies consistent criteria across all comments, removing the variability and fatigue that affects manual rating, leading to more reliable trend data.</p>
+        <p><strong>Create actionable marketing intelligence.</strong> Transform unstructured social comments into structured data that integrates with your CRM, support ticketing, or business intelligence tools for comprehensive customer understanding.</p>
+        <p><strong>Scale monitoring without proportional cost increases.</strong> Whether you're analyzing 100 comments or 10,000, the workflow handles the volume with minimal additional setup, making it cost-effective for growing businesses.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about social media sentiment analysis and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is social media sentiment analysis and why is it important for businesses?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Social media sentiment analysis uses AI to automatically classify public comments and mentions as positive, negative, or neutral. It's crucial for businesses to understand brand perception, measure campaign impact, identify customer pain points, and track reputation in real-time without manually reading thousands of comments.</p>
+          <p>This automated approach transforms subjective social feedback into quantifiable data. Marketing teams can prove ROI, product teams can prioritize feature requests, and customer service can proactively address issues before they escalate on public platforms.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is AI sentiment analysis for Facebook comments?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Modern AI models like Google Gemini achieve 85-95% accuracy in sentiment classification for social media text. They understand context, sarcasm, and emojis better than simple keyword matching. For business use, this accuracy is sufficient to identify trends, spot urgent issues, and gauge overall audience sentiment toward your brand or products.</p>
+          <p>The key advantage isn't perfect accuracy on every single comment, but consistent, scalable analysis across your entire comment history. You'll identify sentiment patterns and shifts that would be impossible to spot manually.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I analyze comments from multiple Facebook pages with one workflow?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, you can modify this template to monitor multiple Facebook pages or posts. The workflow can be scheduled to run periodically, collecting and analyzing comments from different sources into a centralized Google Sheet. This gives you a unified dashboard of sentiment across all your social media presence.</p>
+          <p>For multi-page monitoring, you would create a list of Page IDs or Post IDs and loop through them. Each page's comments would be analyzed separately but stored in the same spreadsheet with clear source identifiers for filtering and comparison.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What other data can I extract besides sentiment from Facebook comments?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Beyond basic sentiment, you can extract key topics, frequently mentioned products, common complaints, competitor mentions, and customer intent. Advanced workflows can categorize comments by issue type, identify influencers, track sentiment trends over time, and even trigger automated responses for specific comment types.</p>
+          <p>With additional AI processing, you could extract: product feature requests, shipping/delivery issues, pricing feedback, competitor comparisons, and customer service satisfaction indicators—all automatically categorized from unstructured comment text.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automated sentiment analysis save time compared to manual monitoring?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Manual monitoring of hundreds or thousands of comments takes hours each week and is prone to human bias and fatigue. Automation processes the same volume in minutes, provides consistent analysis 24/7, and generates structured data ready for reporting. This frees up marketing teams to focus on strategy rather than data collection.</p>
+          <p>Consider a medium-sized business with 5 posts weekly receiving 200 comments each. Manual review would take 5-10 hours weekly. This workflow completes the analysis in under 30 minutes with more consistent categorization.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the limitations of AI sentiment analysis for social media?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI may struggle with heavy sarcasm, cultural references, or mixed emotions in a single comment. It also can't replace human judgment for nuanced customer service issues. The best approach combines AI automation for scale with human review for edge cases and strategic decision-making based on the insights generated.</p>
+          <p>For business applications, we recommend using AI for initial filtering and trend identification, then having team members review flagged comments (especially negative ones) for appropriate response. This hybrid approach maximizes efficiency while maintaining quality.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow trigger alerts for negative sentiment spikes?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. You can extend this template to send Slack/Teams alerts, create support tickets, or notify your team via email when negative sentiment exceeds a threshold. This enables proactive reputation management—you can address issues before they escalate, rather than discovering problems days later.</p>
+          <p>Common alert triggers include: sudden increase in negative comments, specific complaint keywords, or sentiment dropping below a defined threshold. These alerts can be routed to different teams based on content (product issues to product team, shipping complaints to operations).</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom social media monitoring automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes! GrowwStacks specializes in building tailored automation solutions. We can create custom workflows that monitor multiple platforms (Instagram, Twitter, LinkedIn), integrate with your CRM, generate executive dashboards, and trigger specific business actions based on sentiment patterns.</p>
+          <p>Our team will work with you to understand your specific monitoring needs, brand voice, and integration requirements. We build solutions that fit your existing tech stack and business processes, not just generic templates.</p>
+          <ul>
+            <li>Multi-platform social listening across all your channels</li>
+            <li>Custom sentiment categories specific to your industry</li>
+            <li>Integration with your existing CRM and support systems</li>
+            <li>Executive dashboards with real-time sentiment metrics</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Social Media Monitoring Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

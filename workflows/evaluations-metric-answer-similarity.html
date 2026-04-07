@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent Answer Similarity Evaluations | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate AI agent consistency scoring. This free n8n workflow template calculates answer similarity metrics to evaluate LLM performance against ground truth.">
+<link rel="canonical" href="https://growwstacks.com/workflows/2293-evaluations-metric-answer-similarity/">
+<meta property="og:title" content="Free AI Agent Evaluation & Answer Similarity n8n Template">
+<meta property="og:description" content="Automate AI agent consistency scoring. This free n8n workflow template calculates answer similarity metrics to evaluate LLM performance against ground truth.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/2293-evaluations-metric-answer-similarity/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4423-evaluations-metric-answer-similarity.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Agent Evaluation & Answer Similarity n8n Template">
+<meta name="twitter:description" content="Automate AI agent consistency scoring. This free n8n workflow template calculates answer similarity metrics to evaluate LLM performance against ground truth.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Agent Answer Similarity Evaluations","description":"Automate AI agent consistency scoring. This free n8n workflow template calculates answer similarity metrics to evaluate LLM performance against ground truth.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4423-evaluations-metric-answer-similarity.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is answer similarity in AI agent evaluation?","acceptedAnswer":{"@type":"Answer","text":"Answer similarity is a metric that measures how closely an AI agent's response matches a known correct answer or ground truth. It uses embedding vectors and cosine similarity to quantify consistency, helping identify when an LLM is hallucinating or deviating from expected outputs."}},{"@type":"Question","name":"Why is automated evaluation important for AI agents?","acceptedAnswer":{"@type":"Answer","text":"Automated evaluation saves hundreds of hours in manual testing, provides objective consistency metrics, and enables continuous monitoring of AI performance. It helps teams quickly identify regression, validate improvements, and maintain reliable AI systems in production."}},{"@type":"Question","name":"What types of AI responses work best with similarity scoring?","acceptedAnswer":{"@type":"Answer","text":"Similarity scoring works best with factual, close-ended questions where there's a single correct answer or limited acceptable variations. Examples include product specifications, policy details, factual Q&A, and structured data extraction where deviation indicates potential errors."}},{"@type":"Question","name":"How does cosine similarity work for text evaluation?","acceptedAnswer":{"@type":"Answer","text":"Cosine similarity converts text into numerical vectors (embeddings) that capture semantic meaning. It then calculates the cosine of the angle between the AI response vector and ground truth vector. Scores range from -1 (opposite) to 1 (identical), with higher scores indicating greater semantic alignment."}},{"@type":"Question","name":"Can I use this for open-ended creative AI responses?","acceptedAnswer":{"@type":"Answer","text":"Similarity metrics are less effective for highly creative or open-ended responses where multiple valid answers exist. For those cases, consider combining similarity with other metrics like relevance, coherence, or human-in-the-loop evaluation for more nuanced assessment."}},{"@type":"Question","name":"What embedding models work best for similarity evaluation?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's text-embedding-ada-002, Cohere Embed, and sentence-transformers models are excellent choices. The key is consistency—use the same embedding model for both AI responses and ground truth to ensure comparable vector spaces and meaningful similarity calculations."}},{"@type":"Question","name":"How do I interpret similarity scores in production?","acceptedAnswer":{"@type":"Answer","text":"Establish baseline scores during testing (0.7-0.9 for good matches). Monitor for significant drops indicating potential issues. Use thresholds to trigger alerts or human review. Remember that perfect 1.0 scores are rare—focus on consistent performance within an acceptable range."}},{"@type":"Question","name":"Can I get a custom AI agent evaluation automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, absolutely. GrowwStacks specializes in building tailored AI evaluation systems that match your specific use cases, data formats, and quality thresholds. We can integrate with your existing LLM pipelines, create custom scoring logic, and set up automated monitoring dashboards."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"AI Agent Answer Similarity Evaluations"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>AI Agent Evaluations</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">AI Evaluation</span>
+          <span class="cs-tag">LLM Testing</span>
+          <span class="cs-tag">Quality Assurance</span>
+          <span class="cs-tag">Zapier</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+        <h1>AI Agent Answer Similarity Evaluations</h1>
+        <p class="cs-hero-sub">Automatically measure AI response consistency against ground truth using semantic similarity scoring</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4423-evaluations-metric-answer-similarity.png" alt="AI Agent Answer Similarity Evaluation workflow showing embedding generation and cosine similarity calculation" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This n8n automation template solves a critical challenge in AI deployment: measuring and ensuring the consistency of your AI agent's responses. When businesses deploy LLMs for customer support, knowledge base queries, or data extraction, they need confidence that the AI provides reliable, accurate answers every time.</p>
+        <p>The workflow automatically calculates the "Similarity" evaluation metric by comparing AI-generated responses against known ground truth answers. It generates embeddings for both texts, computes cosine similarity scores, and provides quantitative metrics that indicate whether your AI is staying consistent or potentially hallucinating. This transforms subjective quality checks into objective, automated monitoring.</p>
+        <p>By implementing this evaluation system, teams can catch performance degradation early, validate model improvements with data, and maintain trust in their AI systems. It's particularly valuable for regulated industries, customer-facing applications, and any scenario where answer consistency directly impacts business outcomes.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow follows a systematic approach to evaluate AI response quality through semantic similarity analysis.</p>
+        
+        <h3>1. Data Ingestion & Preparation</h3>
+        <p>The automation begins by importing your evaluation dataset containing question-answer pairs. This can come from Google Sheets, Airtable, databases, or CSV files. Each record includes the user question, the AI's generated response, and the expected ground truth answer for comparison.</p>
+        
+        <h3>2. Embedding Generation</h3>
+        <p>Both the AI response and ground truth text are converted into numerical vector representations using embedding models like OpenAI's text-embedding-ada-002. This transformation captures semantic meaning in a format suitable for mathematical comparison, moving beyond simple keyword matching to understand contextual similarity.</p>
+        
+        <h3>3. Similarity Calculation</h3>
+        <p>The workflow computes cosine similarity between the two embedding vectors. This mathematical operation measures the cosine of the angle between vectors in multi-dimensional space, producing a score from -1 (completely opposite) to 1 (identical). Higher scores indicate greater semantic alignment between the AI's answer and the expected response.</p>
+        
+        <h3>4. Scoring & Threshold Analysis</h3>
+        <p>Each similarity score is evaluated against your quality thresholds. Responses scoring above 0.8 might be considered excellent matches, while scores below 0.5 could trigger alerts for manual review. The workflow can automatically flag outliers, generate reports, or trigger retraining workflows based on your configured rules.</p>
+        
+        <h3>5. Results Export & Visualization</h3>
+        <p>Final evaluation results are exported to your preferred destination—databases, analytics platforms, or notification systems. You can create dashboards showing performance trends over time, identify patterns in failure cases, and make data-driven decisions about your AI deployment.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> For best results, establish baseline similarity scores during your testing phase. This gives you reference points for what constitutes "good" performance in your specific domain before moving to production monitoring.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This automation template serves multiple roles across technical and business teams:</p>
+        <p><strong>AI/ML Engineers</strong> who need to monitor model performance in production and validate that updates don't introduce regression. The similarity metrics provide objective evidence of improvement or degradation.</p>
+        <p><strong>Product Managers</strong> overseeing AI-powered features who require confidence in response quality before customer-facing launches. The automated evaluation reduces reliance on manual testing.</p>
+        <p><strong>Customer Support Leaders</strong> implementing AI chatbots who must ensure consistent, accurate answers to common queries. Similarity scoring helps maintain service quality at scale.</p>
+        <p><strong>Quality Assurance Teams</strong> responsible for testing AI systems across thousands of scenarios. Automated evaluation accelerates testing cycles and provides reproducible metrics.</p>
+        <p><strong>Startups & SMBs</strong> deploying their first AI solutions who need cost-effective quality monitoring without building complex evaluation infrastructure from scratch.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>n8n instance</strong> (self-hosted or cloud) version 1.94 or higher</li>
+          <li><strong>Embedding API access</strong> (OpenAI, Cohere, or compatible service) for converting text to vectors</li>
+          <li><strong>Evaluation dataset</strong> with question, AI response, and ground truth answer columns</li>
+          <li><strong>Storage destination</strong> for results (Google Sheets, database, or data warehouse)</li>
+          <li><strong>Basic understanding</strong> of cosine similarity and semantic search concepts</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Follow these steps to implement AI answer similarity evaluation in your workflow:</p>
+        <ol>
+          <li><strong>Import the template</strong> into your n8n instance using the download button above</li>
+          <li><strong>Configure your embedding node</strong> with API credentials from OpenAI, Cohere, or your preferred provider</li>
+          <li><strong>Connect your data source</strong> containing question-answer pairs (Google Sheets sample provided)</li>
+          <li><strong>Set similarity thresholds</strong> based on your quality requirements (0.7-0.9 typically indicates good matches)</li>
+          <li><strong>Test with sample data</strong> to verify the scoring aligns with your manual assessments</li>
+          <li><strong>Deploy as scheduled workflow</strong> to run evaluations daily, weekly, or on-demand</li>
+          <li><strong>Connect alerting</strong> to Slack, email, or your incident management system for low scores</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Implementation note:</strong> Start with a small representative sample of 50-100 question-answer pairs to calibrate your thresholds before scaling to full production evaluation.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 20+ hours weekly on manual AI testing</strong> by automating consistency checks across hundreds of scenarios simultaneously. What previously required human review of each response now runs unattended with quantitative scoring.</p>
+        <p><strong>Catch performance regression before customers notice</strong> with continuous monitoring that alerts you when similarity scores drop below acceptable thresholds. This proactive approach prevents degraded user experiences.</p>
+        <p><strong>Make data-driven decisions about model updates</strong> using objective similarity metrics rather than anecdotal evidence. Compare different LLM versions or prompting strategies with reproducible evaluation results.</p>
+        <p><strong>Scale AI quality assurance efficiently</strong> as your question-answer pairs grow from dozens to thousands. The automated system handles increased volume without proportional increases in manual effort.</p>
+        <p><strong>Build stakeholder confidence</strong> with transparent, measurable AI performance metrics. Demonstrate consistency with data rather than promises when reporting to leadership or compliance teams.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about AI agent evaluation and similarity scoring</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is answer similarity in AI agent evaluation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Answer similarity is a metric that measures how closely an AI agent's response matches a known correct answer or ground truth. It uses embedding vectors and cosine similarity to quantify consistency, helping identify when an LLM is hallucinating or deviating from expected outputs.</p>
+          <p>Unlike simple keyword matching, semantic similarity captures meaning and context. For example, "The product ships in 3-5 business days" and "Delivery typically takes 3 to 5 working days" would score highly despite different wording, while factually incorrect responses would score lower.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why is automated evaluation important for AI agents?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automated evaluation saves hundreds of hours in manual testing, provides objective consistency metrics, and enables continuous monitoring of AI performance. It helps teams quickly identify regression, validate improvements, and maintain reliable AI systems in production.</p>
+          <p>Manual evaluation becomes impractical at scale—imagine reviewing thousands of AI responses daily. Automated systems provide consistent, unbiased scoring 24/7, catching issues that human reviewers might miss during sporadic sampling.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of AI responses work best with similarity scoring?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Similarity scoring works best with factual, close-ended questions where there's a single correct answer or limited acceptable variations. Examples include product specifications, policy details, factual Q&A, and structured data extraction where deviation indicates potential errors.</p>
+          <p>For creative writing, brainstorming, or open-ended conversations, similarity metrics are less appropriate. In those cases, consider combining similarity with other evaluation approaches like human scoring, rubric-based assessment, or specialized metrics for creativity and coherence.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does cosine similarity work for text evaluation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Cosine similarity converts text into numerical vectors (embeddings) that capture semantic meaning. It then calculates the cosine of the angle between the AI response vector and ground truth vector. Scores range from -1 (opposite) to 1 (identical), with higher scores indicating greater semantic alignment.</p>
+          <p>The magic happens in the embedding model—modern transformers like OpenAI's ada-002 create vectors where semantically similar sentences are close in vector space. "The cat sat on the mat" and "A feline rested on the rug" would have vectors pointing in nearly the same direction despite different words.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I use this for open-ended creative AI responses?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Similarity metrics are less effective for highly creative or open-ended responses where multiple valid answers exist. For those cases, consider combining similarity with other metrics like relevance, coherence, or human-in-the-loop evaluation for more nuanced assessment.</p>
+          <p>Creative tasks benefit from evaluation frameworks that measure originality, stylistic consistency, and task completion rather than similarity to a single "correct" answer. The template can be extended with additional scoring logic tailored to your specific creative requirements.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What embedding models work best for similarity evaluation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>OpenAI's text-embedding-ada-002, Cohere Embed, and sentence-transformers models are excellent choices. The key is consistency—use the same embedding model for both AI responses and ground truth to ensure comparable vector spaces and meaningful similarity calculations.</p>
+          <p>Different models have different strengths: ada-002 excels at general semantic understanding, Cohere offers multilingual capabilities, and sentence-transformers provide open-source options. Test multiple models on your specific data to determine which produces the most human-aligned similarity scores.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I interpret similarity scores in production?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Establish baseline scores during testing (0.7-0.9 for good matches). Monitor for significant drops indicating potential issues. Use thresholds to trigger alerts or human review. Remember that perfect 1.0 scores are rare—focus on consistent performance within an acceptable range.</p>
+          <p>Create a scoring rubric: 0.9+ = excellent match, 0.7-0.89 = acceptable variation, 0.5-0.69 = review recommended, below 0.5 = likely incorrect. Track distribution shifts over time rather than individual outliers to identify systemic problems.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom AI agent evaluation automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, absolutely. GrowwStacks specializes in building tailored AI evaluation systems that match your specific use cases, data formats, and quality thresholds. We can integrate with your existing LLM pipelines, create custom scoring logic, and set up automated monitoring dashboards.</p>
+          <p>Our team works with you to understand your unique requirements—whether you need multi-metric evaluation, integration with proprietary systems, custom alerting rules, or specialized reporting. We build solutions that scale with your AI initiatives while providing the transparency needed for responsible deployment.</p>
+          <ul>
+            <li>Custom evaluation workflows for your specific AI applications</li>
+            <li>Integration with your existing data pipelines and LLM providers</li>
+            <li>Dashboard development for real-time performance monitoring</li>
+            <li>Ongoing optimization as your AI systems evolve</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom AI Agent Evaluation Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

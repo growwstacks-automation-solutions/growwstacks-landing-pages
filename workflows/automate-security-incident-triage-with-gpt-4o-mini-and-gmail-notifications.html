@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Security Incident Triage with GPT-4o-mini & Gmail | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n workflow template: Automatically triage AWS Security Hub findings, classify severity with AI, generate remediation plans, and send Gmail alerts.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4948-automate-security-incident-triage-with-gpt-4o-mini-and-gmail-notifications/">
+<meta property="og:title" content="Automate Security Incident Triage with AI & Gmail">
+<meta property="og:description" content="Free n8n workflow template: Automatically triage AWS Security Hub findings, classify severity with AI, generate remediation plans, and send Gmail alerts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4948-automate-security-incident-triage-with-gpt-4o-mini-and-gmail-notifications/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7785-automate-security-incident-triage-with-gpt-4o-mini-and-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Security Incident Triage with AI & Gmail">
+<meta name="twitter:description" content="Free n8n workflow template: Automatically triage AWS Security Hub findings, classify severity with AI, generate remediation plans, and send Gmail alerts.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400,500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400,500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate Security Incident Triage with GPT-4o-mini & Gmail","description":"Free n8n workflow template: Automatically triage AWS Security Hub findings, classify severity with AI, generate remediation plans, and send Gmail alerts.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7785-automate-security-incident-triage-with-gpt-4o-mini-and-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is security incident triage automation?","acceptedAnswer":{"@type":"Answer","text":"Security incident triage automation is the process of automatically receiving, analyzing, classifying, and routing security alerts from monitoring tools like AWS Security Hub. Instead of a human manually reviewing every alert, an AI-powered workflow reads the finding, determines its severity and type, and generates a concise remediation plan. This reduces response time from hours to minutes, ensuring critical issues get immediate attention while low-priority alerts are logged appropriately."}},{"@type":"Question","name":"Why use AI like GPT-4o-mini for security alert classification?","acceptedAnswer":{"@type":"Answer","text":"AI models like GPT-4o-mini can understand the context and technical details of security findings far better than static rule-based filters. They can interpret vague descriptions, infer potential impact, and assign appropriate severity (P0-P3) based on the actual risk, not just predefined keywords. This reduces false positives and ensures alerts are prioritized accurately, saving security teams from reviewing irrelevant notifications."}},{"@type":"Question","name":"How does automating incident triage improve operational efficiency?","acceptedAnswer":{"@type":"Answer","text":"Automating triage eliminates manual, repetitive analysis of incoming alerts. Security engineers no longer need to spend hours each day reading raw logs or AWS findings. The workflow automatically extracts key details (resource, account, description), classifies the issue, and generates a ready-to-execute remediation plan. This can cut initial response time by 80–90%, freeing up staff for higher-value threat investigation and mitigation tasks."}},{"@type":"Question","name":"Can this workflow integrate with other security tools besides AWS Security Hub?","acceptedAnswer":{"@type":"Answer","text":"Yes. The core design uses a webhook trigger, meaning any security tool that can send JSON alerts via HTTP can feed into this workflow. SIEM platforms like Splunk or Datadog, cloud monitoring services like Azure Sentinel or Google Cloud Security Command Center, and even custom internal logging systems can be adapted. The normalization step ensures the data structure is consistent before AI analysis."}},{"@type":"Question","name":"What are the typical cost savings from automating security incident response?","acceptedAnswer":{"@type":"Answer","text":"For a mid-sized company receiving 50–100 security alerts daily, manual triage can consume 2–3 engineer hours per day. Automating this with AI and n8n reduces that to near zero. Over a month, this saves 60–90 hours of high-skill labor, translating to thousands of dollars in salary costs. Additionally, faster response reduces potential breach impact, avoiding costly downtime or data loss."}},{"@type":"Question","name":"Is it safe to send security alerts through an AI model like GPT-4o-mini?","acceptedAnswer":{"@type":"Answer","text":"Yes, with proper data handling. The workflow typically sends only non-sensitive metadata—resource ID, account, alert title, and a generic description—to the AI for classification. No customer data, passwords, or internal IPs are included. You can also use local LLMs or Azure OpenAI for enhanced privacy. The output is a classification and plan, not raw data storage, keeping your security posture intact."}},{"@type":"Question","name":"How do I customize the notification channel (e.g., Slack, Teams instead of Gmail)?","acceptedAnswer":{"@type":"Answer","text":"The workflow uses a Gmail node for notifications, but you can easily swap it for Slack, Microsoft Teams, Discord, or a ticketing system like Jira. n8n has native nodes for these platforms. Simply replace the Gmail node with your preferred channel, map the same output fields (subject, body HTML), and adjust the formatting if needed. The modular design means you can plug in any communication tool your team uses."}},{"@type":"Question","name":"Can I get a custom security incident automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. GrowwStacks specializes in building tailored automation systems for unique security environments. We can integrate your specific SIEM tools, compliance frameworks, internal dashboards, and escalation protocols. Whether you need multi‑channel alerts, automated ticket creation, or real‑time dashboards, our team designs workflows that match your exact operational procedures and risk thresholds. Book a free consultation to discuss your requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Automate Security Incident Triage"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Automate Security Incident Triage</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Security Automation</span>
+          <span class="cs-tag">AI Classification</span>
+          <span class="cs-tag">AWS Security Hub</span>
+          <span class="cs-tag">Gmail</span>
+          <span class="cs-tag">GPT-4o-mini</span>
+        </div>
+        <h1>Automate Security Incident Triage with GPT‑4o‑mini & Gmail</h1>
+        <p class="cs-hero-sub">Free n8n workflow template: Automatically triage AWS Security Hub findings, classify severity with AI, generate remediation plans, and send Gmail alerts.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7785-automate-security-incident-triage-with-gpt-4o-mini-and-.png" alt="Automated security incident triage workflow diagram showing webhook, AI classification, and Gmail notification steps" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Security teams are overwhelmed with alerts. AWS Security Hub, EventBridge, SNS, and other monitoring tools generate hundreds of findings daily. Manually reviewing each one is slow, error‑prone, and drains engineering time.</p>
+        <p>This n8n workflow automates the entire triage process. It receives security findings via a webhook, normalizes the data, uses GPT‑4o‑mini to classify the incident type and severity, generates a concise 3‑step remediation plan, and sends a structured email alert via Gmail. The result is a prioritized, actionable incident brief delivered to the right team within seconds.</p>
+        <p>The pipeline is modular: Webhook → Clean Finding → Classify (LLM) → Plan (LLM) → Gmail. You can swap Gmail for Slack, Teams, or any other notification channel.</p>
+
+        <h2>How It Works</h2>
+        <h3>Step 1: Webhook Trigger</h3>
+        <p>AWS Security Hub (or any security tool) sends a JSON finding via EventBridge → SNS → Webhook to your n8n instance. The webhook node captures the raw alert payload.</p>
+        <h3>Step 2: Data Normalization</h3>
+        <p>A “Set” node extracts and standardizes key fields: title, description, AWS account ID, resource ID/type, and timestamp. This ensures consistent input for the AI model.</p>
+        <h3>Step 3: AI Classification</h3>
+        <p>The GPT‑4o‑mini node analyzes the normalized finding. It assigns an <strong>incident_type</strong> (e.g., “Unauthorized Access,” “Misconfigured Resource”), a <strong>severity level</strong> (P0‑P3), <strong>urgency</strong>, a <strong>short_title</strong>, and a <strong>why</strong> rationale—all based on the context of the alert.</p>
+        <h3>Step 4: Remediation Plan Generation</h3>
+        <p>A second LLM call creates a practical 3‑step remediation plan. Each step includes clear actions, an <strong>owner_hint</strong> (which team should handle it), and <strong>success_criteria</strong> to verify resolution.</p>
+        <h3>Step 5: Gmail Notification</h3>
+        <p>The workflow compiles everything into a clean HTML email. The subject line includes the short title, resource ID, and account. The body presents the type, account, urgency, rationale, next actions, owner hint, and success criteria—ready for immediate action.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This template is ideal for:</p>
+        <ul>
+          <li><strong>Security Operations (SecOps) Teams</strong> managing cloud infrastructure (AWS, Azure, GCP).</li>
+          <li><strong>IT Managers</strong> overseeing compliance and threat response.</li>
+          <li><strong>DevOps Engineers</strong> responsible for cloud security monitoring.</li>
+          <li><strong>Startups & SMEs</strong> without dedicated security staff who need automated alert prioritization.</li>
+          <li><strong>Companies using SIEM tools</strong> like Splunk, Datadog, or Azure Sentinel wanting to add AI‑based classification.</li>
+        </ul>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>An n8n instance (cloud or self‑hosted) reachable via HTTP for the webhook.</li>
+          <li>OpenAI API credentials (or a compatible LLM service) configured in n8n.</li>
+          <li>Gmail OAuth2 credentials (or SMTP settings for another email provider).</li>
+          <li>A source that can POST security findings in JSON format (AWS Security Hub via EventBridge/SNS, a custom SIEM, or even a curl script for testing).</li>
+          <li>Basic understanding of n8n node configuration—no deep coding required.</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the template JSON file and import it into your n8n workspace.</li>
+          <li>Configure the Webhook node: set a unique path and ensure your security tool can send POST requests to it.</li>
+          <li>Add your OpenAI API key in the LLM nodes (GPT‑4o‑mini). Adjust the prompt if you want different classification criteria.</li>
+          <li>Set up Gmail OAuth2 credentials (or replace with Slack/Teams if preferred).</li>
+          <li>Test the flow by sending a sample AWS Security Hub finding (or a mock JSON payload) to the webhook URL.</li>
+          <li>Activate the workflow and monitor the email output for real alerts.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Use a “Switch” node after the AI classification to route P0‑P1 alerts to a high‑priority channel (like Slack) and P2‑P3 alerts to a log or low‑priority email. This further automates escalation.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Reduce response time from hours to minutes.</strong> AI classification happens instantly, eliminating manual review delays.</p>
+        <p><strong>Cut false‑positive fatigue.</strong> The LLM understands context, so vague or low‑risk alerts are correctly tagged as low severity, reducing noise for engineers.</p>
+        <p><strong>Standardize incident reporting.</strong> Every alert follows the same format: type, severity, rationale, plan, owner hint, success criteria—making team handoffs seamless.</p>
+        <p><strong>Free up security staff for real threats.</strong> Automating triage saves 2‑3 hours per engineer daily, allowing focus on investigation and mitigation.</p>
+        <p><strong>Scalable across multiple cloud accounts and tools.</strong> The webhook‑based design works with AWS, Azure, GCP, and any JSON‑outputting security monitor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about security incident triage automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is security incident triage automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Security incident triage automation is the process of automatically receiving, analyzing, classifying, and routing security alerts from monitoring tools like AWS Security Hub. Instead of a human manually reviewing every alert, an AI-powered workflow reads the finding, determines its severity and type, and generates a concise remediation plan. This reduces response time from hours to minutes, ensuring critical issues get immediate attention while low-priority alerts are logged appropriately.</p>
+          <p>For example, an alert about an “S3 bucket policy change” can be automatically classified as “Configuration Drift” with severity P2, and a plan to review the bucket’s ACLs is generated—all before a human even sees the notification.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why use AI like GPT‑4o‑mini for security alert classification?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI models like GPT‑4o‑mini can understand the context and technical details of security findings far better than static rule‑based filters. They can interpret vague descriptions, infer potential impact, and assign appropriate severity (P0‑P3) based on the actual risk, not just predefined keywords. This reduces false positives and ensures alerts are prioritized accurately, saving security teams from reviewing irrelevant notifications.</p>
+          <p>Traditional rule‑based systems might flag “IAM role modified” as high‑severity every time. AI can discern whether it’s a routine admin change or a suspicious unauthorized modification, adjusting the priority accordingly.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does automating incident triage improve operational efficiency?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating triage eliminates manual, repetitive analysis of incoming alerts. Security engineers no longer need to spend hours each day reading raw logs or AWS findings. The workflow automatically extracts key details (resource, account, description), classifies the issue, and generates a ready‑to‑execute remediation plan. This can cut initial response time by 80–90%, freeing up staff for higher‑value threat investigation and mitigation tasks.</p>
+          <p>Teams can focus on actual incident response rather than sorting through hundreds of alerts to find the few that matter. This also reduces burnout and improves morale among security personnel.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow integrate with other security tools besides AWS Security Hub?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes. The core design uses a webhook trigger, meaning any security tool that can send JSON alerts via HTTP can feed into this workflow. SIEM platforms like Splunk or Datadog, cloud monitoring services like Azure Sentinel or Google Cloud Security Command Center, and even custom internal logging systems can be adapted. The normalization step ensures the data structure is consistent before AI analysis.</p>
+          <p>You simply need to map the incoming JSON fields to the expected format in the “Set” node. n8n’s flexibility allows integration with virtually any alerting source.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the typical cost savings from automating security incident response?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>For a mid‑sized company receiving 50–100 security alerts daily, manual triage can consume 2–3 engineer hours per day. Automating this with AI and n8n reduces that to near zero. Over a month, this saves 60–90 hours of high‑skill labor, translating to thousands of dollars in salary costs. Additionally, faster response reduces potential breach impact, avoiding costly downtime or data loss.</p>
+          <p>The ROI isn’t just labor savings; it’s also risk reduction. Faster triage means critical vulnerabilities are addressed before they’re exploited, potentially preventing incidents that could cost millions in remediation.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it safe to send security alerts through an AI model like GPT‑4o‑mini?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, with proper data handling. The workflow typically sends only non‑sensitive metadata—resource ID, account, alert title, and a generic description—to the AI for classification. No customer data, passwords, or internal IPs are included. You can also use local LLMs or Azure OpenAI for enhanced privacy. The output is a classification and plan, not raw data storage, keeping your security posture intact.</p>
+          <p>If you have strict data policies, you can anonymize resource IDs or use a private LLM instance. The workflow’s modular design allows you to control exactly what data is sent to external services.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I customize the notification channel (e.g., Slack, Teams instead of Gmail)?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The workflow uses a Gmail node for notifications, but you can easily swap it for Slack, Microsoft Teams, Discord, or a ticketing system like Jira. n8n has native nodes for these platforms. Simply replace the Gmail node with your preferred channel, map the same output fields (subject, body HTML), and adjust the formatting if needed. The modular design means you can plug in any communication tool your team uses.</p>
+          <p>For example, replacing Gmail with Slack involves adding a Slack node, setting the channel, and formatting the message with the same severity and plan details. The rest of the workflow remains unchanged.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom security incident automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. GrowwStacks specializes in building tailored automation systems for unique security environments. We can integrate your specific SIEM tools, compliance frameworks, internal dashboards, and escalation protocols. Whether you need multi‑channel alerts, automated ticket creation, or real‑time dashboards, our team designs workflows that match your exact operational procedures and risk thresholds.</p>
+          <p>Book a free consultation to discuss your requirements. We’ll assess your current alerting sources, desired outputs, and team workflows, then build a custom automation that fits seamlessly into your security operations.</p>
+          <ul>
+            <li>Integration with your existing security stack (Splunk, Datadog, custom logs)</li>
+            <li>Multi‑step escalation paths based on severity</li>
+            <li>Compliance reporting and audit trail generation</li>
+            <li>Real‑time dashboard updates for incident tracking</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Security Incident Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
