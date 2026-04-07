@@ -1,0 +1,64 @@
+<!-- ═══ CASE STUDIES ═══ -->
+<section class="fio-cs">
+  <div class="container">
+    <div class="fio-section-header">
+      <div class="section-label">Case Studies</div>
+      <h2>Real Results From Real Projects</h2>
+      <p>See how we've transformed business workflows with automation — across industries, tools, and use cases.</p>
+    </div>
+    <div class="fio-cs-grid" id="cs-grid">
+      <!-- Populated by JS -->
+    </div>
+    <div class="fio-cs-cta">
+      <a href="https://growwstacks.com/case-studies/" target="_blank" rel="noopener noreferrer" class="fio-btn-more">
+        View All Case Studies
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+<script>
+    /* ── Case Studies — pick 12 random from CS_CARDS (case-studies-data.js) ── */
+!function(){
+  if(typeof CS_CARDS==='undefined'||!CS_CARDS.length){
+    console.warn('CS_CARDS not loaded — check case-studies-data.js path');
+    return;
+  }
+  var grid=document.getElementById('cs-grid');
+  if(!grid)return;
+  /* Shuffle and pick 12 */
+  var shuffled=CS_CARDS.slice().sort(function(){return Math.random()-.5});
+  var picked=shuffled.slice(0,12);
+  picked.forEach(function(cs){
+    var a=document.createElement('a');
+    a.href=cs.href;a.target='_blank';a.rel='noopener noreferrer';a.className='fio-cs-card';
+    /* Add ImageKit transform for optimized loading */
+    var imgSrc=cs.img;
+    if(imgSrc.indexOf('ik.imagekit.io')!==-1&&imgSrc.indexOf('tr=')===-1){
+      imgSrc+=imgSrc.indexOf('?')!==-1?'&tr=w-320,h-180,q-80,f-auto':'?tr=w-320,h-180,q-80,f-auto';
+    }
+    a.innerHTML='<img class="fio-cs-img" src="'+imgSrc+'" alt="'+cs.imgAlt+'" width="320" height="180" loading="lazy">'
+      +'<div class="fio-cs-body">'
+      +'<div class="fio-cs-cat">'+cs.tag+' · '+cs.meta+'</div>'
+      +'<h3>'+cs.title+'</h3>'
+      +'<p>'+cs.desc+'</p>'
+      +'<span class="fio-cs-link">View case study →</span>'
+      +'</div>';
+    grid.appendChild(a);
+  });
+  /* Scroll fade-in */
+  if('IntersectionObserver' in window){
+    var cards=grid.querySelectorAll('.fio-cs-card');
+    cards.forEach(function(c,i){
+      c.style.opacity='0';c.style.transform='translateY(20px)';
+      c.style.transition='opacity .45s ease '+(i*80)+'ms,transform .45s ease '+(i*80)+'ms';
+    });
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target);}
+      });
+    },{threshold:.1});
+    cards.forEach(function(c){obs.observe(c)});
+  }
+}();
+</script>
