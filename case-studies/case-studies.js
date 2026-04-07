@@ -609,3 +609,187 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+/* ═══════════════════════════════════════════════════════════════
+   case-studies.js
+   Renders cards + filter pills + dynamic count
+   Uses exact same HTML structure and classes
+   ═══════════════════════════════════════════════════════════════ */
+
+(function () {
+  "use strict";
+
+  let activeFilter = "all";
+
+  function getGrid() {
+    return document.getElementById("csh-grid");
+  }
+
+  function getCountEl() {
+    return document.getElementById("csh-count");
+  }
+
+  function getCards() {
+    return Array.isArray(window.CS_CARDS) ? window.CS_CARDS : [];
+  }
+
+  function getMetaIcon() {
+    return `
+      <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" clip-rule="evenodd"></path>
+      </svg>
+    `;
+  }
+
+  function getRoiIcon(type = "trend") {
+    if (type === "clock") {
+      return `
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.5 2.5a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd"></path>
+        </svg>
+      `;
+    }
+
+    return `
+      <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"></path>
+      </svg>
+    `;
+  }
+
+  function escapeHtml(str = "") {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function renderCard(card) {
+    return `
+      <a class="csh-card"
+         data-category="${escapeHtml(card.category || "")}"
+         href="${escapeHtml(card.href || "#")}"
+         target="_blank">
+
+        <div class="csh-card-banner ${escapeHtml(card.bannerClass || "")}">
+          <img
+            src="${escapeHtml(card.img || "")}"
+            alt="${escapeHtml(card.imgAlt || card.title || "Case Study")}"
+            class="csh-card-banner-img"
+            loading="lazy"
+          >
+          <span class="csh-card-tag">${card.tag || ""}</span>
+        </div>
+
+        <div class="csh-card-body">
+          <h3 class="csh-card-title">${card.title || ""}</h3>
+          <p class="csh-card-desc">${card.desc || ""}</p>
+
+          <div class="csh-card-footer">
+            <div class="csh-card-meta">
+              ${getMetaIcon()}
+              ${card.meta || ""}
+            </div>
+
+            <div class="csh-card-roi">
+              ${getRoiIcon(card.roiIcon)}
+              ${card.roi || ""}
+            </div>
+
+            <span class="csh-card-link">View &rarr;</span>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  function getFilteredCards() {
+    const cards = getCards();
+
+    if (activeFilter === "all") return cards;
+
+    return cards.filter(card => {
+      const category = String(card.category || "").toLowerCase();
+      return category.split(/\s+/).includes(activeFilter.toLowerCase());
+    });
+  }
+
+  function updateCount(count) {
+    const countEl = getCountEl();
+    if (!countEl) return;
+
+    countEl.innerHTML = `Showing <strong>${count}</strong> project${count === 1 ? "" : "s"}`;
+  }
+
+  function renderCards() {
+    const grid = getGrid();
+    if (!grid) {
+      console.error("❌ #csh-grid not found");
+      return;
+    }
+
+    const filteredCards = getFilteredCards();
+
+    grid.innerHTML = filteredCards.map(renderCard).join("");
+    updateCount(filteredCards.length);
+
+    console.log("✅ Cards rendered:", filteredCards.length, "Filter:", activeFilter);
+  }
+
+  function initFilters() {
+    const pills = document.querySelectorAll(".csh-pill");
+    if (!pills.length) return;
+
+    pills.forEach(btn => {
+      btn.addEventListener("click", function () {
+        pills.forEach(p => p.classList.remove("active"));
+        this.classList.add("active");
+
+        activeFilter = this.getAttribute("data-filter") || "all";
+        renderCards();
+      });
+    });
+  }
+
+  function initFAQ() {
+    const faqButtons = document.querySelectorAll(".csh-faq-q");
+    if (!faqButtons.length) return;
+
+    faqButtons.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", String(!expanded));
+
+        const answer = this.nextElementSibling;
+        if (answer) {
+          answer.style.maxHeight = expanded ? null : answer.scrollHeight + "px";
+        }
+
+        const icon = this.querySelector(".csh-faq-icon");
+        if (icon) icon.textContent = expanded ? "+" : "−";
+      });
+    });
+  }
+
+  function init() {
+    if (!Array.isArray(window.CS_CARDS)) {
+      console.error("❌ window.CS_CARDS not found");
+      return;
+    }
+
+    initFilters();
+    initFAQ();
+    renderCards();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+
+  // backup in case page-builder injects content later
+  window.addEventListener("load", init);
+})();
+

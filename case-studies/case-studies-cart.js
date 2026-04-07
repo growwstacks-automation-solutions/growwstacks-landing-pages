@@ -4,7 +4,7 @@
    Consumed by case-studies.js → renderCards()
    ═══════════════════════════════════════════════════════════════ */
 
-const CS_CARDS = [
+window.CS_CARDS = [
 
   /* ── 1 ── */
   {
