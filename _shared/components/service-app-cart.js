@@ -159,7 +159,7 @@ window.templateData = [
     description: "Automate Google Hangouts Chat workflows and data sync with Make.com.",
     image: "https://drive.google.com/file/d/1WLOFkUmohXnJNzl6-4QVCJMAiX1nmJJM/view?usp=drivesdk",
     makeUrl: "",
-    apps: ["Google Hangouts Chat"],
+    apps: ["Google Hangouts Chat","Go High Level "],
     driveUrl: "https://drive.google.com/file/d/1WLOFkUmohXnJNzl6-4QVCJMAiX1nmJJM/view?usp=drivesdk",
     displayTitle: "Google Hangouts Chat Integration | Make",
     fileId: "1WLOFkUmohXnJNzl6-4QVCJMAiX1nmJJM"
