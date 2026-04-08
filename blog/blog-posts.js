@@ -153,7 +153,7 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 {
-  title: "Boss Fired Me For Being "Too Efficient"... So I Took My Automation Code With Me",
+  title: "Boss Fired Me For Being Too Efficient... So I Took My Automation Code With Me",
   desc: "A data analyst shares how automating his job led to termination - and how he turned the tables when his former employer realized they couldn't function without his automation.",
   url: "/blog/boss-fired-me-for-being-too-efficient",
   tags: ["Automation","Workplace","Python"],
