@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Twitter/X Captions from Google Drive Images | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Turn images into viral-ready Twitter/X captions in seconds. This free n8n automation watches Google Drive, uploads to Cloudinary, and uses GPT-4o-mini to generate engaging captions, hashtags, and threads.">
+<link rel="canonical" href="https://growwstacks.com/workflows/4543-generate-twitterx-captions-from-google-drive-images-using-cloudinary-and-gpt-4o-mini/">
+<meta property="og:title" content="Generate Twitter/X Captions from Google Drive Images | Free n8n Template">
+<meta property="og:description" content="Turn images into viral-ready Twitter/X captions in seconds. This free n8n automation watches Google Drive, uploads to Cloudinary, and uses GPT-4o-mini to generate engaging captions, hashtags, and threads.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/4543-generate-twitterx-captions-from-google-drive-images-using-cloudinary-and-gpt-4o-mini/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7278-generate-twitterx-captions-from-google-drive-images-usi.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Generate Twitter/X Captions from Google Drive Images | Free n8n Template">
+<meta name="twitter:description" content="Turn images into viral-ready Twitter/X captions in seconds. This free n8n automation watches Google Drive, uploads to Cloudinary, and uses GPT-4o-mini to generate engaging captions, hashtags, and threads.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Generate Twitter/X Captions from Google Drive Images","description":"Turn images into viral-ready Twitter/X captions in seconds. This n8n automation watches Google Drive, uploads to Cloudinary, and uses GPT-4o-mini to generate engaging captions, hashtags, and threads.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7278-generate-twitterx-captions-from-google-drive-images-usi.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can AI help with social media content creation?","acceptedAnswer":{"@type":"Answer","text":"AI can analyze images, understand context, and generate engaging, platform-optimized captions, hashtags, and even full tweet threads in seconds. This saves hours of manual brainstorming and writing, ensuring your content is consistent, on-brand, and designed to boost engagement."}},{"@type":"Question","name":"What are the benefits of automating Twitter/X caption generation?","acceptedAnswer":{"@type":"Answer","text":"Automating caption generation saves significant time, maintains a consistent posting schedule, improves content quality with AI optimization, and allows social media managers to focus on strategy and community engagement instead of manual writing."}},{"@type":"Question","name":"How does integrating Google Drive with AI tools improve workflow?","acceptedAnswer":{"@type":"Answer","text":"Integrating Google Drive with AI tools like GPT-4o-mini creates a seamless pipeline. New images are automatically detected, processed, and turned into ready-to-publish content without any manual intervention, streamlining the entire content creation process from asset storage to social media posting."}},{"@type":"Question","name":"What makes a good Twitter/X caption for engagement?","acceptedAnswer":{"@type":"Answer","text":"A good caption is concise (under 280 characters), includes a clear hook, provides value or insight, uses relevant hashtags, mentions relevant accounts, suggests an action, and is formatted for readability. AI can be trained to generate captions that incorporate all these elements based on image analysis."}},{"@type":"Question","name":"Can automation handle different types of images for social media?","acceptedAnswer":{"@type":"Answer","text":"Yes, with multimodal AI like GPT-4o-mini, automation can analyze various image types—product photos, infographics, team pictures, event shots—and generate context-appropriate captions. The system can be configured with different tone guidelines for different image categories or brand voices."}},{"@type":"Question","name":"How do I ensure AI-generated content stays on-brand?","acceptedAnswer":{"@type":"Answer","text":"Provide clear brand guidelines, tone of voice examples, and key messaging points in your AI prompts. Use n8n to structure these guidelines into the automation workflow, ensuring every generated caption aligns with your brand's personality, values, and communication style."}},{"@type":"Question","name":"What other social media tasks can be automated with n8n?","acceptedAnswer":{"@type":"Answer","text":"Beyond caption generation, n8n can automate content scheduling, cross-posting across platforms, social listening and response, analytics reporting, lead generation from social interactions, community management tasks, and integrating social media data with your CRM or marketing tools."}},{"@type":"Question","name":"Can I get a custom social media automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom social media automation systems tailored to your specific brand, platforms, and workflow needs. We can create end-to-end automation that integrates all your tools, enforces brand guidelines, and scales with your content strategy."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Generate Twitter/X Captions from Google Drive Images"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Twitter/X Caption Automation</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Drive</span>
+          <span class="cs-tag">AI Content</span>
+          <span class="cs-tag">Twitter/X</span>
+          <span class="cs-tag">Cloudinary</span>
+          <span class="cs-tag">GPT-4o-mini</span>
+        </div>
+        <h1>Generate Twitter/X Captions from Google Drive Images</h1>
+        <p class="cs-hero-sub">Turn images into viral-ready social media content in seconds with AI-powered automation.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/7278-generate-twitterx-captions-from-google-drive-images-usi.png" alt="n8n workflow automation for generating Twitter/X captions from Google Drive images using Cloudinary and GPT-4o-mini" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Social media managers, content creators, and marketing teams spend hours brainstorming captions for images. This manual process slows down content calendars and creates inconsistency. This n8n automation solves that by turning image storage into a content creation pipeline.</p>
+        <p>Whenever you upload an image to a specific Google Drive folder, the workflow automatically detects it, uploads it to Cloudinary for hosting, analyzes it with Azure OpenAI's GPT-4o-mini, and generates a complete Twitter/X content package. You receive everything in a formatted email—ready to copy, paste, and publish.</p>
+        <p>The system creates more than just a caption. It produces headlines, primary tweets, mini-threads with hooks and insights, alt text for accessibility, suggested replies, optimized hashtags, relevant @mentions, and even ideal posting times. This transforms a simple image upload into a complete social media asset.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Image Detection & Download</h3>
+        <p>The workflow starts with a Google Drive Trigger node monitoring a designated folder. When a new image file appears, it instantly activates. A Google Drive node then downloads the file for processing, ensuring the original remains safe in your Drive.</p>
+        
+        <h3>2. Image Hosting & Analysis Preparation</h3>
+        <p>An HTTP Request node uploads the image to Cloudinary, creating a publicly accessible URL. This URL is crucial—it allows the AI to "see" and analyze the image content directly, rather than working with file data.</p>
+        
+        <h3>3. AI-Powered Content Generation</h3>
+        <p>The core magic happens with LangChain and Azure OpenAI's GPT-4o-mini. The AI receives the image URL along with detailed instructions about your brand voice and content goals. It analyzes the visual elements, context, and potential audience appeal.</p>
+        
+        <h3>4. Structured Content Creation</h3>
+        <p>The AI doesn't just write one caption. It follows a structured prompt to generate: a punchy headline (under 280 characters), a primary tweet, a 3-part mini-thread (hook → insight → action), descriptive alt text, suggested first-reply content, 10-12 relevant hashtags, recommended @mentions, and optimal posting times based on your timezone.</p>
+        
+        <h3>5. Delivery & Ready-to-Publish Formatting</h3>
+        <p>Finally, an SMTP node sends a professionally formatted HTML email containing all generated content, the analyzed image thumbnail, a visual summary, and feature notes. This delivers a complete content package to your inbox, organized for immediate use.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for social media managers handling multiple client accounts who need to maintain consistent posting schedules without sacrificing quality. Content creators and influencers can use it to quickly turn personal or professional photos into engaging threads. Marketing teams at small to medium businesses benefit by maintaining brand voice across posts while saving countless hours. Even agencies can white-label this system for client content creation services.</p>
+        <p>If you're posting regularly to Twitter/X, have a library of images in Google Drive, and want to increase your content output without increasing your workload, this workflow provides the infrastructure. It's particularly valuable for industries like e-commerce, travel, food, education, and tech where visual content drives engagement.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>n8n instance</strong> (cloud or self-hosted) with workflow execution capabilities.</li>
+          <li><strong>Google Drive account</strong> with API access enabled and a dedicated folder for content images.</li>
+          <li><strong>Cloudinary account</strong> for image hosting and URL generation (free tier available).</li>
+          <li><strong>Azure OpenAI API access</strong> with GPT-4o-mini model availability (or alternative OpenAI-compatible endpoint).</li>
+          <li><strong>SMTP email credentials</strong> for sending formatted content packages (Gmail, SendGrid, etc.).</li>
+          <li><strong>Basic understanding</strong> of n8n node configuration and API key management.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Before running the workflow at scale, test with a few images to fine-tune the AI prompt. Adjust the tone, length, and structure instructions to match your brand voice perfectly. Save this optimized prompt as a template for future workflows.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Importing and configuring this workflow takes about 15-20 minutes if you have your API credentials ready.</p>
+        <ol>
+          <li><strong>Download the template</strong> using the button above and import it into your n8n instance.</li>
+          <li><strong>Configure Google Drive nodes</strong> by connecting your account and specifying the folder ID to monitor.</li>
+          <li><strong>Set up Cloudinary credentials</strong> in the HTTP Request node with your cloud name, API key, and upload preset.</li>
+          <li><strong>Connect Azure OpenAI</strong> in the LangChain node with your endpoint, API key, and deployment name for GPT-4o-mini.</li>
+          <li><strong>Customize the AI prompt</strong> in the LangChain node—add your brand voice, content guidelines, and any specific hashtags or mentions.</li>
+          <li><strong>Configure SMTP email</strong> with your sender credentials and recipient email address for content delivery.</li>
+          <li><strong>Test the workflow</strong> by uploading an image to your designated Google Drive folder and checking your email for the generated content package.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 5-10 hours weekly on caption writing.</strong> What used to take 15-30 minutes per image now happens automatically in seconds. Reclaim that time for strategy, engagement, or creating more visual content.</p>
+        <p><strong>Boost engagement with AI-optimized content.</strong> The AI analyzes what works on Twitter/X—optimal length, hashtag relevance, thread structure—and applies those patterns to your specific images, increasing reach and interaction.</p>
+        <p><strong>Maintain consistent posting frequency.</strong> Never miss a posting opportunity because you're stuck writing captions. The automation ensures content is always ready when you have images available.</p>
+        <p><strong>Improve accessibility with auto-generated alt text.</strong> Every image gets descriptive alt text, making your content more inclusive and compliant with accessibility standards.</p>
+        <p><strong>Scale content creation without scaling your team.</strong> Handle twice the social media output with the same resources. Perfect for growing brands or agencies taking on more clients.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about social media automation and AI content generation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can AI help with social media content creation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI can analyze images, understand context, and generate engaging, platform-optimized captions, hashtags, and even full tweet threads in seconds. This saves hours of manual brainstorming and writing, ensuring your content is consistent, on-brand, and designed to boost engagement.</p>
+          <p>For example, an AI can look at a product photo and generate not just a description, but a compelling story about its use, benefits, and why it matters to your audience. It can identify visual elements and translate them into emotional hooks that resonate with followers.</p>
+          <ul>
+            <li>Transforms visual content into narrative content</li>
+            <li>Maintains consistent tone across all posts</li>
+            <li>Optimizes for platform-specific best practices</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating Twitter/X caption generation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating caption generation saves significant time, maintains a consistent posting schedule, improves content quality with AI optimization, and allows social media managers to focus on strategy and community engagement instead of manual writing.</p>
+          <p>Consider a small business owner who spends 30 minutes daily crafting posts. Automation reclaims that 15+ hours monthly for business development. The consistency also builds audience trust—followers know when to expect new content and what quality to anticipate.</p>
+          <ul>
+            <li>Eliminates creative burnout from daily writing</li>
+            <li>Ensures data-driven optimization of every post</li>
+            <li>Creates scalable content production systems</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does integrating Google Drive with AI tools improve workflow?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Integrating Google Drive with AI tools like GPT-4o-mini creates a seamless pipeline. New images are automatically detected, processed, and turned into ready-to-publish content without any manual intervention, streamlining the entire content creation process from asset storage to social media posting.</p>
+          <p>This integration turns Google Drive from passive storage into an active content engine. Marketing teams can simply drop campaign images into a folder, and within minutes receive complete social media packages—no file transfers, no manual uploads to different platforms, no context switching between tools.</p>
+          <ul>
+            <li>Creates a closed-loop content production system</li>
+            <li>Reduces manual steps from 5-6 to zero</li>
+            <li>Ensures no visual asset goes unused</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What makes a good Twitter/X caption for engagement?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>A good caption is concise (under 280 characters), includes a clear hook, provides value or insight, uses relevant hashtags, mentions relevant accounts, suggests an action, and is formatted for readability. AI can be trained to generate captions that incorporate all these elements based on image analysis.</p>
+          <p>The best captions tell a micro-story. For a restaurant photo, instead of "Our new dish," try "The 47-hour process behind our signature pasta—why the extra day of aging makes all the difference." This provides value (education) while showcasing the product.</p>
+          <ul>
+            <li>Hook readers in the first 3-5 words</li>
+            <li>Include 2-3 specific, niche hashtags</li>
+            <li>End with a question or call-to-action</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can automation handle different types of images for social media?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, with multimodal AI like GPT-4o-mini, automation can analyze various image types—product photos, infographics, team pictures, event shots—and generate context-appropriate captions. The system can be configured with different tone guidelines for different image categories or brand voices.</p>
+          <p>You can create conditional logic in n8n: if an image contains people, use a conversational tone; if it's a data visualization, focus on insights; if it's a product, highlight features and benefits. The AI adapts its output based on both visual analysis and your predefined rules.</p>
+          <ul>
+            <li>Configure different prompts for different content categories</li>
+            <li>Use image metadata or folder location to determine tone</li>
+            <li>Maintain brand consistency across diverse content types</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I ensure AI-generated content stays on-brand?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Provide clear brand guidelines, tone of voice examples, and key messaging points in your AI prompts. Use n8n to structure these guidelines into the automation workflow, ensuring every generated caption aligns with your brand's personality, values, and communication style.</p>
+          <p>Create a "brand bible" section in your prompt with specific examples: "Always use active voice," "Include one emoji maximum," "Reference our core values of sustainability and innovation," "Avoid jargon—explain concepts simply." The AI will internalize these rules across all generated content.</p>
+          <ul>
+            <li>Include 3-5 sample captions as reference in prompts</li>
+            <li>List prohibited words or phrases</li>
+            <li>Specify formatting preferences (hashtag placement, line breaks)</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What other social media tasks can be automated with n8n?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Beyond caption generation, n8n can automate content scheduling, cross-posting across platforms, social listening and response, analytics reporting, lead generation from social interactions, community management tasks, and integrating social media data with your CRM or marketing tools.</p>
+          <p>Imagine automatically adding Twitter followers who mention specific keywords to your email list, or creating support tickets from social media complaints, or generating weekly performance reports that combine data from Twitter, LinkedIn, and Instagram. n8n connects all these systems without coding.</p>
+          <ul>
+            <li>Automate competitor monitoring and analysis</li>
+            <li>Sync social engagements with your CRM</li>
+            <li>Generate automated responses for common questions</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom social media automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom social media automation systems tailored to your specific brand, platforms, and workflow needs. We can create end-to-end automation that integrates all your tools, enforces brand guidelines, and scales with your content strategy.</p>
+          <p>Our team works with you to understand your content calendar, team structure, brand voice, and goals. We then design and implement automation that fits seamlessly into your existing processes, often connecting 5-10 different tools you already use into a cohesive, time-saving system.</p>
+          <ul>
+            <li>Custom AI prompt engineering for your brand voice</li>
+            <li>Integration with your specific tech stack</li>
+            <li>Ongoing optimization based on performance data</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Social Media Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

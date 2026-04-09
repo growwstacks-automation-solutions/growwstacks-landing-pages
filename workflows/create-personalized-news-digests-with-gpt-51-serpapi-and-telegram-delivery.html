@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Personalized News Digests with GPT-5.1, SerpAPI & Telegram | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate your daily news briefing. This free n8n workflow uses AI to fetch, filter, and deliver personalized news digests via Telegram, saving you hours of manual research.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7231-create-personalized-news-digests-with-gpt-51-serpapi-and-telegram-delivery/">
+<meta property="og:title" content="AI-Powered News Digest Automation with n8n">
+<meta property="og:description" content="Free n8n template to automate personalized news curation using GPT-5.1, SerpAPI, and Telegram delivery.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7231-create-personalized-news-digests-with-gpt-51-serpapi-and-telegram-delivery/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11425-create-personalized-news-digests-with-gpt-51-serpapi-a.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-Powered News Digest Automation with n8n">
+<meta name="twitter:description" content="Free n8n template to automate personalized news curation using GPT-5.1, SerpAPI, and Telegram delivery.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Personalized News Digest Automation","description":"Automate your daily news briefing. This free n8n workflow uses AI to fetch, filter, and deliver personalized news digests via Telegram, saving you hours of manual research.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11425-create-personalized-news-digests-with-gpt-51-serpapi-a.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can AI help with staying updated on industry news?","acceptedAnswer":{"@type":"Answer","text":"AI can filter through massive amounts of daily news, identify what's truly relevant to your specific interests, and summarize key points. This saves hours of manual reading and ensures you never miss important developments in fast-moving fields like AI, tech, or finance."}},{"@type":"Question","name":"What are the benefits of automating a personalized news digest?","acceptedAnswer":{"@type":"Answer","text":"Automating a news digest saves 5-10 hours per week on manual research, reduces information overload by filtering out noise, delivers insights at optimal times, and ensures consistent, high-quality updates tailored to your exact business needs and interests."}},{"@type":"Question","name":"How does SerpAPI integration improve news gathering?","acceptedAnswer":{"@type":"Answer","text":"SerpAPI provides real-time access to search engine results and news sources without rate limiting or delays. It fetches fresh, relevant articles from multiple sources, giving your AI agent rich data to analyze and curate, unlike static RSS feeds or delayed news APIs."}},{"@type":"Question","name":"Why use Telegram for delivering automated news updates?","acceptedAnswer":{"@type":"Answer","text":"Telegram offers instant delivery, rich formatting options, and works seamlessly across all devices. It's perfect for brief, digestible updates that you can read quickly, plus it supports bots for interactive features like feedback buttons or topic preferences."}},{"@type":"Question","name":"What makes GPT-5.1 better for content curation than previous models?","acceptedAnswer":{"@type":"Answer","text":"GPT-5.1 has improved reasoning, better context understanding, and more accurate judgment on relevance and quality. It can evaluate whether news is worth sending based on multiple criteria, not just keyword matching, resulting in higher-quality, more valuable digests."}},{"@type":"Question","name":"How do businesses use automated news monitoring for competitive advantage?","acceptedAnswer":{"@type":"Answer","text":"Businesses use automated news monitoring to track competitors, spot market trends early, identify partnership opportunities, monitor brand mentions, and stay ahead of regulatory changes—all without manual effort, giving them faster response times and strategic insights."}},{"@type":"Question","name":"Can I customize this workflow for different industries or topics?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can easily modify the topics, sources, frequency, and delivery channels. The workflow is modular—swap SerpAPI for other news sources, change the AI criteria, or deliver via email/Slack instead of Telegram to match any industry or personal preference."}},{"@type":"Question","name":"Can I get a custom news monitoring automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored news monitoring and intelligence automation systems. We can integrate your specific data sources, apply custom filtering logic, create multi-channel delivery, and add features like sentiment analysis or trend alerts."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Personalized News Digest Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Personalized News Digest Automation</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">AI Automation</span>
+          <span class="cs-tag">News Monitoring</span>
+          <span class="cs-tag">Telegram</span>
+          <span class="cs-tag">GPT-5.1</span>
+          <span class="cs-tag">SerpAPI</span>
+        </div>
+        <h1>Automate Your Personalized News Digest with AI</h1>
+        <p class="cs-hero-sub">Free n8n template that uses GPT-5.1 and SerpAPI to fetch, filter, and deliver curated news updates via Telegram—saving hours of manual research.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11425-create-personalized-news-digests-with-gpt-51-serpapi-a.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11425-create-personalized-news-digests-with-gpt-51-serpapi-a.png" alt="AI news digest automation workflow diagram showing GPT-5.1, SerpAPI, and Telegram integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Staying current with fast-moving topics like AI, machine learning, or your specific industry is overwhelming. You either drown in daily noise or miss crucial developments between weekly digests. This AI News Agent workflow solves that by delivering a curated newsletter <strong>only when there's genuinely relevant news</strong>—not on a fixed schedule that often sends fluff or misses timing.</p>
+        <p>The system acts as your personal editorial assistant. It fetches fresh news twice daily, uses AI to evaluate whether the content is worth sending, enriches articles with additional context, and delivers a clean, formatted digest via Telegram. It remembers what it has sent previously to avoid repetition and respects your configured frequency preferences.</p>
+        <p>This transforms news consumption from a time-consuming chore into an efficient, value-driven process. You get signal without noise, insights without effort, and stay informed without being overwhelmed.</p>
+
+        <h2>How It Works</h2>
+        <p>The workflow is organized into five intelligent stages that mimic how a human editor would curate content, but with automation scale and consistency.</p>
+
+        <h3>Stage 1: Schedule & Configuration</h3>
+        <p>A schedule trigger runs the workflow twice daily (configurable). A Set node defines your topics, output language, and frequency guardrails—minimum and maximum days between sends. This ensures the system checks regularly but only interrupts you when it has something valuable.</p>
+
+        <h3>Stage 2: Fetch & Store News</h3>
+        <p>The workflow splits your topics into individual queries and uses SerpAPI's DuckDuckGo News engine to fetch real-time articles. Each article is stored in a persistent data table with automatic deduplication, creating a searchable history of all discovered content.</p>
+
+        <h3>Stage 3: Filtering & Frequency Guardrails</h3>
+        <p>This is where the system gets smart. It retrieves your last newsletter timestamp, filters out articles published before that date, and checks if you're still within your minimum days-between-sends window. If it's too soon, the workflow stops gracefully—no unnecessary processing.</p>
+
+        <h3>Stage 4: AI Editorial Decision</h3>
+        <p>The core intelligence. GPT-5.1 evaluates today's filtered articles against your previous newsletters and a comprehensive set of editorial criteria: relevance, novelty, informational value, and duplication. It decides whether to send and selects the top 3-5 articles. A fallback rule ensures you get at least something if it's been too long since your last update.</p>
+
+        <h3>Stage 5: Content Enrichment & Delivery</h3>
+        <p>Selected articles are enriched using Tavily web search for fact-checking and additional context. The AI rewrites titles and summaries for clarity and impact. Finally, a formatted newsletter is sent to your Telegram chat or channel, and the content is stored for future deduplication.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is perfect for professionals, executives, researchers, and businesses who need to stay informed but don't have hours to spend reading daily. <strong>Marketing teams</strong> tracking industry trends, <strong>investors</strong> monitoring sectors, <strong>founders</strong> keeping up with competitor moves, <strong>consultants</strong> staying current for clients, and <strong>any knowledge worker</strong> who values being informed without the time sink.</p>
+        <p>It's particularly valuable for fast-moving fields where being a week behind means missing opportunities—AI development, cryptocurrency, regulatory changes, or emerging technologies. If you've ever wished for a "personal news assistant" that learns what matters to you, this workflow delivers exactly that.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>SerpAPI Key</strong> – Free tier offers 250 searches/month, perfect for personal use.</li>
+          <li><strong>Tavily API Key</strong> – Generous free tier for web search and fact-checking.</li>
+          <li><strong>OpenAI API Key</strong> – Required for GPT-5.1's editorial decisions and content enrichment.</li>
+          <li><strong>Telegram Bot & Chat ID</strong> – Free setup via BotFather; works for personal chats or channels.</li>
+          <li><strong>n8n Instance</strong> – Self-hosted or cloud version to run the workflow.</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li><strong>Download the template</strong> using the button above and import it into your n8n instance.</li>
+          <li><strong>Configure credentials</strong> for SerpAPI, Tavily, OpenAI, and Telegram in n8n's credential management.</li>
+          <li><strong>Edit the "Set topics and language" node</strong> with your interests, preferred language, and frequency preferences.</li>
+          <li><strong>Update the Telegram node</strong> with your chat or channel ID for delivery.</li>
+          <li><strong>Adjust the schedule trigger</strong> if you prefer different check-in times than the default 9 AM and 5 PM.</li>
+          <li><strong>Activate the workflow</strong> and let it run for a few days to build up its memory of what it has sent.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with broad topics (like "AI" or "your industry") and narrow down based on what the AI selects. The system will show you what it considers valuable, helping you refine your interests over time.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Saves 5-10 hours weekly</strong> on manual news scanning and reading. Instead of browsing multiple sources, you get one curated digest with only what matters.</p>
+        <p><strong>Eliminates FOMO without overload</strong> by using AI judgment rather than human fatigue or bias to determine what's truly worth your attention.</p>
+        <p><strong>Improves decision timing</strong> because you learn about developments when they happen, not days later when weekly digests arrive or you finally catch up on reading.</p>
+        <p><strong>Creates a searchable knowledge base</strong> of all articles the system has ever found, organized by topic and date—perfect for retrospective analysis or research.</p>
+        <p><strong>Fully customizable and extensible</strong>—add new sources, change delivery channels, modify AI criteria, or integrate with other systems like your CRM or note-taking apps.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about AI news monitoring and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can AI help with staying updated on industry news?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI can filter through massive amounts of daily news, identify what's truly relevant to your specific interests, and summarize key points. This saves hours of manual reading and ensures you never miss important developments in fast-moving fields like AI, tech, or finance.</p>
+          <p>Unlike human readers who get fatigued or biased, AI applies consistent criteria across all articles. It can spot patterns, connections, and implications that might be missed, turning raw information into actionable intelligence tailored to your business context.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating a personalized news digest?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating a news digest saves 5-10 hours per week on manual research, reduces information overload by filtering out noise, delivers insights at optimal times, and ensures consistent, high-quality updates tailored to your exact business needs and interests.</p>
+          <p>The system works while you sleep or focus on other tasks, scanning sources you might not even know about. It creates a competitive advantage through better information timing and frees up mental bandwidth for decision-making rather than information gathering.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does SerpAPI integration improve news gathering?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>SerpAPI provides real-time access to search engine results and news sources without rate limiting or delays. It fetches fresh, relevant articles from multiple sources, giving your AI agent rich data to analyze and curate, unlike static RSS feeds or delayed news APIs.</p>
+          <p>This means your digest includes breaking news and emerging stories, not just content from publishers with API partnerships. The diversity of sources leads to more comprehensive coverage and reduces blind spots in your industry monitoring.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why use Telegram for delivering automated news updates?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Telegram offers instant delivery, rich formatting options, and works seamlessly across all devices. It's perfect for brief, digestible updates that you can read quickly, plus it supports bots for interactive features like feedback buttons or topic preferences.</p>
+          <p>Unlike email that gets buried or Slack that requires constant context switching, Telegram provides a dedicated, low-friction channel for important updates. You can read when convenient, archive for reference, or forward to team members with one tap.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What makes GPT-5.1 better for content curation than previous models?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>GPT-5.1 has improved reasoning, better context understanding, and more accurate judgment on relevance and quality. It can evaluate whether news is worth sending based on multiple criteria, not just keyword matching, resulting in higher-quality, more valuable digests.</p>
+          <p>The model understands nuance, recognizes when different articles cover the same story, and can identify truly novel developments versus rehashed content. This editorial sophistication is what separates a useful digest from a simple news aggregator.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do businesses use automated news monitoring for competitive advantage?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Businesses use automated news monitoring to track competitors, spot market trends early, identify partnership opportunities, monitor brand mentions, and stay ahead of regulatory changes—all without manual effort, giving them faster response times and strategic insights.</p>
+          <p>This transforms news from background noise into a strategic asset. Teams can proactively address issues, capitalize on opportunities, and make data-driven decisions based on comprehensive market intelligence that would be impossible to gather manually at scale.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize this workflow for different industries or topics?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, you can easily modify the topics, sources, frequency, and delivery channels. The workflow is modular—swap SerpAPI for other news sources, change the AI criteria, or deliver via email/Slack instead of Telegram to match any industry or personal preference.</p>
+          <p>The template is designed for extension. Add sentiment analysis, competitor tracking, automatic saving to databases, or integration with your CRM. The core logic remains the same while the specifics adapt to your exact use case.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom news monitoring automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored news monitoring and intelligence automation systems. We can integrate your specific data sources, apply custom filtering logic, create multi-channel delivery, and add features like sentiment analysis or trend alerts.</p>
+          <p>Our team works with you to understand your information needs, competitive landscape, and decision-making processes. We then design and implement a system that delivers exactly the intelligence you need, when you need it, in the format that works best for your team.</p>
+          <ul>
+            <li>Integration with proprietary data sources and internal systems</li>
+            <li>Custom AI training for your industry terminology and priorities</li>
+            <li>Multi-user dashboards with role-based access and alerts</li>
+            <li>Regular optimization based on usage feedback and changing needs</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom News Monitoring Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
