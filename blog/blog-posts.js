@@ -1,5 +1,482 @@
 const BLOG_POSTS = [
 {
+  title: "How AI Teammates Like Ava Are Transforming Revenue Workflows in",
+  desc: "Discover how AI sales teammates like Ava are solving the biggest challenges in modern revenue workflows - from call preparation to real-time deal coaching and post-call follow-ups.",
+  url: "/blog/ai-teammates-revenue-workflow",
+  tags: ["AI Agents","Sales","CRM"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "OpenClaw + Qwen 3.5: The Ultimate Free AI Automation Stack for Businesses",
+  desc: "Discover how OpenClaw's local-first AI assistant combined with Qwen 3.5's 1M token context creates a powerful free automation stack that keeps your data private while handling complex business tasks.",
+  url: "/blog/openclaw-qwen-3-5-free-ai-automation",
+  tags: ["AI Agents","Local AI","Automation"],
+  date: "2026-02-20",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "Did My Claude Code AI Agent Automate a Six Figure Accounting Job?",
+  desc: "Watch as an AI agent autonomously processes invoices from Gmail, creates accounting entries, and sends client communications - potentially automating a $100k/year accounting role.",
+  url: "/blog/claude-ai-agent-automates-accounting",
+  tags: ["AI Agents","Accounting","Automation"],
+  date: "2026-02-17",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How Legora Built the Legal AI Operating System with Anthropic's Claude",
+  desc: "Legora CEO Max Junestrand reveals how they transformed Claude into an enterprise-grade legal OS - solving security, compliance and workflow challenges most firms struggle with.",
+  url: "/blog/legora-legal-ai-operating-system-anthropic-claude",
+  tags: ["AI Agents","Legal","Compliance"],
+  date: "2026-02-19",
+  readTime: 11,
+  target: "_blank"
+},
+{
+  title: "How Warp's Oz Platform Just Changed Cloud Agents Forever",
+  desc: "Discover how Warp's Oz platform enables autonomous cloud agents that generate weekly digests, validate PRs, and run scheduled workflows without manual intervention - all while you focus on building.",
+  url: "/blog/how-warp-oz-changed-cloud-agents",
+  tags: ["AI Agents","Cloud Automation","Warp"],
+  date: "2026-02-18",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How to Build Premium Shopify Stores in Minutes Using Claude AI",
+  desc: "Discover how to leverage Claude AI to create custom, premium Shopify stores in record time - complete with branded designs, product pages, and mobile optimization without coding expertise.",
+  url: "/blog/build-premium-shopify-stores-with-claude",
+  tags: ["Shopify","AI Agents","eCommerce"],
+  date: "2026-02-18",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How to Build a Claude AI Agent in Under 13 Minutes (Complete Guide)",
+  desc: "Discover how to create specialized Claude AI agents that autonomously fix bugs, design UI, and handle complex tasks while preserving your main chat context. Includes step-by-step demo.",
+  url: "/blog/how-to-build-claude-ai-agent",
+  tags: ["AI Agents","Claude","Automation"],
+  date: "2026-02-17",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "From Scraped Lead to Personalized Landing Page in One Click with Claude Code",
+  desc: "Discover how to automatically scrape thousands of leads, enrich their LinkedIn profiles, and generate personalized landing pages - all with a single Claude Code prompt. Perfect for real estate agents and sales teams.",
+  url: "/blog/scraped-lead-to-personalized-landpage-claude-code",
+  tags: ["AI Agents","Lead Generation","Claude"],
+  date: "2026-02-20",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Design, Deploy and Scale AI Agents That Transform Customer Experience",
+  desc: "Discover how Parloa and IBEX help businesses implement AI agents that reduce costs while improving customer satisfaction. Learn the framework for successful AI agent deployment at scale.",
+  url: "/blog/design-deploy-scale-ai-agents",
+  tags: ["AI Agents","Voice AI","Customer Experience"],
+  date: "2026-02-17",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "OpenClaw + MiniMax M2.5: The Game-Changing AI Agent Stack That Costs 20x Less",
+  desc: "Discover how the OpenClaw open-source AI agent framework combined with MiniMax M2.5's breakthrough performance can automate your entire business at 1/20th the cost of premium models like Claude Opus.",
+  url: "/blog/openclaw-minimax-m2-5-ai-agent-stack",
+  tags: ["AI Agents","Automation","Open Source"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Breaking Through the Complexity Wall with AI Teammates: How BrightLink is Transforming Credentialing",
+  desc: "Discover how BrightLink's AI teammates Rosie and Scout are helping credentialing programs overcome operational complexity by automating policy research, candidate communications, and data analysis at scale.",
+  url: "/blog/breaking-through-complexity-wall-with-ai-teammates",
+  tags: ["AI Agents","Credentialing","Automation"],
+  date: "2026-02-20",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "From FileMaker to AI-Powered Web App: How Claude Code Can Transform Legacy Systems",
+  desc: "Migrate your FileMaker database to a modern web app with AI capabilities using Claude Code. See how this powerful tool analyzes DDR files and generates migration plans automatically.",
+  url: "/blog/filemaker-to-web-app-with-claude-code",
+  tags: ["AI Agents","Legacy Migration","Claude Code"],
+  date: "2026-02-19",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "21 Claude Skills That Will 10X Your Workflow (Coding, SEO, Automation & More!)",
+  desc: "Discover how Claude Skills can revolutionize your coding, SEO, automation and content workflows with these 21 powerful implementations - from automated documentation to AI-powered pitch decks.",
+  url: "/blog/21-claude-skills-workflow-automation",
+  tags: ["AI Agents","Automation","Productivity"],
+  date: "2026-02-18",
+  readTime: 13,
+  target: "_blank"
+},
+{
+  title: "Context Engineering Explained: How to Build Reliable AI Agents",
+  desc: "Discover the art and science of context engineering for AI agents. Learn techniques to optimize memory, prevent context poisoning, and maintain high signal-to-noise ratios in your AI systems.",
+  url: "/blog/context-engineering-explained-how-to-build-reliable-ai-agents",
+  tags: ["AI Agents","LLM","Context Engineering"],
+  date: "2026-02-19",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "Master AI Agents: RAG, LangChain, LangGraph & MCP Explained",
+  desc: "Discover how to build intelligent AI agents from scratch using RAG, LangChain, and LangGraph. Learn to overcome LLM limitations and create systems that understand your business data.",
+  url: "/blog/master-ai-agents-rag-langchain-langgraph-mcp-explained",
+  tags: ["AI Agents","LangChain","RAG"],
+  date: "2026-02-18",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How to Automate Booking Notifications from OnceHub to Google Sheets with Zapier",
+  desc: "Stop manually transferring booking details from OnceHub to spreadsheets. This Zapier integration automatically captures new bookings and logs them in Google Sheets with all contact details.",
+  url: "/blog/how-to-setup-zapier-triggers-in-oncehub-booking-scheduled",
+  tags: ["Zapier","Automation","Google Sheets"],
+  date: "2026-02-11",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "How to Connect WordPress to Codex (Complete Setup Guide)",
+  desc: "Automate WordPress content creation by connecting Codex AI to your site. This setup lets you generate and publish articles automatically without manual intervention.",
+  url: "/blog/how-to-connect-wordpress-to-codex",
+  tags: ["AI Agents","WordPress","Content Automation"],
+  date: "2026-02-20",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "Automate Keyword Research with Claude AI: Build a 3D Keyword Visualization Tool",
+  desc: "Stop wasting hours on manual keyword research. This Claude AI-powered tool automatically discovers parent/child keyword relationships and visualizes them in an interactive 3D graph.",
+  url: "/blog/automate-keyword-research-claude-ai",
+  tags: ["AI Agents","Keyword Research","Python"],
+  date: "2026-02-18",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "Anthropic Just Killed Tool Calling - Here's What You Need to Know",
+  desc: "Anthropic's latest release introduces programmatic tool calling - a game-changing approach that reduces token costs by up to 80% while improving agent accuracy. Learn how this fundamentally changes AI agent architecture.",
+  url: "/blog/anthropic-killed-tool-calling",
+  tags: ["AI Agents","LLM","Anthropic"],
+  date: "2026-02-18",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Build a Sales Outreach AI Agent That Knows When to Book a Meeting",
+  desc: "Automate lead qualification, personalized outreach, and meeting scheduling with a Make.com AI agent that researches leads, drafts emails, and proposes times based on your actual calendar availability.",
+  url: "/blog/build-sales-outreach-ai-agent",
+  tags: ["Make.com","AI Agents","Sales"],
+  date: "2026-02-11",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "ORMCP & The Future of Agentic AI: How to Bridge the 'SQL Wall' Without Writing a Single Line of Code",
+  desc: "Discover how ORMCP is revolutionizing AI-database interactions by eliminating manual SQL writing, reducing costs by 68%, and preventing dangerous data leaks - all while automatically reverse-engineering your database structure.",
+  url: "/blog/ormcp-agentic-ai-bridge-sql-wall",
+  tags: ["AI Agents","Database Automation","ORMCP"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Why Every Serious AI App Will Use MCP (Model Context Protocol)",
+  desc: "MCP is revolutionizing AI infrastructure by standardizing how agents interact with tools. Learn why this protocol gained rapid adoption from OpenAI, Google, and Microsoft - and how it solves the N+M integration problem.",
+  url: "/blog/why-every-serious-ai-app-will-use-mcp",
+  tags: ["AI Agents","MCP","AI Infrastructure"],
+  date: "2026-02-19",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "How Autonomous AI Agents Can Build Your Next SaaS Product While You Sleep",
+  desc: "Discover how combining OpenClaw's agent orchestration with BMAD's structured software engineering method creates AI agents that code, commit, and deploy SaaS applications autonomously overnight.",
+  url: "/blog/openclaw-bmad-autonomous-ai-coding-agents",
+  tags: ["AI Agents","Software Development","SaaS"],
+  date: "2026-02-19",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Give Claude AI Access To Your Local Files (No Code Guide)",
+  desc: "Learn how to grant Claude AI direct access to your computer's files and folders without writing any code. This guide shows you how to set up MCP servers to automate file organization and management.",
+  url: "/blog/give-claude-ai-access-to-local-files",
+  tags: ["AI Agents","Productivity","Claude AI"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Claude Sonnet 4.6 vs Opus: The Cost-Effective AI Breakthrough for Business Automation",
+  desc: "Discover why Claude Sonnet 4.6 delivers 95-98% of Opus's capabilities at 1/5th the cost - and which business automation tasks it performs better than the premium model.",
+  url: "/blog/claude-sonnet-4-6-vs-opus-business-automation",
+  tags: ["AI Agents","Business Automation","Claude AI"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Google Just Solved The Greatest Limitation of AI Agents",
+  desc: "Google and Microsoft's WebMCP protocol fundamentally changes how AI agents interact with websites by making sites declare their available actions as tools rather than forcing agents to guess. This eliminates the biggest bottleneck in agent reliability.",
+  url: "/blog/google-solved-ai-agent-limitation-web-mcp",
+  tags: ["AI Agents","Web Development","Google"],
+  date: "2026-02-19",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "10 Claude Code Tips for Non-Developers (No Terminal Needed)",
+  desc: "Discover how non-technical users can leverage Claude Code's AI capabilities without writing a single line of code or touching the terminal. Learn 10 actionable tips to automate workflows, create agents, and boost productivity.",
+  url: "/blog/claude-code-tips-for-non-developers",
+  tags: ["AI Agents","Productivity","No-Code"],
+  date: "2026-02-19",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "I Built an AI Lead Generator with Claude Code - 20 Qualified Leads Every Morning",
+  desc: "Discover how we automated lead generation to consistently deliver 20+ qualified leads daily using Claude Code, without writing a single line of code ourselves. Learn the exact system we built to remove friction from cold outreach.",
+  url: "/blog/ai-lead-generator-with-claude-code",
+  tags: ["AI Agents","Lead Generation","Automation"],
+  date: "2026-02-19",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "OpenAI's Production Blueprint: 5 Secrets to Enterprise-Grade AI Agents",
+  desc: "Discover the architectural secrets behind OpenAI's production-ready AI agents that handle 7M tokens per workflow while maintaining compliance and reliability. Learn how enterprises like Cisco and Virgin Atlantic scaled AI beyond pilot projects.",
+  url: "/blog/openai-production-blueprint-enterprise-ai-agents",
+  tags: ["AI Agents","ChatGPT","Codex"],
+  date: "2026-02-20",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How OpenAI Codex CLI Gives Enterprise Teams a 30% Productivity Boost",
+  desc: "Enterprise engineering teams lose weeks annually to boilerplate code, context switching, and documentation hunting. OpenAI Codex CLI cuts this drag by putting AI assistance directly in developers' terminals - with measurable impact on cycle time and defect rates.",
+  url: "/blog/openai-codex-cli-enterprise-productivity",
+  tags: ["AI Agents","Productivity","Enterprise"],
+  date: "2026-02-19",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How Claude's New Playground Plugin Lets You Build Interactive Tools Without Coding",
+  desc: "Anthropic's new Claude Playground plugin generates custom HTML interfaces with sliders, buttons and visual controls - all from natural language prompts. No coding required.",
+  url: "/blog/claude-playground-plugin-interactive-tools",
+  tags: ["AI Agents","Claude","Productivity"],
+  date: "2026-02-17",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Claude Code Just Replaced the Need for a Content Designer - Here's How",
+  desc: "Discover how to train Claude Code to autonomously create thumbnails, carousels, and documents for your social media - eliminating manual design work and saving hours per week.",
+  url: "/blog/claude-code-replaces-content-designer",
+  tags: ["AI Agents","Social Media","Content Creation"],
+  date: "2026-02-17",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "Talk to Your WooCommerce Data: How Claude AI Generates Full Store Reports Instantly",
+  desc: "Stop digging through spreadsheets — now you can ask Claude AI for a complete WooCommerce performance report in plain English. Get sales trends, top products, regional revenue, and strategic recommendations in minutes.",
+  url: "/blog/woocommerce-claude-ai-store-analytics",
+  tags: ["AI Agents","WooCommerce","Analytics"],
+  date: "2026-02-19",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "The Emergent Magic of Claude Code Agent Teams: How AI Collaboration Outperforms Individuals",
+  desc: "Discover how Claude's agent teams demonstrate emergent behavior where the collective output surpasses individual capabilities, with real-world examples from naming and branding projects.",
+  url: "/blog/claude-code-agent-teams-emergent-ai",
+  tags: ["AI Agents","Claude","Emergent Behavior"],
+  date: "2026-02-20",
+  readTime: 14,
+  target: "_blank"
+},
+{
+  title: "How to Cut AI Costs by 90% While Boosting Accuracy — Agent Skills Explained",
+  desc: "Stop wasting tokens on bloated prompts. Learn how progressive disclosure in AI agent skills can slash your LLM costs while improving output quality across Claude, OpenAI, and VS Code.",
+  url: "/blog/ai-agent-skills-claude-code",
+  tags: ["AI Agents","Claude","Productivity"],
+  date: "2026-02-19",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Build an Enterprise-Grade n8n Dashboard with Real-Time Monitoring",
+  desc: "Discover how to create a powerful monitoring dashboard for n8n workflows that tracks executions, failures, and costs in real-time - perfect for enterprise automation needs.",
+  url: "/blog/n8n-enterprise-dashboard-real-time-monitoring",
+  tags: ["n8n","Workflow","Make.com"],
+  date: "2026-02-11",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "Claude Code + Amazon Bedrock: Build Your First Project in 10 Minutes 🔧",
+  desc: "Go from zero to working CLI app in minutes using Claude Code with Amazon Bedrock. Learn the complete workflow most tutorials skip - including enterprise-ready AWS setup.",
+  url: "/blog/claude-code-amazon-bedrock-build-first-project",
+  tags: ["AI Agents","Amazon Bedrock","CLI Tools"],
+  date: "2026-02-20",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Close Clients with Just 10 Cold Emails Using OpenClaw AI",
+  desc: "Discover the exact OpenClaw framework that converts 10 cold emails into paying clients - including the API connections, email templates, and positioning strategy that works for Inc. 5000 companies.",
+  url: "/blog/how-to-close-clients-with-10-cold-emails-openclaw",
+  tags: ["AI Agents","Cold Outreach","Sales"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "5 Proven Ways to Optimize Token Usage in Claude Code (Save Money & Boost Results)",
+  desc: "Learn expert techniques to reduce Claude token consumption without sacrificing output quality. Discover how to strategically manage context, be more precise with prompts, batch tasks efficiently, and optimize MCP usage.",
+  url: "/blog/how-to-optimize-token-usage-in-claude-code",
+  tags: ["AI Agents","Productivity"],
+  date: "2026-02-20",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "10 Expert Strategies to Slash MCP Token Bloat and Cut AI Costs by 60%",
+  desc: "Discover how leading AI teams are solving the MCP scaling nightmare - from minimal schemas to semantic routing - and cutting token usage by 30-60% while improving agent performance.",
+  url: "/blog/reduce-mcp-token-bloat",
+  tags: ["AI Agents","MCP","LLM Optimization"],
+  date: "2026-02-18",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How I Automated YouTube Content Research With Zero Coding (Claude AI Tutorial)",
+  desc: "Struggling to know what YouTube content to create? This Claude AI workflow analyzes trends in your niche and delivers weekly reports - no coding required.",
+  url: "/blog/automate-youtube-content-research-claude-ai",
+  tags: ["AI Agents","YouTube","Content Marketing"],
+  date: "2026-02-19",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How We Built an AI-Powered Sales Assistant That Handles Voice Requests, Recommendations, and Quotes",
+  desc: "See how we transformed a FileMaker database into an AI web app that processes voice requests, generates product recommendations, and creates quotes with discounts — all without switching screens.",
+  url: "/blog/filemaker-to-ai-web-app-part3",
+  tags: ["AI Agents","Sales Automation","Voice AI"],
+  date: "2026-02-19",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Claude Code for Beginners: Build Your First App Without Writing Code",
+  desc: "Discover how Claude Code lets non-developers create production-ready applications using plain English. This beginner-friendly guide walks through setup and building a real-world project step-by-step.",
+  url: "/blog/claude-code-beginners-guide",
+  tags: ["AI Agents","Claude","No-Code"],
+  date: "2026-02-20",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Kimi Claw Just Made Open Claw 10x Easier — Browser-Based AI Agents for Everyone",
+  desc: "Moonshot AI's Kimi Claw brings the full power of OpenClaw to your browser — no servers, no terminal, just instant AI automation with 5,000+ skills and 40GB cloud storage.",
+  url: "/blog/kimi-claw-open-claw-browser-based-ai",
+  tags: ["AI Agents","OpenClaw","Automation"],
+  date: "2026-02-17",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "AI Agents in 2026: What's Changed and How to Use Them Effectively",
+  desc: "Discover the latest advancements in AI agents - from thinking models to MCP protocols - and learn practical patterns for implementing them in your business.",
+  url: "/blog/ai-agents-whats-new-and-what-weve-learned",
+  tags: ["AI Agents","GPT","LLM"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "MCPs: The Swiss Army Knives of AI Integration",
+  desc: "Discover how Model Context Protocols (MCPs) are solving the N×M integration nightmare in AI, enabling any AI to connect with any tool through a universal standard. Learn why this protocol is projected to drive $10B+ in market value by 2028.",
+  url: "/blog/mcps-swiss-army-knives-ai-integration",
+  tags: ["AI Agents","Enterprise AI","Automation"],
+  date: "2026-02-17",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How to Connect Magento 2 to Claude AI Using Freento MCP Server",
+  desc: "Learn how to securely connect your Magento store to Claude AI for instant access to orders, inventory, and marketing data through natural language queries.",
+  url: "/blog/connect-magento2-to-claude-freento-mcp",
+  tags: ["AI Agents","eCommerce","Magento"],
+  date: "2026-02-18",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Model Context Protocol (MCP): The Universal Adapter for AI Accounting Systems",
+  desc: "Discover how MCP acts as a standardized connector allowing AI tools to securely interact with accounting software without custom integrations - transforming how accountants access and analyze financial data.",
+  url: "/blog/model-context-protocol-mcp-accounting",
+  tags: ["Accounting","AI Agents","Finance"],
+  date: "2026-02-20",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Openclaw is the Most Brutal AI Tool I’ve Ever Used. Here’s How to Install It",
+  desc: "Discover how Openclaw, a 24/7 AI agent employee, can revolutionize your workflow by controlling your computer, managing tasks, and automating complex processes - all while feeling like a human assistant.",
+  url: "/blog/openclaw-most-brutal-ai-tool-install-guide",
+  tags: ["AI Agents","Productivity","Automation"],
+  date: "2026-02-20",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "From Noob to Expert: Master Claude Code in Under an Hour with This Interactive Course",
+  desc: "Discover how to transform from a Claude Code beginner to expert marketer in under 60 minutes. This interactive course teaches you to build AI business automators, connect your apps, and create teams of AI agents that work for you 24/7.",
+  url: "/blog/interactive-claude-code-course-noob-to-expert",
+  tags: ["AI Agents","Claude Code","Marketing"],
+  date: "2026-02-18",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How to Connect WooCommerce to Claude AI in Minutes — Instant Store Reports with MCP",
+  desc: "Stop wasting hours on manual WooCommerce reports. This MCP integration lets Claude AI analyze your store data in seconds — pulling sales metrics, customer insights, and optimization recommendations automatically.",
+  url: "/blog/connect-woocommerce-claude-ai-mcp",
+  tags: ["AI Agents","eCommerce","WooCommerce"],
+  date: "2026-02-20",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "How We Built a Reddit Monitoring Tool Using Claude Code Agent Teams",
+  desc: "Discover how agent teams in Claude Code can build complete web apps faster by specializing roles - and why our front-end developer got fired mid-project.",
+  url: "/blog/reddit-monitoring-tool-claude-code-agent-teams",
+  tags: ["AI Agents","Claude Code","Automation"],
+  date: "2026-02-20",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How Gemini 3.1 Pro Supercharges OpenClaw AI Agents",
+  desc: "Discover how Gemini 3.1 Pro's 77.1% ARC AGI benchmark score transforms OpenClaw agents - creating complete marketing videos in minutes with Remotion and Miniax API integration.",
+  url: "/blog/gemini-3-1-pro-openclaw-agents",
+  tags: ["AI Agents","Gemini","OpenClaw"],
+  date: "2026-02-19",
+  readTime: 8,
+  target: "_blank"
+},
+{
   title: "Claude Plugins Give You Superpowers - Here's How to Unlock Them in Your Business",
   desc: "Anthropic's new Claude plugins let you create virtual employees for any business function - customer support, marketing, sales, legal and more - with zero coding required. See how these pre-built AI specialists can transform your workflows.",
   url: "/blog/claude-plugins-business-automation",
