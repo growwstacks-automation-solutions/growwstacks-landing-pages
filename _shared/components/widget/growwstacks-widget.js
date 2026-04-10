@@ -16,15 +16,13 @@ export function initGrowwStacksWidget(config = {}) {
   root.innerHTML = "";
 
   const records = widgetData.slice(-20).map((item) => ({
-    clientName: item.clientName || "Unknown Client",
+    clientName: "New Project Started For " + (item.clientName || "Unknown Client"),
     projectName: item.projectName || "New Project",
     projectType: item.projectType || "Service",
     city: item.city || "",
     country: item.country || "",
     mapimageUrl: item.mapimageUrl || "",
-    logoUrl: item.logoUrl || "",
     color: randomColor(),
-    status: item.ProjectStatus || "Active",
     init: getInitials(item.clientName || "UC"),
     mapColors: getCountryMapColors(item.country || ""),
   }));

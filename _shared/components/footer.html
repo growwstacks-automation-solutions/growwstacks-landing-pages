@@ -3,27 +3,53 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">{{SITE.name}}»</div>
-        <p>AI Agents, Voice AI, and Business Automation for companies that want to scale without scaling headcount. Make.com Platinum Partner. 2000+ projects delivered.</p>
+        <p>
+          AI Agents, Voice AI, and Business Automation for companies that want
+          to scale without scaling headcount. Make.com Platinum Partner. 2000+
+          projects delivered.
+        </p>
       </div>
       <div class="footer-col">
         <p class="footer-col-title">Services</p>
-        <a href="/services/ai-agents/" target="_blank" rel="noopener noreferrer">AI Agents</a>
-        <a href="/services/voice-ai/" target="_blank" rel="noopener noreferrer">Voice AI</a>
-        <a href="/services/make-automation/" target="_blank" rel="noopener noreferrer">Make.com Automation</a>
-        <a href="/services/n8n-automation/" target="_blank" rel="noopener noreferrer">n8n Automation</a>
+        <a href="/services/ai-agents/" target="_blank" rel="noopener noreferrer"
+          >AI Agents</a
+        >
+        <a href="/services/voice-ai/" target="_blank" rel="noopener noreferrer"
+          >Voice AI</a
+        >
+        <a
+          href="/services/make-automation/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Make.com Automation</a
+        >
+        <a
+          href="/services/n8n-automation/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >n8n Automation</a
+        >
         <a href="#consultation">Custom Integration</a>
       </div>
       <div class="footer-col">
         <h4>Free Resources</h4>
-        <a href="/workflows/" target="_blank" rel="noopener noreferrer">n8n Workflows</a>
-        <a href="/workflows-make.com/" target="_blank" rel="noopener noreferrer">Make.com Templates</a>
+        <a href="/workflows/" target="_blank" rel="noopener noreferrer"
+          >n8n Workflows</a
+        >
+        <a href="/workflows-make.com/" target="_blank" rel="noopener noreferrer"
+          >Make.com Templates</a
+        >
         <a href="/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
-        <a href="/how-to-guides/" target="_blank" rel="noopener noreferrer">How To Guides</a>
-        </div>
+        <a href="/how-to-guides/" target="_blank" rel="noopener noreferrer"
+          >How To Guides</a
+        >
+      </div>
       <div class="footer-col">
         <h4>Company</h4>
         <a href="/about/" target="_blank" rel="noopener noreferrer">About Us</a>
-        <a href="/case-studies/" target="_blank" rel="noopener noreferrer">Case Studies</a>
+        <a href="/case-studies/" target="_blank" rel="noopener noreferrer"
+          >Case Studies</a
+        >
         <a href="/#testimonials">Review</a>
         <a href="/#consultation">Contact</a>
       </div>
@@ -31,181 +57,220 @@
         <h4>Contact</h4>
         <a href="mailto:{{SITE.email}}">{{SITE.email}}</a>
         <a href="{{SITE.phoneTel}}">{{SITE.phone}}</a>
-        <a>{{SITE.addressUS.flag}} {{SITE.addressUS.city}}, {{SITE.addressUS.state}}, USA</a>
+        <a
+          >{{SITE.addressUS.flag}} {{SITE.addressUS.city}},
+          {{SITE.addressUS.state}}, USA</a
+        >
         <a>{{SITE.addressIN.flag}} {{SITE.addressIN.city}}, India</a>
       </div>
     </div>
     <div class="footer-bottom">
-  <span>© {{YEAR}} {{SITE.name}} ({{SITE.legalName}})</span>
-  <div>
-    <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-    <a href="terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      <span>© {{YEAR}} {{SITE.name}} ({{SITE.legalName}})</span>
+      <div>
+        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer"
+          >Privacy Policy</a
+        >
+        <a href="terms-of-service" target="_blank" rel="noopener noreferrer"
+          >Terms of Service</a
+        >
+      </div>
+    </div>
   </div>
-</div>
-  </div>
-<script>
-window.onload = function () {
+  <script>
 
-  const path = window.location.pathname;
+    // get 10K operation btn ----------------------
+    setInterval(function () {
+      document.querySelectorAll(".flow-file-meta").forEach(function (el) {
+        const path = window.location.pathname;
 
-  if (!path.includes('/blog') && !path.includes('/workflows') && !path.includes('/how-to-guides') ) return;
+        // Run only on correct page
+        if (!path.includes("/workflows-make.com")) return;
 
-  const themes = [
+        if (!el.dataset.replaced) {
+          el.dataset.replaced = "true";
 
-    {
-      gradient: "linear-gradient(to right,#FFD6E0,#FFF1F5)",
-      tagColor: "#e85a8a",
-      tagText: "#ffffff"
-    },
+          const newBtn = document.createElement("a");
+          newBtn.href = "https://www.make.com/en/register?pc=growwstacks";
+          newBtn.target = "_blank";
+          newBtn.className = "btn btn-10000";
+          newBtn.innerHTML = `
+        Get Free 10k Operations
+        <span class="btn-arrow">→</span>
+      `;
 
-    {
-      gradient: "linear-gradient(to right,#E6F7FF,#F0FBFF)",
-      tagColor: "#2b7de9",
-      tagText: "#ffffff"
-    },
-
-    {
-      gradient: "linear-gradient(to right,#E8F8F5,#F0FFF9)",
-      tagColor: "#2a9d8f",
-      tagText: "#ffffff"
-    },
-
-    {
-      gradient: "linear-gradient(to right,#FFF6E5,#FFFBEF)",
-      tagColor: "#e67e22",
-      tagText: "#ffffff"
-    },
-
-    {
-      gradient: "linear-gradient(to right,#F3E8FF,#FAF5FF)",
-      tagColor: "#7b61ff",
-      tagText: "#ffffff"
-    },
-
-    {
-      gradient: "linear-gradient(to right,#FFEAF4,#FFF4F8)",
-      tagColor: "#d63384",
-      tagText: "#ffffff"
-    },
-
-    {
-      gradient: "linear-gradient(to right,#EAF4FF,#F6FAFF)",
-      tagColor: "#1c7ed6",
-      tagText: "#ffffff"
-    },
-
-    {
-      gradient: "linear-gradient(to right,#EAFBEA,#F5FFF6)",
-      tagColor: "#2f9e44",
-      tagText: "#ffffff"
-    }
-
-  ];
-
-  const randomTheme = themes[Math.floor(Math.random() * themes.length)];
-
-  // Hero background
-  document.querySelectorAll(".cs-hero-bg").forEach(hero => {
-    hero.style.setProperty("background", randomTheme.gradient, "important");
-  });
-  document.querySelectorAll(".blog-toc").forEach(hero => {
-    hero.style.setProperty("background", randomTheme.gradient, "important");
-  });
-  document.querySelectorAll(".cs-highlight").forEach(hero => {
-    hero.style.setProperty("background", randomTheme.gradient, "important");
-  });
-  document.querySelectorAll(".blog-section--tinted").forEach(hero => {
-    hero.style.setProperty("background", randomTheme.gradient, "important");
-  });
-  document.querySelectorAll(".cs-bottom-cta").forEach(hero => {
-    hero.style.setProperty("background", randomTheme.gradient, "important");
-  });
-
-  // Tags
-  document.querySelectorAll(".cs-tag").forEach(tag => {
-    tag.style.background = randomTheme.tagColor;
-    tag.style.color = randomTheme.tagText;
-  });
-  document.querySelectorAll(".btn-accent").forEach(tag => {
-    tag.style.background = randomTheme.tagColor;
-    tag.style.color = randomTheme.tagText;
-    tag.style.borderColor = randomTheme.tagColor;
-  });
-  document.querySelectorAll(".btn-outline").forEach(btn => {
-  btn.style.borderColor = randomTheme.tagColor;
-  btn.style.color = randomTheme.tagColor;
-});
-  document.querySelectorAll(".blog-toc-title").forEach(tag => {
-    tag.style.color = randomTheme.tagColor;
-  });
-   // BREADCRUMB LINKS (Home / Blog)
-  document.querySelectorAll(".cs-breadcrumb a").forEach(tag => {
-       tag.style.color = randomTheme.tagColor;
-  });
-  document.querySelectorAll(".blog-toc").forEach(tag => {
-       tag.style.borderColor = randomTheme.tagColor;
-  });
-  document.querySelectorAll(".cs-highlight").forEach(tag => {
-       tag.style.borderColor = randomTheme.tagColor;
-  });
-
-  // Reading time
-  document.querySelectorAll(".blog-reading-time").forEach(el => {
-    el.style.background = randomTheme.tagColor;
-    el.style.color = randomTheme.tagText;
-  });
-  document.querySelectorAll(".btn-download").forEach(el => {
-    el.style.background = randomTheme.tagColor;
-    el.style.borderColor = randomTheme.tagColor;
-    el.style.color = randomTheme.tagText;
-  });
-
-  document.querySelectorAll(".cs-toc").forEach(tag => {
-       tag.style.borderColor = randomTheme.tagColor;
-  });
-  document.querySelectorAll(".cs-toc-title + ol li a").forEach((a) => {
-      a.style.color = randomTheme.tagColor;
-    });
-};
-</script>
-<script>
-if (window.location.href.includes("how-to-guides")) {
-  document.body.classList.add("how-to-guides");
-  document.body.classList.add("cs-faq");
-}
-</script>
- <!-- GrowwStacks Widget -->
-<div id="gs-spw"></div>
-
-<script>
-(function () {
-  if (window.__GS_WIDGET_INIT__) return;
-  window.__GS_WIDGET_INIT__ = true;
-
-  function getSharedPrefix() {
-    const pathSegments = window.location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
-    const depth = pathSegments.length;
-    return depth === 0 ? './_shared/' : '../'.repeat(depth) + '_shared/';
-  }
-
-  function initWidget() {
-    const prefix = getSharedPrefix();
-
-    import(prefix + 'components/widget/growwstacks-widget.js')
-      .then((module) => {
-        if (module && typeof module.initGrowwStacksWidget === 'function') {
-          module.initGrowwStacksWidget();
-        } else {
-          console.warn('[footer] initGrowwStacksWidget not found.');
+          el.replaceWith(newBtn);
         }
-      })
-      .catch((err) => {
-        console.warn('[footer] Widget failed to load:', err);
       });
-  }
+    }, 500);
 
-  // Slight delay so footer DOM is fully injected first
-  setTimeout(initWidget, 100);
-})();
-</script>
+    // ---------------------------------------
+    window.onload = function () {
+      const path = window.location.pathname;
+
+      if (
+        !path.includes("/blog") &&
+        !path.includes("/workflows") &&
+        !path.includes("/how-to-guides")
+      )
+        return;
+
+      const themes = [
+        {
+          gradient: "linear-gradient(to right,#FFD6E0,#FFF1F5)",
+          tagColor: "#e85a8a",
+          tagText: "#ffffff",
+        },
+
+        {
+          gradient: "linear-gradient(to right,#E6F7FF,#F0FBFF)",
+          tagColor: "#2b7de9",
+          tagText: "#ffffff",
+        },
+
+        {
+          gradient: "linear-gradient(to right,#E8F8F5,#F0FFF9)",
+          tagColor: "#2a9d8f",
+          tagText: "#ffffff",
+        },
+
+        {
+          gradient: "linear-gradient(to right,#FFF6E5,#FFFBEF)",
+          tagColor: "#e67e22",
+          tagText: "#ffffff",
+        },
+
+        {
+          gradient: "linear-gradient(to right,#F3E8FF,#FAF5FF)",
+          tagColor: "#7b61ff",
+          tagText: "#ffffff",
+        },
+
+        {
+          gradient: "linear-gradient(to right,#FFEAF4,#FFF4F8)",
+          tagColor: "#d63384",
+          tagText: "#ffffff",
+        },
+
+        {
+          gradient: "linear-gradient(to right,#EAF4FF,#F6FAFF)",
+          tagColor: "#1c7ed6",
+          tagText: "#ffffff",
+        },
+
+        {
+          gradient: "linear-gradient(to right,#EAFBEA,#F5FFF6)",
+          tagColor: "#2f9e44",
+          tagText: "#ffffff",
+        },
+      ];
+
+      const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+
+      // Hero background
+      document.querySelectorAll(".cs-hero-bg").forEach((hero) => {
+        hero.style.setProperty("background", randomTheme.gradient, "important");
+      });
+      document.querySelectorAll(".blog-toc").forEach((hero) => {
+        hero.style.setProperty("background", randomTheme.gradient, "important");
+      });
+      document.querySelectorAll(".cs-highlight").forEach((hero) => {
+        hero.style.setProperty("background", randomTheme.gradient, "important");
+      });
+      document.querySelectorAll(".blog-section--tinted").forEach((hero) => {
+        hero.style.setProperty("background", randomTheme.gradient, "important");
+      });
+      document.querySelectorAll(".cs-bottom-cta").forEach((hero) => {
+        hero.style.setProperty("background", randomTheme.gradient, "important");
+      });
+
+      // Tags
+      document.querySelectorAll(".cs-tag").forEach((tag) => {
+        tag.style.background = randomTheme.tagColor;
+        tag.style.color = randomTheme.tagText;
+      });
+      document.querySelectorAll(".btn-accent").forEach((tag) => {
+        tag.style.background = randomTheme.tagColor;
+        tag.style.color = randomTheme.tagText;
+        tag.style.borderColor = randomTheme.tagColor;
+      });
+      document.querySelectorAll(".btn-outline").forEach((btn) => {
+        btn.style.borderColor = randomTheme.tagColor;
+        btn.style.color = randomTheme.tagColor;
+      });
+      document.querySelectorAll(".blog-toc-title").forEach((tag) => {
+        tag.style.color = randomTheme.tagColor;
+      });
+      // BREADCRUMB LINKS (Home / Blog)
+      document.querySelectorAll(".cs-breadcrumb a").forEach((tag) => {
+        tag.style.color = randomTheme.tagColor;
+      });
+      document.querySelectorAll(".blog-toc").forEach((tag) => {
+        tag.style.borderColor = randomTheme.tagColor;
+      });
+      document.querySelectorAll(".cs-highlight").forEach((tag) => {
+        tag.style.borderColor = randomTheme.tagColor;
+      });
+
+      // Reading time
+      document.querySelectorAll(".blog-reading-time").forEach((el) => {
+        el.style.background = randomTheme.tagColor;
+        el.style.color = randomTheme.tagText;
+      });
+      document.querySelectorAll(".btn-download").forEach((el) => {
+        el.style.background = randomTheme.tagColor;
+        el.style.borderColor = randomTheme.tagColor;
+        el.style.color = randomTheme.tagText;
+      });
+
+      document.querySelectorAll(".cs-toc").forEach((tag) => {
+        tag.style.borderColor = randomTheme.tagColor;
+      });
+      document.querySelectorAll(".cs-toc-title + ol li a").forEach((a) => {
+        a.style.color = randomTheme.tagColor;
+      });
+    };
+  </script>
+  <script>
+    if (window.location.href.includes("how-to-guides")) {
+      document.body.classList.add("how-to-guides");
+      document.body.classList.add("cs-faq");
+    }
+  </script>
+  <!-- GrowwStacks Widget -->
+  <div id="gs-spw"></div>
+
+  <script>
+    (function () {
+      if (window.__GS_WIDGET_INIT__) return;
+      window.__GS_WIDGET_INIT__ = true;
+
+      function getSharedPrefix() {
+        const pathSegments = window.location.pathname
+          .replace(/\/+$/, "")
+          .split("/")
+          .filter(Boolean);
+        const depth = pathSegments.length;
+        return depth === 0 ? "./_shared/" : "../".repeat(depth) + "_shared/";
+      }
+
+      function initWidget() {
+        const prefix = getSharedPrefix();
+
+        import(prefix + "components/widget/growwstacks-widget.js")
+          .then((module) => {
+            if (module && typeof module.initGrowwStacksWidget === "function") {
+              module.initGrowwStacksWidget();
+            } else {
+              console.warn("[footer] initGrowwStacksWidget not found.");
+            }
+          })
+          .catch((err) => {
+            console.warn("[footer] Widget failed to load:", err);
+          });
+      }
+
+      // Slight delay so footer DOM is fully injected first
+      setTimeout(initWidget, 100);
+    })();
+  </script>
 </footer>
