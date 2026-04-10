@@ -4,6 +4,16 @@
   let activeFilter = "all";
   let visibleCount = 12;
   const STEP = 12;
+  let shuffledCards = [];
+
+  function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
   function getGrid() {
     return document.getElementById("csh-grid");
@@ -87,7 +97,7 @@
 
     // ✅ Category filter
     if (activeFilter !== "all") {
-      cards = cards.filter(card => {
+      cards = cards.filter((card) => {
         const category = String(card.category || "").toLowerCase();
         return category.split(/\s+/).includes(activeFilter.toLowerCase());
       });
@@ -97,13 +107,18 @@
     const appFilter = getAppFilter();
 
     if (appFilter) {
-      cards = cards.filter(card => {
+      cards = cards.filter((card) => {
         const apps = Array.isArray(card.app) ? card.app : [];
-        return apps.map(a => a.toLowerCase()).includes(appFilter);
+        return apps.map((a) => a.toLowerCase()).includes(appFilter);
       });
     }
 
-    return cards;
+    // 🔥 apply shuffle only once when filter changes
+    if (!shuffledCards.length) {
+      shuffledCards = shuffleArray(cards);
+    }
+
+    return shuffledCards;
   }
 
   function updateCount(count) {
@@ -120,8 +135,7 @@
     const visible = filtered.slice(0, visibleCount);
 
     grid.innerHTML = visible.map(renderCard).join("");
-    updateCount(filtered.length);
-
+    updateCount(visible.length, filtered.length);
     const btn = document.getElementById("csh-load-more");
 
     if (btn) {
@@ -134,33 +148,46 @@
     const pills = document.querySelectorAll(".csh-pill");
     if (!pills.length) return;
 
-    pills.forEach(btn => {
+    pills.forEach((btn) => {
       btn.addEventListener("click", function () {
-        pills.forEach(p => p.classList.remove("active"));
+        pills.forEach((p) => p.classList.remove("active"));
         this.classList.add("active");
 
         activeFilter = this.getAttribute("data-filter") || "all";
 
         visibleCount = 12; // ✅ reset on filter change
+        // 🔥 reset shuffle so new filter gets new random order
+shuffledCards = [];
         renderCards();
       });
     });
   }
+
+  let isLoading = false;
 
   function initLoadMore() {
     const btn = document.getElementById("csh-load-more");
     if (!btn) return;
 
     btn.addEventListener("click", function () {
-      visibleCount += STEP;
+      if (isLoading) return; // prevent double click
+      isLoading = true;
+
+      const filtered = getFilteredCards();
+      visibleCount = Math.min(visibleCount + STEP, filtered.length);
+      shuffledCards = [];
       renderCards();
+
+      setTimeout(() => {
+        isLoading = false;
+      }, 200);
     });
   }
 
   function initFAQ() {
     const faqButtons = document.querySelectorAll(".csh-faq-q");
 
-    faqButtons.forEach(btn => {
+    faqButtons.forEach((btn) => {
       btn.addEventListener("click", function () {
         const expanded = this.getAttribute("aria-expanded") === "true";
         this.setAttribute("aria-expanded", !expanded);
@@ -192,5 +219,4 @@
 
   document.addEventListener("DOMContentLoaded", init);
   window.addEventListener("load", init);
-
 })();
