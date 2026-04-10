@@ -121,11 +121,12 @@
     return shuffledCards;
   }
 
-  function updateCount(count) {
-    const el = getCountEl();
-    if (!el) return;
-    el.innerHTML = `Showing <strong>${count}</strong> projects`;
-  }
+  function updateCount(visible, total) {
+  const el = getCountEl();
+  if (!el) return;
+
+  el.innerHTML = `Showing <strong>${visible}</strong> of <strong>${total}</strong> projects`;
+}
 
   function renderCards() {
     const grid = getGrid();
@@ -175,7 +176,6 @@ shuffledCards = [];
 
       const filtered = getFilteredCards();
       visibleCount = Math.min(visibleCount + STEP, filtered.length);
-      shuffledCards = [];
       renderCards();
 
       setTimeout(() => {
