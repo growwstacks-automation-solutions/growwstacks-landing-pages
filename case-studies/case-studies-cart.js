@@ -18,6 +18,7 @@ window.CS_CARDS = [
     desc: "VAPI voice agent \u201cAnna\u201d collects loan applications through natural phone conversations, validates data with ChatGPT, and syncs to Airtable + Salesforce in parallel.",
     meta: "Financial Services",
     roi: "85% faster processing",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -33,6 +34,7 @@ window.CS_CARDS = [
     desc: "AI-powered qualification pipeline screening 200+ daily prospects via ManyChat + ChatGPT-4, reducing response time from hours to minutes with automated Slack and Gmail routing.",
     meta: "E-Commerce Brand",
     roi: "550% ROI",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -48,6 +50,7 @@ window.CS_CARDS = [
     desc: "Research topics with Perplexity AI, generate content and images with ChatGPT + DALL-E, and auto-publish to Facebook, Instagram, and LinkedIn via Make.com.",
     meta: "Content Automation",
     roi: "650% ROI",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -63,6 +66,7 @@ window.CS_CARDS = [
     desc: "Automatically reply to LinkedIn post comments with custom messages and track engagement in real-time",
     meta: "SaaS",
     roi: "340% more leads",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -78,6 +82,7 @@ window.CS_CARDS = [
     desc: "Meet your 24/7 AI receptionist \u2014 a conversational voice agent built by GrowwStacks that answers every inbound call, checks real-time Google Calendar availability, books appointments through natural dialogue, and fires off a confirmation before the customer hangs up",
     meta: "D2C Brand",
     roi: "$50K+ Annual savings",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "clock"
   },
 
@@ -93,6 +98,7 @@ window.CS_CARDS = [
     desc: "Instantly translate text messages and audio files to any language via Telegram using AI",
     meta: "Medical Clinic",
     roi: "700% ROI",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -108,6 +114,7 @@ window.CS_CARDS = [
     desc: "Automatically summarize YouTube videos with AI, generate WhatsApp messages, and distribute to groups.",
     meta: "CPA Firm",
     roi: "700% ROI",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -123,6 +130,7 @@ window.CS_CARDS = [
     desc: "Automatically extract lead data from emails, prevent duplicates, and create organized contacts in Pipedrive CRM",
     meta: "Marketing Agency",
     roi: "100% ROI",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -138,6 +146,7 @@ window.CS_CARDS = [
     desc: "Automatically sync leads between Airtable and Close CRM, prevent duplicates, and enroll in Mailchimp campaigns",
     meta: "Real Estate",
     roi: "3\u00d7 conversion rate",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -153,6 +162,7 @@ window.CS_CARDS = [
     desc: "Generate personalized gratitude posts with AI content, DALL-E images, PDF docs, and auto-publish to Instagram.",
     meta: "E-Commerce",
     roi: "100% ROI",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -168,6 +178,7 @@ window.CS_CARDS = [
     desc: "Automatically analyze multiple images, extract text and insights using AI, and aggregate structured data from visual content",
     meta: "Medical Clinic",
     roi: "$50K/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "clock"
   },
 
@@ -183,6 +194,7 @@ window.CS_CARDS = [
     desc: "Automatically transcribe audio/video files, generate AI summaries, create Google Docs, and email to team",
     meta: "SaaS",
     roi: "60% more conversions",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -198,6 +210,7 @@ window.CS_CARDS = [
     desc: "Automate lead calling with AI voice agent, analyze interest, and send personalized follow-up emails automatically.",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -213,6 +226,7 @@ window.CS_CARDS = [
     desc: "Automatically scrape LinkedIn profiles and enrich Airtable CRM with job titles, skills, and professional details",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -228,6 +242,7 @@ window.CS_CARDS = [
     desc: "Transform meeting summaries into 30 days of social media content ideas and store in Notion for team scheduling",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -243,6 +258,7 @@ window.CS_CARDS = [
     desc: "Generate multi-platform content from ideas, assign to team in Trello, and automate RSS news monitoring with AI",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -258,6 +274,7 @@ window.CS_CARDS = [
     desc: "Automatically classify emails, draft AI replies, save to drafts, and organize by category with Telegram notifications",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -273,6 +290,7 @@ window.CS_CARDS = [
     desc: "Automatically summarize, categorize, tag, and extract insights from bulk text data in Google Sheets using AI",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -288,6 +306,7 @@ window.CS_CARDS = [
     desc: "Automatically sync products, orders, and customer data between BigCommerce and Airtable in real-time",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -303,6 +322,7 @@ window.CS_CARDS = [
     desc: "Automatically sync invoices and payments from QuickBooks to Airtable with intelligent duplicate detection",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -318,6 +338,7 @@ window.CS_CARDS = [
     desc: "Automate market research and news distribution with AI web search, summarization, and Slack delivery",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -333,6 +354,7 @@ window.CS_CARDS = [
     desc: "Auto-generate SEO-optimized blog posts with titles and meta descriptions, then publish to Webflow instantly",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -348,6 +370,7 @@ window.CS_CARDS = [
     desc: "Instant lead response system that calls, qualifies, and manages property inquiries within 30 seconds",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -363,6 +386,7 @@ window.CS_CARDS = [
     desc: "Streamline office support requests with automated routing, assignment, tracking, and Microsoft Teams integration",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -378,6 +402,7 @@ window.CS_CARDS = [
     desc: "Generate industry-specific personalized emails and SMS automatically using AI and web scraping",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -393,6 +418,7 @@ window.CS_CARDS = [
     desc: "Automatically send personalized invoice emails to clients the moment invoices are created or updated",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -408,6 +434,7 @@ window.CS_CARDS = [
     desc: "Automatically generate blog content and images with AI, format with SEO optimization, and publish to WordPress",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -423,6 +450,7 @@ window.CS_CARDS = [
     desc: "Automate renewal reminders for expiring software subscriptions with intelligent filtering and product substitution",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -438,6 +466,7 @@ window.CS_CARDS = [
     desc: "Automatically generate and send intelligent email responses in Outlook threads using ChatGPT 24/7",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -453,6 +482,7 @@ window.CS_CARDS = [
     desc: "Automatically transcribe YouTube videos, generate AI summaries, create audio versions, and notify team via Slack",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -468,6 +498,7 @@ window.CS_CARDS = [
     desc: "Automate customer service with intelligent ChatGPT-powered WhatsApp bot providing instant personalized responses 24/7",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -483,6 +514,7 @@ window.CS_CARDS = [
     desc: "Instantly extract text from images, receipts, screenshots, and documents using GPT-4 Vision in Telegram",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -498,6 +530,7 @@ window.CS_CARDS = [
     desc: "Automate task management, deadline tracking, and team notifications via Google Sheets and WhatsApp",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -513,6 +546,7 @@ window.CS_CARDS = [
     desc: "Automate mass payments to hundreds of customers with PayPal API, validation, and email notifications",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -528,6 +562,7 @@ window.CS_CARDS = [
     desc: "Scrape LinkedIn job postings automatically and populate structured databases with Apify integration",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -543,6 +578,7 @@ window.CS_CARDS = [
     desc: "Upload thousands of YouTube Shorts from Google Drive to your channel automatically in minutes",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -558,6 +594,7 @@ window.CS_CARDS = [
     desc: "Auto-extract LinkedIn prospects, enrich data, generate personalized emails, and launch campaigns automatically",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -573,6 +610,7 @@ window.CS_CARDS = [
     desc: "Build intelligent WhatsApp chatbot with conversation memory trained on company data using AWS Lambda and ChatGPT",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -588,6 +626,7 @@ window.CS_CARDS = [
     desc: "Schedule and auto-post AI-generated content with images across Instagram, LinkedIn, and Facebook",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -603,6 +642,7 @@ window.CS_CARDS = [
     desc: "Automate multi-stage SMS nurture sequences with Twilio, scheduled delays, and comprehensive tracking in Google Sheets",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -618,6 +658,7 @@ window.CS_CARDS = [
     desc: "Auto-generate platform-specific posts with AI images and captions for Facebook, Instagram, and LinkedIn",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -633,6 +674,7 @@ window.CS_CARDS = [
     desc: "Send personalized emails with multiple attachments automatically from Google Sheets database",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -648,6 +690,7 @@ window.CS_CARDS = [
     desc: "Automate community programs with AI chat analysis, PayPal payouts, Klaviyo sync, and Slack notifications",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -663,6 +706,7 @@ window.CS_CARDS = [
     desc: "Automate lead qualification calls with intelligent AI agents that convert prospects into customers 24/7",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   },
 
@@ -678,6 +722,7 @@ window.CS_CARDS = [
     desc: "Auto-capture Google Ads leads, generate personalized AI emails, and create GoHighLevel contacts instantly",
     meta: "Enterprise",
     roi: "$400K+/yr saved",
+    app:["Airtable", "ChatGPT", "Salesforce"],
     roiIcon: "trend"
   }
 
