@@ -6,13 +6,13 @@
 
     <div class="wwd-grid">
 <div class="wwd-card wwd-card-ai">
-        <div class="wwd-icon">🧠</div>
+        <div class="wwd-icon"><div class="sc-icon" style="background:var(--lavender)">🤖</div></div>
         <h3>Agentic AI Systems</h3>
         <p>Autonomous AI agents that handle multi-step tasks — research, data processing, report generation, decision-making — without constant human supervision.</p>
         <a href="/services/ai-agents/" class="wwd-link" target="_blank" rel="noopener noreferrer">Learn more <span>→</span></a>
       </div>
       <div class="wwd-card wwd-card-voice">
-        <div class="wwd-icon">📞</div>
+        <div class="wwd-icon"><div class="sc-icon" style="background:var(--amber)">🎙️</div></div>
         <h3>Voice AI Agents</h3>
         <p>Human-like AI that answers phone calls 24/7. Handles customer support, books appointments, qualifies leads, and integrates with your CRM in real-time.</p>
         <a href="/services/voice-ai/" class="wwd-link" target="_blank" rel="noopener noreferrer">Learn more <span>→</span></a>
@@ -24,13 +24,13 @@
         <a href="/services/ai-chatbots/" class="wwd-link" target="_blank" rel="noopener noreferrer">Learn more <span>→</span></a>
       </div>
       <div class="wwd-card wwd-card-make">
-        <div class="wwd-icon">⚡</div>
+        <div class="wwd-icon"><div class="sc-icon" style="background:var(--green-100)"><img data-logo="make" alt="Make.com" width="40" height="40" loading="lazy"></div></div>
         <h3>Make.com Automation</h3>
         <p>As a Platinum Partner, we build complex multi-step workflows connecting 3000+ apps. From lead capture to invoice generation — fully automated.</p>
         <a href="/services/make-automation/" class="wwd-link" target="_blank" rel="noopener noreferrer">Learn more <span>→</span></a>
       </div>
       <div class="wwd-card wwd-card-n8n">
-        <div class="wwd-icon">🔒</div>
+        <div class="wwd-icon"><div class="sc-icon" style="background:var(--sky)"><img data-logo="n8n" alt="n8n" width="40" height="40" loading="lazy"></div></div>
         <h3>n8n Automation</h3>
         <p>Self-hosted automation for businesses that need complete data privacy. Run unlimited workflows on your own servers with zero per-operation costs.</p>
         <a href="/services/n8n-automation/" class="wwd-link" target="_blank" rel="noopener noreferrer">Learn more <span>→</span></a>
@@ -44,3 +44,17 @@
     </div>
   </div>
 </section>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>

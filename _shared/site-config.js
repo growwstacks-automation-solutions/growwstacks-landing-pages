@@ -463,7 +463,8 @@ SITE.images = {
 
   REVIEW_BADGES: {
     google: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/GrowwStacks%20Google%20Review%20Logo.png',
-    upwork: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270'
+    upwork: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/upwork%20logo.jpeg?updatedAt=1771312194270',
+    clutch: 'https://ik.imagekit.io/r2zdlyze2o/GS-Website/Top-Clutch-Ai-Consulting-Company-2026.png'
   },
 
   BRANDING: {

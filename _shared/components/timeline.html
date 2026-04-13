@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timeline Component</title>
+<style>
+/* ── Timeline Component — Self-contained ── */
+.hww {
+  padding: 80px 0;
+  background: var(--gray-50, #f9fafb);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+}
+
+.hww-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+
+.hww-header .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--green-600, #16a34a);
+  margin-bottom: 14px;
+}
+
+.hww-header h2 {
+  font-family: var(--font-display, 'Bricolage Grotesque', serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  margin: 0 0 14px;
+  color: var(--dark, #111827);
+}
+
+.hww-header p {
+  font-size: 16px;
+  color: var(--gray-500, #6b7280);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Timeline wrapper ── */
+.tl-timeline {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* vertical centre line */
+.tl-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--green-600, #16a34a), var(--green-300, #86efac));
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+/* ── Each step: 3-column grid  left | dot | right ── */
+.tl-step {
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  margin-bottom: 44px;
+  align-items: start;
+}
+.tl-step:last-child { margin-bottom: 0; }
+
+/* ── Dot ── */
+.tl-dot {
+  grid-column: 2;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--green-600, #16a34a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display, 'Bricolage Grotesque', serif);
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 5px var(--gray-50, #f9fafb), 0 0 0 7px var(--green-200, #bbf7d0);
+  flex-shrink: 0;
+}
+
+/* ── Content block ── */
+.tl-content {
+  padding-top: 8px;
+}
+.tl-content h3 {
+  font-family: var(--font-display, 'Bricolage Grotesque', serif);
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: var(--dark, #111827);
+}
+.tl-content p {
+  font-size: 14px;
+  color: var(--gray-500, #6b7280);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Duration badge ── */
+.tl-dur {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--gray-200, #e5e7eb);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green-700, #15803d);
+}
+
+/* ── ODD steps: content LEFT, badge RIGHT ── */
+.tl-step:nth-child(odd) .tl-content {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 32px;
+  text-align: right;
+}
+.tl-step:nth-child(odd) .tl-dot {
+  grid-column: 2;
+  grid-row: 1;
+}
+.tl-step:nth-child(odd) .tl-badge-col {
+  grid-column: 3;
+  grid-row: 1;
+  padding-left: 32px;
+  padding-top: 16px;
+}
+
+/* ── EVEN steps: badge LEFT, content RIGHT ── */
+.tl-step:nth-child(even) .tl-badge-col {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 32px;
+  padding-top: 16px;
+  text-align: right;
+}
+.tl-step:nth-child(even) .tl-dot {
+  grid-column: 2;
+  grid-row: 1;
+}
+.tl-step:nth-child(even) .tl-content {
+  grid-column: 3;
+  grid-row: 1;
+  padding-left: 32px;
+  text-align: left;
+}
+
+/* ── Mobile: left-aligned single column ── */
+@media (max-width: 700px) {
+  .tl-timeline::before {
+    left: 26px;
+    top: 0;
+    bottom: 0;
+  }
+  .tl-step {
+    grid-template-columns: 52px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    margin-bottom: 36px;
+  }
+  .tl-step:nth-child(odd) .tl-dot,
+  .tl-step:nth-child(even) .tl-dot {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+  .tl-step:nth-child(odd) .tl-content,
+  .tl-step:nth-child(even) .tl-content {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 4px 0 0 0;
+    text-align: left;
+  }
+  .tl-step:nth-child(odd) .tl-badge-col,
+  .tl-step:nth-child(even) .tl-badge-col {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 6px 0 0 0;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     HOW WE WORK — TIMELINE COMPONENT
+     Usage: copy the <section class="hww">...</section>
+     block into any page that already loads global.css
+     and the shared fonts. No extra dependencies needed.
+════════════════════════════════════════════════════ -->
+
+<section class="hww">
+  <div class="container">
+
+    <div class="hww-header">
+      <div class="section-label">Our Process</div>
+      <h2>How Every Project Gets Delivered</h2>
+      <p>A proven 6-step process refined over 2,000+ projects. No guesswork, no scope creep — just predictable, measurable results.</p>
+    </div>
+
+    <div class="tl-timeline">
+
+      <!-- Step 1 — content LEFT, badge RIGHT -->
+      <div class="tl-step">
+        <div class="tl-content">
+          <h3>Discovery &amp; Audit</h3>
+          <p>We deep-dive into your current workflows, tech stack, and pain points. You get a detailed automation report showing exactly where time and money are leaking — free of charge.</p>
+        </div>
+        <div class="tl-dot">1</div>
+        <div class="tl-badge-col"><span class="tl-dur">⏱️ 2–3 Days</span></div>
+      </div>
+
+      <!-- Step 2 — badge LEFT, content RIGHT -->
+      <div class="tl-step">
+        <div class="tl-badge-col"><span class="tl-dur">⏱️ 3–5 Days</span></div>
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <h3>Solution Architecture</h3>
+          <p>Our automation architects design the blueprint — choosing the right tools, mapping data flows, defining integrations, and planning for scale. You approve the architecture before we write a single line.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 — content LEFT, badge RIGHT -->
+      <div class="tl-step">
+        <div class="tl-content">
+          <h3>Build &amp; Develop</h3>
+          <p>Our developers build your automation in iterative sprints with regular progress updates. You see working demos at every milestone — not just at the end.</p>
+        </div>
+        <div class="tl-dot">3</div>
+        <div class="tl-badge-col"><span class="tl-dur">⏱️ 1–4 Weeks</span></div>
+      </div>
+
+      <!-- Step 4 — badge LEFT, content RIGHT -->
+      <div class="tl-step">
+        <div class="tl-badge-col"><span class="tl-dur">⏱️ 2–3 Days</span></div>
+        <div class="tl-dot">4</div>
+        <div class="tl-content">
+          <h3>Testing &amp; QA</h3>
+          <p>Every scenario is stress-tested with real data — edge cases, error handling, and load testing. We break it before your customers do.</p>
+        </div>
+      </div>
+
+      <!-- Step 5 — content LEFT, badge RIGHT -->
+      <div class="tl-step">
+        <div class="tl-content">
+          <h3>Launch &amp; Go Live</h3>
+          <p>We handle deployment, DNS configs, API keys, team training, and documentation. Your team knows exactly how everything works on Day 1.</p>
+        </div>
+        <div class="tl-dot">5</div>
+        <div class="tl-badge-col"><span class="tl-dur">⏱️ 1–2 Days</span></div>
+      </div>
+
+      <!-- Step 6 — badge LEFT, content RIGHT -->
+      <div class="tl-step">
+        <div class="tl-badge-col"><span class="tl-dur">⏱️ Ongoing</span></div>
+        <div class="tl-dot">6</div>
+        <div class="tl-content">
+          <h3>Ongoing Support &amp; Optimisation</h3>
+          <p>Post-launch monitoring, performance optimisation, and priority support. We stay with you to ensure your automations keep delivering results as your business evolves.</p>
+        </div>
+      </div>
+
+    </div><!-- /.tl-timeline -->
+  </div>
+</section>
+
+</body>
+</html>

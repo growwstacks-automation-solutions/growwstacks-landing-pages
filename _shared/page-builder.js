@@ -30,6 +30,7 @@
     { id: 'gs-consult-form',    file: 'components/consult-form.html' },
     { id: 'gs-schema',          file: 'components/schema-org.html' },
     { id: 'gs-case-studies',    file: 'components/case-studies.html' },
+    { id: 'gs-timeline',    file: 'components/timeline.html' },
   ];
 
   // --- Token map: {{TOKEN}} → value ---
