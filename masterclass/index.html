@@ -30,6 +30,145 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- GrowwStacks nav/footer fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    <!-- GrowwStacks shared nav/footer styles -->
+    <style>
+      /* ── Tokens (nav/footer only) ── */
+      :root {
+        --gs-green-900:#0d3b1a; --gs-green-800:#145a27; --gs-green-700:#1a6e30;
+        --gs-green-600:#1f8a3c; --gs-green-500:#22a447; --gs-green-400:#4cbc6b;
+        --gs-green-100:#dcf5e3; --gs-green-50:#f0faf3;
+        --gs-dark:#0f1117; --gs-gray-600:#4b5563; --gs-gray-500:#6b7280;
+        --gs-gray-400:#9ca3af; --gs-gray-300:#d1d5db; --gs-gray-200:#e5e7eb;
+        --gs-gray-100:#f3f4f6; --gs-white:#ffffff;
+        --gs-shadow-md:0 4px 16px rgba(0,0,0,.08);
+        --gs-shadow-green:0 4px 20px rgba(34,164,71,.15);
+        --gs-radius-sm:8px; --gs-radius-full:9999px;
+        --gs-font-display:'Bricolage Grotesque',serif;
+        --gs-font-body:'Plus Jakarta Sans',sans-serif;
+        --nav-h:72px;
+      }
+      /* Push body content below fixed nav */
+      body { padding-top: var(--nav-h) !important; }
+      /* ── Shared container (used by footer) ── */
+      .gs-container { max-width:1200px; margin:0 auto; padding:0 24px; }
+      /* ── Nav ── */
+      .nav {
+        position:fixed; top:0; left:0; right:0; z-index:1000;
+        background:rgba(255,255,255,.95); backdrop-filter:blur(16px) saturate(180%);
+        border-bottom:1px solid var(--gs-gray-200); transition:box-shadow .3s;
+        height:var(--nav-h);
+      }
+      .nav.scrolled { box-shadow:var(--gs-shadow-md); }
+      .nav-inner {
+        max-width:1280px; margin:0 auto; padding:0 24px;
+        display:flex; align-items:center; justify-content:space-between;
+        height:100%;
+      }
+      .nav-left { display:flex; align-items:center; gap:48px; }
+      .nav-logo { display:flex; align-items:center; gap:10px; }
+      .nav-logo img { height:36px; }
+      .nav-logo-fallback {
+        font-family:var(--gs-font-display); font-weight:800; font-size:24px;
+        color:var(--gs-green-700); letter-spacing:-.5px;
+      }
+      .nav-logo-fallback span { color:var(--gs-gray-400); font-weight:400; font-size:14px; margin-left:4px; }
+      .nav-links { display:flex; gap:32px; list-style:none; margin:0; padding:0; }
+      .nav-links a {
+        font-family:var(--gs-font-body); font-size:14px; font-weight:500;
+        color:var(--gs-gray-600); transition:color .2s; position:relative;
+        text-decoration:none;
+      }
+      .nav-links a:hover { color:var(--gs-green-700); }
+      .nav-links a::after {
+        content:''; position:absolute; bottom:-4px; left:0; width:0;
+        height:2px; background:var(--gs-green-600); transition:width .25s;
+      }
+      .nav-links a:hover::after { width:100%; }
+      .nav-right { display:flex; align-items:center; gap:16px; }
+      /* Nav CTA button */
+      .btn.btn-primary.nav-cta, a.btn.btn-primary.nav-cta {
+        display:inline-flex; align-items:center; gap:8px;
+        padding:10px 22px; border-radius:var(--gs-radius-sm);
+        font-family:var(--gs-font-body); font-weight:700; font-size:14px;
+        background:var(--gs-green-700); color:var(--gs-white);
+        border:2px solid var(--gs-green-700); cursor:pointer;
+        transition:all .25s ease; text-decoration:none;
+      }
+      .btn.btn-primary.nav-cta:hover, a.btn.btn-primary.nav-cta:hover {
+        background:var(--gs-green-800); border-color:var(--gs-green-800);
+        transform:translateY(-2px); box-shadow:var(--gs-shadow-green); color:var(--gs-white);
+      }
+      .btn-arrow { transition:transform .25s; }
+      .btn.btn-primary.nav-cta:hover .btn-arrow { transform:translateX(4px); }
+      /* Hamburger */
+      .nav-mobile-toggle {
+        display:none; background:none; border:none; cursor:pointer; padding:8px;
+        flex-direction:column; gap:5px;
+      }
+      .nav-mobile-toggle span {
+        display:block; width:24px; height:2px;
+        background:var(--gs-dark); border-radius:2px; transition:all .3s ease;
+      }
+      .nav-mobile-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+      .nav-mobile-toggle.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+      .nav-mobile-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+      /* ── Footer ── */
+      .footer { background:var(--gs-dark); color:rgba(255,255,255,.5); padding:64px 0 32px; }
+      .footer .gs-container { max-width:1200px; margin:0 auto; padding:0 24px; }
+      .footer-grid {
+        display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px;
+      }
+      .footer-brand p { font-family:var(--gs-font-body); font-size:14px; line-height:1.7; margin-top:16px; max-width:300px; }
+      .footer-col h4, .footer-col-title {
+        font-family:var(--gs-font-body); font-size:13px; font-weight:700; text-transform:uppercase;
+        letter-spacing:1px; color:rgba(255,255,255,.5); margin-bottom:16px;
+      }
+      .footer-col a { font-family:var(--gs-font-body); display:block; font-size:14px; color:rgba(255,255,255,.6); margin-bottom:10px; transition:color .2s; text-decoration:none; }
+      .footer-col a:hover { color:var(--gs-green-400); }
+      .footer-bottom {
+        padding-top:32px; border-top:1px solid rgba(255,255,255,.08);
+        display:flex; justify-content:space-between; align-items:center;
+        font-family:var(--gs-font-body); font-size:13px; flex-wrap:wrap; gap:16px;
+      }
+      .footer-bottom a { color:rgba(255,255,255,.4); margin-left:16px; text-decoration:none; }
+      .footer-bottom a:hover { color:rgba(255,255,255,.8); }
+      .footer-logo { font-family:var(--gs-font-display); font-weight:800; font-size:22px; color:var(--gs-white); }
+      /* ── Responsive nav/footer ── */
+      @media (max-width:1024px) {
+        .nav-links { display:none; }
+        .nav-mobile-toggle { display:flex; }
+        .nav-right { display:none; }
+        .footer-grid { grid-template-columns:1fr 1fr; }
+      }
+      @media (max-width:768px) {
+        :root { --nav-h:60px; }
+        .nav-links {
+          position:fixed; top:var(--nav-h); left:0; right:0;
+          background:rgba(255,255,255,.98); backdrop-filter:blur(16px);
+          flex-direction:column; padding:16px 20px 24px; gap:0;
+          border-bottom:1px solid var(--gs-gray-200);
+          box-shadow:0 8px 24px rgba(0,0,0,.08);
+          transform:translateY(-110%); transition:transform .3s ease;
+          z-index:999; list-style:none;
+        }
+        .nav-links.show { transform:translateY(0); display:flex; }
+        .nav-links li { border-bottom:1px solid var(--gs-gray-100); }
+        .nav-links li:last-child { border-bottom:none; }
+        .nav-links a { display:block; padding:14px 0; font-size:16px; font-weight:600; color:var(--gs-dark); }
+        .nav-links a::after { display:none; }
+        .footer { padding:40px 0 24px; }
+        .footer-grid { grid-template-columns:1fr 1fr; gap:28px; margin-bottom:32px; }
+        .footer-brand { grid-column:1 / -1; }
+        .footer-bottom { flex-direction:column; align-items:flex-start; gap:10px; font-size:12px; }
+        .footer-bottom a { margin-left:0; margin-right:12px; }
+      }
+      @media (max-width:480px) {
+        .footer-grid { grid-template-columns:1fr; gap:20px; }
+      }
+    </style>
     <link
       rel="icon"
       type="image/png"
@@ -95,6 +234,8 @@
     <!-- End Meta Pixel Code -->
   </head>
   <body>
+    <!-- GrowwStacks shared navbar -->
+    <div id="gs-navbar"></div>
     <main class="page">
       <!-- Section Banner -->
       <section class="section section-banner">
@@ -826,7 +967,7 @@
         const emailError = document.getElementById("emailError");
         const phoneError = document.getElementById("errormessage");
 
-        const WEBHOOK_URL = "https://hook.make.com/YOUR_WEBHOOK_URL"; // 🔥 PUT YOUR REAL URL
+        const WEBHOOK_URL = "https://hook.eu1.make.com/7knuexrqgcnusnwq7s1qu2l1ibsxmsft"; // 🔥 PUT YOUR REAL URL
 
         function isValidEmail(email) {
           return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
@@ -904,5 +1045,9 @@
         });
       });
     </script>
+    <!-- GrowwStacks shared footer -->
+    <div id="gs-footer"></div>
+    <script src="../_shared/site-config.js"></script>
+    <script src="../_shared/page-builder.js"></script>
   </body>
 </html>
