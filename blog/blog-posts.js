@@ -162,7 +162,7 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 {
-  title: "Stripe's AI "Minions" Merge 1,000+ PRs Weekly - The Unattended Coding Revolution",
+  title: "Stripe's AI Minions Merge 1,000+ PRs Weekly - The Unattended Coding Revolution",
   desc: "Discover how Stripe's autonomous AI coding agents handle over 1,000 pull requests weekly with zero human intervention, and what this means for the future of software development.",
   url: "/blog/stripe-ai-minions-merge-1000-prs-weekly",
   tags: ["AI Agents","Software Development","Automation"],
