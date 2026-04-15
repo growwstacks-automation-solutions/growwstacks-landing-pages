@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Portfolio Tracking with Google Sheets & Alpha Vantage | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n workflow to automatically track stock portfolio performance, calculate P&L, CAGR, and risk metrics. Connects Google Sheets with Alpha Vantage for real-time insights.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7822-track-portfolio-performance-and-risk-using-google-sheets-and-alpha-vantage/">
+<meta property="og:title" content="Automate Portfolio Tracking with Google Sheets & Alpha Vantage">
+<meta property="og:description" content="Free n8n workflow to automatically track stock portfolio performance, calculate P&L, CAGR, and risk metrics.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7822-track-portfolio-performance-and-risk-using-google-sheets-and-alpha-vantage/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12487-track-portfolio-performance-and-risk-using-google-shee.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Portfolio Tracking with Google Sheets & Alpha Vantage">
+<meta name="twitter:description" content="Free n8n workflow to automatically track stock portfolio performance, calculate P&L, CAGR, and risk metrics.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automate Portfolio Tracking with Google Sheets & Alpha Vantage","description":"Free n8n workflow to automatically track stock portfolio performance, calculate P&L, CAGR, and risk metrics. Connects Google Sheets with Alpha Vantage for real-time insights.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12487-track-portfolio-performance-and-risk-using-google-shee.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the benefits of automating portfolio tracking?","acceptedAnswer":{"@type":"Answer","text":"Automating portfolio tracking eliminates manual data entry, reduces errors, and provides real-time performance insights. It saves investors hours each week, ensures consistent calculation of metrics like P&L and CAGR, and helps identify underperforming assets faster for timely decisions."}},{"@type":"Question","name":"How does connecting Google Sheets with financial APIs improve investment management?","acceptedAnswer":{"@type":"Answer","text":"Connecting Google Sheets with APIs like Alpha Vantage transforms static spreadsheets into dynamic dashboards. It automatically pulls live market prices, calculates returns, and updates risk metrics. This integration provides a single source of truth, eliminates manual price lookups, and enables scenario analysis with up-to-date data."}},{"@type":"Question","name":"What key metrics should investors track for portfolio health?","acceptedAnswer":{"@type":"Answer","text":"Key metrics include Profit & Loss (P&L), P&L percentage, Compound Annual Growth Rate (CAGR), and Maximum Drawdown. P&L shows absolute gains, CAGR measures annualized returns, and drawdown quantifies risk during downturns. Tracking these together provides a complete picture of both performance and risk exposure."}},{"@type":"Question","name":"Can automation help with tax reporting for investments?","acceptedAnswer":{"@type":"Answer","text":"Yes, automated portfolio tracking significantly simplifies tax reporting. By maintaining accurate records of purchase prices, sale prices, and holding periods in Google Sheets, you can automatically generate capital gains reports. This reduces year-end stress, ensures compliance, and helps optimize tax strategies by identifying tax-loss harvesting opportunities."}},{"@type":"Question","name":"How often should portfolio performance be reviewed?","acceptedAnswer":{"@type":"Answer","text":"For long-term investors, weekly or monthly reviews are sufficient. Daily tracking often leads to emotional decisions. Automation allows for scheduled reviews without manual effort—set the workflow to run weekly, generate a performance summary, and flag only significant changes. This balances staying informed with avoiding overreaction to market noise."}},{"@type":"Question","name":"What's the difference between using spreadsheets vs. dedicated portfolio software?","acceptedAnswer":{"@type":"Answer","text":"Spreadsheets offer complete customization and control at no cost, while dedicated software provides polished interfaces with less flexibility. Automation bridges this gap—you keep the flexibility of Google Sheets while gaining automated data updates and calculations typically found in paid software, without vendor lock-in or subscription fees."}},{"@type":"Question","name":"Can I get a custom portfolio tracking automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom portfolio tracking and investment management automations. We can integrate multiple data sources, create custom dashboards, add alerts for specific conditions, and connect with your existing tools. Our solutions are tailored to your specific asset classes, reporting needs, and risk management frameworks."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"Portfolio Tracking Automation"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>Portfolio Tracking Automation</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Alpha Vantage</span>
+          <span class="cs-tag">Finance</span>
+          <span class="cs-tag">Investment</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+        <h1>Automate Portfolio Tracking with Google Sheets & Alpha Vantage</h1>
+        <p class="cs-hero-sub">Free n8n workflow to track stock performance, calculate returns, and monitor risk—automatically updated in your spreadsheet.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12487-track-portfolio-performance-and-risk-using-google-shee.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/12487-track-portfolio-performance-and-risk-using-google-shee.png" alt="Visualization of automated portfolio tracking workflow connecting Google Sheets with stock market data" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Manually tracking investment portfolios in spreadsheets is time-consuming, error-prone, and quickly becomes outdated. This automation solves that by connecting your Google Sheets portfolio directly to live market data from Alpha Vantage. It automatically fetches current prices, calculates performance metrics, and updates your spreadsheet with clear insights—transforming a static document into a dynamic investment dashboard.</p>
+        <p>The workflow reads your holdings (stock symbols, purchase prices, quantities, and dates), pulls daily price data, and computes key metrics like invested value, current value, profit/loss, CAGR, and maximum drawdown. It then classifies each holding as Healthy, Watch, or Risk based on performance and downside metrics, giving you actionable intelligence at a glance without manual calculations.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Read Portfolio Data from Google Sheets</h3>
+        <p>The workflow starts by connecting to your Google Sheet where you maintain your investment portfolio. It reads each holding's details including stock symbol, purchase price, quantity purchased, and purchase date. This structured input ensures accurate calculations for all subsequent steps.</p>
+
+        <h3>2. Fetch Live Market Prices via Alpha Vantage</h3>
+        <p>For each stock symbol, the workflow calls the Alpha Vantage API to retrieve the latest daily closing price. This replaces manual price lookups with automated, real-time data fetching, ensuring your portfolio valuation is always current.</p>
+
+        <h3>3. Calculate Performance & Risk Metrics</h3>
+        <p>The core calculation engine computes multiple metrics: invested value (purchase price × quantity), current value (market price × quantity), absolute P&L, P&L percentage, Compound Annual Growth Rate (CAGR), and maximum drawdown. These calculations follow standard financial formulas to ensure accuracy.</p>
+
+        <h3>4. Classify Holdings by Performance</h3>
+        <p>Based on the calculated metrics, each holding receives a classification: "Healthy" for strong returns with limited drawdown, "Watch" for moderate performance, or "Risk" for significant losses or high volatility. This simple traffic-light system helps prioritize review efforts.</p>
+
+        <h3>5. Update Google Sheets with Results</h3>
+        <p>Finally, the workflow writes all calculated metrics and classifications back to your Google Sheet, either in new columns or a separate tab. This creates a complete, updated portfolio snapshot that's ready for analysis or visualization.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is ideal for retail investors managing personal portfolios, financial advisors tracking client investments, fintech startups building portfolio tools, and business owners monitoring company investments. It's particularly valuable for anyone currently using spreadsheets manually and wanting to add automation without switching to expensive portfolio software.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A Google Sheets spreadsheet with your portfolio data (columns for symbol, buy price, quantity, buy date)</li>
+          <li>Google Cloud Platform credentials with Sheets API enabled</li>
+          <li>An Alpha Vantage API key (free tier available)</li>
+          <li>An n8n instance (cloud or self-hosted)</li>
+          <li>Basic understanding of your portfolio structure and investment goals</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li>Download the template using the button above and import it into your n8n instance.</li>
+          <li>Configure the Google Sheets node with your OAuth credentials and spreadsheet ID.</li>
+          <li>Add your Alpha Vantage API key to the HTTP Request nodes.</li>
+          <li>Map your spreadsheet columns to match the expected input format (symbol, price, quantity, date).</li>
+          <li>Test with a few holdings to verify calculations, then schedule the workflow to run daily or weekly.</li>
+          <li>Optionally, connect the output to data visualization tools or alert systems for enhanced monitoring.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with a copy of your main portfolio sheet for testing. Once confident, connect the automation to your live sheet. Set the schedule to run after market close for most accurate daily valuations.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminates 2-3 hours of manual work weekly</strong> by automating price lookups and calculations. What used to be a tedious monthly chore becomes a seamless, scheduled process that runs in the background.</p>
+        <p><strong>Reduces calculation errors by 95%</strong> compared to manual spreadsheet formulas. Automated financial formulas ensure consistent, accurate metrics every time, eliminating fat-finger mistakes and formula errors.</p>
+        <p><strong>Provides real-time risk visibility</strong> through automated drawdown calculations and classification. Instead of discovering losses weeks later, you get immediate alerts when holdings enter "Watch" or "Risk" categories.</p>
+        <p><strong>Creates a single source of truth</strong> by keeping all data in Google Sheets. No more switching between brokerage statements, spreadsheets, and financial websites—everything updates automatically in one place.</p>
+        <p><strong>Enables better investment decisions</strong> with timely, accurate data. With up-to-date performance metrics and clear classifications, you can make rebalancing decisions based on current information rather than outdated snapshots.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about portfolio tracking automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating portfolio tracking?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating portfolio tracking eliminates manual data entry, reduces errors, and provides real-time performance insights. It saves investors hours each week, ensures consistent calculation of metrics like P&L and CAGR, and helps identify underperforming assets faster for timely decisions.</p>
+          <p>Beyond time savings, automation creates discipline in portfolio review. Instead of sporadic manual updates, you get scheduled, comprehensive reports that remove emotion from the process. This systematic approach leads to more objective investment decisions and better long-term outcomes.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does connecting Google Sheets with financial APIs improve investment management?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Connecting Google Sheets with APIs like Alpha Vantage transforms static spreadsheets into dynamic dashboards. It automatically pulls live market prices, calculates returns, and updates risk metrics. This integration provides a single source of truth, eliminates manual price lookups, and enables scenario analysis with up-to-date data.</p>
+          <p>The real power comes from combining the flexibility of spreadsheets with the timeliness of API data. You maintain complete control over your data structure and calculations while benefiting from automated updates. This hybrid approach is more customizable than dedicated portfolio software and more powerful than manual spreadsheets.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What key metrics should investors track for portfolio health?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Key metrics include Profit & Loss (P&L), P&L percentage, Compound Annual Growth Rate (CAGR), and Maximum Drawdown. P&L shows absolute gains, CAGR measures annualized returns, and drawdown quantifies risk during downturns. Tracking these together provides a complete picture of both performance and risk exposure.</p>
+          <p>Advanced investors should also track sector allocation, dividend yield, and volatility metrics. The beauty of automation is that once you establish the calculation logic, these additional metrics can be added without significant extra work. Start with the basics, then expand your tracking as your needs evolve.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can automation help with tax reporting for investments?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, automated portfolio tracking significantly simplifies tax reporting. By maintaining accurate records of purchase prices, sale prices, and holding periods in Google Sheets, you can automatically generate capital gains reports. This reduces year-end stress, ensures compliance, and helps optimize tax strategies by identifying tax-loss harvesting opportunities.</p>
+          <p>When integrated with transaction data from your brokerage, automation can categorize gains as short-term or long-term, calculate cost basis, and even estimate tax liabilities. This transforms tax season from a weeks-long documentation scramble into a simple report generation process.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How often should portfolio performance be reviewed?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>For long-term investors, weekly or monthly reviews are sufficient. Daily tracking often leads to emotional decisions. Automation allows for scheduled reviews without manual effort—set the workflow to run weekly, generate a performance summary, and flag only significant changes. This balances staying informed with avoiding overreaction to market noise.</p>
+          <p>The frequency should match your investment strategy. Active traders might need daily updates, while retirement accounts benefit from quarterly reviews. Automation lets you set the right cadence for your goals while ensuring consistency in the review process itself.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the difference between using spreadsheets vs. dedicated portfolio software?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Spreadsheets offer complete customization and control at no cost, while dedicated software provides polished interfaces with less flexibility. Automation bridges this gap—you keep the flexibility of Google Sheets while gaining automated data updates and calculations typically found in paid software, without vendor lock-in or subscription fees.</p>
+          <p>With automation, you can create exactly the reports, alerts, and dashboards you need. As your investment strategy evolves, you can modify your tracking system accordingly. This adaptability is rarely possible with off-the-shelf portfolio software that forces you into predefined workflows.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom portfolio tracking automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom portfolio tracking and investment management automations. We can integrate multiple data sources, create custom dashboards, add alerts for specific conditions, and connect with your existing tools. Our solutions are tailored to your specific asset classes, reporting needs, and risk management frameworks.</p>
+          <p>Whether you're a financial advisor needing client reporting, a fund manager requiring sophisticated analytics, or a business tracking corporate investments, we build systems that fit your exact requirements. We handle the technical complexity so you can focus on investment decisions.</p>
+          <ul>
+            <li>Multi-account aggregation across brokerages</li>
+            <li>Custom performance benchmarks and reporting</li>
+            <li>Integration with accounting and CRM systems</li>
+            <li>Real-time alerts for threshold breaches</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Portfolio Tracking Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

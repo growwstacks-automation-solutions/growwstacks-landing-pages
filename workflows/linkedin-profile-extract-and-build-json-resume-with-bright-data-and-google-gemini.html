@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Profile Extract & JSON Resume Builder | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automate LinkedIn profile scraping & resume parsing. Extract data with Bright Data, structure it with Google Gemini AI, and output JSON resumes. Free n8n workflow.">
+<link rel="canonical" href="https://growwstacks.com/workflows/2467-linkedin-profile-extract-and-build-json-resume-with-bright-data-and-google-gemini/">
+<meta property="og:title" content="LinkedIn Profile Extract & JSON Resume Builder | Free n8n Template">
+<meta property="og:description" content="Automate LinkedIn profile scraping & resume parsing. Extract data with Bright Data, structure it with Google Gemini AI, and output JSON resumes.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/2467-linkedin-profile-extract-and-build-json-resume-with-bright-data-and-google-gemini/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4653-linkedin-profile-extract-and-build-json-resume-with-bri.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LinkedIn Profile Extract & JSON Resume Builder | Free n8n Template">
+<meta name="twitter:description" content="Automate LinkedIn profile scraping & resume parsing. Extract data with Bright Data, structure it with Google Gemini AI, and output JSON resumes.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LinkedIn Profile Extract & JSON Resume Builder","description":"Automate LinkedIn profile scraping & resume parsing. Extract data with Bright Data, structure it with Google Gemini AI, and output JSON resumes.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4653-linkedin-profile-extract-and-build-json-resume-with-bri.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best way to automate candidate sourcing from LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"The most effective way is to use a combination of reliable web scraping infrastructure (like Bright Data) to bypass LinkedIn's anti-bot measures and AI (like Google Gemini) to structure the raw data into usable formats like JSON resumes. This approach ensures data accuracy and compliance while saving recruiters 10-15 hours per week on manual profile review."}},{"@type":"Question","name":"How can AI improve the resume screening process?","acceptedAnswer":{"@type":"Answer","text":"AI can parse unstructured resume text, extract key skills, years of experience, education, and previous roles, then format this into a standardized JSON schema. This allows for automated scoring, filtering, and matching against job descriptions, reducing human bias and cutting screening time by up to 80%."}},{"@type":"Question","name":"Is it legal to scrape LinkedIn profiles for recruitment?","acceptedAnswer":{"@type":"Answer","text":"Scraping public LinkedIn profiles for internal recruitment purposes is generally permissible under fair use, especially when using ethical scraping services that respect robots.txt and rate limits. However, you must comply with data privacy laws (GDPR, CCPA) by informing candidates how their data is used, not selling it, and providing opt-out mechanisms."}},{"@type":"Question","name":"What are the benefits of a JSON resume format over PDF?","acceptedAnswer":{"@type":"Answer","text":"JSON resumes are machine-readable, enabling instant integration with Applicant Tracking Systems (ATS), AI matching algorithms, and internal databases. They eliminate manual data entry, ensure consistent formatting, and allow for advanced search and analytics, such as skill gap analysis and trend reporting across your talent pipeline."}},{"@type":"Question","name":"Can I integrate automated resume parsing with my existing ATS?","acceptedAnswer":{"@type":"Answer","text":"Yes, most modern ATS platforms (like Greenhouse, Lever, Workday) offer APIs or webhook endpoints. A workflow like this can be extended to push the structured JSON data directly into candidate profiles, auto-tag them with skills, or trigger follow-up email sequences, creating a seamless end-to-end recruitment automation."}},{"@type":"Question","name":"How much time does automating LinkedIn profile extraction save?","acceptedAnswer":{"@type":"Answer","text":"Manually reviewing and entering data from a single LinkedIn profile can take 5-10 minutes. An automated workflow processes a profile in under 60 seconds. For a recruitment agency screening 50 candidates weekly, this automation saves over 40 hours per month, allowing recruiters to focus on high-value tasks like interviews and relationship building."}},{"@type":"Question","name":"What's the difference between web scraping and using LinkedIn's official API?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn's official API is restrictive, often limited to basic profile data of 1st-degree connections and requires formal partnership agreements. Web scraping provides access to public profile data at scale but requires careful implementation to avoid blocks. For most recruitment automation use cases, ethical scraping via a service like Bright Data is the most practical and comprehensive solution."}},{"@type":"Question","name":"Can I get a custom LinkedIn automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom automation solutions for recruitment, talent sourcing, and HR workflows. We can tailor this template to integrate with your specific ATS, add custom data fields, implement multi-language support, or build a complete candidate enrichment and engagement pipeline. Book a free consultation to discuss your requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"LinkedIn Profile Extract & JSON Resume Builder"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>LinkedIn Profile Extract & JSON Resume Builder</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">LinkedIn</span>
+          <span class="cs-tag">AI</span>
+          <span class="cs-tag">Recruitment</span>
+          <span class="cs-tag">Bright Data</span>
+          <span class="cs-tag">Google Gemini</span>
+        </div>
+        <h1>LinkedIn Profile Extract & JSON Resume Builder</h1>
+        <p class="cs-hero-sub">Automate candidate sourcing by scraping LinkedIn profiles, extracting key data with AI, and generating structured JSON resumes—ready for your ATS.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/4653-linkedin-profile-extract-and-build-json-resume-with-bri.png" alt="Diagram showing LinkedIn profile data flowing into Bright Data, processed by Google Gemini AI, and output as a structured JSON resume" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Manual candidate sourcing from LinkedIn is a massive time sink for recruiters and HR teams. This workflow automates the entire process: it takes a LinkedIn profile URL, uses Bright Data's Web Unlocker to reliably scrape the public profile data (bypassing CAPTCHAs and anti-bot measures), then sends the raw HTML to Google Gemini. The AI extracts clean, structured information—name, headline, experience, skills, education—and formats it into a standards-compliant JSON resume schema.</p>
+        <p>The final output is a machine-readable JSON file that can be instantly pushed to your Applicant Tracking System (ATS), used for candidate matching, or stored for analytics. It turns hours of manual profile review into a 60-second automated task, ensuring consistency and eliminating human error in data entry.</p>
+
+        <h2>How It Works</h2>
+        <h3>Step 1: Input & Configuration</h3>
+        <p>The workflow is triggered manually or via a webhook. You provide the LinkedIn profile URL and configure your Bright Data zone credentials. A webhook URL is also set for receiving the final JSON output.</p>
+        <h3>Step 2: LinkedIn Profile Scraping</h3>
+        <p>Using the HTTP Request node with Bright Data's Web Unlocker, the workflow fetches the full HTML of the LinkedIn profile page. This service handles proxies, rotation, and CAPTCHA solving, ensuring a high success rate for data extraction.</p>
+        <h3>Step 3: AI-Powered Data Extraction</h3>
+        <p>The raw HTML is passed to a Google Gemini node. A carefully crafted prompt instructs the AI to identify and extract key professional details: name, current role, company, past positions, skills, education, and location. The AI returns this as clean, structured text.</p>
+        <h3>Step 4: JSON Resume Building</h3>
+        <p>A Function node or a series of Set nodes takes the extracted data and maps it into the official JSON Resume schema format. This creates a standardized object with sections for basics, work, education, skills, and awards.</p>
+        <h3>Step 5: Output & Delivery</h3>
+        <p>The completed JSON resume is sent to the configured webhook (e.g., your ATS or internal database) and simultaneously saved as a file on your n8n server for backup. The process is complete, and the structured candidate data is ready for use.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Use this workflow as the first step in a larger pipeline. Add a node to compare the extracted skills against a job description and auto-score candidates, or trigger a personalized email to the candidate informing them they've been added to your talent pool.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is designed for recruitment agencies, in-house HR teams, talent acquisition platforms, and anyone who sources candidates professionally. It's also invaluable for developers building recruitment SaaS products, data analysts studying labor market trends, and growth hackers running targeted outreach campaigns. If you spend more than an hour a week looking at LinkedIn profiles, this workflow will pay for itself in time saved.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li>A <strong>Bright Data account</strong> with a Web Unlocker zone set up (for reliable LinkedIn scraping).</li>
+          <li>A <strong>Google Gemini API key</strong> (or access via Vertex AI) for the AI processing step.</li>
+          <li>An <strong>n8n instance</strong> (cloud or self-hosted) where you can import and run the workflow.</li>
+          <li>A <strong>webhook endpoint</strong> (like webhook.site for testing, or your ATS API endpoint for production) to receive the JSON output.</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li><strong>Download the template</strong> using the button above and import it into your n8n workspace.</li>
+          <li><strong>Configure credentials:</strong> Create a "Header Auth" credential in n8n for Bright Data (Value: <code>Bearer YOUR_BRIGHT_DATA_TOKEN</code>). Create a "Google Gemini" credential with your API key.</li>
+          <li><strong>Update the trigger node:</strong> In the "Set URL and Bright Data Zone" node, input a sample LinkedIn profile URL, your Bright Data zone ID, and your target webhook URL.</li>
+          <li><strong>Test the workflow:</strong> Execute the workflow once manually. Check the webhook destination to see the JSON resume output.</li>
+          <li><strong>Go live:</strong> Once testing is successful, you can set the workflow to trigger on a schedule, from a form submission, or via an API call.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 10–15 hours per recruiter per week</strong> by eliminating manual profile review and data entry. This time can be redirected to strategic interviews and candidate engagement.</p>
+        <p><strong>Improve data accuracy and consistency</strong> across your candidate database. AI extraction reduces human error and ensures every profile is parsed with the same rules.</p>
+        <p><strong>Enable advanced candidate matching</strong> by having data in a structured JSON format. You can instantly filter by skills, years of experience, or education using simple code or no-code tools.</p>
+        <p><strong>Scale your sourcing efforts effortlessly</strong>. Process hundreds of profiles in the time it used to take to review one, allowing you to build a much larger and more qualified talent pipeline.</p>
+        <p><strong>Future-proof your recruitment tech stack</strong> by adopting an automated, AI-driven approach that integrates easily with modern ATS and HR analytics platforms.</p>
+
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about LinkedIn automation and AI resume parsing</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is the best way to automate candidate sourcing from LinkedIn?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The most effective way is to use a combination of reliable web scraping infrastructure (like Bright Data) to bypass LinkedIn's anti-bot measures and AI (like Google Gemini) to structure the raw data into usable formats like JSON resumes. This approach ensures data accuracy and compliance while saving recruiters 10-15 hours per week on manual profile review.</p>
+          <p>Automation should focus on extracting public profile data ethically and transforming it into actionable insights, not on spamming users. This method creates a sustainable, scalable talent pipeline.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can AI improve the resume screening process?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI can parse unstructured resume text, extract key skills, years of experience, education, and previous roles, then format this into a standardized JSON schema. This allows for automated scoring, filtering, and matching against job descriptions, reducing human bias and cutting screening time by up to 80%.</p>
+          <p>Beyond parsing, AI can identify skill gaps, suggest related candidates, and even predict candidate success based on historical hiring data, transforming recruitment from a reactive to a predictive function.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it legal to scrape LinkedIn profiles for recruitment?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Scraping public LinkedIn profiles for internal recruitment purposes is generally permissible under fair use, especially when using ethical scraping services that respect robots.txt and rate limits. However, you must comply with data privacy laws (GDPR, CCPA) by informing candidates how their data is used, not selling it, and providing opt-out mechanisms.</p>
+          <p>Best practice is to use the data solely for candidate evaluation, store it securely, and have a clear privacy policy. When in doubt, consult with a legal professional specializing in data privacy.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of a JSON resume format over PDF?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>JSON resumes are machine-readable, enabling instant integration with Applicant Tracking Systems (ATS), AI matching algorithms, and internal databases. They eliminate manual data entry, ensure consistent formatting, and allow for advanced search and analytics, such as skill gap analysis and trend reporting across your talent pipeline.</p>
+          <p>While PDFs are human-friendly, they create data silos. JSON turns candidate information into a dynamic asset that can power automation, reporting, and strategic decision-making.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I integrate automated resume parsing with my existing ATS?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, most modern ATS platforms (like Greenhouse, Lever, Workday) offer APIs or webhook endpoints. A workflow like this can be extended to push the structured JSON data directly into candidate profiles, auto-tag them with skills, or trigger follow-up email sequences, creating a seamless end-to-end recruitment automation.</p>
+          <p>The key is to map the JSON output fields to the specific fields your ATS expects. This often requires a simple transformation node in the workflow, which we can help you build.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much time does automating LinkedIn profile extraction save?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Manually reviewing and entering data from a single LinkedIn profile can take 5-10 minutes. An automated workflow processes a profile in under 60 seconds. For a recruitment agency screening 50 candidates weekly, this automation saves over 40 hours per month, allowing recruiters to focus on high-value tasks like interviews and relationship building.</p>
+          <p>The time savings compound with volume and enable recruiters to engage with a larger, more qualified pool of candidates, directly improving placement rates and revenue.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the difference between web scraping and using LinkedIn's official API?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>LinkedIn's official API is restrictive, often limited to basic profile data of 1st-degree connections and requires formal partnership agreements. Web scraping provides access to public profile data at scale but requires careful implementation to avoid blocks. For most recruitment automation use cases, ethical scraping via a service like Bright Data is the most practical and comprehensive solution.</p>
+          <p>Scraping focuses on publicly available information anyone can see in a browser, while the API is designed for specific, sanctioned integrations. The choice depends on your scale, compliance needs, and data requirements.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom LinkedIn automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building custom automation solutions for recruitment, talent sourcing, and HR workflows. We can tailor this template to integrate with your specific ATS, add custom data fields, implement multi-language support, or build a complete candidate enrichment and engagement pipeline.</p>
+          <p>Book a free consultation to discuss your requirements. We'll analyze your process, identify the biggest time sinks, and design an automation system that delivers measurable ROI within weeks.</p>
+          <ul>
+            <li>Seamless integration with your existing HR tech stack</li>
+            <li>Custom AI prompts for industry-specific skill extraction</li>
+            <li>Ongoing support and optimization as your needs evolve</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom LinkedIn Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
