@@ -4,7 +4,7 @@
     if (!url || !url.trim()) return null;
 
     const driveMatch = url.match(
-      /drive\.google\.com\/(?:file\/d\/([^/?#]+)|open\?id=([^&]+))/
+      /drive\.google\.com\/(?:file\/d\/([^/?#]+)|open\?id=([^&]+))/,
     );
 
     if (driveMatch) {
@@ -21,20 +21,42 @@
   function createTemplateCard(item) {
     const resolvedImage = resolveImageUrl(item.image) || fallbackImage;
 
+    const industry = item.Industry || "General";
+    const roi = item.ROI ? `${item.ROI}% ROI` : "";
+    const pageUrl = item.pageUrl || "#";
+
     return `
-      <div class="template-card">
-        <div class="card-image">
-          <img 
-            src="${resolvedImage}" 
-            alt="${item.title || "Template"}"
-            loading="lazy"
-            onerror="this.onerror=null;this.src='${fallbackImage}'"
-          />
-        </div>
+    <div class="template-card">
+    <div class="card-image">
+    <img 
+    src="${resolvedImage}" 
+    alt="${item.title || "Template"}"
+    loading="lazy"
+    onerror="this.onerror=null;this.src='${fallbackImage}'"
+    />
+    </div>
+    <a href="${pageUrl}" target="_blank" rel="noopener noreferrer" data-category="ai-powered operations" class="">
         <div class="card-content">
           <h3>${item.title || ""}</h3>
-          <p class="display-title">${item.description || item.displayTitle || ""}</p>
-          <div class="card-actions">
+          <p class="display-title" style="font-size: 12px; color: #666;">
+            ${item.description || item.displayTitle || ""}
+          </p>
+          <!-- Footer -->
+          <div class="csh-card-footer">
+
+            <!-- Industry -->
+            <div class="csh-card-meta">
+              ${industry}
+            </div>
+
+            <!-- ROI -->
+            <div class="csh-card-roi">
+              ${roi}
+            </div>
+
+          </div>
+          </a>
+          <div class="card-actions" style="margin-top: 10px;">
             <a href="${item.driveUrl || "#"}" target="_blank" rel="noopener noreferrer">Download Template</a>
           </div>
         </div>
@@ -53,15 +75,18 @@
       card.style.transition = `opacity .5s ease ${i * 70}ms, transform .5s ease ${i * 70}ms`;
     });
 
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
 
     cards.forEach((card) => obs.observe(card));
   }
@@ -70,8 +95,13 @@
     const containers = document.querySelectorAll("[data-service-app]");
     if (!containers.length) return;
 
-    if (typeof window.templateData === "undefined" || !Array.isArray(window.templateData)) {
-      console.error("templateData is missing. Check if service-app-cart.js is loaded first.");
+    if (
+      typeof window.templateData === "undefined" ||
+      !Array.isArray(window.templateData)
+    ) {
+      console.error(
+        "templateData is missing. Check if service-app-cart.js is loaded first.",
+      );
       return;
     }
 
@@ -85,7 +115,7 @@
       const filteredTemplates = window.templateData.filter(
         (item) =>
           Array.isArray(item.apps) &&
-          item.apps.some((app) => app.toLowerCase().trim() === appName)
+          item.apps.some((app) => app.toLowerCase().trim() === appName),
       );
 
       if (!filteredTemplates.length) {

@@ -5,11 +5,13 @@ window.templateData = [
     "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_3Zuwy9fVi.jpg",
     "apps": [
       "Google Drive",
-      "Airtable"
+      "Airtable",
+      "Active Campaign"
     ],
     "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_3Zuwy9fVi.jpg",
     "Industry": "Human Resources",
     "ROI": "200",
-    "displayTitle": "Automate Employment Contract PDF Storage and Airtable Tracking"
+    "displayTitle": "Automate Employment Contract PDF Storage and Airtable Tracking",
+    "pageUrl": ""
   }
 ];;
