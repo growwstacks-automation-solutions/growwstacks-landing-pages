@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automated UK Planning Data Analysis with AI-Driven Postcode Sorting — Case Study | GrowwStacks</title>
+<meta name="description" content="Automated UK planning data analysis using n8n & AI. Extracts insights from Excel data by postcode, approval rates, timelines, and trends for planning pros.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/automated-uk-planning-data-analysis-with-ai-driven-postcode-sorting/">
+<meta property="og:title" content="Automated UK Planning Data Analysis with AI-Driven Postcode Sorting — GrowwStacks Case Study">
+<meta property="og:description" content="This n8n workflow automates UK planning data analysis, extracting insights from Excel files. It sorts by postcode and uses AI to identify geographic patterns, approval rates, and timeline trends.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/automated-uk-planning-data-analysis-with-ai-driven-postcode-sorting/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_IEPQjVssz.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automated UK Planning Data Analysis with AI-Driven Postcode Sorting">
+<meta name="twitter:description" content="This n8n workflow automates UK planning data analysis, extracting insights from Excel files. It sorts by postcode and uses AI to identify geographic patterns, approval rates, and timeline trends.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, openai, googleSheets">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation involves using technology to automate repetitive tasks and processes, reducing manual effort and improving efficiency. It can range from simple tasks like sending automated emails to complex processes like managing customer orders."}},{"@type":"Question","name":"What are the benefits of automating data analysis?","acceptedAnswer":{"@type":"Answer","text":"Automating data analysis can save time, reduce errors, and provide insights more quickly. It allows businesses to process large volumes of data efficiently, identify trends, and make data-driven decisions."}},{"@type":"Question","name":"How secure is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"The security of workflow automation depends on the platform and security measures implemented. Robust platforms offer encryption, access controls, and regular security audits to protect sensitive data. It's essential to choose a reputable platform and follow security best practices."}},{"@type":"Question","name":"What types of tasks can be automated?","acceptedAnswer":{"@type":"Answer","text":"Many tasks can be automated, including data entry, email marketing, social media posting, customer service inquiries, and report generation. The possibilities are vast and depend on the specific needs of the business."}},{"@type":"Question","name":"How much does workflow automation cost?","acceptedAnswer":{"@type":"Answer","text":"The cost of workflow automation varies depending on the platform, complexity of the workflows, and the number of users. Some platforms offer free plans or trials, while others have subscription-based pricing. It's important to evaluate the costs and benefits before investing in a solution."}},{"@type":"Question","name":"Can I get a custom data analysis automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom automation solutions tailored to your specific business needs. We can help you design, develop, and implement automation workflows to improve efficiency and productivity."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Automated UK Planning Data Analysis with AI-Driven Postcode Sorting"}]}</script>
+</head>
+<body class="cs-page page-automated-uk-planning-data-analysis-with-ai-driven-postcode-sorting">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#fee2e2 0%,#fecaca 50%,#fca5a5 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Automated UK Planning Data</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">excel</span>
+      <span class="cs-tag">data-analysis</span>
+      <span class="cs-tag">automation</span>
+    </div>
+    <h1>Automated UK Planning Data Analysis with AI-Driven Postcode Sorting</h1>
+    <p class="cs-hero-sub">This workflow automates the analysis of UK planning application data. By extracting and sorting data by postcode and using AI for insights, it provides structured reports on geographic patterns, approval rates, and trends, saving planning professionals significant time and resources.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="openai" alt="" width="20" height="20" loading="lazy">
+        OpenAI
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="googleSheets" alt="" width="20" height="20" loading="lazy">
+        Google Sheets
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_IEPQjVssz.jpg" alt="Automated UK Planning Data Analysis with AI-Driven Postcode Sorting" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">95%</div>
+        <div class="cs-result-label">Faster data processing</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">6×</div>
+        <div class="cs-result-label">More data analyzed</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$15K+</div>
+        <div class="cs-result-label">Saved in analysis costs</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">90s</div>
+        <div class="cs-result-label">Report generation time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Planning professionals in the UK face a significant challenge in <strong>efficiently analyzing planning application data</strong>. The data, often stored in large Excel files, requires <strong>manual extraction and sorting</strong> to identify trends and patterns. This process is not only time-consuming but also prone to errors, hindering effective decision-making.</p>
+
+    <p>The <strong>lack of structured insights</strong> from this data makes it difficult to understand geographic patterns, approval rates, and timelines. This can lead to <strong>inefficient resource allocation</strong>, missed opportunities, and delays in project approvals. The need for a streamlined, automated solution is critical for planning professionals to optimize their operations and make informed decisions.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution is an automated workflow built with n8n that processes and analyzes UK planning application data. This workflow extracts data from Excel files, sorts it by postcode, and then uses AI, specifically OpenAI, to generate structured insights. The analyzed data is then compiled into reports in Google Sheets, providing a clear overview of key metrics.</p>
+
+    <p>This tech stack was chosen for its ability to handle large datasets, integrate AI for advanced analytics, and present data in an accessible format. n8n's flexibility allows for seamless integration with OpenAI and Google Sheets, creating a powerful and efficient data analysis pipeline. The combination of these tools ensures accurate, timely, and actionable insights for planning professionals.</p>
+
+    <div class="cs-visual-flow" aria-label="Data is extracted from Excel, sorted by postcode, analyzed by AI, and compiled into a Google Sheets report.">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📤</div><div class="cs-flow-step-title">Data Input</div><div class="cs-flow-step-sub">Excel file upload</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">📍</div><div class="cs-flow-step-title">Postcode Sort</div><div class="cs-flow-step-sub">Sort by geographic area</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">🤖</div><div class="cs-flow-step-title">AI Analysis</div><div class="cs-flow-step-sub">Insight generation</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Structured Report</div>
+          <div class="cs-flow-outcome review">📋 Actionable Insights</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — AI-Powered Planning Data Analysis</h3>
+    <p>This automated system streamlines the analysis of UK planning application data, providing actionable insights in minutes.</p>
+    <ol>
+      <li><strong>Data Extraction:</strong> The workflow begins by extracting planning application data from Excel files, ensuring all relevant information is captured.</li>
+      <li><strong>Postcode Sorting:</strong> The extracted data is then sorted by postcode, allowing for geographic-specific analysis and pattern identification.</li>
+      <li><strong>AI-Driven Analysis:</strong> OpenAI is used to analyze the sorted data, generating insights on approval rates, timelines, and emerging trends.</li>
+      <li><strong>Insight Structuring:</strong> The AI-generated insights are structured into a coherent and actionable format, ready for reporting.</li>
+      <li><strong>Report Generation:</strong> The structured insights are compiled into reports in Google Sheets, providing a clear overview of key metrics.</li>
+      <li><strong>Trend Identification:</strong> The system identifies trends in planning applications, helping professionals anticipate future developments.</li>
+      <li><strong>Performance Monitoring:</strong> The workflow monitors the performance of planning applications, providing real-time updates and alerts.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Data-Driven Decisions:</strong> By automating the analysis of planning application data, professionals can make informed decisions based on accurate and timely insights, leading to better outcomes and efficient resource allocation.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⚡</div><h4>Speed &amp; Efficiency</h4><p>Automated data processing and analysis significantly reduces the time required to generate insights, enabling faster decision-making.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Comprehensive Analysis</h4><p>AI-driven analysis provides a more thorough understanding of planning application data, identifying trends and patterns that may be missed manually.</p>
+      </div>
+      <div class="cs-feature"><div class="cs-feature-icon">🎯</div><h4>Targeted Insights</h4><p>Sorting data by postcode allows for geographically targeted insights, enabling professionals to focus on specific areas and address local needs.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">⚙️</div><h4>Scalability</h4><p>The automated workflow can handle large volumes of data, making it suitable for organizations of all sizes and ensuring consistent performance.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Accuracy</h4><p>Automated data processing reduces the risk of human error, ensuring the accuracy and reliability of insights for informed decision-making.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">💰</div><h4>Cost Savings</h4><p>By automating data analysis, organizations can reduce labor costs and allocate resources more efficiently, resulting in significant cost savings.</p></div>
+    </div>
+
+    <h2>Before vs. After: AI-Enhanced Planning Insights</h2>
+    <p><strong>Before:</strong> Manual data analysis took weeks, with limited insights and high error rates, costing approximately $20,000 annually in labor.</p>
+    <p><strong>After:</strong> Automated analysis provides comprehensive insights in minutes, with near-zero error rates, saving over $15,000 annually.</p>
+
+    <h2>Implementation: Live in 3 Weeks</h2>
+    <ol>
+      <li><strong>Planning &amp; Design:</strong> The initial phase involves understanding the specific data analysis needs and designing the workflow architecture.</li>
+      <li><strong>Data Integration:</strong> The next step is integrating the Excel data source with n8n, ensuring seamless data extraction and transfer.</li>
+      <li><strong>AI Configuration:</strong> Configuring OpenAI for data analysis, including defining the parameters and objectives for insight generation.</li>
+      <li><strong>Workflow Testing:</strong> Thorough testing of the workflow to ensure accurate data processing, analysis, and report generation.</li>
+      <li><strong>Deployment &amp; Training:</strong> Deploying the automated workflow and providing training to planning professionals on how to use the system.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This automated solution is ideal for planning professionals and organizations that need to analyze large volumes of UK planning application data quickly and accurately. It's particularly beneficial for those seeking to identify trends, optimize resource allocation, and make data-driven decisions.</p>
+    <p>However, it may not be the right fit for organizations with very small datasets or those that do not require in-depth analysis. In such cases, manual analysis may be sufficient. Additionally, organizations that lack the technical expertise to manage and maintain the workflow may need to consider alternative solutions.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Government &amp; Planning</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Data Analysis</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">3 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">75%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="openai" alt="" width="14" height="14" loading="lazy">OpenAI</span>
+        <span class="cs-tool-tag"><img src="" data-logo="googleSheets" alt="" width="14" height="14" loading="lazy">Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Processing Time</span><span class="cs-sidebar-value" style="text-align:right;">95% Faster</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Analysis Capacity</span><span class="cs-sidebar-value" style="text-align:right;">6x Increase</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Cost Savings</span><span class="cs-sidebar-value" style="text-align:right;">$15K+ Annually</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Report Generation</span><span class="cs-sidebar-value" style="text-align:right;">90 Seconds</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Error Rate</span><span class="cs-sidebar-value" style="text-align:right;">Near Zero</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to unlock planning insights?</h4>
+      <p>Free discovery call — See how we can automate your planning data analysis.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation streamlines processes.</strong> It involves using technology to automate repetitive tasks and processes, reducing manual effort and improving efficiency.</p>
+          <p>Automation can range from simple tasks like sending automated emails to complex processes like managing customer orders. By automating these tasks, businesses can free up valuable time and resources, allowing employees to focus on more strategic initiatives.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating data analysis?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Automating data analysis saves time.</strong> It can save time, reduce errors, and provide insights more quickly. It allows businesses to process large volumes of data efficiently, identify trends, and make data-driven decisions.</p>
+          <p>By automating data analysis, organizations can gain a competitive edge by making informed decisions based on accurate and timely insights. This can lead to improved performance, increased efficiency, and better outcomes.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Security depends on the platform.</strong> The security of workflow automation depends on the platform and security measures implemented. Robust platforms offer encryption, access controls, and regular security audits to protect sensitive data.</p>
+          <p>It's essential to choose a reputable platform and follow security best practices to ensure the confidentiality, integrity, and availability of data. This includes implementing strong passwords, enabling multi-factor authentication, and regularly updating software.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks can be automated?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Many tasks can be automated.</strong> This includes data entry, email marketing, social media posting, customer service inquiries, and report generation. The possibilities are vast and depend on the specific needs of the business.</p>
+          <p>By identifying and automating repetitive and time-consuming tasks, organizations can improve efficiency, reduce costs, and free up employees to focus on more strategic initiatives. This can lead to increased productivity and better overall performance.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does workflow automation cost?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Costs vary by platform and complexity.</strong> The cost of workflow automation varies depending on the platform, complexity of the workflows, and the number of users. Some platforms offer free plans or trials, while others have subscription-based pricing.</p>
+          <p>It's important to evaluate the costs and benefits before investing in a solution. This includes considering the initial investment, ongoing maintenance costs, and the potential return on investment in terms of increased efficiency and reduced costs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom data analysis automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, custom automations are available.</strong> GrowwStacks specializes in building custom automation solutions tailored to your specific business needs. We can help you design, develop, and implement automation workflows to improve efficiency and productivity.</p>
+          <p>Our team of experts will work closely with you to understand your unique requirements and develop a solution that meets your specific needs. This includes providing ongoing support and maintenance to ensure the automation continues to deliver value over time.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Unlock data-driven planning insights</h2>
+    <p>Automate your UK planning data analysis and gain a competitive edge. See how we can help you.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: none
