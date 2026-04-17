@@ -44,5 +44,33 @@ window.templateData = [
     "ROI": "200",
     "displayTitle": "Automate Airtable Invoice Uploads to Google Drive",
     "pageUrl": " https://www.growwstacks.com/case-studies/appsautomate-airtable-invoice-uploads-to-google-drive"
+  },
+  {
+    "title": "Automate Construction Build Notifications via WhatsApp",
+    "description": "This workflow monitors a Google Drive folder for PDF build schedules, extracts key dates and tasks using AI, stores them in a database, and sends daily WhatsApp reminders to customers via Go High Level. It solves manual notification problems for construction managers.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_RTvkYbR3T.jpg",
+    "apps": [
+      "Google Drive",
+      "OpenAI",
+      "Go High Level"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_RTvkYbR3T.jpg",
+    "Industry": "Construction",
+    "ROI": "200",
+    "displayTitle": "Automate Construction Build Notifications via WhatsApp",
+    "pageUrl": " https://www.growwstacks.com/case-studies/appsautomate-construction-build-notifications-via-whatsapp"
+  },
+  {
+    "title": "Fatture Webhook Subscription Management & Verification Workflow",
+    "description": "This n8n workflow automates the management of webhook subscriptions for Fatture in Cloud. It automatically deletes old subscriptions, creates a new one with specific event types (suppliers, clients, invoices, quotes), and verifies it via a header method. Designed for businesses using Fatture in Cloud to ensure reliable webhook event delivery for real-time data sync.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_T-KXaiN9p.jpg",
+    "apps": [
+      "No apps"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_T-KXaiN9p.jpg",
+    "Industry": "Accounting",
+    "ROI": "200",
+    "displayTitle": "Fatture Webhook Subscription Management & Verification Workflow",
+    "pageUrl": " https://www.growwstacks.com/case-studies/appsfatture-webhook-subscription-management-verification"
   }
-];;;
+];;;;
