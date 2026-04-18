@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyze Food Ingredients from Telegram Photos | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Free n8n automation template: Scan food labels via Telegram, analyze ingredients with AI, and check against your Airtable database for allergies or dietary restrictions.">
+<link rel="canonical" href="https://growwstacks.com/workflows/7112-analyze-food-ingredients-from-telegram-photos-using-gemini-and-airtable/">
+<meta property="og:title" content="Free AI Food Ingredient Scanner Template for Telegram & Airtable">
+<meta property="og:description" content="Automate food safety checks. Upload product photos to Telegram, get instant ingredient analysis via AI, and log results in Airtable.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/7112-analyze-food-ingredients-from-telegram-photos-using-gemini-and-airtable/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11159-analyze-food-ingredients-from-telegram-photos-using-ge.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Food Ingredient Scanner Template for Telegram & Airtable">
+<meta name="twitter:description" content="Automate food safety checks. Upload product photos to Telegram, get instant ingredient analysis via AI, and log results in Airtable.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Food Ingredient Scanner","description":"Automate food safety checks by analyzing product label photos sent via Telegram using AI vision and cross-referencing with a personal Airtable database.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11159-analyze-food-ingredients-from-telegram-photos-using-ge.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can AI help with food allergies and dietary restrictions?","acceptedAnswer":{"@type":"Answer","text":"AI can analyze images of ingredient labels using optical character recognition (OCR) and natural language processing to identify specific allergens, additives, or non-compliant ingredients. It provides a fast, automated check against a personal database of 'good' and 'bad' items, reducing the risk of human error when reading complex labels."}},{"@type":"Question","name":"What are the benefits of automating food safety checks?","acceptedAnswer":{"@type":"Answer","text":"Automating food safety checks saves significant time and mental effort for individuals with dietary restrictions. It provides instant, consistent verification, creates a searchable log of scanned products, and can be customized with strict personal rules (like veto logic) that are applied every time without exception."}},{"@type":"Question","name":"How do Telegram bots work for business or personal automation?","acceptedAnswer":{"@type":"Answer","text":"Telegram bots act as conversational interfaces that can receive photos, documents, or text commands. They trigger backend workflows that process the input, perform actions (like AI analysis or database queries), and return a formatted response. This makes complex automation accessible through a simple, familiar messaging app."}},{"@type":"Question","name":"Why use Airtable as a database for automation workflows?","acceptedAnswer":{"@type":"Answer","text":"Airtable combines the simplicity of a spreadsheet with the power of a relational database. It's ideal for automation because it's easy to set up and modify (no SQL required), has a robust API, allows for complex data relationships, and provides a user-friendly interface for non-technical users to manage the 'rules' (like ingredient watchlists)."}},{"@type":"Question","name":"What's the difference between using a local LLM vs. cloud AI like Gemini for OCR?","acceptedAnswer":{"@type":"Answer","text":"A local LLM runs on your own hardware, offering data privacy and potentially lower long-term costs, but requires technical setup and may have slower performance. Cloud AI services like Google Gemini are easier to implement, offer state-of-the-art accuracy and speed, but involve API costs and data is processed on external servers."}},{"@type":"Question","name":"Can automation handle complex dietary rules like 'vegan except for honey'?","acceptedAnswer":{"@type":"Answer","text":"Yes, well-designed automation can handle nuanced rules. By structuring your database with categories (e.g., 'Always Avoid', 'Conditionally Allowed', 'Preferred') and pairing it with logic in the workflow (like if-then branches or custom code nodes), you can model virtually any dietary framework, from strict veganism to complex medical protocols."}},{"@type":"Question","name":"What are the limitations of using AI for food ingredient analysis?","acceptedAnswer":{"@type":"Answer","text":"Key limitations include: OCR can misread text on crumpled or low-quality labels; AI may not understand contextual synonyms or scientific ingredient names; it cannot assess cross-contamination risks during manufacturing; and it should never replace medical advice for life-threatening allergies. Always verify with the physical label."}},{"@type":"Question","name":"Can I get a custom food safety automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored automation systems for food businesses, restaurants, supplement companies, and healthcare providers. We can create custom solutions for batch ingredient verification, supplier compliance logging, allergy-aware menu generation, or integrated safety protocols that fit your specific operational needs and scale."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"AI Food Ingredient Scanner"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>AI Food Ingredient Scanner</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Telegram</span>
+          <span class="cs-tag">AI Vision</span>
+          <span class="cs-tag">Airtable</span>
+          <span class="cs-tag">Google Gemini</span>
+          <span class="cs-tag">Personal Automation</span>
+        </div>
+        <h1>AI Food Ingredient Scanner: Telegram + Airtable</h1>
+        <p class="cs-hero-sub">Upload product photos to Telegram, get instant AI analysis against your personal ingredient database, and ensure dietary compliance automatically.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/11159-analyze-food-ingredients-from-telegram-photos-using-ge.png" alt="Diagram showing a Telegram photo being analyzed by AI, with results saved to Airtable" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>For anyone managing food allergies, dietary restrictions (vegan, gluten-free, halal, keto), or simply avoiding specific additives, reading ingredient labels is a constant, error-prone chore. This automation turns your smartphone into a personal food safety bodyguard.</p>
+        <p>The workflow solves the problem of manual label scrutiny. You simply send a photo of a product's ingredient list to your private Telegram bot. The system automatically extracts the text using AI vision, cross-references every ingredient against your personal "watchlist" stored in Airtable, and instantly replies with a clear "Safe" or "Unsafe" verdict. It even logs the scan for your records, creating a searchable history of everything you've checked.</p>
+
+        <h2>How It Works</h2>
+        <p>The automation follows a precise, logical sequence to ensure accurate and personalized results every time.</p>
+        <h3>1. Photo Submission via Telegram</h3>
+        <p>You send a photo message to your dedicated Telegram bot. The workflow is triggered instantly, capturing the image file and the user's details for personalized processing.</p>
+        <h3>2. Fetch Personal Rules from Airtable</h3>
+        <p>The workflow queries your Airtable base to retrieve your active "watchlist" (ingredients to avoid or prefer) and your configured "persona" settings, which can customize the bot's response tone and language.</p>
+        <h3>3. AI-Powered Ingredient Analysis</h3>
+        <p>The image is processed using an AI model (configurable for local LLM or cloud services like Gemini) to perform Optical Character Recognition (OCR), converting the label image into readable text. This text is then analyzed against your watchlist using strict logic (e.g., veto mode where any "bad" ingredient triggers an unsafe result).</p>
+        <h3>4. Instant Telegram Response</h3>
+        <p>The bot replies directly in the Telegram chat with a formatted message. Safe results are highlighted in green, unsafe items are flagged in red, and a summary explains the findings based on your personal rules.</p>
+        <h3>5. Result Logging in Airtable</h3>
+        <p>Finally, a complete record of the scan—including the product image link, extracted text, analysis result, and timestamp—is saved to a "Scan Log" table in Airtable, building your personal food safety database.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This template is designed for individuals and families who need reliable, fast dietary compliance checks. It's ideal for people with food allergies (nuts, dairy, shellfish), those following specific diets (Vegan, Paleo, Low-FODMAP), religious dietary observers (Halal, Kosher), and health-conscious shoppers avoiding additives like artificial sweeteners or colors. It's also a powerful tool for nutritionists or healthcare providers managing client food plans.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>An n8n instance</strong> (Cloud or self-hosted).</li>
+          <li><strong>A Telegram account</strong> and a bot created via @BotFather to get your API token.</li>
+          <li><strong>An Airtable account</strong> (free tier works) with the pre-configured "Ingredients Brain" base copied.</li>
+          <li><strong>A Google Gemini API key</strong> for the AI analysis component.</li>
+          <li><strong>Optional:</strong> A local LLM setup (like Ollama) if you prefer to run OCR privately instead of using a cloud AI service.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with the free Google Gemini tier for testing. You can process hundreds of label scans per month without incurring costs, allowing you to fully validate the workflow's value before any commitment.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <p>You can have this personal food scanner running in under 30 minutes by following these steps.</p>
+        <ol>
+          <li><strong>Copy the Airtable Base:</strong> Use the provided link to duplicate the "Ingredients Brain" base into your Airtable workspace. This contains the necessary tables (Watchlist, Preferences, Scan Log).</li>
+          <li><strong>Create Your Telegram Bot:</strong> Message @BotFather on Telegram, follow the prompts to create a new bot, and securely save the provided HTTP API token.</li>
+          <li><strong>Import the Template:</strong> Download the JSON file using the button above and import it into your n8n workspace.</li>
+          <li><strong>Configure Credentials:</strong> In your n8n workflow, set up the credentials for Telegram Bot, Airtable, and Google Gemini API using the tokens and keys you collected.</li>
+          <li><strong>Personalize Your Watchlist:</strong> Go to your Airtable base and populate the "Watchlist" table with the ingredients you need to avoid or look for, marking their status as "Active".</li>
+          <li><strong>Test It:</strong> Send a clear photo of an ingredient label to your new Telegram bot. You should receive an analysis reply within seconds.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminates Label Reading Fatigue:</strong> Save 5–10 minutes per product by automating the tedious task of squinting at tiny, complex ingredient lists. The AI does the reading and cross-checking for you instantly.</p>
+        <p><strong>Reduces Human Error Risk:</strong> Even careful readers can miss an allergen listed under a scientific name. The automated system applies your rules consistently and thoroughly every single time, minimizing oversight.</p>
+        <p><strong>Creates a Searchable Safety Log:</strong> Every scan is logged in Airtable with a timestamp and result. This allows you to track what you've consumed, identify problematic brands, and share data with healthcare providers if needed.</p>
+        <p><strong>Highly Customizable for Any Diet:</strong> The system isn't tied to one diet. By editing the Airtable watchlist, you can model vegan, gluten-free, keto, low-histamine, or any other set of dietary rules with ease.</p>
+        <p><strong>Private and Controllable:</strong> You control all the data. Your ingredient lists and scan history reside in your Airtable and your Telegram chat, not in a third-party app. You can choose to use a local LLM for complete privacy.</p>
+
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about food safety automation and AI integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can AI help with food allergies and dietary restrictions?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI can analyze images of ingredient labels using optical character recognition (OCR) and natural language processing to identify specific allergens, additives, or non-compliant ingredients. It provides a fast, automated check against a personal database of 'good' and 'bad' items, reducing the risk of human error when reading complex labels.</p>
+          <p>For example, someone with a dairy allergy can set up a watchlist for "milk," "whey," "casein," and "lactose." The AI will scan a label and flag the product if any of these terms appear, even if they're buried in a long list or use scientific terminology the user might not recognize.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating food safety checks?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Automating food safety checks saves significant time and mental effort for individuals with dietary restrictions. It provides instant, consistent verification, creates a searchable log of scanned products, and can be customized with strict personal rules (like veto logic) that are applied every time without exception.</p>
+          <p>Beyond convenience, it offers peace of mind. The automation acts as a reliable second pair of eyes, which is especially valuable in high-stakes situations like managing a severe allergy or when shopping while fatigued. The historical log also helps in identifying patterns or problematic product lines over time.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do Telegram bots work for business or personal automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Telegram bots act as conversational interfaces that can receive photos, documents, or text commands. They trigger backend workflows that process the input, perform actions (like AI analysis or database queries), and return a formatted response. This makes complex automation accessible through a simple, familiar messaging app.</p>
+          <p>For personal use, it eliminates the need to switch between multiple apps. You're already using Telegram for communication; now it becomes your command center for food safety, task management, or home automation, with all the complex logic handled invisibly in the background by tools like n8n.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why use Airtable as a database for automation workflows?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Airtable combines the simplicity of a spreadsheet with the power of a relational database. It's ideal for automation because it's easy to set up and modify (no SQL required), has a robust API, allows for complex data relationships, and provides a user-friendly interface for non-technical users to manage the 'rules' (like ingredient watchlists).</p>
+          <p>In this workflow, Airtable serves as the dynamic "brain." You can easily add new ingredients to avoid, change your persona from "Sarcastic Bodyguard" to "Helpful Nutritionist," or review past scan logs—all through Airtable's intuitive grid or forms, without touching the underlying automation code.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the difference between using a local LLM vs. cloud AI like Gemini for OCR?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>A local LLM runs on your own hardware, offering data privacy and potentially lower long-term costs, but requires technical setup and may have slower performance. Cloud AI services like Google Gemini are easier to implement, offer state-of-the-art accuracy and speed, but involve API costs and data is processed on external servers.</p>
+          <p>The template is designed for flexibility. You can start with Gemini's free tier for quick validation. If privacy becomes a paramount concern, you can swap the node for a local model like LLaVA or use a self-hosted OCR service, keeping all your label data completely within your control.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can automation handle complex dietary rules like 'vegan except for honey'?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, well-designed automation can handle nuanced rules. By structuring your database with categories (e.g., 'Always Avoid', 'Conditionally Allowed', 'Preferred') and pairing it with logic in the workflow (like if-then branches or custom code nodes), you can model virtually any dietary framework, from strict veganism to complex medical protocols.</p>
+          <p>For the 'vegan except honey' rule, you would mark all animal-derived ingredients as "Bad Stuff" in Airtable, but create a separate rule or a "Conditional" field for honey that the AI logic knows to treat as an exception, perhaps requiring a manual confirmation step.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the limitations of using AI for food ingredient analysis?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Key limitations include: OCR can misread text on crumpled or low-quality labels; AI may not understand contextual synonyms or scientific ingredient names; it cannot assess cross-contamination risks during manufacturing; and it should never replace medical advice for life-threatening allergies. Always verify with the physical label.</p>
+          <p>This tool is best used as a powerful first-pass filter and a logging system, not as an absolute authority. Its greatest value is in catching obvious violations and creating a habit of checking, thereby freeing up your mental energy for the more nuanced decisions that require human judgment.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom food safety automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored automation systems for food businesses, restaurants, supplement companies, and healthcare providers. We can create custom solutions for batch ingredient verification, supplier compliance logging, allergy-aware menu generation, or integrated safety protocols that fit your specific operational needs and scale.</p>
+          <p>Our process starts with a free consultation to understand your workflow, data sources, and compliance requirements. We then design and implement a robust automation system that reduces manual effort, minimizes risk, and provides clear audit trails, all built on reliable platforms like n8n.</p>
+          <ul>
+            <li>End-to-end system design and implementation</li>
+            <li>Integration with your existing POS, inventory, or CRM software</li>
+            <li>Ongoing support and optimization as your needs evolve</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Food Safety Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

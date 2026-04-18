@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrich LinkedIn Lead Profiles with Apify & Google Sheets | Free n8n Template</title>
+<meta name="description" content="Automatically enrich LinkedIn profile URLs into detailed lead profiles. Extract names, titles, company info, and recent activity directly into Google Sheets.">
+<link rel="canonical" href="https://growwstacks.com/workflows/8135-enrich-lead-profiles-from-linkedin-urls-with-apify-and-google-sheets/">
+<meta property="og:title" content="Automate LinkedIn Lead Enrichment with Apify & Google Sheets">
+<meta property="og:description" content="Free n8n workflow to scrape and enrich LinkedIn profiles automatically. Save hours on manual research.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/8135-enrich-lead-profiles-from-linkedin-urls-with-apify-and-google-sheets/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13090-enrich-lead-profiles-from-linkedin-urls-with-apify-and.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate LinkedIn Lead Enrichment with Apify & Google Sheets">
+<meta name="twitter:description" content="Free n8n workflow to scrape and enrich LinkedIn profiles automatically. Save hours on manual research.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Enrich LinkedIn Lead Profiles with Apify & Google Sheets","description":"Automatically enrich LinkedIn profile URLs into detailed lead profiles. Extract names, titles, company info, and recent activity directly into Google Sheets.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13090-enrich-lead-profiles-from-linkedin-urls-with-apify-and.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is LinkedIn lead enrichment and why is it important for sales?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn lead enrichment is the process of automatically extracting detailed professional information from LinkedIn profiles to build comprehensive contact records. It's crucial for sales teams because it transforms a simple name and URL into actionable data like job titles, company details, career history, and recent activity. This saves hours of manual research, ensures your outreach is personalized and relevant, and dramatically increases response rates by allowing you to tailor your messaging to the prospect's specific role and background."}},{"@type":"Question","name":"How accurate is automated LinkedIn data scraping compared to manual research?","acceptedAnswer":{"@type":"Answer","text":"Modern LinkedIn scraping tools like Apify provide highly accurate data when configured correctly, typically achieving 85-95% accuracy for standard profile fields like name, headline, current position, and company. The main advantage isn't just accuracy but consistency and scale—automation eliminates human error and fatigue, processes hundreds of profiles identically, and works 24/7. For sales teams, this means you get standardized, structured data for every lead, making segmentation and personalization at scale actually possible."}},{"@type":"Question","name":"Is it legal to scrape LinkedIn profiles for lead generation?","acceptedAnswer":{"@type":"Answer","text":"Scraping public LinkedIn data for business intelligence and lead generation is generally permissible under LinkedIn's terms when done responsibly—using professional tools like Apify that respect rate limits, not overwhelming their servers, and using the data for legitimate business purposes. The key is to focus on publicly available profile information (not private messages or connections) and avoid violating LinkedIn's User Agreement. Many businesses use this approach successfully, but it's wise to consult legal counsel for your specific use case and jurisdiction."}},{"@type":"Question","name":"What's the difference between LinkedIn Sales Navigator and automated enrichment?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn Sales Navigator is a premium search and filtering tool that helps you find leads within LinkedIn's platform. Automated enrichment extracts that data out of LinkedIn and into your systems (like Google Sheets or your CRM). The real power comes from combining both: use Sales Navigator to build targeted lead lists, then use automation to export and enrich those profiles at scale. This gives you the best of both worlds—LinkedIn's powerful search capabilities and your own database for segmentation, sequencing, and reporting."}},{"@type":"Question","name":"How can enriched LinkedIn data improve my email outreach campaigns?","acceptedAnswer":{"@type":"Answer","text":"Enriched LinkedIn data transforms generic email blasts into highly personalized campaigns. Instead of 'Hi there,' you can reference their specific role, company size, or recent post. Instead of guessing their pain points, you can tailor your message based on their industry and position. This level of personalization typically increases open rates by 40-60% and reply rates by 300-500%. The workflow automatically structures this data so you can use it directly in email templates, making personalization scalable rather than manual."}},{"@type":"Question","name":"What are the main challenges when building a LinkedIn enrichment automation?","acceptedAnswer":{"@type":"Answer","text":"The three biggest challenges are: 1) Handling LinkedIn's anti-scraping measures and rate limits without getting blocked, 2) Parsing inconsistent profile data into clean, structured fields, and 3) Managing errors and partial data gracefully. Professional scraping tools handle the first challenge. This n8n template addresses the second by extracting and structuring key fields consistently. For the third, it includes error handling and status tracking so failed profiles don't break the entire process and can be retried or reviewed manually."}},{"@type":"Question","name":"Can I get a custom LinkedIn lead enrichment automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, absolutely. While this free template provides a solid foundation, every business has unique needs—different CRMs, specific data points, custom scoring logic, or integration with other tools. GrowwStacks specializes in building tailored automation systems that match your exact sales process. We can create a complete solution that connects LinkedIn enrichment to your CRM, adds lead scoring, triggers personalized follow-up sequences, and provides dashboards showing which enrichment sources deliver the best leads for your industry."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"LinkedIn Lead Enrichment"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>LinkedIn Lead Enrichment</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Google Sheets</span>
+          <span class="cs-tag">Apify</span>
+          <span class="cs-tag">LinkedIn</span>
+          <span class="cs-tag">Lead Generation</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+        <h1>Automatically Enrich LinkedIn Profiles into Google Sheets</h1>
+        <p class="cs-hero-sub">Transform LinkedIn URLs into complete lead profiles with job titles, company details, career history, and recent activity—fully automated.</p>
+        <div class="flow-download-bar">
+          <a href="?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/13090-enrich-lead-profiles-from-linkedin-urls-with-apify-and.png" alt="LinkedIn lead enrichment automation workflow diagram showing Google Sheets and Apify integration" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>Manual LinkedIn research is one of the biggest time-sinks in sales and recruitment. This automation eliminates that grind by turning LinkedIn profile URLs into rich, structured lead data automatically. Simply paste URLs into Google Sheets, run the workflow, and get back complete profiles with names, job titles, companies, industries, company websites, sizes, career history, and even recent LinkedIn posts—all neatly organized in your spreadsheet.</p>
+        <p>The workflow intelligently detects which rows need enrichment (where the "First Name" field is empty), scrapes each LinkedIn profile using Apify's professional scraping actor, waits for completion with smart polling, extracts over a dozen valuable data points, and writes everything back to your sheet. It handles errors gracefully, tracks status for each row, and stores the raw Apify dataset ID for future reference if you need deeper analysis.</p>
+        <p>For sales teams, recruiters, and marketers, this means moving from hours of manual profile review to batch-processing hundreds of leads in minutes. You get consistent, structured data ready for segmentation, personalization, and integration into your CRM or marketing automation platforms.</p>
+
+        <h2>How It Works</h2>
+        <h3>1. Read Unenriched Rows from Google Sheets</h3>
+        <p>The workflow starts by scanning your designated Google Sheet for rows where the "First Name" column is empty. This smart detection ensures you only process new leads and avoid duplicate work. It reads the LinkedIn profile URLs you've added and prepares them for scraping.</p>
+        
+        <h3>2. Trigger Apify LinkedIn Profile Scraper</h3>
+        <p>For each URL, the workflow sends a request to Apify's "dev_fusion~linkedin-profile-scraper" actor. This professional scraping tool handles LinkedIn's structure, authentication challenges, and rate limiting—saving you from building and maintaining your own scraper. The workflow initiates the scrape and receives a dataset ID to track progress.</p>
+        
+        <h3>3. Poll for Completion with Smart Retry Logic</h3>
+        <p>LinkedIn scraping takes time. Instead of failing or timing out, the workflow checks the Apify dataset status every 15 seconds (up to 20 attempts). This patient polling ensures reliable completion even for larger profiles or during peak traffic, without overwhelming Apify's API or your n8n instance.</p>
+        
+        <h3>4. Extract and Structure Profile Data</h3>
+        <p>Once scraping completes, the workflow fetches the raw JSON data and extracts key information: personal details (name, location, headline, bio), current role (title, description, company, industry, size, website), additional concurrent positions, most recent previous employer, and the last two LinkedIn posts with links. This transforms unstructured profile HTML into clean, usable fields.</p>
+        
+        <h3>5. Write Enriched Data Back to Google Sheets</h3>
+        <p>The final step updates the original Google Sheets row with all extracted information. Each field gets its own column: First Name, Last Name, Job Position, Location, Industry, Company Name, Company URL, Company Size, and a rich text summary in "LI Other Profile Information." The workflow also marks the status as "Completed" and stores the Apify dataset ID for auditability.</p>
+
+        <h2>Who This Is For</h2>
+        <p>This automation is perfect for <strong>sales development representatives</strong> who need to research prospects before outreach, <strong>recruiters</strong> building talent pipelines, <strong>marketers</strong> creating targeted account lists, and <strong>business development teams</strong> researching partnership opportunities. If you regularly look up LinkedIn profiles to gather professional information, this workflow will save you 10-15 minutes per lead—which adds up to days or weeks saved per month.</p>
+        <p>It's particularly valuable for agencies managing multiple client campaigns, startups building their first target account lists, and established companies scaling their outbound sales operations. The structured output integrates seamlessly with CRM imports, email sequencing tools, and lead scoring systems.</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>Apify Account & API Token:</strong> Sign up at Apify.com, get your API token from settings, and add credits to run the LinkedIn scraper actor.</li>
+          <li><strong>Google Sheets with OAuth2 Access:</strong> A Google Cloud project with Sheets API enabled and OAuth2 credentials configured in n8n.</li>
+          <li><strong>Google Sheet Template:</strong> A sheet with these columns: LinkedIn (URL), First Name, Last Name, Job Position, Location, Industry, Company Name, Company URL, Company Size, LI Other Profile Information, Status, Apify ID, Add date, row_number.</li>
+          <li><strong>n8n Instance:</strong> Either n8n.cloud or self-hosted n8n with internet access to Apify and Google APIs.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Start with a test sheet containing 5-10 LinkedIn URLs to verify everything works before processing large batches. Monitor your Apify usage credits—scraping many profiles consecutively may require sufficient balance.</p>
+        </div>
+
+        <h2>Quick Setup Guide</h2>
+        <ol>
+          <li><strong>Duplicate the template sheet</strong> or create your own with the required column structure.</li>
+          <li><strong>Add your LinkedIn profile URLs</strong> to the "LinkedIn" column, leaving "First Name" blank to trigger enrichment.</li>
+          <li><strong>Import this workflow</strong> into your n8n instance using the downloaded JSON file.</li>
+          <li><strong>Configure three HTTP Request nodes</strong> with your Apify API token (replace "YOUR_APIFY_API_KEY").</li>
+          <li><strong>Connect Google Sheets OAuth2 credentials</strong> to both Google Sheets nodes in the workflow.</li>
+          <li><strong>Update the document ID</strong> in the Google Sheets nodes if using your own sheet instead of the template.</li>
+          <li><strong>Run the workflow manually</strong>—it will process all unenriched rows sequentially and update your sheet.</li>
+        </ol>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Save 10+ hours per week on manual research.</strong> What used to take minutes per profile now happens automatically while you focus on higher-value activities like crafting personalized outreach.</p>
+        <p><strong>Ensure data consistency across your team.</strong> Everyone gets the same structured fields in the same format, eliminating variations from manual data entry and improving CRM data quality.</p>
+        <p><strong>Scale your prospecting without adding headcount.</strong> Process hundreds of leads in the time it previously took to research ten, enabling larger, more targeted outreach campaigns.</p>
+        <p><strong>Get richer lead intelligence.</strong> Beyond basic name and title, you capture company size, industry, career history, and recent activity—giving you more hooks for personalized messaging.</p>
+        <p><strong>Future-proof your data.</strong> The stored Apify dataset IDs let you re-analyze raw profile data later as your needs evolve, without re-scraping.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about LinkedIn lead enrichment and automation</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is LinkedIn lead enrichment and why is it important for sales?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>LinkedIn lead enrichment is the process of automatically extracting detailed professional information from LinkedIn profiles to build comprehensive contact records. It's crucial for sales teams because it transforms a simple name and URL into actionable data like job titles, company details, career history, and recent activity.</p>
+          <p>This saves hours of manual research, ensures your outreach is personalized and relevant, and dramatically increases response rates by allowing you to tailor your messaging to the prospect's specific role and background.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How accurate is automated LinkedIn data scraping compared to manual research?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Modern LinkedIn scraping tools like Apify provide highly accurate data when configured correctly, typically achieving 85-95% accuracy for standard profile fields like name, headline, current position, and company.</p>
+          <p>The main advantage isn't just accuracy but consistency and scale—automation eliminates human error and fatigue, processes hundreds of profiles identically, and works 24/7. For sales teams, this means you get standardized, structured data for every lead, making segmentation and personalization at scale actually possible.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is it legal to scrape LinkedIn profiles for lead generation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Scraping public LinkedIn data for business intelligence and lead generation is generally permissible under LinkedIn's terms when done responsibly—using professional tools like Apify that respect rate limits, not overwhelming their servers, and using the data for legitimate business purposes.</p>
+          <p>The key is to focus on publicly available profile information (not private messages or connections) and avoid violating LinkedIn's User Agreement. Many businesses use this approach successfully, but it's wise to consult legal counsel for your specific use case and jurisdiction.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the difference between LinkedIn Sales Navigator and automated enrichment?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>LinkedIn Sales Navigator is a premium search and filtering tool that helps you find leads within LinkedIn's platform. Automated enrichment extracts that data out of LinkedIn and into your systems (like Google Sheets or your CRM).</p>
+          <p>The real power comes from combining both: use Sales Navigator to build targeted lead lists, then use automation to export and enrich those profiles at scale. This gives you the best of both worlds—LinkedIn's powerful search capabilities and your own database for segmentation, sequencing, and reporting.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can enriched LinkedIn data improve my email outreach campaigns?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Enriched LinkedIn data transforms generic email blasts into highly personalized campaigns. Instead of 'Hi there,' you can reference their specific role, company size, or recent post. Instead of guessing their pain points, you can tailor your message based on their industry and position.</p>
+          <p>This level of personalization typically increases open rates by 40-60% and reply rates by 300-500%. The workflow automatically structures this data so you can use it directly in email templates, making personalization scalable rather than manual.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the main challenges when building a LinkedIn enrichment automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The three biggest challenges are: 1) Handling LinkedIn's anti-scraping measures and rate limits without getting blocked, 2) Parsing inconsistent profile data into clean, structured fields, and 3) Managing errors and partial data gracefully.</p>
+          <p>Professional scraping tools handle the first challenge. This n8n template addresses the second by extracting and structuring key fields consistently. For the third, it includes error handling and status tracking so failed profiles don't break the entire process and can be retried or reviewed manually.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom LinkedIn lead enrichment automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, absolutely. While this free template provides a solid foundation, every business has unique needs—different CRMs, specific data points, custom scoring logic, or integration with other tools.</p>
+          <p>GrowwStacks specializes in building tailored automation systems that match your exact sales process. We can create a complete solution that connects LinkedIn enrichment to your CRM, adds lead scoring, triggers personalized follow-up sequences, and provides dashboards showing which enrichment sources deliver the best leads for your industry.</p>
+          <ul>
+            <li>Direct integration with Salesforce, HubSpot, or Pipedrive</li>
+            <li>Automated lead scoring based on role, company size, and industry</li>
+            <li>Custom data validation and cleaning rules for your niche</li>
+            <li>Scheduled enrichment runs and alerting for high-priority leads</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom LinkedIn Lead Enrichment Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>

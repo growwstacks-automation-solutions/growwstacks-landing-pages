@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Image Analysis from Forms to Telegram | Free n8n Template | GrowwStacks</title>
+<meta name="description" content="Automatically analyze images submitted via forms using OpenAI Vision and send the AI-generated description to Telegram. Free n8n workflow template for instant visual data processing.">
+<link rel="canonical" href="https://growwstacks.com/workflows/3130-analyze-images-from-forms-using-gpt-4o-mini-vision-and-deliver-to-telegram/">
+<meta property="og:title" content="Free AI Image Analysis Workflow: Forms to Telegram | GrowwStacks">
+<meta property="og:description" content="Automate image analysis from form submissions using GPT-4o-mini Vision and deliver insights directly to Telegram. Download the free n8n template.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/workflows/3130-analyze-images-from-forms-using-gpt-4o-mini-vision-and-deliver-to-telegram/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5507-analyze-images-from-forms-using-gpt-4o-mini-vision-and-.png">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Image Analysis Workflow: Forms to Telegram | GrowwStacks">
+<meta name="twitter:description" content="Automate image analysis from form submissions using GPT-4o-mini Vision and deliver insights directly to Telegram. Download the free n8n template.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<style>
+:root{--cs-accent:#059669;--cs-accent-light:#10b981;--cs-accent-pale:#ecfdf5;--cs-gradient:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 40%,#a7f3d0 100%)}
+.flow-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.flow-hero-content{display:flex;flex-direction:column}
+.flow-hero-img{border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.10);border:1px solid #e2e8f0;overflow:hidden}
+.flow-hero-img img{width:100%;height:auto;display:block}
+.flow-download-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn-download{background:var(--cs-accent);color:#fff;border-color:var(--cs-accent);font-size:16px;padding:16px 32px;gap:10px}
+.btn-download:hover{background:var(--cs-accent-light);transform:translateY(-2px);box-shadow:0 4px 20px rgba(5,150,105,.25)}
+.btn-download svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-file-meta{font-size:13px;color:#94a3b8}
+@media(max-width:768px){.flow-hero-grid{grid-template-columns:1fr;gap:24px}.flow-hero-content{order:-1}.flow-download-bar{justify-content:center}.btn-download{width:100%;justify-content:center;max-width:360px}.flow-file-meta{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Image Analysis from Forms to Telegram","description":"Automatically analyze images submitted via forms using OpenAI Vision and send the AI-generated description to Telegram. Free n8n workflow template for instant visual data processing.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1225"},"image":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5507-analyze-images-from-forms-using-gpt-4o-mini-vision-and-.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is AI image analysis and how can it benefit my business?","acceptedAnswer":{"@type":"Answer","text":"AI image analysis uses computer vision models like GPT-4o-mini to interpret and describe the content of images. For businesses, this automates tasks like processing customer-submitted photos, extracting text from receipts, verifying document authenticity, or categorizing visual feedback, saving hours of manual review and enabling real-time responses."}},{"@type":"Question","name":"Why combine form submissions with Telegram for image analysis?","acceptedAnswer":{"@type":"Answer","text":"Combining forms and Telegram creates a powerful, low-latency feedback loop. Users submit images via a familiar form interface, and your team receives instant, analyzed insights in a chat app they already use daily. This is ideal for support tickets, field service reports, or customer feedback where visual context is critical and speed matters."}},{"@type":"Question","name":"Can this workflow handle multiple images from a single form submission?","acceptedAnswer":{"@type":"Answer","text":"Yes, with proper configuration. The n8n workflow can be set to loop through multiple image attachments from a single form entry, analyzing each one sequentially and compiling the results into a single Telegram message or separate alerts, depending on your needs. This is perfect for multi-part inspections or document bundles."}},{"@type":"Question","name":"What types of image analysis prompts work best with OpenAI Vision?","acceptedAnswer":{"@type":"Answer","text":"Specific, task-oriented prompts yield the best results. Instead of 'describe this image,' use 'Extract the total amount, date, and vendor name from this receipt' or 'List all visible safety hazards in this workplace photo.' Providing clear context and expected output format in your prompt significantly improves accuracy and usefulness for business automation."}},{"@type":"Question","name":"How secure is this workflow for sensitive document images?","acceptedAnswer":{"@type":"Answer","text":"When self-hosted, n8n keeps your data within your infrastructure. OpenAI API calls transmit images, so review their data usage policies. For highly sensitive documents, consider using local vision models or adding a pre-processing step to redact personal information before analysis. Always encrypt connections and use secure credentials for all services."}},{"@type":"Question","name":"What are common business use cases for automated image analysis?","acceptedAnswer":{"@type":"Answer","text":"Common use cases include: processing insurance claim photos for damage assessment, analyzing retail shelf photos for planogram compliance, extracting data from handwritten forms or invoices, moderating user-generated content, verifying identity documents during onboarding, and monitoring construction site progress through daily photo submissions."}},{"@type":"Question","name":"Can I customize the AI's analysis for industry-specific terminology?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The OpenAI Vision API allows extensive prompt engineering. You can train the model within your prompt to recognize industry-specific terms, grading scales, or compliance criteria. For example, 'Analyze this restaurant kitchen photo using health department violation categories' or 'Grade this manufacturing weld based on AWS D1.1 standards.'"},{"@type":"Question","name":"Can I get a custom image analysis automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building tailored automation solutions. We can create custom workflows that integrate your specific form platforms, use proprietary image analysis models, connect to your internal databases, and deliver results to your preferred communication channels. Our team handles the entire implementation from design to deployment."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Workflows","item":"https://growwstacks.com/workflows/"},{"@type":"ListItem","position":3,"name":"AI Image Analysis from Forms to Telegram"}]}</script>
+</head>
+<body class="cs-page page-flow-detail">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero">
+  <div class="cs-hero-bg"><div class="cs-hero-bg-shape1"></div><div class="cs-hero-bg-shape2"></div></div>
+  <div class="container cs-hero-inner">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/workflows/">Workflows</a> <span aria-hidden="true">/</span>
+      <span>AI Image Analysis</span>
+    </nav>
+    <div class="flow-hero-grid">
+      <div class="flow-hero-content">
+        <div class="cs-hero-tags">
+          <span class="cs-tag">OpenAI</span>
+          <span class="cs-tag">Telegram</span>
+          <span class="cs-tag">Form Processing</span>
+          <span class="cs-tag">AI Vision</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+        <h1>AI Image Analysis from Forms to Telegram</h1>
+        <p class="cs-hero-sub">Automatically analyze images submitted via forms using OpenAI Vision and send the AI-generated description directly to your Telegram chat.</p>
+        <div class="flow-download-bar">
+          <a href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5507-analyze-images-from-forms-using-gpt-4o-mini-vision-and-.json?ik-attachment=true" download="workflow-template.json" class="btn btn-download" aria-label="Download workflow template">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Template
+          </a>
+          <span class="flow-file-meta">JSON · n8n compatible · Free</span>
+        </div>
+      </div>
+      <div class="flow-hero-img">
+        <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/N8N-Workflows/5507-analyze-images-from-forms-using-gpt-4o-mini-vision-and-.png" alt="AI Image Analysis Workflow Diagram showing form submission, OpenAI Vision processing, and Telegram notification" width="580" height="380" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner" style="display:block;max-width:820px;margin:0 auto;">
+      <article class="cs-article">
+        <h2>What This Workflow Does</h2>
+        <p>This automation solves a common business problem: manually reviewing images submitted by customers, team members, or through public forms. Whether it's expense receipts, product photos, inspection reports, or support tickets with screenshots, visual data requires human interpretation—until now.</p>
+        <p>The workflow automatically processes images submitted through any form (Typeform, Google Forms, JotForm, or n8n's built-in form trigger), sends them to OpenAI's GPT-4o-mini Vision model for analysis, and delivers the AI-generated description directly to a designated Telegram chat or channel. This creates an instant feedback loop where visual information becomes actionable text insights.</p>
+        <p>Instead of someone constantly monitoring form submissions or email attachments, your team receives concise, analyzed summaries in their everyday communication tool. The AI can be instructed to look for specific elements—extract text, identify objects, assess quality, or flag issues—making it adaptable for countless business scenarios.</p>
+
+        <h2>How It Works</h2>
+        <p>The automation follows a clean three-step process that transforms raw images into intelligent notifications.</p>
+        
+        <h3>1. Form Submission Trigger</h3>
+        <p>The workflow starts when a user submits a form containing image attachments. This could be a customer support form, a field service report, an expense submission, or a quality inspection portal. The trigger captures all form data, including image URLs or binary files.</p>
+        
+        <h3>2. OpenAI Vision Analysis</h3>
+        <p>Each submitted image is sent to OpenAI's Vision API with a custom prompt you define. For example: "Extract the total amount, date, and vendor from this receipt" or "Describe any visible damage in this insurance claim photo." The AI returns a detailed textual analysis based on your specific requirements.</p>
+        
+        <h3>3. Telegram Delivery</h3>
+        <p>The analyzed text, along with original submission details (user email, timestamp, form responses), is formatted into a clear message and sent to your pre-configured Telegram chat or channel. Team members get instant notifications with all context needed for follow-up.</p>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> Use Telegram's bot features to create interactive responses. Add buttons to approve/reject submissions or request more information directly from the notification.</p>
+        </div>
+
+        <h2>Who This Is For</h2>
+        <p>This template is ideal for businesses and teams that receive visual information through forms and need to process it quickly. Customer support teams handling screenshot-based tickets, operations managers reviewing field service photos, accounting departments processing receipt submissions, quality assurance teams analyzing product images, and educational institutions collecting assignment photos can all benefit dramatically.</p>
+        <p>Small businesses without dedicated IT staff will find this particularly valuable—it replaces manual image review with automated intelligence. Developers and agencies can use it as a foundation for client solutions, adding custom logic for specific industries like real estate (property photos), healthcare (document processing), or retail (inventory photos).</p>
+
+        <h2>What You'll Need</h2>
+        <ol>
+          <li><strong>n8n instance</strong> (cloud or self-hosted)</li>
+          <li><strong>OpenAI API key</strong> with Vision access</li>
+          <li><strong>Telegram Bot Token</strong> (create via @BotFather)</li>
+          <li><strong>Telegram Chat ID</strong> (where notifications will be sent)</li>
+          <li><strong>Form platform</strong> (Typeform, Google Forms, Tally, or n8n's webhook form)</li>
+          <li><strong>Basic understanding</strong> of how to import JSON workflows into n8n</li>
+        </ol>
+
+        <h2>Quick Setup Guide</h2>
+        <p>Get this automation running in under 15 minutes with these steps:</p>
+        <ol>
+          <li><strong>Download the template</strong> using the button above and import it into your n8n instance.</li>
+          <li><strong>Configure your form trigger</strong> by connecting your form platform (or set up n8n's webhook form trigger).</li>
+          <li><strong>Add your OpenAI API key</strong> in the OpenAI Vision node and customize the analysis prompt for your use case.</li>
+          <li><strong>Set up Telegram credentials</strong> by creating a bot via @BotFather and adding your bot token and chat ID to the Telegram node.</li>
+          <li><strong>Test the workflow</strong> by submitting a sample image through your form and verifying the analysis appears in Telegram.</li>
+          <li><strong>Activate the workflow</strong> and start processing images automatically.</li>
+        </ol>
+
+        <div class="cs-highlight">
+          <p><strong>Pro tip:</strong> For production use, add an error handling step that retries failed API calls and notifies administrators if the workflow stops. Consider adding a database node to log all analyses for audit trails.</p>
+        </div>
+
+        <h2>Key Benefits</h2>
+        <p><strong>Eliminate manual image review:</strong> What used to take minutes per submission now happens instantly. Support teams can focus on solving problems instead of deciphering screenshots.</p>
+        <p><strong>24/7 processing capability:</strong> The workflow runs continuously, analyzing submissions as they arrive—even outside business hours. No more backlog of unprocessed images on Monday morning.</p>
+        <p><strong>Consistent analysis quality:</strong> Unlike human reviewers who might miss details when tired, the AI applies the same criteria to every image, ensuring standardized evaluation.</p>
+        <p><strong>Immediate team notification:</strong> Critical visual information reaches the right people instantly via Telegram, enabling faster response times for urgent issues.</p>
+        <p><strong>Scalable solution:</strong> Process 10 or 10,000 images daily without additional staffing. The per-image cost decreases with volume, making it economically efficient.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="cs-faq-subtitle">Common questions about AI image analysis automation and integration</p>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is AI image analysis and how can it benefit my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>AI image analysis uses computer vision models like GPT-4o-mini to interpret and describe the content of images. For businesses, this automates tasks like processing customer-submitted photos, extracting text from receipts, verifying document authenticity, or categorizing visual feedback, saving hours of manual review and enabling real-time responses.</p>
+          <p>Instead of employees manually opening each image, the AI provides instant summaries. This transforms visual data into actionable insights that can trigger other automations, like creating support tickets or updating databases.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Why combine form submissions with Telegram for image analysis?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Combining forms and Telegram creates a powerful, low-latency feedback loop. Users submit images via a familiar form interface, and your team receives instant, analyzed insights in a chat app they already use daily. This is ideal for support tickets, field service reports, or customer feedback where visual context is critical and speed matters.</p>
+          <p>Telegram's notification system ensures urgent issues get immediate attention, while the threaded chat format keeps all related conversations organized. Teams can discuss findings and decide on next steps without switching between multiple applications.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can this workflow handle multiple images from a single form submission?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, with proper configuration. The n8n workflow can be set to loop through multiple image attachments from a single form entry, analyzing each one sequentially and compiling the results into a single Telegram message or separate alerts, depending on your needs. This is perfect for multi-part inspections or document bundles.</p>
+          <p>For example, a field technician might submit 5 photos of equipment from different angles. The workflow can analyze each photo individually, then provide a consolidated report: "5 images analyzed: 3 show normal wear, 1 shows corrosion on component X, 1 shows potential safety issue with guard removed."</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of image analysis prompts work best with OpenAI Vision?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Specific, task-oriented prompts yield the best results. Instead of 'describe this image,' use 'Extract the total amount, date, and vendor name from this receipt' or 'List all visible safety hazards in this workplace photo.' Providing clear context and expected output format in your prompt significantly improves accuracy and usefulness for business automation.</p>
+          <p>Include examples in your prompt when possible: "Analyze this restaurant inspection photo similar to health department standards: check for 1) proper food storage temperatures, 2) cleanliness of surfaces, 3) employee hygiene compliance. Return findings as bullet points." The more guidance you give the AI, the more actionable its analysis becomes.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is this workflow for sensitive document images?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>When self-hosted, n8n keeps your data within your infrastructure. OpenAI API calls transmit images, so review their data usage policies. For highly sensitive documents, consider using local vision models or adding a pre-processing step to redact personal information before analysis. Always encrypt connections and use secure credentials for all services.</p>
+          <p>Implement additional security by: 1) Using form platforms with built-in encryption, 2) Setting image retention policies to auto-delete after processing, 3) Restricting Telegram bot access to authorized chats only, and 4) Regularly auditing access logs. For compliance-heavy industries, consult legal counsel about data handling requirements.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are common business use cases for automated image analysis?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Common use cases include: processing insurance claim photos for damage assessment, analyzing retail shelf photos for planogram compliance, extracting data from handwritten forms or invoices, moderating user-generated content, verifying identity documents during onboarding, and monitoring construction site progress through daily photo submissions.</p>
+          <p>Educational institutions use it to grade assignment submissions, healthcare providers process patient intake documents, manufacturers inspect product quality photos, and real estate agents analyze property listing images. The pattern is universal: any business receiving visual information can automate its interpretation and routing.</p>
+          <ul>
+            <li>Reduce processing time from hours to seconds</li>
+            <li>Eliminate human error in visual inspection</li>
+            <li>Scale operations without proportional staffing increases</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the AI's analysis for industry-specific terminology?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Absolutely. The OpenAI Vision API allows extensive prompt engineering. You can train the model within your prompt to recognize industry-specific terms, grading scales, or compliance criteria. For example, 'Analyze this restaurant kitchen photo using health department violation categories' or 'Grade this manufacturing weld based on AWS D1.1 standards.'</p>
+          <p>Provide reference images or descriptions in your prompt to establish context. For medical applications: "This is a dermatology image. Look for ABCDE melanoma indicators: Asymmetry, Border irregularity, Color variation, Diameter >6mm, Evolution." The AI will apply this specialized lens to all submitted images.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom image analysis automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes, GrowwStacks specializes in building tailored automation solutions. We can create custom workflows that integrate your specific form platforms, use proprietary image analysis models, connect to your internal databases, and deliver results to your preferred communication channels. Our team handles the entire implementation from design to deployment.</p>
+          <p>We'll work with you to understand your unique requirements—whether you need multi-step approval processes, integration with existing CRM systems, custom reporting dashboards, or compliance-specific data handling. Contact us for a free consultation to discuss how automated image analysis can transform your business operations.</p>
+          <ul>
+            <li>End-to-end implementation with your existing tools</li>
+            <li>Ongoing support and optimization</li>
+            <li>Training for your team to manage and modify workflows</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Need a Custom Image Analysis Automation?</h2>
+    <p>This free template is a starting point. Our team builds fully tailored automation systems for your specific business needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/workflows/" class="btn btn-outline">Browse More Workflows</a>
+    </div>
+  </div>
+</section>
+<div id="gs-consult-section"></div>
+<div id="gs-testimonials"></div>
+</main>
+<div id="gs-footer"></div>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+</body>
+</html>
