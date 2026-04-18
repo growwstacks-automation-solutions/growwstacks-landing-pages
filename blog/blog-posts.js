@@ -1,5 +1,518 @@
 const BLOG_POSTS = [
 {
+  title: "Connect Claude to 8,000+ Apps With This One MCP Setup",
+  desc: "Transform Claude into a powerful AI assistant that integrates with Gmail, Google Calendar, Slack and thousands more apps through a single Zapier MCP connection. Step-by-step guide for both Claude Chat and Claude Code.",
+  url: "/blog/connect-claude-to-apps-with-mcp",
+  tags: ["AI Agents","Zapier","Automation"],
+  date: "2026-03-09",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "OpenClaw + Ollama: The Free, Private AI Automation Revolution for Businesses",
+  desc: "Discover how OpenClaw's latest update combined with Ollama creates a powerful, private AI automation platform that runs entirely on your local machine - no API costs, no data leaks.",
+  url: "/blog/openclaw-ollama-free-private-ai-automation",
+  tags: ["AI Agents","Automation","Local AI"],
+  date: "2026-03-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Why I Stopped Using n8n (And What Replaced It)",
+  desc: "Discover how AI-powered Claude plugins are replacing traditional automation tools like n8n, offering 100x simpler workflows with natural language interfaces. Learn the three layers of Claude plugins and how any business can implement them without coding.",
+  url: "/blog/why-i-stopped-using-n8n-and-what-replaced-it",
+  tags: ["AI Agents","Automation","Claude"],
+  date: "2026-03-12",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Gemini Voice AI Agent WIPED OUT $297/Month Answering Services (Receptionists Are Panicking)",
+  desc: "Discover how to build a free 24/7 voice AI agent using Google Gemini and Python that replaces expensive answering services. This complete guide shows you how to capture missed calls, qualify leads, and create a new recurring revenue stream.",
+  url: "/blog/gemini-voice-ai-agent-replaces-answering-services",
+  tags: ["Voice AI","Google Gemini","Python"],
+  date: "2026-03-08",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How to Sell AI Voice Agents to Local Businesses (Without Coding) in 2026",
+  desc: "Local businesses are desperate for solutions that handle phone calls and appointments automatically. This guide shows how to build and sell AI voice agents that answer calls, book appointments, and save hours of receptionist time — with no coding required.",
+  url: "/blog/how-to-sell-ai-voice-agents-to-local-businesses",
+  tags: ["Voice AI","AI Agents","Local Business"],
+  date: "2026-03-13",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "21 Game-Changing Ways to Use OpenClaw AI for Business Automation",
+  desc: "Discover how OpenClaw AI can transform your business operations with 21 powerful automation use cases - from personal CRM systems to AI-powered business advisory councils that work while you sleep.",
+  url: "/blog/openclaw-ai-business-automation-use-cases",
+  tags: ["AI Agents","Automation","Productivity"],
+  date: "2026-03-15",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "Build Low Latency AI Voice Agents in Minutes with Telnyx + Deepgram + Kimi K2.5",
+  desc: "Discover how to create sub-200ms AI voice agents using Telnyx's full-stack platform with Deepgram transcription and Kimi K2.5. Perfect for businesses needing real-time voice interactions without the complexity.",
+  url: "/blog/build-low-latency-ai-voice-agents-telnyx-deepgram-kimi",
+  tags: ["Voice AI","Telnyx","AI Agents"],
+  date: "2026-03-17",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Make vs Zapier for Small Business — Which Automation Tool Wins?",
+  desc: "Struggling to choose between Make and Zapier for your small business automation? This breakdown reveals the key differences in pricing, complexity, and ease of use to help you pick the right tool.",
+  url: "/blog/make-vs-zapier-small-business-automation",
+  tags: ["Make.com","Automation","Small Business"],
+  date: "2026-03-22",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How to Connect WhatsApp to Zapier in 2026 (Step-by-Step Guide)",
+  desc: "Learn how to seamlessly connect WhatsApp with Zapier to automate notifications and messages without coding. This step-by-step guide walks you through the entire integration process.",
+  url: "/blog/how-to-integrate-whatsapp-with-zapier",
+  tags: ["Zapier","WhatsApp","Automation"],
+  date: "2026-03-13",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "How to Build Your First AI Agent in Zapier (No Code Required)",
+  desc: "Discover how to create a custom AI agent in Zapier that automatically summarizes your emails and sends Slack updates - no coding skills needed. Perfect for busy professionals.",
+  url: "/blog/build-ai-agent-zapier-no-code",
+  tags: ["AI Agents","Zapier","Automation"],
+  date: "2026-03-11",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Automate YouTube Comment Replies with AI and Make.com",
+  desc: "Stop wasting hours manually replying to YouTube comments. This Make.com automation monitors your channel, analyzes comments with AI, and sends personalized replies automatically — even when you're busy growing your business.",
+  url: "/blog/how-to-automate-youtube-comment-replies-with-ai-and-make-com",
+  tags: ["Make.com","AI Agents","Social Media"],
+  date: "2026-02-16",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "OpenClaw + MiniMax M2.5: The Game-Changing AI Agent Stack That Cuts Costs by 20X",
+  desc: "Discover how the OpenClaw open-source AI agent framework combined with MiniMax M2.5's powerful yet affordable language model can automate your entire business at 1/20th the cost of premium solutions.",
+  url: "/blog/openclaw-minimax-m2-5-ai-agent-stack",
+  tags: ["AI Agents","Open Source","Cost Optimization"],
+  date: "2026-03-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "5 OpenClaw Skills That Actually Automate Your Work (No More Manual Tasks)",
+  desc: "Discover how OpenClaw's Notion integration, Nano Banana Pro, Tavili web search, Twitter thread generator, and model usage tracking can automate your daily workflows. These skills eliminate manual work while giving you AI-powered productivity.",
+  url: "/blog/openclaw-skills-automate-work",
+  tags: ["AI Agents","Productivity","Automation"],
+  date: "2026-03-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How AI Agents Are Changing Marketing Forever — Insights from Zapier's Founder",
+  desc: "Zapier founder Wade Foster reveals how AI agents now choose software for humans — and why businesses need 'agent marketing' to get picked. Learn the new rules of B2B sales in an AI-driven world.",
+  url: "/blog/how-ai-agents-are-changing-marketing",
+  tags: ["AI Agents","Marketing","Automation"],
+  date: "2026-03-03",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How OpenClaw Added $50k/Month to This HVAC Business",
+  desc: "Discover how one HVAC company automated dispatch, lead revival, and after-hours calls using OpenClaw AI - adding $50k/month while replacing 5 staff positions. See the exact workflows they implemented.",
+  url: "/blog/how-openclaw-added-50k-month-to-hvac-business",
+  tags: ["AI Agents","HVAC","Automation"],
+  date: "2026-03-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Automate Daily Competitor Analysis with Make.com (Save 5+ Hours Weekly)",
+  desc: "Stop wasting hours manually tracking competitors. This Make.com workflow automatically gathers data from SERP APIs, analyzes trends with AI, and delivers organized reports to your inbox daily.",
+  url: "/blog/automate-daily-competitor-analysis-make-com",
+  tags: ["Make.com","Competitor Analysis","AI Agents"],
+  date: "2026-02-16",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How I Built My 10 Agent OpenClaw Team for AI-Powered Productivity",
+  desc: "Discover how to assemble your own AI agent team with OpenClaw - from research assistants to project managers - and transform how you work around the clock.",
+  url: "/blog/how-i-built-my-10-agent-openclaw-team",
+  tags: ["AI Agents","OpenClaw","Productivity"],
+  date: "2026-03-16",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Build Your Own OpenClaw AI Assistant in n8n — Full Walkthrough",
+  desc: "Discover how to recreate OpenClaw's core functionality in n8n with multi-channel messaging, persistent memory, and autonomous task execution — all with complete visibility and customization.",
+  url: "/blog/build-openclaw-ai-assistant-n8n",
+  tags: ["n8n","AI Agents","Automation"],
+  date: "2026-03-11",
+  readTime: 15,
+  target: "_blank"
+},
+{
+  title: "🚀 Automate LinkedIn Posts with Make.com + OpenAI | Daily AI Updates Auto-Posting Tutorial",
+  desc: "Learn how to automate daily LinkedIn posts with AI-generated content using Make.com and OpenAI. Never worry about writer's block again while maintaining a professional presence.",
+  url: "/blog/automate-linkedin-posts-make-openai",
+  tags: ["Make.com","Social Media","AI Agents"],
+  date: "2026-03-01",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Why n8n Is No Longer Enough for AI Automation in 2026",
+  desc: "After building hundreds of n8n workflows, we're seeing a seismic shift in when to use visual automation vs AI coding agents. Here's why n8n struggles with scalability, speed, and licensing in today's AI landscape.",
+  url: "/blog/why-n8n-is-no-longer-enough-for-ai-automation",
+  tags: ["n8n","AI Agents","Automation"],
+  date: "2026-02-17",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Build & Sell AI Voice Agents in 12 Minutes (No Code)",
+  desc: "Learn how to create and monetize AI voice agents for local businesses without coding. Includes step-by-step setup, pricing strategies, and ideal client profiles.",
+  url: "/blog/how-to-build-sell-ai-voice-agents",
+  tags: ["Voice AI","AI Agents","Make.com"],
+  date: "2026-02-16",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How I Built an AI Personal Assistant on WhatsApp Using OpenClaw",
+  desc: "Discover how to create your own AI assistant with OpenClaw that can book travel, shop online, and manage tasks - plus learn the surprising limitations and risks of AI agents.",
+  url: "/blog/how-i-built-an-ai-personal-assistant-on-whatsapp-using-openclaw",
+  tags: ["AI Agents","WhatsApp","OpenClaw"],
+  date: "2026-03-15",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How to Automate Customer Order Processing with Make.com: Google Forms to Gmail & Slack",
+  desc: "Stop manually processing customer orders. This Make.com workflow automatically collects Google Form orders, filters by location, updates Google Sheets, sends confirmation emails, and alerts your Slack team - all without lifting a finger.",
+  url: "/blog/automate-customer-order-processing-make-com",
+  tags: ["Make.com","Google Forms","Slack"],
+  date: "2026-03-25",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Zapier Tables Tutorial: The Complete Guide to Building Automated Databases",
+  desc: "Learn how to create powerful automated databases with Zapier Tables - the perfect middle ground between Google Sheets and Airtable for fast automation.",
+  url: "/blog/zapier-tables-tutorial",
+  tags: ["Zapier","Automation","Database"],
+  date: "2026-03-05",
+  readTime: 15,
+  target: "_blank"
+},
+{
+  title: "How AI Agents Made Workflows 10x Easier Than n8n (Claude Code Tutorial)",
+  desc: "Discover how Claude Code eliminates weeks of n8n learning curve by letting you describe workflows in plain English. See how we automated year-end accounting in minutes.",
+  url: "/blog/claude-code-ai-agent-workflows",
+  tags: ["AI Agents","Claude","Automation"],
+  date: "2026-03-02",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Build Real-Time Voice AI Agents with ElevenLabs (Full Tutorial + Demo)",
+  desc: "Learn how to create natural-sounding voice AI agents using ElevenLabs' platform - perfect for interview coaching, customer service, and more. Includes full code demo.",
+  url: "/blog/build-real-time-voice-ai-agents-with-elevenlabs",
+  tags: ["Voice AI","ElevenLabs","AI Agents"],
+  date: "2026-03-20",
+  readTime: 6,
+  target: "_blank"
+},
+{
+  title: "How to Automate Lead Prioritization with Make.com's New If-Else and Merge Modules",
+  desc: "Discover how Make.com's new If-Else and Merge modules let you automatically route high-value leads to your CEO while filtering others - all in one streamlined workflow.",
+  url: "/blog/automate-lead-prioritization-make-if-else-merge",
+  tags: ["Make.com","CRM","Automation"],
+  date: "2026-03-12",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "n8n vs OpenClaw: The Critical Difference That Determines Which One You Should Use",
+  desc: "Most people think n8n and OpenClaw are interchangeable automation tools - but they work in fundamentally different ways. Learn which one to use based on whether your process is predefined or requires AI reasoning.",
+  url: "/blog/n8n-vs-openclaw-which-one-should-you-use",
+  tags: ["n8n","AI Agents","Automation"],
+  date: "2026-03-16",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "STOP Building AI Agents. Do THIS Instead.",
+  desc: "Antropic, the makers of Claude AI, reveal why skills - not agents - are the future of practical AI implementation. Learn how modular expertise transforms AI from generalists to domain specialists.",
+  url: "/blog/stop-building-ai-agents-do-this-instead",
+  tags: ["AI Agents","Claude","Automation"],
+  date: "2026-03-05",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Sell AI Agents with Personalized Demos Created in 10 Seconds (GoHighLevel)",
+  desc: "Stop cold outreach that doesn't work. This GoHighLevel system builds fully customized AI demo agents for prospects in under 10 seconds - delivering value before you ever ask for a meeting.",
+  url: "/blog/how-to-sell-ai-agents-with-personalized-demos",
+  tags: ["AI Agents","GoHighLevel","Sales Automation"],
+  date: "2026-03-13",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Why I Switched From n8n to Agentic Workflows (And When You Should Too)",
+  desc: "After building hundreds of complex n8n workflows, I discovered agentic workflows - where AI agents build automations from plain English descriptions. Here's when they outperform traditional tools and when to stick with n8n.",
+  url: "/blog/why-i-switched-from-n8n-to-agentic-workflows",
+  tags: ["AI Agents","n8n","Automation"],
+  date: "2026-03-09",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "3 Powerful OpenClaw Bots That Put Your Business on Autopilot (with Zapier MCP)",
+  desc: "Discover how OpenClaw's SEO bot, sales rep, and ads manager can automate your business workflows while maintaining security through sandbox protocols and Zapier MCP.",
+  url: "/blog/openclaw-bots-automation-zapier-mcp",
+  tags: ["AI Agents","Automation","Zapier"],
+  date: "2026-03-12",
+  readTime: 6,
+  target: "_blank"
+},
+{
+  title: "How to Make OpenClaw 10,000x More Powerful (+7 Scaling Workflows)",
+  desc: "Discover how to supercharge your OpenClaw with API integrations and 7 ready-to-use workflows for lead generation, content creation, and trend analysis.",
+  url: "/blog/openclaw-power-boost-workflows",
+  tags: ["AI Agents","Automation","Workflows"],
+  date: "2026-03-15",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "Build an AI Content Factory in Zapier: Turn One Idea into Blog + Social Posts Automatically",
+  desc: "Stop wasting hours creating content manually. This Zapier workflow turns one idea into a full blog post, LinkedIn post, and Twitter thread automatically using Google's Gemini AI.",
+  url: "/blog/build-ai-content-factory-zapier",
+  tags: ["Zapier","AI Agents","Content Creation"],
+  date: "2026-03-18",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How to Build and Test Voice Agents Automatically with Claude Code (Retell AI)",
+  desc: "Discover how Claude Code can now build, test, fix, and retest your Retell AI voice agents automatically using a powerful testing API no one's talking about. Get our free Voice AI Starter Kit with SOPs and testing frameworks.",
+  url: "/blog/how-to-build-test-voice-agents-claude-code-retell-ai",
+  tags: ["Voice AI","AI Agents","Retell AI"],
+  date: "2026-03-21",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Top 7 AI Agent Tools That Actually Work in 2026",
+  desc: "Discover the 7 most powerful AI agent tools that automate complex tasks while you focus on growing your business. Learn which tool fits your needs without coding knowledge.",
+  url: "/blog/top-ai-agent-tools",
+  tags: ["AI Agents","Automation","Productivity"],
+  date: "2026-03-19",
+  readTime: 11,
+  target: "_blank"
+},
+{
+  title: "Why Agentic Workflows Are Making N8N, Zapier & Make Obsolete",
+  desc: "Discover how agentic workflows using Claude Code and the BMAD framework offer more control, visibility and flexibility than traditional automation tools like N8N, Zapier and Make.com.",
+  url: "/blog/agentic-workflows-replacing-n8n-zapier-make",
+  tags: ["AI Agents","Workflow Automation","BMAD Framework"],
+  date: "2026-02-15",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "Synthflow AI Review: I Built 6 Voice AI Agents – Is It Worth It?",
+  desc: "After testing Synthflow's voice AI agents across 7 key criteria including latency, interruption handling and integrations, discover whether it's the right solution for your business needs.",
+  url: "/blog/synthflow-ai-review-voice-agents",
+  tags: ["Voice AI","AI Agents","Telephony"],
+  date: "2026-03-18",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How to Connect Clay & Make.com for Two-Way Data Automation",
+  desc: "Learn how to seamlessly transfer data between Clay and Make.com in both directions - including troubleshooting JSON formatting issues and leveraging Clay's native Make integration.",
+  url: "/blog/how-to-connect-clay-make-com",
+  tags: ["Make.com","Clay","Automation"],
+  date: "2026-03-02",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Build a FREE AI Agent on Windows (Claude + n8n + MCP Full Guide)",
+  desc: "Learn how to create a fully functional AI agent running locally on Windows using Claude, n8n, and MCP - no cloud dependencies or paid platforms required.",
+  url: "/blog/build-free-ai-agent-windows-claude-n8n-mcp",
+  tags: ["AI Agents","n8n","Windows"],
+  date: "2026-03-01",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "n8n vs Zapier in 2026: Which Automation Tool Actually Saves You Time?",
+  desc: "Automation has evolved beyond simple triggers - discover whether n8n's flexibility or Zapier's simplicity better fits your business needs in 2026.",
+  url: "/blog/n8n-vs-zapier-2026-comparison",
+  tags: ["n8n","Make.com","AI Agents"],
+  date: "2026-03-23",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "How to Automate Daily Weather Updates with Make.com in 3 Simple Steps",
+  desc: "Stop checking weather apps manually - this Make.com automation sends daily forecasts straight to your Telegram with just 3 modules. Perfect for travelers, outdoor workers, or anyone who needs weather alerts.",
+  url: "/blog/automate-daily-weather-updates-make-com",
+  tags: ["Make.com","Telegram","Weather Automation"],
+  date: "2026-03-18",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "OpenClaw + PaperClip: Build a Fully Autonomous AI Company With Zero Employees",
+  desc: "Discover how to create an entire AI-powered company structure with OpenClaw and PaperClip - complete with org charts, job titles, and autonomous task management - all without writing a single line of code.",
+  url: "/blog/openclaw-paperclip-ai-company",
+  tags: ["AI Agents","OpenClaw","Automation"],
+  date: "2026-03-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Automate Business Tasks Without Coding in 2026 (Make.com Beginner's Guide)",
+  desc: "Stop wasting hours on manual data entry. This step-by-step Make.com tutorial shows beginners how to connect apps like Google Forms and Sheets in minutes - no coding required.",
+  url: "/blog/make-com-beginners-guide-automation",
+  tags: ["Make.com","Automation","Google Sheets"],
+  date: "2026-03-06",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How to Automate Finance Animation Videos with n8n - Generate 10+ Daily",
+  desc: "Discover how to fully automate finance animation video creation using n8n and AI agents - generate 10+ high-quality videos daily without manual scripting or editing.",
+  url: "/blog/automate-finance-animation-videos-n8n",
+  tags: ["n8n","AI Agents","Social Media"],
+  date: "2026-03-09",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "I Let Claude Build My AI Receptionist Using ElevenLabs & Make.com — Then Compared It to Mine",
+  desc: "Discover how Claude AI created a functional but robotic receptionist compared to my custom-built solution - and why AI still needs human refinement for natural conversations.",
+  url: "/blog/claude-ai-receptionist-elevenlabs-make-com-comparison",
+  tags: ["AI Agents","Voice AI","Make.com"],
+  date: "2026-03-13",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Embed Voice AI Agents Anywhere on Your Website — Not Just the Corner",
+  desc: "Stop hiding your Voice AI in a corner chat bubble. This HighLevel tutorial shows you how to embed your AI agent directly into any section of your website or funnel, creating a seamless conversational experience for visitors.",
+  url: "/blog/embed-voice-ai-agents-seamlessly-on-your-website-highlevel-tutorial",
+  tags: ["Voice AI","HighLevel","AI Agents"],
+  date: "2026-02-16",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "How I Built a Full AI Team Inside OpenClaw for $400/Month",
+  desc: "An 18-year-old founder reveals how he runs his entire company with 15 AI agents powered by OpenClaw - from mission control to automated workflows that generate features while he sleeps. Learn how to replicate his $400/month system.",
+  url: "/blog/how-i-built-a-full-ai-team-inside-openclaw-for-400-month",
+  tags: ["AI Agents","OpenClaw","Automation"],
+  date: "2026-03-15",
+  readTime: 12,
+  target: "_blank"
+},
+{
+  title: "How to Sell GoHighLevel AI Voice Agents Without Pitching (The Self-Selling Method)",
+  desc: "Stop cold-calling and pitching - let AI sell itself. This revolutionary method uses customized voice agents that demonstrate value by handling real customer interactions, making sales effortless.",
+  url: "/blog/sell-gohighlevel-ai-voice-agents-without-pitching",
+  tags: ["Voice AI","GoHighLevel","Sales"],
+  date: "2026-02-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "n8n vs Claude Code: Which AI Automation Tool Should You Use?",
+  desc: "Discover the pros and cons of visual workflow builder n8n versus AI-powered Claude Code for business automation. Learn which tool fits your technical skills and business needs.",
+  url: "/blog/n8n-vs-claude-code",
+  tags: ["n8n","AI Agents","Automation"],
+  date: "2026-02-27",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "How I Automated Meta Ad Library Scraping Into a Sales Machine (n8n + Gemini + Gamma)",
+  desc: "Transform Meta Ad Library data into polished sales decks automatically with this n8n workflow combining Gemini AI analysis and Gamma presentation generation. Perfect for agencies offering ad creative services.",
+  url: "/blog/automated-meta-ad-library-sales-machine",
+  tags: ["n8n","AI Agents","Social Media"],
+  date: "2026-03-02",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "Stop Learning n8n in 2026...Learn Agentic AI Workflows Instead",
+  desc: "The automation landscape is shifting rapidly - discover why agentic AI workflows built with tools like Claude Code and Trigger.dev are replacing traditional drag-and-drop platforms and how you can stay ahead of this transformation.",
+  url: "/blog/stop-learning-n8n-learn-agentic-ai-workflows",
+  tags: ["AI Agents","Automation","n8n"],
+  date: "2026-03-21",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "This Tool Makes Claude Cowork 100x More Powerful",
+  desc: "Discover how Zapier MCP unlocks Claude Cowork's full automation potential - sending emails, creating tasks, and managing workflows without manual approval.",
+  url: "/blog/this-tool-makes-claude-cowork-100x-more-powerful",
+  tags: ["AI Agents","Zapier","Automation"],
+  date: "2026-03-18",
+  readTime: 6,
+  target: "_blank"
+},
+{
+  title: "Why Narrow AI Agents Outperform General Ones: Building an OpenClaw Superteam",
+  desc: "After testing hundreds of AI agents, we discovered specialized agents with 7-10 focused skills outperform general ones. Learn how to build a team of narrow OpenClaw agents that work together like a well-oiled machine.",
+  url: "/blog/why-narrow-ai-agents-outperform-general-ones",
+  tags: ["AI Agents","OpenClaw","Automation"],
+  date: "2026-03-15",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "The Complete Beginner's Guide to Make.com: Automate Anything Without Coding",
+  desc: "Discover how Make.com lets you automate Instagram messages, client responses, and email replies without writing code. This beginner's guide walks through building your first automation workflow step-by-step.",
+  url: "/blog/complete-beginners-guide-make-com-automation",
+  tags: ["Make.com","Automation","AI Agents"],
+  date: "2026-03-02",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Voice AI Agents Are Now Solving Real Business Problems — Here’s How",
+  desc: "Customer service used to mean long hold times and frustrating chatbots. Now, AI voice agents from companies like ElevenLabs are resolving issues 8x faster while handling 31 languages. Learn how enterprises are deploying conversational AI at scale.",
+  url: "/blog/voice-ai-agents-solving-real-business-problems",
+  tags: ["Voice AI","AI Agents","Customer Service"],
+  date: "2026-02-16",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "N8n vs OpenClaw: When to Use Each for Maximum Automation Impact",
+  desc: "Discover the crucial difference between reactive automation (n8n) and proactive AI (OpenClaw) - and why you might need both in your tech stack for <span data-year="current"></span>.",
+  url: "/blog/n8n-vs-openclaw-comparison",
+  tags: ["n8n","AI Agents","Automation"],
+  date: "2026-03-05",
+  readTime: 5,
+  target: "_blank"
+},
+{
   title: "HubSpot + Make.com Automation: Create Deals, Contacts & Line Items from One Form",
   desc: "Eliminate manual data entry by automatically creating HubSpot deals, assigning contacts/companies, and adding line items from a single form submission using Make.com.",
   url: "/blog/hubspot-make-com-automation-create-deals-contacts-line-items",
