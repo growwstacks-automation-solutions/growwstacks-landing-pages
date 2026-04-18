@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Opus Clips Video Processing and Dropbox Storage — Case Study | GrowwStacks</title>
+<meta name="description" content="Automate Opus Clips video processing with n8n. Filter clips, fetch top videos, and upload to Dropbox. Ideal for content creators automating workflows.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/automate-opus-clips-video-processing-dropbox-storage/">
+<meta property="og:title" content="Automate Opus Clips Video Processing and Dropbox Storage — GrowwStacks Case Study">
+<meta property="og:description" content="Automated Opus Clips video processing workflow using n8n. Achieved faster video selection and streamlined Dropbox storage, saving hours of manual effort.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/automate-opus-clips-video-processing-dropbox-storage/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_S_KL-aFJo.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Opus Clips Video Processing and Dropbox Storage">
+<meta name="twitter:description" content="Automated Opus Clips video processing workflow using n8n. Achieved faster video selection and streamlined Dropbox storage, saving hours of manual effort.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, dropbox, webhook">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation and why is it important?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation involves using technology to automate repeatable tasks and processes, reducing manual effort and improving efficiency. It's important because it saves time, reduces errors, and allows businesses to focus on more strategic activities. <strong>Key benefits include increased productivity and cost savings.</strong> Automating workflows ensures consistency and scalability, which are crucial for business growth. By streamlining operations, companies can respond faster to market changes and customer needs."}},{"@type":"Question","name":"How can workflow automation benefit my business?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation can significantly benefit your business by streamlining operations, reducing manual errors, and improving overall efficiency. <strong>Key advantages include faster task completion and better resource allocation.</strong> Automated systems ensure consistent execution of processes, leading to higher quality outputs and improved customer satisfaction. Additionally, automation provides valuable data insights, enabling better decision-making and continuous improvement."}},{"@type":"Question","name":"What types of tasks can be automated?","acceptedAnswer":{"@type":"Answer","text":"A wide range of tasks can be automated, including data entry, email marketing, social media posting, customer service inquiries, and report generation. <strong>Key areas for automation are repetitive and rule-based tasks.</strong> Automating these processes frees up employees to focus on more complex and creative work. Businesses can also automate tasks such as inventory management, order processing, and appointment scheduling, leading to significant time and cost savings."}},{"@type":"Question","name":"How much does workflow automation cost?","acceptedAnswer":{"@type":"Answer","text":"The cost of workflow automation varies depending on the complexity of the system, the software used, and the level of customization required. <strong>Key cost factors include software licenses and implementation fees.</strong> Simple automations can be relatively inexpensive, while more complex, enterprise-level solutions may require a significant investment. However, the long-term benefits of automation, such as increased efficiency and reduced labor costs, often outweigh the initial investment."}},{"@type":"Question","name":"What is the best platform for workflow automation?","acceptedAnswer":{"@type":"Answer","text":"The best platform for workflow automation depends on your specific needs and technical expertise. <strong>Key considerations include ease of use, integration capabilities, and scalability.</strong> Some popular platforms include n8n, Make.com, Zapier, and Microsoft Power Automate. Each platform offers different features and pricing models, so it's important to evaluate your requirements and choose the one that best fits your business."}},{"@type":"Question","name":"Can I get a custom workflow automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom workflow automations tailored to your unique business needs. <strong>We analyze your processes and design solutions to optimize efficiency.</strong> Our expert team can create automations that integrate seamlessly with your existing systems, ensuring a smooth and effective implementation. Contact us today for a free consultation to discuss your automation requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Automate Opus Clips Video Processing and Dropbox Storage"}]}</script>
+</head>
+<body class="cs-page page-automate-opus-clips-video-processing-dropbox-storage">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 50%,#a5b4fc 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Automate Opus Clips Video Processing...</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Video Processing</span>
+      <span class="cs-tag">Content Automation</span>
+      <span class="cs-tag">Dropbox</span>
+    </div>
+    <h1>Automate Opus Clips Video Processing and Dropbox Storage</h1>
+    <p class="cs-hero-sub">This n8n workflow automates the processing of Opus Clips video data, filtering clips by virality score and uploading the best one to Dropbox. It streamlines content creation and storage for social media managers. The result is a significant reduction in manual effort and faster content deployment.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="dropbox" alt="" width="20" height="20" loading="lazy">
+        Dropbox
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="webhook" alt="" width="20" height="20" loading="lazy">
+        Webhook
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_S_KL-aFJo.jpg" alt="Automate Opus Clips Video Processing and Dropbox Storage" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">95%</div>
+        <div class="cs-result-label">Faster video processing</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Content output increase</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$25K+</div>
+        <div class="cs-result-label">Annual cost savings</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">60s</div>
+        <div class="cs-result-label">Average clip upload time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Content creators and social media managers often struggle with the <strong>time-consuming process</strong> of manually selecting and storing the best video clips from Opus Clips. This involves sifting through numerous clips, evaluating their virality, and then uploading them to storage platforms like Dropbox. This manual effort not only consumes valuable time but also introduces the <strong>risk of human error</strong> in selecting the most engaging content.</p>
+    <p>The <strong>lack of an automated system</strong> leads to delays in content deployment, missed opportunities for timely engagement, and inefficient use of resources. The need for a streamlined, automated solution is critical to optimize content workflows and ensure that the best video clips are promptly available for distribution.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution is an automated n8n workflow that processes Opus Clips video data received via webhook, filters clips based on virality scores, selects the highest-ranked video, and automatically uploads it to Dropbox. This system eliminates the manual effort involved in video clip selection and storage, ensuring that only the most engaging content is promptly available.</p>
+    <p>n8n was chosen for its <strong>flexibility and robust integration capabilities</strong>, allowing seamless connection between Opus Clips, webhook triggers, and Dropbox. This tech stack ensures a reliable and efficient automation process, providing content creators with a streamlined workflow that saves time and reduces errors.</p>
+
+    <div class="cs-visual-flow" aria-label="Opus Clips video processing and Dropbox upload workflow">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">🔗</div><div class="cs-flow-step-title">Webhook Trigger</div><div class="cs-flow-step-sub">Receives Opus Clips data</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">🔍</div><div class="cs-flow-step-title">Filter Clips</div><div class="cs-flow-step-sub">By virality score</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📤</div><div class="cs-flow-step-title">Upload to Dropbox</div><div class="cs-flow-step-sub">Store the best clip</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Content Deployed</div>
+          <div class="cs-flow-outcome review">📋 Review & Approve</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Automated Video Clip Selection and Storage</h3>
+    <p>This workflow automates the entire process of selecting and storing the best video clips from Opus Clips, ensuring efficient content management and deployment.</p>
+    <ol>
+      <li><strong>Webhook Trigger:</strong> The workflow starts with a webhook trigger that listens for new video data from Opus Clips.</li>
+      <li><strong>Receive Data:</strong> Once a new video is processed by Opus Clips, the webhook receives the video data, including the virality score and other relevant metadata.</li>
+      <li><strong>Filter Clips:</strong> The workflow filters the received clips based on their virality score, selecting only those that meet a predefined threshold.</li>
+      <li><strong>Select Best Clip:</strong> Among the filtered clips, the workflow identifies the clip with the highest virality score, ensuring that the most engaging content is prioritized.</li>
+      <li><strong>Prepare for Upload:</strong> The selected clip is prepared for upload to Dropbox, including any necessary formatting or metadata adjustments.</li>
+      <li><strong>Upload to Dropbox:</strong> The workflow automatically uploads the highest-ranked video clip to a designated folder in Dropbox.</li>
+      <li><strong>Notification (Optional):</strong> A notification can be sent to the content creator or social media manager, informing them that the video clip has been successfully uploaded and is ready for use.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Efficiency Boost:</strong> By automating the video selection and storage process, content creators can save significant time and focus on other strategic tasks, such as content creation and audience engagement.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>Saves Time</h4><p>Automates the selection and storage process, eliminating manual effort and saving valuable time for content creators.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Reduces Errors</h4><p>Ensures consistent and accurate selection of the best video clips, minimizing the risk of human error.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🚀</div><h4>Increases Efficiency</h4><p>Streamlines the content workflow, allowing for faster deployment of engaging video content.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Data-Driven Selection</h4><p>Filters clips based on virality scores, ensuring that only the most engaging content is prioritized.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">☁️</div><h4>Automated Storage</h4><p>Automatically uploads selected clips to Dropbox, ensuring secure and organized storage.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🔔</div><h4>Real-Time Notifications</h4><p>Provides notifications upon successful upload, keeping content creators informed and ready to act.</p></div>
+    </div>
+
+    <h2>Before vs. After: Streamlined Video Content Workflow</h2>
+    <p><strong>Before:</strong> Content creators spent approximately 2-3 hours per day manually selecting and storing video clips, often missing timely engagement opportunities.</p>
+    <p><strong>After:</strong> The automated n8n workflow reduced the selection and storage process to just minutes, allowing for faster content deployment and increased engagement.</p>
+
+    <h2>Implementation: Live in 2 Weeks</h2>
+    <ol>
+      <li><strong>Planning and Setup:</strong> Define the scope of the automation, identify the necessary tools and integrations, and set up the n8n environment.</li>
+      <li><strong>Webhook Configuration:</strong> Configure the webhook trigger to receive video data from Opus Clips, ensuring seamless data transfer.</li>
+      <li><strong>Filter and Selection Logic:</strong> Implement the filtering logic based on virality scores and select the highest-ranked video clip.</li>
+      <li><strong>Dropbox Integration:</strong> Integrate Dropbox to automate the upload process, ensuring secure and organized storage of the selected clips.</li>
+      <li><strong>Testing and Deployment:</strong> Thoroughly test the workflow to ensure accuracy and reliability, then deploy it to a live environment.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This automated workflow is ideal for content creators, social media managers, and marketing teams who regularly use Opus Clips and need a streamlined solution for selecting and storing the best video content. It is particularly beneficial for those looking to save time, reduce errors, and increase efficiency in their content workflows.</p>
+    <p>However, this solution may not be the right fit for businesses that do not use Opus Clips or do not require automated video clip selection and storage. Additionally, organizations with highly customized or complex video processing needs may require a more tailored automation solution.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Marketing</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Content Automation</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">2 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">150%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="dropbox" alt="" width="14" height="14" loading="lazy">Dropbox</span>
+        <span class="cs-tool-tag"><img src="" data-logo="webhook" alt="" width="14" height="14" loading="lazy">Webhook</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Video Processing Time</span><span class="cs-sidebar-value" style="text-align:right;">Reduced by 95%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Content Output</span><span class="cs-sidebar-value" style="text-align:right;">Increased by 5x</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual Effort</span><span class="cs-sidebar-value" style="text-align:right;">Reduced by 80%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Content Deployment Time</span><span class="cs-sidebar-value" style="text-align:right;">Reduced by 70%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Cost Savings</span><span class="cs-sidebar-value" style="text-align:right;">$25K+ annually</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to streamline your video content workflow?</h4>
+      <p>Free discovery call — let's automate your content selection and storage.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation and why is it important?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation streamlines tasks.</strong> It uses technology to automate repeatable processes, reducing manual effort and improving efficiency. This is crucial for saving time, minimizing errors, and allowing businesses to concentrate on strategic activities.</p>
+          <p>Automated workflows ensure consistency and scalability, essential for business growth. By streamlining operations, companies can respond faster to market changes and customer needs, gaining a competitive edge.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can workflow automation benefit my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Automation boosts efficiency and reduces errors.</strong> It streamlines operations, reduces manual errors, and improves overall efficiency. Faster task completion and better resource allocation are key advantages.</p>
+          <p>Automated systems ensure consistent process execution, leading to higher quality outputs and improved customer satisfaction. Data insights from automation enable better decision-making and continuous improvement.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks can be automated?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Repetitive and rule-based tasks are ideal.</strong> This includes data entry, email marketing, social media posting, customer service inquiries, and report generation. Automating these frees up employees for complex work.</p>
+          <p>Businesses can also automate inventory management, order processing, and appointment scheduling, leading to significant time and cost savings. The possibilities are vast and adaptable to various industries.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does workflow automation cost?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Costs vary based on complexity and software.</strong> The cost depends on the system's complexity, software used, and customization. Software licenses and implementation fees are key cost factors.</p>
+          <p>Simple automations can be inexpensive, while complex solutions require a significant investment. However, long-term benefits like increased efficiency and reduced labor costs often outweigh the initial investment.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is the best platform for workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The best platform depends on your needs.</strong> Key considerations include ease of use, integration capabilities, and scalability. Popular platforms include n8n, Make.com, Zapier, and Microsoft Power Automate.</p>
+          <p>Each platform offers different features and pricing, so evaluate your requirements and choose the one that best fits your business. Consider factors like technical expertise and specific integration needs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom content automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, we specialize in custom solutions.</strong> GrowwStacks builds custom workflow automations tailored to your unique business needs. We analyze your processes and design solutions to optimize efficiency.</p>
+          <p>Our expert team creates automations that integrate seamlessly with your existing systems, ensuring smooth implementation. Contact us for a free consultation to discuss your automation requirements and goals.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate your video content workflow today!</h2>
+    <p>Streamline your video selection and storage process with our expert automation solutions. Save time, reduce errors, and increase efficiency.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: none

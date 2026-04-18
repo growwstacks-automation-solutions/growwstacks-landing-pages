@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Invoice Data Extraction from Email PDFs to Google Sheets — Case Study | GrowwStacks</title>
+<meta name="description" content="Automate invoice data extraction from Gmail PDFs to Google Sheets using n8n, LlamaParse, and OpenAI. Eliminate manual data entry for finance teams.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/automate-invoice-data-extraction-from-email-pdfs-to-google-sheets/">
+<meta property="og:title" content="Automate Invoice Data Extraction from Email PDFs to Google Sheets — GrowwStacks Case Study">
+<meta property="og:description" content="Automate accounts payable by monitoring Gmail for invoice PDFs, using LlamaParse for advanced PDF table extraction, OpenAI to structure invoice data, and appending results to a Google Sheet. Save 90% of manual processing time.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/automate-invoice-data-extraction-from-email-pdfs-to-google-sheets/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_lTg5pEO_r.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Invoice Data Extraction from Email PDFs to Google Sheets">
+<meta name="twitter:description" content="Automate accounts payable by monitoring Gmail for invoice PDFs, using LlamaParse for advanced PDF table extraction, OpenAI to structure invoice data, and appending results to a Google Sheet. Save 90% of manual processing time.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, openai, googleSheets, gmail, llamaparse">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the benefits of automating invoice data extraction?","acceptedAnswer":{"@type":"Answer","text":"Automating invoice data extraction reduces manual data entry, minimizes errors, and accelerates accounts payable processes. It also improves data accuracy and provides real-time insights into financial data."}},{"@type":"Question","name":"What types of invoices can this automation handle?","acceptedAnswer":{"@type":"Answer","text":"This automation is designed to handle a wide variety of invoice formats, including PDFs attached to emails. LlamaParse's advanced table extraction capabilities ensure accurate data capture regardless of the invoice layout. <strong>It's adaptable.</strong>"}},{"@type":"Question","name":"How secure is the data extraction process?","acceptedAnswer":{"@type":"Answer","text":"Data security is a top priority. The automation uses secure APIs and encryption to protect sensitive invoice data during extraction and transfer. <strong>Your data is safe.</strong> We adhere to best practices for data privacy and compliance."}},{"@type":"Question","name":"Can I customize the data fields extracted from invoices?","acceptedAnswer":{"@type":"Answer","text":"Yes, the automation is highly customizable. You can specify the exact data fields to extract from invoices, such as invoice number, date, amount, and line items. <strong>Customization is key.</strong> This ensures that the extracted data meets your specific business requirements."}},{"@type":"Question","name":"What happens if an invoice is not processed correctly?","acceptedAnswer":{"@type":"Answer","text":"The automation includes error handling and notifications. If an invoice cannot be processed correctly, you will receive an alert, allowing you to review and correct the issue manually. <strong>We've got you covered.</strong> This ensures that no invoice is missed."}},{"@type":"Question","name":"How long does it take to set up this automation?","acceptedAnswer":{"@type":"Answer","text":"The setup time varies depending on the complexity of your requirements. However, with our expert guidance, most automations can be set up within a few weeks. <strong>Quick setup.</strong> We provide comprehensive support to ensure a smooth implementation."}},{"@type":"Question","name":"Will this automation integrate with my existing accounting software?","acceptedAnswer":{"@type":"Answer","text":"The extracted data can be easily integrated with various accounting software platforms. By appending the data to Google Sheets, it can then be imported into your accounting software. <strong>Integration is seamless.</strong> We can also build direct integrations if needed."}},{"@type":"Question","name":"Can I get a custom invoice processing automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, we specialize in building custom automations tailored to your specific business needs. Our team can assess your requirements and develop a solution that integrates seamlessly with your existing systems. <strong>Custom solutions are our specialty.</strong> Contact us for a free consultation to discuss your automation needs."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Automate Invoice Data Extraction from Email PDFs"}]}</script>
+</head>
+<body class="cs-page page-automate-invoice-data-extraction-from-email-pdfs-to-google-sheets">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#fee2e2 0%,#fecaca 50%,#fca5a5 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Automate Invoice Data Extraction from Email PDFs</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Invoice Processing</span>
+      <span class="cs-tag">Gmail</span>
+      <span class="cs-tag">OpenAI</span>
+    </div>
+    <h1>Automate Invoice Data Extraction from Email PDFs to Google Sheets</h1>
+    <p class="cs-hero-sub">This workflow automates accounts payable by monitoring Gmail for invoice PDFs, using LlamaParse for advanced PDF table extraction, OpenAI to structure invoice data, and appending results to a Google Sheet. It eliminates manual data entry and streamlines financial processes.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="openai" alt="" width="20" height="20" loading="lazy">
+        OpenAI
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="googleSheets" alt="" width="20" height="20" loading="lazy">
+        Google Sheets
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="gmail" alt="" width="20" height="20" loading="lazy">
+        Gmail
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="llama" alt="" width="20" height="20" loading="lazy">
+        LlamaParse
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_lTg5pEO_r.jpg" alt="Automate Invoice Data Extraction from Email PDFs to Google Sheets" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">90%</div>
+        <div class="cs-result-label">Faster processing time</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Increase in data accuracy</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$25K+</div>
+        <div class="cs-result-label">Annual savings</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">60s</div>
+        <div class="cs-result-label">Average invoice processing time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Accounts payable teams often face the tedious task of manually extracting data from invoices. This process is <strong>time-consuming</strong>, <strong>error-prone</strong>, and <strong>resource-intensive</strong>. Finance departments spend countless hours sifting through email attachments, downloading PDFs, and manually entering invoice details into spreadsheets or accounting systems.</p>
+
+    <p>The manual approach not only leads to <strong>delayed payments</strong> and <strong>missed discounts</strong> but also hinders real-time financial visibility. <strong>Inaccurate data entry</strong> can result in discrepancies, compliance issues, and ultimately, financial losses. Businesses need a more efficient and reliable way to manage their invoice processing.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution is an automated workflow that leverages n8n, LlamaParse, OpenAI, and Google Sheets to streamline invoice data extraction. This system monitors a designated Gmail inbox for new emails with invoice PDF attachments. It then uses LlamaParse to extract tabular data from the PDFs, OpenAI to structure and validate the extracted information, and finally, appends the data to a Google Sheet for easy access and analysis.</p>
+
+    <p>This tech stack was chosen for its robust capabilities in handling unstructured data, extracting information from complex documents, and providing a user-friendly interface for data management. n8n serves as the central automation platform, orchestrating the entire process and ensuring seamless integration between the different tools.</p>
+
+    <div class="cs-visual-flow" aria-label="Invoice data extraction flow">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📧</div><div class="cs-flow-step-title">Email</div><div class="cs-flow-step-sub">New invoice PDF</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">📄</div><div class="cs-flow-step-title">LlamaParse</div><div class="cs-flow-step-sub">Extract table data</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">🤖</div><div class="cs-flow-step-title">OpenAI</div><div class="cs-flow-step-sub">Structure data</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Data in Google Sheets</div>
+          <div class="cs-flow-outcome review">📋 Review for accuracy</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Automated Invoice Processing</h3>
+    <p>The automation monitors a Gmail inbox for new emails containing invoice PDFs and automatically extracts the relevant data.</p>
+    <ol>
+      <li><strong>Monitor Gmail:</strong> The workflow starts by monitoring a specified Gmail inbox for new emails with PDF attachments.</li>
+      <li><strong>Download PDF:</strong> When a new email with a PDF attachment is detected, the workflow automatically downloads the PDF file.</li>
+      <li><strong>Extract Table Data:</strong> LlamaParse is used to extract tabular data from the PDF invoice, accurately capturing line items and other relevant information.</li>
+      <li><strong>Structure Data with OpenAI:</strong> The extracted data is then sent to OpenAI to structure and validate the information, ensuring consistency and accuracy.</li>
+      <li><strong>Append to Google Sheets:</strong> The structured invoice data is appended to a designated Google Sheet, creating a centralized repository of invoice information.</li>
+      <li><strong>Error Handling:</strong> If any errors occur during the process, notifications are sent to the appropriate personnel for review and resolution.</li>
+      <li><strong>Archive Email:</strong> After successful processing, the email is archived to prevent duplicate processing.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Data Validation:</strong> OpenAI ensures that the extracted data is accurate and consistent, reducing the risk of errors and discrepancies.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⚡</div><h4>Speed &amp; Efficiency</h4><p>Automated data extraction significantly reduces processing time compared to manual data entry.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Accuracy</h4><p>AI-powered data validation minimizes errors and ensures data consistency.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Real-Time Visibility</h4><p>Centralized data in Google Sheets provides real-time insights into financial information.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">⚙️</div><h4>Scalability</h4><p>The automated system can easily handle increasing volumes of invoices without additional manual effort.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🛡️</div><h4>Compliance</h4><p>Improved data accuracy and consistency help ensure compliance with financial regulations.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">💰</div><h4>Cost Savings</h4><p>Reduced manual labor and improved efficiency result in significant cost savings for the organization.</p></div>
+    </div>
+
+    <h2>Before vs. After: Automated Invoice Processing</h2>
+    <p><strong>Before:</strong> Manual invoice processing took an average of 15 minutes per invoice, with a 10% error rate.</p>
+    <p><strong>After:</strong> Automated invoice processing takes just 1 minute per invoice, with a less than 1% error rate.</p>
+
+    <h2>Implementation: Live in 3 Weeks</h2>
+    <ol>
+      <li><strong>Discovery &amp; Planning:</strong> Initial consultation to understand the client's specific requirements and define the scope of the project.</li>
+      <li><strong>Workflow Design:</strong> Designing the n8n workflow, including setting up the Gmail trigger, LlamaParse integration, OpenAI configuration, and Google Sheets connection.</li>
+      <li><strong>Testing &amp; Optimization:</strong> Thorough testing of the workflow with sample invoices to identify and resolve any issues.</li>
+      <li><strong>Deployment:</strong> Deploying the automated workflow to the client's n8n instance and providing training on how to use the system.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This automation is ideal for businesses that process a high volume of invoices and want to reduce manual data entry, improve accuracy, and gain real-time financial visibility. It's particularly well-suited for finance teams, accounting departments, and small businesses looking to streamline their accounts payable processes.</p>
+
+    <p>However, this automation may not be the right fit for businesses that only process a small number of invoices per month or those that require complex, custom integrations with legacy systems. In such cases, a manual approach or a more tailored solution may be more appropriate.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Finance</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Invoice Processing</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">3 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">250%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="openai" alt="" width="14" height="14" loading="lazy">OpenAI</span>
+        <span class="cs-tool-tag"><img src="" data-logo="googleSheets" alt="" width="14" height="14" loading="lazy">Google Sheets</span>
+        <span class="cs-tool-tag"><img src="" data-logo="gmail" alt="" width="14" height="14" loading="lazy">Gmail</span>
+        <span class="cs-tool-tag"><img src="" data-logo="llama" alt="" width="14" height="14" loading="lazy">LlamaParse</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Processing Time</span><span class="cs-sidebar-value" style="text-align:right;">1 minute/invoice</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Accuracy</span><span class="cs-sidebar-value" style="text-align:right;">99%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual Effort</span><span class="cs-sidebar-value" style="text-align:right;">Reduced by 90%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Cost Savings</span><span class="cs-sidebar-value" style="text-align:right;">$25K+ annually</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Invoice Cycle Time</span><span class="cs-sidebar-value" style="text-align:right;">Shortened by 75%</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to automate your invoice processing?</h4>
+      <p>Free discovery call — let's discuss your needs and explore how we can help.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating invoice data extraction?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Improved efficiency.</strong> Automating invoice data extraction reduces manual data entry, minimizes errors, and accelerates accounts payable processes.</p>
+          <p>It also improves data accuracy and provides real-time insights into financial data, enabling better decision-making and financial management.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of invoices can this automation handle?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Versatile processing.</strong> This automation is designed to handle a wide variety of invoice formats, including PDFs attached to emails. LlamaParse's advanced table extraction capabilities ensure accurate data capture regardless of the invoice layout.</p>
+          <p>It can adapt to different invoice structures and extract the necessary information, making it a flexible solution for various business needs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is the data extraction process?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Top priority.</strong> Data security is a top priority. The automation uses secure APIs and encryption to protect sensitive invoice data during extraction and transfer.</p>
+          <p>We adhere to best practices for data privacy and compliance, ensuring that your data is safe and protected throughout the entire process.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the data fields extracted from invoices?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Highly customizable.</strong> Yes, the automation is highly customizable. You can specify the exact data fields to extract from invoices, such as invoice number, date, amount, and line items.</p>
+          <p>This ensures that the extracted data meets your specific business requirements and integrates seamlessly with your existing systems.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What happens if an invoice is not processed correctly?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Error handling.</strong> The automation includes error handling and notifications. If an invoice cannot be processed correctly, you will receive an alert, allowing you to review and correct the issue manually.</p>
+          <p>This ensures that no invoice is missed and that all data is accurately processed and recorded.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How long does it take to set up this automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Varies.</strong> The setup time varies depending on the complexity of your requirements. However, with our expert guidance, most automations can be set up within a few weeks.</p>
+          <p>We provide comprehensive support to ensure a smooth implementation and integration with your existing systems.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom invoice processing automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes.</strong> We specialize in building custom automations tailored to your specific business needs. Our team can assess your requirements and develop a solution that integrates seamlessly with your existing systems.</p>
+          <p>Contact us for a free consultation to discuss your automation needs and explore how we can help you streamline your invoice processing.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Invoice Processing Today</h2>
+    <p>Eliminate manual data entry, improve accuracy, and gain real-time financial visibility. Contact us for a free consultation and discover how we can help you streamline your accounts payable processes.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: llama

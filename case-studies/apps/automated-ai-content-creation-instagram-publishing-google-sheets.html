@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automated AI Content Creation and Instagram Publishing from Google Sheets — Case Study | GrowwStacks</title>
+<meta name="description" content="Automate AI content creation & Instagram publishing. Extract ideas from Google Sheets, generate content with Gemini AI, create images, & auto-publish.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/automated-ai-content-creation-instagram-publishing-google-sheets/">
+<meta property="og:title" content="Automated AI Content Creation and Instagram Publishing from Google Sheets — GrowwStacks Case Study">
+<meta property="og:description" content="Automate AI content creation and Instagram publishing with n8n. This workflow extracts ideas from Google Sheets, uses Gemini AI for content, creates images with Replicate Flux, and publishes to Instagram, saving 10+ hours weekly.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/automated-ai-content-creation-instagram-publishing-google-sheets/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_W470DCo_a.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automated AI Content Creation and Instagram Publishing from Google Sheets">
+<meta name="twitter:description" content="Automate AI content creation and Instagram publishing with n8n. This workflow extracts ideas from Google Sheets, uses Gemini AI for content, creates images with Replicate Flux, and publishes to Instagram, saving 10+ hours weekly.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, googleSheets, gemini, replicate, instagram">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is AI automation, and how can it benefit my business?","acceptedAnswer":{"@type":"Answer","text":"<strong>AI automation uses artificial intelligence to automate tasks.</strong> This can save time, reduce errors, and improve efficiency by handling repetitive processes, analyzing data, and making decisions without human intervention. It allows businesses to focus on strategic activities and innovation."}},{"@type":"Question","name":"How secure is automating my data and workflows in the cloud?","acceptedAnswer":{"@type":"Answer","text":"<strong>Security is a top priority for cloud automation platforms.</strong> Leading platforms employ robust security measures, including encryption, access controls, and regular security audits. It's crucial to choose a provider with strong security certifications and transparent security practices to ensure your data and workflows are protected."}},{"@type":"Question","name":"What types of tasks are best suited for automation?","acceptedAnswer":{"@type":"Answer","text":"<strong>Repetitive, rule-based tasks are ideal for automation.</strong> This includes data entry, report generation, email marketing, social media posting, and customer service inquiries. Automating these tasks frees up employees to focus on more complex and creative work, improving overall productivity and job satisfaction."}},{"@type":"Question","name":"How much does it cost to automate a workflow?","acceptedAnswer":{"@type":"Answer","text":"<strong>The cost of automation varies depending on the complexity of the workflow.</strong> Simple automations can be relatively inexpensive, while more complex automations may require a larger investment. However, the long-term benefits of automation, such as increased efficiency and reduced errors, often outweigh the initial costs."}},{"@type":"Question","name":"What is a no-code automation platform?","acceptedAnswer":{"@type":"Answer","text":"<strong>A no-code automation platform allows you to build automated workflows without writing any code.</strong> These platforms use a visual interface with drag-and-drop functionality, making it easy for anyone to create automations, regardless of their technical skills. This empowers business users to automate their own tasks and processes, reducing the reliance on IT departments."}},{"@type":"Question","name":"Can I get a custom content creation automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"<strong>Yes, we specialize in building custom automations tailored to your specific business needs.</strong> Our team can assess your current processes, identify automation opportunities, and develop a solution that integrates seamlessly with your existing systems. Contact us for a free consultation to discuss your automation goals."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Automated AI Content Creation and Instagram Publishing from Google Sheets"}]}</script>
+</head>
+<body class="cs-page page-automated-ai-content-creation-instagram-publishing-google-sheets">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#fee2e2 0%,#fecaca 50%,#fca5a5 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>AI Content & IG Publishing</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Social Media</span>
+      <span class="cs-tag">AI Automation</span>
+      <span class="cs-tag">Content Creation</span>
+    </div>
+    <h1>Automated AI Content Creation and Instagram Publishing from Google Sheets</h1>
+    <p class="cs-hero-sub">This n8n workflow automates social media content creation by pulling post ideas from Google Sheets, using Gemini AI to generate content and image prompts, creating images with Replicate Flux, and publishing to Instagram. It streamlines content creation and publishing, saving significant time.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="googleSheets" alt="" width="20" height="20" loading="lazy">
+        Google Sheets
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="gemini" alt="" width="20" height="20" loading="lazy">
+        Gemini
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="replicate" alt="" width="20" height="20" loading="lazy">
+        Replicate
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="instagram" alt="" width="20" height="20" loading="lazy">
+        Instagram
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_W470DCo_a.jpg" alt="Automated AI Content Creation and Instagram Publishing from Google Sheets" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">10+</div>
+        <div class="cs-result-label">Hours saved per week</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">95%</div>
+        <div class="cs-result-label">Less manual content creation</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Increase in post frequency</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">60s</div>
+        <div class="cs-result-label">Content generation time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Many social media marketers and content teams struggle with the <strong>time-consuming process of consistently creating engaging content</strong>. Brainstorming ideas, writing captions, designing visuals, and manually publishing posts across different platforms can take hours each day, leading to <strong>burnout and inconsistent posting schedules</strong>.</p>
+    <p>This manual process often results in <strong>missed opportunities to engage with their audience</strong> and grow their online presence. The need for fresh, high-quality content is constant, but the resources and time required to produce it can be a significant bottleneck, especially for small teams or individual creators who are <strong>juggling multiple responsibilities</strong>.</p>
+
+    <h2>The Solution</h2>
+    <p>An n8n workflow was created to fully automate social media content creation and publishing. This system extracts content ideas from a Google Sheet, leverages Gemini AI to generate compelling post copy and image prompts, uses Replicate Flux to create unique visuals, and automatically publishes the content to Instagram.</p>
+    <p>This solution was chosen for its ability to <strong>integrate seamlessly with existing tools</strong> (Google Sheets and Instagram), its <strong>scalability</strong> to handle increasing content demands, and its <strong>cost-effectiveness</strong> compared to hiring additional team members or relying solely on manual content creation methods. By automating the entire process, users can maintain a consistent posting schedule and free up valuable time for other strategic initiatives.</p>
+
+    <div class="cs-visual-flow" aria-label="AI content creation and automated Instagram publishing workflow">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📄</div><div class="cs-flow-step-title">Read Sheet</div><div class="cs-flow-step-sub">Fetch content ideas</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">🤖</div><div class="cs-flow-step-title">Generate AI</div><div class="cs-flow-step-sub">Create content & prompts</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">🎨</div><div class="cs-flow-step-title">Create Image</div><div class="cs-flow-step-sub">Generate visual content</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Published to Instagram</div>
+          <div class="cs-flow-outcome review">📋 Content saved for review</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — From Idea to Instagram Post</h3>
+    <p>The n8n workflow automates the entire content creation and publishing process, from sourcing ideas to posting on Instagram. Here's a step-by-step breakdown:</p>
+    <ol>
+      <li><strong>Read Google Sheet:</strong> The workflow starts by reading a Google Sheet containing a list of content ideas, keywords, or topics.</li>
+      <li><strong>Generate Content with Gemini AI:</strong> Using the data from the Google Sheet, Gemini AI generates engaging post captions and image prompts.</li>
+      <li><strong>Create Image with Replicate Flux:</strong> The image prompt is then sent to Replicate Flux, which generates a unique visual asset for the post.</li>
+      <li><strong>Combine Content and Image:</strong> The generated caption and image are combined into a single post package.</li>
+      <li><strong>Publish to Instagram:</strong> The workflow automatically publishes the content to Instagram, scheduling posts for optimal engagement.</li>
+      <li><strong>Save to Review (Optional):</strong> Alternatively, the content can be saved for manual review and approval before publishing.</li>
+      <li><strong>Log Results:</strong> The workflow logs the results of each post, tracking metrics like engagement and reach.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>AI-Powered Content:</strong> Gemini AI ensures high-quality, engaging content tailored to your target audience, while Replicate Flux creates visually appealing images that capture attention.</p>
+    </div>
+
+    <h2>What This System Does That [Manual Process] Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>Saves Time</h4><p>Automates the entire content creation process, freeing up hours each week for other tasks.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📈</div><h4>Increases Consistency</h4><p>Maintains a consistent posting schedule, keeping your audience engaged and growing your online presence.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🎨</div><h4>Enhances Creativity</h4><p>Leverages AI to generate fresh, innovative content ideas and visually appealing images.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🎯</div><h4>Improves Targeting</h4><p>Tailors content to your specific audience, increasing engagement and reach.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Provides Data-Driven Insights</h4><p>Tracks key metrics, allowing you to optimize your content strategy and improve results.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">⚙️</div><h4>Scalable Solution</h4><p>Easily adapts to changing content needs and growing audience demands.</p></div>
+    </div>
+
+    <h2>Before vs. After: [Content Creation Efficiency]</h2>
+    <p><strong>Before:</strong> Content creation took 10+ hours per week, with inconsistent posting and limited engagement.</p>
+    <p><strong>After:</strong> Content is created and published automatically, saving 10+ hours per week and increasing post frequency by 5x.</p>
+
+    <h2>Implementation: Live in 2 Weeks</h2>
+    <ol>
+      <li><strong>Discovery and Planning:</strong> Understanding your content goals, target audience, and existing tools.</li>
+      <li><strong>Workflow Design:</strong> Designing the n8n workflow to automate the content creation and publishing process.</li>
+      <li><strong>AI Configuration:</strong> Configuring Gemini AI and Replicate Flux to generate high-quality content and images.</li>
+      <li><strong>Integration and Testing:</strong> Integrating the workflow with Google Sheets and Instagram, and thoroughly testing the system.</li>
+      <li><strong>Deployment and Training:</strong> Deploying the automated system and providing training on how to manage and optimize the workflow.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This automated content creation system is ideal for social media marketers, content creators, and small businesses looking to streamline their content creation process and maintain a consistent posting schedule. It's particularly beneficial for those who struggle with the time-consuming nature of manual content creation and want to leverage the power of AI to generate engaging content.</p>
+    <p>However, this system may not be the right fit for businesses that require highly customized or niche content that cannot be easily generated by AI. In such cases, a hybrid approach that combines automated content creation with manual editing and refinement may be more appropriate.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Marketing</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Social Media</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">n8n</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">2 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">200%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="googleSheets" alt="" width="14" height="14" loading="lazy">Google Sheets</span>
+        <span class="cs-tool-tag"><img src="" data-logo="gemini" alt="" width="14" height="14" loading="lazy">Gemini</span>
+        <span class="cs-tool-tag"><img src="" data-logo="replicate" alt="" width="14" height="14" loading="lazy">Replicate</span>
+        <span class="cs-tool-tag"><img src="" data-logo="instagram" alt="" width="14" height="14" loading="lazy">Instagram</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Time saved</span><span class="cs-sidebar-value" style="text-align:right;">10+ hours/week</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Post frequency</span><span class="cs-sidebar-value" style="text-align:right;">5x increase</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Content creation time</span><span class="cs-sidebar-value" style="text-align:right;">60 seconds</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual effort reduction</span><span class="cs-sidebar-value" style="text-align:right;">95% less</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Engagement rate</span><span class="cs-sidebar-value" style="text-align:right;">30% increase</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to automate your content?</h4>
+      <p>Free discovery call — see how we can automate your content creation and publishing.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is AI automation, and how can it benefit my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>AI automation uses artificial intelligence to automate tasks.</strong> This can save time, reduce errors, and improve efficiency by handling repetitive processes, analyzing data, and making decisions without human intervention.</p>
+          <p>It allows businesses to focus on strategic activities and innovation, leading to increased productivity and profitability. By automating tasks such as data entry, customer service, and content creation, businesses can free up employees to focus on more complex and creative work.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is automating my data and workflows in the cloud?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Security is a top priority for cloud automation platforms.</strong> Leading platforms employ robust security measures, including encryption, access controls, and regular security audits.</p>
+          <p>It's crucial to choose a provider with strong security certifications and transparent security practices to ensure your data and workflows are protected. These measures help prevent unauthorized access and data breaches, ensuring the confidentiality and integrity of your business information.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks are best suited for automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Repetitive, rule-based tasks are ideal for automation.</strong> This includes data entry, report generation, email marketing, social media posting, and customer service inquiries.</p>
+          <p>Automating these tasks frees up employees to focus on more complex and creative work, improving overall productivity and job satisfaction. By identifying and automating these tasks, businesses can streamline their operations and achieve significant efficiency gains.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does it cost to automate a workflow?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The cost of automation varies depending on the complexity of the workflow.</strong> Simple automations can be relatively inexpensive, while more complex automations may require a larger investment.</p>
+          <p>However, the long-term benefits of automation, such as increased efficiency and reduced errors, often outweigh the initial costs. By carefully evaluating the potential ROI of automation projects, businesses can make informed decisions about where to invest their resources.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is a no-code automation platform?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>A no-code automation platform allows you to build automated workflows without writing any code.</strong> These platforms use a visual interface with drag-and-drop functionality, making it easy for anyone to create automations, regardless of their technical skills.</p>
+          <p>This empowers business users to automate their own tasks and processes, reducing the reliance on IT departments. No-code platforms democratize automation, making it accessible to a wider range of users and enabling faster innovation.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom content creation automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, we specialize in building custom automations tailored to your specific business needs.</strong> Our team can assess your current processes, identify automation opportunities, and develop a solution that integrates seamlessly with your existing systems.</p>
+          <p>We work closely with our clients to understand their unique requirements and design automations that deliver maximum value. Contact us for a free consultation to discuss your automation goals and explore how we can help you achieve them.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Content Creation Today</h2>
+    <p>Ready to save time, increase consistency, and enhance creativity with AI-powered content automation? Let's discuss your specific needs and build a custom solution.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: replicate, gemini

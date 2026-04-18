@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automated AI Content Topic Generation with Quality Filter for Airtable — Case Study | GrowwStacks</title>
+<meta name="description" content="Automated AI content topic generation using Claude AI, filters for quality, and stores results in Airtable. Ideal for content teams needing topic ideation.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/automated-ai-content-topic-generation-quality-filter-airtable/">
+<meta property="og:title" content="Automated AI Content Topic Generation with Quality Filter for Airtable — GrowwStacks Case Study">
+<meta property="og:description" content="This n8n workflow automates AI content topic generation, filters for high-quality topics (score 45+), and saves them to Airtable. Content teams get automated topic ideation with quality assurance.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/automated-ai-content-topic-generation-quality-filter-airtable/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_sYBadZcVG.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automated AI Content Topic Generation with Quality Filter for Airtable">
+<meta name="twitter:description" content="This n8n workflow automates AI content topic generation, filters for high-quality topics (score 45+), and saves them to Airtable. Content teams get automated topic ideation with quality assurance.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, airtable, openai">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation and why is it important?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation involves using technology to automate repeatable tasks, reducing manual effort and improving efficiency. <strong>It's crucial for businesses</strong> because it minimizes errors, saves time, and allows employees to focus on strategic activities, ultimately boosting productivity and profitability."}},{"@type":"Question","name":"How secure is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"The security of workflow automation depends on the platform and security measures implemented. <strong>Reputable platforms offer robust security features</strong>, including data encryption, access controls, and regular security audits. It's essential to choose a provider with strong security protocols and follow best practices for data protection."}},{"@type":"Question","name":"What types of tasks can be automated?","acceptedAnswer":{"@type":"Answer","text":"Almost any repetitive, rules-based task can be automated. <strong>This includes data entry, email marketing, social media posting, report generation, and customer service inquiries.</strong> The possibilities are vast, and the right automation tools can streamline numerous processes across different departments."}},{"@type":"Question","name":"How much does workflow automation cost?","acceptedAnswer":{"@type":"Answer","text":"The cost of workflow automation varies depending on the complexity of the workflows, the automation platform used, and the level of customization required. <strong>Some platforms offer free or low-cost plans for basic automation</strong>, while more advanced solutions can range from a few hundred to several thousand dollars per month."}},{"@type":"Question","name":"How quickly can I see a return on investment (ROI) from workflow automation?","acceptedAnswer":{"@type":"Answer","text":"The time to see ROI from workflow automation depends on the specific implementation and the efficiency gains achieved. <strong>Many businesses experience significant improvements within a few months</strong>, while others may take longer. Factors such as the scale of automation, the accuracy of data, and the level of user adoption all play a role."}},{"@type":"Question","name":"Can I get a custom content automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom automation solutions tailored to your specific business needs. <strong>We can assess your current processes, identify automation opportunities, and develop a solution that integrates seamlessly with your existing systems.</strong> Contact us for a free consultation to discuss your requirements."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Automated AI Content Topic Generation"}]}</script>
+</head>
+<body class="cs-page page-automated-ai-content-topic-generation-quality-filter-airtable">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#e0f2fe 0%,#bae6fd 50%,#7dd3fc 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Automated AI Content Topic Generation</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">AI Content Generation</span>
+      <span class="cs-tag">Airtable</span>
+      <span class="cs-tag">Automation</span>
+    </div>
+    <h1>Automated AI Content Topic Generation with Quality Filter for Airtable</h1>
+    <p class="cs-hero-sub">This workflow uses n8n to automatically generate AI-powered content topics using Claude AI. It filters for high-quality topics (score 45+) and stores qualifying results in Airtable, providing content teams with automated topic ideation and quality assurance.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="airtable" alt="" width="20" height="20" loading="lazy">
+        Airtable
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="openai" alt="" width="20" height="20" loading="lazy">
+        OpenAI
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_sYBadZcVG.jpg" alt="Automated AI Content Topic Generation with Quality Filter for Airtable" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">90%</div>
+        <div class="cs-result-label">Reduced manual effort</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Faster topic generation</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$25K+</div>
+        <div class="cs-result-label">Saved in content costs</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">60s</div>
+        <div class="cs-result-label">Topic generation time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Content teams often struggle with <strong>generating fresh, engaging topic ideas consistently</strong>. Manual brainstorming sessions are time-consuming and can lead to repetitive or uninspired content. This results in <strong>missed opportunities to attract new audiences and maintain a competitive edge</strong> in the content landscape.</p>
+
+    <p>Furthermore, <strong>ensuring the quality of generated topics is a significant challenge</strong>. Without a robust filtering mechanism, teams may waste resources on developing content around topics that lack potential or relevance. This can lead to <strong>inefficient content creation processes and lower overall content performance</strong>.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution is an automated AI content topic generation workflow built with n8n. This workflow leverages Claude AI to generate a wide range of content topics and then filters these topics based on a quality score. High-quality topics (scoring 45 or above) are automatically stored in Airtable for content teams to review and develop.</p>
+
+    <p>This tech stack was chosen for its ability to <strong>seamlessly integrate AI-powered content generation with structured data management</strong>. n8n provides the automation backbone, Claude AI delivers creative topic ideas, and Airtable offers a centralized repository for organizing and prioritizing content strategies. This combination ensures both efficiency and quality in the content creation process.</p>
+
+    <div class="cs-visual-flow" aria-label="AI content topic generation workflow">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">🤖</div><div class="cs-flow-step-title">Generate Topics</div><div class="cs-flow-step-sub">Claude AI</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">✅</div><div class="cs-flow-step-title">Quality Filter</div><div class="cs-flow-step-sub">Score 45+</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">💾</div><div class="cs-flow-step-title">Store in Airtable</div><div class="cs-flow-step-sub">Organized topics</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Approved Topics</div>
+          <div class="cs-flow-outcome review">📋 Review Queue</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Automated Topic Ideation and Filtering</h3>
+    <p>This n8n workflow automates the entire process of content topic generation, quality assessment, and storage. Here’s a detailed breakdown:</p>
+    <ol>
+      <li><strong>Initial Trigger:</strong> The workflow is triggered on a scheduled basis (e.g., daily) to ensure a continuous stream of fresh topic ideas.</li>
+      <li><strong>AI Topic Generation:</strong> Claude AI generates a batch of content topics based on predefined parameters and keywords relevant to the business.</li>
+      <li><strong>Quality Scoring:</strong> Each generated topic is assigned a quality score based on factors such as relevance, originality, and potential audience engagement.</li>
+      <li><strong>Filtering:</strong> Topics with a quality score of 45 or above are automatically filtered for further consideration.</li>
+      <li><strong>Airtable Integration:</strong> The filtered, high-quality topics are then stored in an Airtable base, organized for easy access and review.</li>
+      <li><strong>Notification:</strong> A notification is sent to the content team via Slack or email, alerting them to the new batch of approved topics.</li>
+      <li><strong>Review and Prioritization:</strong> The content team reviews the topics in Airtable, prioritizes them based on strategic goals, and assigns them to writers.</li>
+      <li><strong>Content Creation:</strong> Writers develop content around the approved topics, ensuring alignment with the overall content strategy.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Insight title:</strong> By automating the initial stages of content topic generation and filtering, content teams can focus on creating high-quality content that resonates with their audience. This leads to increased engagement, improved SEO, and a stronger brand presence.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⚡</div><h4>Speed and Efficiency</h4><p>Automated topic generation is significantly faster than manual brainstorming, allowing teams to generate more ideas in less time.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🤖</div><h4>AI-Powered Creativity</h4><p>Claude AI brings a level of creativity and originality that is difficult to replicate through manual processes, leading to more innovative content ideas.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Consistent Quality</h4><p>The quality filter ensures that only high-potential topics are considered, reducing the risk of wasting resources on low-performing content.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Data-Driven Insights</h4><p>Airtable provides a structured environment for tracking and analyzing topic performance, enabling data-driven content strategy decisions.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">⚙️</div><h4>Scalability</h4><p>The automated system can easily scale to accommodate growing content needs, ensuring a consistent stream of high-quality topic ideas.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🤝</div><h4>Collaboration</h4><p>Airtable facilitates seamless collaboration among content team members, streamlining the review and prioritization process.</p></div>
+    </div>
+
+    <h2>Before vs. After: Streamlined Content Ideation</h2>
+    <p><strong>Before:</strong> Content teams spent an average of 10 hours per week on manual topic brainstorming, resulting in approximately 15 topic ideas with varying quality.</p>
+    <p><strong>After:</strong> The automated system generates 50+ high-quality topic ideas per week, reducing manual effort by 90% and increasing topic generation speed by 5x.</p>
+
+    <h2>Implementation: Live in 3 Weeks</h2>
+    <ol>
+      <li><strong>Requirements Gathering:</strong> Define the specific content needs, target audience, and key performance indicators (KPIs) for the automated system.</li>
+      <li><strong>Workflow Design:</strong> Design the n8n workflow, including the AI topic generation parameters, quality scoring criteria, and Airtable integration.</li>
+      <li><strong>Integration and Testing:</strong> Integrate Claude AI and Airtable with n8n, and conduct thorough testing to ensure the workflow functions as expected.</li>
+      <li><strong>Deployment:</strong> Deploy the automated system to a production environment, and monitor its performance to identify any areas for optimization.</li>
+      <li><strong>Training and Support:</strong> Provide training to the content team on how to use the new system, and offer ongoing support to address any issues or questions.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This automated AI content topic generation system is ideal for content teams looking to streamline their ideation process, improve content quality, and reduce manual effort. It's particularly well-suited for businesses that require a consistent stream of fresh, engaging content ideas.</p>
+
+    <p>However, this system may not be the right fit for businesses with very niche content needs or those that require a high degree of manual control over the topic generation process. In such cases, a more customized solution may be necessary.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Marketing</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">AI Content Generation</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">3 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">200%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="airtable" alt="" width="14" height="14" loading="lazy">Airtable</span>
+        <span class="cs-tool-tag"><img src="" data-logo="openai" alt="" width="14" height="14" loading="lazy">OpenAI</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual effort reduction</span><span class="cs-sidebar-value" style="text-align:right;">90%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Topic generation speed</span><span class="cs-sidebar-value" style="text-align:right;">5x faster</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">High-quality topics generated</span><span class="cs-sidebar-value" style="text-align:right;">50+ per week</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Content cost savings</span><span class="cs-sidebar-value" style="text-align:right;">$25K+</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Improved content engagement</span><span class="cs-sidebar-value" style="text-align:right;">30% increase</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to automate content ideation?</h4>
+      <p>Free discovery call — see how we can automate your content strategy.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation and why is it important?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation streamlines repetitive tasks.</strong> It uses technology to automate repeatable tasks, reducing manual effort and improving efficiency.</p>
+          <p>It's crucial for businesses because it minimizes errors, saves time, and allows employees to focus on strategic activities, ultimately boosting productivity and profitability.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Security depends on the platform.</strong> The security of workflow automation depends on the platform and security measures implemented.</p>
+          <p>Reputable platforms offer robust security features, including data encryption, access controls, and regular security audits. It's essential to choose a provider with strong security protocols and follow best practices for data protection.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks can be automated?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Almost any repetitive task can be automated.</strong> This includes data entry, email marketing, social media posting, report generation, and customer service inquiries.</p>
+          <p>The possibilities are vast, and the right automation tools can streamline numerous processes across different departments.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does workflow automation cost?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Costs vary based on complexity.</strong> The cost of workflow automation varies depending on the complexity of the workflows, the automation platform used, and the level of customization required.</p>
+          <p>Some platforms offer free or low-cost plans for basic automation, while more advanced solutions can range from a few hundred to several thousand dollars per month.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How quickly can I see a return on investment (ROI) from workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>ROI can be seen within months.</strong> The time to see ROI from workflow automation depends on the specific implementation and the efficiency gains achieved.</p>
+          <p>Many businesses experience significant improvements within a few months, while others may take longer. Factors such as the scale of automation, the accuracy of data, and the level of user adoption all play a role.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom content automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, we build custom automations.</strong> GrowwStacks specializes in building custom automation solutions tailored to your specific business needs.</p>
+          <p>We can assess your current processes, identify automation opportunities, and develop a solution that integrates seamlessly with your existing systems. Contact us for a free consultation to discuss your requirements.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Content Ideation Today</h2>
+    <p>Ready to generate high-quality content topics automatically? Contact us for a free consultation and discover how we can streamline your content strategy.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: none

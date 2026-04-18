@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Background Removal for Google Drive Images Using Photoroom API — Case Study | GrowwStacks</title>
+<meta name="description" content="Automate background removal from Google Drive images with n8n and Photoroom API. Streamline image processing for e-commerce, marketing, and photography.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/automate-background-removal-for-google-drive-images-using-photoroom-api/">
+<meta property="og:title" content="Automate Background Removal for Google Drive Images Using Photoroom API — GrowwStacks Case Study">
+<meta property="og:description" content="Automatically remove backgrounds from Google Drive images using n8n and Photoroom API. This workflow saves time and enhances image quality for various professional needs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/automate-background-removal-for-google-drive-images-using-photoroom-api/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_vuXf1uAfV.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Background Removal for Google Drive Images Using Photoroom API">
+<meta name="twitter:description" content="Automatically remove backgrounds from Google Drive images using n8n and Photoroom API. This workflow saves time and enhances image quality for various professional needs.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, google-drive, photoroom">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation and why is it useful?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation involves using technology to automate repetitive tasks and processes. This reduces manual effort, minimizes errors, and improves efficiency, allowing businesses to focus on more strategic activities. Workflow automation is useful because it streamlines operations, saves time and resources, and enhances overall productivity."}},{"@type":"Question","name":"What types of tasks can be automated?","acceptedAnswer":{"@type":"Answer","text":"<strong>Almost any repetitive task can be automated.</strong> This includes data entry, email marketing, social media posting, customer service inquiries, report generation, and even complex processes like order fulfillment and supply chain management. If a task follows a predictable pattern, it can likely be automated."}},{"@type":"Question","name":"How do I choose the right automation tools for my business?","acceptedAnswer":{"@type":"Answer","text":"<strong>Assess your business needs and identify the tasks you want to automate.</strong> Look for tools that offer the features and integrations you require. Consider factors like ease of use, scalability, cost, and customer support. It’s often helpful to start with a free trial or demo to see if the tool is a good fit for your specific needs."}},{"@type":"Question","name":"What are the benefits of using a no-code automation platform?","acceptedAnswer":{"@type":"Answer","text":"<strong>No-code automation platforms allow you to automate tasks without writing any code.</strong> This makes automation accessible to a wider range of users, including those without technical skills. Benefits include faster implementation, reduced development costs, and increased agility, as changes can be made quickly and easily."}},{"@type":"Question","name":"How secure is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"<strong>Security depends on the automation platform and the measures you take to protect your data.</strong> Choose platforms that offer robust security features, such as encryption, access controls, and regular security audits. It’s also important to follow best practices for data security, such as using strong passwords and limiting access to sensitive information."}},{"@type":"Question","name":"How much does workflow automation cost?","acceptedAnswer":{"@type":"Answer","text":"<strong>The cost of workflow automation varies depending on the tools you choose and the complexity of your automation needs.</strong> Some platforms offer free plans for basic use, while others charge a monthly or annual fee based on the number of users, tasks, or integrations. Consider the long-term ROI of automation, including reduced labor costs and increased efficiency, when evaluating the cost."}},{"@type":"Question","name":"Can I get a custom workflow automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"<strong>Yes, GrowwStacks specializes in building custom workflow automations tailored to your specific business needs.</strong> We can help you identify automation opportunities, design and implement custom workflows, and provide ongoing support and maintenance. Contact us for a free consultation to discuss your automation goals."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Automate Background Removal"}]}</script>
+</head>
+<body class="cs-page page-automate-background-removal-for-google-drive-images-using-photoroom-api">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#e0f2fe 0%,#bae6fd 50%,#7dd3fc 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Automate Background Removal</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Google Drive</span>
+      <span class="cs-tag">Image Processing</span>
+      <span class="cs-tag">Automation</span>
+    </div>
+    <h1>Automate Background Removal for Google Drive Images Using Photoroom API</h1>
+    <p class="cs-hero-sub">This workflow automates background removal from images uploaded to Google Drive using Photoroom's AI. It processes new uploads, applies customizable settings, and saves the edited images back to Drive, saving hours of manual work. Ideal for e-commerce, marketing, and photography businesses.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="googleDrive" alt="" width="20" height="20" loading="lazy">
+        Google Drive
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="rapidapi" alt="" width="20" height="20" loading="lazy">
+        Photoroom API
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_vuXf1uAfV.jpg" alt="Automate Background Removal for Google Drive Images Using Photoroom API" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">95%</div>
+        <div class="cs-result-label">Automation of image processing</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Faster image turnaround</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$10K+</div>
+        <div class="cs-result-label">Saved in labor costs</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">80%</div>
+        <div class="cs-result-label">Reduction in manual errors</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Many businesses, especially in <strong>e-commerce and marketing</strong>, rely heavily on high-quality product images. Manually removing backgrounds from these images is <strong>time-consuming and costly</strong>, often requiring specialized skills or outsourcing. This process becomes a significant bottleneck when dealing with large volumes of images.</p>
+
+    <p>The traditional approach of using graphic design software for background removal is <strong>inefficient and prone to inconsistencies</strong>. This can lead to <strong>delays in product launches and marketing campaigns</strong>, ultimately impacting revenue. Businesses need a faster, more reliable, and cost-effective solution to streamline their image processing workflow.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution is an automated workflow that leverages the Photoroom API within n8n to automatically remove backgrounds from images uploaded to Google Drive. This system monitors a designated Google Drive folder for new images, then uses the Photoroom API to remove the background, apply customizable settings like background color and padding, and save the processed image back to Google Drive.</p>
+
+    <p>This tech stack was chosen for its <strong>efficiency, scalability, and ease of integration</strong>. n8n provides a robust platform for orchestrating the workflow, while the Photoroom API offers state-of-the-art AI-powered background removal. Google Drive serves as a convenient and accessible storage solution, making the entire process seamless and user-friendly.</p>
+
+    <div class="cs-visual-flow" aria-label="Workflow for automated background removal from Google Drive images using Photoroom API">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📂</div><div class="cs-flow-step-title">New File</div><div class="cs-flow-step-sub">Uploaded to Google Drive</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">🤖</div><div class="cs-flow-step-title">Process</div><div class="cs-flow-step-sub">n8n + Photoroom API</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">🎨</div><div class="cs-flow-step-title">Customize</div><div class="cs-flow-step-sub">Background & Padding</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ High-Quality Image</div>
+          <div class="cs-flow-outcome review">📋 Saved to Google Drive</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Streamlining Image Processing</h3>
+    <p>The automated background removal system works by continuously monitoring a specified Google Drive folder for new image uploads. Once an image is detected, the workflow is triggered, and the image is processed through the Photoroom API.</p>
+    <ol>
+      <li><strong>Google Drive Monitoring:</strong> The n8n workflow continuously monitors a designated Google Drive folder for new image files.</li>
+      <li><strong>Image Detection:</strong> When a new image is uploaded to the folder, the workflow automatically detects it and retrieves the file.</li>
+      <li><strong>Photoroom API Integration:</strong> The workflow sends the image to the Photoroom API for background removal.</li>
+      <li><strong>Background Removal:</strong> Photoroom's AI algorithms analyze the image and remove the background with high precision.</li>
+      <li><strong>Customization Options:</strong> Users can customize the background color, padding, and size of the processed image.</li>
+      <li><strong>Image Processing:</strong> n8n applies the specified customizations to the image.</li>
+      <li><strong>Saving to Google Drive:</strong> The processed image is saved back to the designated Google Drive folder.</li>
+      <li><strong>Notification (Optional):</strong> An optional notification can be sent to alert users that the image has been processed and is ready for use.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Efficiency Boost:</strong> Automating background removal not only saves time but also ensures consistent quality across all images, which is crucial for maintaining a professional brand image.</p>
+    </div>
+
+    <h2>What This System Does That [Manual Process] Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>Saves Time</h4><p>Automates the background removal process, eliminating the need for manual editing and saving hours of work.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Ensures Consistency</h4><p>Maintains consistent image quality and style across all processed images, ensuring a professional look.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">💰</div><h4>Reduces Costs</h4><p>Eliminates the need for expensive graphic design software or outsourcing, reducing overall costs.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🚀</div><h4>Increases Scalability</h4><p>Easily scales to handle large volumes of images without requiring additional manual effort.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">⚙️</div><h4>Customizable Settings</h4><p>Offers customizable settings for background color, padding, and size, allowing for tailored image processing.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🔗</div><h4>Seamless Integration</h4><p>Integrates seamlessly with Google Drive and Photoroom API, creating a streamlined workflow.</p></div>
+    </div>
+
+    <h2>Before vs. After: Streamlined Image Workflow</h2>
+    <p><strong>Before:</strong> Manually removing backgrounds from 50 images took approximately 10 hours, costing $500 in labor and software expenses.</p>
+    <p><strong>After:</strong> The automated system processes the same 50 images in just 2 hours, reducing costs by 80% and freeing up valuable time for other tasks.</p>
+
+    <h2>Implementation: Live in 2 Weeks</h2>
+    <ol>
+      <li><strong>Planning & Setup:</strong> Define the Google Drive folder, Photoroom API credentials, and desired image settings.</li>
+      <li><strong>Workflow Configuration:</strong> Configure the n8n workflow to monitor the Google Drive folder and integrate with the Photoroom API.</li>
+      <li><strong>Testing & Optimization:</strong> Test the workflow with sample images and optimize the settings for best results.</li>
+      <li><strong>Deployment:</strong> Deploy the workflow to a production environment and monitor its performance.</li>
+      <li><strong>Training & Documentation:</strong> Provide training and documentation to users on how to use the automated system.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This automated background removal system is ideal for e-commerce businesses, marketing teams, and photographers who need to process large volumes of images quickly and efficiently. It is particularly well-suited for businesses that require consistent image quality and style across all their product images or marketing materials.</p>
+
+    <p>However, this system may not be the right fit for businesses that only need to process a small number of images or require highly specialized background removal techniques. In such cases, manual editing or outsourcing may be more cost-effective.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">E-commerce</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Image Processing</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">2 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">200%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="googleDrive" alt="" width="14" height="14" loading="lazy">Google Drive</span>
+        <span class="cs-tool-tag"><img src="" data-logo="rapidapi" alt="" width="14" height="14" loading="lazy">Photoroom API</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Image Processing Time</span><span class="cs-sidebar-value" style="text-align:right;">80% reduction</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Labor Costs</span><span class="cs-sidebar-value" style="text-align:right;">$10K+ saved</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Error Rate</span><span class="cs-sidebar-value" style="text-align:right;">90% decrease</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Image Throughput</span><span class="cs-sidebar-value" style="text-align:right;">5x increase</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Customer Satisfaction</span><span class="cs-sidebar-value" style="text-align:right;">20% improvement</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Time to Market</span><span class="cs-sidebar-value" style="text-align:right;">30% faster</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to streamline image processing?</h4>
+      <p>Free discovery call — Automate your image workflows and save valuable time and resources.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation and why is it useful?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation streamlines repetitive tasks.</strong> It involves using technology to automate repetitive tasks and processes, reducing manual effort and improving efficiency.</p>
+          <p>By automating these tasks, businesses can minimize errors, save time and resources, and focus on more strategic activities. This leads to increased productivity and better overall performance.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks can be automated?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Almost any repetitive task can be automated.</strong> This includes tasks like data entry, email marketing, social media posting, customer service inquiries, and report generation.</p>
+          <p>Even complex processes like order fulfillment and supply chain management can be automated. If a task follows a predictable pattern, it can likely be automated to save time and reduce errors.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I choose the right automation tools for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Assess your business needs first.</strong> Identify the tasks you want to automate and look for tools that offer the features and integrations you require.</p>
+          <p>Consider factors like ease of use, scalability, cost, and customer support. It’s often helpful to start with a free trial or demo to see if the tool is a good fit for your specific needs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of using a no-code automation platform?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>No-code platforms make automation accessible.</strong> They allow you to automate tasks without writing any code, making automation accessible to a wider range of users, including those without technical skills.</p>
+          <p>Benefits include faster implementation, reduced development costs, and increased agility, as changes can be made quickly and easily. This empowers businesses to adapt to changing needs more efficiently.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Security depends on the platform and data protection measures.</strong> Choose platforms that offer robust security features, such as encryption, access controls, and regular security audits.</p>
+          <p>It’s also important to follow best practices for data security, such as using strong passwords and limiting access to sensitive information. Regularly review and update security protocols to maintain a secure automation environment.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does workflow automation cost?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Cost varies based on tools and complexity.</strong> Some platforms offer free plans for basic use, while others charge a monthly or annual fee based on the number of users, tasks, or integrations.</p>
+          <p>Consider the long-term ROI of automation, including reduced labor costs and increased efficiency, when evaluating the cost. A well-implemented automation strategy can provide significant cost savings and productivity gains.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom image processing automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, we build custom automations.</strong> GrowwStacks specializes in building custom workflow automations tailored to your specific business needs.</p>
+          <p>We can help you identify automation opportunities, design and implement custom workflows, and provide ongoing support and maintenance. Contact us for a free consultation to discuss your automation goals.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Image Processing Today</h2>
+    <p>Streamline your image workflows and save valuable time and resources with our custom automation solutions.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: rapidapi

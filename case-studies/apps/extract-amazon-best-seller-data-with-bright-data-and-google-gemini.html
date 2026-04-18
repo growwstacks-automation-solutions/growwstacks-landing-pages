@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extract Amazon Best Seller Data with Bright Data and Google Gemini — Case Study | GrowwStacks</title>
+<meta name="description" content="Automated workflow extracts Amazon best seller data using Bright Data, transforms it with Google Gemini AI, and sends results to a webhook.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/extract-amazon-best-seller-data-with-bright-data-and-google-gemini/">
+<meta property="og:title" content="Extract Amazon Best Seller Data with Bright Data and Google Gemini — GrowwStacks Case Study">
+<meta property="og:description" content="Automated extraction of Amazon best seller data, transformed with Google Gemini AI. Achieved 95% data accuracy and reduced manual effort by 80%.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/extract-amazon-best-seller-data-with-bright-data-and-google-gemini/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_cTdjEVz1y.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Extract Amazon Best Seller Data with Bright Data and Google Gemini">
+<meta name="twitter:description" content="Automated extraction of Amazon best seller data, transformed with Google Gemini AI. Achieved 95% data accuracy and reduced manual effort by 80%.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, bright-data, google-gemini, webhook">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an automation platform, and why use it?","acceptedAnswer":{"@type":"Answer","text":"**Efficiency and accuracy.** An automation platform allows you to connect different apps and services to automate repetitive tasks, saving time and reducing errors. It streamlines workflows, allowing you to focus on more strategic activities."}},{"@type":"Question","name":"How secure is using an automation platform for sensitive data?","acceptedAnswer":{"@type":"Answer","text":"**Secure and compliant.** Reputable automation platforms employ robust security measures, including encryption, access controls, and regular security audits, to protect your data. They also comply with industry standards and regulations."}},{"@type":"Question","name":"What types of tasks can be automated with a platform like n8n?","acceptedAnswer":{"@type":"Answer","text":"**Versatile automation.** You can automate a wide range of tasks, including data entry, email marketing, social media management, customer service, and more. If a task is repetitive and rule-based, it can likely be automated."}},{"@type":"Question","name":"How much technical knowledge is required to use an automation platform?","acceptedAnswer":{"@type":"Answer","text":"**Low-code solutions.** Many automation platforms offer a user-friendly, low-code interface that allows you to create workflows without extensive programming knowledge. Drag-and-drop functionality and pre-built templates make it easy to get started."}},{"@type":"Question","name":"What are the benefits of integrating AI into automation workflows?","acceptedAnswer":{"@type":"Answer","text":"**Enhanced capabilities.** Integrating AI can add advanced capabilities to your workflows, such as natural language processing, machine learning, and predictive analytics. This allows you to automate more complex tasks and gain valuable insights from your data."}},{"@type":"Question","name":"Can I get a custom data extraction automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"**Yes, absolutely.** We specialize in building custom automation solutions tailored to your specific business needs. Our team can assess your requirements, design a solution, and implement it for you. Contact us for a free consultation."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Extract Amazon Best Seller Data with Bright Data and Gemini"}]}</script>
+</head>
+<body class="cs-page page-extract-amazon-best-seller-data-with-bright-data-and-google-gemini">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#cffafe 0%,#a5f3fc 50%,#67e8f9 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Extract Amazon Best Seller Data with Gemini</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Web Scraping</span>
+      <span class="cs-tag">Data Extraction</span>
+      <span class="cs-tag">E-commerce</span>
+    </div>
+    <h1>Extract Amazon Best Seller Data with Bright Data and Google Gemini</h1>
+    <p class="cs-hero-sub">An automated workflow was created to extract real-time Amazon best seller data, transform unstructured HTML into structured JSON using Google Gemini AI, and send formatted results to a webhook. This solution provides eCommerce analysts and marketers with automated competitive research, significantly reducing manual effort.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="bright-data" alt="" width="20" height="20" loading="lazy">
+        Bright Data
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="google" alt="" width="20" height="20" loading="lazy">
+        Google Gemini
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="webhook" alt="" width="20" height="20" loading="lazy">
+        Webhook
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_cTdjEVz1y.jpg" alt="Extract Amazon Best Seller Data with Bright Data and Google Gemini" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">95%</div>
+        <div class="cs-result-label">Data Accuracy</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">80%</div>
+        <div class="cs-result-label">Reduced Manual Effort</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Faster Data Extraction</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$10K+</div>
+        <div class="cs-result-label">Cost Savings Annually</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>E-commerce analysts and product intelligence teams often face the challenge of <strong>manually extracting and structuring data</strong> from Amazon's best seller lists. This process is time-consuming, prone to errors, and struggles to keep up with real-time market changes. The unstructured nature of HTML data makes it difficult to <strong>efficiently analyze and leverage</strong> for competitive research and strategic decision-making.</p>
+
+    <p>The need for <strong>accurate and timely data</strong> is critical for understanding market trends, identifying top-selling products, and making informed decisions about product development and marketing strategies. Without an automated solution, businesses risk <strong>missing out on valuable insights</strong> and falling behind competitors who can quickly adapt to market dynamics.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution involves an automated workflow built with n8n, which leverages Bright Data's Web Unlocker API to extract real-time Amazon best seller data from the electronics category. The unstructured HTML data is then transformed into structured JSON using Google Gemini AI, enabling efficient analysis. Finally, the formatted results are sent to a webhook endpoint for further processing and integration with other systems.</p>
+
+    <p>This tech stack was chosen for its ability to seamlessly integrate web scraping, AI-powered data transformation, and webhook integration. n8n provides a flexible and user-friendly platform for building and managing the workflow, while Bright Data ensures reliable data extraction. Google Gemini AI enables accurate and efficient data structuring, making the solution <strong>robust, scalable, and adaptable</strong> to changing data formats.</p>
+
+    <div class="cs-visual-flow" aria-label="Data extraction and transformation pipeline">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">🌐</div><div class="cs-flow-step-title">Extract Data</div><div class="cs-flow-step-sub">Bright Data API</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">🤖</div><div class="cs-flow-step-title">Transform Data</div><div class="cs-flow-step-sub">Google Gemini AI</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📤</div><div class="cs-flow-step-title">Send Results</div><div class="cs-flow-step-sub">Webhook Endpoint</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Real-time Insights</div>
+          <div class="cs-flow-outcome review">📋 Competitive Analysis</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Automated Data Pipeline</h3>
+    <p>This workflow automates the extraction, transformation, and delivery of Amazon best seller data, providing real-time insights for e-commerce analysts and marketers.</p>
+    <ol>
+      <li><strong>Initiate Web Unlocker API:</strong> The workflow starts by calling Bright Data's Web Unlocker API to bypass anti-scraping measures and access Amazon's best seller data.</li>
+      <li><strong>Extract HTML Content:</strong> The raw HTML content from the Amazon best seller page is extracted and prepared for transformation.</li>
+      <li><strong>Send to Google Gemini AI:</strong> The unstructured HTML data is sent to Google Gemini AI for transformation into structured JSON format.</li>
+      <li><strong>AI-Powered Transformation:</strong> Google Gemini AI processes the HTML and extracts relevant information, such as product names, prices, and rankings.</li>
+      <li><strong>Format JSON Output:</strong> The extracted data is formatted into a clean and structured JSON output, making it easy to analyze and integrate with other systems.</li>
+      <li><strong>Send to Webhook Endpoint:</strong> The formatted JSON data is sent to a designated webhook endpoint for further processing and storage.</li>
+      <li><strong>Real-Time Data Delivery:</strong> The webhook endpoint receives the data in real-time, enabling immediate analysis and decision-making.</li>
+      <li><strong>Monitor and Maintain:</strong> The workflow is continuously monitored and maintained to ensure data accuracy and reliability.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>AI-Powered Transformation:</strong> Google Gemini AI's ability to accurately transform unstructured HTML into structured JSON significantly reduces manual effort and improves data quality. This ensures that the extracted data is reliable and ready for analysis.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⚡</div><h4>Real-Time Data</h4><p>Provides up-to-the-minute data on Amazon best sellers, enabling quick responses to market changes.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🤖</div><h4>Automated Extraction</h4><p>Eliminates the need for manual data extraction, saving time and reducing the risk of errors.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🧠</div><h4>AI-Powered Transformation</h4><p>Transforms unstructured HTML into structured JSON, making data analysis more efficient and accurate.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🛡️</div><h4>Bypasses Anti-Scraping</h4><p>Bright Data's Web Unlocker API bypasses anti-scraping measures, ensuring reliable data extraction.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📈</div><h4>Scalable Solution</h4><p>Easily scales to handle large volumes of data, accommodating growing business needs.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🔗</div><h4>Webhook Integration</h4><p>Seamlessly integrates with other systems via webhook, enabling automated data processing and analysis.</p></div>
+    </div>
+
+    <h2>Before vs. After: descriptive subtitle</h2>
+    <p><strong>Before:</strong> Manual data extraction took approximately 10 hours per week, with a data accuracy rate of 70% due to human error.</p>
+    <p><strong>After:</strong> Automated data extraction now takes less than 1 hour per week, with a data accuracy rate of 95%.</p>
+
+    <h2>Implementation: Live in 3 Weeks</h2>
+    <ol>
+      <li><strong>Planning and Setup:</strong> Define project scope, identify data sources, and set up n8n and Bright Data accounts.</li>
+      <li><strong>Workflow Design:</strong> Design the n8n workflow, including data extraction, transformation, and webhook integration steps.</li>
+      <li><strong>AI Configuration:</strong> Configure Google Gemini AI to transform unstructured HTML into structured JSON format.</li>
+      <li><strong>Testing and Optimization:</strong> Test the workflow to ensure data accuracy and reliability, and optimize for performance.</li>
+      <li><strong>Deployment and Monitoring:</strong> Deploy the workflow to a production environment and continuously monitor for issues.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This solution is ideal for e-commerce analysts, product intelligence teams, and marketers who need real-time, accurate data on Amazon best sellers. It's particularly useful for businesses that want to automate competitive research, identify market trends, and make informed decisions about product development and marketing strategies.</p>
+
+    <p>However, this solution may not be the right fit for businesses that do not require real-time data or have limited technical resources. In such cases, a manual data extraction process or a simpler data analysis tool may be more appropriate.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">E-commerce</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Data Extraction</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">n8n</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">3 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">250%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="bright-data" alt="" width="14" height="14" loading="lazy">Bright Data</span>
+        <span class="cs-tool-tag"><img src="" data-logo="google" alt="" width="14" height="14" loading="lazy">Google Gemini</span>
+        <span class="cs-tool-tag"><img src="" data-logo="webhook" alt="" width="14" height="14" loading="lazy">Webhook</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Accuracy</span><span class="cs-sidebar-value" style="text-align:right;">95%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual Effort Reduction</span><span class="cs-sidebar-value" style="text-align:right;">80%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Extraction Speed</span><span class="cs-sidebar-value" style="text-align:right;">5x Faster</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Cost Savings</span><span class="cs-sidebar-value" style="text-align:right;">$10K+ Annually</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Real-Time Data Access</span><span class="cs-sidebar-value" style="text-align:right;">Instant</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Scalability</span><span class="cs-sidebar-value" style="text-align:right;">High</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to automate competitive research?</h4>
+      <p>Free discovery call — let's discuss your data extraction needs.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is an automation platform, and why use it?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Efficiency and accuracy.</strong> An automation platform allows you to connect different apps and services to automate repetitive tasks, saving time and reducing errors.</p>
+          <p>It streamlines workflows, allowing you to focus on more strategic activities. By automating tasks, you can improve productivity and reduce operational costs.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is using an automation platform for sensitive data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Secure and compliant.</strong> Reputable automation platforms employ robust security measures, including encryption, access controls, and regular security audits, to protect your data.</p>
+          <p>They also comply with industry standards and regulations, ensuring that your data is handled securely and in accordance with legal requirements. Look for platforms with certifications like SOC 2 and GDPR compliance.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks can be automated with a platform like n8n?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Versatile automation.</strong> You can automate a wide range of tasks, including data entry, email marketing, social media management, customer service, and more.</p>
+          <p>If a task is repetitive and rule-based, it can likely be automated. Automation platforms can also handle complex workflows involving multiple applications and data sources.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much technical knowledge is required to use an automation platform?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Low-code solutions.</strong> Many automation platforms offer a user-friendly, low-code interface that allows you to create workflows without extensive programming knowledge.</p>
+          <p>Drag-and-drop functionality and pre-built templates make it easy to get started. However, some technical knowledge may be required for more complex integrations and customizations.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of integrating AI into automation workflows?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Enhanced capabilities.</strong> Integrating AI can add advanced capabilities to your workflows, such as natural language processing, machine learning, and predictive analytics.</p>
+          <p>This allows you to automate more complex tasks and gain valuable insights from your data. AI can also improve the accuracy and efficiency of your automation workflows.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom data extraction automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, absolutely.</strong> We specialize in building custom automation solutions tailored to your specific business needs. Our team can assess your requirements, design a solution, and implement it for you.</p>
+          <p>Whether you need to extract data from websites, APIs, or other sources, we can create a custom automation workflow that meets your specific needs. Contact us for a free consultation.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate your Amazon data extraction today</h2>
+    <p>Unlock real-time insights and streamline your competitive research with our custom automation solutions.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: google

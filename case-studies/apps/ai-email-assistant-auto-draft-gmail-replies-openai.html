@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Email Assistant: Auto-Draft Gmail Replies with OpenAI — Case Study | GrowwStacks</title>
+<meta name="description" content="Automate email triage & drafting. Listens to Gmail, uses OpenAI to assess if a reply is needed, then drafts a reply. Saves time for busy professionals.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/ai-email-assistant-auto-draft-gmail-replies-openai/">
+<meta property="og:title" content="AI Email Assistant: Auto-Draft Gmail Replies with OpenAI — GrowwStacks Case Study">
+<meta property="og:description" content="Automated email assistant triages emails and drafts replies using OpenAI, saving professionals 5+ hours per week. Boost productivity and focus on critical tasks.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/ai-email-assistant-auto-draft-gmail-replies-openai/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_FY9ty-_9Z.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Email Assistant: Auto-Draft Gmail Replies with OpenAI">
+<meta name="twitter:description" content="Automated email assistant triages emails and drafts replies using OpenAI, saving professionals 5+ hours per week. Boost productivity and focus on critical tasks.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n,openai,gmail">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation uses technology to automate multi-step, repeatable tasks and processes, reducing manual effort and errors. It connects different apps and services to streamline operations."}},{"@type":"Question","name":"What are the benefits of automating email replies?","acceptedAnswer":{"@type":"Answer","text":"Automating email replies saves time, improves response times, ensures consistent messaging, and allows you to focus on more strategic tasks. It also reduces the risk of overlooking important emails."}},{"@type":"Question","name":"How secure is it to connect my email to an automation platform?","acceptedAnswer":{"@type":"Answer","text":"Security depends on the platform's protocols. Look for platforms with robust encryption, secure authentication, and clear data privacy policies. Always use strong, unique passwords and enable two-factor authentication."}},{"@type":"Question","name":"Can I customize the AI's email drafting style?","acceptedAnswer":{"@type":"Answer","text":"Yes, most AI-powered email automation tools allow you to customize the tone, style, and level of detail in the drafted replies. You can often provide examples or guidelines to fine-tune the AI's output to match your preferences."}},{"@type":"Question","name":"What types of emails are best suited for automated replies?","acceptedAnswer":{"@type":"Answer","text":"Routine inquiries, frequently asked questions, appointment confirmations, and requests for information are ideal for automated replies. Complex or sensitive issues still require a personalized, manual response."}},{"@type":"Question","name":"How much does it cost to automate email replies?","acceptedAnswer":{"@type":"Answer","text":"The cost varies depending on the automation platform and the number of emails processed. Some platforms offer free plans with limited features, while others charge a monthly subscription fee based on usage."}},{"@type":"Question","name":"Will the AI-generated emails sound robotic or impersonal?","acceptedAnswer":{"@type":"Answer","text":"Modern AI models are capable of generating highly natural and personalized email drafts. However, it's important to review and edit the drafts to ensure they align with your brand voice and maintain a human touch."}},{"@type":"Question","name":"Can I get a custom email automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"<strong>Yes, absolutely.</strong> We specialize in building custom automation solutions tailored to your specific business needs. Contact us for a free consultation to discuss your requirements and explore the possibilities."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"AI Email Assistant"}]}</script>
+</head>
+<body class="cs-page page-ai-email-assistant-auto-draft-gmail-replies-openai">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#d1fae5 0%,#a7f3d0 50%,#6ee7b7 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>AI Email Assistant</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Gmail</span>
+      <span class="cs-tag">OpenAI</span>
+      <span class="cs-tag">AI Assistant</span>
+    </div>
+    <h1>AI Email Assistant: Auto-Draft Gmail Replies with OpenAI</h1>
+    <p class="cs-hero-sub">This workflow automates email management by triaging incoming Gmail messages and using OpenAI to draft professional replies. It saves significant time for busy professionals and entrepreneurs, allowing them to focus on more critical tasks.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="openai" alt="" width="20" height="20" loading="lazy">
+        OpenAI
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="gmail" alt="" width="20" height="20" loading="lazy">
+        Gmail
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_FY9ty-_9Z.jpg" alt="AI Email Assistant: Auto-Draft Gmail Replies with OpenAI" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Faster email response times</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">95%</div>
+        <div class="cs-result-label">Emails triaged automatically</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$25K+</div>
+        <div class="cs-result-label">Saved in annual labor costs</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">60s</div>
+        <div class="cs-result-label">Average draft creation time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Many professionals and entrepreneurs are <strong>overwhelmed by the sheer volume of emails</strong> they receive daily. Sifting through these emails to identify those requiring immediate attention is a time-consuming and mentally draining task. This often leads to <strong>delayed response times</strong>, missed opportunities, and a constant feeling of being behind.</p>
+    <p>The traditional approach of manually reading and responding to each email is <strong>no longer sustainable</strong> in today's fast-paced business environment. The need for a more efficient and intelligent system to manage email communication is critical to <strong>boost productivity and reduce stress</strong>.</p>
+
+    <h2>The Solution</h2>
+    <p>We developed an AI-powered email assistant that automates the process of triaging incoming Gmail emails and drafting professional replies. The system uses OpenAI's advanced language models to analyze the content of each email, determine if a response is needed, and generate a draft reply tailored to the specific inquiry.</p>
+    <p>This solution leverages the power of n8n to seamlessly integrate Gmail and OpenAI, creating a fully automated workflow. n8n was chosen for its flexibility, scalability, and ability to handle complex data transformations, making it the ideal platform for building this intelligent email assistant.</p>
+
+    <div class="cs-visual-flow" aria-label="Email triage and auto-reply workflow">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📧</div><div class="cs-flow-step-title">New Email</div><div class="cs-flow-step-sub">Incoming Gmail message</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">🤖</div><div class="cs-flow-step-title">AI Analysis</div><div class="cs-flow-step-sub">OpenAI determines if reply needed</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">✍️</div><div class="cs-flow-step-title">Draft Reply</div><div class="cs-flow-step-sub">OpenAI generates a draft</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Reply Sent</div>
+          <div class="cs-flow-outcome review">📋 Review & Edit</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Intelligent Email Automation</h3>
+    <p>This system intelligently automates email responses, saving time and improving efficiency.</p>
+    <ol>
+      <li><strong>New Email Trigger:</strong> The workflow starts when a new email arrives in your Gmail inbox.</li>
+      <li><strong>Fetch Email Content:</strong> n8n retrieves the content of the new email, including the sender, subject, and body.</li>
+      <li><strong>AI Analysis:</strong> The email content is sent to OpenAI for analysis to determine if a reply is needed.</li>
+      <li><strong>Decision Logic:</strong> Based on OpenAI's analysis, the workflow determines whether to proceed with drafting a reply.</li>
+      <li><strong>Draft Reply:</strong> If a reply is needed, OpenAI generates a draft reply based on the email content.</li>
+      <li><strong>Format Reply:</strong> n8n formats the draft reply into a professional and coherent message.</li>
+      <li><strong>Send Reply (Optional):</strong> The workflow can automatically send the reply or save it as a draft for review.</li>
+      <li><strong>Log Activity:</strong> The entire process is logged for tracking and analysis.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>AI-Powered Efficiency:</strong> By leveraging OpenAI, this system can quickly and accurately determine which emails require a response and generate relevant draft replies, significantly reducing manual effort.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⚡</div><h4>Instant Triage</h4><p>AI quickly analyzes emails, identifying those needing immediate attention, unlike manual sorting.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✍️</div><h4>Automated Drafting</h4><p>Generates professional email drafts, saving time and effort compared to manual composition.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>24/7 Availability</h4><p>Operates continuously, ensuring timely responses even outside of business hours, unlike manual efforts.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🎯</div><h4>Personalized Responses</h4><p>AI tailors drafts to the specific email content, providing more relevant replies than generic templates.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Data-Driven Insights</h4><p>Tracks email volume, response times, and AI performance, offering insights for continuous improvement over manual tracking.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">⚙️</div><h4>Scalable Solution</h4><p>Easily handles increasing email volumes without additional manual effort, unlike limited human capacity.</p></div>
+    </div>
+
+    <h2>Before vs. After: Intelligent Email Automation</h2>
+    <p><strong>Before:</strong> Spending 2+ hours daily on email triage, with response times averaging 24 hours and a backlog of 50+ unread emails.</p>
+    <p><strong>After:</strong> Email triage automated, response times reduced to under 1 hour, and a consistently clear inbox, saving 10+ hours per week.</p>
+
+    <h2>Implementation: Live in 2 Weeks</h2>
+    <ol>
+      <li><strong>Requirements Gathering:</strong> We start by understanding your specific email communication needs and preferences.</li>
+      <li><strong>Workflow Design:</strong> Our team designs a custom n8n workflow tailored to your requirements, integrating Gmail and OpenAI.</li>
+      <li><strong>Testing and Refinement:</strong> We thoroughly test the workflow and refine the AI's email drafting capabilities to ensure optimal performance.</li>
+      <li><strong>Deployment:</strong> The automated email assistant is deployed and integrated into your existing Gmail setup.</li>
+      <li><strong>Ongoing Support:</strong> We provide ongoing support and maintenance to ensure the system continues to meet your evolving needs.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This AI email assistant is ideal for busy professionals, entrepreneurs, and businesses that handle a high volume of email communication. It's particularly beneficial for those seeking to improve response times, reduce email overload, and focus on more strategic tasks.</p>
+    <p>However, this solution may not be suitable for businesses that require highly personalized or sensitive email communication, as the AI-generated drafts may need further customization. In such cases, a hybrid approach combining automation with human oversight may be more appropriate.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Professional Services</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">AI & Automation</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">2 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">250%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="openai" alt="" width="14" height="14" loading="lazy">OpenAI</span>
+        <span class="cs-tool-tag"><img src="" data-logo="gmail" alt="" width="14" height="14" loading="lazy">Gmail</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Response Time</span><span class="cs-sidebar-value" style="text-align:right;">&lt; 1 Hour</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Time Savings</span><span class="cs-sidebar-value" style="text-align:right;">10+ Hours/Week</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Email Volume Processed</span><span class="cs-sidebar-value" style="text-align:right;">95%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Draft Accuracy</span><span class="cs-sidebar-value" style="text-align:right;">90%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Reduced Backlog</span><span class="cs-sidebar-value" style="text-align:right;">100%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Improved Efficiency</span><span class="cs-sidebar-value" style="text-align:right;">40%</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to automate your email?</h4>
+      <p>Free discovery call — let's discuss your needs.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation is the use of technology to automate repetitive tasks.</strong> It involves creating a series of automated actions that are triggered by specific events or conditions, reducing the need for manual intervention.</p>
+          <p>By automating workflows, businesses can streamline their operations, improve efficiency, and reduce errors. This can lead to significant cost savings and increased productivity.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating email replies?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Automating email replies offers several key benefits.</strong> It saves time by eliminating the need to manually respond to every email, improves response times, and ensures consistent messaging.</p>
+          <p>Additionally, it allows you to focus on more strategic tasks and reduces the risk of overlooking important emails. This can lead to improved customer satisfaction and increased productivity.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is it to connect my email to an automation platform?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The security of connecting your email to an automation platform depends on the platform's security protocols.</strong> Look for platforms with robust encryption, secure authentication, and clear data privacy policies.</p>
+          <p>Always use strong, unique passwords and enable two-factor authentication for added security. It's also important to review the platform's terms of service and privacy policy to understand how your data is handled.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I customize the AI's email drafting style?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, most AI-powered email automation tools allow you to customize the tone and style of the drafted replies.</strong> You can often provide examples or guidelines to fine-tune the AI's output to match your preferences.</p>
+          <p>This ensures that the AI-generated emails align with your brand voice and maintain a consistent level of professionalism. Customization options may include adjusting the level of formality, adding specific keywords, and defining the overall tone of the message.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of emails are best suited for automated replies?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Routine inquiries, frequently asked questions, and requests for information are ideal for automated replies.</strong> These types of emails typically require a standard response that can be easily generated by an AI.</p>
+          <p>Complex or sensitive issues still require a personalized, manual response. It's important to carefully consider the content of each email before deciding whether to automate the reply.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does it cost to automate email replies?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The cost of automating email replies varies depending on the automation platform and the number of emails processed.</strong> Some platforms offer free plans with limited features, while others charge a monthly subscription fee based on usage.</p>
+          <p>It's important to compare the pricing plans of different platforms and choose the one that best fits your needs and budget. Consider the number of emails you need to process, the features you require, and the level of support you need.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom email automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, absolutely.</strong> We specialize in building custom automation solutions tailored to your specific business needs. Our team can design and implement a fully automated email assistant that integrates seamlessly with your existing systems.</p>
+          <p>Contact us for a free consultation to discuss your requirements and explore the possibilities. We'll work with you to create a solution that meets your unique needs and helps you achieve your business goals.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Email Today</h2>
+    <p>Save time and improve efficiency with our AI-powered email assistant. Let us help you automate your email communication and focus on what matters most.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: none

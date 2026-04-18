@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automate Container ETA and ETD Notifications with Terminal49 — Case Study | GrowwStacks</title>
+<meta name="description" content="Automate container tracking with an n8n workflow that fetches real-time ETA/ETD data from Terminal49, updates Monday.com, and improves visibility.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/automate-container-eta-etd-notifications-terminal49/">
+<meta property="og:title" content="Automate Container ETA and ETD Notifications with Terminal49 — GrowwStacks Case Study">
+<meta property="og:description" content="Automated container tracking using Terminal49 and n8n to provide real-time ETA/ETD updates. This system reduces manual checks by 90% and improves operational visibility for logistics teams.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/automate-container-eta-etd-notifications-terminal49/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_StWSl7cxy.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automate Container ETA and ETD Notifications with Terminal49">
+<meta name="twitter:description" content="Automated container tracking using Terminal49 and n8n to provide real-time ETA/ETD updates. This system reduces manual checks by 90% and improves operational visibility for logistics teams.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n, terminal49, monday">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation and why is it useful?","acceptedAnswer":{"@type":"Answer","text":"**Workflow automation streamlines repetitive tasks**, reducing manual effort and errors. It connects different applications and services, allowing data to flow seamlessly between them. This not only saves time but also improves accuracy and efficiency in business processes.\n\nBy automating workflows, businesses can focus on more strategic activities, improve productivity, and ensure consistent execution of tasks. It's a key component of digital transformation, enabling organizations to optimize their operations and achieve better results."}},{"@type":"Question","name":"How secure is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"**Security is a critical aspect of workflow automation.** Reputable automation platforms employ robust security measures to protect data and ensure compliance with industry standards.\n\nThese measures include encryption, access controls, and regular security audits. When implementing workflow automation, it's essential to choose a platform that prioritizes security and offers features like multi-factor authentication and data loss prevention."}},{"@type":"Question","name":"What types of tasks can be automated?","acceptedAnswer":{"@type":"Answer","text":"**Almost any repetitive, rule-based task can be automated.** This includes data entry, email marketing, social media posting, customer service inquiries, and report generation.\n\nWorkflow automation can also be applied to more complex processes, such as order fulfillment, invoice processing, and supply chain management. The key is to identify tasks that are time-consuming, prone to errors, and require minimal human intervention."}},{"@type":"Question","name":"How much does workflow automation cost?","acceptedAnswer":{"@type":"Answer","text":"**The cost of workflow automation varies depending on the complexity of the system and the platform used.** Some platforms offer free plans with limited features, while others charge a monthly or annual subscription fee based on usage.\n\nAdditional costs may include implementation, training, and ongoing maintenance. However, the ROI of workflow automation is often significant, as it can lead to increased productivity, reduced costs, and improved accuracy."}},{"@type":"Question","name":"What is the difference between RPA and workflow automation?","acceptedAnswer":{"@type":"Answer","text":"**RPA (Robotic Process Automation) and workflow automation are related but distinct concepts.** RPA focuses on automating individual tasks by mimicking human actions on a computer, such as clicking buttons and entering data.\n\nWorkflow automation, on the other hand, involves automating entire processes by connecting different applications and services. While RPA is often used for simple, repetitive tasks, workflow automation is better suited for more complex, end-to-end processes."}},{"@type":"Question","name":"How quickly can I implement workflow automation?","acceptedAnswer":{"@type":"Answer","text":"**The implementation time for workflow automation depends on the complexity of the project.** Simple automations can be set up in a matter of hours, while more complex workflows may take several weeks to implement.\n\nThe key is to start with a clear understanding of the process you want to automate and to choose a platform that is easy to use and offers the necessary features. With proper planning and execution, you can quickly start realizing the benefits of workflow automation."}},{"@type":"Question","name":"Can I get a custom logistics automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"**Yes, absolutely!** We specialize in building custom automation solutions tailored to the unique needs of businesses like yours. Whether it's optimizing your supply chain, automating data entry, or improving customer communications, we can design and implement a solution that fits your specific requirements.\n\nOur team of experienced automation experts will work closely with you to understand your business processes, identify opportunities for automation, and develop a solution that delivers maximum ROI. Contact us today to discuss your automation needs and get a free consultation."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Automate Container ETA and ETD Notifications"}]}</script>
+</head>
+<body class="cs-page page-automate-container-eta-etd-notifications-terminal49">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#fef3c7 0%,#fde68a 50%,#fcd34d 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Automate Container ETA and ETD Notifications</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">terminal49</span>
+      <span class="cs-tag">logistics</span>
+      <span class="cs-tag">notifications</span>
+    </div>
+    <h1>Automate Container ETA and ETD Notifications with Terminal49</h1>
+    <p class="cs-hero-sub">This workflow automates container tracking by fetching real-time ETA/ETD data from Terminal49 API and updating a Monday.com board. It centralizes container status, reducing manual checks and improving operational visibility for logistics coordinators and supply chain managers.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="terminal49" alt="" width="20" height="20" loading="lazy">
+        Terminal49
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="monday" alt="" width="20" height="20" loading="lazy">
+        Monday.com
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_StWSl7cxy.jpg" alt="Automate Container ETA and ETD Notifications with Terminal49" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">90%</div>
+        <div class="cs-result-label">Reduced manual checks</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">20%</div>
+        <div class="cs-result-label">Faster data processing</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">More frequent data updates</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">100%</div>
+        <div class="cs-result-label">Improved data accuracy</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Logistics coordinators and supply chain managers face significant challenges in <strong>tracking container ETAs and ETDs manually</strong>. This often involves sifting through multiple systems, carrier websites, and email threads, leading to <strong>inefficiencies and potential inaccuracies</strong>. The lack of a centralized, real-time view of container status can result in <strong>delayed decision-making and increased operational costs</strong>.</p>
+
+    <p>Without automated notifications, teams spend countless hours <strong>manually checking for updates</strong>, which diverts their attention from more strategic tasks. This reactive approach also makes it difficult to proactively address potential disruptions, such as <strong>port congestion or unexpected delays</strong>, ultimately impacting customer satisfaction and profitability.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution is an automated workflow built with n8n that leverages the Terminal49 API to fetch real-time container ETA and ETD data. This data is then processed and used to update a Monday.com board, providing a centralized and easily accessible view of container status for all stakeholders.</p>
+
+    <p>This tech stack was chosen for its ability to seamlessly integrate with Terminal49 and Monday.com, as well as its flexibility in handling complex data transformations. n8n's visual interface makes it easy to build and maintain the workflow, while Monday.com's collaborative platform ensures that everyone stays informed about container status in real-time.</p>
+
+    <div class="cs-visual-flow" aria-label="Container tracking and status updates">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📦</div><div class="cs-flow-step-title">Fetch Data</div><div class="cs-flow-step-sub">Terminal49 API</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">⚙️</div><div class="cs-flow-step-title">Process Data</div><div class="cs-flow-step-sub">Transform & Filter</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📊</div><div class="cs-flow-step-title">Update Board</div><div class="cs-flow-step-sub">Monday.com</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Real-time Status</div>
+          <div class="cs-flow-outcome review">📋 Proactive Alerts</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Streamlining Container Tracking</h3>
+    <p>The n8n workflow automates the entire container tracking process, from fetching data to updating stakeholders. Here's a step-by-step breakdown:</p>
+    <ol>
+      <li><strong>API Authentication:</strong> Authenticates with the Terminal49 API using provided credentials.</li>
+      <li><strong>Fetch Container Data:</strong> Retrieves container ETA and ETD data from the Terminal49 API based on specific container numbers or shipment IDs.</li>
+      <li><strong>Data Transformation:</strong> Transforms the raw API data into a structured format that is compatible with Monday.com.</li>
+      <li><strong>Filter Relevant Events:</strong> Filters the data to only include relevant events, such as arrival at port, departure from port, and customs clearance.</li>
+      <li><strong>Check for Updates:</strong> Compares the current container status with the previous status stored in Monday.com to identify any changes.</li>
+      <li><strong>Update Monday.com Board:</strong> Updates the Monday.com board with the latest container status, including ETA, ETD, and any relevant events.</li>
+      <li><strong>Send Notifications:</strong> Sends notifications to relevant stakeholders via email or Slack when there are significant changes in container status, such as delays or arrivals.</li>
+      <li><strong>Error Handling:</strong> Implements error handling to catch any issues with the API or data processing and sends alerts to the IT team.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Real-Time Visibility:</strong> By automating container tracking, logistics teams gain real-time visibility into the status of their shipments, enabling them to make more informed decisions and proactively address potential disruptions.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>Real-Time Updates</h4><p>Provides instant updates on container ETA and ETD, eliminating delays associated with manual checks.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🔔</div><h4>Automated Notifications</h4><p>Sends proactive alerts for critical events, such as delays or arrivals, ensuring timely responses.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📈</div><h4>Improved Visibility</h4><p>Offers a centralized view of container status, enhancing transparency and collaboration across teams.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Reduced Errors</h4><p>Minimizes the risk of human error associated with manual data entry and tracking.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🚀</div><h4>Increased Efficiency</h4><p>Frees up logistics teams to focus on more strategic tasks by automating routine tracking activities.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🤝</div><h4>Better Collaboration</h4><p>Facilitates seamless information sharing and collaboration among stakeholders, improving overall coordination.</p></div>
+    </div>
+
+    <h2>Before vs. After: Enhanced Container Management</h2>
+    <p><strong>Before:</strong> Logistics teams spent an average of 2 hours per day manually tracking container status, resulting in delayed decision-making and potential inaccuracies.</p>
+    <p><strong>After:</strong> The automated workflow reduced manual tracking time by 90%, providing real-time visibility and enabling proactive responses to disruptions, saving approximately 10 hours per week.</p>
+
+    <h2>Implementation: Live in 3 Weeks</h2>
+    <ol>
+      <li><strong>Requirements Gathering:</strong> Detailed discussions with the client to understand their specific container tracking needs and data requirements.</li>
+      <li><strong>Workflow Design:</strong> Designing the n8n workflow, including API integration with Terminal49, data transformation logic, and Monday.com board updates.</li>
+      <li><strong>Testing and Refinement:</strong> Rigorous testing of the workflow to ensure accuracy and reliability, followed by iterative refinements based on client feedback.</li>
+      <li><strong>Deployment and Training:</strong> Deploying the workflow to a production environment and providing training to the client's team on how to use and maintain the system.</li>
+      <li><strong>Ongoing Support:</strong> Providing ongoing support and maintenance to ensure the workflow continues to meet the client's evolving needs.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This solution is ideal for logistics companies, supply chain managers, and anyone who needs to track container ETAs and ETDs in real-time. It's particularly well-suited for organizations that use Terminal49 and Monday.com.</p>
+    <p>However, it may not be the right fit for companies that don't rely on container shipping or those that don't have a need for real-time container tracking. Additionally, companies that don't use Terminal49 or Monday.com may need a different solution.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Logistics</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Notifications</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">3 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">30%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="terminal49" alt="" width="14" height="14" loading="lazy">Terminal49</span>
+        <span class="cs-tool-tag"><img src="" data-logo="monday" alt="" width="14" height="14" loading="lazy">Monday.com</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual Tracking Time</span><span class="cs-sidebar-value" style="text-align:right;">-90%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Processing Speed</span><span class="cs-sidebar-value" style="text-align:right;">+20%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Update Frequency</span><span class="cs-sidebar-value" style="text-align:right;">5x Faster</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Accuracy</span><span class="cs-sidebar-value" style="text-align:right;">100%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Decision-Making Time</span><span class="cs-sidebar-value" style="text-align:right;">-15%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Operational Costs</span><span class="cs-sidebar-value" style="text-align:right;">-8%</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to improve your logistics?</h4>
+      <p>Free discovery call — let's map your needs.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation and why is it useful?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation streamlines repetitive tasks</strong>, reducing manual effort and errors. It connects different applications and services, allowing data to flow seamlessly between them.</p>
+          <p>By automating workflows, businesses can focus on more strategic activities, improve productivity, and ensure consistent execution of tasks. It's a key component of digital transformation, enabling organizations to optimize their operations and achieve better results.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Security is a critical aspect of workflow automation.</strong> Reputable automation platforms employ robust security measures to protect data and ensure compliance with industry standards.</p>
+          <p>These measures include encryption, access controls, and regular security audits. When implementing workflow automation, it's essential to choose a platform that prioritizes security and offers features like multi-factor authentication and data loss prevention.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks can be automated?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Almost any repetitive, rule-based task can be automated.</strong> This includes data entry, email marketing, social media posting, customer service inquiries, and report generation.</p>
+          <p>Workflow automation can also be applied to more complex processes, such as order fulfillment, invoice processing, and supply chain management. The key is to identify tasks that are time-consuming, prone to errors, and require minimal human intervention.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does workflow automation cost?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The cost of workflow automation varies depending on the complexity of the system and the platform used.</strong> Some platforms offer free plans with limited features, while others charge a monthly or annual subscription fee based on usage.</p>
+          <p>Additional costs may include implementation, training, and ongoing maintenance. However, the ROI of workflow automation is often significant, as it can lead to increased productivity, reduced costs, and improved accuracy.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is the difference between RPA and workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>RPA (Robotic Process Automation) and workflow automation are related but distinct concepts.</strong> RPA focuses on automating individual tasks by mimicking human actions on a computer, such as clicking buttons and entering data.</p>
+          <p>Workflow automation, on the other hand, involves automating entire processes by connecting different applications and services. While RPA is often used for simple, repetitive tasks, workflow automation is better suited for more complex, end-to-end processes.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How quickly can I implement workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The implementation time for workflow automation depends on the complexity of the project.</strong> Simple automations can be set up in a matter of hours, while more complex workflows may take several weeks to implement.</p>
+          <p>The key is to start with a clear understanding of the process you want to automate and to choose a platform that is easy to use and offers the necessary features. With proper planning and execution, you can quickly start realizing the benefits of workflow automation.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom logistics automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, absolutely!</strong> We specialize in building custom automation solutions tailored to the unique needs of businesses like yours. Whether it's optimizing your supply chain, automating data entry, or improving customer communications, we can design and implement a solution that fits your specific requirements.</p>
+          <p>Our team of experienced automation experts will work closely with you to understand your business processes, identify opportunities for automation, and develop a solution that delivers maximum ROI. Contact us today to discuss your automation needs and get a free consultation.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Container Tracking</h2>
+    <p>Ready to streamline your logistics operations and gain real-time visibility into your shipments? Let us build a custom automation solution for you.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: terminal49
