@@ -79,24 +79,31 @@
   <!--Start of GHL Chat bot Script-->
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69e31cca1024ff7c424c9af2"></script>
 <script>
-setInterval(() => {
-  const widget = document.querySelector('chat-widget');
+function adjustChatWidget() {
+  if (window.innerWidth <= 450) {
+    const widget = document.querySelector('chat-widget');
 
-  if (widget && widget.shadowRoot) {
-    const btn = widget.shadowRoot.querySelector('#lc_text-widget--btn');
-    const container = widget.shadowRoot.querySelector('#lc_text-widget');
+    if (widget && widget.shadowRoot) {
+      const btn = widget.shadowRoot.querySelector('#lc_text-widget--btn');
+      const container = widget.shadowRoot.querySelector('#lc_text-widget');
 
-    if (btn) {
-      btn.style.bottom = '120px';
-      btn.style.right = '20px'; // optional
-    }
+      if (btn) {
+        btn.style.bottom = '120px';
+      }
 
-    if (container) {
-      container.style.bottom = '120px';
-      container.style.maxHeight = '450px';
+      if (container) {
+        container.style.bottom = '120px';
+        container.style.maxHeight = '450px';
+      }
     }
   }
-}, 1000);
+}
+
+// Run multiple times because widget loads async
+setInterval(adjustChatWidget, 1000);
+
+// Also run on resize
+window.addEventListener('resize', adjustChatWidget);
 </script>
 <!--End of GHL Chat bot Script-->
   <script>
