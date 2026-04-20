@@ -46,7 +46,7 @@ const BLOG_POSTS = [
 },
 {
   title: "How to Build Profitable Business Systems Without Code Using Zoer AI (MiniMax M2.1, Claude Sonnet 4.5, Gemini 3.0 Pro)",
-  desc: "Stop selling outdated websites and PDFs. In <span data-year="current"></span>, profitable businesses need working systems - and Zoer AI lets you build them without coding. See how to create restaurant booking apps, admin dashboards, and payment systems using multiple AI models.",
+  desc: "Stop selling outdated websites and PDFs. In 2026, profitable businesses need working systems - and Zoer AI lets you build them without coding. See how to create restaurant booking apps, admin dashboards, and payment systems using multiple AI models.",
   url: "/blog/build-business-systems-without-code-zoer-ai",
   tags: ["AI Agents","No-Code","Business Automation"],
   date: "2026-02-10",
@@ -189,7 +189,7 @@ const BLOG_POSTS = [
   target: "_blank"
 },
 {
-  title: "How OpenClaw Works: The Real "Magic" Behind 24/7 AI Agents",
+  title: "How OpenClaw Works: The Real Magic Behind 24/7 AI Agents",
   desc: "Discover how OpenClaw's elegant event-driven architecture creates AI agents that operate 24/7 without human intervention using five types of triggers and simple markdown memory.",
   url: "/blog/how-openclaw-works-the-real-magic",
   tags: ["AI Agents","Automation","OpenClaw"],
@@ -1342,7 +1342,7 @@ const BLOG_POSTS = [
 },
 {
   title: "N8n vs OpenClaw: When to Use Each for Maximum Automation Impact",
-  desc: "Discover the crucial difference between reactive automation (n8n) and proactive AI (OpenClaw) - and why you might need both in your tech stack for <span data-year="current"></span>.",
+  desc: "Discover the crucial difference between reactive automation (n8n) and proactive AI (OpenClaw) - and why you might need both in your tech stack for 2026",
   url: "/blog/n8n-vs-openclaw-comparison",
   tags: ["n8n","AI Agents","Automation"],
   date: "2026-03-05",
