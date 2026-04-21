@@ -56,9 +56,7 @@
 
           </div>
           </a>
-          <div class="card-actions" style="margin-top: 10px;">
-            <a href="${item.driveUrl || "#"}" target="_blank" rel="noopener noreferrer">Download Template</a>
-          </div>
+          
         </div>
       </div>
     `;
