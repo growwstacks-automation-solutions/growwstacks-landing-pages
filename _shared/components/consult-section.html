@@ -573,15 +573,13 @@ btn.textContent='Verifying...';
 btn.disabled=true;
 
 try {
-  const verifyRes = await fetch("https://script.google.com/macros/s/AKfycbxaCgJa3Swn_khuefJdS83fMii6xKWgzU_L5ssI95WZ9aiqniqB0fIY20fB3gerdS8K/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      token: captchaToken
-    })
-  });
+  const formData = new URLSearchParams();
+formData.append("token", captchaToken);
+
+const verifyRes = await fetch("https://script.google.com/macros/s/AKfycbxaCgJa3Swn_khuefJdS83fMii6xKWgzU_L5ssI95WZ9aiqniqB0fIY20fB3gerdS8K/exec", {
+  method: "POST",
+  body: formData
+});
 
   const verifyText = await verifyRes.text();
   const verifyData = JSON.parse(verifyText);
