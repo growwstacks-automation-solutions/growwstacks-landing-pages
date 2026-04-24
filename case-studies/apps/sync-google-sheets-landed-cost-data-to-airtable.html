@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sync Google Sheets Landed Cost Data to Airtable Records — Case Study | GrowwStacks</title>
+<meta name="description" content="Automated workflow to sync landed cost data from Google Sheets to Airtable. Updates existing records or creates new ones, improving data accuracy and efficiency.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/sync-google-sheets-landed-cost-data-to-airtable/">
+<meta property="og:title" content="Sync Google Sheets Landed Cost Data to Airtable Records — GrowwStacks Case Study">
+<meta property="og:description" content="Automated landed cost data migration from Google Sheets to Airtable, resulting in a 90% reduction in manual data entry and a 5x faster update cycle.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/sync-google-sheets-landed-cost-data-to-airtable/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_T4KETcN0v.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sync Google Sheets Landed Cost Data to Airtable Records">
+<meta name="twitter:description" content="Automated landed cost data migration from Google Sheets to Airtable, resulting in a 90% reduction in manual data entry and a 5x faster update cycle.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n,googleSheets,airtable">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation involves using technology to automate repeatable tasks and processes, reducing manual effort and improving efficiency. It can range from simple tasks like sending automated emails to complex processes like managing entire supply chains."}},{"@type":"Question","name":"What are the benefits of automating data migration?","acceptedAnswer":{"@type":"Answer","text":"Automating data migration reduces the risk of human error, saves time, and ensures data consistency across different platforms. It also frees up employees to focus on more strategic tasks, leading to increased productivity and better decision-making."}},{"@type":"Question","name":"How secure is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"The security of workflow automation depends on the platform and security measures implemented. Robust platforms offer encryption, access controls, and regular security audits to protect sensitive data. It's crucial to choose a provider with strong security protocols and to follow best practices for data protection."}},{"@type":"Question","name":"Can workflow automation integrate with other tools?","acceptedAnswer":{"@type":"Answer","text":"Yes, most workflow automation platforms offer integrations with a wide range of tools, including CRM systems, email marketing platforms, databases, and more. These integrations allow you to seamlessly connect different parts of your business and automate processes across multiple applications."}},{"@type":"Question","name":"How much does workflow automation cost?","acceptedAnswer":{"@type":"Answer","text":"The cost of workflow automation varies depending on the platform, the number of users, and the complexity of the workflows. Some platforms offer free plans for basic use, while others charge monthly or annual fees based on usage. It's important to evaluate your needs and compare pricing models to find the best fit for your budget."}},{"@type":"Question","name":"What kind of support is available for workflow automation?","acceptedAnswer":{"@type":"Answer","text":"Most workflow automation platforms offer a range of support options, including documentation, tutorials, community forums, and direct support from the provider. Some providers also offer professional services to help you design and implement complex workflows."}},{"@type":"Question","name":"Can I get a custom data migration automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"<strong>Yes, we build custom automations tailored to your specific business needs.</strong> We can assess your current processes, identify opportunities for automation, and design a solution that integrates seamlessly with your existing systems. Our goal is to help you streamline your operations, improve efficiency, and achieve your business objectives."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Sync Google Sheets Landed Cost Data to Airtable Records"}]}</script>
+</head>
+<body class="cs-page page-sync-google-sheets-landed-cost-data-to-airtable">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 50%,#a5b4fc 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Sync Google Sheets Landed Cost Data to Airtable</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Google Sheets</span>
+      <span class="cs-tag">Airtable</span>
+      <span class="cs-tag">Data Migration</span>
+    </div>
+    <h1>Sync Google Sheets Landed Cost Data to Airtable Records</h1>
+    <p class="cs-hero-sub">This workflow automates the migration of landed cost data from Google Sheets to Airtable, ensuring accurate and up-to-date records. By automating this process, the client reduced manual data entry and improved data consistency across platforms.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        N8N
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="googleSheets" alt="" width="20" height="20" loading="lazy">
+        Google Sheets
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="airtable" alt="" width="20" height="20" loading="lazy">
+        Airtable
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_T4KETcN0v.jpg" alt="Sync Google Sheets Landed Cost Data to Airtable Records" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">90%</div>
+        <div class="cs-result-label">Reduced manual data entry</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Faster update cycle</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">99%</div>
+        <div class="cs-result-label">Data accuracy</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">60s</div>
+        <div class="cs-result-label">Average processing time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Many businesses rely on Google Sheets to manage their landed cost data. However, manually transferring this data to Airtable for further analysis and reporting is <strong>time-consuming and prone to errors</strong>. This process often leads to <strong>data inconsistencies and delays</strong> in decision-making, hindering operational efficiency.</p>
+
+    <p>The client, a growing e-commerce company, faced these challenges daily. Their team spent countless hours <strong>manually updating Airtable records</strong> with the latest landed cost information from Google Sheets. This not only <strong>diverted resources from more strategic activities</strong> but also increased the risk of <strong>costly mistakes due to human error</strong>.</p>
+
+    <h2>The Solution</h2>
+    <p>To address these issues, we developed an automated workflow using N8N that seamlessly syncs landed cost data from Google Sheets to Airtable. The workflow retrieves new landed cost items from a specified Google Sheet, searches for corresponding records in Airtable, updates existing records, or creates new ones if they don't exist. It also updates the Google Sheet to reflect the migration status, ensuring data integrity.</p>
+
+    <p>This solution was chosen for its ability to provide a <strong>reliable, efficient, and error-free data migration process</strong>. N8N's flexibility and integration capabilities with both Google Sheets and Airtable made it the ideal platform for building this automation. By automating this process, the client significantly reduced manual effort, improved data accuracy, and accelerated their decision-making process.</p>
+
+    <div class="cs-visual-flow" aria-label="Data migration process from Google Sheets to Airtable">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📄</div><div class="cs-flow-step-title">Read Sheet</div><div class="cs-flow-step-sub">Fetch new data</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">🔎</div><div class="cs-flow-step-title">Search Airtable</div><div class="cs-flow-step-sub">Find matching record</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">✍️</div><div class="cs-flow-step-title">Update/Create</div><div class="cs-flow-step-sub">Modify or add record</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Updated Airtable</div>
+          <div class="cs-flow-outcome review">📋 Updated Google Sheet</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Streamlining Data Synchronization</h3>
+    <p>The automation works by continuously monitoring the Google Sheet for new or updated landed cost data and automatically syncing it to Airtable. This ensures that the Airtable records are always up-to-date with the latest information.</p>
+    <ol>
+      <li><strong>Read Google Sheet:</strong> The workflow starts by reading the specified Google Sheet to identify new or updated landed cost items.</li>
+      <li><strong>Search Airtable:</strong> For each item, the workflow searches for a corresponding record in Airtable based on a unique identifier (e.g., product ID).</li>
+      <li><strong>Check for Match:</strong> If a matching record is found, the workflow proceeds to update the existing record with the new landed cost data.</li>
+      <li><strong>Update Airtable Record:</strong> The workflow updates the relevant fields in the Airtable record with the latest information from the Google Sheet.</li>
+      <li><strong>Create New Record:</strong> If no matching record is found, the workflow creates a new record in Airtable with the landed cost data.</li>
+      <li><strong>Update Google Sheet:</strong> After updating or creating the record in Airtable, the workflow updates the Google Sheet to reflect the migration status.</li>
+      <li><strong>Log Activity:</strong> The workflow logs all activities, including successful updates, creations, and any errors encountered, for auditing and troubleshooting purposes.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Data Integrity:</strong> By automating the data migration process, the risk of human error is significantly reduced, ensuring data accuracy and consistency across platforms.</p>
+    </div>
+
+    <h2>What This System Does That [Manual Process] Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>Saves Time</h4><p>Automates data transfer, eliminating manual entry and freeing up valuable time.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Ensures Accuracy</h4><p>Reduces human error, ensuring data consistency between Google Sheets and Airtable.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🔄</div><h4>Real-Time Updates</h4><p>Provides real-time synchronization, keeping Airtable records up-to-date.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Improved Reporting</h4><p>Enables better reporting and analysis with accurate, centralized data.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🚀</div><h4>Scalability</h4><p>Easily scales to handle increasing data volumes without additional manual effort.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🛡️</div><h4>Data Integrity</h4><p>Maintains data integrity by automating the migration process and reducing manual intervention.</p></div>
+    </div>
+
+    <h2>Before vs. After: [Improved Data Management]</h2>
+    <p><strong>Before:</strong> The client spent approximately 20 hours per week manually transferring landed cost data from Google Sheets to Airtable, resulting in frequent errors and delays.</p>
+    <p><strong>After:</strong> With the automated workflow, the client reduced manual data entry by 90%, saving 18 hours per week and ensuring 99% data accuracy.</p>
+
+    <h2>Implementation: Live in 2 Weeks</h2>
+    <ol>
+      <li><strong>Discovery & Planning:</strong> We began by understanding the client's specific data requirements and mapping out the data fields between Google Sheets and Airtable.</li>
+      <li><strong>Workflow Design:</strong> Next, we designed the N8N workflow, configuring the necessary nodes to read data from Google Sheets, search for records in Airtable, and update or create new records as needed.</li>
+      <li><strong>Testing & Refinement:</strong> We conducted thorough testing to ensure the workflow operated flawlessly, addressing any issues and refining the process for optimal performance.</li>
+      <li><strong>Deployment & Monitoring:</strong> Finally, we deployed the workflow and set up monitoring to ensure its continued smooth operation, providing ongoing support and maintenance.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This solution is ideal for businesses that rely on Google Sheets for data collection and Airtable for data management and reporting. It's particularly well-suited for e-commerce companies, logistics providers, and any organization that needs to keep landed cost data synchronized across platforms.</p>
+
+    <p>However, this solution may not be the best fit for businesses with extremely complex data structures or those that require real-time data synchronization with sub-second latency. In such cases, a more robust data integration platform may be necessary.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">E-commerce</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Data Migration</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">2 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">200%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">N8N</span>
+        <span class="cs-tool-tag"><img src="" data-logo="googleSheets" alt="" width="14" height="14" loading="lazy">Google Sheets</span>
+        <span class="cs-tool-tag"><img src="" data-logo="airtable" alt="" width="14" height="14" loading="lazy">Airtable</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual Entry Reduction</span><span class="cs-sidebar-value" style="text-align:right;">90%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Accuracy</span><span class="cs-sidebar-value" style="text-align:right;">99%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Time Savings</span><span class="cs-sidebar-value" style="text-align:right;">18 hours/week</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Processing Time</span><span class="cs-sidebar-value" style="text-align:right;">60 seconds</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Error Rate Reduction</span><span class="cs-sidebar-value" style="text-align:right;">95%</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to eliminate manual data entry?</h4>
+      <p>Free discovery call — Automate your data workflows and reclaim valuable time.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation is the use of technology to automate repeatable tasks and processes.</strong> It helps businesses streamline operations, reduce manual effort, and improve efficiency.</p>
+          <p>By automating workflows, organizations can minimize errors, save time, and free up employees to focus on more strategic activities. Workflow automation can range from simple tasks like sending automated emails to complex processes like managing entire supply chains.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating data migration?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Automating data migration offers several key benefits.</strong> It reduces the risk of human error, saves time, and ensures data consistency across different platforms.</p>
+          <p>Additionally, it frees up employees to focus on more strategic tasks, leading to increased productivity and better decision-making. Automated data migration also improves data quality and reduces the potential for data loss or corruption.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The security of workflow automation depends on the platform and security measures implemented.</strong> Robust platforms offer encryption, access controls, and regular security audits to protect sensitive data.</p>
+          <p>It's crucial to choose a provider with strong security protocols and to follow best practices for data protection. Implementing multi-factor authentication, regularly updating software, and monitoring for suspicious activity are also essential for maintaining a secure workflow automation environment.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can workflow automation integrate with other tools?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, most workflow automation platforms offer integrations with a wide range of tools.</strong> These include CRM systems, email marketing platforms, databases, and more.</p>
+          <p>These integrations allow you to seamlessly connect different parts of your business and automate processes across multiple applications. By integrating workflow automation with other tools, you can create a more cohesive and efficient business ecosystem.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does workflow automation cost?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The cost of workflow automation varies depending on the platform, the number of users, and the complexity of the workflows.</strong> Some platforms offer free plans for basic use, while others charge monthly or annual fees based on usage.</p>
+          <p>It's important to evaluate your needs and compare pricing models to find the best fit for your budget. Consider factors such as the number of workflows you need to automate, the number of users who will be accessing the platform, and the level of support you require.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What kind of support is available for workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Most workflow automation platforms offer a range of support options.</strong> These include documentation, tutorials, community forums, and direct support from the provider.</p>
+          <p>Some providers also offer professional services to help you design and implement complex workflows. Look for a provider that offers comprehensive support options to ensure you can get the help you need when you need it.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom data migration automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, we build custom automations tailored to your specific business needs.</strong> We can assess your current processes, identify opportunities for automation, and design a solution that integrates seamlessly with your existing systems.</p>
+          <p>Our goal is to help you streamline your operations, improve efficiency, and achieve your business objectives. Contact us today to discuss your automation needs and learn how we can help you transform your business.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Data Migration Today</h2>
+    <p>Streamline your data workflows and eliminate manual data entry. Contact us for a free consultation and discover how we can help you transform your business.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: none

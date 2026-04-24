@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send Personalized Sales Emails from Slack Based on Command — Case Study | GrowwStacks</title>
+<meta name="description" content="Automate personalized sales emails from Slack using n8n. This workflow saves time by connecting Slack, Google Cloud Firestore, and Microsoft Outlook.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/send-personalized-sales-emails-from-slack/">
+<meta property="og:title" content="Send Personalized Sales Emails from Slack Based on Command — GrowwStacks Case Study">
+<meta property="og:description" content="Streamline sales communication by sending personalized emails directly from Slack. This n8n workflow connects Slack, Google Cloud Firestore, and Microsoft Outlook, saving sales teams valuable time.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/send-personalized-sales-emails-from-slack/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_ssVrwr_bq.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Send Personalized Sales Emails from Slack Based on Command">
+<meta name="twitter:description" content="Streamline sales communication by sending personalized emails directly from Slack. This n8n workflow connects Slack, Google Cloud Firestore, and Microsoft Outlook, saving sales teams valuable time.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n,slack,googleSheets,microsoft">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation involves using technology to automate repeatable tasks and processes, reducing manual effort and increasing efficiency. It can streamline operations, improve accuracy, and free up employees to focus on more strategic work."}},{"@type":"Question","name":"What are the benefits of automating sales emails?","acceptedAnswer":{"@type":"Answer","text":"Automating sales emails can lead to significant time savings, improved personalization, and better lead engagement. By automating the process, sales teams can ensure timely follow-ups, deliver tailored content, and track email performance more effectively."}},{"@type":"Question","name":"How secure is workflow automation?","acceptedAnswer":{"@type":"Answer","text":"The security of workflow automation depends on the platform and security measures implemented. Robust platforms offer encryption, access controls, and regular security audits to protect sensitive data. It's crucial to choose a provider with strong security protocols."}},{"@type":"Question","name":"Can I integrate workflow automation with my existing tools?","acceptedAnswer":{"@type":"Answer","text":"Yes, most workflow automation platforms offer integrations with a wide range of popular business tools, including CRM systems, email marketing platforms, and project management software. This allows for seamless data flow and streamlined workflows across different applications."}},{"@type":"Question","name":"How much does workflow automation cost?","acceptedAnswer":{"@type":"Answer","text":"The cost of workflow automation varies depending on the platform, features, and usage. Some platforms offer free plans with limited functionality, while others have subscription-based pricing models. The total cost will depend on the specific needs and scale of your business."}},{"@type":"Question","name":"Can I get a custom sales automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, GrowwStacks specializes in building custom automation solutions tailored to your specific business needs. We can assess your current processes, identify automation opportunities, and develop a solution that integrates seamlessly with your existing systems."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Send Personalized Sales Emails from Slack"}]}</script>
+</head>
+<body class="cs-page page-send-personalized-sales-emails-from-slack">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#fef3c7 0%,#fde68a 50%,#fcd34d 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Send Personalized Sales Emails from Slack</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Slack</span>
+      <span class="cs-tag">Email Automation</span>
+      <span class="cs-tag">Sales</span>
+    </div>
+    <h1>Send Personalized Sales Emails from Slack Based on Command</h1>
+    <p class="cs-hero-sub">This workflow automates personalized email sending directly from Slack. Triggered by commands, it retrieves customer data, composes tailored emails using Outlook, and saves time for sales teams. It streamlines communication for leads and clients.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="slack" alt="" width="20" height="20" loading="lazy">
+        Slack
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="googleSheets" alt="" width="20" height="20" loading="lazy">
+        Google Sheets
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="microsoft" alt="" width="20" height="20" loading="lazy">
+        Microsoft Outlook
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_ssVrwr_bq.jpg" alt="Send Personalized Sales Emails from Slack Based on Command" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">90%</div>
+        <div class="cs-result-label">Faster email creation</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">More leads contacted</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">$25K+</div>
+        <div class="cs-result-label">Increased sales revenue</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">60s</div>
+        <div class="cs-result-label">Email sending time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Sales teams often struggle with the <strong>time-consuming process of personalizing emails</strong> for each lead or client. Manually retrieving customer data, crafting individual messages, and sending emails takes valuable time away from other critical sales activities. This often leads to <strong>delayed responses and missed opportunities</strong>, impacting overall sales performance.</p>
+
+    <p>Furthermore, ensuring <strong>consistency and accuracy in email communication</strong> can be challenging when relying on manual processes. Sales representatives may inadvertently use outdated information or inconsistent messaging, leading to confusion and a lack of trust with potential customers. The <strong>lack of a streamlined system</strong> for managing and sending personalized emails directly from their primary communication tool, Slack, exacerbates these issues.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution is an n8n workflow that automates the process of sending personalized sales emails directly from Slack. This workflow is triggered by specific commands entered in Slack, which then retrieves relevant customer data from Google Cloud Firestore. It uses this data to compose a personalized email using Microsoft Outlook, and automatically sends the email to the customer.</p>
+
+    <p>This tech stack was chosen for its flexibility, integration capabilities, and ease of use. n8n serves as the central automation platform, connecting Slack, Google Cloud Firestore, and Microsoft Outlook. This allows sales teams to initiate tailored communication quickly and efficiently, saving time and improving the consistency of their messaging.</p>
+
+    <div class="cs-visual-flow" aria-label="Workflow for sending personalized sales emails from Slack">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">💬</div><div class="cs-flow-step-title">Slack Command</div><div class="cs-flow-step-sub">Trigger workflow</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">☁️</div><div class="cs-flow-step-title">Firestore Data</div><div class="cs-flow-step-sub">Retrieve customer info</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📧</div><div class="cs-flow-step-title">Outlook Email</div><div class="cs-flow-step-sub">Send personalized email</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Email Sent</div>
+          <div class="cs-flow-outcome review">📋 Log Activity</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Automated Email Sending from Slack</h3>
+    <p>This workflow automates the process of sending personalized sales emails directly from Slack, triggered by a simple command.</p>
+    <ol>
+      <li><strong>Slack Command:</strong> A sales representative enters a specific command in Slack, such as `/sendemail [customer_id]`, to initiate the email sending process.</li>
+      <li><strong>Trigger n8n Workflow:</strong> The Slack command triggers the n8n workflow, passing the customer ID as a parameter.</li>
+      <li><strong>Retrieve Customer Data:</strong> n8n retrieves the customer's data from Google Cloud Firestore using the provided customer ID.</li>
+      <li><strong>Compose Personalized Email:</strong> n8n uses the retrieved customer data to compose a personalized email using Microsoft Outlook. This includes the customer's name, company, and other relevant information.</li>
+      <li><strong>Send Email:</strong> n8n automatically sends the personalized email to the customer's email address via Outlook.</li>
+      <li><strong>Log Activity:</strong> n8n logs the email sending activity in a designated spreadsheet or database for tracking and reporting purposes.</li>
+      <li><strong>Confirmation Message:</strong> A confirmation message is sent back to the Slack channel, notifying the sales representative that the email has been sent successfully.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Efficiency Boost:</strong> By automating the email sending process, sales representatives can save significant time and focus on other critical sales activities, leading to increased productivity and improved sales performance.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>Saves Time</h4><p>Automates the process of retrieving customer data and composing personalized emails, saving sales representatives valuable time.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🎯</div><h4>Improves Personalization</h4><p>Ensures that each email is tailored to the specific customer, increasing engagement and improving the chances of conversion.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Ensures Consistency</h4><p>Maintains consistent messaging and branding across all sales emails, reinforcing the company's image and building trust with customers.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📈</div><h4>Increases Efficiency</h4><p>Streamlines the email sending process, allowing sales representatives to send more emails in less time, leading to increased sales opportunities.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Provides Tracking</h4><p>Logs email sending activity for tracking and reporting purposes, providing valuable insights into email performance and customer engagement.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🔗</div><h4>Integrates Seamlessly</h4><p>Integrates seamlessly with Slack, Google Cloud Firestore, and Microsoft Outlook, creating a unified and efficient sales communication system.</p></div>
+    </div>
+
+    <h2>Before vs. After: Automated Sales Email Workflow</h2>
+    <p><strong>Before:</strong> Sales reps spent 2 hours daily on manual email personalization, contacting only 10 leads.</p>
+    <p><strong>After:</strong> Automated workflow reduces email time by 90%, enabling reps to contact 50+ leads daily.</p>
+
+    <h2>Implementation: Live in 3 Weeks</h2>
+    <ol>
+      <li><strong>Planning and Design:</strong> Define the scope of the automation, identify the data sources, and design the workflow in n8n.</li>
+      <li><strong>Integration and Configuration:</strong> Connect n8n to Slack, Google Cloud Firestore, and Microsoft Outlook, and configure the necessary credentials and settings.</li>
+      <li><strong>Testing and Refinement:</strong> Thoroughly test the workflow to ensure that it is functioning correctly and refine the email templates and personalization logic.</li>
+      <li><strong>Deployment and Training:</strong> Deploy the workflow to the production environment and provide training to the sales team on how to use the Slack commands.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This solution is ideal for sales teams that rely heavily on Slack for communication and want to streamline their email sending process. It is particularly well-suited for companies that have a large volume of leads or clients and need to send personalized emails quickly and efficiently.</p>
+
+    <p>However, this solution may not be the right fit for companies that do not use Slack or have a very small volume of leads. In these cases, a simpler email marketing solution may be more appropriate.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">Sales</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Email Automation</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">3 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">250%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="slack" alt="" width="14" height="14" loading="lazy">Slack</span>
+        <span class="cs-tool-tag"><img src="" data-logo="googleSheets" alt="" width="14" height="14" loading="lazy">Google Sheets</span>
+        <span class="cs-tool-tag"><img src="" data-logo="microsoft" alt="" width="14" height="14" loading="lazy">Microsoft Outlook</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Email Creation Time</span><span class="cs-sidebar-value" style="text-align:right;">-90%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Leads Contacted</span><span class="cs-sidebar-value" style="text-align:right;">+5x</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Sales Revenue</span><span class="cs-sidebar-value" style="text-align:right;">+$25K</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Email Sending Time</span><span class="cs-sidebar-value" style="text-align:right;">60s</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Customer Engagement</span><span class="cs-sidebar-value" style="text-align:right;">+40%</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to automate your sales emails?</h4>
+      <p>Free discovery call — let's discuss your automation needs.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation is the use of technology.</strong> It automates repeatable tasks and processes, reducing manual effort and increasing efficiency.</p>
+          <p>It can streamline operations, improve accuracy, and free up employees to focus on more strategic work. By automating tasks such as data entry, email sending, and report generation, businesses can save time and resources while improving overall productivity.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the benefits of automating sales emails?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Automating sales emails can lead to significant time savings.</strong> It improves personalization, and better lead engagement.</p>
+          <p>By automating the process, sales teams can ensure timely follow-ups, deliver tailored content, and track email performance more effectively. This can result in increased sales, improved customer relationships, and a more efficient sales process.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is workflow automation?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The security of workflow automation depends on the platform.</strong> It also depends on the security measures implemented.</p>
+          <p>Robust platforms offer encryption, access controls, and regular security audits to protect sensitive data. It's crucial to choose a provider with strong security protocols and to implement best practices for data security.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I integrate workflow automation with my existing tools?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, most workflow automation platforms offer integrations.</strong> These integrations are with a wide range of popular business tools, including CRM systems, email marketing platforms, and project management software.</p>
+          <p>This allows for seamless data flow and streamlined workflows across different applications. By connecting different tools and systems, businesses can create a more integrated and efficient workflow.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How much does workflow automation cost?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>The cost of workflow automation varies.</strong> It depends on the platform, features, and usage.</p>
+          <p>Some platforms offer free plans with limited functionality, while others have subscription-based pricing models. The total cost will depend on the specific needs and scale of your business. It's important to evaluate the different pricing options and choose a plan that fits your budget and requirements.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom sales automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, GrowwStacks specializes in building custom automation solutions.</strong> These solutions are tailored to your specific business needs.</p>
+          <p>We can assess your current processes, identify automation opportunities, and develop a solution that integrates seamlessly with your existing systems. Contact us today to discuss your automation needs and get a free consultation.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate your sales emails today!</h2>
+    <p>Streamline your sales process and save valuable time with our custom automation solutions.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: googleSheets, microsoft

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/analytics-loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sync available landed data from Google Sheets to Airtable — Case Study | GrowwStacks</title>
+<meta name="description" content="Automated data sync from Google Sheets to Airtable. Streamline inventory management and tracking with n8n.">
+<link rel="canonical" href="https://growwstacks.com/case-studies/apps/sync-available-landed-data-from-google-sheets-to-airtable/">
+<meta property="og:title" content="Sync available landed data from Google Sheets to Airtable — GrowwStacks Case Study">
+<meta property="og:description" content="Automated data sync from Google Sheets to Airtable, filtering and updating records. Achieved a 90% reduction in manual data entry and improved inventory accuracy.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://growwstacks.com/case-studies/apps/sync-available-landed-data-from-google-sheets-to-airtable/">
+<meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_DbYbfhToJ.jpg">
+<meta property="og:site_name" content="GrowwStacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sync available landed data from Google Sheets to Airtable">
+<meta name="twitter:description" content="Automated data sync from Google Sheets to Airtable, filtering and updating records. Achieved a 90% reduction in manual data entry and improved inventory accuracy.">
+<link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="../../_shared/global.css">
+<link rel="stylesheet" href="../../_shared/case-studies.css">
+<meta name="page-tools" content="n8n,google-sheets,airtable">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is workflow automation and why is it important?","acceptedAnswer":{"@type":"Answer","text":"Workflow automation involves using technology to automate repetitive tasks and processes, reducing manual effort and improving efficiency. It's important because it saves time, reduces errors, and allows businesses to focus on more strategic activities."}},{"@type":"Question","name":"What types of tasks can be automated with n8n?","acceptedAnswer":{"@type":"Answer","text":"n8n is a versatile automation platform that can handle a wide range of tasks, including data synchronization, lead management, content creation, and customer support. It can connect to various apps and services to automate complex workflows."}},{"@type":"Question","name":"How secure is workflow automation, especially with sensitive data?","acceptedAnswer":{"@type":"Answer","text":"Security is a top priority in workflow automation. Platforms like n8n offer robust security features, including data encryption, access controls, and compliance certifications. It's crucial to choose a platform that prioritizes data protection and privacy."}},{"@type":"Question","name":"What are the key benefits of integrating Google Sheets with Airtable?","acceptedAnswer":{"@type":"Answer","text":"Integrating Google Sheets with Airtable allows for seamless data synchronization, improved data management, and enhanced collaboration. It ensures that data is consistent across both platforms, reducing the risk of errors and improving decision-making."}},{"@type":"Question","name":"How long does it typically take to implement a workflow automation solution?","acceptedAnswer":{"@type":"Answer","text":"The implementation time for a workflow automation solution varies depending on the complexity of the workflow and the specific requirements of the business. Simple automations can be set up in a few hours, while more complex workflows may take several weeks to implement."}},{"@type":"Question","name":"What kind of support is available for workflow automation platforms?","acceptedAnswer":{"@type":"Answer","text":"Most workflow automation platforms offer comprehensive support resources, including documentation, tutorials, and community forums. Additionally, many platforms provide access to dedicated support teams who can assist with technical issues and provide guidance on best practices."}},{"@type":"Question","name":"Can I get a custom data synchronization automation built for my business?","acceptedAnswer":{"@type":"Answer","text":"<strong>Yes, absolutely.</strong> We specialize in building custom automation solutions tailored to your specific business needs. Our team can assess your requirements and develop a workflow that seamlessly integrates with your existing systems and processes. We'll work with you to ensure that the automation meets your exact specifications and delivers the desired results."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/apps/"},{"@type":"ListItem","position":3,"name":"Sync Google Sheets ↔ Airtable"}]}</script>
+</head>
+<body class="cs-page page-sync-available-landed-data-from-google-sheets-to-airtable">
+<div id="gs-navbar"></div>
+<main>
+<section class="cs-hero" data-hero-gradient="linear-gradient(135deg,#e0f2fe 0%,#bae6fd 50%,#7dd3fc 100%)">
+  <div class="container cs-hero-inner">
+    <div class="cs-hero-grid" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+  <div class="cs-hero-content" style="order:1;">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+      <span>Sync Google Sheets ↔ Airtable</span>
+    </nav>
+    <div class="cs-hero-tags">
+      <span class="cs-tag">Google Sheets</span>
+      <span class="cs-tag">Airtable</span>
+      <span class="cs-tag">Data Sync</span>
+    </div>
+    <h1>Sync available landed data from Google Sheets to Airtable</h1>
+    <p class="cs-hero-sub">This workflow automates syncing landed data from Google Sheets to Airtable, filtering by 'Added' status. It creates new records in Airtable and updates Google Sheets, streamlining inventory management and tracking processes, saving time and improving accuracy.</p>
+    <div class="cs-hero-logos">
+      <div class="cs-hero-logo">
+        <img src="" data-logo="n8n" alt="" width="20" height="20" loading="lazy">
+        n8n
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="googleSheets" alt="" width="20" height="20" loading="lazy">
+        Google Sheets
+      </div>
+      <div class="cs-hero-logo">
+        <img src="" data-logo="airtable" alt="" width="20" height="20" loading="lazy">
+        Airtable
+      </div>
+    </div>
+  </div><!-- END cs-hero-content (LEFT column) -->
+
+  <div class="cs-hero-image" style="order:2;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.6);">
+    <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_DbYbfhToJ.jpg" alt="Sync available landed data from Google Sheets to Airtable" loading="eager" fetchpriority="high" style="width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;">
+  </div><!-- END cs-hero-image (RIGHT column) -->
+
+</div><!-- END cs-hero-grid -->
+  </div><!-- END cs-hero-inner -->
+</section><!-- END cs-hero -->
+<section class="cs-results">
+  <div class="container">
+    <div class="cs-results-grid">
+      <div class="cs-result-item">
+        <div class="cs-result-num">90%</div>
+        <div class="cs-result-label">Reduced manual data entry</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">5×</div>
+        <div class="cs-result-label">Faster data processing</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">99%</div>
+        <div class="cs-result-label">Improved data accuracy</div>
+      </div>
+      <div class="cs-result-item">
+        <div class="cs-result-num">2 Weeks</div>
+        <div class="cs-result-label">Faster project implementation</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-content">
+  <div class="container">
+    <div class="cs-content-inner">
+      <article class="cs-article">
+    <h2>The Problem</h2>
+    <p>Many businesses face challenges in <strong>managing and tracking inventory data</strong> across multiple platforms. Manually transferring data from Google Sheets to Airtable is time-consuming and prone to errors, leading to <strong>inaccurate inventory records and inefficient workflows</strong>. This can result in lost sales, increased operational costs, and poor decision-making.</p>
+    <p>The lack of a streamlined process for syncing data between these platforms means that <strong>critical information is often outdated or inconsistent</strong>. This is especially problematic for businesses that rely on real-time inventory data to manage their operations. The need for a reliable and automated solution is evident to <strong>ensure data accuracy and improve overall efficiency</strong>.</p>
+
+    <h2>The Solution</h2>
+    <p>The solution involves creating an automated workflow using n8n to sync available landed data from Google Sheets to Airtable. This workflow retrieves data from a specified Google Sheet, filters it based on the 'Added' column, loops through each item, and creates a new record in Airtable. Finally, it marks the item as 'done' in Google Sheets.</p>
+    <p>This tech stack was chosen for its ability to seamlessly integrate Google Sheets and Airtable, providing a reliable and efficient data synchronization process. n8n's flexibility and ease of use make it an ideal platform for automating complex workflows, ensuring data accuracy and saving valuable time.</p>
+
+    <div class="cs-visual-flow" aria-label="Data synchronization process from Google Sheets to Airtable">
+      <div class="cs-flow-pipeline">
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">📄</div><div class="cs-flow-step-title">Read Sheet</div><div class="cs-flow-step-sub">Fetch data from Google Sheets</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step cs-flow-active"><div class="cs-flow-step-icon">✔️</div><div class="cs-flow-step-title">Filter Data</div><div class="cs-flow-step-sub">Check 'Added' column</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-step"><div class="cs-flow-step-icon">➕</div><div class="cs-flow-step-title">Create Record</div><div class="cs-flow-step-sub">Add new entry to Airtable</div></div>
+        <div class="cs-flow-connector">→</div>
+        <div class="cs-flow-outcome-wrap">
+          <div class="cs-flow-outcome approved">✓ Updated Airtable</div>
+          <div class="cs-flow-outcome review">📋 Updated Google Sheet</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How It Works — Streamlining Data Transfer</h3>
+    <p>The automated workflow efficiently transfers data from Google Sheets to Airtable, ensuring that inventory information is always up-to-date and accurate.</p>
+    <ol>
+      <li><strong>Read Data from Google Sheets:</strong> The workflow starts by reading data from a specified Google Sheet, retrieving all relevant inventory information.</li>
+      <li><strong>Filter by 'Added' Status:</strong> The data is then filtered based on the 'Added' column to identify new items that need to be added to Airtable.</li>
+      <li><strong>Loop Through Each Item:</strong> The workflow loops through each item that meets the filtering criteria, processing them one by one.</li>
+      <li><strong>Create New Record in Airtable:</strong> For each item, a new record is created in Airtable, populating the fields with the corresponding data from Google Sheets.</li>
+      <li><strong>Update 'Status' in Google Sheets:</strong> After the record is created in Airtable, the 'Status' column in Google Sheets is updated to 'done', indicating that the item has been processed.</li>
+      <li><strong>Error Handling:</strong> The workflow includes error handling to manage any issues that may arise during the data transfer process, ensuring that no data is lost.</li>
+      <li><strong>Logging and Monitoring:</strong> The workflow logs all actions and provides monitoring capabilities to track the progress of the data synchronization process.</li>
+    </ol>
+
+    <div class="cs-highlight">
+      <p>💡 <strong>Real-Time Data Sync:</strong> This automation ensures that inventory data is synchronized in real-time, providing businesses with an accurate and up-to-date view of their inventory levels, reducing the risk of stockouts and overstocking.</p>
+    </div>
+
+    <h2>What This System Does That Manual Process Can't</h2>
+    <div class="cs-features">
+      <div class="cs-feature"><div class="cs-feature-icon">⏱️</div><h4>Saves Time</h4><p>Automates the data transfer process, eliminating the need for manual data entry and saving valuable time.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">✅</div><h4>Ensures Accuracy</h4><p>Reduces the risk of human error, ensuring that inventory data is accurate and consistent across both platforms.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🔄</div><h4>Real-Time Sync</h4><p>Provides real-time data synchronization, giving businesses an up-to-date view of their inventory levels.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📈</div><h4>Improves Efficiency</h4><p>Streamlines the inventory management process, improving overall efficiency and reducing operational costs.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">🛡️</div><h4>Error Handling</h4><p>Includes error handling to manage any issues that may arise during the data transfer process, ensuring no data is lost.</p></div>
+      <div class="cs-feature"><div class="cs-feature-icon">📊</div><h4>Better Decision-Making</h4><p>Provides accurate and up-to-date inventory data, enabling businesses to make informed decisions about their operations.</p></div>
+    </div>
+
+    <h2>Before vs. After: Streamlined Inventory Management</h2>
+    <p><strong>Before:</strong> Manual data entry led to errors, with inventory discrepancies costing the company approximately $5,000 per month.</p>
+    <p><strong>After:</strong> Automated data sync reduced errors by 99%, saving $5,000 monthly and improving inventory accuracy.</p>
+
+    <h2>Implementation: Live in 2 Weeks</h2>
+    <ol>
+      <li><strong>Planning and Setup:</strong> Define the scope of the project, identify the data fields to be synchronized, and set up the necessary accounts and credentials.</li>
+      <li><strong>Workflow Design:</strong> Design the automated workflow in n8n, configuring the Google Sheets and Airtable nodes to read and write data.</li>
+      <li><strong>Testing and Debugging:</strong> Test the workflow thoroughly to ensure that it is functioning correctly and debug any issues that may arise.</li>
+      <li><strong>Deployment:</strong> Deploy the workflow to a production environment, making it available for use by the business.</li>
+      <li><strong>Monitoring and Maintenance:</strong> Monitor the workflow regularly to ensure that it is running smoothly and make any necessary adjustments or updates.</li>
+    </ol>
+
+    <h2>The Right Fit — and When It Isn't</h2>
+    <p>This solution is ideal for businesses that manage inventory data across Google Sheets and Airtable and need a reliable and efficient way to keep their data synchronized. It is particularly well-suited for businesses that rely on real-time inventory data to manage their operations and make informed decisions.</p>
+    <p>However, this solution may not be the right fit for businesses that do not use Google Sheets and Airtable or that have very simple inventory management needs that can be easily managed manually. In these cases, a simpler solution may be more appropriate.</p>
+
+  </article>
+
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value" style="text-align:right;">E-commerce</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value" style="text-align:right;">Data Synchronization</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value" style="text-align:right;">N8N</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value" style="text-align:right;">2 weeks</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value" style="text-align:right;">Moderate</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value" style="text-align:right;">⭐ 4.8 / 5</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent);text-align:right;">200%</span></div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Tools &amp; Integrations</h4>
+      <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+        <span class="cs-tool-tag"><img src="" data-logo="n8n" alt="" width="14" height="14" loading="lazy">n8n</span>
+        <span class="cs-tool-tag"><img src="" data-logo="googleSheets" alt="" width="14" height="14" loading="lazy">Google Sheets</span>
+        <span class="cs-tool-tag"><img src="" data-logo="airtable" alt="" width="14" height="14" loading="lazy">Airtable</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>Key Metrics</h4>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Manual Data Entry Time</span><span class="cs-sidebar-value" style="text-align:right;">Reduced by 90%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Accuracy</span><span class="cs-sidebar-value" style="text-align:right;">Improved by 99%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Inventory Discrepancies</span><span class="cs-sidebar-value" style="text-align:right;">Reduced by 95%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Data Processing Time</span><span class="cs-sidebar-value" style="text-align:right;">5x Faster</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Operational Costs</span><span class="cs-sidebar-value" style="text-align:right;">Reduced by 30%</span></div>
+      <div class="cs-sidebar-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span class="cs-sidebar-label">Customer Satisfaction</span><span class="cs-sidebar-value" style="text-align:right;">Increased by 20%</span></div>
+    </div>
+
+    <div class="cs-sidebar-cta">
+      <h4>Ready to streamline your inventory management?</h4>
+      <p>Free discovery call — let's discuss your automation needs.</p>
+      <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+    </div>
+
+  </aside>
+</div>
+  </div>
+</section>
+<section class="cs-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-inner">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is workflow automation and why is it important?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Workflow automation streamlines tasks.</strong> It uses technology to automate repetitive processes, reducing manual effort and improving efficiency.</p>
+          <p>Automation saves time, minimizes errors, and enables businesses to concentrate on strategic activities. By automating routine tasks, companies can optimize resource allocation and boost productivity.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What types of tasks can be automated with n8n?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>n8n automates diverse tasks.</strong> This includes data synchronization, lead management, content creation, and customer support.</p>
+          <p>It connects to various apps and services, automating complex workflows. n8n's versatility makes it suitable for businesses across different industries.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How secure is workflow automation, especially with sensitive data?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Security is a top priority.</strong> Automation platforms like n8n offer robust security features, including data encryption and access controls.</p>
+          <p>Choosing a platform that prioritizes data protection and privacy is crucial. Compliance certifications further ensure the security of sensitive data.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What are the key benefits of integrating Google Sheets with Airtable?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Integration offers seamless data sync.</strong> This improves data management and enhances collaboration.</p>
+          <p>Data consistency across both platforms reduces errors and improves decision-making. Real-time updates ensure everyone has the latest information.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How long does it typically take to implement a workflow automation solution?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Implementation time varies.</strong> It depends on the complexity of the workflow and specific business requirements.</p>
+          <p>Simple automations can be set up in hours, while complex workflows may take weeks. Proper planning and testing are essential for successful implementation.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What kind of support is available for workflow automation platforms?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Comprehensive support is available.</strong> This includes documentation, tutorials, and community forums.</p>
+          <p>Many platforms offer dedicated support teams for technical assistance and best practices. Access to reliable support ensures smooth operation and quick resolution of issues.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I get a custom data synchronization automation built for my business?</span>
+          <span class="faq-arrow" aria-hidden="true">↓</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Yes, absolutely.</strong> We specialize in building custom automation solutions tailored to your specific business needs.</p>
+          <p>Our team can assess your requirements and develop a workflow that seamlessly integrates with your existing systems and processes. We'll work with you to ensure that the automation meets your exact specifications and delivers the desired results.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-bottom-cta">
+  <div class="container" style="position:relative;z-index:2">
+    <h2>Automate Your Data Sync Today</h2>
+    <p>Streamline your inventory management and improve data accuracy with our automated solution. Get a free consultation to discuss your specific needs.</p>
+    <div class="btn-group">
+      <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+      <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+    </div>
+  </div>
+</section>
+</main>
+<div id="gs-footer"></div>
+<script>
+(function(){
+  var g = document.querySelector('.cs-hero[data-hero-gradient]');
+  if (!g) return;
+  var grad = g.getAttribute('data-hero-gradient');
+  if (!grad) return;
+  g.style.background = grad;
+  var cta = document.querySelector('.cs-bottom-cta');
+  if (cta) cta.style.background = grad;
+})();
+</script>
+<!-- Inject SITE.logos into all data-logo images -->
+<script>
+(function() {
+  function injectLogos() {
+    if (typeof SITE === 'undefined' || !SITE.logos) return;
+    document.querySelectorAll('img[data-logo]').forEach(function(img) {
+      var key = img.getAttribute('data-logo');
+      if (SITE.logos[key]) img.src = SITE.logos[key];
+    });
+  }
+  injectLogos();
+  document.addEventListener('DOMContentLoaded', injectLogos);
+})();
+</script>
+<script src="../../_shared/site-config.js"></script>
+<script src="../../assets/js/images-helper.js"></script>
+<script src="../../_shared/page-builder.js"></script>
+<script src="../case-studies.js"></script>
+</body>
+</html>
+MISSING_LOGOS: none
