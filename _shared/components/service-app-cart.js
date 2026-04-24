@@ -3100,5 +3100,357 @@ window.templateData = [
     "ROI": "300",
     "displayTitle": "Automated AI-Powered UGC Video Creation from Telegram Images",
     "pageUrl": " https://www.growwstacks.com/case-studies/apps/automated-ai-ugc-video-creation-from-telegram-images"
+  },
+  {
+    "title": "Generate Daily Morning Briefs from ClickUp with AI to Slack/Email",
+    "description": "Automate the creation and delivery of daily morning briefs using ClickUp tasks and GPT-4. This workflow fetches active sprint data, generates summaries, and sends updates to Slack and Gmail, keeping your team informed and aligned. Ideal for teams using ClickUp for sprint management.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_RNZtLUPl8.jpg",
+    "apps": [
+      "ClickUp",
+      "OpenAI",
+      "Slack",
+      "Gmail"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__My_workflow_45__20260409_200848_cQsXpv7NX.json",
+    "Industry": "Project Management",
+    "ROI": "150%",
+    "displayTitle": "Generate Daily Morning Briefs from ClickUp with AI to Slack/Email",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/generate-daily-morning-briefs-clickup-ai-slack-email"
+  },
+  {
+    "title": "Send Personalized Sales Emails from Slack Based on Command",
+    "description": "This n8n workflow streamlines sales communication. Triggered by specific commands in Slack, it retrieves customer data from Google Cloud Firestore, composes personalized email using Microsoft Outlook, and saves time by automating email sending directly from Slack. Sales teams can quickly initiate tailored communication for leads and clients..",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_ssVrwr_bq.jpg",
+    "apps": [
+      "Slack",
+      "Google Cloud Firestore",
+      "Microsoft Outlook"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__mail_slack_j_20__20260409_200619_9epXVnFMC.json",
+    "Industry": "Sales",
+    "ROI": "250",
+    "displayTitle": "Send Personalized Sales Emails from Slack Based on Command",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/send-personalized-sales-emails-from-slack"
+  },
+  {
+    "title": "Automate Lalamove Delivery Booking for WooCommerce Orders",
+    "description": "This n8n workflow automates same-day delivery booking via Lalamove for WooCommerce orders. It processes eligible orders, groups them by time slot and postal sector, creates batch deliveries, and saves tracking back to WooCommerce—saving hours of manual coordination for e-commerce businesses.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_AyWNhAiYG.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Shubhroneel_Chanda__merging_slides__20260410_114848_c-q5OZJWrx.json",
+    "Industry": "E-commerce",
+    "ROI": "150%",
+    "displayTitle": "Automate Lalamove Delivery Booking for WooCommerce Orders",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-lalamove-delivery-booking-woocommerce-orders"
+  },
+  {
+    "title": "Send welcome email from Slack trigger using Google Cloud Firestore",
+    "description": "This workflow automates the process of sending welcome emails upon specific Slack commands. It triggers from new Slack messages, identifies the command, searches Google Cloud Firestore for user details, and sends a customized welcome email via Microsoft Outlook. Ideal for onboarding new clients or users automatically.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_vOdEL5qMph.jpg",
+    "apps": [
+      "Slack",
+      "Google Cloud Firestore",
+      "Microsoft Outlook"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__mail_slack_j_10__20260409_200740_kBiIsXBHFz.json",
+    "Industry": "Technology",
+    "ROI": "25",
+    "displayTitle": "Send welcome email from Slack trigger using Google Cloud Firestore",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/send-welcome-email-from-slack-google-cloud-firestore"
+  },
+  {
+    "title": "Automate Lalamove Delivery Scheduling for WooCommerce Orders",
+    "description": "This n8n workflow automatically fetches eligible WooCommerce orders, groups them by time slot and postal sectors, creates batch deliveries via Lalamove API, and syncs tracking IDs back. It solves manual coordination for e-commerce businesses needing scheduled logistics, ensuring efficient delivery routing and status updates.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_ApNyhnmnJ.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__task_assigner__dan___20260409_200438_vt0LnJyGO.json",
+    "Industry": "E-commerce",
+    "ROI": "40",
+    "displayTitle": "Automate Lalamove Delivery Scheduling for WooCommerce Orders",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-lalamove-delivery-scheduling-for-woocommerce-orders"
+  },
+  {
+    "title": "Send Welcome Email via Outlook from Slack Trigger",
+    "description": "This workflow automates sending a welcome email via Microsoft Outlook when a new request is made in Slack. It extracts details, confirms the email content in Slack, retrieves user email from Google Cloud Firestore, and sends the email.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_vL8x1QsKf.jpg",
+    "apps": [
+      "Slack",
+      "Google Cloud Firestore",
+      "Microsoft Outlook"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__mail_slack_j_4__20260409_200815_deKwo9_tF.json",
+    "Industry": "Technology",
+    "ROI": "150",
+    "displayTitle": "Send Welcome Email via Outlook from Slack Trigger",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/send-welcome-email-via-outlook-from-slack-trigger"
+  },
+  {
+    "title": "Automate WhatsApp Bio Data Extraction and Google Drive Backup",
+    "description": "This workflow automates the extraction of bio data from documents and images received via WhatsApp. It leverages AI to analyze the data, creates customer-specific folders in Google Drive, uploads the files, and sends extracted data to Airtable for storage and organization, perfect for matrimony services.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_VSgi7t3Hb.jpg",
+    "apps": [
+      "WhatsApp",
+      "Google Drive",
+      "Airtable",
+      "OpenAI",
+      "Langchain",
+      "Imagekit"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Sri_Vasavi__WABot_V2__20260410_114501_rCBh2OVUKD.json",
+    "Industry": "Matrimony Services",
+    "ROI": "40",
+    "displayTitle": "Automate WhatsApp Bio Data Extraction and Google Drive Backup",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-whatsapp-bio-data-extraction-google-drive-backup"
+  },
+  {
+    "title": "Automate ClickUp Task Status Updates with Delay and Filtering",
+    "description": "This workflow automates actions based on ClickUp task status updates. Utilizing a ClickUp trigger, it listens for `taskStatusUpdated` events, introduces a 5-second delay, retrieves task details, and applies conditional filtering based on specific criteria. Ideal for project managers who want to streamline ClickUp.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_B8jTth94u.jpg",
+    "apps": [
+      "Clickup"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__My_workflow_51__20260409_195935_tYc7COujxQ.json",
+    "Industry": "Project Management",
+    "ROI": "25",
+    "displayTitle": "Automate ClickUp Task Status Updates with Delay and Filtering",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-clickup-task-status-updates-with-delay-and-filtering"
+  },
+  {
+    "title": "Automate Lalamove Delivery Scheduling from WooCommerce Orders",
+    "description": "This n8n workflow automates Lalamove delivery scheduling for WooCommerce orders. It filters hourly time slots, groups orders by postal sectors, creates delivery batches, generates Lalamove quotations, places orders, and updates WooCommerce with tracking information—saving merchants hours of manual coordination daily.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_p3EQzLJcmJ.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Steven_Rowlands__My_workflow_4__20260409_182704_Pmm79Cvmn.json",
+    "Industry": "E-commerce",
+    "ROI": "200",
+    "displayTitle": "Automate Lalamove Delivery Scheduling from WooCommerce Orders",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-lalamove-delivery-scheduling-from-woocommerce-orders"
+  },
+  {
+    "title": "Send Personalized Emails via Slack Commands with AI HTML Conversion",
+    "description": "This n8n workflow streamlines email sending using Slack! Triggered by a Slack command, it identifies the auto-école, fetches email content, and converts it to HTML with AI. It uses Firestore to find user emails and the OpenAI model generates custom-branded HTML emails automatically, which can be modified and sent automatically.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_jvivTowTl.jpg",
+    "apps": [
+      "Slack",
+      "Google Cloud Firestore",
+      "OpenAI",
+      "Microsoft Outlook"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__bot_slack__20260409_200545_0lio4NelVK.json",
+    "Industry": "Education",
+    "ROI": "150%",
+    "displayTitle": "Send Personalized Emails via Slack Commands with AI HTML Conversion",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/send-personalized-emails-slack-ai-html"
+  },
+  {
+    "title": "Sync available landed data from Google Sheets to Airtable",
+    "description": "This workflow automates the process of syncing available landed data from Google Sheets to Airtable. It retrieves data from a specified Google Sheet, filters based on the 'Added' column, loops through each item, and creates a new record in Airtable.  Finally marks the item to ‘done’ in google sheet. This is helpful for inventory management and tracking.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_DbYbfhToJ.jpg",
+    "apps": [
+      "Google Sheets",
+      "Airtable"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Shubhroneel_Chanda__Availabe_Landed_data__20260410_114816_418Ut73RN.json",
+    "Industry": "E-commerce",
+    "ROI": "200",
+    "displayTitle": "Sync available landed data from Google Sheets to Airtable",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/sync-available-landed-data-from-google-sheets-to-airtable"
+  },
+  {
+    "title": "Send personalized intro emails via Slack based on triggers",
+    "description": "This workflow automates sending personalized introduction emails to new leads. When a specific phrase is triggered in a designated Slack channel (e.g., \"envoi le mail j+0\"), it retrieves lead details and sends customized email.Streamline lead engagement with a combination of Slack for trigger and email sent,saving you time and effort!",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_7mEQsk2a9.jpg",
+    "apps": [
+      "Slack",
+      "Microsoft Outlook",
+      "Google Cloud Firestore"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__mail_slack_j_15__20260409_200653_08D1SQVPQ.json",
+    "Industry": "Marketing",
+    "ROI": "25",
+    "displayTitle": "Send personalized intro emails via Slack based on triggers",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/send-personalized-intro-emails-via-slack"
+  },
+  {
+    "title": "Automate WooCommerce Order Batch Delivery with Lalamove",
+    "description": "This n8n workflow automates logistics by fetching processing WooCommerce orders, grouping them by postal sectors and time slots, creating batch deliveries via Lalamove API, and updating order metadata. It's ideal for e-commerce businesses in Singapore needing automated last-mile delivery scheduling and order tracking.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_4IL74fumGi.jpg",
+    "apps": [
+      "WooCommerce",
+      "Wordpress",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Chris_easy_AI__07m_-_VAPI_MCP_Book_Appointment_Dev__20260409_171841_VIou-i_Zj.json",
+    "Industry": "E-commerce",
+    "ROI": "150",
+    "displayTitle": "Automate WooCommerce Order Batch Delivery with Lalamove",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-woocommerce-order-batch-delivery-with-lalamove"
+  },
+  {
+    "title": "Daily ClickUp Task Summary to Slack with AI Analysis",
+    "description": "This workflow automates daily summaries of ClickUp tasks transitioned to 'educated' status. It extracts task data, analyzes it with an AI agent, and posts a concise report to a designated Slack channel. Ideal for sales teams needing insights into daily progress and auto-école education efforts.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_TVU7b6V4P.jpg",
+    "apps": [
+      "Clickup",
+      "OpenAI",
+      "Slack"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__daily_clickup_report_slack__20260409_200331_rOiah7b2K.json",
+    "Industry": "Sales & Education",
+    "ROI": "250",
+    "displayTitle": "Daily ClickUp Task Summary to Slack with AI Analysis",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/daily-clickup-task-summary-slack-ai"
+  },
+  {
+    "title": "Summarize Mailchimp Campaigns & Send WhatsApp Updates with AI",
+    "description": "This workflow automates Mailchimp campaign analysis and delivers insights via WhatsApp. It extracts campaign data, uses AI to summarize performance and suggest improvements, crafting optimized email elements. Ideal for marketers wanting quick, actionable feedback and automated reporting to stakeholders.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_X4tXvjYxp.jpg",
+    "apps": [
+      "Mailchimp",
+      "OpenAI",
+      "WhatsApp"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__resumer_analyse_mailchimp__20260409_200404_HyWZuUNn2.json",
+    "Industry": "Marketing",
+    "ROI": "30%",
+    "displayTitle": "Summarize Mailchimp Campaigns & Send WhatsApp Updates with AI",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/summarize-mailchimp-campaigns-whatsapp-ai"
+  },
+  {
+    "title": "Automate WooCommerce Delivery Scheduling with Lalamove",
+    "description": "This n8n workflow automatically processes WooCommerce orders, groups them by location and time slots, and schedules deliveries via Lalamove. It's designed for e-commerce businesses to streamline logistics, reduce manual work, and ensure timely same-day deliveries in Singapore.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_tt9kwtjrvC.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__index_blog__20260409_201318_R7cMdokxv.json",
+    "Industry": "E-commerce",
+    "ROI": "25",
+    "displayTitle": "Automate WooCommerce Delivery Scheduling with Lalamove",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-woocommerce-delivery-scheduling-lalamove"
+  },
+  {
+    "title": "Automate WooCommerce Delivery Batching with Lalamove Integration",
+    "description": "Automatically groups WooCommerce orders by time slot and postal sector, batches them for delivery, creates Lalamove delivery jobs with optimized routing, and updates order metadata. Designed for Singapore-based e-commerce businesses to streamline same-day delivery logistics and reduce manual coordination.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_s0ykpuYdX.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Chris_easy_AI__Elevated_Finance_Outbound_Dialer_Dev__20260409_170333_ctymDS6eHX.json",
+    "Industry": "E-commerce",
+    "ROI": "150",
+    "displayTitle": "Automate WooCommerce Delivery Batching with Lalamove Integration",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-woocommerce-delivery-batching-lalamove-integration"
+  },
+  {
+    "title": "Automate WooCommerce Orders to Lalamove Delivery with Cron Scheduling",
+    "description": "This n8n workflow automatically processes WooCommerce orders, groups them by postal sectors and time slots, and creates Lalamove deliveries for efficient batch shipping. Perfect for e-commerce businesses in Singapore looking to automate last-mile logistics with intelligent order grouping.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_Vul6RjPBd.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__Youtube_to_TikTok_Automation__DIY_Remakeit___20260409_200224_hQY-M32u-.json",
+    "Industry": "E-commerce",
+    "ROI": "200",
+    "displayTitle": "Automate WooCommerce Orders to Lalamove Delivery with Cron Scheduling",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-woocommerce-orders-to-lalamove-delivery-with-cron-scheduling"
+  },
+  {
+    "title": "Automate Lalamove Delivery Scheduling from WooCommerce Orders",
+    "description": "This workflow automatically processes WooCommerce orders for delivery via Lalamove. It retrieves processing orders, filters them by current time slot and postal sector zones, groups them into batches, creates Lalamove quotations and orders, and updates WooCommerce with tracking IDs. Ideal for Singapore-based e-commerce stores needing scheduled bulk deliveries.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_52_24diY1.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Shubhroneel_Chanda__test_3__20260410_115025_kMONvRLRA.json",
+    "Industry": "E-commerce",
+    "ROI": "200",
+    "displayTitle": "Automate Lalamove Delivery Scheduling from WooCommerce Orders",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-lalamove-delivery-scheduling-from-woocommerce-orders"
+  },
+  {
+    "title": "Automate WooCommerce Delivery Scheduling with Lalamove Integration",
+    "description": "This n8n workflow automates delivery order management for WooCommerce stores by fetching processing orders, grouping them by postal zones and time slots, creating Lalamove deliveries, and updating order metadata. It's designed for e-commerce businesses needing automated last-mile logistics scheduling and tracking.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_qZYecL2WVb.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Chris_easy_AI__Dev_Workflow_Test__20260409_172217_mba1ed1jL.json",
+    "Industry": "E-commerce",
+    "ROI": "25",
+    "displayTitle": "Automate WooCommerce Delivery Scheduling with Lalamove Integration",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-woocommerce-delivery-scheduling-lalamove-integration"
+  },
+  {
+    "title": "Automate WooCommerce Orders to Lalamove Delivery Scheduling",
+    "description": "This n8n workflow automates order processing for e-commerce businesses using WooCommerce. It fetches eligible orders, groups them by postal zones and time slots, creates optimized Lalamove deliveries, and updates WooCommerce with tracking IDs. Ideal for businesses needing automated logistics coordination.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_Y5ynDsR_P.jpg",
+    "apps": [
+      "WooCommerce"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__My_workflow_46__20260409_200258_pBjuIfxNw.json",
+    "Industry": "Industry",
+    "ROI": "I don't have enough HTML content to find the ROI number.",
+    "displayTitle": "Automate WooCommerce Orders to Lalamove Delivery Scheduling",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-woocommerce-orders-to-lalamove-delivery-scheduling"
+  },
+  {
+    "title": "Automate Lalamove Delivery Scheduling for WooCommerce Orders",
+    "description": "This n8n workflow automatically groups WooCommerce orders by time slot and postal sector, then schedules deliveries via Lalamove API. It's designed for e-commerce businesses in Singapore to streamline delivery operations, batch similar orders, and update order status with tracking IDs, reducing manual coordination work.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_38bYD68EG.jpg",
+    "apps": [
+      "WooCommerce",
+      "Lalamove"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__track_no_result__20260409_200151_pYXAnuPsk.json",
+    "Industry": "I don’t see any HTML content provided. Please provide the HTML so I can extract the Industry from the Project Details section.",
+    "ROI": "I don't see any HTML content provided. Please provide the HTML code so I can extract the ROI number from the Project Details in the Industry section.",
+    "displayTitle": "Automate Lalamove Delivery Scheduling for WooCommerce Orders",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-lalamove-delivery-scheduling-woocommerce-orders"
+  },
+  {
+    "title": "Automate WhatsApp Bio Data Registration and Upload to Google Drive",
+    "description": "This n8n workflow automates the process of collecting and organizing user bio data from WhatsApp messages. It intelligently processes text, images, and documents, extracts relevant information using AI, creates a dedicated Google Drive folder for each user, uploads the data, and provides shared links. Ideal for Matrimony services.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_asb422X6m.jpg",
+    "apps": [
+      "WhatsApp",
+      "Google Drive",
+      "OpenAI",
+      "Airtable",
+      "Imagekit"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Sri_Vasavi__Test__20260410_114245_mSs_DNywA.json",
+    "Industry": "Matrimony Services",
+    "ROI": "200",
+    "displayTitle": "Automate WhatsApp Bio Data Registration and Upload to Google Drive",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/automate-whatsapp-bio-data-registration-google-drive"
+  },
+  {
+    "title": "Sync Google Sheets Landed Cost Data to Airtable Records",
+    "description": "This workflow automates the process of migrating landed cost data from Google Sheets to Airtable. It retrieves new landed cost items from a specified Google Sheet, searches for corresponding records in Airtable, updates existing records, or creates new ones in Airtable. It also updates the Google Sheet to reflect the migration status.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_T4KETcN0v.jpg",
+    "apps": [
+      "Google Sheets",
+      "Airtable"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Shubhroneel_Chanda__My_workflow_3__20260410_114744_6kpHT9R60.json",
+    "Industry": "E-commerce",
+    "ROI": "200",
+    "displayTitle": "Sync Google Sheets Landed Cost Data to Airtable Records",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/sync-google-sheets-landed-cost-data-to-airtable"
   }
-];;;;;;;;
+];;;;;;;;;
