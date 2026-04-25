@@ -3452,5 +3452,97 @@ window.templateData = [
     "ROI": "200",
     "displayTitle": "Sync Google Sheets Landed Cost Data to Airtable Records",
     "pageUrl": " https://www.growwstacks.com/case-studies/apps/sync-google-sheets-landed-cost-data-to-airtable"
+  },
+  {
+    "title": "Send WhatsApp Message from Google Sheets Data",
+    "description": "This workflow automates sending personalized WhatsApp messages using data from Google Sheets. It's designed for businesses aiming to streamline communication with customers. The workflow reads data, loops through contacts and parameters and send custom template message with URL button.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_oj9cD4UZV.jpg",
+    "apps": [
+      "Google Sheets",
+      "WhatsApp"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__flow_whatsapp__20260410_120240_NfNrHeU08.json",
+    "Industry": "Marketing",
+    "ROI": "150%",
+    "displayTitle": "Send WhatsApp Message from Google Sheets Data",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/send-whatsapp-message-from-google-sheets-data"
+  },
+  {
+    "title": "Extract Invoice Data to Notion and Upload to Google Drive",
+    "description": "Streamline invoice processing with this workflow. Automatically extract key data from invoices using Gemini AI, validate the results, update a Notion database, and upload the invoice to Google Drive, ensuring efficient invoice management and data organization.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_tYkODdd0J.jpg",
+    "apps": [
+      "Notion",
+      "Google Gemini",
+      "Google Drive"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__factures__20260410_120347_j6jGvjQGO.json",
+    "Industry": "Financial Services",
+    "ROI": "200",
+    "displayTitle": "Extract Invoice Data to Notion and Upload to Google Drive",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/extract-invoice-data-to-notion-google-drive"
+  },
+  {
+    "title": "Automatically send WhatsApp notifications based on webhook triggers",
+    "description": "This workflow automates sending targeted WhatsApp notifications based on webhook events. It listens for incoming webhooks, filters the message type, and sends personalized WhatsApp messages using templates from WhatsApp Business through N8N. It also sends emails depending on the message type via Outlook and logs into Airtable.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_npM6mm-dQ.jpg",
+    "apps": [
+      "WhatsApp Business",
+      "Microsoft Outlook",
+      "Twilio",
+      "Airtable"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__send_notif__20260410_115729_PzgMsZlzm.json",
+    "Industry": "Multiple",
+    "ROI": "25",
+    "displayTitle": "Automatically send WhatsApp notifications based on webhook triggers",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/send-whatsapp-notifications-webhook-triggers"
+  },
+  {
+    "title": "Download and Upload Specific Google Drive Files to a Folder",
+    "description": "This n8n workflow automates downloading specific files from Google Drive based on file ID. It then uploads these files to a designated folder within Google Drive. This is ideal for archiving, backing up, or consolidating files for specific projects or clients.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_9adMX2FS-.jpg",
+    "apps": [
+      "Google Drive"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Shubhroneel_Chanda__get_specefic_file_into_single_folder__20260410_115335_t9zCFnAF0.json",
+    "Industry": "General Business",
+    "ROI": "200",
+    "displayTitle": "Download and Upload Specific Google Drive Files to a Folder",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/download-upload-google-drive-files-to-folder"
+  },
+  {
+    "title": "AI-Powered WhatsApp Assistant for Permifast Admin Management",
+    "description": "This n8n workflow acts as an AI-powered WhatsApp assistant, tailored for Permifast admin management. It uses tools and Google Analytics to answer user questions, analyze metrics, process files, images, and audio. Enhance your capacity to respond to new customer with the automated response based on a range of Google sheet datasets",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_UX8yKEYF2.jpg",
+    "apps": [
+      "WhatsApp",
+      "Google Sheets",
+      "Google Analytics",
+      "Google Gemini",
+      "Facebook Graph API",
+      "Google Docs",
+      "Stripe",
+      "Google Ads",
+      "OpenAI"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__AGENTWHATSAPP__20260410_120056_Jx383uloe.json",
+    "Industry": "Admin Management",
+    "ROI": "50",
+    "displayTitle": "AI-Powered WhatsApp Assistant for Permifast Admin Management",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/ai-powered-whatsapp-assistant-permifast-admin-management"
+  },
+  {
+    "title": "Capture Web Form Leads and Append to Google Sheets",
+    "description": "This n8n workflow automatically captures leads submitted through a web form (via webhook) and formats the data before appending it to a designated Google Sheets spreadsheet. Ideal for businesses seeking to streamline lead management and data collection, saving time and improving data accuracy.",
+    "image": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/desired_image_name_slWJT-4s8.jpg",
+    "apps": [
+      "Google Sheets"
+    ],
+    "driveUrl": "https://ik.imagekit.io/r2zdlyze2o/Case_Studies/Apps/Victor_Lignel__leads_ae_web_form__20260410_120130_wfCcpdpWB.json",
+    "Industry": "Marketing",
+    "ROI": "200",
+    "displayTitle": "Capture Web Form Leads and Append to Google Sheets",
+    "pageUrl": " https://www.growwstacks.com/case-studies/apps/capture-web-form-leads-google-sheets"
   }
-];;;;;;;;;
+];;;;;;;;;;
