@@ -1,5 +1,113 @@
 const BLOG_POSTS = [
 {
+  title: "Is Zapier Overkill for Your Small Business? The Best Alternative You've Never Heard Of",
+  desc: "Most small businesses pay for enterprise automation features they'll never use. Discover why Stepper might be the perfect Zapier alternative for solopreneurs and small teams.",
+  url: "/blog/zapier-alternative-small-business-stepper",
+  tags: ["Make.com","Automation","Small Business"],
+  date: "2026-03-31",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "How Claude Co-Work Turns AI From Chatbot to Full-Time Employee",
+  desc: "Discover how Claude Co-Work can automate document creation, browser tasks, presentations and data analysis - transforming AI from simple chatbot to full business assistant.",
+  url: "/blog/claude-cowork-tutorial-ai-employee",
+  tags: ["AI Agents","Productivity","Automation"],
+  date: "2026-04-24",
+  readTime: 9,
+  target: "_blank"
+},
+{
+  title: "Automate Weekly Reports from Google Sheets with Zapier - No Coding Needed",
+  desc: "Tired of manually creating reports from spreadsheets? This Zapier automation pulls sales data, summarizes it with AI, and emails you a polished report every Monday morning - all without writing a single line of code.",
+  url: "/blog/automate-weekly-reports-from-google-sheets-with-zapier",
+  tags: ["Zapier","Google Sheets","AI"],
+  date: "2026-04-24",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Como Automatizar Qualquer Tarefa Manual com n8n — Introdução Completa",
+  desc: "Descubra como o n8n pode revolucionar seu trabalho automatizando processos manuais e integrando inteligência artificial em seus fluxos de trabalho.",
+  url: "/blog/introducao-n8n-automacao",
+  tags: ["n8n","Automação","AI Agents"],
+  date: "2026-04-06",
+  readTime: 11,
+  target: "_blank"
+},
+{
+  title: "How to Automate Your Business Workflows with Zapier (Step-by-Step for Small Business Owners)",
+  desc: "Small business owners waste 6+ hours weekly on repetitive tasks. This Zapier guide shows you 4 real workflows to automate lead follow-ups, invoicing, bookings and reviews - saving you time while helping you compete with larger companies.",
+  url: "/blog/how-to-automate-business-workflows-with-zapier",
+  tags: ["Zapier","Automation","Small Business"],
+  date: "2026-03-30",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Zapier SDK and MCP: Connect 8,000+ Apps to AI with One Tool",
+  desc: "Discover how Zapier's new SDK and MCP server let AI agents securely access 8,000+ apps through a single connection. Perfect for startups and developers building intelligent automation.",
+  url: "/blog/zapier-sdk-mcp-connect-apps-to-ai",
+  tags: ["AI Agents","Zapier","Automation"],
+  date: "2026-04-07",
+  readTime: 7,
+  target: "_blank"
+},
+{
+  title: "Sam Altman Just Beat Claude With OpenAI's Biggest Model Yet - GPT 5.5 Deep Dive",
+  desc: "OpenAI's GPT 5.5 has arrived with groundbreaking capabilities that outperform Claude Opus 4.7 in real-world tasks. See the head-to-head comparisons, Codex desktop app features, and how this model changes AI automation forever.",
+  url: "/blog/sam-altman-beats-claude-openai-gpt5",
+  tags: ["AI Agents","GPT","LLM"],
+  date: "2026-04-24",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "I Tried EVERY AI Agent (Here's What's ACTUALLY Good in 2026)",
+  desc: "After testing dozens of AI agent tools, we reveal the top 5 that actually deliver real business value - ranked from worst to best. Learn which agents save hours weekly through automation.",
+  url: "/blog/best-ai-agents-2026",
+  tags: ["AI Agents","Automation","Productivity"],
+  date: "2026-04-24",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Hermes Agent Setup Guide: How to Build Your First Self-Improving AI Assistant",
+  desc: "Discover how to install and configure Hermes Agent - the self-improving AI assistant that outperforms OpenClaw. Follow our step-by-step guide to create a Telegram-connected bot that learns from experience.",
+  url: "/blog/hermes-agent-setup-guide",
+  tags: ["AI Agents","Automation","Telegram"],
+  date: "2026-04-23",
+  readTime: 14,
+  target: "_blank"
+},
+{
+  title: "How Zapier + MCP Gives You AI Portability Across Claude, ChatGPT and More",
+  desc: "Discover how the MCP layer connects securely to any AI system while maintaining guardrails on permissions. Learn to centralize skills and business knowledge for consistent AI access across platforms.",
+  url: "/blog/zapier-mcp-ai-portability-claude-chatgpt",
+  tags: ["AI Agents","Zapier","Automation"],
+  date: "2026-04-06",
+  readTime: 5,
+  target: "_blank"
+},
+{
+  title: "Stop Wasting AI Tokens: How n8n + OpenClaw Cuts Costs by 80%",
+  desc: "Discover how combining OpenClaw's intelligence with n8n's deterministic automation can dramatically reduce your AI token costs while improving reliability - with real examples showing 80% savings.",
+  url: "/blog/n8n-openclaw-ai-token-savings",
+  tags: ["n8n","AI Agents","Automation"],
+  date: "2026-03-31",
+  readTime: 8,
+  target: "_blank"
+},
+{
+  title: "Can Claude Code Really Replace n8n? We Put It to the Ultimate Test",
+  desc: "We challenged Claude Code to replicate a complex YouTube automation workflow built in n8n - the results will surprise you. Discover which platform wins for stability, security, and real-world business automation.",
+  url: "/blog/claude-code-vs-n8n-automation-test",
+  tags: ["n8n","AI Agents","Automation"],
+  date: "2026-03-31",
+  readTime: 9,
+  target: "_blank"
+},
+{
   title: "How OpenClaw Became the Fastest-Growing AI Agent Platform",
   desc: "From burnout to breakthrough - how one developer accidentally created the viral AI agent platform OpenClaw that's changing who can build software.",
   url: "/blog/how-openclaw-became-fastest-growing-ai-agent",
