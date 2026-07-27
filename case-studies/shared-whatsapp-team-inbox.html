@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/analytics-loader.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO Meta ═══ -->
+  <title>Shared WhatsApp Team Inbox — One Number, Whole Team | GrowwStacks</title>
+  <meta name="description" content="A shared WhatsApp team inbox on one number: multi-agent assignment, group chats, search, an installable mobile PWA, and zero messages missed on reconnect.">
+  <link rel="canonical" href="https://growwstacks.com/case-studies/shared-whatsapp-team-inbox/">
+
+  <!-- ═══ Open Graph ═══ -->
+  <meta property="og:title" content="Shared WhatsApp Team Inbox — GrowwStacks Case Study">
+  <meta property="og:description" content="A shared WhatsApp team inbox on one number — multi-agent assignment, group chats, full-text search, an installable mobile PWA, and zero messages missed when the connection drops and comes back.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://growwstacks.com/case-studies/shared-whatsapp-team-inbox/">
+  <meta property="og:site_name" content="GrowwStacks">
+  <meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/01_Desktop_Shared_Inbox.png?updatedAt=1785157198318&tr=w-800,q-80,f-auto">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shared WhatsApp Team Inbox">
+  <meta name="twitter:description" content="One WhatsApp number the whole team works from — assignment, group chats, search, and an installable mobile PWA that back-fills any messages missed during a disconnection.">
+  <meta name="twitter:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/01_Desktop_Shared_Inbox.png?updatedAt=1785157198318&tr=w-800,q-80,f-auto">
+
+  <!-- ═══ Favicon ═══ -->
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+
+  <!-- ═══ Google Ads Tag ═══ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+
+  <!-- ═══ Resource Preconnects ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ik.imagekit.io">
+
+  <!-- ═══ Fonts ═══ -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+  <!-- ═══ Stylesheets ═══ -->
+  <link rel="stylesheet" href="../_shared/global.css">
+  <link rel="stylesheet" href="../_shared/case-studies.css">
+
+  <!-- Style overrides to prevent visual flow diagram wrapping on desktop -->
+  <style>
+    @media (min-width: 769px) {
+      .cs-flow-pipeline {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        gap: 4px !important;
+        padding: 2rem 0 !important;
+      }
+      .cs-flow-step {
+        min-width: 90px !important;
+        max-width: 130px !important;
+        padding: 0.6rem 0.4rem !important;
+      }
+      .cs-flow-connector {
+        padding: 0 2px !important;
+        font-size: 0.95rem !important;
+      }
+      .cs-flow-outcome {
+        min-width: 90px !important;
+        padding: 0.4rem !important;
+        font-size: 0.68rem !important;
+      }
+    }
+
+    /* Landscape screenshot: constrain height so the layout stays compact on desktop. */
+    .cs-img-block img {
+      max-height: 460px;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+      border-radius: var(--radius-lg, 12px);
+    }
+    @media (max-width: 768px) {
+      .cs-img-block img {
+        max-height: 380px;
+      }
+    }
+
+    /* App-screenshot gallery: groups the portrait phone shots into one row
+       so the wide content column is filled instead of leaving side gaps. */
+    .cs-app-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 2rem 0;
+      align-items: start;
+    }
+    .cs-app-gallery figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .cs-app-gallery img {
+      width: 100%;
+      /* All four phone shots share one fixed frame so heights match and
+         captions align. object-fit: contain shows every screen in full
+         (no UI cropped) and letterboxes onto the dark phone bezel. */
+      aspect-ratio: 1179 / 2556;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: var(--radius-lg, 12px);
+      background: #0d0d0d;
+    }
+    .cs-app-gallery figcaption {
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: var(--cs-muted, #64748b);
+      text-align: center;
+    }
+    .cs-app-gallery figcaption strong {
+      display: block;
+      color: var(--cs-ink, #0f172a);
+      font-size: 0.85rem;
+      margin-bottom: 0.15rem;
+    }
+    /* 2-up on tablet, stacked on mobile so phones never get too narrow. */
+    @media (max-width: 900px) {
+      .cs-app-gallery { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    }
+    @media (max-width: 480px) {
+      .cs-app-gallery { grid-template-columns: 1fr; max-width: 320px; margin-inline: auto; }
+    }
+
+    /* Sidebar detail rows: label left, value right. Values here run longer than
+       on other case studies, so give the label a stable min-width, let the value
+       take the remaining space, and tighten wrapped-line spacing so multi-line
+       values stay compact instead of looking congested. */
+    .cs-sidebar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .cs-sidebar-label {
+      flex: 0 0 auto;
+      max-width: 42%;
+      line-height: 1.35;
+    }
+    .cs-sidebar-value {
+      text-align: right;
+      line-height: 1.35;
+    }
+  </style>
+
+  <!-- ═══ Page Tools ═══ -->
+  <meta name="page-tools" content="react,cloudflarePages,supabase,whapi">
+
+  <!-- ═══ JSON-LD: Article ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"A Shared WhatsApp Team Inbox — One Number, Whole Team, Any Device","description":"A shared WhatsApp team inbox on one number: multi-agent assignment, group chats, full-text search, an installable mobile PWA, and zero messages missed on reconnect.","image":"https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/01_Desktop_Shared_Inbox.png?updatedAt=1785157198318&tr=w-800,q-80,f-auto","datePublished":"2026-07-27","dateModified":"2026-07-27","author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"publisher":{"@type":"Organization","name":"GrowwStacks","logo":{"@type":"ImageObject","url":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://growwstacks.com/case-studies/shared-whatsapp-team-inbox/"}}</script>
+
+  <!-- ═══ JSON-LD: BreadcrumbList ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/"},{"@type":"ListItem","position":3,"name":"Shared WhatsApp Team Inbox","item":"https://growwstacks.com/case-studies/shared-whatsapp-team-inbox/"}]}</script>
+
+  <!-- ═══ JSON-LD: FAQPage ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can the whole team really use one WhatsApp number at the same time?","acceptedAnswer":{"@type":"Answer","text":"Yes — that is the whole point. Every conversation on the single WhatsApp number lands in one shared dashboard that every agent is logged into at once. They see the same conversation list, the same threads, and who is handling what, so several people work the same number in parallel without passing a phone around or stepping on each other."}},{"@type":"Question","name":"What happens to messages if the WhatsApp connection drops?","acceptedAnswer":{"@type":"Answer","text":"Nothing is lost. If the gateway connection drops, an admin reconnects in seconds by scanning a QR code inside the app. Any messages that arrived while it was disconnected are synced back automatically on reconnect, so a disconnection is an inconvenience rather than a hole in the record."}},{"@type":"Question","name":"Does it work on mobile without an app store download?","acceptedAnswer":{"@type":"Answer","text":"Yes. The inbox is an installable PWA — open it in a phone browser and add it to the home screen, and it behaves like a native app with no app store download required. The same app also runs in any desktop browser, so the whole team is covered on whatever device they already carry."}},{"@type":"Question","name":"Do group chats, media, and documents work the same as in WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"They do. Group chats work seamlessly, including showing how many people are in each group, and replying works exactly like WhatsApp — type, send, and it reaches the contact. Each contact also has a profile panel that collects all the media, documents, and links shared in the chat in one place."}},{"@type":"Question","name":"How are agents, roles, and permissions managed?","acceptedAnswer":{"@type":"Answer","text":"Admins manage the team directly from inside the app. They add members, set each person's role, remove people who have left, and reset passwords — all self-service, with no developer involvement. Each user also controls their own theme, password, and notification preferences."}},{"@type":"Question","name":"Where is the conversation data stored?","acceptedAnswer":{"@type":"Answer","text":"Conversations and files are stored in Supabase, on Postgres for data and Supabase Storage for media and documents. The WhatsApp gateway is Whapi, the frontend is a React app on Cloudflare Pages, and the serverless backend runs on Cloudflare Pages Functions."}}]}</script>
+</head>
+
+<body class="cs-page page-whatsapp-inbox">
+
+  <!-- ═══ NAVBAR ═══ -->
+  <div id="gs-navbar"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO                                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="cs-hero">
+      <div class="cs-hero-bg">
+        <div class="cs-hero-bg-shape1"></div>
+        <div class="cs-hero-bg-shape2"></div>
+      </div>
+
+      <div class="container cs-hero-inner">
+
+        <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true">/</span>
+          <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+          <span>Shared WhatsApp Team Inbox</span>
+        </nav>
+
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Customer Support</span>
+          <span class="cs-tag">Custom App</span>
+          <span class="cs-tag">WhatsApp</span>
+          <span class="cs-tag">PWA</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+
+        <h1>A Shared WhatsApp Team Inbox — One Number, Whole Team, Any Device</h1>
+        <p class="cs-hero-sub">GrowwStacks built a shared WhatsApp team inbox on top of a single WhatsApp number, so an entire team works the same conversations from one dashboard — assigning chats, replying, running group chats, and searching months of history from a desktop browser or an installable mobile app. If the connection ever drops, everything that arrived in the gap is back-filled on reconnect, so no message is ever missed.</p>
+
+        <div class="cs-hero-logos">
+          <div class="cs-hero-logo">
+            <img data-logo="whatsapp" alt="WhatsApp" width="20" height="20" loading="lazy">
+            WhatsApp
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="react" alt="React" width="20" height="20" loading="lazy">
+            React
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="cloudflarePages" alt="Cloudflare Pages" width="20" height="20" loading="lazy">
+            Cloudflare Pages
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="supabase" alt="Supabase" width="20" height="20" loading="lazy">
+            Supabase
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="whapi" alt="Whapi" width="20" height="20" loading="lazy">
+            Whapi
+          </div>
+        </div>
+
+        <div class="process-content">
+          <div class="process-video">
+            <div class="yt-facade" data-video-id="1A6nMMDP-q8" role="button" tabindex="0" aria-label="Play video: Shared WhatsApp Team Inbox Demo" style="border-radius: var(--radius-lg); aspect-ratio: 16/9; width: 100%; position:relative; overflow:hidden; cursor:pointer;">
+              <picture>
+                <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/1A6nMMDP-q8/maxresdefault.webp">
+                <img alt="Shared WhatsApp Team Inbox Demo" loading="lazy" width="480" height="360" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);" src="https://i.ytimg.com/vi/1A6nMMDP-q8/maxresdefault.jpg">
+              </picture>
+              <div class="yt-facade-play" aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;">
+                <svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.5 7.7s-.7-4.7-2.8-6.8C60.7-2.1 57.5-2.2 56-2.4 46.6-3 34-3 34-3h0S21.4-3 12-2.4C10.4-2.2 7.3-2.1 4.3 1S.7 7.7.7 7.7 0 13.2 0 18.8v5.2c0 5.5.7 11 .7 11s.7 4.7 2.8 6.8c3 3.1 6.9 3 8.7 3.3C18.5 45.6 34 45.8 34 45.8s12.6 0 22-0.6c1.6-0.2 4.7-0.3 7.7-3.4 2.1-2.1 2.8-6.8 2.8-6.8s.7-5.5.7-11v-5.2c0-5.6-.7-11.1-.7-11.1z" fill="#FF0000"/><path d="M27 33V14l18 9.5z" fill="#FFF"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ KEY RESULTS ═══ -->
+    <section class="cs-results">
+      <div class="container">
+        <div class="cs-results-grid">
+          <div class="cs-result-item">
+            <div class="cs-result-num">1</div>
+            <div class="cs-result-label">WhatsApp number the whole team works from</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">0</div>
+            <div class="cs-result-label">Messages missed during a dropped connection</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">PWA</div>
+            <div class="cs-result-label">Installable on any phone, plus any browser</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">Multi</div>
+            <div class="cs-result-label">Agent assignment, filtering, and group chats</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTENT + SIDEBAR ═══ -->
+    <section class="cs-content">
+      <div class="container">
+        <div class="cs-content-inner">
+
+          <!-- ARTICLE -->
+          <article class="cs-article">
+
+            <!-- SECTION 1: The Problem -->
+            <h2>The Problem — One Number, No System</h2>
+            <p>Plenty of service businesses run every customer conversation through a single WhatsApp number, with no shared WhatsApp team inbox behind it. For a while it works fine. One phone, one number on the website, and whoever is nearest picks it up. But the moment the team grows past one person, that single number becomes the bottleneck instead of the convenience it used to be.</p>
+            <p>The phone gets passed around. Nobody knows who replied to which customer, or whether a message was answered at all. Threads slip through unanswered because everyone assumed someone else had it. And the instant the person holding the phone steps out, goes on leave, or simply logs off for the day, the number goes quiet — customers message into a void. There is no shared view of the queue, no ownership of individual conversations, and no record of who handled what. For a business that runs on WhatsApp, that is a real operational risk, not a minor annoyance.</p>
+
+            <!-- SECTION 2: The Solution -->
+            <h2>The Solution — A Shared WhatsApp Team Inbox</h2>
+            <p>GrowwStacks built a <strong>shared WhatsApp team inbox</strong> on top of that same single WhatsApp number. Every conversation now lands in one dashboard where the whole team can see, at a glance, who messaged, what they said, and who is handling it. There is no phone to pass around and no guessing about ownership — the client, described here only as a service business running its customer conversations over WhatsApp, gets a single shared view of everything coming in.</p>
+            <p>Agents work that shared view from wherever they are: a browser on a laptop at the desk, or the same app installed on a phone in the field. The result is the visibility, ownership, and continuity a single passed-around phone could never provide, layered on the WhatsApp number customers already know. Much like the <a href="/case-studies/cleaning-workforce-custom-app-migration.html">custom web app that replaced a no-code workforce stack</a>, this is a purpose-built tool shaped around how the team actually works rather than a generic platform they have to bend to.</p>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/01_Desktop_Shared_Inbox.png?updatedAt=1785157198318&tr=w-800,q-80,f-auto"
+                   alt="Shared WhatsApp team inbox on desktop showing the conversation list, an open chat thread, and a contact info panel with media, documents and links tabs"
+                   width="800" height="470">
+              <div class="cs-img-caption">The shared inbox on the desktop — one conversation list for the whole team, an open thread in the centre, and a contact panel on the right holding all shared media, documents, and links per contact.</div>
+            </div>
+
+            <!-- SECTION 3: How It Works — mobile showcase -->
+            <h2>How It Works — The Whole Inbox, On a Phone</h2>
+            <p>Nothing about the shared inbox is desktop-only. Everything an agent can do at their laptop, they can do from a phone in exactly the same way — read the queue, filter it, take ownership of a chat, reply, and even start a brand-new conversation. The four screens below walk through that mobile experience, and each capability is then explained in detail in the sections that follow.</p>
+
+            <div class="cs-app-gallery" aria-label="The shared WhatsApp team inbox on mobile, screen by screen: Reply from Anywhere, Filter and Start New, Live Connection, and Admin Controls.">
+              <figure>
+                <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/02_Mobile_Chat_Reply.png?updatedAt=1785157198270&tr=w-500,q-80,f-auto"
+                     alt="Mobile view of a shared WhatsApp team inbox chat thread with an assignee selector at the top" loading="lazy">
+                <figcaption><strong>1. Reply from Anywhere</strong>Replies send straight to WhatsApp, with the assignee shown on top.</figcaption>
+              </figure>
+              <figure>
+                <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/03_New_Conversation_And_Filters.png?updatedAt=1785157198249&tr=w-500,q-80,f-auto"
+                     alt="New message dialog for starting a conversation by phone number, with assigned, unassigned and per-agent filters" loading="lazy">
+                <figcaption><strong>2. Filter &amp; Start New</strong>Assigned, unassigned, and per-agent filters, plus one-tap new chats.</figcaption>
+              </figure>
+              <figure>
+                <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/04_Admin_Menu_And_Connection.png?updatedAt=1785157198315&tr=w-500,q-80,f-auto"
+                     alt="Admin menu showing live WhatsApp connection status, sync missed messages, theme, and notification settings" loading="lazy">
+                <figcaption><strong>3. Live Connection</strong>Connection status, missed-message sync, theme, and notifications.</figcaption>
+              </figure>
+              <figure>
+                <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/shared-whatsapp-team-inbox/05_Add_Agent_Admin.png?updatedAt=1785157198261&tr=w-500,q-80,f-auto"
+                     alt="Add an agent form with name, email, password, and role fields for managing shared inbox access" loading="lazy">
+                <figcaption><strong>4. Admin Controls</strong>Add agents, set roles, reset passwords — all self-service.</figcaption>
+              </figure>
+            </div>
+
+            <!-- SECTION 4: Assignment and Replies -->
+            <h2>Assignment and Replies</h2>
+            <p>Ownership is one click. An agent can assign a chat to themselves the moment they pick it up, or hand it to a colleague by selecting that person's name — so every live conversation has exactly one owner and there is never a question of who is on it. Unassigned conversations get their own filter, which means nothing sits unowned by accident; if a chat has no name against it, it is visible as a gap to be closed, not buried in the queue.</p>
+            <p>Replying works exactly like WhatsApp itself: type, send, and the message reaches the contact's phone. There is nothing new for an agent to learn. Group chats work seamlessly too, including showing how many people are in each group, so a busy support or sales team handles one-to-one and group conversations from the same familiar interface.</p>
+
+            <!-- SECTION 5: Filtering and Starting Conversations -->
+            <h2>Filtering and Starting Conversations</h2>
+            <p>The inbox filters by Assigned, Unassigned, or any specific team member, and the member filter is multi-select — so a manager can pull up what two or three agents are working on side by side and see the shape of the whole queue at once. It turns a single flat list of messages into something a team lead can actually manage.</p>
+            <p>Starting a brand-new conversation is just as direct. It takes a phone number, an optional contact name, and a first message, and the thread opens in the shared inbox like any other — ready to be assigned, replied to, and tracked from the first message onward.</p>
+
+            <!-- SECTION 6: Search, Contacts, and Shared Media -->
+            <h2>Search, Contacts, and Shared Media</h2>
+            <p>Full-text search runs across every conversation by keyword, and also within a single contact's own history, so scrolling back through months of messages to find one detail is painless rather than hopeless. Whether an agent is hunting for a specific order number across the whole inbox or a promise made to one customer three months ago, the answer is a search away.</p>
+            <p>Each contact also has a profile panel that gathers everything shared in that chat — all the media, all the documents, and all the links — into one place. Instead of scrolling the thread to find that one PDF or image a customer sent weeks ago, an agent opens the contact panel and it is all there, organised by type.</p>
+
+            <!-- SECTION 7: PWA -->
+            <h2>Works Everywhere — The Installable PWA</h2>
+            <p>The app installs on a phone straight from the browser: open it, add it to the home screen, and it behaves like a native app — the full inbox, the filters, assignment, replies, and starting new conversations, all of it, with no app store download in the way. The very same app runs in any desktop browser, so the team is covered on whatever device each person happens to have in hand.</p>
+            <p>Personal settings are per-user, not global. Each agent controls their own theme, their own password, and their own notification preferences, and Web Push delivers new-message notifications right to the lock screen — so a field agent knows a customer has replied without keeping the app open. One shared number, but an experience each person can tune to themselves.</p>
+
+            <!-- SECTION 8: Reliability -->
+            <h2>Reliability — Nothing Missed</h2>
+            <p>This is the part that makes it safe to depend on. Any gateway-based WhatsApp setup can lose its connection — that is simply the nature of the technology. What matters is what happens next. Here, if the WhatsApp connection drops, an admin reconnects in seconds by scanning a QR code inside the app, and any messages that arrived while it was disconnected sync back automatically. Nothing is lost during the downtime; the gap is filled in as if it never happened.</p>
+            <p>Admins also manage the team directly from the same place — adding members, removing people who have left, and resetting passwords without waiting on a developer. Keeping the roster current is a self-service task, not a support ticket.</p>
+
+            <div class="cs-highlight">
+              <p>💡 <strong>No message left behind</strong> — A dropped gateway connection is the moment most WhatsApp tools quietly lose data. Here, reconnection is a QR scan, and everything that arrived during the gap is back-filled on reconnect — so a disconnection is an inconvenience, not a hole in the record.</p>
+            </div>
+
+            <!-- SECTION 9: Under the Hood -->
+            <h2>Under the Hood</h2>
+            <p>The frontend is a React application deployed on Cloudflare Pages, with Cloudflare Pages Functions providing the serverless backend — no separate server to run or maintain. Supabase handles data and file storage, with Postgres for the conversation data and Supabase Storage for the media and documents shared in each chat. Whapi serves as the WhatsApp gateway that connects the shared number to the inbox, and Web Push with VAPID delivers the lock-screen notifications. It is a lean, modern stack that runs the same whether it is one member or a whole team using it, on any device.</p>
+
+            <!-- SECTION 10: The Right Fit -->
+            <h2>The Right Fit — and When It Isn't</h2>
+            <p>This suits any team sharing a single WhatsApp number for customer conversations — support desks, sales teams, agencies, and service businesses — that need ownership, visibility, and continuity across several people and several devices. If more than one person answers the same number, and it matters who owns which conversation and that none go missing, this is built for exactly that. It pairs naturally with an <a href="/case-studies/AI-WhatsApp-Customer-Support-Bot.html">automated WhatsApp support bot</a> as the human-staffed counterpart, and it borrows the same shared-ownership discipline as a <a href="/case-studies/home-care-referral-recruiting-engine.html">multi-agent referral and recruiting pipeline</a> where a lead must never sit unowned in an inbox.</p>
+            <p>It is less suited to a solo operator who genuinely handles every message themselves — where a shared inbox adds structure without solving a real problem — or to businesses that are required to use the official WhatsApp Business Platform for compliance reasons rather than a gateway-based setup. When the need is real, though, a shared team inbox turns one number into something a whole team can depend on.</p>
+
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="cs-sidebar">
+
+            <div class="cs-sidebar-card">
+              <h4>Project Details</h4>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value">Customer Support</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value">Custom App &amp; Collaboration</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value">React + Cloudflare + Supabase</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value">4 days</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value">Advanced</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value">⭐ 5.0 / 5</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent)">One shared number, anywhere</span></div>
+            </div>
+
+            <div class="cs-sidebar-card">
+              <h4>Tools &amp; Integrations</h4>
+              <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+                <span class="cs-tool-tag"><img data-logo="whatsapp" alt="WhatsApp" width="14" height="14" loading="lazy">WhatsApp</span>
+                <span class="cs-tool-tag"><img data-logo="react" alt="React" width="14" height="14" loading="lazy">React</span>
+                <span class="cs-tool-tag"><img data-logo="cloudflarePages" alt="Cloudflare Pages" width="14" height="14" loading="lazy">Cloudflare Pages</span>
+                <span class="cs-tool-tag"><img data-logo="supabase" alt="Supabase" width="14" height="14" loading="lazy">Supabase</span>
+                <span class="cs-tool-tag"><img data-logo="whapi" alt="Whapi" width="14" height="14" loading="lazy">Whapi</span>
+              </div>
+            </div>
+
+            <div class="cs-sidebar-card">
+              <h4>Key Metrics</h4>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Shared Number</span><span class="cs-sidebar-value">One, whole team</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Device Support</span><span class="cs-sidebar-value">Desktop + mobile PWA</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Missed Messages</span><span class="cs-sidebar-value">Auto-synced on reconnect</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Conversation Types</span><span class="cs-sidebar-value">1-to-1 &amp; group chats</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Access Control</span><span class="cs-sidebar-value">Admin-managed roles</span></div>
+            </div>
+
+            <div class="cs-sidebar-cta">
+              <h4>One number your whole team can work from?</h4>
+              <p>Free discovery call — let us build a shared inbox or custom tool for how your team actually works.</p>
+              <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ VISUAL FLOW ═══ -->
+    <section class="cs-content" style="padding-top:0">
+      <div class="container">
+        <div class="cs-visual-flow" aria-label="A WhatsApp message arrives through the Whapi gateway, lands in the shared inbox, is assigned to an agent, and is replied to from any device.">
+          <div class="cs-flow-pipeline">
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">💬</div>
+              <div class="cs-flow-step-title">WhatsApp Message</div>
+              <div class="cs-flow-step-sub">Customer messages in</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">🔌</div>
+              <div class="cs-flow-step-title">Whapi Gateway</div>
+              <div class="cs-flow-step-sub">Connects the number</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step cs-flow-active">
+              <div class="cs-flow-step-icon">📥</div>
+              <div class="cs-flow-step-title">Shared Inbox</div>
+              <div class="cs-flow-step-sub">One team view</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">👤</div>
+              <div class="cs-flow-step-title">Assign to Agent</div>
+              <div class="cs-flow-step-sub">One clear owner</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">📲</div>
+              <div class="cs-flow-step-title">Reply from Any Device</div>
+              <div class="cs-flow-step-sub">Desktop or mobile</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-outcome-wrap">
+              <div class="cs-flow-outcome approved">✓ Nothing Missed</div>
+              <div class="cs-flow-outcome review">📱 Install as App</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ SECTION ═══ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div style="text-align:center">
+          <div class="section-label" style="justify-content:center">Frequently Asked Questions</div>
+          <h2 class="section-title">Got Questions? We've Got Answers.</h2>
+        </div>
+        <div class="faq-inner">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Can the whole team really use one WhatsApp number at the same time?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Yes — that is the whole point.</strong> Every conversation on the single WhatsApp number lands in one shared dashboard that every agent is logged into at once. They see the same conversation list, the same threads, and who is handling what, so several people work the same number in parallel without passing a phone around or stepping on each other.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What happens to messages if the WhatsApp connection drops?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Nothing is lost.</strong> If the gateway connection drops, an admin reconnects in seconds by scanning a QR code inside the app. Any messages that arrived while it was disconnected are synced back automatically on reconnect, so a disconnection is an inconvenience rather than a hole in the record.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Does it work on mobile without an app store download?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Yes.</strong> The inbox is an installable PWA — open it in a phone browser and add it to the home screen, and it behaves like a native app with no app store download required. The same app also runs in any desktop browser, so the whole team is covered on whatever device they already carry.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Do group chats, media, and documents work the same as in WhatsApp?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>They do.</strong> Group chats work seamlessly, including showing how many people are in each group, and replying works exactly like WhatsApp — type, send, and it reaches the contact. Each contact also has a profile panel that collects all the media, documents, and links shared in the chat in one place.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How are agents, roles, and permissions managed?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Admins manage the team directly from inside the app.</strong> They add members, set each person's role, remove people who have left, and reset passwords — all self-service, with no developer involvement. Each user also controls their own theme, password, and notification preferences.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Where is the conversation data stored?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Conversations and files are stored in Supabase,</strong> on Postgres for data and Supabase Storage for media and documents. The WhatsApp gateway is Whapi, the frontend is a React app on Cloudflare Pages, and the serverless backend runs on Cloudflare Pages Functions.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BOTTOM CTA ═══ -->
+    <section class="cs-bottom-cta">
+      <div class="container" style="position:relative;z-index:2">
+        <h2>One WhatsApp number. Your whole team.</h2>
+        <p>Give every agent a shared inbox they can work from anywhere — with assignment, search, and zero missed messages.</p>
+        <div class="btn-group">
+          <a href="https://growwstacks.com/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+          <a href="https://growwstacks.com/case-studies/" class="btn btn-outline">See More Projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div id="gs-footer"></div>
+
+  <!-- Inject SITE.logos into all data-logo images -->
+  <script>
+  (function() {
+    function injectLogos() {
+      if (typeof SITE === 'undefined' || !SITE.logos) return;
+      document.querySelectorAll('img[data-logo]').forEach(function(img) {
+        var key = img.getAttribute('data-logo');
+        if (SITE.logos[key]) img.src = SITE.logos[key];
+      });
+    }
+    injectLogos();
+    document.addEventListener('DOMContentLoaded', injectLogos);
+  })();
+  </script>
+
+  <!-- ═══ Shared Config + Component Loader ═══ -->
+  <script src="../_shared/site-config.js"></script>
+  <script src="../assets/js/images-helper.js"></script>
+  <script src="../_shared/page-builder.js"></script>
+  <script src="../case-studies.js"></script>
+
+</body>
+</html>

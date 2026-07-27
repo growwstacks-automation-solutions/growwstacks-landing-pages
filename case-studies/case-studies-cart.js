@@ -851,6 +851,22 @@ window.CS_CARDS = [
     roi: "One source of truth",
     app: ["justcall", "gorgias", "bigQuery", "lookerStudio", "n8n"],
     roiIcon: "check"
+  },
+
+  /* ── 53 ── */
+  {
+    category: "operations crm-sales",
+    href: "/case-studies/shared-whatsapp-team-inbox.html",
+    bannerClass: "csh-banner-green",
+    img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Hero_Shared_WhatsApp_Inbox.png",
+    imgAlt: "Shared WhatsApp team inbox dashboard on desktop",
+    tag: "Customer Support",
+    title: "Shared WhatsApp Team Inbox",
+    desc: "One WhatsApp number the whole team works from — multi-agent assignment, group chats, full-text search, and an installable mobile PWA that back-fills any messages missed during a disconnection.",
+    meta: "Service Business",
+    roi: "Zero missed messages",
+    app: ["React", "Supabase", "Whapi"],
+    roiIcon: "check"
   }
 
 

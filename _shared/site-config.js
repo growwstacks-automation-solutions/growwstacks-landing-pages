@@ -394,6 +394,12 @@ logos: {
   gorgias:         'https://ik.imagekit.io/r2zdlyze2o/Logo/Gorgias.png?updatedAt=1784888229698',
   bigQuery:        'https://ik.imagekit.io/r2zdlyze2o/Logo/google-big-query.png',
   lookerStudio:    'https://ik.imagekit.io/r2zdlyze2o/Logo/data%20studio.png?updatedAt=1784888229705',
+
+  // ── Added: keys referenced by shared-whatsapp-team-inbox case study ──
+  react:           favicon('react.dev'),
+  cloudflarePages: favicon('pages.cloudflare.com'),
+  whapi:           favicon('whapi.cloud'),
+  webPush:         '', // TODO: add Web Push logo URL (no brand favicon renders acceptably; not surfaced on the page)
 },
 
   // ─── Stats (update here → updates everywhere) ─
