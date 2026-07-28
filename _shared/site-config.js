@@ -74,6 +74,7 @@ logos: {
 
   // ── AI & Voice ──
   openai:          favicon('openai.com'),
+  claude:          favicon('claude.ai'),
   vapi:            favicon('vapi.ai'),
   retell:          favicon('retellai.com'),
   perplexity:      favicon('perplexity.ai'),
