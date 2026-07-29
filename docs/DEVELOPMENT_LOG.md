@@ -18,6 +18,56 @@ project's memory: each entry should let a future session reconstruct *what* chan
 
 ---
 
+## 2026-07-29 — Hub filters: strict 1:1 badge ↔ category
+**Commit(s):** _unpushed — pending review_ · **Scope:** `case-studies/case-studies-cart.js`
+
+**What:** Rewrote the `category` field on 56 of 56 cards so each carries **exactly one**
+valid filter token, always equal to the badge printed on the card (`tag`). Also removed
+14 dead tokens that matched no filter pill (`automation`, `hospitality`, `analytics`,
+`construction`, `mep`, `document-ai`, `rfp`, `outreach`, `recruiting`,
+`customer-experience`, `data-pipeline`, `workforce`, `custom-app`, `bid-qualification`).
+
+**Why:** Cards badged "AI-Powered" or "E-Commerce" were appearing under the Operations
+filter. Root cause: `operations` had been used as a catch-all meaning "this is an
+automation" — true of nearly every case study — so **38 of 56 cards carried both
+`ai-powered` and `operations`**, and 41 of the 46 cards in the Operations filter showed
+a badge saying something else. The filter contradicted the card.
+
+**Effect on filter counts:**
+
+| Pill | Before | After |
+|---|---|---|
+| operations | 46 | 5 |
+| ai-powered | 46 | 36 |
+| social-marketing | 5 | 3 |
+| crm-sales | 5 | 4 |
+| ecommerce | 4 | 3 |
+| finance | 3 | 2 |
+| healthcare | 3 | 3 |
+| **All Projects** | 56 | 56 |
+
+Every card remains reachable — the seven filters now sum to exactly 56.
+
+**Decisions:**
+- `tag` is the source of truth: the badge a visitor sees is the category they find it
+  under. One card, one category.
+- **Shared WhatsApp Team Inbox** badge changed `Customer Support` → `CRM & Sales`.
+  "Customer Support" is not one of the seven pills, so as a badge it read as a category
+  that does not exist (the same defect just fixed on the tuition card).
+- Cards previously in two legitimate categories now appear in one only — e.g. the
+  tuition portal left Finance and kept Operations. This is the intended trade-off of a
+  strict 1:1 rule.
+
+**Left untouched (on purpose):** `tag`/`title`/`desc` on all other cards, the seven
+filter pills in `case-studies/index.html`, and the filter logic in `case-studies.js`
+(unchanged — it already did an exact token match).
+
+**Follow-ups:** `ai-powered` still holds 36 of 56 cards. Worth a future pass to split it
+by industry or use-case, since a filter holding 64% of the catalogue does little to help
+a visitor narrow down.
+
+---
+
 ## 2026-07-29 — New case study: Tuition Management Portal
 **Commit(s):** _unpushed — pending review_ · **Scope:**
 `case-studies/tutoring-business-admin-platform.html` (new), `_shared/site-config.js`,

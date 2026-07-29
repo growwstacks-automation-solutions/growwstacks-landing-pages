@@ -8,7 +8,7 @@ window.CS_CARDS = [
 
   /* ── 1 ── */
   {
-    category: "finance ai-powered",
+    category: "finance",
     href: "/case-studies/ai-finance-loan-automation.html",
     bannerClass: "csh-banner-slate",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Loan%20Application%20System.png",
@@ -24,7 +24,7 @@ window.CS_CARDS = [
 
   /* ── 2 ── */
   {
-    category: "ecommerce ai-powered social-marketing",
+    category: "ecommerce",
     href: "/case-studies/smart-lead-qualification-ai",
     bannerClass: "csh-banner-pink",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Smart%20Lead%20Qualification%20System%20(AI).png",
@@ -40,7 +40,7 @@ window.CS_CARDS = [
 
   /* ── 3 ── */
   {
-    category: "social-marketing ai-powered",
+    category: "social-marketing",
     href: "/case-studies/ai-multi-platform-content-publisher.html",
     bannerClass: "csh-banner-slate",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Multi-Platform%20Content%20Publisher.png",
@@ -56,7 +56,7 @@ window.CS_CARDS = [
 
   /* ── 4 ── */
   {
-    category: "crm-sales ai-powered",
+    category: "crm-sales",
     href: "/case-studies/LinkedIn-Auto-Comment-Reply-System.html",
     bannerClass: "csh-banner-blue",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/LinkedIn%20Auto-Comment%20Reply%20System.png",
@@ -72,7 +72,7 @@ window.CS_CARDS = [
 
   /* ── 5 ── */
   {
-    category: "ecommerce operations",
+    category: "ecommerce",
     href: "/case-studies/AI-Voice-Receptionist-Booking-System.html",
     bannerClass: "csh-banner-purple",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Voice%20Receptionist%20Booking%20System.png",
@@ -88,7 +88,7 @@ window.CS_CARDS = [
 
   /* ── 6 ── */
   {
-    category: "healthcare operations",
+    category: "healthcare",
     href: "/case-studies/AI-Translation-Bot-System.html",
     bannerClass: "csh-banner-teal",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Translation%20Bot.jpg",
@@ -104,7 +104,7 @@ window.CS_CARDS = [
 
   /* ── 7 ── */
   {
-    category: "finance operations",
+    category: "finance",
     href: "/case-studies/YouTube-Content-Marketing-Automation.html",
     bannerClass: "csh-banner-slate",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/YouTube%20Content%20Marketing%20Automation.png",
@@ -120,7 +120,7 @@ window.CS_CARDS = [
 
   /* ── 8 ── */
   {
-    category: "social-marketing ai-powered",
+    category: "social-marketing",
     href: "/case-studies/Pipedrive-Lead-Creation-Through-Mail-Data.html",
     bannerClass: "csh-banner-pink",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/pipe%20drive%20lead%20generation.jpg",
@@ -136,7 +136,7 @@ window.CS_CARDS = [
 
   /* ── 9 ── */
   {
-    category: "crm-sales social-marketing",
+    category: "crm-sales",
     href: "/case-studies/CRM-Lead-Sync&Email-Automation.html",
     bannerClass: "csh-banner-blue",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/CRM%20Lead%20Sync%20&%20Email%20Automation.png",
@@ -152,7 +152,7 @@ window.CS_CARDS = [
 
   /* ── 10 ── */
   {
-    category: "ecommerce ai-powered",
+    category: "ai-powered",
     href: "/case-studies/AI-Gratitude-Content-Automation.html",
     bannerClass: "csh-banner-emerald",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Gratitude%20Content%20Automation.png",
@@ -168,7 +168,7 @@ window.CS_CARDS = [
 
   /* ── 11 ── */
   {
-    category: "healthcare ai-powered",
+    category: "healthcare",
     href: "/case-studies/AI-Visual-Content-Analysis-System.html",
     bannerClass: "csh-banner-orange",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Visual%20Content%20Analysis%20System.png",
@@ -184,7 +184,7 @@ window.CS_CARDS = [
 
   /* ── 12 ── */
   {
-    category: "crm-sales operations",
+    category: "crm-sales",
     href: "/case-studies/AI-Transcription%26Document-Processor.html",
     bannerClass: "csh-banner-blue",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Transcription%20Document%20Processor.png",
@@ -200,7 +200,7 @@ window.CS_CARDS = [
 
   /* ── 13 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Sales-Follow-Up-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Sales%20Follow-Up%20Automation.png",
@@ -216,7 +216,7 @@ window.CS_CARDS = [
 
   /* ── 14 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Linkedin-profile-scraper-crm-enrichment.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/LinkedIn%20Profile%20Scraper%20&%20CRM%20Enrichment.png",
@@ -232,7 +232,7 @@ window.CS_CARDS = [
 
   /* ── 15 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/30-Days-Social-Content-Generator.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/30-Days%20Social%20Content%20Generator.png",
@@ -248,7 +248,7 @@ window.CS_CARDS = [
 
   /* ── 16 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Content-Workflow-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Content%20Workflow%20Automation.png",
@@ -264,7 +264,7 @@ window.CS_CARDS = [
 
   /* ── 17 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Email-Assistant-Pro.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Ai%20email%20assitant%20pro.jpg",
@@ -280,7 +280,7 @@ window.CS_CARDS = [
 
   /* ── 18 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Bulk-AI-Content-Processing-Pipeline.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Bulk%20AI%20Content%20Processing%20Pipeline.png",
@@ -296,7 +296,7 @@ window.CS_CARDS = [
 
   /* ── 19 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/bigcommerce-airtable-data-sync.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/BigCommerce%20Airtable%20Data%20Sync.png",
@@ -312,7 +312,7 @@ window.CS_CARDS = [
 
   /* ── 20 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/QuickBooks-to-Airtable-Financial-Sync.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/QuickBooks%20to%20Airtable%20Financial%20Sync.png",
@@ -328,7 +328,7 @@ window.CS_CARDS = [
 
   /* ── 21 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-News-Assistant-System.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20News%20Assistant%20System.png",
@@ -344,7 +344,7 @@ window.CS_CARDS = [
 
   /* ── 22 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-SEO-Content-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop",
@@ -360,7 +360,7 @@ window.CS_CARDS = [
 
   /* ── 23 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Real-Estate-Agent.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Real%20Estate%20Agent.png",
@@ -376,7 +376,7 @@ window.CS_CARDS = [
 
   /* ── 24 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Microsoft-Power-Apps-Smart-Service-Request-Management-System.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Microsoft%20Power%20Apps%20Smart%20Service%20Request%20Management%20System.png?updatedAt=1769493617486",
@@ -392,7 +392,7 @@ window.CS_CARDS = [
 
   /* ── 25 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Personalized-Outreach-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Personalized%20Outreach%20Automation.png?updatedAt=1769493621071",
@@ -408,7 +408,7 @@ window.CS_CARDS = [
 
   /* ── 26 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Invoice-Email-Automation-System.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Invoice%20Email%20Automation%20System.png",
@@ -424,7 +424,7 @@ window.CS_CARDS = [
 
   /* ── 27 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-WordPress-Blog-Publisher.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20WordPress%20Blog%20Publisher.png",
@@ -440,7 +440,7 @@ window.CS_CARDS = [
 
   /* ── 28 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Software-subscription-renewal-automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Software%20Subscription%20Renewal%20Automation.png?updatedAt=1769493621196",
@@ -456,7 +456,7 @@ window.CS_CARDS = [
 
   /* ── 29 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Powered-Outlook-Reply-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI-Powered%20Outlook%20Reply%20Automation.png",
@@ -472,7 +472,7 @@ window.CS_CARDS = [
 
   /* ── 30 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/YouTube-Video-Summarizer-with-Audio.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/YouTube%20Video%20Summarizer%20with%20Audio.png",
@@ -488,7 +488,7 @@ window.CS_CARDS = [
 
   /* ── 31 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-WhatsApp-Customer-Support-Bot.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20WhatsApp%20Customer%20Support%20Bot.png",
@@ -504,7 +504,7 @@ window.CS_CARDS = [
 
   /* ── 32 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Intelligent-Telegram-Image-Processing%26Analysis-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Intelligent%20Telegram%20Image%20Processing%20&%20Analysis%20Automation.png",
@@ -520,7 +520,7 @@ window.CS_CARDS = [
 
   /* ── 33 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Advanced-Googl-Apps-Script-Task-Management-with-WhatsApp-Integration.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Advanced%20Google%20Apps%20Script%20Task%20Management%20with%20WhatsApp%20Integration.png",
@@ -536,7 +536,7 @@ window.CS_CARDS = [
 
   /* ── 34 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Bulk-PayPal-Payout-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Bulk%20PayPal%20Payout%20Automation.png",
@@ -552,7 +552,7 @@ window.CS_CARDS = [
 
   /* ── 35 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Automated-Job-Scraping-System.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Automatic%20job%20Scrapping.png",
@@ -568,7 +568,7 @@ window.CS_CARDS = [
 
   /* ── 36 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Bulk-YouTube-Shorts-Uploader.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Bulk%20YouTube%20Shorts%20Uploader.png",
@@ -584,7 +584,7 @@ window.CS_CARDS = [
 
   /* ── 37 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/LinkedIn-Prospect-Outreach-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/LinkedIn%20Prospect%20Outreach%20Automation.png",
@@ -600,7 +600,7 @@ window.CS_CARDS = [
 
   /* ── 38 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-WhatsApp-Business-Chatbot.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20WhatsApp%20Business%20Chatbot.png",
@@ -616,7 +616,7 @@ window.CS_CARDS = [
 
   /* ── 39 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Social-Media-Auto-Posting.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Social%20Media%20Auto-Posting.png",
@@ -632,7 +632,7 @@ window.CS_CARDS = [
 
   /* ── 40 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/SMS-Drip-Campaign-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/SMS%20Drip%20Campaign%20Automation.png?updatedAt=1768999816768",
@@ -648,7 +648,7 @@ window.CS_CARDS = [
 
   /* ── 41 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Social-Media-Content-Generator.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI%20Social%20Media%20Content%20Generator.png",
@@ -664,7 +664,7 @@ window.CS_CARDS = [
 
   /* ── 42 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Bulk-Email-Attachment-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Bulk%20Email%20Attachment%20Automation.png",
@@ -680,7 +680,7 @@ window.CS_CARDS = [
 
   /* ── 43 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/ManyChat-Community-Rewards-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/ManyChat%20Community%20Rewards%20Automation.png?updatedAt=1768999816856",
@@ -696,7 +696,7 @@ window.CS_CARDS = [
 
   /* ── 44 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/Smart-Lead-Call-Automation.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Smart%20Lead%20Call%20Automation.png?updatedAt=1769493615779",
@@ -712,7 +712,7 @@ window.CS_CARDS = [
 
   /* ── 45 ── */
   {
-    category: "ai-powered operations",
+    category: "ai-powered",
     href: "/case-studies/AI-Enhanced-Google-Ads-Lead-Automation-System.html",
     bannerClass: "csh-banner-indigo",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI-Enhanced%20Google%20Ads%20Lead%20Automation%20System.png?updatedAt=1769493618552",
@@ -728,7 +728,7 @@ window.CS_CARDS = [
 
   /* ── 46 ── */
   {
-    category: "operations ai-powered",
+    category: "operations",
     href: "/case-studies/track-shipment-via-terminal-49.html",
     bannerClass: "csh-banner-teal",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Terminal_49.jpeg",
@@ -744,7 +744,7 @@ window.CS_CARDS = [
 
   /* ── 47 ── */
   {
-    category: "operations ai-powered",
+    category: "operations",
     href: "/case-studies/google-review-automation.html",
     bannerClass: "csh-banner-blue",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Google_Review_Automation.jpeg",
@@ -757,7 +757,7 @@ window.CS_CARDS = [
     app: ["make", "Google Business Profile", "Google Sheets"],
     roiIcon: "clock"
   },  {
-    category: "operations ai-powered customer-experience",
+    category: "ai-powered",
     href: "/case-studies/ai-call-quality-assurance-compliance-automation.html",
     bannerClass: "csh-banner-slate",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Hospitality%20Call%20QA%20Automation",
@@ -771,7 +771,7 @@ window.CS_CARDS = [
     roiIcon: "clock"
   },
     {
-    category: "operations hospitality customer-experience",
+    category: "operations",
     href: "/case-studies/nfc-guest-access-automation.html",
     bannerClass: "csh-banner-blue",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/nfc-guest-verification-event-access.jpeg",
@@ -784,7 +784,7 @@ window.CS_CARDS = [
     app: ["Airtable", "NFC Tools", "Custom Web App", "Email"],
     roiIcon: "check"
   } , {
-    category: "social-marketing ai-powered",
+    category: "social-marketing",
     href: "/case-studies/ai-social-media-content-engine.html",
     bannerClass: "csh-banner-purple",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/AI_Social_Media_Content_Engine",
@@ -797,7 +797,7 @@ window.CS_CARDS = [
     app: ["n8n", "gemini", "googleSlide", "instagram", "linkedin", "facebook"],
     roiIcon: "clock"
   },{
-    category: "operations ai-powered workforce custom-app hospitality automation",
+    category: "operations",
     href: "/case-studies/cleaning-workforce-custom-app-migration.html",
     bannerClass: "csh-banner-blue",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/cleaning-workforce-custom-app-migration?updatedAt=1784530337441",
@@ -811,7 +811,7 @@ window.CS_CARDS = [
     roiIcon: "check"
   },
   {
-    category: "ai-powered operations construction mep bid-qualification document-ai rfp automation",
+    category: "ai-powered",
     href: "/case-studies/ai-bid-qualification-construction-mep.html",
     bannerClass: "csh-banner-green",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/ai-bid-qualification-construction-mep?updatedAt=1784636201606",
@@ -825,7 +825,7 @@ window.CS_CARDS = [
     roiIcon: "check"
   },
     {
-    category: "healthcare outreach recruiting crm-sales automation",
+    category: "healthcare",
     href: "/case-studies/home-care-referral-recruiting-engine.html",
     bannerClass: "csh-banner-purple",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/home-care-referral-recruiting-engine",
@@ -839,7 +839,7 @@ window.CS_CARDS = [
     roiIcon: "check"
   },
   {
-    category: "ecommerce operations analytics data-pipeline automation",
+    category: "ecommerce",
     href: "/case-studies/multi-channel-agent-performance-analytics.html",
     bannerClass: "csh-banner-teal",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/multi-channel-agent-performance-analytics",
@@ -855,12 +855,12 @@ window.CS_CARDS = [
 
   /* ── 53 ── */
   {
-    category: "operations crm-sales",
+    category: "crm-sales",
     href: "/case-studies/shared-whatsapp-team-inbox.html",
     bannerClass: "csh-banner-green",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/Hero_Shared_WhatsApp_Inbox.png",
     imgAlt: "Shared WhatsApp team inbox dashboard on desktop",
-    tag: "Customer Support",
+    tag: "CRM &amp; Sales",
     title: "Shared WhatsApp Team Inbox",
     desc: "One WhatsApp number the whole team works from — multi-agent assignment, group chats, full-text search, and an installable mobile PWA that back-fills any messages missed during a disconnection.",
     meta: "Service Business",
@@ -871,7 +871,7 @@ window.CS_CARDS = [
 
   /* ── 54 ── */
   {
-    category: "operations finance",
+    category: "operations",
     href: "/case-studies/tutoring-business-admin-platform.html",
     bannerClass: "csh-banner-purple",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/tutoring-business-admin-platform",
