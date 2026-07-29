@@ -32,6 +32,12 @@ refined system; the rest uses the original. This is intentional and stable.
 ## Next actions (prioritized)
 
 ### P0 — In flight (this session, unpushed)
+- [ ] **Tuition Management Portal case study — blur the screenshots before publish.**
+      `02_Schedule_Management_Calendar.png` shows an unblurred tutor name in "Available
+      Slots", and `01`, `03`, `04` show unblurred revenue / tutor-pay / parent-bill
+      figures. Page prose, alt text, captions, and schema are already clean; only the
+      images carry identifying data. (Sidebar duration resolved to 7 weeks — no TODO
+      markers remain on the page.)
 - [ ] **Register the WebMCP origin trial** for `growwstacks.com` (Chrome Origin
       Trials console) and paste the token into `_headers` (uncomment the two
       placeholder lines). Without it, the WebMCP tools stay inactive in production.
@@ -88,6 +94,13 @@ refined system; the rest uses the original. This is intentional and stable.
 - `global.css` still carries styles for components that may have been superseded by
   scoped blocks (e.g. legacy `.partners`/`.partner-badge`). Dead but harmless; prune
   only as part of a deliberate cleanup pass.
+- **Broken-but-tolerated case-study includes.** `_shared/case-studies.css` is referenced
+  by 311 case-study pages but **does not exist in the repo**; all `cs-*` styles actually
+  live in `global.css`. Likewise `../case-studies.js` resolves one level above the file's
+  real location (`case-studies/case-studies.js`), and the FAQ/video handlers it provides
+  are also bound by `page-builder.js`. Both requests return 200 in production, so nothing
+  is visibly broken — new pages replicate the includes for consistency. Worth one
+  deliberate pass to either add the file or strip the references site-wide.
 
 ---
 

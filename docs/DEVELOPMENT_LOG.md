@@ -18,6 +18,65 @@ project's memory: each entry should let a future session reconstruct *what* chan
 
 ---
 
+## 2026-07-29 — New case study: Tuition Management Portal
+**Commit(s):** _unpushed — pending review_ · **Scope:**
+`case-studies/tutoring-business-admin-platform.html` (new), `_shared/site-config.js`,
+`case-studies/case-studies-cart.js`, `sitemap/sitemap-case-studies.xml`
+**What:** Added a flat-file case study for a custom full-stack tuition management portal
+built for an anonymised UK tuition centre (React + Node/Express + PostgreSQL on Neon,
+n8n self-hosted on a VPS, QuickBooks Online invoicing, Microsoft 365 email). Mirrors
+`shared-whatsapp-team-inbox.html` structurally: `cs-hero`, `cs-results`,
+`cs-content`/`cs-sidebar`, five `cs-img-block` figures, `cs-highlight`, `cs-visual-flow`
+(5 steps + 2 outcome chips), 6-item `faq`, `cs-bottom-cta`, plus all three JSON-LD blocks
+(Article, BreadcrumbList, FAQPage) with the FAQ schema matching the rendered accordion
+word for word. Registered the hub card as entry 54 in `case-studies-cart.js` and added
+both this page and the previously-missed `shared-whatsapp-team-inbox` to the sitemap.
+
+**Why:** Publish the tuition-portal build as a case study, targeting "tuition management
+portal" as primary keyword.
+
+**Decisions:**
+- **Logo keys — audited rather than trusted.** The brief listed `react`, `express`,
+  `postgresql`, `neon`, `microsoft365` as missing; in fact only `neon` was. `react`
+  (added by the shared-whatsapp build) and `postgresql` already existed, and Express is
+  keyed **`expressjs`**, not `express`. Only `neon` and a `microsoft365` alias (→ same
+  source as the existing `microsoft`) were added — no duplicate keys, and **no blank
+  pills**: all 8 hero/sidebar pills resolve to a real logo URL.
+- `csh-banner-purple` for the hub card instead of the brief's suggested
+  `csh-banner-indigo`, which is already used 33× in the file.
+- Category tokens `operations finance` — both valid filter tokens.
+- Prose trimmed to 1,789 words to hit the 1,400–1,800 target; primary keyword seeded in
+  H1, title, meta description, an H2, the first 100 words, and 3 image alts.
+- Sidebar **Duration = 7 weeks** (supplied by the user; the page briefly carried a
+  `TODO_DURATION` placeholder, now resolved — no TODO markers remain on this page).
+- **Sidebar kept on the shared styling, not overridden.** The page initially copied the
+  `.cs-sidebar-row/label/value` override block from `shared-whatsapp-team-inbox.html`
+  (`align-items:flex-start`, `max-width:42%`), which exists only because that page's
+  values wrap. Root cause was sentence-length values ("Live revenue and expenditure from
+  QuickBooks"). Fixed at the source: values shortened to a word or figure so `global.css`
+  renders single-line rows with hairline dividers and centred label/value, matching the
+  rest of the site. Override block deleted; ROI now uses the existing
+  `.cs-sidebar-value.accent` class instead of an inline `style`. Key Metrics reworded to
+  scannable pairs (`Manual processes −100%`, `Roles supported 4`).
+
+**Left untouched (on purpose):** The form/webhook, shared components, and `global.css`.
+The `../_shared/case-studies.css` and `../case-studies.js` includes were replicated
+verbatim from the reference page even though neither resolves on disk from
+`case-studies/` (see Follow-ups) — deviating would have made this page inconsistent with
+the other 55.
+
+**Follow-ups (mirrored to ROADMAP):**
+- **Screenshots need blurring before publish** — `02_Schedule_Management_Calendar.png`
+  shows an unblurred tutor name in "Available Slots"; `01`, `03`, and `04` show
+  unblurred revenue/pay/bill figures. Prose, alts, captions, and schema are already
+  clean; the images are not.
+- Site-wide: `_shared/case-studies.css` does not exist in the repo yet is referenced by
+  311 case-study pages, and `../case-studies.js` resolves one level above the file's
+  actual location. Both currently return 200 in production, so this is latent, not
+  broken — worth a dedicated cleanup pass.
+
+---
+
 ## 2026-07-24 — New case study: Multi-Channel Agent Performance Analytics
 **Commit(s):** _unpushed — pending review_ · **Scope:**
 `case-studies/multi-channel-agent-performance-analytics/index.html` (new),

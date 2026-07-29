@@ -401,6 +401,11 @@ logos: {
   cloudflarePages: favicon('pages.cloudflare.com'),
   whapi:           favicon('whapi.cloud'),
   webPush:         '', // TODO: add Web Push logo URL (no brand favicon renders acceptably; not surfaced on the page)
+
+  // ── Added: keys referenced by tutoring-business-admin-platform case study ──
+  // react / postgresql / nodejs / expressjs / n8n / quickbooks / microsoft already exist above — reused, not duplicated.
+  neon:            favicon('neon.tech'),
+  microsoft365:    favicon('microsoft.com'), // alias → same source as `microsoft`
 },
 
   // ─── Stats (update here → updates everywhere) ─

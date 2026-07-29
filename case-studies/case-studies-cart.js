@@ -867,6 +867,22 @@ window.CS_CARDS = [
     roi: "Zero missed messages",
     app: ["React", "Supabase", "Whapi"],
     roiIcon: "check"
+  },
+
+  /* ── 54 ── */
+  {
+    category: "operations finance",
+    href: "/case-studies/tutoring-business-admin-platform.html",
+    bannerClass: "csh-banner-purple",
+    img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/tutoring-business-admin-platform",
+    imgAlt: "Tuition management portal admin dashboard",
+    tag: "Education",
+    title: "Tuition Management Portal",
+    desc: "A custom full-stack portal for a UK tuition centre — role-based access for admins, tutors and parents, auto-decrementing session counts, and QuickBooks-automated invoicing that raises and sends itself when sessions reset.",
+    meta: "Education / Tutoring",
+    roi: "Runs itself",
+    app: ["React", "Node.js", "n8n"],
+    roiIcon: "check"
   }
 
 

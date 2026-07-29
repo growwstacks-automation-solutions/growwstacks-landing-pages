@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/analytics-loader.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO Meta ═══ -->
+  <title>Tuition Management Portal — Custom Case Study | GrowwStacks</title>
+  <meta name="description" content="A custom full-stack tuition management portal for a UK tutoring centre: role-based access, auto-decrementing sessions, and QuickBooks-automated invoicing.">
+  <link rel="canonical" href="https://growwstacks.com/case-studies/tutoring-business-admin-platform/">
+
+  <!-- ═══ Open Graph ═══ -->
+  <meta property="og:title" content="Tuition Management Portal — GrowwStacks Case Study">
+  <meta property="og:description" content="A custom full-stack tuition management portal for a UK tutoring centre — role-based access for admins, tutors and parents, auto-decrementing sessions, and invoicing that raises itself in QuickBooks.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://growwstacks.com/case-studies/tutoring-business-admin-platform/">
+  <meta property="og:site_name" content="GrowwStacks">
+  <meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/01_Admin_Overview_Dashboard.png?tr=w-800,q-80,f-auto">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tuition Management Portal">
+  <meta name="twitter:description" content="One portal for a UK tuition centre — admins, tutors, parents and staff each get their own view, session counts decrement themselves, and QuickBooks invoices send automatically.">
+  <meta name="twitter:image" content="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/01_Admin_Overview_Dashboard.png?tr=w-800,q-80,f-auto">
+
+  <!-- ═══ Favicon ═══ -->
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+
+  <!-- ═══ Google Ads Tag ═══ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+
+  <!-- ═══ Resource Preconnects ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ik.imagekit.io">
+
+  <!-- ═══ Fonts ═══ -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+  <!-- ═══ Stylesheets ═══ -->
+  <link rel="stylesheet" href="../_shared/global.css">
+  <link rel="stylesheet" href="../_shared/case-studies.css">
+
+  <!-- Style overrides to prevent visual flow diagram wrapping on desktop -->
+  <style>
+    @media (min-width: 769px) {
+      .cs-flow-pipeline {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        gap: 4px !important;
+        padding: 2rem 0 !important;
+      }
+      .cs-flow-step {
+        min-width: 90px !important;
+        max-width: 130px !important;
+        padding: 0.6rem 0.4rem !important;
+      }
+      .cs-flow-connector {
+        padding: 0 2px !important;
+        font-size: 0.95rem !important;
+      }
+      .cs-flow-outcome {
+        min-width: 90px !important;
+        padding: 0.4rem !important;
+        font-size: 0.68rem !important;
+      }
+    }
+
+    /* Landscape screenshot: constrain height so the layout stays compact on desktop. */
+    .cs-img-block img {
+      max-height: 460px;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+      border-radius: var(--radius-lg, 12px);
+    }
+    @media (max-width: 768px) {
+      .cs-img-block img {
+        max-height: 380px;
+      }
+    }
+
+    /* Sidebar rows intentionally have NO overrides here — values are kept short
+       (a word or figure, not a sentence) so the shared `.cs-sidebar-row` styling
+       in global.css works as designed: single-line rows, hairline dividers, and
+       label/value vertically centred. Adding flex-start/max-width overrides here
+       only becomes necessary when values wrap, so keep values terse instead. */
+  </style>
+
+  <!-- ═══ Page Tools ═══ -->
+  <meta name="page-tools" content="react,nodejs,postgresql,n8n,quickbooks">
+
+  <!-- ═══ JSON-LD: Article ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"A Full-Stack Tuition Management Portal for a UK Tutoring Centre","description":"A custom full-stack tuition management portal for a UK tutoring centre: role-based access, auto-decrementing sessions, and QuickBooks-automated invoicing.","image":"https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/01_Admin_Overview_Dashboard.png?tr=w-800,q-80,f-auto","datePublished":"2026-07-29","dateModified":"2026-07-29","author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"publisher":{"@type":"Organization","name":"GrowwStacks","logo":{"@type":"ImageObject","url":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://growwstacks.com/case-studies/tutoring-business-admin-platform/"}}</script>
+
+  <!-- ═══ JSON-LD: BreadcrumbList ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/"},{"@type":"ListItem","position":3,"name":"Tuition Management Portal","item":"https://growwstacks.com/case-studies/tutoring-business-admin-platform/"}]}</script>
+
+  <!-- ═══ JSON-LD: FAQPage ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does role-based access work across admin, tutor, parent, and staff?","acceptedAnswer":{"@type":"Answer","text":"Everyone logs into the same portal, and the view changes based on the role signing in. Admins get the full picture — students, tutors, scheduling, timesheets, invoicing, and the financial overview. Tutors see their own timesheets and earnings, their allocated students, their calendar, and any change requests. Parents see invoices, scheduled and historical sessions, remaining balances across each of their children, messaging, and shared documents. Additional staff such as exam setters and markers are added with their own roles and rates. There is one system to maintain rather than four, and nobody sees more than their role should."}},{"@type":"Question","name":"How do invoices get raised automatically?","acceptedAnswer":{"@type":"Answer","text":"Billing is tied to sessions rather than to a calendar reminder. Every student record carries a count of sessions booked, and when a tutor logs a session that count drops by one. The moment it reaches zero, the portal fires a webhook into n8n, which raises an advance invoice in QuickBooks Online for the next block of sessions and emails it to the registered parent. Nobody has to notice that a student is due to top up, and no revenue is lost to an invoice somebody forgot to send."}},{"@type":"Question","name":"How does the QuickBooks integration keep the books in sync?","acceptedAnswer":{"@type":"Answer","text":"QuickBooks Online is integrated on the backend rather than exported to periodically. Invoices are created directly in QuickBooks as customer records and invoices, so the accounting system is the origin of the invoice, not a copy of it. The figures on the admin dashboard — revenue, outstanding parent invoices, weekly outgoings, and monthly income and expenditure — are pulled live from that same QuickBooks data. Because both sides read from one source, the portal and the books cannot drift apart."}},{"@type":"Question","name":"What happens when an admin adjusts a student's session count?","acceptedAnswer":{"@type":"Answer","text":"The portal asks rather than assumes. Changing a session count presents a clear choice: raise an invoice for this change, or treat it as a general edit with no invoice. That distinction matters, because adding sessions a parent has agreed to pay for and correcting a mistyped number are the same action mechanically but opposite commercially. Putting the decision in front of the admin at the moment of the edit means automated billing never fires on a correction."}},{"@type":"Question","name":"Can parents who pay by cash skip the automated invoice?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each student is set to either QuickBooks invoicing or cash. Selecting cash suppresses the emailed invoice, so families who settle in person are not sent a payment request they do not need, while the session tracking and records continue exactly as normal. Admins also set the parent rate per student and can enable recurring invoices for parents on a fixed weekly schedule instead of session-triggered billing."}},{"@type":"Question","name":"Where are the data and automations hosted?","acceptedAnswer":{"@type":"Answer","text":"The frontend is a React application, with Node.js and Express serving the backend and PostgreSQL hosted on Neon as the database. Email runs through Microsoft 365. All automation and integration work is handled by n8n, self-hosted on a VPS, and every invoice, notification, QuickBooks sync, and outbound email is triggered through webhooks from the portal into those workflows."}}]}</script>
+</head>
+
+<body class="cs-page page-tuition-portal">
+
+  <!-- ═══ NAVBAR ═══ -->
+  <div id="gs-navbar"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO                                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="cs-hero">
+      <div class="cs-hero-bg">
+        <div class="cs-hero-bg-shape1"></div>
+        <div class="cs-hero-bg-shape2"></div>
+      </div>
+
+      <div class="container cs-hero-inner">
+
+        <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true">/</span>
+          <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+          <span>Tuition Management Portal</span>
+        </nav>
+
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Education</span>
+          <span class="cs-tag">Custom App</span>
+          <span class="cs-tag">Full-Stack</span>
+          <span class="cs-tag">Automation</span>
+          <span class="cs-tag">Invoicing</span>
+        </div>
+
+        <h1>A Full-Stack Tuition Management Portal for a UK Tutoring Centre</h1>
+        <p class="cs-hero-sub">GrowwStacks built a custom tuition management portal that runs an entire tutoring centre from one place — admins, tutors, parents, and support staff each sign into the same system and get their own view of it. Session counts decrement themselves as tutors log lessons, invoices raise and send themselves in QuickBooks when a student's sessions run out, and the financial picture stays live because it is read straight from the accounting system rather than re-typed into a spreadsheet.</p>
+
+        <div class="cs-hero-logos">
+          <div class="cs-hero-logo">
+            <img data-logo="react" alt="React" width="20" height="20" loading="lazy">
+            React
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="nodejs" alt="Node.js" width="20" height="20" loading="lazy">
+            Node.js
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="expressjs" alt="Express" width="20" height="20" loading="lazy">
+            Express
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="postgresql" alt="PostgreSQL" width="20" height="20" loading="lazy">
+            PostgreSQL
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="neon" alt="Neon" width="20" height="20" loading="lazy">
+            Neon
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="microsoft365" alt="Microsoft 365" width="20" height="20" loading="lazy">
+            Microsoft 365
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="n8n" alt="n8n" width="20" height="20" loading="lazy">
+            n8n
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="quickbooks" alt="QuickBooks" width="20" height="20" loading="lazy">
+            QuickBooks
+          </div>
+        </div>
+
+        <div class="process-content">
+          <div class="process-video">
+            <div class="yt-facade" data-video-id="kHX7-3B8CaQ" role="button" tabindex="0" aria-label="Play video: Tuition Management Portal Demo" style="border-radius: var(--radius-lg); aspect-ratio: 16/9; width: 100%; position:relative; overflow:hidden; cursor:pointer;">
+              <picture>
+                <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/kHX7-3B8CaQ/maxresdefault.webp">
+                <img alt="Tuition Management Portal Demo" loading="lazy" width="480" height="360" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);" src="https://i.ytimg.com/vi/kHX7-3B8CaQ/maxresdefault.jpg">
+              </picture>
+              <div class="yt-facade-play" aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;">
+                <svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.5 7.7s-.7-4.7-2.8-6.8C60.7-2.1 57.5-2.2 56-2.4 46.6-3 34-3 34-3h0S21.4-3 12-2.4C10.4-2.2 7.3-2.1 4.3 1S.7 7.7.7 7.7 0 13.2 0 18.8v5.2c0 5.5.7 11 .7 11s.7 4.7 2.8 6.8c3 3.1 6.9 3 8.7 3.3C18.5 45.6 34 45.8 34 45.8s12.6 0 22-0.6c1.6-0.2 4.7-0.3 7.7-3.4 2.1-2.1 2.8-6.8 2.8-6.8s.7-5.5.7-11v-5.2c0-5.6-.7-11.1-.7-11.1z" fill="#FF0000"/><path d="M27 33V14l18 9.5z" fill="#FFF"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ KEY RESULTS ═══ -->
+    <section class="cs-results">
+      <div class="container">
+        <div class="cs-results-grid">
+          <div class="cs-result-item">
+            <div class="cs-result-num">4</div>
+            <div class="cs-result-label">Roles in one portal — admin, tutor, parent, staff</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">Auto</div>
+            <div class="cs-result-label">Invoices raised in QuickBooks when sessions reset</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">0</div>
+            <div class="cs-result-label">Spreadsheets, paper logs, or manual invoicing</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">Live</div>
+            <div class="cs-result-label">Revenue and expenditure synced from QuickBooks</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTENT + SIDEBAR ═══ -->
+    <section class="cs-content">
+      <div class="container">
+        <div class="cs-content-inner">
+
+          <!-- ARTICLE -->
+          <article class="cs-article">
+
+            <!-- SECTION 1: The Problem -->
+            <h2>The Problem — A Centre Run Entirely by Hand</h2>
+            <p>Before it had a tuition management portal, a UK tuition centre was running every part of its operation by hand. Student records lived in spreadsheets. Invoices were written and sent one at a time. Tutors logged their sessions on paper and handed them in. And parents — who simply wanted to know how many sessions their child had left, whether an invoice had been paid, or when the next lesson was — had no way to find out except by asking, which meant somebody had to stop what they were doing and go and look it up.</p>
+            <p>None of these were unusual problems alone. What made them serious was that nothing connected: the spreadsheet did not know what the paper timesheets said, and the invoices did not know what the spreadsheet said. There was no single source of truth about a student, only partial ones reconciled by a person who remembered how they fit together — so every new student and tutor added coordination work rather than being absorbed by a system.</p>
+            <p>That is operational debt that scales badly, and the failure mode is quiet: an invoice that never went out, a session logged twice, a top-up nobody noticed was due. What the client needed was not a better spreadsheet, but one centralised system handling students, tutors, scheduling, and billing together, doing the repetitive parts automatically.</p>
+
+            <!-- SECTION 2: The Solution -->
+            <h2>The Solution — A Custom Multi-Role Tuition Management Portal</h2>
+            <p>GrowwStacks built a fully custom, full-stack <strong>tuition management portal</strong> — not a template or a no-code tool bent into an unfamiliar shape, but a purpose-built application designed around how this centre actually operates. Admins, tutors, parents, and additional staff all sign into the same portal, and the interface changes automatically based on the role signing in. One system, one login, four genuinely different experiences.</p>
+            <p>That single decision is what makes the rest work. Because everyone is inside the same system rather than emailing each other about it, the data only ever exists once. When a tutor logs a session, that is not a note somebody later transcribes into a spreadsheet — it is the event that decrements the student's remaining sessions, populates the tutor's timesheet, and, when the count runs out, triggers the invoice. The same discipline shaped the <a href="/case-studies/cleaning-workforce-custom-app-migration.html">custom web app that replaced a no-code workforce stack</a>: build the tool around the real workflow, and manual reconciliation stops existing.</p>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/01_Admin_Overview_Dashboard.png?tr=w-800,q-80,f-auto"
+                   alt="Tuition management portal admin dashboard with cards for revenue, active students, active tutors, outstanding invoices, and monthly income and expenditure"
+                   width="800" height="457">
+              <div class="cs-img-caption">The admin overview — revenue, active students and tutors, outstanding invoices, and monthly income and expenditure, all pulled live from QuickBooks Online rather than re-entered by hand.</div>
+            </div>
+
+            <!-- SECTION 3: Admin Dashboard -->
+            <h2>The Admin Dashboard — the Whole Business at a Glance</h2>
+            <p>The admin lands on a single overview of the centre: revenue, active students and tutors, outstanding parent invoices, weekly outgoings, and monthly income and expenditure. It is the view an owner wants on a Monday morning — not a report to be assembled, but a state to be glanced at.</p>
+            <p>The part that matters is where those numbers come from. They are not typed in, and they are not a periodic export that was accurate only at the moment somebody ran it. QuickBooks Online is integrated directly on the backend and the dashboard reads from it live, so the portal and the accounting system are structurally incapable of disagreeing — there is no reconciliation step because there are not two sets of figures to reconcile.</p>
+
+            <!-- SECTION 4: Student Management -->
+            <h2>Student Management and Auto-Decrementing Sessions</h2>
+            <p>Each student record holds what the centre needs to teach and bill them: subjects, exam type and level, class type (individual or group), the linked parent, contact details, sessions booked, and the tutor rate. Parents with more than one child link to a single parent account, so a family is one relationship with several students under it rather than disconnected records that happen to share a surname.</p>
+            <p>The session count drives everything downstream. When a tutor logs a session the student's remaining count drops automatically, and when it reaches zero it triggers billing. Nobody maintains that number by hand, which means it cannot be forgotten, double-counted, or updated late.</p>
+            <p>Admins keep the commercial controls: they set the parent rate per student, choose QuickBooks invoicing or cash — cash suppresses the emailed invoice for families who settle in person — and can enable recurring invoices for parents who prefer a fixed weekly schedule to session-triggered billing. The automation handles the default path; the admin decides what the default is for each family.</p>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/03_Student_Management.png?tr=w-800,q-80,f-auto"
+                   alt="Student profile in the tuition management portal showing subjects, exam type, class type, sessions booked, tutor rate, and invoice status"
+                   width="800" height="457" loading="lazy">
+              <div class="cs-img-caption">The student record — subjects, class type, sessions booked and remaining, tutor rate, and invoice status in one place. When a tutor logs a session, the remaining count updates automatically.</div>
+            </div>
+
+            <!-- SECTION 5: Invoicing -->
+            <h2>The Automated Invoicing Engine</h2>
+            <p>This is the core of the system, and the piece that removed the most manual work. When a student's remaining sessions reach zero, an advance invoice for the next block is generated in QuickBooks and emailed to the registered parent automatically. The trigger is not a date or a reminder but the actual exhaustion of the thing the parent paid for — the only moment at which the invoice is genuinely due.</p>
+            <p>Edge cases stay under human control, which is what stops the automation becoming a liability. When an admin adjusts a session count, the portal presents an explicit choice: raise an invoice for this change, or treat it as a general edit with no invoice. Mechanically those are the same action; commercially they are opposites, so asking at the moment of the edit means a correction never fires a bill.</p>
+            <p>Ad-hoc invoices cover everything outside the standard cycle: a one-off lesson, or physical products like manuals and workbooks drawn from a built-in inventory. The automation handles the repetitive majority while the manual path stays available for exceptions.</p>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/05_Invoice_Generation_Workflow.png?tr=w-800,q-80,f-auto"
+                   alt="Automated invoicing workflow for tutors triggered by a webhook, branching through conditions to create a customer and invoice in QuickBooks and send emails to parents and admin"
+                   width="800" height="393" loading="lazy">
+              <div class="cs-img-caption">The invoice automation — a webhook fires when sessions reset, branches on whether an invoice is needed, creates the customer and invoice in QuickBooks, and emails the parent and admin automatically.</div>
+            </div>
+
+            <div class="cs-highlight">
+              <p>💡 <strong>The invoice nobody has to remember</strong> — Billing is tied to the thing that actually happens: a tutor logging a session. When the booked sessions run out, the next invoice raises and sends itself. No one watches a spreadsheet for who is due to top up, and no revenue slips because an invoice was forgotten.</p>
+            </div>
+
+            <!-- SECTION 6: Scheduling -->
+            <h2>Scheduling and Recurring Sessions</h2>
+            <p>Scheduling runs on a colour-coded weekly calendar that filters by tutor, with a legend covering scheduled, completed, cancelled, and no-show sessions alongside tutor availability. Because the states are visually distinct, the shape of a week is readable at a glance — a run of no-shows, or a tutor with an unusually light week, shows up as a pattern rather than something you would only find by reading rows.</p>
+            <p>Recurring sessions are created once and repeat, so a standing Saturday morning slot is set up a single time instead of being re-entered every week. Available tutor slots surface alongside the calendar, which means bookings do not collide: the information needed to avoid the clash is on screen at the moment of booking rather than in somebody's memory.</p>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/02_Schedule_Management_Calendar.png?tr=w-800,q-80,f-auto"
+                   alt="Weekly tutor scheduling and billing calendar with tutor filter, colour-coded session legend, recurring sessions, and available tutor slots"
+                   width="800" height="457" loading="lazy">
+              <div class="cs-img-caption">Schedule management — a colour-coded weekly calendar filtered by tutor, with recurring sessions and available slots surfaced on the right so bookings never collide.</div>
+            </div>
+
+            <!-- SECTION 7: Timesheets -->
+            <h2>Tutor Timesheets, Approvals, and Session Alerts</h2>
+            <p>Tutors log their sessions into a weekly timesheet recording duration, tutor pay, parent bill, and attendance. Each timesheet carries a full status history — draft, then submitted, then approved — giving a clean audit trail of what was claimed, when, and who approved it. For a business where pay and billing both derive from the same logged session, that trail is what makes the numbers defensible.</p>
+            <p>Admins approve from a single screen rather than chasing paperwork, and can log a session on a tutor's behalf. Session alerts flag any session that should have been logged but was not, closing the most common gap in a manual system: the lesson that happened but never made it onto paper, and therefore never got billed. Overdue-invoice alerts do the same job on the finance side, surfacing unpaid parent invoices by age so the oldest debt is the most visible.</p>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/tutoring-business-admin-platform/04_Weekly_Timesheets_Approval.png?tr=w-800,q-80,f-auto"
+                   alt="Weekly timesheet showing a logged session with duration, tutor pay, parent bill, attendance, and a draft to submitted to approved status history"
+                   width="800" height="457" loading="lazy">
+              <div class="cs-img-caption">Weekly timesheets — each logged session carries its duration, tutor pay, and parent bill, with a full status history from draft to submitted to approved.</div>
+            </div>
+
+            <!-- SECTION 8: Roles -->
+            <h2>Role-Based Views — Admin, Tutor, Parent, and Staff</h2>
+            <p>The same portal serves every role, and each one sees a system that appears to have been built specifically for them.</p>
+            <h3>Parents</h3>
+            <p>Parents see their invoices — due, paid, and outstanding — plus messaging, shared documents, scheduled and historical sessions, and remaining balances across each of their children. This removed a whole category of interruption from the centre's day: the questions that used to arrive by phone and require somebody to go and check a spreadsheet are now answered by the parent logging in.</p>
+            <h3>Tutors</h3>
+            <p>Tutors see their timesheets and earnings, their allocated students, their own calendar, and student change requests — a reschedule from noon to 10am, for instance — along with messaging, shared documents, and an editable emergency contact. Everything a tutor needs to do their job and get paid correctly is in one place, with no admin acting as a relay.</p>
+            <h3>Additional staff</h3>
+            <p>Exam setters, markers, and other support staff are added with their own roles and rates, so the system covers the whole team, not only the people who teach.</p>
+            <p>Two things hold this together at the oversight level: messaging is visible to admins, so direct tutor–parent contact does not cost the centre sight of what is being agreed, and every action is captured in an audit log, so who changed what, and when, always has an answer.</p>
+
+            <!-- SECTION 9: Under the Hood -->
+            <h2>Under the Hood</h2>
+            <p>The frontend is a React application. The backend runs on Node.js with Express, and the database is PostgreSQL hosted on Neon. Email is handled through Microsoft 365, so notifications and invoices send from the centre's own domain rather than a third-party address parents would not recognise.</p>
+            <p>Automation and integrations run through n8n, self-hosted on a VPS, with every invoice, notification, QuickBooks sync, and outbound email triggered automatically through webhooks fired from the portal into those workflows. Keeping the automation layer separate is deliberate: billing rules and notification logic are the parts most likely to change, and here they can be adjusted in a workflow without redeploying the application around them.</p>
+            <p>The result is a system that quietly does the work a full team used to coordinate by hand. That same event-driven pattern — something happens, a webhook fires, the follow-up handles itself — is what drives the <a href="/case-studies/AI-Sales-Follow-Up-Automation.html">automated sales follow-up engine</a>, and the multi-role structure mirrors the <a href="/case-studies/shared-whatsapp-team-inbox.html">shared WhatsApp team inbox</a>, where several people work one system without treading on each other.</p>
+
+            <!-- SECTION 10: The Right Fit -->
+            <h2>The Right Fit — and When It Isn't</h2>
+            <p>This suits tuition centres, coaching businesses, and service businesses running scheduling, billing, and multi-party coordination by hand — organisations that have outgrown spreadsheets and need role-based access for staff and customers alike. The signal is usually not that the current system is broken, but that keeping it working has become somebody's job.</p>
+            <p>It is less suited to a single tutor with a handful of students, where a simple calendar and an off-the-shelf invoicing app already cover the need. It is also a poor fit for businesses whose billing rules change so frequently that a fixed automated engine would need constant rework — there, the automation becomes the maintenance burden it was meant to remove. Where the rules are stable and the volume is real, though, a portal like this turns a full-team workload into something that runs itself.</p>
+
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="cs-sidebar">
+
+            <div class="cs-sidebar-card">
+              <h4>Project Details</h4>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value">Education</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value">Custom App</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value">React + Node.js</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value">7 weeks</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value">Advanced</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value">⭐ 5.0 / 5</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value accent">Runs itself</span></div>
+            </div>
+
+            <div class="cs-sidebar-card">
+              <h4>Tools &amp; Integrations</h4>
+              <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+                <span class="cs-tool-tag"><img data-logo="react" alt="React" width="14" height="14" loading="lazy">React</span>
+                <span class="cs-tool-tag"><img data-logo="nodejs" alt="Node.js" width="14" height="14" loading="lazy">Node.js</span>
+                <span class="cs-tool-tag"><img data-logo="expressjs" alt="Express" width="14" height="14" loading="lazy">Express</span>
+                <span class="cs-tool-tag"><img data-logo="postgresql" alt="PostgreSQL" width="14" height="14" loading="lazy">PostgreSQL</span>
+                <span class="cs-tool-tag"><img data-logo="neon" alt="Neon" width="14" height="14" loading="lazy">Neon</span>
+                <span class="cs-tool-tag"><img data-logo="microsoft365" alt="Microsoft 365" width="14" height="14" loading="lazy">Microsoft 365</span>
+                <span class="cs-tool-tag"><img data-logo="n8n" alt="n8n" width="14" height="14" loading="lazy">n8n</span>
+                <span class="cs-tool-tag"><img data-logo="quickbooks" alt="QuickBooks" width="14" height="14" loading="lazy">QuickBooks</span>
+              </div>
+            </div>
+
+            <div class="cs-sidebar-card">
+              <h4>Key Metrics</h4>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Roles supported</span><span class="cs-sidebar-value">4</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Invoicing</span><span class="cs-sidebar-value">Automated</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Accounting sync</span><span class="cs-sidebar-value">Live</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Session tracking</span><span class="cs-sidebar-value">Auto</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Manual processes</span><span class="cs-sidebar-value">−100%</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Parent queries</span><span class="cs-sidebar-value">Self-serve</span></div>
+            </div>
+
+            <div class="cs-sidebar-cta">
+              <h4>Still running your centre on spreadsheets?</h4>
+              <p>Free discovery call — let us design a portal that handles students, tutors, scheduling, and invoicing in one place.</p>
+              <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ VISUAL FLOW ═══ -->
+    <section class="cs-content" style="padding-top:0">
+      <div class="container">
+        <div class="cs-visual-flow" aria-label="A tutor logs a session, the student's session count updates, the count resets at zero, an invoice is raised in QuickBooks, and the parent is emailed automatically.">
+          <div class="cs-flow-pipeline">
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">📝</div>
+              <div class="cs-flow-step-title">Tutor Logs Session</div>
+              <div class="cs-flow-step-sub">Into the timesheet</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">🔢</div>
+              <div class="cs-flow-step-title">Session Count Updates</div>
+              <div class="cs-flow-step-sub">Decrements itself</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step cs-flow-active">
+              <div class="cs-flow-step-icon">🔄</div>
+              <div class="cs-flow-step-title">Sessions Reset</div>
+              <div class="cs-flow-step-sub">Count hits zero</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">🧾</div>
+              <div class="cs-flow-step-title">QuickBooks Invoice</div>
+              <div class="cs-flow-step-sub">Raised automatically</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-step">
+              <div class="cs-flow-step-icon">📧</div>
+              <div class="cs-flow-step-title">Parent Emailed</div>
+              <div class="cs-flow-step-sub">Sent via Microsoft 365</div>
+            </div>
+            <div class="cs-flow-connector">→</div>
+            <div class="cs-flow-outcome-wrap">
+              <div class="cs-flow-outcome approved">✓ Invoice Sent</div>
+              <div class="cs-flow-outcome review">📊 Books in Sync</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ SECTION ═══ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div style="text-align:center">
+          <div class="section-label" style="justify-content:center">Frequently Asked Questions</div>
+          <h2 class="section-title">Got Questions? We've Got Answers.</h2>
+        </div>
+        <div class="faq-inner">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How does role-based access work across admin, tutor, parent, and staff?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Everyone logs into the same portal, and the view changes based on the role signing in.</strong> Admins get the full picture — students, tutors, scheduling, timesheets, invoicing, and the financial overview. Tutors see their own timesheets and earnings, their allocated students, their calendar, and any change requests. Parents see invoices, scheduled and historical sessions, remaining balances across each of their children, messaging, and shared documents. Additional staff such as exam setters and markers are added with their own roles and rates. There is one system to maintain rather than four, and nobody sees more than their role should.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How do invoices get raised automatically?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Billing is tied to sessions rather than to a calendar reminder.</strong> Every student record carries a count of sessions booked, and when a tutor logs a session that count drops by one. The moment it reaches zero, the portal fires a webhook into n8n, which raises an advance invoice in QuickBooks Online for the next block of sessions and emails it to the registered parent. Nobody has to notice that a student is due to top up, and no revenue is lost to an invoice somebody forgot to send.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How does the QuickBooks integration keep the books in sync?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>QuickBooks Online is integrated on the backend rather than exported to periodically.</strong> Invoices are created directly in QuickBooks as customer records and invoices, so the accounting system is the origin of the invoice, not a copy of it. The figures on the admin dashboard — revenue, outstanding parent invoices, weekly outgoings, and monthly income and expenditure — are pulled live from that same QuickBooks data. Because both sides read from one source, the portal and the books cannot drift apart.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What happens when an admin adjusts a student's session count?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>The portal asks rather than assumes.</strong> Changing a session count presents a clear choice: raise an invoice for this change, or treat it as a general edit with no invoice. That distinction matters, because adding sessions a parent has agreed to pay for and correcting a mistyped number are the same action mechanically but opposite commercially. Putting the decision in front of the admin at the moment of the edit means automated billing never fires on a correction.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Can parents who pay by cash skip the automated invoice?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Yes.</strong> Each student is set to either QuickBooks invoicing or cash. Selecting cash suppresses the emailed invoice, so families who settle in person are not sent a payment request they do not need, while the session tracking and records continue exactly as normal. Admins also set the parent rate per student and can enable recurring invoices for parents on a fixed weekly schedule instead of session-triggered billing.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Where are the data and automations hosted?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>The frontend is a React application,</strong> with Node.js and Express serving the backend and PostgreSQL hosted on Neon as the database. Email runs through Microsoft 365. All automation and integration work is handled by n8n, self-hosted on a VPS, and every invoice, notification, QuickBooks sync, and outbound email is triggered through webhooks from the portal into those workflows.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BOTTOM CTA ═══ -->
+    <section class="cs-bottom-cta">
+      <div class="container" style="position:relative;z-index:2">
+        <h2>Run your whole centre from one portal.</h2>
+        <p>Replace spreadsheets, paper logs, and hand-sent invoices with a custom system that manages students, tutors, scheduling, and billing automatically.</p>
+        <div class="btn-group">
+          <a href="https://growwstacks.com/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+          <a href="https://growwstacks.com/case-studies/" class="btn btn-outline">See More Projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div id="gs-footer"></div>
+
+  <!-- Inject SITE.logos into all data-logo images -->
+  <script>
+  (function() {
+    function injectLogos() {
+      if (typeof SITE === 'undefined' || !SITE.logos) return;
+      document.querySelectorAll('img[data-logo]').forEach(function(img) {
+        var key = img.getAttribute('data-logo');
+        if (SITE.logos[key]) img.src = SITE.logos[key];
+      });
+    }
+    injectLogos();
+    document.addEventListener('DOMContentLoaded', injectLogos);
+  })();
+  </script>
+
+  <!-- ═══ Shared Config + Component Loader ═══ -->
+  <script src="../_shared/site-config.js"></script>
+  <script src="../assets/js/images-helper.js"></script>
+  <script src="../_shared/page-builder.js"></script>
+  <script src="../case-studies.js"></script>
+
+</body>
+</html>
