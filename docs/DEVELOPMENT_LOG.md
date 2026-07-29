@@ -45,6 +45,15 @@ portal" as primary keyword.
 - `csh-banner-purple` for the hub card instead of the brief's suggested
   `csh-banner-indigo`, which is already used 33× in the file.
 - Category tokens `operations finance` — both valid filter tokens.
+- **Card `tag` set to `Operations`, not `Education`.** The hub has only seven filter
+  pills and Education is not one of them; `tag` is the visible badge while `category`
+  drives filtering, so an off-list badge reads as a category that does not exist. Badge
+  now mirrors a real pill. (`shared-whatsapp-team-inbox` still uses an off-list
+  "Customer Support" badge — same issue, left alone as it predates this.)
+- **Card `desc` cut to 153 chars.** `.csh-card-desc` clamps to 3 lines
+  (`-webkit-line-clamp:3`, global.css:1787); the original 221-char copy overflowed and
+  truncated mid-word at "a…", which also stretched the final line. Median desc across
+  the 56 cards is 110 chars — keep new cards near that.
 - Prose trimmed to 1,789 words to hit the 1,400–1,800 target; primary keyword seeded in
   H1, title, meta description, an H2, the first 100 words, and 3 image alts.
 - Sidebar **Duration = 7 weeks** (supplied by the user; the page briefly carried a
