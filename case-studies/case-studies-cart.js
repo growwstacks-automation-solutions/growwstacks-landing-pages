@@ -885,5 +885,5 @@ window.CS_CARDS = [
     roiIcon: "check"
   }
 
-
+ 
 ];
