@@ -876,7 +876,7 @@ window.CS_CARDS = [
     bannerClass: "csh-banner-purple",
     img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/tutoring-business-admin-platform",
     imgAlt: "Tuition management portal admin dashboard",
-    tag: "Operations",
+    tag: "test",
     title: "Tuition Management Portal",
     desc: "A custom portal for a UK tuition centre — one login for admins, tutors and parents, with QuickBooks invoices that raise themselves when sessions run out.",
     meta: "Education / Tutoring",
