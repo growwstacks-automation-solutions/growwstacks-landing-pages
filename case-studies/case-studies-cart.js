@@ -883,7 +883,23 @@ window.CS_CARDS = [
     roi: "Runs itself",
     app: ["React", "Node.js", "n8n"],
     roiIcon: "check"
+  },
+
+  /* ── 55 ── */
+  {
+    category: "healthcare",
+    href: "/case-studies/ai-telemedicine-multichannel-agents.html",
+    bannerClass: "csh-banner-purple",
+    img: "https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/ai-telemedicine-multichannel-agents?updatedAt=1785416570696",
+    imgAlt: "Multi-channel AI agent system for a telemedicine practice",
+    tag: "Healthcare",
+    title: "Multi-Channel AI Telemedicine Agents",
+    desc: "Four AI agents — inbound voice, outbound voice, website chat and SMS — sharing one knowledge base and one CRM, with consistent branding, medical-compliance guardrails, and automatic GoHighLevel logging on every lead touchpoint.",
+    meta: "Telemedicine",
+    roi: "Zero manual entry",
+    app: ["VAPI", "n8n", "GoHighLevel"],
+    roiIcon: "check"
   }
 
- 
+
 ];

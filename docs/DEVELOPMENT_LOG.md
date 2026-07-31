@@ -18,6 +18,137 @@ project's memory: each entry should let a future session reconstruct *what* chan
 
 ---
 
+## 2026-07-30 — Claude Architect service page: hero carousel now rotates
+**Commit(s):** _unpushed — pending review_ · **Scope:** `services/claude-architect.html`
+
+**What:** Added three more hero banners (`Claude_banner_2.png`, `Claude_banner_3.png`,
+`Claude_Banner_4.png`) to the `.cc-carousel`, so it cross-fades through four images like
+the Make.com page. Full cycle is 4 x 3.5s = 14s.
+
+**Why:** The markup, CSS, and rotation script were all already in place, but the carousel
+held a single image — and the script bails at `imgs.length < 2`, so nothing rotated.
+Adding the images activates the existing loop; no JS change was needed.
+
+**Decisions:**
+- **The four banners have very different native ratios** — 1024x536 (1.91), 1080x1350
+  (0.80, portrait), 1280x720 (1.78), and 768x1024 (0.75, portrait). In the 560x380 (1.47)
+  frame the two portrait shots left wide empty bands either side.
+- **Final approach: CSS blur-fill.** Each slide is a `<figure class="cc-slide">` carrying
+  its own photo URL in a `--slide` custom property. `::before` paints that image
+  `background-size:cover` + `blur(22px) saturate(1.15) scale(1.18)` at `opacity:.55` to
+  fill the frame; `::after` lays a soft cream→coral gradient over it to keep it on-brand;
+  the sharp `<img>` sits on top at `z-index:1` with `object-fit:contain`. Portrait shots
+  now fill the panel edge-to-edge with a soft blur instead of flat cream bands.
+  `--slide` is the **same URL** as the `<img> src`, so it is one HTTP request per slide,
+  served from cache — no extra image weight.
+- **Rejected: chained ImageKit transforms** (`bl-` + `l-image` overlay). It worked in
+  isolation but proved fragile — the overlay's own `h-` kept overriding the frame height,
+  yielding 1120x1231 instead of 1120x760. Also discovered the sources carry their **own**
+  white borders (banner 2 has 115px left / 119px right), so blurring the raw file just
+  smeared white rather than photo. CSS avoids both problems.
+- `.cc-carousel` keeps `background:#FFE8DC` (the page's `--cc-100`) as the base tone
+  behind the blur layer, replacing the previous dark navy `#0E1428`.
+- **`Claude_Banner_4.png` uses a capital "B"** unlike banners 2-3 (`Claude_banner_N`).
+  ImageKit paths are case-sensitive, so the inconsistency is preserved deliberately and
+  flagged with an inline comment — "correcting" it to lowercase would 404.
+- The rotation script now selects `.cc-slide` rather than `img`, since each slide is a
+  figure wrapping its image.
+- `.cc-float` gained a `1px solid var(--cc-border)` hairline. The white stat cards
+  previously sat against a dark navy panel; on the lighter panel they lost their edge.
+- First slide keeps `loading="eager"` + `fetchpriority="high"` (it is the LCP element);
+  slides 2 and 3 are `loading="lazy"`.
+
+**Left untouched (on purpose):** the rotation script, `.cc-carousel` CSS, the floating
+stat cards, and the `@media` rule that hides `.cc-visual` on mobile.
+
+---
+
+## 2026-07-30 — Fix: 4th phone screenshot in the WhatsApp inbox gallery
+**Commit(s):** _unpushed — pending review_ · **Scope:** `case-studies/shared-whatsapp-team-inbox.html`
+
+**What:** Added an ImageKit `cm-extract` crop to the 4th `.cs-app-gallery` image
+(`05_Add_Agent_Admin.png`) so it matches the other three.
+
+**Why:** All four sources are 1080x1920, but that one has **~250px of solid green
+(rgb 71,112,76) baked into the top and bottom of the file itself** — verified by decoding
+the PNG scanlines. The other three fill their full frame. Because `object-fit: contain`
+scales to fit, the green bands consumed 26% of the height, so its UI rendered visibly
+smaller than its neighbours and showed green where the others showed dark phone bezel.
+
+**Fix:** `tr=cm-extract,w-1080,h-1419,y-250:w-500,q-80,f-auto` — crops the bands, then
+chains the existing resize. Verified: delivered image is 500x657 with **0.00% green
+pixels**, and the gallery frame letterboxes it onto the same `#0d0d0d` bezel as the rest.
+All four now render at an identical 185px width in one equal-height grid row.
+
+**Decisions:** Cropped at delivery rather than re-exporting the asset — no ImageKit write
+access is needed and the original file is untouched. A re-exported screenshot without the
+baked bands would let the `tr=` be simplified back to `w-500,q-80,f-auto`.
+
+**Left untouched (on purpose):** the other three gallery images, the `.cs-app-gallery` CSS
+frame, and everything else on the page.
+
+---
+
+## 2026-07-30 — New case study: Multi-Channel AI Telemedicine Agents
+**Commit(s):** _unpushed — pending review_ · **Scope:**
+`case-studies/ai-telemedicine-multichannel-agents.html` (new),
+`case-studies/case-studies-cart.js`
+
+**What:** New flat case-study page for an anonymised virtual telemedicine and wellness
+practice — four AI agents (inbound voice, outbound voice, website chat, SMS) all
+answering as one assistant, sharing one knowledge base and one GoHighLevel logging
+pattern. Registered as card #55 on the hub.
+
+**Article structure follows `google-review-automation.html`** (the canonical pattern),
+not a narrative one: Problem → Solution → `<h3>` How It Works (numbered `<ol>`, one step
+per channel) → 6-card `cs-features` grid → Before vs. After → Implementation (numbered
+`<ol>`) → Right Fit. Tone is plain and direct — short paragraphs, no literary framing,
+no standalone "The Client"/"The Challenge" sections (client context folds into The
+Problem). The `cs-visual-flow` sits inside The Solution, after the chat screenshots.
+
+**Why:** Publish the telemedicine multi-channel agent build as a case study targeting
+the primary keyword "multi-channel AI agent".
+
+**Decisions:**
+- **Card category is `healthcare` (badge "Healthcare"), not the three tokens the brief
+  specified.** The brief asked for `ai-powered healthcare crm-sales` with an "AI Agents"
+  badge; that would have reintroduced the exact defect fixed on 2026-07-29 (badge naming
+  a category that is not one of the seven pills, card appearing under filters its badge
+  contradicts). Confirmed with the user before applying. Filters still sum to 57 = 57.
+- `_shared/case-studies.css` **does not exist** — every `cs-*` style lives in
+  `global.css`. The `<link>` is kept because all 58 case studies carry it (harmless 404,
+  consistent with the rest of the directory), and the new `.cs-img-pair` two-up
+  screenshot pattern went into a scoped `<style>` block on the page instead.
+- No `SITE.logos` edit needed: `vapi`, `twilio`, `claude`, `n8n` and `ghl` all already
+  exist and resolve (all five verified HTTP 200). The brief's assumption that `claude`
+  was missing and `gohighlevel` was blank was incorrect — both are present.
+- Walkthrough video is live: `yt-facade` embed in the `.process-video` hero slot,
+  `data-video-id="bvs6wKmv4Pc"`. Markup is byte-identical to the working reference apart
+  from the ID/labels; the click + Enter/Space handlers in `case-studies.js` are delegated,
+  so it binds with no extra wiring. The interim `.cs-video-soon` placeholder and its
+  `TODO_VIDEO` comment have been removed. (Note: `.cs-hero-media` in `global.css` is dead
+  — no case study uses it; the hero visual always lives in `.process-video`.)
+- **The `Hero Image AI Store` asset is the hub card banner and the social image only —
+  it is deliberately not rendered anywhere in the page itself.** `renderCard()` in
+  `case-studies/apps/app-wise-case-studies.js` paints `card.img` into
+  `.csh-card-banner-img`, which is where a visitor sees it. Inside the page, "The
+  Solution" carries only the two-up chat row and "Technical Approach" the workflow
+  `cs-img-block`. It remains `og:image` / `twitter:image` / schema `image`.
+- Sidebar is Project Details → Tools & Integrations → **Key Metrics** → CTA. The brief
+  said to omit Key Metrics, but **56 of 58 case studies carry that card**, so omitting it
+  made this page the outlier; the site-wide convention won. Values are short (2–4 words)
+  and drawn from facts already in the article.
+
+**Left untouched (on purpose):** the consult form and Make.com webhook, `global.css`,
+all other cards' `category`/`tag`, the seven filter pills, and `case-studies.js`.
+
+**Follow-ups (mirrored to ROADMAP):**
+- Replace the video placeholder with the `yt-facade` embed once the walkthrough ships.
+- `_shared/case-studies.css` is referenced by all 58 case studies but does not exist —
+  either create it or strip the link site-wide.
+
+---
+
 ## 2026-07-29 — Hub filters: strict 1:1 badge ↔ category
 **Commit(s):** _unpushed — pending review_ · **Scope:** `case-studies/case-studies-cart.js`
 

@@ -58,10 +58,18 @@ body{padding-top:0}
 
 /* Hero visual */
 .cc-visual{position:relative}
-.cc-carousel{position:relative;width:100%;max-width:560px;height:380px;border-radius:16px;overflow:hidden;border:1px solid rgba(217,119,87,.3);box-shadow:0 24px 60px rgba(45,27,20,.4);background:#0E1428}
-.cc-carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1s ease-in-out}
-.cc-carousel img.active{opacity:1}
-.cc-float{position:absolute;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-radius:12px;padding:14px 18px;box-shadow:0 8px 32px rgba(45,27,20,.2);animation:floaty 6s ease-in-out infinite}
+.cc-carousel{position:relative;width:100%;max-width:560px;height:380px;border-radius:16px;overflow:hidden;border:1px solid rgba(217,119,87,.3);box-shadow:0 24px 60px rgba(45,27,20,.4);background:#FFE8DC}
+/* Each slide fills the frame with a blurred, zoomed copy of its own photo (--slide),
+   then lays the sharp photo on top with object-fit:contain. Portrait banners therefore
+   fill the panel edge-to-edge instead of leaving flat cream bands beside them. */
+.cc-slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s ease-in-out}
+.cc-slide::before{content:'';position:absolute;inset:0;background-image:var(--slide);background-size:cover;background-position:center;filter:blur(22px) saturate(1.15);transform:scale(1.18);opacity:.55}
+.cc-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,232,220,.28),rgba(255,232,220,.10) 45%,rgba(217,119,87,.14))}
+.cc-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
+.cc-slide.active{opacity:1}
+/* hairline border keeps these white cards defined where they overlap the now
+   light-cream carousel (previously they sat against a dark navy panel) */
+.cc-float{position:absolute;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border:1px solid var(--cc-border);border-radius:12px;padding:14px 18px;box-shadow:0 8px 32px rgba(45,27,20,.2);animation:floaty 6s ease-in-out infinite}
 .cc-float-1{bottom:-20px;left:-24px}
 .cc-float-2{top:-15px;right:-20px;animation-delay:3s}
 .cc-float-label{font-size:11px;color:var(--cc-text-sec)}
@@ -238,7 +246,28 @@ body{padding-top:0}
     </div>
     <div class="cc-visual">
       <div class="cc-carousel">
-        <img src="https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_servicepage_banner?tr=w-1120,h-760,cm-pad_resize,bg-0E1428,q-82,f-auto&updatedAt=20260730" alt="The GrowwStacks team of 10 Anthropic certified engineers who completed Claude certification" class="active" width="560" height="380" loading="eager" fetchpriority="high">
+        <!-- Each slide is a <figure> whose background-image is the SAME photo scaled to
+             cover the frame and blurred by CSS, with the sharp photo sitting on top via
+             object-fit:contain. Portrait shots (banners 2 and 4) therefore fill the panel
+             edge-to-edge with a soft, on-brand blur instead of leaving flat cream bands.
+             Done in CSS rather than chained ImageKit transforms: one image request per
+             slide, and no dependence on fragile transform chaining. -->
+        <figure class="cc-slide active" style="--slide:url('https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_servicepage_banner?tr=w-1120,q-82,f-auto&updatedAt=20260730')">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_servicepage_banner?tr=w-1120,q-82,f-auto&updatedAt=20260730" alt="The GrowwStacks team of 10 Anthropic certified engineers who completed Claude certification" width="1120" height="586" loading="eager" fetchpriority="high">
+        </figure>
+        <figure class="cc-slide" style="--slide:url('https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_banner_2.png?tr=w-1120,q-82,f-auto')">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_banner_2.png?tr=w-1120,q-82,f-auto" alt="GrowwStacks engineers building production applications with Claude" width="1120" height="1400" loading="lazy">
+        </figure>
+        <figure class="cc-slide" style="--slide:url('https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_banner_3.png?tr=w-1120,q-82,f-auto')">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_banner_3.png?tr=w-1120,q-82,f-auto" alt="Claude-powered application architecture delivered by the GrowwStacks team" width="1120" height="630" loading="lazy">
+        </figure>
+        <!-- NOTE: this filename uses a capital "B" (Claude_Banner_4) unlike banners 2-3.
+             The &updatedAt param is a cache-buster: the file was re-uploaded in place and
+             ImageKit was still serving the previous version for its 1-year max-age. Bump
+             the date whenever this asset is replaced again. -->
+        <figure class="cc-slide" style="--slide:url('https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_Banner_4.png?tr=w-1120,q-82,f-auto&updatedAt=20260731')">
+          <img src="https://ik.imagekit.io/r2zdlyze2o/Service_Page_banner_images/Claude_Banner_4.png?tr=w-1120,q-82,f-auto&updatedAt=20260731" alt="Two GrowwStacks engineers holding their Claude Certified Architect award from Anthropic" width="1120" height="1493" loading="lazy">
+        </figure>
       </div>
       <div class="cc-float cc-float-1"><div class="cc-float-label">Idea to Live App</div><div class="cc-float-val green">In Days</div></div>
       <div class="cc-float cc-float-2"><div class="cc-float-label">Anthropic</div><div class="cc-float-val">Certified Team</div></div>
@@ -247,7 +276,7 @@ body{padding-top:0}
 </section>
 
 <script>
-(function(){var c=document.querySelector('.cc-carousel');if(!c)return;var imgs=c.querySelectorAll('img');if(!imgs||imgs.length<2)return;var i=0;setInterval(function(){imgs[i].classList.remove('active');i=(i+1)%imgs.length;imgs[i].classList.add('active')},3500)})();
+(function(){var c=document.querySelector('.cc-carousel');if(!c)return;var slides=c.querySelectorAll('.cc-slide');if(!slides||slides.length<2)return;var i=0;setInterval(function(){slides[i].classList.remove('active');i=(i+1)%slides.length;slides[i].classList.add('active')},3500)})();
 </script>
 
 <!-- ═══ TRUST BAR ═══ -->

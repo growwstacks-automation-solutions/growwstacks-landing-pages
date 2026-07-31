@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/analytics-loader.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO Meta ═══ -->
+  <title>Multi-Channel AI Agents for Telemedicine | GrowwStacks AI</title>
+  <meta name="description" content="Four AI agents — voice, chat and SMS — sharing one knowledge base and one CRM for a telemedicine practice, with compliance guardrails and automatic logging.">
+  <link rel="canonical" href="https://growwstacks.com/case-studies/ai-telemedicine-multichannel-agents/">
+
+  <!-- ═══ Open Graph ═══ -->
+  <meta property="og:title" content="Four AI Agents, One Assistant — GrowwStacks Case Study">
+  <meta property="og:description" content="A multi-channel AI agent system for a telemedicine practice — inbound voice, outbound voice, website chat and SMS, all sharing one knowledge base, one CRM, and one set of compliance guardrails.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://growwstacks.com/case-studies/ai-telemedicine-multichannel-agents/">
+  <meta property="og:site_name" content="GrowwStacks">
+  <meta property="og:image" content="https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/ai-telemedicine-multichannel-agents?updatedAt=1785416570696&tr=w-800,q-80,f-auto">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Multi-Channel AI Agents for Telemedicine">
+  <meta name="twitter:description" content="Four AI agents — inbound voice, outbound voice, website chat and SMS — sharing one knowledge base and one CRM, with medical-compliance guardrails and automatic logging on every lead touchpoint.">
+  <meta name="twitter:image" content="https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/ai-telemedicine-multichannel-agents?updatedAt=1785416570696&tr=w-800,q-80,f-auto">
+
+  <!-- ═══ Favicon ═══ -->
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png">
+
+  <!-- ═══ Google Ads Tag ═══ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17936939840"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17936939840');</script>
+
+  <!-- ═══ Resource Preconnects ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ik.imagekit.io">
+
+  <!-- ═══ Fonts ═══ -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+  <!-- ═══ Stylesheets ═══ -->
+  <link rel="stylesheet" href="../_shared/global.css">
+  <link rel="stylesheet" href="../_shared/case-studies.css">
+
+  <style>
+    /* Keep the five-step visual flow on one row at desktop widths. */
+    @media (min-width: 769px) {
+      .cs-flow-pipeline {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        gap: 4px !important;
+        padding: 2rem 0 !important;
+      }
+      .cs-flow-step {
+        min-width: 90px !important;
+        max-width: 130px !important;
+        padding: 0.6rem 0.4rem !important;
+      }
+      .cs-flow-connector {
+        padding: 0 2px !important;
+        font-size: 0.95rem !important;
+      }
+      .cs-flow-outcome {
+        min-width: 90px !important;
+        padding: 0.4rem !important;
+        font-size: 0.68rem !important;
+      }
+    }
+
+    /* Landscape screenshots: constrain height so the layout stays compact. */
+    .cs-img-block img {
+      max-height: 460px;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .cs-img-block img { max-height: 380px; }
+    }
+
+    /* Two-up screenshot row: the repo has no side-by-side pattern, so this is a
+       minimal scoped one, following the same approach as .cs-app-gallery on the
+       shared-whatsapp-team-inbox page. The two source screenshots have different
+       aspect ratios (1866x2509 vs 588x658), so both images are pinned to ONE
+       shared frame with object-fit:contain — every screen stays fully visible
+       (nothing cropped) and both cards end up exactly the same height, so the
+       captions align. `align-items: stretch` + equal rows keeps the two figures
+       identical even when one caption wraps to more lines than the other. */
+    .cs-img-pair {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 20px;
+      margin: 32px 0;
+      align-items: stretch;
+    }
+    .cs-img-pair figure {
+      margin: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+    .cs-img-pair img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      height: auto;
+      object-fit: contain;
+      object-position: center top;
+      background: var(--gray-50);
+      display: block;
+    }
+    .cs-img-pair figcaption {
+      padding: 12px 16px;
+      background: var(--gray-50);
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--gray-400);
+      text-align: center;
+      border-top: 1px solid var(--gray-200);
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .cs-img-pair { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 16px; margin: 24px 0; }
+      .cs-img-pair img { aspect-ratio: 3 / 4; }
+    }
+
+    /* Sidebar rows: stable label width, right-aligned values, tight wrapping. */
+    .cs-sidebar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .cs-sidebar-label { flex: 0 0 auto; max-width: 42%; line-height: 1.35; }
+    .cs-sidebar-value { text-align: right; line-height: 1.35; }
+  </style>
+
+  <!-- ═══ Page Tools ═══ -->
+  <meta name="page-tools" content="vapi,twilio,claude,n8n,ghl">
+
+  <!-- ═══ JSON-LD: Article ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Four AI Agents, One Assistant — Voice, Chat and SMS for a Telemedicine Practice","description":"Four AI agents — voice, chat and SMS — sharing one knowledge base and one CRM for a telemedicine practice, with compliance guardrails and automatic logging.","image":"https://ik.imagekit.io/r2zdlyze2o/Hero%20Image%20AI%20Store/ai-telemedicine-multichannel-agents?updatedAt=1785416570696&tr=w-800,q-80,f-auto","datePublished":"2026-07-30","dateModified":"2026-07-30","author":{"@type":"Organization","name":"GrowwStacks","url":"https://growwstacks.com"},"publisher":{"@type":"Organization","name":"GrowwStacks","logo":{"@type":"ImageObject","url":"https://ik.imagekit.io/r2zdlyze2o/GS-Website/GS-favicon.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://growwstacks.com/case-studies/ai-telemedicine-multichannel-agents/"}}</script>
+
+  <!-- ═══ JSON-LD: BreadcrumbList ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://growwstacks.com/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://growwstacks.com/case-studies/"},{"@type":"ListItem","position":3,"name":"Multi-Channel AI Telemedicine Agents","item":"https://growwstacks.com/case-studies/ai-telemedicine-multichannel-agents/"}]}</script>
+
+  <!-- ═══ JSON-LD: FAQPage ═══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does one assistant stay consistent across four different channels?","acceptedAnswer":{"@type":"Answer","text":"All four agents are the same assistant. They read from one shared knowledge base and follow one shared set of compliance guardrails, so the facts and the boundaries are identical whether a lead calls, texts, or opens the chat widget. Only the delivery changes: natural pacing on voice, Markdown formatting in chat, and plain text on SMS. Each agent is purpose-built for its own channel rather than one script copy-pasted across four surfaces."}},{"@type":"Question","name":"How does the shared knowledge base work, and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"One document holds pricing, eligibility rules, and programme details, and every agent queries it as a tool rather than carrying that content inside its own prompt. That separation is the point. When a price changes or an eligibility rule is revised, it is edited in one place and voice, chat, and SMS all reflect it immediately — no re-training, no four separate prompt edits, and no channel left running on outdated information."}},{"@type":"Question","name":"How are the medical-compliance guardrails enforced?","acceptedAnswer":{"@type":"Answer","text":"The same boundaries are built into every agent: no diagnosis, no prescribing, and no individualised medical advice. Each agent answers general questions about services, pricing, and eligibility, and routes anything clinical to a licensed human. Because the guardrails are identical across all four channels, the practice's compliance posture does not depend on which channel a lead happens to use."}},{"@type":"Question","name":"What happens when a conversation needs a human?","acceptedAnswer":{"@type":"Answer","text":"Escalation runs on clear triggers rather than the agent's judgement. A medical emergency routes to 911 immediately, and requests for individualised advice, signs of frustration, complaints, and billing disputes all hand over to a person. The outbound voice agent is deliberately conservative as well: it never promises to book an appointment or send something it cannot deliver, and offers a human follow-up instead."}},{"@type":"Question","name":"How do leads reach the CRM automatically?","acceptedAnswer":{"@type":"Answer","text":"A single contact-and-logging pattern — look up the contact, create or update the record, then log the conversation — was built once and reused across all four agents. Every touchpoint on every channel runs it, so a call, a chat, and a text each leave the same trace: a current contact record plus a readable summary of what was discussed. No one types anything in by hand."}},{"@type":"Question","name":"How do the outbound voice and SMS messages get personalised?","acceptedAnswer":{"@type":"Answer","text":"They open on what the lead actually asked about. The outbound voice agent fires when a new tagged lead enters the CRM and pulls that lead's stated interest from their enquiry form, so the first sentence references the programme they enquired about rather than a generic script. The SMS agent identifies the sender's number instantly, looks them up in the CRM, and never re-asks for information the practice already holds."}}]}</script>
+</head>
+
+<body class="cs-page page-telemedicine-agents">
+
+  <!-- ═══ NAVBAR ═══ -->
+  <div id="gs-navbar"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO                                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="cs-hero">
+      <div class="cs-hero-bg">
+        <div class="cs-hero-bg-shape1"></div>
+        <div class="cs-hero-bg-shape2"></div>
+      </div>
+
+      <div class="container cs-hero-inner">
+
+        <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true">/</span>
+          <a href="/case-studies/">Case Studies</a> <span aria-hidden="true">/</span>
+          <span>Multi-Channel AI Telemedicine Agents</span>
+        </nav>
+
+        <div class="cs-hero-tags">
+          <span class="cs-tag">Healthcare</span>
+          <span class="cs-tag">Telemedicine</span>
+          <span class="cs-tag">AI Agents</span>
+          <span class="cs-tag">Voice AI</span>
+          <span class="cs-tag">Automation</span>
+        </div>
+
+        <h1>Four AI Agents, One Assistant — Voice, Chat and SMS for a Telemedicine Practice</h1>
+        <p class="cs-hero-sub">A single AI assistant that answers on voice, chat and SMS — sharing one knowledge base and one CRM, with medical-compliance guardrails and automatic logging on every lead touchpoint.</p>
+
+        <div class="cs-hero-logos">
+          <div class="cs-hero-logo">
+            <img data-logo="vapi" alt="VAPI" width="20" height="20" loading="lazy">
+            VAPI
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="twilio" alt="Twilio" width="20" height="20" loading="lazy">
+            Twilio
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="claude" alt="Claude" width="20" height="20" loading="lazy">
+            Claude
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="n8n" alt="n8n" width="20" height="20" loading="lazy">
+            n8n
+          </div>
+          <div class="cs-hero-logo">
+            <img data-logo="ghl" alt="GoHighLevel" width="20" height="20" loading="lazy">
+            GoHighLevel
+          </div>
+        </div>
+
+        <div class="process-content">
+          <div class="process-video">
+            <div class="yt-facade" data-video-id="bvs6wKmv4Pc" role="button" tabindex="0" aria-label="Play video: Multi-Channel AI Telemedicine Agents Demo" style="border-radius: var(--radius-lg); aspect-ratio: 16/9; width: 100%; position:relative; overflow:hidden; cursor:pointer;">
+              <picture>
+                <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/bvs6wKmv4Pc/maxresdefault.webp">
+                <img alt="Multi-Channel AI Telemedicine Agents Demo" loading="lazy" width="480" height="360" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);" src="https://i.ytimg.com/vi/bvs6wKmv4Pc/maxresdefault.jpg">
+              </picture>
+              <div class="yt-facade-play" aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;">
+                <svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.5 7.7s-.7-4.7-2.8-6.8C60.7-2.1 57.5-2.2 56-2.4 46.6-3 34-3 34-3h0S21.4-3 12-2.4C10.4-2.2 7.3-2.1 4.3 1S.7 7.7.7 7.7 0 13.2 0 18.8v5.2c0 5.5.7 11 .7 11s.7 4.7 2.8 6.8c3 3.1 6.9 3 8.7 3.3C18.5 45.6 34 45.8 34 45.8s12.6 0 22-0.6c1.6-0.2 4.7-0.3 7.7-3.4 2.1-2.1 2.8-6.8 2.8-6.8s.7-5.5.7-11v-5.2c0-5.6-.7-11.1-.7-11.1z" fill="#FF0000"/><path d="M27 33V14l18 9.5z" fill="#FFF"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ KEY RESULTS ═══ -->
+    <section class="cs-results">
+      <div class="container">
+        <div class="cs-results-grid">
+          <div class="cs-result-item">
+            <div class="cs-result-num">4</div>
+            <div class="cs-result-label">AI agents — inbound voice, outbound voice, chat, SMS</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">1</div>
+            <div class="cs-result-label">Shared knowledge base across every channel</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">0</div>
+            <div class="cs-result-label">Manual CRM data entry per lead touchpoint</div>
+          </div>
+          <div class="cs-result-item">
+            <div class="cs-result-num">50</div>
+            <div class="cs-result-label">US states covered by the practice's licensed providers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTENT + SIDEBAR ═══ -->
+    <section class="cs-content">
+      <div class="container">
+        <div class="cs-content-inner">
+
+          <!-- ARTICLE -->
+          <article class="cs-article">
+
+            <!-- SECTION 1: The Problem -->
+            <h2>The Problem: Answering at National Scale</h2>
+            <p>For a high-volume telemedicine practice, the same questions arrive all day across three channels at once — phone, website chat, and SMS. Prospective patients want to know what a programme costs, whether they are eligible, and what is actually included. None of it is clinical, but answering it manually pulls licensed staff away from patient care, and the volume only grows as the ad spend does.</p>
+
+            <p>A virtual telemedicine and wellness practice, with licensed providers in all 50 US states and a high-volume ad funnel driving leads in daily, faced exactly this. Its existing tooling was fragmented rather than absent: a generic third-party chatbot answered on the website in the wrong brand voice and with information it did not reliably have, SMS went out as one-way blasts with no handling of the replies they generated, and there was no voice automation at all — leaving the busiest channel the least supported.</p>
+
+            <!-- SECTION 2: The Solution -->
+            <h2>The Solution: A Multi-Channel AI Agent — Four Agents, One Ava</h2>
+            <p>GrowwStacks built four AI agents — all answering as one assistant named Ava — sharing a single knowledge base and a single CRM logging system. Each was purpose-built for the constraints of its own channel rather than one script copy-pasted across four surfaces: an inbound voice agent, an outbound voice agent, a website chat agent, and an SMS agent. Voice needs pacing and interruption handling, SMS needs brevity and segment discipline, and chat needs formatting and clickable links.</p>
+
+            <p>The result is the same accurate, on-brand, compliant experience whether a lead calls the main line, replies to a text, or opens the chat widget. Every conversation is logged to GoHighLevel automatically — a contact record created or updated, plus a readable summary of what was discussed — with no manual data entry from staff on any channel.</p>
+
+            <div class="cs-img-pair">
+              <figure>
+                <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/AI-telemedicine-multichannel-agents/01_Chat_Agent_Greeting.png?tr=w-800,q-80,f-auto"
+                     alt="AI website chat assistant greeting a visitor and answering a question about the practice's services"
+                     width="800" height="1000" loading="lazy">
+                <figcaption>The website chat agent, Ava, greeting a visitor and answering a services question on brand.</figcaption>
+              </figure>
+              <figure>
+                <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/AI-telemedicine-multichannel-agents/02_Chat_Agent_Answer.png?tr=w-800,q-80,f-auto"
+                     alt="AI chat assistant giving a detailed, knowledge-base-driven answer about a wellness programme"
+                     width="800" height="1000" loading="lazy">
+                <figcaption>The same agent drawing on the shared knowledge base to give a detailed, on-brand answer.</figcaption>
+              </figure>
+            </div>
+
+            <div class="cs-visual-flow" aria-label="A lead contacts the practice, Ava answers on voice, chat or SMS, draws on the shared knowledge base, logs the touchpoint to the CRM, and hands off to a human if needed.">
+              <div class="cs-flow-pipeline">
+                <div class="cs-flow-step">
+                  <div class="cs-flow-step-icon">📞</div>
+                  <div class="cs-flow-step-title">Lead Contacts Practice</div>
+                  <div class="cs-flow-step-sub">Call, chat or text</div>
+                </div>
+                <div class="cs-flow-connector">→</div>
+                <div class="cs-flow-step cs-flow-active">
+                  <div class="cs-flow-step-icon">🤖</div>
+                  <div class="cs-flow-step-title">Ava Answers</div>
+                  <div class="cs-flow-step-sub">Voice / Chat / SMS</div>
+                </div>
+                <div class="cs-flow-connector">→</div>
+                <div class="cs-flow-step">
+                  <div class="cs-flow-step-icon">📚</div>
+                  <div class="cs-flow-step-title">Shared Knowledge Base</div>
+                  <div class="cs-flow-step-sub">One source of truth</div>
+                </div>
+                <div class="cs-flow-connector">→</div>
+                <div class="cs-flow-step">
+                  <div class="cs-flow-step-icon">🗂️</div>
+                  <div class="cs-flow-step-title">CRM Logged</div>
+                  <div class="cs-flow-step-sub">No manual entry</div>
+                </div>
+                <div class="cs-flow-connector">→</div>
+                <div class="cs-flow-step">
+                  <div class="cs-flow-step-icon">🙋</div>
+                  <div class="cs-flow-step-title">Human Handoff if Needed</div>
+                  <div class="cs-flow-step-sub">Clear escalation triggers</div>
+                </div>
+                <div class="cs-flow-connector">→</div>
+                <div class="cs-flow-outcome-wrap">
+                  <div class="cs-flow-outcome approved">✓ On-Brand Everywhere</div>
+                  <div class="cs-flow-outcome review">🔒 Compliance Guardrails</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3: How It Works -->
+            <h3>How It Works — One Assistant Across Four Channels</h3>
+            <p>Each agent handles the constraints of its own channel while sharing the same facts, the same boundaries, and the same logging. Here is what each one does:</p>
+            <ol>
+              <li><strong>Inbound Voice:</strong> Answers the main line as Ava and handles general questions from the shared knowledge base. When a question needs specifics it does not already have, it queries a knowledge-base tool on demand — speaking a short "one moment" filler while it does, so there is no dead air. It captures and confirms contact details, and escalates live on clear triggers: a medical emergency routes to 911, and requests for individualised advice, frustration, complaints, and billing disputes all go to a person.</li>
+              <li><strong>Outbound Voice:</strong> Fires automatically when a new tagged lead enters the CRM, and opens on that lead's actual stated interest pulled from their enquiry form rather than a generic greeting. It qualifies naturally instead of reading a checklist, then logs a structured outcome — interested and awaiting scheduling, wants more info, declined, callback requested, or voicemail. It never promises to book or send something it can't deliver; it offers a human follow-up instead.</li>
+              <li><strong>Website Chat:</strong> Answers the visitor's first question with no gate at all. Only from the second question does it ask for details, framed naturally as part of the conversation rather than as a form. The widget was rebuilt from scratch to match the client's site, with reliable, clickable, program-specific links — and every conversation logs a structured summary to the CRM.</li>
+              <li><strong>SMS:</strong> Knows the lead's number instantly, looks them up in the CRM, and never re-asks for what it already has. Formatting is plain text only, capped to roughly two segments, since Markdown renders literally on a phone and long messages fragment across carriers. It also solves the single-destination Twilio routing constraint by handling messages itself, while logging every inbound and outbound message to the contact record.</li>
+            </ol>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/AI-telemedicine-multichannel-agents/03_Main_AI_Agent_Workflow.png?tr=w-800,q-80,f-auto"
+                   alt="Multi-channel AI agent workflow in n8n — an inbound webhook feeding an AI agent backed by a chat model, memory, and a row of connected tools"
+                   loading="lazy" width="800" height="367">
+              <div class="cs-img-caption">The SMS agent end to end — an inbound webhook hands the message to the AI agent, which runs on a chat model with conversation memory and a set of tools it can call.</div>
+            </div>
+
+            <div class="cs-img-block">
+              <img src="https://ik.imagekit.io/r2zdlyze2o/Case_Studies/AI-telemedicine-multichannel-agents/04_AI_Agent_With_Tools_Workflow.png?tr=w-800,q-80,f-auto"
+                   alt="Automation workflow showing an AI agent connected to a chat model, memory, and tools for creating contacts, updating notes, querying a knowledge base, and sending messages"
+                   loading="lazy" width="800" height="368">
+              <div class="cs-img-caption">One agent, many tools — the AI agent connects to the shared knowledge base and CRM actions (create contact, update notes, send message, search contact) through a single reusable pattern.</div>
+            </div>
+
+            <div class="cs-highlight">
+              <p>💡 <strong>One brain, four voices</strong> — Because all four agents read from the same knowledge base and share the same logging pattern, updating a price or an eligibility rule once propagates to voice, chat, and SMS at the same time. No re-training, no drift between channels.</p>
+            </div>
+
+            <!-- SECTION 4: Feature Cards -->
+            <h2>What This System Does That Fragmented Tools Can't</h2>
+            <div class="cs-features">
+              <div class="cs-feature">
+                <div class="cs-feature-icon">🧠</div>
+                <h4>Shared Knowledge Base</h4>
+                <p>One source of truth for pricing, eligibility, and programmes — update it once and every channel reflects the change immediately.</p>
+              </div>
+              <div class="cs-feature">
+                <div class="cs-feature-icon">🎙️</div>
+                <h4>Voice, Chat &amp; SMS</h4>
+                <p>One assistant across four channels, giving the same accurate answers on each rather than four scripts that drift apart.</p>
+              </div>
+              <div class="cs-feature">
+                <div class="cs-feature-icon">🔒</div>
+                <h4>Compliance Guardrails</h4>
+                <p>Never diagnoses, prescribes, or gives individualised advice, with a clean and consistent path to a human on every channel.</p>
+              </div>
+              <div class="cs-feature">
+                <div class="cs-feature-icon">📇</div>
+                <h4>Automatic CRM Logging</h4>
+                <p>Every touchpoint creates or updates a contact and logs a readable summary, with zero manual data entry from staff.</p>
+              </div>
+              <div class="cs-feature">
+                <div class="cs-feature-icon">🎯</div>
+                <h4>Personalised Outreach</h4>
+                <p>Outbound voice and SMS open on the lead's actual stated interest, not a generic script that ignores what they asked for.</p>
+              </div>
+              <div class="cs-feature">
+                <div class="cs-feature-icon">🤝</div>
+                <h4>Clean Human Handoff</h4>
+                <p>Recognises emergencies, complaints, and explicit requests for a person, and transfers the conversation live.</p>
+              </div>
+            </div>
+
+            <!-- SECTION 5: Before vs After -->
+            <h2>Before vs. After</h2>
+            <p><strong>Before:</strong> A generic third-party chatbot answered website visitors in the wrong brand voice, SMS went out as one-way blasts with no reply handling, and there was no voice automation at all. Leads reached the CRM inconsistently, and staff spent hours each day answering the same questions about pricing and eligibility.</p>
+            <p><strong>After:</strong> A fully custom, on-brand AI system runs across four channels. Every touchpoint logs itself automatically to GoHighLevel, outbound voice and SMS personalise on the lead's stated interest, and content updates reach every channel at once because the knowledge base is shared — with zero manual data entry.</p>
+
+            <!-- SECTION 6: Implementation -->
+            <h2>Implementation: Live in 6 Weeks</h2>
+            <ol>
+              <li><strong>Knowledge Base First:</strong> Built one shared knowledge-base document as the single source of truth for pricing, eligibility, and programme details across all four agents.</li>
+              <li><strong>Reusable CRM Pattern:</strong> Built a single lookup → create/update → log pattern once and reused it on every channel, cutting build time on each successive agent.</li>
+              <li><strong>Voice Agents:</strong> Configured inbound and outbound voice on VAPI and Twilio, with escalation triggers and on-demand knowledge-base lookups.</li>
+              <li><strong>Chat &amp; SMS Agents:</strong> Built the chat and SMS agents on n8n behind webhooks, with a custom-branded chat widget and SMS-specific plain-text formatting.</li>
+              <li><strong>Prompt Engineering &amp; Compliance:</strong> Tuned tool-call sequencing, static non-guessable system parameters for IDs and phone numbers, channel-specific formatting, and identical compliance guardrails across all four agents.</li>
+            </ol>
+
+            <!-- SECTION 7: The Right Fit -->
+            <h2>The Right Fit — and When It Isn't</h2>
+            <p>This suits high-volume practices and service businesses fielding the same questions across phone, chat, and text — where answers must stay consistent and compliant, and every lead needs to reach the CRM. The more channels a business runs and the more regulated its answers, the more a shared knowledge base pays for itself. It pairs naturally with an <a href="/case-studies/AI-Voice-Receptionist-Booking-System.html">AI voice receptionist and booking system</a> on the inbound side, and applies the same CRM-first discipline as a <a href="/case-studies/home-care-referral-recruiting-engine.html">GoHighLevel-centred referral and recruiting engine</a> or an <a href="/case-studies/AI-WhatsApp-Customer-Support-Bot.html">AI WhatsApp support bot that logs every conversation automatically</a>.</p>
+            <p>It is less suited to low-volume operations where one person comfortably handles everything inbound, since it adds architecture without solving a real problem. It also fits poorly where answers are so bespoke per customer that no shared knowledge base can capture them — if every enquiry needs individual judgement, there is nothing consistent to share.</p>
+
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="cs-sidebar">
+
+            <div class="cs-sidebar-card">
+              <h4>Project Details</h4>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Industry</span><span class="cs-sidebar-value">Healthcare / Telemedicine</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Category</span><span class="cs-sidebar-value">AI Agents</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Platform</span><span class="cs-sidebar-value">VAPI + n8n + GHL</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Duration</span><span class="cs-sidebar-value">6 weeks</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Complexity</span><span class="cs-sidebar-value">Advanced</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Client Rating</span><span class="cs-sidebar-value">⭐ 5.0 / 5</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">ROI</span><span class="cs-sidebar-value" style="color:var(--cs-accent)">Zero manual entry</span></div>
+            </div>
+
+            <div class="cs-sidebar-card">
+              <h4>Tools &amp; Integrations</h4>
+              <div class="cs-sidebar-tools" id="cs-sidebar-tools">
+                <span class="cs-tool-tag"><img data-logo="vapi" alt="VAPI" width="14" height="14" loading="lazy">VAPI</span>
+                <span class="cs-tool-tag"><img data-logo="twilio" alt="Twilio" width="14" height="14" loading="lazy">Twilio</span>
+                <span class="cs-tool-tag"><img data-logo="claude" alt="Claude" width="14" height="14" loading="lazy">Claude</span>
+                <span class="cs-tool-tag"><img data-logo="n8n" alt="n8n" width="14" height="14" loading="lazy">n8n</span>
+                <span class="cs-tool-tag"><img data-logo="ghl" alt="GoHighLevel" width="14" height="14" loading="lazy">GoHighLevel</span>
+              </div>
+            </div>
+
+            <div class="cs-sidebar-card">
+              <h4>Key Metrics</h4>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Channels Covered</span><span class="cs-sidebar-value">Voice, chat &amp; SMS</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">AI Agents</span><span class="cs-sidebar-value">4, one assistant</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Knowledge Base</span><span class="cs-sidebar-value">One, shared</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">CRM Logging</span><span class="cs-sidebar-value">Automatic</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Manual Data Entry</span><span class="cs-sidebar-value">Zero</span></div>
+              <div class="cs-sidebar-row"><span class="cs-sidebar-label">Provider Coverage</span><span class="cs-sidebar-value">All 50 US states</span></div>
+            </div>
+
+            <div class="cs-sidebar-cta">
+              <h4>One assistant for every channel?</h4>
+              <p>Free discovery call — let us build a voice, chat, and SMS agent that speaks for your brand.</p>
+              <a href="/#consultation" class="btn btn-white">Get Free Consultation →</a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ SECTION ═══ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div style="text-align:center">
+          <div class="section-label" style="justify-content:center">Frequently Asked Questions</div>
+          <h2 class="section-title">Got Questions? We've Got Answers.</h2>
+        </div>
+        <div class="faq-inner">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How does one assistant stay consistent across four different channels?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>All four agents are the same assistant.</strong> They read from one shared knowledge base and follow one shared set of compliance guardrails, so the facts and the boundaries are identical whether a lead calls, texts, or opens the chat widget. Only the delivery changes: natural pacing on voice, Markdown formatting in chat, and plain text on SMS. Each agent is purpose-built for its own channel rather than one script copy-pasted across four surfaces.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How does the shared knowledge base work, and why does it matter?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>One document holds pricing, eligibility rules, and programme details,</strong> and every agent queries it as a tool rather than carrying that content inside its own prompt. That separation is the point. When a price changes or an eligibility rule is revised, it is edited in one place and voice, chat, and SMS all reflect it immediately — no re-training, no four separate prompt edits, and no channel left running on outdated information.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How are the medical-compliance guardrails enforced?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>The same boundaries are built into every agent:</strong> no diagnosis, no prescribing, and no individualised medical advice. Each agent answers general questions about services, pricing, and eligibility, and routes anything clinical to a licensed human. Because the guardrails are identical across all four channels, the practice's compliance posture does not depend on which channel a lead happens to use.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What happens when a conversation needs a human?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Escalation runs on clear triggers rather than the agent's judgement.</strong> A medical emergency routes to 911 immediately, and requests for individualised advice, signs of frustration, complaints, and billing disputes all hand over to a person. The outbound voice agent is deliberately conservative as well: it never promises to book an appointment or send something it cannot deliver, and offers a human follow-up instead.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How do leads reach the CRM automatically?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>A single contact-and-logging pattern — look up the contact, create or update the record, then log the conversation — was built once and reused across all four agents.</strong> Every touchpoint on every channel runs it, so a call, a chat, and a text each leave the same trace: a current contact record plus a readable summary of what was discussed. No one types anything in by hand.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How do the outbound voice and SMS messages get personalised?
+              <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>They open on what the lead actually asked about.</strong> The outbound voice agent fires when a new tagged lead enters the CRM and pulls that lead's stated interest from their enquiry form, so the first sentence references the programme they enquired about rather than a generic script. The SMS agent identifies the sender's number instantly, looks them up in the CRM, and never re-asks for information the practice already holds.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BOTTOM CTA ═══ -->
+    <section class="cs-bottom-cta">
+      <div class="container" style="position:relative;z-index:2">
+        <h2>One AI assistant for every channel.</h2>
+        <p>Give your practice a voice, chat, and SMS agent that stays on brand, stays compliant, and logs every lead automatically.</p>
+        <div class="btn-group">
+          <a href="/#consultation" class="btn btn-accent">Get Free Consultation <span class="btn-arrow">→</span></a>
+          <a href="/case-studies/" class="btn btn-outline">See More Projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div id="gs-footer"></div>
+
+  <!-- Inject SITE.logos into all data-logo images -->
+  <script>
+  (function() {
+    function injectLogos() {
+      if (typeof SITE === 'undefined' || !SITE.logos) return;
+      document.querySelectorAll('img[data-logo]').forEach(function(img) {
+        var key = img.getAttribute('data-logo');
+        if (SITE.logos[key]) img.src = SITE.logos[key];
+      });
+    }
+    injectLogos();
+    document.addEventListener('DOMContentLoaded', injectLogos);
+  })();
+  </script>
+
+  <!-- ═══ Shared Config + Component Loader ═══ -->
+  <script src="../_shared/site-config.js"></script>
+  <script src="../assets/js/images-helper.js"></script>
+  <script src="../_shared/page-builder.js"></script>
+  <script src="../case-studies.js"></script>
+
+</body>
+</html>

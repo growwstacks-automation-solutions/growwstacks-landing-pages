@@ -32,6 +32,12 @@ refined system; the rest uses the original. This is intentional and stable.
 ## Next actions (prioritized)
 
 ### P0 — In flight (this session, unpushed)
+- [ ] **Multi-Channel AI Telemedicine Agents case study — review the two chat
+      screenshots for identifying brand marks before publish.** `01_Chat_Agent_Greeting`
+      and `02_Chat_Agent_Answer` show the client's own chat widget; prose, alt text,
+      captions and schema are clean and the client is never named, but the widget
+      chrome may carry the practice's brand name or colour. Confirm visually, blur if
+      so. (The workflow and hero images are generic.)
 - [ ] **Tuition Management Portal case study — blur the screenshots before publish.**
       `02_Schedule_Management_Calendar.png` shows an unblurred tutor name in "Available
       Slots", and `01`, `03`, `04` show unblurred revenue / tutor-pay / parent-bill
@@ -106,6 +112,10 @@ refined system; the rest uses the original. This is intentional and stable.
 
 ## Done (recent — see DEVELOPMENT_LOG for detail)
 
+- 2026-07-30 — New case study: Multi-Channel AI Telemedicine Agents (page + hub card
+  #55). Card kept to the strict 1:1 badge↔category rule (`healthcare`) rather than the
+  brief's three tokens; filters still sum to 57 = 57. Unpushed — see P0 for the
+  screenshot-blur check and the pending walkthrough video.
 - 2026-06-22 — Widget load-on-page-load fix, `llms.txt`, WebMCP declarative +
   imperative tools, origin-trial scaffold (unpushed — pending review + token).
 - 2026-06-08 — Hero redesign, credentials strip, CTA copy alignment (`3d0af1c8`, live).
