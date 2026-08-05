@@ -695,10 +695,18 @@ color:#fff;
 }
 .footer-col a { display:block; font-size:14px; color:rgba(255,255,255,.6); margin-bottom:10px; transition:color .2s; }
 .footer-col a:hover { color:var(--green-400); }
+/* Copyright is truly centred in the row (absolute, so the links' width can't
+   bias it) while the policy links stay right-aligned. Centring keeps the
+   copyright clear of the fixed project widget in the bottom-left corner. */
 .footer-bottom {
+  position:relative;
   padding-top:32px; border-top:1px solid rgba(255,255,255,.08);
-  display:flex; justify-content:space-between; align-items:center;
+  display:flex; justify-content:flex-end; align-items:center;
   font-size:13px; flex-wrap:wrap; gap:16px;
+}
+.footer-bottom > span {
+  position:absolute; left:50%; transform:translateX(-50%);
+  top:32px; white-space:nowrap;
 }
 .footer-bottom a { color:rgba(255,255,255,.4); margin-left:16px; }
 .footer-bottom a:hover { color:rgba(255,255,255,.8); }
@@ -916,8 +924,10 @@ color:#fff;
   .footer { padding:40px 0 24px; }
   .footer-grid { grid-template-columns:1fr 1fr; gap:28px; margin-bottom:32px; }
   .footer-brand { grid-column:1 / -1; }
-  .footer-bottom { flex-direction:column; align-items:flex-start; gap:10px; font-size:12px; }
-  .footer-bottom a { margin-left:0; margin-right:12px; }
+  /* Too narrow to absolutely centre a nowrap line — stack and centre instead. */
+  .footer-bottom { flex-direction:column; justify-content:center; align-items:center; gap:10px; font-size:12px; }
+  .footer-bottom > span { position:static; transform:none; white-space:normal; text-align:center; }
+  .footer-bottom a { margin-left:6px; margin-right:6px; }
 
   .cs-hero { padding:100px 0 40px; }
   .cs-hero h1 { font-size:clamp(26px,6vw,36px); }
