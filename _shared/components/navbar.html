@@ -1,3 +1,148 @@
+<style>
+  /* =====================================================
+   MOBILE NAVBAR FIX
+   Keeps Consultation CTA visible on mobile
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav-inner {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .nav-left {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .nav-logo {
+    max-width: 100%;
+  }
+
+  /* Hide desktop navigation links initially */
+  .nav-links {
+    display: none;
+  }
+
+  /* Mobile menu when opened */
+  .nav-links.show {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 16px 18px;
+    background: #fff;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  }
+
+  .nav-links.show li {
+    width: 100%;
+  }
+
+  .nav-links.show a {
+    display: block;
+    width: 100%;
+    padding: 13px 8px;
+  }
+
+  /* IMPORTANT: keep CTA visible */
+  .nav-right {
+    display: flex !important;
+    flex: 0 0 auto;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .nav-cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: auto;
+    min-width: 0;
+    padding: 9px 12px;
+    font-size: 11px;
+    line-height: 1.2;
+    border-radius: 8px;
+  }
+
+  .nav-cta .btn-arrow {
+    display: inline;
+    margin-left: 4px;
+  }
+
+  /* Hamburger */
+  .nav-mobile-toggle {
+    display: flex !important;
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin-left: 2px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10001;
+  }
+
+  .nav-mobile-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+  }
+}
+
+
+/* Smaller phones */
+@media (max-width: 420px) {
+
+  .nav-inner {
+    padding: 8px 10px;
+    gap: 5px;
+  }
+
+  .nav-logo {
+    font-size: 15px;
+  }
+
+  .nav-cta {
+    padding: 8px 9px;
+    font-size: 10px;
+  }
+
+  .nav-cta .btn-arrow {
+    display: none;
+  }
+
+  .nav-mobile-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+
+  .nav-mobile-toggle span {
+    width: 20px;
+  }
+}
+</style>
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <div class="nav-left">

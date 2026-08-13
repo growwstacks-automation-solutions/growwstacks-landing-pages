@@ -18,6 +18,80 @@ project's memory: each entry should let a future session reconstruct *what* chan
 
 ---
 
+## 2026-08-13 — Claude Architect page rebuilt on the "Enlight Lab" layout
+**Commit(s):** _uncommitted — pending review_ · **Scope:** `services/claude-architect.html`
+
+**What:** Rebuilt the page's layout, structure and section order to match a reference
+design the user supplied (`enlightlab_responsive_landing.html`), recoloured to the
+existing Claude coral palette. All page copy, images, projects, FAQ answers, schema
+and integrations were carried over unchanged.
+
+Structural changes:
+- **Hero** — was a 2-column split (copy left, carousel right); now the reference's
+  centered, single-column hero on a radial-wash background, with the carousel moved
+  below the CTAs as a full-width `.hero-media` panel.
+- **Trust** — the 3-item icon bar became the reference's trust band: rating row +
+  partner logo cloud + "trusted by" client grid.
+- **Stats** — moved out of the hero into a dedicated `.proof` section (4-up grid).
+- **What we build** — 3-col `.cc-build` cards → the reference's 2-col `.service-card`
+  layout (top-centred icon medallion, bottom-anchored copy, per-card gradient tint).
+- **Process / Why Claude Code** — now `.framework-card` (top accent rule, 4-up).
+- **Team** — the 3-bullet list became the reference's `.orb-wrap` panel with four
+  satellite labels around a central Anthropic mark.
+- Added the reference's hatched **dark CTA** band; kept the compact mid-CTA.
+
+**Why:** The user asked to take the design, layout and structure from the reference
+file while keeping the content of the existing page.
+
+**Decisions:**
+- **Palette: coral, not the reference's blue.** Confirmed with the user. The reference's
+  structural tokens were kept verbatim (`--radius:26px`, `--max:1180px`, its section
+  paddings and its 900/760/420px breakpoints) and only the *colour* tokens remapped
+  (`--blue` → `#D97757` etc.), so the layout is a faithful port but the page still
+  matches the rest of growwstacks.com.
+- **Everything scoped under `.cc-page`.** The reference styles bare tags and generic
+  names (`.btn`, `.container`, `.section-title`, `.stats`, `.hero`) which would collide
+  badly with `global.css` across ~13k pages. `<main>` carries `.cc-page` and every rule
+  is descendant-scoped — same zero-blast-radius pattern as `.gs-hero-ds` / `.gs-creds-ds`
+  (ARCHITECTURE §6). The two rules that must stay global (`html`/`body` overflow) are
+  the only unscoped ones.
+- **Shared components kept.** Confirmed with the user: the reference's inline header and
+  footer were *not* copied. `#gs-navbar`, `#gs-consult-section` and `#gs-footer`
+  placeholders and `page-builder.js` are unchanged, so nav/footer stay site-consistent
+  and the lead form is untouched.
+- **FAQ mechanism swapped to the reference's.** Was `max-height` transition on
+  `.cc-faq .faq-a`; now the reference's `display:none` / `.open` toggle. The toggle
+  script's selectors were updated to `.cc-page .faq-q` / `.cc-page .faq-item` to match.
+- **Case-study grid restyled, not rewired.** `#csh-grid`, `#csh-count`,
+  `#csh-load-more`, `.csh-pill[data-filter]` and `data-app` all kept verbatim — verified
+  against `case-studies/apps/app-wise-case-studies.js`. The scoped `.cc-page .csh-grid`
+  rule deliberately sets only width/margin, leaving `display:grid` and
+  `grid-template-columns` (and their breakpoints) to `global.css:1696` so the injected
+  `.csh-card` markup keeps its existing layout and styling.
+
+**Left untouched (on purpose):**
+- The consult form and Make.com webhook (`#gs-consult-section` is still the shared
+  component; no field names, structure or hidden inputs touched).
+- All `<head>` metadata, canonical, OG tags, gtag config, and both JSON-LD blocks
+  (Service + FAQPage) — byte-identical, both re-validated as parsing.
+- The carousel's blur-backdrop technique and its ImageKit URLs, including the
+  `Claude_Banner_4` capital-B filename and the `updatedAt` cache-buster (and the
+  comments explaining both).
+- The Loom facade's video ID and lazy-open behaviour.
+
+**Verification:** HTML parses with zero unclosed/mismatched tags; both JSON-LD blocks
+parse; all eight required element IDs present; section/div tag counts balanced.
+Not yet opened in a browser — visual QA at the three breakpoints is still pending.
+
+**Follow-ups:**
+- Visual QA at 1440 / 768 / 390 px, especially the `.orb-wrap` satellite labels, which
+  are absolutely positioned and are the most likely thing to crowd on small screens.
+- The page had two stacked `<style>` blocks (original + a later "responsive patch");
+  these are now consolidated into one. If any other page was relying on that patch
+  block being present here, it never was — it was page-local.
+
+---
+
 ## 2026-07-30 — Claude Architect service page: hero carousel now rotates
 **Commit(s):** _unpushed — pending review_ · **Scope:** `services/claude-architect.html`
 

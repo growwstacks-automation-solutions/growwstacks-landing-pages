@@ -32,6 +32,12 @@ refined system; the rest uses the original. This is intentional and stable.
 ## Next actions (prioritized)
 
 ### P0 — In flight (this session, unpushed)
+- [ ] **Claude Architect page — visual QA at 1440 / 768 / 390 px.** The page was
+      rebuilt onto the user-supplied "Enlight Lab" layout (coral-recoloured, scoped
+      under `.cc-page`) — see DEVELOPMENT_LOG 2026-08-13. Markup, JSON-LD and the
+      case-study script hooks are verified, but it has **not been opened in a
+      browser**. Highest-risk area: the `.orb-wrap` satellite labels (`.d1`–`.d4`)
+      are absolutely positioned and may crowd on narrow screens.
 - [ ] **Multi-Channel AI Telemedicine Agents case study — review the two chat
       screenshots for identifying brand marks before publish.** `01_Chat_Agent_Greeting`
       and `02_Chat_Agent_Answer` show the client's own chat widget; prose, alt text,
