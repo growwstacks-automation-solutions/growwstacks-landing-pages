@@ -3,7 +3,7 @@
 <head>
 <script src="/analytics-loader.js"></script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claude Code — Custom Web Apps, CRMs & AI Tools Built at Speed | GrowwStacks</title>
 <meta name="description" content="A team of 10+ Anthropic certified engineers. GrowwStacks has delivered 50+ production apps with Claude Code — custom web apps, CRMs, dashboards & AI tools deployed on Supabase, Neon & Vercel.">
 <meta name="keywords" content="Claude Code, Claude Code developer, hire Claude Code, custom web app, Supabase app, Vercel deployment, AI-built web app, Claude developer, custom CRM, Claude Code projects">
@@ -25,510 +25,210 @@
 <link rel="stylesheet" href="../../_shared/global.css">
 
 <style>
-/* =========================================================
-   CLAUDE CODE SERVICE PAGE
-   Layout, spacing scale, section order and responsive rules
-   ported from the Enlight Lab reference; recoloured to the
-   Claude coral palette. Everything is scoped under .cc-page
-   so it never collides with global.css.
-   ========================================================= */
-.cc-page{
-  /* Enlight Lab structural tokens, Claude colours */
-  --blue:#D97757;          /* primary accent (was #073bc7) */
-  --blue-2:#E8956F;        /* accent hover */
-  --blue-deep:#B85A3A;     /* pressed / deep accent */
-  --ink:#2D1B14;
-  --muted:#7B6459;
-  --line:#F0D5C8;
-  --soft:#FFF8F5;
-  --soft-blue:#FFE8DC;
-  --surface:#FFFAF7;
-  --white:#fff;
-  --green:#10B981;
-  --dark:#1F1410;
-  --dark-2:#2D1E18;
-  --radius:26px;
-  --max:1180px;
-}
+:root{--cc:#D97757;--cc-light:#E8956F;--cc-dark:#B85A3A;--cc-50:#FFF8F5;--cc-100:#FFE8DC;--cc-gradient:linear-gradient(135deg,#D97757 0%,#E8956F 50%,#F0B89A 100%);--cc-gradient-dark:linear-gradient(135deg,#1F1410 0%,#2D1E18 50%,#3D2A20 100%);--cc-surface:#FFFAF7;--cc-accent:#10B981;--cc-accent-blue:#2D9CDB;--cc-text:#2D1B14;--cc-text-sec:#7B6459;--cc-border:#F0D5C8}
 
-/* ---- base ---- */
-html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
-body{margin:0;padding-top:0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.cc-page *{box-sizing:border-box}
-.cc-page img,.cc-page svg{max-width:100%}
-.cc-page a{text-decoration:none;color:inherit}
-.cc-page button,.cc-page a{font:inherit}
+body{padding-top:0}
 
-.cc-page .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
-.cc-page .section{position:relative;overflow:hidden}
-.cc-page .section-inner{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
-.cc-page .accent{color:var(--blue)}
-.cc-page .center{text-align:center}
+/* ═══ HERO ═══ */
+.cc-hero{background:var(--cc-gradient-dark);padding:calc(var(--nav-h,72px) + 48px) 24px 80px;position:relative;overflow:hidden}
+.cc-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 20% 50%,rgba(217,119,87,.25),transparent),radial-gradient(ellipse 500px 300px at 80% 30%,rgba(16,185,129,.12),transparent),radial-gradient(ellipse 300px 300px at 60% 80%,rgba(45,156,219,.08),transparent);pointer-events:none}
+.cc-hero .float-shape{position:absolute;opacity:.07;animation:ccFloat 20s ease-in-out infinite}
+.fs1{width:120px;height:120px;border-radius:16px;background:var(--cc-light);top:10%;right:8%}
+.fs2{width:80px;height:80px;border-radius:50%;background:var(--cc-accent);top:60%;right:15%;animation-delay:5s}
+.fs3{width:100px;height:60px;border-radius:16px;background:#fff;bottom:15%;left:5%;animation-delay:10s}
+.fs4{width:60px;height:60px;border-radius:12px;background:var(--cc-accent-blue);top:20%;left:12%;animation-delay:7s}
+@keyframes ccFloat{0%,100%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(15px,-20px) rotate(5deg)}50%{transform:translate(-10px,15px) rotate(-3deg)}75%{transform:translate(10px,10px) rotate(2deg)}}
 
-/* ---- HERO (Enlight Lab: centered, radial-wash background) ---- */
-.cc-page .hero{
-  background:
-    radial-gradient(circle at 10% 30%,rgba(217,119,87,.14),transparent 25%),
-    radial-gradient(circle at 85% 70%,rgba(232,149,111,.16),transparent 24%),
-    linear-gradient(180deg,#FFFDFC 0%,#FFF1E9 100%);
-}
-.cc-page .hero:after{
-  content:"";position:absolute;width:600px;height:600px;right:-300px;top:130px;
-  border-radius:50%;background:rgba(255,255,255,.28);filter:blur(20px);pointer-events:none;
-}
-.cc-page .hero-inner{
-  min-height:650px;padding:10px 20px 70px;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  position:relative;z-index:1;
-}
-.cc-page .eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(217,119,87,.10);border:1px solid rgba(217,119,87,.28);
-  border-radius:100px;padding:8px 18px 8px 8px;margin-bottom:27px;
-}
-.cc-page .eyebrow img{width:28px;height:28px;border-radius:7px}
-.cc-page .eyebrow span{font-size:13px;font-weight:700;color:var(--blue-deep);letter-spacing:.5px;text-transform:uppercase}
-.cc-page .hero h1{
-  max-width:900px;margin:0;font-family:var(--font-display);
-  font-size:clamp(38px,5.7vw,70px);line-height:1.12;letter-spacing:-2.7px;font-weight:800;color:var(--ink);
-}
-.cc-page .hero h1 em{font-style:normal;color:var(--blue)}
-.cc-page .hero-copy{
-  max-width:760px;margin:28px auto 0;color:var(--muted);font-size:20px;line-height:1.55;
-}
-.cc-page .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:43px}
-.cc-page .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:14px;
-  min-height:51px;padding:14px 25px;border-radius:12px;
-  border:1.5px solid var(--blue);font-size:14px;font-weight:700;
-  transition:.22s ease;cursor:pointer;
-}
-.cc-page .btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 25px rgba(217,119,87,.22)}
-.cc-page .btn-primary:hover{transform:translateY(-2px);background:var(--blue-deep);border-color:var(--blue-deep)}
-.cc-page .btn-secondary{background:#fff;color:var(--ink)}
-.cc-page .btn-secondary:hover{background:var(--soft)}
-.cc-page .arrow{font-size:19px;line-height:1}
+.cc-hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.cc-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(217,119,87,.25);border:1px solid rgba(232,149,111,.4);border-radius:100px;padding:8px 20px 8px 8px;margin-bottom:24px;backdrop-filter:blur(8px)}
+.cc-badge img{width:32px;height:32px;border-radius:8px}
+.cc-badge span{font-size:13px;font-weight:700;color:var(--cc-100);letter-spacing:.5px;text-transform:uppercase}
+.cc-hero h1{font-family:var(--font-display);font-size:clamp(36px,4.5vw,56px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px}
+.cc-hero h1 em{font-style:normal;background:var(--cc-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cc-hero-desc{font-size:18px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:32px;max-width:520px}
+.cc-stats{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:36px}
+.cc-stat-num{font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--cc-accent)}
+.cc-stat-label{font-size:13px;color:rgba(255,255,255,.5);font-weight:500;margin-top:2px}
+.cc-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-cc{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:12px;font-family:var(--font-body);font-weight:700;font-size:15px;cursor:pointer;transition:all .3s;text-decoration:none;border:2px solid transparent}
+.btn-cc-primary{background:var(--cc);color:#fff;border-color:var(--cc)}
+.btn-cc-primary:hover{background:var(--cc-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(217,119,87,.3)}
+.btn-cc-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+.btn-cc-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
-/* Hero carousel — the reference has no image slot, so the existing
-   carousel is rebuilt below the centered hero copy in the same
-   card language (radius, hairline border, soft shadow). */
-.cc-page .hero-media{width:min(100%,860px);margin:56px auto 0;position:relative}
-.cc-page .cc-carousel{
-  position:relative;width:100%;height:clamp(260px,42vw,420px);
-  border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
-  box-shadow:0 22px 70px rgba(45,27,20,.14);background:var(--soft-blue);
-}
-/* Each slide fills the frame with a blurred, zoomed copy of its own photo
-   (--slide), then lays the sharp photo on top with object-fit:contain, so
-   portrait banners fill the panel instead of leaving flat cream bands. */
-.cc-page .cc-slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s ease-in-out}
-.cc-page .cc-slide::before{content:"";position:absolute;inset:0;background-image:var(--slide);background-size:cover;background-position:center;filter:blur(22px) saturate(1.15);transform:scale(1.18);opacity:.55}
-.cc-page .cc-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,232,220,.28),rgba(255,232,220,.10) 45%,rgba(217,119,87,.14))}
-.cc-page .cc-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
-.cc-page .cc-slide.active{opacity:1}
-.cc-page .cc-float{
-  position:absolute;z-index:10;background:rgba(255,255,255,.96);
-  border:1px solid var(--line);border-radius:14px;padding:14px 18px;
-  box-shadow:0 8px 32px rgba(45,27,20,.14);animation:ccFloaty 6s ease-in-out infinite;
-}
-.cc-page .cc-float-1{bottom:-20px;left:-18px}
-.cc-page .cc-float-2{top:-15px;right:-18px;animation-delay:3s}
-.cc-page .cc-float-label{font-size:11px;color:var(--muted)}
-.cc-page .cc-float-val{font-family:var(--font-display);font-size:16px;font-weight:800;color:var(--blue);white-space:nowrap}
-.cc-page .cc-float-val.green{color:var(--green)}
-@keyframes ccFloaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+/* Hero visual */
+.cc-visual{position:relative}
+.cc-carousel{position:relative;width:100%;max-width:560px;height:380px;border-radius:16px;overflow:hidden;border:1px solid rgba(217,119,87,.3);box-shadow:0 24px 60px rgba(45,27,20,.4);background:#FFE8DC}
+/* Each slide fills the frame with a blurred, zoomed copy of its own photo (--slide),
+   then lays the sharp photo on top with object-fit:contain. Portrait banners therefore
+   fill the panel edge-to-edge instead of leaving flat cream bands beside them. */
+.cc-slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s ease-in-out}
+.cc-slide::before{content:'';position:absolute;inset:0;background-image:var(--slide);background-size:cover;background-position:center;filter:blur(22px) saturate(1.15);transform:scale(1.18);opacity:.55}
+.cc-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,232,220,.28),rgba(255,232,220,.10) 45%,rgba(217,119,87,.14))}
+.cc-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
+.cc-slide.active{opacity:1}
+/* hairline border keeps these white cards defined where they overlap the now
+   light-cream carousel (previously they sat against a dark navy panel) */
+.cc-float{position:absolute;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border:1px solid var(--cc-border);border-radius:12px;padding:14px 18px;box-shadow:0 8px 32px rgba(45,27,20,.2);animation:floaty 6s ease-in-out infinite}
+.cc-float-1{bottom:-20px;left:-24px}
+.cc-float-2{top:-15px;right:-20px;animation-delay:3s}
+.cc-float-label{font-size:11px;color:var(--cc-text-sec)}
+.cc-float-val{font-family:var(--font-display);font-size:16px;font-weight:800;color:var(--cc);white-space:nowrap}
+.cc-float-val.green{color:var(--cc-accent)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-/* ---- TRUST (Enlight Lab trust band) ---- */
-.cc-page .trust{background:var(--soft-blue);padding:34px 0 52px}
-.cc-page .rating-row{display:flex;justify-content:center;align-items:center;gap:26px;flex-wrap:wrap}
-.cc-page .rating{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--ink)}
-.cc-page .rating .stars{color:#F4B400;letter-spacing:1px}
-.cc-page .logo-cloud{display:flex;justify-content:center;align-items:center;gap:34px;flex-wrap:wrap;margin:28px auto 0;max-width:900px}
-.cc-page .brand{
-  display:flex;align-items:center;gap:10px;
-  color:var(--ink);font-weight:700;font-size:15px;letter-spacing:-.3px;opacity:.9;white-space:nowrap;
-}
-.cc-page .brand img{width:26px;height:26px;border-radius:6px}
-.cc-page .trusted-title{
-  margin:31px auto 28px;max-width:620px;text-align:center;
-  font-family:var(--font-display);font-size:20px;line-height:1.3;font-weight:600;color:var(--ink);
-}
-.cc-page .client-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:34px 42px;align-items:center;justify-items:center;max-width:780px;margin:auto;
-}
-.cc-page .client{
-  display:flex;align-items:center;gap:10px;
-  font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;
-}
-.cc-page .client img{width:24px;height:24px;border-radius:6px}
+/* ═══ TRUST BAR ═══ */
+.cc-trust{background:var(--cc-surface);border-bottom:1px solid var(--cc-border);padding:32px 24px}
+.cc-trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.cc-trust-item{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--cc-text)}
+.cc-trust-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.ti-coral{background:var(--cc-50);color:var(--cc)}
+.ti-green{background:#E6FFF5;color:#059669}
+.ti-blue{background:#E6F4FD;color:#2D9CDB}
+.ti-amber{background:#FEF3C7;color:#D97706}
 
-/* ---- PROOF / STATS (Enlight Lab proof section) ---- */
-.cc-page .proof{
-  background:
-    radial-gradient(circle at 92% 8%,rgba(255,220,205,.65),transparent 16%),
-    linear-gradient(180deg,#fff 0%,var(--soft) 100%);
-}
-.cc-page .proof-inner{padding:78px 20px 88px;text-align:center}
-.cc-page .section-title{
-  margin:0 auto;font-family:var(--font-display);
-  font-size:clamp(32px,4.4vw,52px);line-height:1.12;
-  letter-spacing:-1.7px;font-weight:800;max-width:850px;color:var(--ink);
-}
-.cc-page .section-copy{
-  max-width:730px;margin:26px auto 0;color:var(--muted);font-size:19px;line-height:1.6;
-}
-.cc-page .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:45px;max-width:920px;margin:70px auto 0}
-.cc-page .stat-num{font-family:var(--font-display);color:var(--blue);font-size:52px;font-weight:800;letter-spacing:-2px}
-.cc-page .stat-label{font-size:15px;line-height:1.4;max-width:160px;margin:18px auto 0;color:var(--muted)}
+/* ═══ SECTIONS ═══ */
+.cc-section{padding:80px 24px}
+.cc-section-inner{max-width:1200px;margin:0 auto}
+.cc-label{font-size:13px;font-weight:700;color:var(--cc);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+.cc-title{font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--cc-text);margin-bottom:16px;line-height:1.15}
+.cc-desc{font-size:17px;color:var(--cc-text-sec);line-height:1.7;max-width:640px;margin-bottom:48px}
 
-/* ---- SERVICES (Enlight Lab 2-col service cards) ---- */
-.cc-page .services{background:#fff}
-.cc-page .services-inner{padding:88px 20px 100px}
-.cc-page .services-intro{max-width:830px;margin-bottom:55px}
-.cc-page .services-intro .section-title{text-align:left;max-width:720px;margin:0}
-.cc-page .services-intro p{font-size:19px;line-height:1.65;color:var(--muted);max-width:780px;margin:22px 0 0}
-.cc-page .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.cc-page .service-card{
-  min-height:315px;border:1px solid var(--line);border-radius:27px;
-  padding:104px 32px 34px;display:flex;flex-direction:column;justify-content:flex-end;
-  overflow:hidden;position:relative;background:#fff;transition:.28s ease;
-}
-.cc-page .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(217,119,87,.12)}
-.cc-page .service-card:before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 50% 15%,rgba(255,255,255,.95),transparent 35%);
-}
-.cc-page .service-card .icon{
-  position:absolute;top:32px;left:50%;transform:translateX(-50%);
-  width:58px;height:58px;border-radius:17px;display:grid;place-items:center;
-  font-size:28px;box-shadow:0 9px 30px rgba(45,27,20,.08);
-}
-.cc-page .service-card h3{font-family:var(--font-display);font-size:25px;margin:0 0 10px;position:relative;color:var(--ink)}
-.cc-page .service-card p{font-size:16px;line-height:1.5;color:var(--muted);margin:0;position:relative;max-width:460px}
-.cc-page .service-card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;position:relative}
-.cc-page .service-card .tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.5px;background:var(--soft);color:var(--blue);border:1px solid var(--line)}
-.cc-page .card-crm{background:linear-gradient(180deg,#fff 0%,#FFF6F1 100%)}
-.cc-page .card-crm .icon{background:#FFE8DC}
-.cc-page .card-dash{background:linear-gradient(180deg,#fff 0%,#EEFBFF 100%)}
-.cc-page .card-dash .icon{background:#E7FBFF}
-.cc-page .card-ai{background:linear-gradient(180deg,#fff 0%,#F1FBF6 100%)}
-.cc-page .card-ai .icon{background:#E6FFF5}
-.cc-page .card-ops{background:linear-gradient(180deg,#fff 0%,#FFF9EC 100%)}
-.cc-page .card-ops .icon{background:#FEF3C7}
-.cc-page .card-client{background:linear-gradient(180deg,#fff 0%,#FFF0F8 100%)}
-.cc-page .card-client .icon{background:#FFE8F4}
-.cc-page .card-migrate{background:linear-gradient(180deg,#fff 0%,#F6F7FF 100%)}
-.cc-page .card-migrate .icon{background:#EDF0FF}
+/* ═══ MID CTA ═══ */
+.cc-mid-cta{background:var(--cc-gradient-dark);padding:48px 24px;text-align:center}
+.cc-mid-cta-text{font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:800;color:#fff;margin-bottom:20px}
+.cc-mid-cta-text .accent{color:var(--cc-light)}
 
-/* ---- PARTNER / TEAM (Enlight Lab orb panel) ---- */
-.cc-page .partner{
-  background:
-    radial-gradient(circle at 12% 6%,rgba(255,220,205,.45),transparent 18%),
-    radial-gradient(circle at 90% 72%,rgba(232,149,111,.22),transparent 25%),
-    #fff;
+/* ═══ WHAT WE BUILD ═══ */
+.cc-builds{background:var(--cc-50)}
+.cc-build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cc-build{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--cc-border);transition:all .3s}
+.cc-build:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(217,119,87,.12)}
+.cc-build-icon{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:48px;background:var(--cc-50)}
+.cc-build-body{padding:24px}
+.cc-build-title{font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--cc-text);margin-bottom:8px;line-height:1.3}
+.cc-build-desc{font-size:14px;color:var(--cc-text-sec);line-height:1.6;margin-bottom:16px}
+.cc-build-tags{display:flex;gap:8px;flex-wrap:wrap}
+.cc-build-tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.5px}
+.bt-coral{background:var(--cc-50);color:var(--cc)}
+.bt-green{background:#E6FFF5;color:#059669}
+.bt-blue{background:#E6F4FD;color:#2D9CDB}
+
+/* ═══ TECH STACK ═══ */
+.cc-stack{background:var(--cc-gradient-dark);color:#fff}
+.cc-stack .cc-label{color:var(--cc-light)}
+.cc-stack .cc-title{color:#fff}
+.cc-stack .cc-desc{color:rgba(255,255,255,.6)}
+.cc-stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cc-tool{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px 20px;text-align:center;transition:all .3s}
+.cc-tool:hover{transform:translateY(-4px);background:rgba(255,255,255,.1);border-color:rgba(217,119,87,.3)}
+.cc-tool-icon{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px;border:1px solid rgba(255,255,255,.1);overflow:hidden}
+.cc-tool-icon img{width:32px;height:32px;border-radius:6px}
+.cc-tool-name{font-family:var(--font-display);font-weight:700;font-size:15px;color:#fff;margin-bottom:4px}
+.cc-tool-role{font-size:12px;color:rgba(255,255,255,.5)}
+
+/* ═══ CERTIFIED TEAM ═══ */
+.cc-team{background:var(--cc-surface);border-top:1px solid var(--cc-border);border-bottom:1px solid var(--cc-border)}
+.cc-team-inner{max-width:1000px;margin:0 auto;text-align:center}
+.cc-team-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--cc-border);border-radius:100px;padding:8px 18px 8px 8px;margin-bottom:20px;box-shadow:0 2px 12px rgba(217,119,87,.08)}
+.cc-team-badge img{width:28px;height:28px;border-radius:7px}
+.cc-team-badge span{font-size:12px;font-weight:700;color:var(--cc);letter-spacing:.8px;text-transform:uppercase}
+.cc-team-inner .cc-desc{margin:0 auto 44px;max-width:720px}
+.cc-team-points{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:left}
+.cc-team-points li{font-size:14px;color:var(--cc-text-sec);line-height:1.7;padding-top:16px;border-top:2px solid var(--cc-border)}
+.cc-team-points strong{display:block;font-family:var(--font-display);color:var(--cc-text);font-weight:700;font-size:15px;margin-bottom:6px}
+
+/* ═══ PROCESS ═══ */
+.cc-process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cc-step{background:rgba(255,255,255,.85);border:1px solid var(--cc-border);border-radius:16px;padding:28px 24px;position:relative;transition:all .3s}
+.cc-step:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(217,119,87,.1)}
+.cc-step-num{font-family:var(--font-display);font-weight:800;font-size:36px;color:var(--cc-100);margin-bottom:12px;line-height:1}
+.cc-step-title{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--cc-text);margin-bottom:8px}
+.cc-step-desc{font-size:13px;color:var(--cc-text-sec);line-height:1.6}
+
+/* ═══ FEATURED PROJECTS ═══ */
+.cc-projects{background:var(--cc-50)}
+.cc-proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.cc-proj{background:#fff;border:1px solid var(--cc-border);border-radius:16px;padding:32px;transition:all .3s;text-decoration:none}
+.cc-proj:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(217,119,87,.12)}
+.cc-proj-tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;background:var(--cc-50);color:var(--cc);text-transform:uppercase;letter-spacing:.5px;display:inline-block;margin-bottom:12px}
+.cc-proj-title{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--cc-text);margin-bottom:8px;line-height:1.3}
+.cc-proj-desc{font-size:14px;color:var(--cc-text-sec);line-height:1.6;margin-bottom:16px}
+.cc-proj-stack{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.cc-proj-stack-tag{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--cc-50);color:var(--cc-text-sec);border:1px solid var(--cc-border)}
+.cc-proj-result{font-family:var(--font-display);font-weight:800;font-size:14px;color:var(--cc-accent)}
+
+/* ═══ WHY CLAUDE CODE ═══ */
+.cc-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cc-why{background:rgba(255,255,255,.85);border:1px solid var(--cc-border);border-radius:16px;padding:32px 28px;text-align:center;transition:all .3s}
+.cc-why:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(217,119,87,.1)}
+.cc-why-icon{font-size:36px;margin-bottom:16px}
+.cc-why-title{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--cc-text);margin-bottom:10px}
+.cc-why-desc{font-size:14px;color:var(--cc-text-sec);line-height:1.7}
+
+/* ═══ FAQ ═══ */
+.cc-faq{background:var(--cc-surface);padding:80px 24px}
+.cc-faq .container{max-width:1200px;margin:0 auto}
+.cc-faq h2{font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--cc-text);margin-bottom:8px;text-align:center}
+.cc-faq-sub{font-size:17px;color:var(--cc-text-sec);text-align:center;margin-bottom:48px;max-width:640px;margin-left:auto;margin-right:auto}
+.cc-faq .faq-inner{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.cc-faq .faq-item{background:#fff;border:1px solid var(--cc-border);border-radius:var(--radius-md,12px);overflow:hidden}
+.cc-faq .faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--cc-text);transition:background .2s;border:none;background:none;width:100%;text-align:left}
+.cc-faq .faq-q:hover{background:var(--cc-50)}
+.cc-faq .faq-arrow{font-size:14px;color:var(--cc);transition:transform .3s;flex-shrink:0}
+.cc-faq .faq-item.open .faq-arrow{transform:rotate(180deg)}
+.cc-faq .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.cc-faq .faq-item.open .faq-a{max-height:800px}
+.cc-faq .faq-a-inner{padding:0 24px 24px}
+.cc-faq .faq-a-inner p{font-size:15px;color:var(--cc-text-sec);line-height:1.75;margin-bottom:12px}
+.cc-faq .faq-a-inner p:last-child{margin-bottom:0}
+.cc-faq .faq-a-inner strong{color:var(--cc-text)}
+.cc-faq .faq-a-inner ul{margin:8px 0 12px 20px;font-size:15px;color:var(--cc-text-sec);line-height:1.75}
+.cc-faq .faq-a-inner li{margin-bottom:6px}
+
+/* ═══ BOTTOM CTA ═══ */
+.cc-bottom-cta{background:var(--cc-gradient-dark);padding:64px 24px;text-align:center;position:relative;overflow:hidden}
+.cc-bottom-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 300px at 30% 40%,rgba(217,119,87,.2),transparent),radial-gradient(ellipse 400px 300px at 70% 60%,rgba(16,185,129,.08),transparent);pointer-events:none}
+.cc-bottom-cta h2{font-family:var(--font-display);font-size:clamp(28px,3.5vw,40px);font-weight:800;color:#fff;margin-bottom:12px;position:relative;z-index:2}
+.cc-bottom-cta p{font-size:17px;color:rgba(255,255,255,.6);max-width:540px;margin:0 auto 28px;position:relative;z-index:2;line-height:1.7}
+.cc-bottom-cta .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+
+/* ═══ MOBILE ═══ */
+@media(max-width:1024px){.cc-build-grid,.cc-process-grid,.cc-stack-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .cc-hero-inner{grid-template-columns:1fr;text-align:center;gap:40px}
+  .cc-hero-desc{margin-left:auto;margin-right:auto}
+  .cc-stats{justify-content:center}
+  .cc-ctas{justify-content:center}
+  /* Carousel stays visible on phones. The desktop treatment floats the two cards
+     ON TOP of the photo, which only works while the frame is wide. At phone width
+     the cards are nearly as wide as the frame itself and cover the image, so here
+     they stop being absolute and flow underneath as a normal centred row. That
+     also frees the frame to keep the photo's own 16/10 landscape shape, so
+     object-fit:contain fills it instead of letterboxing into a tall box. */
+  .cc-visual{margin:0 auto;max-width:520px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+  /* the photo takes the full first row; the two cards share the row below it */
+  .cc-carousel{flex:0 0 100%;max-width:none;height:auto;aspect-ratio:16/10}
+  .cc-float{position:static;padding:10px 14px;text-align:center;animation:none}
+  .cc-float-label{font-size:10px}
+  .cc-float-val{font-size:14px}
+  .cc-build-grid,.cc-why-grid,.cc-process-grid,.cc-stack-grid{grid-template-columns:1fr}
+  .cc-team-points{grid-template-columns:1fr;gap:20px}
+  .cc-proj-grid{grid-template-columns:1fr}
+  .cc-trust-inner{gap:24px}
+  .cc-hero{padding:calc(var(--nav-h,60px) + 32px) 16px 60px}
+  .cc-section{padding:60px 16px}
+  .cc-faq{padding:60px 16px}
+  .cc-bottom-cta{padding:48px 16px}
+  .cc-bottom-cta .btn-group{flex-direction:column;align-items:center}
 }
-.cc-page .partner-inner{padding:86px 20px 105px;text-align:center}
-.cc-page .partner-copy{max-width:780px;margin:28px auto 0;font-size:19px;line-height:1.6;color:var(--muted)}
-.cc-page .orb-wrap{
-  max-width:760px;min-height:500px;margin:62px auto 0;
-  position:relative;border-radius:38px;display:grid;place-items:center;
-  background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,241,233,.9));
-  box-shadow:0 22px 70px rgba(145,91,65,.10);overflow:hidden;
-}
-.cc-page .orb-wrap:before,.cc-page .orb-wrap:after{content:"";position:absolute;border-radius:50%;filter:blur(1px)}
-.cc-page .orb-wrap:before{width:210px;height:210px;background:rgba(217,119,87,.12)}
-.cc-page .orb-wrap:after{width:430px;height:430px;border:1px solid rgba(217,119,87,.14)}
-.cc-page .orb{
-  width:112px;height:112px;border-radius:50%;display:grid;place-items:center;
-  background:rgba(255,255,255,.85);border:1px solid #fff;
-  box-shadow:0 16px 42px rgba(217,119,87,.25),0 0 0 35px rgba(217,119,87,.07);
-  position:relative;z-index:2;
-}
-.cc-page .orb img{width:48px;height:48px;border-radius:12px}
-.cc-page .pill{
-  position:absolute;z-index:3;bottom:110px;left:50%;transform:translateX(-50%);
-  padding:10px 18px;border-radius:999px;background:#FFE8DC;color:var(--blue-deep);
-  font-size:12px;font-weight:800;letter-spacing:1.2px;
-}
-.cc-page .orb-dot{
-  position:absolute;padding:10px 16px;border-radius:14px;background:#fff;
-  display:grid;place-items:center;box-shadow:0 6px 20px rgba(145,91,65,.13);
-  color:var(--ink);font-size:12px;font-weight:700;text-align:center;line-height:1.35;max-width:150px;
-}
-.cc-page .d1{top:88px;left:12%}
-.cc-page .d2{top:88px;right:12%}
-.cc-page .d3{bottom:78px;left:12%}
-.cc-page .d4{bottom:78px;right:12%}
-
-/* ---- DARK CTA (Enlight Lab diagonal-hatch band) ---- */
-.cc-page .dark-cta{
-  position:relative;background:var(--dark);color:#fff;overflow:hidden;text-align:center;
-  padding:78px 20px 90px;
-}
-.cc-page .dark-cta:before{
-  content:"";position:absolute;inset:0;opacity:.28;
-  background-image:
-    linear-gradient(30deg,transparent 47%,#6B4A3A 48%,transparent 49%),
-    linear-gradient(150deg,transparent 47%,#6B4A3A 48%,transparent 49%);
-  background-size:78px 45px;
-}
-.cc-page .dark-cta > *{position:relative;z-index:1}
-.cc-page .dark-cta h2{font-family:var(--font-display);font-size:clamp(32px,5vw,55px);line-height:1.12;letter-spacing:-1.7px;margin:0 auto 30px;max-width:780px}
-.cc-page .dark-cta p{max-width:640px;margin:0 auto 30px;color:rgba(255,255,255,.72);line-height:1.6;font-size:17px}
-.cc-page .dark-cta .btn{background:var(--blue);color:#fff;border-color:var(--blue)}
-.cc-page .dark-cta .btn:hover{background:var(--blue-2);border-color:var(--blue-2)}
-.cc-page .dark-cta .btn-ghost{background:transparent;border-color:rgba(255,255,255,.3)}
-.cc-page .dark-cta .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
-
-/* ---- MID CTA (compact dark band) ---- */
-.cc-page .mid-cta{background:var(--dark-2);padding:48px 24px;text-align:center;position:relative;overflow:hidden}
-.cc-page .mid-cta-text{font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:800;color:#fff;margin-bottom:20px;padding-inline:16px}
-.cc-page .mid-cta-text .accent{color:var(--blue-2)}
-.cc-page .mid-cta .btn{background:var(--blue);color:#fff;border-color:var(--blue)}
-
-/* ---- STACK (dark tool grid, Enlight Lab card rhythm) ---- */
-.cc-page .stack{background:var(--dark);color:#fff}
-.cc-page .stack-inner{padding:88px 20px 96px}
-.cc-page .stack .section-title{color:#fff;text-align:left;margin:0;max-width:760px}
-.cc-page .stack .section-copy{color:rgba(255,255,255,.62);margin:22px 0 0;text-align:left}
-.cc-page .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
-.cc-page .tool{
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  border-radius:20px;padding:24px 20px;text-align:center;transition:.28s ease;
-}
-.cc-page .tool:hover{transform:translateY(-4px);background:rgba(255,255,255,.1);border-color:rgba(217,119,87,.35)}
-.cc-page .tool-icon{
-  width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.08);
-  display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
-  border:1px solid rgba(255,255,255,.1);overflow:hidden;
-}
-.cc-page .tool-icon img{width:32px;height:32px;border-radius:6px}
-.cc-page .tool-name{font-family:var(--font-display);font-weight:700;font-size:15px;color:#fff;margin-bottom:4px}
-.cc-page .tool-role{font-size:12px;color:rgba(255,255,255,.55)}
-
-/* ---- FRAMEWORK / PROCESS (Enlight Lab top-rule cards) ---- */
-.cc-page .framework{background:#fff}
-.cc-page .framework-inner{padding:90px 20px}
-.cc-page .framework-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
-.cc-page .framework-card{
-  border-top:3px solid var(--blue);padding:24px 20px;
-  background:var(--soft);border-radius:0 0 20px 20px;transition:.28s ease;text-align:left;
-}
-.cc-page .framework-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(217,119,87,.1)}
-.cc-page .framework-card .step-num{font-family:var(--font-display);font-weight:800;font-size:15px;color:var(--blue);letter-spacing:1px;margin-bottom:10px}
-.cc-page .framework-card b{display:block;font-family:var(--font-display);font-size:17px;margin-bottom:10px;color:var(--ink)}
-.cc-page .framework-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
-
-/* ---- PROJECTS (2-col cards, Enlight Lab card language) ---- */
-.cc-page .projects{background:var(--soft)}
-.cc-page .projects-inner{padding:88px 20px 96px}
-.cc-page .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:50px}
-.cc-page .proj{background:#fff;border:1px solid var(--line);border-radius:27px;padding:32px;transition:.28s ease}
-.cc-page .proj:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(217,119,87,.12)}
-.cc-page .proj-tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;background:var(--soft);color:var(--blue);text-transform:uppercase;letter-spacing:.5px;display:inline-block;margin-bottom:12px;border:1px solid var(--line)}
-.cc-page .proj-title{font-family:var(--font-display);font-weight:700;font-size:19px;color:var(--ink);margin-bottom:8px;line-height:1.3}
-.cc-page .proj-desc{font-size:15px;color:var(--muted);line-height:1.6;margin-bottom:16px}
-.cc-page .proj-stack{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.cc-page .proj-stack-tag{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--soft);color:var(--muted);border:1px solid var(--line)}
-.cc-page .proj-result{font-family:var(--font-display);font-weight:800;font-size:14px;color:var(--green)}
-
-/* ---- VIDEO ---- */
-.cc-page .video-inner{padding:88px 20px;max-width:940px;margin-inline:auto;text-align:center}
-.cc-page .video-inner .section-copy{margin-bottom:44px}
-.cc-page #cc-loom-facade{
-  position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;
-  cursor:pointer;box-shadow:0 24px 60px rgba(45,27,20,.18);background:var(--dark);
-}
-.cc-page #cc-loom-facade img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease,opacity .3s}
-.cc-page #cc-loom-facade:hover img{transform:scale(1.03)}
-.cc-page .loom-badge{
-  position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:6px;
-  background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);border-radius:999px;
-  padding:6px 12px;font-size:12px;font-weight:700;color:#fff;
-}
-.cc-page .loom-badge i{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:ccBlink 2s ease-in-out infinite;display:block}
-@keyframes ccBlink{0%,100%{opacity:1}50%{opacity:.3}}
-.cc-page .loom-overlay{
-  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
-  background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.5));
-}
-.cc-page .loom-play{
-  width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.95);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 0 16px rgba(255,255,255,.15);transition:.3s;
-}
-.cc-page .loom-label{font-size:14px;font-weight:700;color:rgba(255,255,255,.92);background:rgba(0,0,0,.4);padding:6px 16px;border-radius:999px}
-
-/* ---- CASE-STUDY FILTER + GRID (JS-driven, restyled to match) ---- */
-.cc-page .csh-filters{width:100%;overflow:hidden;background:#fff;border-bottom:1px solid var(--line)}
-.cc-page .csh-filters .container,
-.cc-page .csh-grid-section .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
-.cc-page .csh-filters-inner{
-  display:flex;align-items:center;gap:10px;width:100%;min-width:0;
-  overflow-x:auto;overflow-y:hidden;padding:16px 2px;
-  -webkit-overflow-scrolling:touch;scrollbar-width:thin;
-}
-.cc-page .csh-filters-inner > *{flex:0 0 auto}
-.cc-page .csh-pill{
-  white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--muted);
-  border-radius:100px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s;
-}
-.cc-page .csh-pill:hover{border-color:var(--blue);color:var(--blue)}
-.cc-page .csh-pill.active{background:var(--blue);border-color:var(--blue);color:#fff}
-.cc-page .csh-filter-count{white-space:nowrap;margin-left:auto;font-size:13px;color:var(--muted)}
-.cc-page .csh-grid-section{background:#fff;padding:70px 0 90px}
-.cc-page .csh-grid{width:100%;min-width:0;margin-top:44px}
-.cc-page .csh-grid > *{min-width:0;max-width:100%}
-.cc-page .csh-grid img{display:block;max-width:100%;height:auto}
-.cc-page .csh-load-more-wrap{width:100%;text-align:center;margin-top:36px}
-.cc-page .csh-btn-primary{
-  max-width:100%;background:var(--blue);color:#fff;border:1.5px solid var(--blue);
-  border-radius:12px;padding:14px 28px;font-size:14px;font-weight:700;cursor:pointer;transition:.22s;
-}
-.cc-page .csh-btn-primary:hover{background:var(--blue-deep);border-color:var(--blue-deep);transform:translateY(-2px)}
-
-/* ---- FAQ (Enlight Lab accordion) ---- */
-.cc-page .faq{background:var(--soft)}
-.cc-page .faq-inner-wrap{padding:88px 20px}
-.cc-page .faq-sub{font-size:18px;color:var(--muted);text-align:center;margin:20px auto 0;max-width:660px;line-height:1.6}
-.cc-page .faq-list{max-width:900px;margin:45px auto 0}
-.cc-page .faq-item{background:#fff;border:1px solid var(--line);border-radius:15px;margin-bottom:12px;overflow:hidden}
-.cc-page .faq-q{
-  width:100%;background:#fff;border:0;text-align:left;padding:22px 24px;
-  display:flex;justify-content:space-between;align-items:center;gap:20px;
-  font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--ink);cursor:pointer;transition:background .2s;
-}
-.cc-page .faq-q:hover{background:var(--soft)}
-.cc-page .faq-arrow{font-size:14px;color:var(--blue);transition:transform .3s;flex-shrink:0}
-.cc-page .faq-item.open .faq-q{color:var(--blue)}
-.cc-page .faq-item.open .faq-arrow{transform:rotate(180deg)}
-.cc-page .faq-a{display:none;padding:0 24px 24px}
-.cc-page .faq-item.open .faq-a{display:block}
-.cc-page .faq-a p{font-size:15px;color:var(--muted);line-height:1.75;margin:0 0 12px}
-.cc-page .faq-a p:last-child{margin-bottom:0}
-.cc-page .faq-a strong{color:var(--ink)}
-.cc-page .faq-a ul{margin:8px 0 12px 20px;font-size:15px;color:var(--muted);line-height:1.75;padding:0}
-.cc-page .faq-a li{margin-bottom:6px}
-
-/* ---- long-content guards ---- */
-.cc-page .section-title,.cc-page .section-copy,.cc-page .hero h1,.cc-page .hero-copy,
-.cc-page .mid-cta-text,.cc-page .proj-desc,.cc-page .proj-result,.cc-page .tool-role,
-.cc-page .framework-card p,.cc-page .service-card p,.cc-page .faq-a{overflow-wrap:anywhere}
-.cc-page .service-card,.cc-page .tool,.cc-page .framework-card,
-.cc-page .proj,.cc-page .cc-float,.cc-page .faq-item{min-width:0;max-width:100%}
-
-/* =========================================================
-   RESPONSIVE — breakpoints ported from the reference
-   ========================================================= */
-@media(max-width:900px){
-  .cc-page .framework-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cc-page .stack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cc-page .stats{gap:25px}
-}
-@media(max-width:760px){
-  .cc-page .container,.cc-page .section-inner,
-  .cc-page .csh-filters .container,.cc-page .csh-grid-section .container{width:min(calc(100% - 32px),var(--max))}
-
-  .cc-page .hero-inner{min-height:auto;padding:calc(var(--nav-h,60px) + 24px) 16px 56px}
-  .cc-page .eyebrow{margin-bottom:24px}
-  .cc-page .hero h1{font-size:31px;line-height:1.28;letter-spacing:-1.25px;max-width:390px}
-  .cc-page .hero-copy{font-size:17px;line-height:1.6;max-width:360px;margin-top:26px}
-  .cc-page .actions{width:100%;flex-direction:column;align-items:center;gap:14px;margin-top:38px}
-  .cc-page .btn{width:min(100%,260px)}
-  .cc-page .hero-media{margin-top:44px}
-  .cc-page .cc-carousel{height:clamp(220px,62vw,320px);border-radius:18px}
-  .cc-page .cc-float{padding:10px 12px}
-  .cc-page .cc-float-1{bottom:-12px;left:0}
-  .cc-page .cc-float-2{top:-10px;right:0}
-  .cc-page .cc-float-label{font-size:10px}
-  .cc-page .cc-float-val{font-size:13px}
-
-  .cc-page .trust{padding:24px 0 56px}
-  .cc-page .rating-row{gap:16px 22px}
-  .cc-page .logo-cloud{gap:18px 24px;margin-top:25px}
-  .cc-page .brand{font-size:13px}
-  .cc-page .trusted-title{font-size:19px;max-width:340px;margin-top:30px}
-  .cc-page .client-grid{grid-template-columns:repeat(2,1fr);gap:22px 14px;max-width:400px}
-  .cc-page .client{font-size:12px}
-
-  .cc-page .proof-inner{padding:68px 16px 78px}
-  .cc-page .section-title{font-size:31px;line-height:1.23;letter-spacing:-1px;max-width:390px}
-  .cc-page .section-copy{font-size:17px;line-height:1.6;max-width:380px;margin-top:24px}
-  .cc-page .stats{grid-template-columns:repeat(2,1fr);gap:44px 20px;margin-top:56px}
-  .cc-page .stat-num{font-size:44px}
-  .cc-page .stat-label{font-size:14px;margin-top:16px}
-
-  .cc-page .services-inner{padding:70px 16px 80px}
-  .cc-page .services-intro{margin-bottom:42px}
-  .cc-page .services-intro .section-title{max-width:100%}
-  .cc-page .services-intro p{font-size:17px;line-height:1.65}
-  .cc-page .service-grid{grid-template-columns:1fr;gap:18px}
-  .cc-page .service-card{min-height:auto;border-radius:22px;padding:100px 24px 30px}
-  .cc-page .service-card h3{font-size:22px}
-  .cc-page .service-card p{font-size:15px}
-
-  .cc-page .partner-inner{padding:70px 16px 80px}
-  .cc-page .partner-copy{font-size:17px;line-height:1.6}
-  .cc-page .orb-wrap{min-height:520px;margin-top:48px;border-radius:26px}
-  .cc-page .orb{width:100px;height:100px}
-  .cc-page .pill{bottom:100px}
-  .cc-page .orb-dot{max-width:120px;font-size:11px;padding:8px 10px}
-  .cc-page .d1,.cc-page .d3{left:5%}
-  .cc-page .d2,.cc-page .d4{right:5%}
-
-  .cc-page .dark-cta{padding:60px 18px 70px}
-  .cc-page .dark-cta h2{font-size:32px}
-  .cc-page .dark-cta p{font-size:16px}
-  .cc-page .dark-cta .btn{width:min(100%,300px)}
-
-  .cc-page .mid-cta{padding:38px 16px}
-  .cc-page .mid-cta-text{font-size:clamp(21px,6vw,28px);line-height:1.25;margin-bottom:18px}
-  .cc-page .mid-cta .btn{width:min(100%,320px)}
-
-  .cc-page .stack-inner,.cc-page .framework-inner,.cc-page .projects-inner,
-  .cc-page .faq-inner-wrap,.cc-page .video-inner{padding:66px 16px}
-  .cc-page .stack .section-title,.cc-page .stack .section-copy{text-align:left}
-  .cc-page .stack-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:40px}
-  .cc-page .tool{padding:20px 12px;border-radius:16px}
-  .cc-page .tool-name{font-size:14px}
-  .cc-page .tool-role{font-size:11px}
-
-  .cc-page .framework-grid{grid-template-columns:1fr;gap:14px;margin-top:38px}
-  .cc-page .proj-grid{grid-template-columns:1fr;gap:16px;margin-top:38px}
-  .cc-page .proj{padding:24px 20px;border-radius:22px}
-  .cc-page .proj-title{font-size:18px}
-
-  .cc-page .csh-grid-section{padding:56px 0 70px}
-  .cc-page .csh-filters-inner{gap:8px;padding:12px 0;margin-right:-16px;padding-right:16px}
-  .cc-page .csh-pill{font-size:12px;padding:9px 13px}
-  .cc-page .csh-filter-count{font-size:12px}
-  .cc-page .csh-grid{margin-top:32px}
-
-  .cc-page #cc-loom-facade{border-radius:16px}
-  .cc-page .loom-play{width:64px;height:64px;box-shadow:0 0 0 10px rgba(255,255,255,.15)}
-  .cc-page .loom-play svg{width:22px;height:22px}
-  .cc-page .loom-label{font-size:12px}
-
-  .cc-page .faq-sub{font-size:15px;line-height:1.6}
-  .cc-page .faq-list{margin-top:34px}
-  .cc-page .faq-q{padding:16px;gap:12px;font-size:14px;line-height:1.45}
-  .cc-page .faq-a{padding:0 16px 18px}
-  .cc-page .faq-a p,.cc-page .faq-a ul{font-size:14px;line-height:1.65}
-}
-@media(max-width:420px){
-  .cc-page .hero-inner{padding-left:12px;padding-right:12px}
-  .cc-page .hero h1{font-size:30px}
-  .cc-page .hero-copy{font-size:16px}
-  .cc-page .client-grid{gap:20px 8px}
-  .cc-page .stats{gap:38px 12px}
-  .cc-page .stat-num{font-size:40px}
-  .cc-page .cc-carousel{height:230px}
-  .cc-page .cc-float-1{left:-2px}
-  .cc-page .cc-float-2{right:-2px}
-  .cc-page .stack-grid{grid-template-columns:1fr}
-  .cc-page .csh-filters .container,.cc-page .csh-grid-section .container{width:min(calc(100% - 24px),var(--max))}
-  .cc-page .csh-filters-inner{margin-right:-12px;padding-right:12px}
+/* Narrow phones: the two cards no longer fit side by side once their text wraps,
+   so they get smaller type and tighter padding to hold the single row. */
+@media(max-width:430px){
+  .cc-visual{gap:10px}
+  .cc-float{padding:8px 11px;border-radius:10px}
+  .cc-float-label{font-size:9px}
+  .cc-float-val{font-size:12px}
 }
 </style>
 </head>
@@ -536,25 +236,34 @@ body{margin:0;padding-top:0;overflow-x:hidden;-webkit-font-smoothing:antialiased
 
 <div id="gs-navbar"></div>
 
-<main class="cc-page" id="top">
+<main>
 
 <!-- ═══ HERO ═══ -->
-<section class="hero section">
-  <div class="hero-inner">
-    <div class="eyebrow">
-      <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="" width="28" height="28">
-      <span>Anthropic Certified Claude Code Team</span>
+<section class="cc-hero">
+  <div class="float-shape fs1"></div>
+  <div class="float-shape fs2"></div>
+  <div class="float-shape fs3"></div>
+  <div class="float-shape fs4"></div>
+  <div class="cc-hero-inner">
+    <div>
+      <div class="cc-badge">
+        <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="Claude Code" width="32" height="32">
+        <span>Claude Code Experts</span>
+      </div>
+      <h1>Custom Apps Built With <em>Claude Code</em> — Deployed in Days, Not Months</h1>
+      <p class="cc-hero-desc">A team of Anthropic certified engineers building production-ready web apps, CRMs, dashboards, and AI tools with Claude Code — deployed on Supabase, Neon, and Vercel. From idea to live in days.</p>
+      <div class="cc-stats">
+        <div><div class="cc-stat-num">10+</div><div class="cc-stat-label">Certified Engineers</div></div>
+        <div><div class="cc-stat-num">50+</div><div class="cc-stat-label">Apps Shipped</div></div>
+        <div><div class="cc-stat-num">10x</div><div class="cc-stat-label">Faster Delivery</div></div>
+        <div><div class="cc-stat-num">$0</div><div class="cc-stat-label">Platform Lock-In</div></div>
+      </div>
+      <div class="cc-ctas">
+        <a href="/#consultation" class="btn-cc btn-cc-primary">Get a Custom App Quote →</a>
+        <a href="/#projects" class="btn-cc btn-cc-outline">See What We've Built</a>
+      </div>
     </div>
-    <h1>Bring Claude Into Your Business — <em></em>Delivered by a Certified Team.</h1>
-    <p class="hero-copy">
-Hire Claude Code developers, automation engineers, and AI architects on demand. 2,000+ projects delivered.
- </p>
-    <div class="actions">
-      <a class="btn btn-primary" href="#consultation">Get a Custom App Quote <span class="arrow">→</span></a>
-      <a class="btn btn-secondary" href="#projects">See What We've Built</a>
-    </div>
-
-    <div class="hero-media">
+    <div class="cc-visual">
       <div class="cc-carousel">
         <!-- Each slide is a <figure> whose background-image is the SAME photo scaled to
              cover the frame and blurred by CSS, with the sharp photo sitting on top via
@@ -589,99 +298,14 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
 (function(){var c=document.querySelector('.cc-carousel');if(!c)return;var slides=c.querySelectorAll('.cc-slide');if(!slides||slides.length<2)return;var i=0;setInterval(function(){slides[i].classList.remove('active');i=(i+1)%slides.length;slides[i].classList.add('active')},3500)})();
 </script>
 
-<!-- ═══ TRUST ═══ -->
-<section class="trust section">
-  <div class="section-inner">
-    <div class="rating-row">
-      <span class="rating"><span class="stars">★★★★★</span> 5.0 Google Rating</span>
-      <span class="rating">✓ You Own 100% of the Code</span>
-      <span class="rating">🛟 30 Days Free Post-Launch Support</span>
-    </div>
-    <div class="logo-cloud" aria-label="Technology partners">
-      <span class="brand"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="" width="26" height="26">Anthropic Certified</span>
-      <span class="brand"><img src="https://www.google.com/s2/favicons?domain=supabase.com&sz=32" alt="" width="26" height="26">Supabase</span>
-      <span class="brand"><img src="https://www.google.com/s2/favicons?domain=vercel.com&sz=32" alt="" width="26" height="26">Vercel</span>
-      <span class="brand"><img src="https://www.google.com/s2/favicons?domain=neon.tech&sz=32" alt="" width="26" height="26">Neon</span>
-    </div>
-    <div class="trusted-title">Trusted by Businesses Shipping Real Production Software</div>
-    <div class="client-grid">
-      <span class="client"><img src="https://www.google.com/s2/favicons?domain=nextjs.org&sz=32" alt="" width="24" height="24">Next.js</span>
-      <span class="client"><img src="https://www.google.com/s2/favicons?domain=react.dev&sz=32" alt="" width="24" height="24">React</span>
-      <span class="client"><img src="https://www.google.com/s2/favicons?domain=postgresql.org&sz=32" alt="" width="24" height="24">PostgreSQL</span>
-      <span class="client"><img src="https://www.google.com/s2/favicons?domain=stripe.com&sz=32" alt="" width="24" height="24">Stripe</span>
-      <span class="client"><img src="https://www.google.com/s2/favicons?domain=tailwindcss.com&sz=32" alt="" width="24" height="24">Tailwind</span>
-      <span class="client"><img src="https://www.google.com/s2/favicons?domain=twilio.com&sz=32" alt="" width="24" height="24">Twilio</span>
-    </div>
+<!-- ═══ TRUST BAR ═══ -->
+<section class="cc-trust">
+  <div class="cc-trust-inner">
+    <div class="cc-trust-item"><div class="cc-trust-icon ti-amber">⭐</div><span>5.0 Google Rating</span></div>
+    <div class="cc-trust-item"><div class="cc-trust-icon ti-green">✓</div><span>You Own 100% of the Code</span></div>
+    <div class="cc-trust-item"><div class="cc-trust-icon ti-blue">🛟</div><span>30 Days Free Post-Launch Support</span></div>
   </div>
 </section>
-
-<!-- ═══ PROOF / STATS ═══ -->
-<section class="proof section" id="proof">
-  <div class="proof-inner section-inner">
-    <h2 class="section-title">Why Startups and Enterprises Trust <span class="accent">Our Claude Code Team</span></h2>
-    <p class="section-copy">Our track record across custom app development, CRM builds, and AI tooling is built on transparency and measurable results — not vague promises. Here's the proof.</p>
-    <div class="stats">
-      <div><div class="stat-num">10+</div><div class="stat-label">Anthropic Certified<br>Engineers</div></div>
-      <div><div class="stat-num">50+</div><div class="stat-label">Production Apps<br>Shipped</div></div>
-      <div><div class="stat-num">10x</div><div class="stat-label">Faster Delivery vs<br>Traditional Dev</div></div>
-      <div><div class="stat-num">$0</div><div class="stat-label">Platform<br>Lock-In</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SERVICES / WHAT WE BUILD ═══ -->
-<section class="services section" id="what-we-build">
-  <div class="services-inner section-inner">
-    <div class="services-intro">
-      <h2 class="section-title">Dive into Our Service Set</h2>
-      <p>Whether you're a founder with an idea, an operator replacing a no-code stack, or an engineering leader who needs extra bandwidth — Claude Code lets us build full-stack applications in days that would traditionally take weeks or months.</p>
-    </div>
-    <div class="service-grid">
-      <article class="service-card card-crm">
-        <div class="icon">🏢</div>
-        <h3>Custom CRM Systems</h3>
-        <p>Purpose-built CRMs tailored to your exact workflow — contact management, deal tracking, pipeline views, and automated follow-ups. No Salesforce licensing fees.</p>
-        <div class="tags"><span class="tag">Supabase</span><span class="tag">Vercel</span></div>
-      </article>
-      <article class="service-card card-dash">
-        <div class="icon">📊</div>
-        <h3>Admin Dashboards &amp; Portals</h3>
-        <p>Real-time dashboards for operations, finance, and team management. Role-based access, live data from your existing tools, and export capabilities.</p>
-        <div class="tags"><span class="tag">React</span><span class="tag">Neon DB</span></div>
-      </article>
-      <article class="service-card card-ai">
-        <div class="icon">🤖</div>
-        <h3>AI-Powered Tools &amp; Agents</h3>
-        <p>Web-based AI tools — document processors, content generators, data analyzers, and chatbots — with the Claude API built directly into the frontend.</p>
-        <div class="tags"><span class="tag">Claude API</span><span class="tag">MCP</span></div>
-      </article>
-      <article class="service-card card-ops">
-        <div class="icon">📋</div>
-        <h3>Internal Operations Tools</h3>
-        <p>Custom tools your team actually needs — booking systems, inventory trackers, invoice managers, approval workflows — built to match your exact process.</p>
-        <div class="tags"><span class="tag">Next.js</span><span class="tag">Supabase</span></div>
-      </article>
-      <article class="service-card card-client">
-        <div class="icon">🌐</div>
-        <h3>Client-Facing Web Apps</h3>
-        <p>Customer portals, booking platforms, marketplace frontends, and SaaS interfaces — with authentication, payments, and responsive design baked in.</p>
-        <div class="tags"><span class="tag">Stripe</span><span class="tag">Vercel</span></div>
-      </article>
-      <article class="service-card card-migrate">
-        <div class="icon">🔄</div>
-        <h3>Automation-to-App Migrations</h3>
-        <p>When your Make.com or n8n scenario outgrows no-code, we rebuild it as a custom app — same logic, better performance, zero platform fees.</p>
-        <div class="tags"><span class="tag">Migration</span><span class="tag">Custom</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ MID CTA ═══ -->
-<div class="mid-cta">
-  <div class="mid-cta-text">Need a custom app? <span class="accent">We build it with Claude Code — fast.</span></div>
-  <a href="#consultation" class="btn btn-primary">Get a Custom App Quote <span class="arrow">→</span></a>
-</div>
 
 <!-- ═══ FILTER BAR ═══ -->
 <section class="csh-filters" id="csh-filters">
@@ -700,11 +324,12 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
   </div>
 </section>
 
-<!-- ═══ CASE STUDIES CARD GRID ═══ -->
+<!-- CASE STUDIES CARD GRID -->
 <section class="csh-grid-section" id="projects">
   <div class="container">
-    <h2 class="section-title" style="text-align:left;margin-left:0">Custom Applications Built and Deployed With Claude Code</h2>
-    <p class="section-copy" style="margin-left:0;text-align:left">From CRMs and dashboards to full-stack AI tools — see what our Claude Code team has shipped for real businesses.</p>
+    <div class="cc-label">Claude Code Projects</div>
+    <h2 class="cc-title">Custom Applications Built and Deployed With Claude Code</h2>
+    <p class="cc-desc">From CRMs and dashboards to full-stack AI tools — see what our Claude Code team has shipped for real businesses.</p>
     <div class="csh-grid" id="csh-grid" data-app=""></div>
     <div class="csh-load-more-wrap">
       <button id="csh-load-more" class="csh-btn-primary">Load More</button>
@@ -712,197 +337,252 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
   </div>
 </section>
 
+<!-- ═══ MID CTA ═══ -->
+<div class="cc-mid-cta">
+  <div class="cc-mid-cta-text">Need a custom app? <span class="accent">We build it with Claude Code — fast.</span></div>
+  <a href="#consultation" class="btn-cc btn-cc-primary">Get a Custom App Quote →</a>
+</div>
+
 <!-- ═══ LOOM VIDEO ═══ -->
-<section class="section" style="background:#fff">
-  <div class="video-inner">
-    <h2 class="section-title">Watch How We Build Apps With Claude Code</h2>
-    <p class="section-copy">A walkthrough of our Claude Code development process — from requirements to deployed app with real project examples.</p>
-    <div id="cc-loom-facade" role="button" tabindex="0" aria-label="Play Claude Code demo video">
-      <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/claude_thumbnail.jpg" alt="Claude Code App Building Demo — GrowwStacks" loading="lazy" width="900" height="506">
-      <div class="loom-badge"><i></i> Loom Demo</div>
-      <div class="loom-overlay">
-        <div class="loom-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#1F1410"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="loom-label">▶ Play Demo — Claude Code App Building</div>
+<section class="cc-section" style="background:#fff">
+  <div class="cc-section-inner" style="max-width:900px">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="cc-label">See It In Action</div>
+      <h2 class="cc-title" style="text-align:center">Watch How We Build Apps With Claude Code</h2>
+      <p class="cc-desc" style="text-align:center;margin-left:auto;margin-right:auto">A walkthrough of our Claude Code development process — from requirements to deployed app with real project examples.</p>
+    </div>
+    <!-- PLACEHOLDER: Replace with actual Claude Code demo Loom -->
+    <div id="cc-loom-facade" role="button" tabindex="0" aria-label="Play Claude Code demo video" style="position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:0 24px 60px rgba(45,27,20,.18);background:#1F1410">
+      <img src="https://ik.imagekit.io/r2zdlyze2o/GS-Website/Home%20Page/claude_thumbnail.jpg" alt="Claude Code App Building Demo — GrowwStacks" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease,opacity .3s" loading="lazy" width="900" height="506">
+      <div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;color:#fff">
+        <span style="width:8px;height:8px;border-radius:50%;background:#D97757;animation:ccBlink 2s ease-in-out infinite"></span> Loom Demo
+      </div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.5))">
+        <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 16px rgba(255,255,255,.15);transition:all .3s">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#1F1410"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div style="font-size:14px;font-weight:700;color:rgba(255,255,255,.9);background:rgba(0,0,0,.4);padding:6px 16px;border-radius:999px;backdrop-filter:blur(8px)">▶ Play Demo — Claude Code App Building</div>
       </div>
     </div>
   </div>
 </section>
+<style>@keyframes ccBlink{0%,100%{opacity:1}50%{opacity:.3}}</style>
 <script>
-!function(){var f=document.getElementById('cc-loom-facade');if(!f)return;function open(){f.innerHTML='<iframe src="https://www.loom.com/embed/872cb1fec2de4f2382b230eb48ba3288?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay;fullscreen" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>';f.style.cursor='default';f.style.background='#000'}f.addEventListener('click',open);f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open()})}();
+!function(){var f=document.getElementById('cc-loom-facade');if(!f)return;function open(){f.innerHTML='<iframe src="https://www.loom.com/embed/872cb1fec2de4f2382b230eb48ba3288?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay;fullscreen" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:16px"></iframe>';f.style.cursor='default';f.style.background='#000'}f.addEventListener('click',open);f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open()})}();
 </script>
 
+<!-- ═══ WHAT WE BUILD ═══ -->
+<section class="cc-section cc-builds" id="what-we-build">
+  <div class="cc-section-inner">
+    <div class="cc-label">What We Build</div>
+    <h2 class="cc-title">Types of Apps We Ship With Claude Code</h2>
+    <p class="cc-desc">Claude Code lets us build full-stack applications in days that would traditionally take weeks or months. Here's what we deliver.</p>
+    <div class="cc-build-grid">
+      <div class="cc-build">
+        <div class="cc-build-icon">🏢</div>
+        <div class="cc-build-body">
+          <div class="cc-build-title">Custom CRM Systems</div>
+          <div class="cc-build-desc">Purpose-built CRMs tailored to your exact workflow — contact management, deal tracking, pipeline views, and automated follow-ups. No Salesforce licensing fees.</div>
+          <div class="cc-build-tags"><span class="cc-build-tag bt-coral">Supabase</span><span class="cc-build-tag bt-green">Vercel</span></div>
+        </div>
+      </div>
+      <div class="cc-build">
+        <div class="cc-build-icon">📊</div>
+        <div class="cc-build-body">
+          <div class="cc-build-title">Admin Dashboards & Portals</div>
+          <div class="cc-build-desc">Real-time dashboards for operations, finance, and team management. Role-based access, live data from your existing tools, and export capabilities.</div>
+          <div class="cc-build-tags"><span class="cc-build-tag bt-coral">React</span><span class="cc-build-tag bt-blue">Neon DB</span></div>
+        </div>
+      </div>
+      <div class="cc-build">
+        <div class="cc-build-icon">🤖</div>
+        <div class="cc-build-body">
+          <div class="cc-build-title">AI-Powered Tools & Agents</div>
+          <div class="cc-build-desc">Web-based AI tools — document processors, content generators, data analyzers, and chatbots — with Claude API built directly into the frontend.</div>
+          <div class="cc-build-tags"><span class="cc-build-tag bt-coral">Claude API</span><span class="cc-build-tag bt-green">MCP</span></div>
+        </div>
+      </div>
+      <div class="cc-build">
+        <div class="cc-build-icon">📋</div>
+        <div class="cc-build-body">
+          <div class="cc-build-title">Internal Operations Tools</div>
+          <div class="cc-build-desc">Custom tools your team actually needs — booking systems, inventory trackers, invoice managers, approval workflows — built to match your exact process.</div>
+          <div class="cc-build-tags"><span class="cc-build-tag bt-coral">Next.js</span><span class="cc-build-tag bt-green">Supabase</span></div>
+        </div>
+      </div>
+      <div class="cc-build">
+        <div class="cc-build-icon">🌐</div>
+        <div class="cc-build-body">
+          <div class="cc-build-title">Client-Facing Web Apps</div>
+          <div class="cc-build-desc">Customer portals, booking platforms, marketplace frontends, and SaaS interfaces — with authentication, payments, and responsive design baked in.</div>
+          <div class="cc-build-tags"><span class="cc-build-tag bt-blue">Stripe</span><span class="cc-build-tag bt-green">Vercel</span></div>
+        </div>
+      </div>
+      <div class="cc-build">
+        <div class="cc-build-icon">🔄</div>
+        <div class="cc-build-body">
+          <div class="cc-build-title">Automation-to-App Migrations</div>
+          <div class="cc-build-desc">When your Make.com or n8n scenario outgrows no-code, we rebuild it as a custom app — same logic, better performance, zero platform fees.</div>
+          <div class="cc-build-tags"><span class="cc-build-tag bt-coral">Migration</span><span class="cc-build-tag bt-blue">Custom</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ TECH STACK ═══ -->
-<section class="stack section" id="tech-stack">
-  <div class="stack-inner section-inner">
-    <h2 class="section-title">Production-Grade Infrastructure — Not Toy Demos</h2>
-    <p class="section-copy">Every app we ship runs on battle-tested infrastructure. Here's the stack our Claude Code team deploys on.</p>
-    <div class="stack-grid">
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="Claude Code" width="32" height="32"></div>
-        <div class="tool-name">Claude Code</div>
-        <div class="tool-role">AI Development Engine</div>
+<section class="cc-section cc-stack" id="tech-stack">
+  <div class="cc-section-inner">
+    <div class="cc-label">Our Tech Stack</div>
+    <h2 class="cc-title">Production-Grade Infrastructure — Not Toy Demos</h2>
+    <p class="cc-desc">Every app we ship runs on battle-tested infrastructure. Here's the stack our Claude Code team deploys on.</p>
+    <div class="cc-stack-grid">
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="Claude Code" width="32" height="32"></div>
+        <div class="cc-tool-name">Claude Code</div>
+        <div class="cc-tool-role">AI Development Engine</div>
       </div>
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=supabase.com&sz=32" alt="Supabase" width="32" height="32"></div>
-        <div class="tool-name">Supabase</div>
-        <div class="tool-role">Database &amp; Auth</div>
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=supabase.com&sz=32" alt="Supabase" width="32" height="32"></div>
+        <div class="cc-tool-name">Supabase</div>
+        <div class="cc-tool-role">Database & Auth</div>
       </div>
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=neon.tech&sz=32" alt="Neon" width="32" height="32"></div>
-        <div class="tool-name">Neon</div>
-        <div class="tool-role">Serverless Postgres</div>
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=neon.tech&sz=32" alt="Neon" width="32" height="32"></div>
+        <div class="cc-tool-name">Neon</div>
+        <div class="cc-tool-role">Serverless Postgres</div>
       </div>
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=vercel.com&sz=32" alt="Vercel" width="32" height="32"></div>
-        <div class="tool-name">Vercel</div>
-        <div class="tool-role">Deployment &amp; Hosting</div>
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=vercel.com&sz=32" alt="Vercel" width="32" height="32"></div>
+        <div class="cc-tool-name">Vercel</div>
+        <div class="cc-tool-role">Deployment & Hosting</div>
       </div>
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=nextjs.org&sz=32" alt="Next.js" width="32" height="32"></div>
-        <div class="tool-name">Next.js</div>
-        <div class="tool-role">React Framework</div>
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=nextjs.org&sz=32" alt="Next.js" width="32" height="32"></div>
+        <div class="cc-tool-name">Next.js</div>
+        <div class="cc-tool-role">React Framework</div>
       </div>
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=tailwindcss.com&sz=32" alt="Tailwind CSS" width="32" height="32"></div>
-        <div class="tool-name">Tailwind CSS</div>
-        <div class="tool-role">Styling &amp; Design</div>
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=tailwindcss.com&sz=32" alt="Tailwind CSS" width="32" height="32"></div>
+        <div class="cc-tool-name">Tailwind CSS</div>
+        <div class="cc-tool-role">Styling & Design</div>
       </div>
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=stripe.com&sz=32" alt="Stripe" width="32" height="32"></div>
-        <div class="tool-name">Stripe</div>
-        <div class="tool-role">Payments</div>
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=stripe.com&sz=32" alt="Stripe" width="32" height="32"></div>
+        <div class="cc-tool-name">Stripe</div>
+        <div class="cc-tool-role">Payments</div>
       </div>
-      <div class="tool">
-        <div class="tool-icon"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="Claude API" width="32" height="32"></div>
-        <div class="tool-name">Claude API</div>
-        <div class="tool-role">AI Intelligence</div>
+      <div class="cc-tool">
+        <div class="cc-tool-icon"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="Claude API" width="32" height="32"></div>
+        <div class="cc-tool-name">Claude API</div>
+        <div class="cc-tool-role">AI Intelligence</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PARTNER / CERTIFIED TEAM ═══ -->
-<section class="partner section" id="our-team">
-  <div class="partner-inner section-inner">
-    <h2 class="section-title">Why Businesses Partner<br>With <span class="accent">Our Certified Team</span></h2>
-    <p class="partner-copy">Claude Code isn't a side experiment for us. Every engineer on our development team has completed Anthropic's official service partner certification — so the people building your app are trained on Claude's tooling, context management, and agentic workflows, not learning on your budget.</p>
-    <div class="orb-wrap">
-      <div class="orb-dot d1">Certified,<br>not self-taught</div>
-      <div class="orb-dot d2">Depth on<br>every project</div>
-      <div class="orb-dot d3">No outsourcing,<br>ever</div>
-      <div class="orb-dot d4">Current with<br>the platform</div>
-      <div class="orb"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" alt="Anthropic" width="48" height="48"></div>
-      <div class="pill">ANTHROPIC CERTIFIED</div>
+<!-- ═══ CERTIFIED TEAM ═══ -->
+<section class="cc-section cc-team" id="our-team">
+  <div class="cc-team-inner">
+    <div>
+      <div class="cc-team-badge">
+        <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" alt="Anthropic" width="28" height="28">
+        <span>Anthropic Certified Team</span>
+      </div>
+      <h2 class="cc-title">Built By a Certified Anthropic Team</h2>
+      <p class="cc-desc">Claude Code isn't a side experiment for us. Every engineer on our development team has completed Anthropic's official service partner certification — so the people building your app are trained on Claude's tooling, context management, and agentic workflows, not learning on your budget.</p>
     </div>
+    <ul class="cc-team-points">
+      <li><strong>Certified, not self-taught.</strong> Official Anthropic certification covering Claude Code, the Claude API, and MCP.</li>
+      <li><strong>Depth on every project.</strong> Your build is never one developer's side task — there's a certified team behind it for reviews and handover.</li>
+      <li><strong>Current with the platform.</strong> We track Claude model and tooling releases as they ship, so your app is built on what's current.</li>
+    </ul>
   </div>
 </section>
 
-<!-- ═══ DARK CTA ═══ -->
-<section class="dark-cta section">
-  <h2>Ready to Build Your<br>Custom App?</h2>
-  <p>Tell us what you need — a CRM, dashboard, AI tool, or something entirely custom. We'll scope it, quote it, and start building within days.</p>
-  <div class="actions">
-    <a class="btn" href="#consultation">Get a Custom App Quote <span class="arrow">→</span></a>
-    <a class="btn btn-ghost" href="/case-studies/">View Case Studies</a>
-  </div>
-</section>
-
-<!-- ═══ FRAMEWORK / PROCESS ═══ -->
-<section class="framework section" id="process">
-  <div class="framework-inner section-inner">
-    <h2 class="section-title">Project Execution Framework from<br><span class="accent">Idea to Live App</span></h2>
-    <div class="framework-grid">
-      <article class="framework-card">
-        <div class="step-num">01</div>
-        <b>Requirements &amp; Architecture</b>
-        <p>We map your workflow, define the data model, choose the right stack, and design the app architecture — typically in a single call.</p>
-      </article>
-      <article class="framework-card">
-        <div class="step-num">02</div>
-        <b>Claude Code Build Sprint</b>
-        <p>Our developers use Claude Code to scaffold the entire app — database schema, API routes, UI components, and authentication — in a focused 2-3 day sprint.</p>
-      </article>
-      <article class="framework-card">
-        <div class="step-num">03</div>
-        <b>Polish, Test &amp; Integrate</b>
-        <p>We refine the UI, connect your existing tools (CRM, email, payments), write tests, and handle the edge cases your team cares about.</p>
-      </article>
-      <article class="framework-card">
-        <div class="step-num">04</div>
-        <b>Deploy &amp; Support</b>
-        <p>Deployed to Vercel with CI/CD, custom domain, SSL, and monitoring. 30 days of free support post-launch — we don't disappear.</p>
-      </article>
+<!-- ═══ OUR PROCESS ═══ -->
+<section class="cc-section">
+  <div class="cc-section-inner">
+    <div class="cc-label">How We Work</div>
+    <h2 class="cc-title">From Idea to Live App in Days</h2>
+    <p class="cc-desc">Claude Code accelerates every step. Here's what a typical project looks like.</p>
+    <div class="cc-process-grid">
+      <div class="cc-step">
+        <div class="cc-step-num">01</div>
+        <div class="cc-step-title">Requirements & Architecture</div>
+        <div class="cc-step-desc">We map your workflow, define the data model, choose the right stack, and design the app architecture — typically in a single call.</div>
+      </div>
+      <div class="cc-step">
+        <div class="cc-step-num">02</div>
+        <div class="cc-step-title">Claude Code Build Sprint</div>
+        <div class="cc-step-desc">Our developers use Claude Code to scaffold the entire app — database schema, API routes, UI components, and authentication — in a focused 2-3 day sprint.</div>
+      </div>
+      <div class="cc-step">
+        <div class="cc-step-num">03</div>
+        <div class="cc-step-title">Polish, Test & Integrate</div>
+        <div class="cc-step-desc">We refine the UI, connect your existing tools (CRM, email, payments), write tests, and handle edge cases your team cares about.</div>
+      </div>
+      <div class="cc-step">
+        <div class="cc-step-num">04</div>
+        <div class="cc-step-title">Deploy & Support</div>
+        <div class="cc-step-desc">Deployed to Vercel with CI/CD, custom domain, SSL, and monitoring. 30 days of free support post-launch — we don't disappear.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ FEATURED PROJECTS ═══ -->
-<section class="projects section" id="featured-projects">
-  <div class="projects-inner section-inner">
-    <h2 class="section-title" style="text-align:left;margin-left:0">Real Apps We've Shipped With <span class="accent">Claude Code</span></h2>
-    <p class="section-copy" style="margin-left:0;text-align:left">Each project below was built primarily with Claude Code and deployed to production for real businesses.</p>
-    <div class="proj-grid">
-      <article class="proj">
-        <span class="proj-tag">Custom Web App</span>
-        <div class="proj-title">Cleaning Workforce Scheduling Platform</div>
-        <div class="proj-desc">Migrated a venue cleaning scheduling pipeline from Make.com to a custom web app — purpose-built client dashboard with WhatsApp notifications, Google Calendar sync, and zero ongoing platform costs.</div>
-        <div class="proj-stack"><span class="proj-stack-tag">Supabase</span><span class="proj-stack-tag">Vercel</span><span class="proj-stack-tag">WhatsApp</span><span class="proj-stack-tag">Google Calendar</span></div>
-        <div class="proj-result">✓ Eliminated all subscription costs · Custom dashboard</div>
-      </article>
-      <article class="proj">
-        <span class="proj-tag">AI Tool</span>
-        <div class="proj-title">AI Bid Qualification System for Construction</div>
-        <div class="proj-desc">End-to-end bid qualification pipeline that scrapes public tenders, transcribes RFP packages, screens disqualifiers across six categories, and delivers ranked go/no-go verdicts.</div>
-        <div class="proj-stack"><span class="proj-stack-tag">PostgreSQL</span><span class="proj-stack-tag">Supabase</span><span class="proj-stack-tag">Claude API</span><span class="proj-stack-tag">Google Sheets</span></div>
-        <div class="proj-result">✓ 100% automated RFP screening · Zero manual review</div>
-      </article>
-      <article class="proj">
-        <span class="proj-tag">Custom CRM</span>
-        <div class="proj-title">Real Estate Lead Management Platform</div>
-        <div class="proj-desc">Custom CRM built for a real estate agency — lead capture from multiple listing sites, automated follow-up sequences, showing scheduler, and deal pipeline with commission tracking.</div>
-        <div class="proj-stack"><span class="proj-stack-tag">Next.js</span><span class="proj-stack-tag">Supabase</span><span class="proj-stack-tag">Vercel</span><span class="proj-stack-tag">Twilio</span></div>
-        <div class="proj-result">✓ Replaced $500/mo SaaS · Tailored to their workflow</div>
-      </article>
-      <article class="proj">
-        <span class="proj-tag">Dashboard</span>
-        <div class="proj-title">Multi-Location Operations Dashboard</div>
-        <div class="proj-desc">Real-time operations dashboard for a multi-location services company — pulling live data from Airtable, Google Sheets, and their booking system into a single unified view.</div>
-        <div class="proj-stack"><span class="proj-stack-tag">React</span><span class="proj-stack-tag">Neon</span><span class="proj-stack-tag">Vercel</span><span class="proj-stack-tag">Airtable API</span></div>
-        <div class="proj-result">✓ Saved 3 hours daily · Real-time visibility</div>
-      </article>
+<section class="cc-section cc-projects" id="featured-projects">
+  <div class="cc-section-inner">
+    <div class="cc-label">Featured Projects</div>
+    <h2 class="cc-title">Real Apps We've Shipped With Claude Code</h2>
+    <p class="cc-desc">Each project below was built primarily with Claude Code and deployed to production for real businesses.</p>
+    <div class="cc-proj-grid">
+      <div class="cc-proj">
+        <span class="cc-proj-tag">Custom Web App</span>
+        <div class="cc-proj-title">Cleaning Workforce Scheduling Platform</div>
+        <div class="cc-proj-desc">Migrated a venue cleaning scheduling pipeline from Make.com to a custom web app — purpose-built client dashboard with WhatsApp notifications, Google Calendar sync, and zero ongoing platform costs.</div>
+        <div class="cc-proj-stack"><span class="cc-proj-stack-tag">Supabase</span><span class="cc-proj-stack-tag">Vercel</span><span class="cc-proj-stack-tag">WhatsApp</span><span class="cc-proj-stack-tag">Google Calendar</span></div>
+        <div class="cc-proj-result">✓ Eliminated all subscription costs · Custom dashboard</div>
+      </div>
+      <div class="cc-proj">
+        <span class="cc-proj-tag">AI Tool</span>
+        <div class="cc-proj-title">AI Bid Qualification System for Construction</div>
+        <div class="cc-proj-desc">End-to-end bid qualification pipeline that scrapes public tenders, transcribes RFP packages, screens disqualifiers across six categories, and delivers ranked go/no-go verdicts.</div>
+        <div class="cc-proj-stack"><span class="cc-proj-stack-tag">PostgreSQL</span><span class="cc-proj-stack-tag">Supabase</span><span class="cc-proj-stack-tag">Claude API</span><span class="cc-proj-stack-tag">Google Sheets</span></div>
+        <div class="cc-proj-result">✓ 100% automated RFP screening · Zero manual review</div>
+      </div>
+      <div class="cc-proj">
+        <span class="cc-proj-tag">Custom CRM</span>
+        <div class="cc-proj-title">Real Estate Lead Management Platform</div>
+        <div class="cc-proj-desc">Custom CRM built for a real estate agency — lead capture from multiple listing sites, automated follow-up sequences, showing scheduler, and deal pipeline with commission tracking.</div>
+        <div class="cc-proj-stack"><span class="cc-proj-stack-tag">Next.js</span><span class="cc-proj-stack-tag">Supabase</span><span class="cc-proj-stack-tag">Vercel</span><span class="cc-proj-stack-tag">Twilio</span></div>
+        <div class="cc-proj-result">✓ Replaced $500/mo SaaS · Tailored to their workflow</div>
+      </div>
+      <div class="cc-proj">
+        <span class="cc-proj-tag">Dashboard</span>
+        <div class="cc-proj-title">Multi-Location Operations Dashboard</div>
+        <div class="cc-proj-desc">Real-time operations dashboard for a multi-location services company — pulling live data from Airtable, Google Sheets, and their booking system into a single unified view.</div>
+        <div class="cc-proj-stack"><span class="cc-proj-stack-tag">React</span><span class="cc-proj-stack-tag">Neon</span><span class="cc-proj-stack-tag">Vercel</span><span class="cc-proj-stack-tag">Airtable API</span></div>
+        <div class="cc-proj-result">✓ Saved 3 hours daily · Real-time visibility</div>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="/case-studies/" class="btn btn-primary">View All Case Studies <span class="arrow">→</span></a>
+    <div style="text-align:center;margin-top:32px">
+      <a href="/case-studies/" class="btn-cc btn-cc-primary">View All Case Studies →</a>
     </div>
   </div>
 </section>
 
 <!-- ═══ WHY CLAUDE CODE ═══ -->
-<section class="proof section" id="why-claude-code">
-  <div class="proof-inner section-inner">
-    <h2 class="section-title">Why We Build With <span class="accent">Claude Code</span><br>Instead of Traditional Dev</h2>
-    <p class="section-copy">And why it means better, faster, cheaper apps for you.</p>
-    <div class="framework-grid" style="margin-top:56px">
-      <article class="framework-card">
-        <div class="step-num">⚡</div>
-        <b>10x Faster Development</b>
-        <p>Claude Code generates entire components, API routes, and database schemas from natural language. What takes a traditional team two weeks, we ship in two days.</p>
-      </article>
-      <article class="framework-card">
-        <div class="step-num">💰</div>
-        <b>60-80% Cost Reduction</b>
-        <p>Faster development means lower costs. Plus, apps deployed on Supabase and Vercel have minimal hosting fees — often under $50/month for production workloads.</p>
-      </article>
-      <article class="framework-card">
-        <div class="step-num">🔓</div>
-        <b>Zero Platform Lock-In</b>
-        <p>You own 100% of the code. It runs on standard open-source technology. If you want to take it in-house or switch developers later, you can — no vendor trap.</p>
-      </article>
-      <article class="framework-card">
-        <div class="step-num">🛟</div>
-        <b>30 Days Free Support</b>
-        <p>Deployed apps come with a month of post-launch support, full documentation, and CI/CD already configured so your team can ship changes on day one.</p>
-      </article>
+<section class="cc-section">
+  <div class="cc-section-inner">
+    <div class="cc-label">Why Claude Code</div>
+    <h2 class="cc-title">Why We Build With Claude Code Instead of Traditional Dev</h2>
+    <p class="cc-desc">And why it means better, faster, cheaper apps for you.</p>
+    <div class="cc-why-grid">
+      <div class="cc-why"><div class="cc-why-icon">⚡</div><div class="cc-why-title">10x Faster Development</div><div class="cc-why-desc">Claude Code generates entire components, API routes, and database schemas from natural language. What takes a traditional team two weeks, we ship in two days.</div></div>
+      <div class="cc-why"><div class="cc-why-icon">💰</div><div class="cc-why-title">60-80% Cost Reduction</div><div class="cc-why-desc">Faster development means lower costs. Plus, apps deployed on Supabase and Vercel have minimal hosting fees — often under $50/month for production workloads.</div></div>
+      <div class="cc-why"><div class="cc-why-icon">🔓</div><div class="cc-why-title">Zero Platform Lock-In</div><div class="cc-why-desc">You own 100% of the code. It runs on standard open-source technology. If you want to take it in-house or switch developers later, you can — no vendor trap.</div></div>
     </div>
   </div>
 </section>
@@ -911,18 +591,18 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
 <div id="gs-consult-section"></div>
 
 <!-- ═══ FAQ ═══ -->
-<section class="faq section" id="faq">
-  <div class="faq-inner-wrap section-inner">
-    <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
-    <p class="faq-sub">Everything you need to know about getting a custom app built with Claude Code</p>
-    <div class="faq-list">
+<section class="cc-faq" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions About Claude Code Development</h2>
+    <p class="cc-faq-sub">Everything you need to know about getting a custom app built with Claude Code</p>
+    <div class="faq-inner">
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           <span>What is Claude Code and how does it speed up development?</span>
           <span class="faq-arrow" aria-hidden="true">↓</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a"><div class="faq-a-inner">
           <p><strong>Claude Code is Anthropic's agentic coding tool</strong> that lets developers build full-stack applications using natural language instructions alongside traditional coding. Think of it as having an extremely capable co-developer who can write entire components, debug complex issues, and scaffold application architecture from a conversation.</p>
           <p>What this means for your project:</p>
           <ul>
@@ -931,7 +611,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
             <li><strong>Higher quality</strong> — Claude Code catches bugs, suggests better patterns, and writes consistent, well-structured code</li>
           </ul>
           <p>The output is standard Next.js, React, TypeScript, and SQL — not proprietary generated code. Your app is fully readable, maintainable, and yours to keep.</p>
-        </div>
+        </div></div>
       </div>
 
       <div class="faq-item">
@@ -939,7 +619,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
           <span>Who actually builds my app? Are your developers certified?</span>
           <span class="faq-arrow" aria-hidden="true">↓</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a"><div class="faq-a-inner">
           <p><strong>Your app is built by our in-house team of 10+ Anthropic certified engineers.</strong> Every developer on our team has completed Anthropic's official service partner certification course — covering Claude Code, the Claude API, MCP, and agentic development workflows.</p>
           <p>In practice, that means:</p>
           <ul>
@@ -948,7 +628,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
             <li><strong>Continuity after launch</strong> — because the whole team knows the stack, support doesn't depend on one developer being available</li>
           </ul>
           <p>You can talk directly to the engineer who will build your app during the scoping call — no account managers in between.</p>
-        </div>
+        </div></div>
       </div>
 
       <div class="faq-item">
@@ -956,15 +636,15 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
           <span>How much does it cost to get a custom app built with Claude Code?</span>
           <span class="faq-arrow" aria-hidden="true">↓</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a"><div class="faq-a-inner">
           <p><strong>Most Claude Code projects range from $3,000 to $15,000</strong> — significantly less than traditional development.</p>
           <ul>
-            <li><strong>Simple tools &amp; dashboards</strong> (single-purpose app, basic CRUD, auth): $3,000 – $5,000, delivered in 3-5 days</li>
+            <li><strong>Simple tools & dashboards</strong> (single-purpose app, basic CRUD, auth): $3,000 – $5,000, delivered in 3-5 days</li>
             <li><strong>Full web applications</strong> (CRM, booking system, multi-page portal with integrations): $5,000 – $10,000, delivered in 1-2 weeks</li>
             <li><strong>Complex platforms</strong> (marketplace, SaaS MVP, multi-role app with payments and AI): $10,000 – $20,000+, delivered in 2-4 weeks</li>
           </ul>
           <p>Ongoing hosting costs are minimal — Supabase free tier covers most small apps, Vercel's hobby plan is free, and production tiers start around $25-50/month.</p>
-        </div>
+        </div></div>
       </div>
 
       <div class="faq-item">
@@ -972,7 +652,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
           <span>Do I own the code? Can I modify it later?</span>
           <span class="faq-arrow" aria-hidden="true">↓</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a"><div class="faq-a-inner">
           <p><strong>Yes — you own 100% of the code, the database, and the deployment.</strong> We build on open-source technology (Next.js, React, PostgreSQL) and standard hosting platforms (Vercel, Supabase). There's no proprietary framework, no vendor lock-in, and no recurring license to us.</p>
           <p>At project delivery, you receive:</p>
           <ul>
@@ -982,7 +662,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
             <li><strong>Technical documentation</strong> covering the architecture, API routes, and database schema</li>
           </ul>
           <p>Any developer can pick up where we left off. You can modify, extend, or completely rewrite any part of the app.</p>
-        </div>
+        </div></div>
       </div>
 
       <div class="faq-item">
@@ -990,7 +670,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
           <span>What databases and hosting platforms do you use?</span>
           <span class="faq-arrow" aria-hidden="true">↓</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a"><div class="faq-a-inner">
           <p><strong>We deploy on Supabase, Neon, and Vercel</strong> — production-grade infrastructure that scales from zero to millions of users:</p>
           <ul>
             <li><strong>Supabase:</strong> PostgreSQL database with built-in authentication, real-time subscriptions, file storage, and edge functions. Perfect for apps that need user management and structured data</li>
@@ -998,7 +678,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
             <li><strong>Vercel:</strong> Edge-first deployment platform with automatic SSL, global CDN, and zero-config CI/CD. Your app deploys on every Git push</li>
           </ul>
           <p>We recommend the right stack based on your specific needs — budget, traffic patterns, data sensitivity, and scaling requirements.</p>
-        </div>
+        </div></div>
       </div>
 
       <div class="faq-item">
@@ -1006,7 +686,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
           <span>Can you migrate my existing Make.com or Zapier automation to a custom app?</span>
           <span class="faq-arrow" aria-hidden="true">↓</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a"><div class="faq-a-inner">
           <p><strong>Yes — automation-to-app migration is one of our most popular services.</strong> When your Make.com or n8n workflow gets too complex, too expensive, or hits platform limits, we rebuild it as a custom web application with the same logic but better performance and zero platform fees.</p>
           <p>A typical migration preserves:</p>
           <ul>
@@ -1015,7 +695,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
             <li><strong>A purpose-built UI</strong> — instead of a no-code canvas, you get a clean dashboard your team can actually use</li>
           </ul>
           <p>We've done this successfully with our <strong>Cleaning Workforce Scheduling Platform</strong> — migrated from Make.com to a custom app, eliminating all subscription costs while adding a client-facing dashboard.</p>
-        </div>
+        </div></div>
       </div>
 
       <div class="faq-item">
@@ -1023,7 +703,7 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
           <span>How long does it take to build and deploy a custom app?</span>
           <span class="faq-arrow" aria-hidden="true">↓</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a"><div class="faq-a-inner">
           <p><strong>Most apps go from kickoff to live deployment in 3 days to 3 weeks</strong>, depending on complexity:</p>
           <ul>
             <li><strong>Simple dashboards and tools:</strong> 3-5 business days — requirements call → build sprint → deploy</li>
@@ -1031,10 +711,20 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
             <li><strong>Complex platforms:</strong> 2-4 weeks — multi-phase build with iterative reviews, complex integrations, and comprehensive testing</li>
           </ul>
           <p>Claude Code is why our timelines are this aggressive. Traditional development agencies quote 8-16 weeks for projects we deliver in 2.</p>
-        </div>
+        </div></div>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ═══ BOTTOM CTA ═══ -->
+<section class="cc-bottom-cta">
+  <h2>Ready to Build Your Custom App?</h2>
+  <p>Tell us what you need — a CRM, dashboard, AI tool, or something entirely custom. We'll scope it, quote it, and start building within days.</p>
+  <div class="btn-group">
+    <a href="#consultation" class="btn btn-accent" style="background:var(--cc);border-color:var(--cc)">Get a Custom App Quote <span class="btn-arrow">→</span></a>
+    <a href="/case-studies/" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.3)">View Case Studies</a>
   </div>
 </section>
 
@@ -1051,11 +741,11 @@ Hire Claude Code developers, automation engineers, and AI architects on demand. 
 
 <!-- FAQ toggle -->
 <script>
-document.querySelectorAll('.cc-page .faq-q').forEach(function(btn){
+document.querySelectorAll('.cc-faq .faq-q').forEach(function(btn){
   btn.addEventListener('click',function(){
     var item=this.closest('.faq-item');
     var wasOpen=item.classList.contains('open');
-    document.querySelectorAll('.cc-page .faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+    document.querySelectorAll('.cc-faq .faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false')});
     if(!wasOpen){item.classList.add('open');this.setAttribute('aria-expanded','true')}
   });
 });
