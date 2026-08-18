@@ -55,7 +55,7 @@ const SITE = {
   // googleAnalyticsId: 'G-XXXXXXXXXX', // uncomment when ready
 
   // ─── Form / Webhook ───────────────────────
-  formWebhookUrl: 'https://hook.eu1.make.com/b4b043slmvtpgdl9d9b8jqt5oivglq1a',
+  formWebhookUrl: 'https://hook.eu1.make.com/348zga9r5guhanfwrp2ehmd86iwj2vq6',
   thankYouPage:   '/thank-you/',
 
   // ─── Assets (ImageKit base — for page-specific images only) ───
