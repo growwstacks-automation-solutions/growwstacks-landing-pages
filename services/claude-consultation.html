@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code Implementation — Free Technical Audit | GrowwStacks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #17110d;
+    --bg-2: #201810;
+    --panel: #241a13;
+    --panel-border: #3a2a1c;
+    --text: #f5ede2;
+    --text-dim: #c9b8a4;
+    --text-faint: #8a7563;
+    --accent: #ff8a4c;
+    --accent-2: #ffb37a;
+    --accent-deep: #d9622a;
+    --success: #7fd9a0;
+    --field-bg: #1c140e;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .display{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Atmosphere ---------- */
+  .bg-glow{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 900px 600px at 82% -10%, rgba(255,138,76,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at -10% 80%, rgba(255,138,76,0.08), transparent 55%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  }
+
+  .grain{
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Minimal top strip: logo + trust only, NO nav ---------- */
+  .topstrip{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0 0;
+  }
+
+  .logo{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .logo span{ color: var(--accent); }
+
+  .trust-chip{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,138,76,0.09);
+    border: 1px solid rgba(255,138,76,0.35);
+    padding: 7px 14px 7px 10px;
+    border-radius: 100px;
+    font-size: 12.5px;
+    color: var(--accent-2);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .trust-chip .dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255,138,76,0.25);
+  }
+
+  /* ---------- Hero: split, form visible immediately ---------- */
+  .hero{
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: start;
+    padding: 34px 0 34px;
+  }
+
+  .kicker{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 22px;
+  }
+  .kicker::before{
+    content: '';
+    width: 22px; height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1{
+    font-size: 44px;
+    line-height: 1.06;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+  .hero h1 em{
+    font-style: normal;
+    color: var(--accent-2);
+    background: linear-gradient(180deg, var(--accent-2), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub{
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 460px;
+    margin-bottom: 26px;
+  }
+
+  .proof-row{
+    display: flex;
+    gap: 34px;
+    padding-top: 24px;
+    border-top: 1px solid var(--panel-border);
+  }
+  .proof-item .num{
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--accent-2);
+    display: block;
+  }
+  .proof-item .label{
+    font-size: 12.5px;
+    color: var(--text-faint);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Form panel (the whole point of this page) ---------- */
+  .form-panel{
+    background: linear-gradient(165deg, var(--panel), #1c140f);
+    border: 1px solid var(--panel-border);
+    border-radius: 20px;
+    padding: 28px 30px;
+    position: relative;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,138,76,0.04) inset;
+  }
+  .form-panel::before{
+    content: '';
+    position: absolute;
+    top: -1px; left: 24px; right: 24px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+  }
+
+  .form-panel h2{
+    font-size: 21px;
+    margin-bottom: 5px;
+    color: var(--text);
+  }
+  .form-panel .form-sub{
+    font-size: 13.5px;
+    color: var(--text-faint);
+    margin-bottom: 18px;
+  }
+
+  .field{
+    margin-bottom: 13px;
+  }
+  .field label{
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-bottom: 7px;
+    letter-spacing: 0.01em;
+  }
+  .field label .req{
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .field input, .field select{
+    width: 100%;
+    background: var(--field-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .field input::placeholder{ color: #5c4c3e; }
+  .field input:focus, .field select:focus{
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255,138,76,0.14);
+  }
+  .field select{
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23c9b8a4' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+
+  .row2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .phone-group{
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 8px;
+  }
+  /* ---------- Custom country-code dropdown ---------- */
+  .cc{ position: relative; }
+  .cc-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    background: var(--field-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 11px 10px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .cc-btn:focus-visible{
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255,138,76,0.14);
+  }
+  .cc-caret{ color: var(--text-dim); flex: 0 0 auto; transition: transform 0.18s; }
+  .cc.open .cc-btn{ border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,138,76,0.14); }
+  .cc.open .cc-caret{ transform: rotate(180deg); }
+
+  .cc-panel{
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 264px;
+    max-width: 78vw;
+    background: #1f160f;
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    box-shadow: 0 24px 48px -16px rgba(0,0,0,0.7);
+    z-index: 50;
+    padding: 8px;
+    display: none;
+  }
+  .cc.open .cc-panel{ display: block; }
+
+  .cc-search-wrap{ padding: 2px 2px 8px; }
+  .cc-search{
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 9px 11px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+  }
+  .cc-search::placeholder{ color: #5c4c3e; }
+  .cc-search:focus{
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255,138,76,0.12);
+  }
+
+  .cc-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 232px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--panel-border) transparent;
+  }
+  .cc-list::-webkit-scrollbar{ width: 8px; }
+  .cc-list::-webkit-scrollbar-thumb{ background: var(--panel-border); border-radius: 8px; }
+  .cc-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 11px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+    cursor: pointer;
+  }
+  .cc-list li .name{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cc-list li .code{ color: var(--text-faint); font-variant-numeric: tabular-nums; flex: 0 0 auto; }
+  .cc-list li:hover,
+  .cc-list li.active{ background: rgba(255,138,76,0.12); color: var(--text); }
+  .cc-list li.selected{ color: var(--accent-2); }
+  .cc-list li.selected .code{ color: var(--accent-2); }
+
+  .cc-empty{
+    padding: 12px 11px;
+    font-size: 13px;
+    color: var(--text-faint);
+    text-align: center;
+  }
+
+  .submit-btn{
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    color: #1a1008;
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 12px 28px -8px rgba(255,138,76,0.45);
+  }
+  .submit-btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px -8px rgba(255,138,76,0.55);
+  }
+
+  .form-microcopy{
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 14px;
+  }
+
+  /* ---------- Below-fold minimal trust strip (optional, still no nav) ---------- */
+  .trust-strip{
+    border-top: 1px solid var(--panel-border);
+    padding: 24px 0 28px;
+  }
+  .trust-strip-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .trust-strip-label{
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 600;
+  }
+  .badge-row{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .badge-pill{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+  .badge-pill .ic{
+    width: 16px; height: 16px;
+    border-radius: 4px;
+    background: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: #1a1008;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 880px){
+    .hero{ grid-template-columns: 1fr; gap: 28px; padding: 28px 0 40px; }
+    .hero h1{ font-size: 34px; }
+    .row2{ grid-template-columns: 1fr; }
+    .proof-row{ gap: 22px; flex-wrap: wrap; }
+    .trust-strip-inner{ flex-direction: column; align-items: flex-start; }
+    .wrap{ padding: 0 20px; }
+    .form-panel{ padding: 28px 24px; }
+  }
+
+  @media (max-width: 560px){
+    .topstrip{ gap: 12px; padding-top: 20px; }
+    .logo{ font-size: 19px; }
+    .trust-chip{ font-size: 11px; padding: 7px 12px 7px 9px; gap: 6px; letter-spacing: 0.01em; white-space: nowrap; }
+    .chip-long{ display: none; }
+    .hero{ gap: 22px; padding: 20px 0 32px; }
+    .hero h1{ font-size: 27px; margin-bottom: 14px; }
+    .kicker{ margin-bottom: 14px; font-size: 11px; }
+    .hero-sub{ font-size: 14.5px; margin-bottom: 22px; }
+    .proof-row{ padding-top: 20px; gap: 18px; }
+    .proof-item .num{ font-size: 21px; }
+    .form-panel{ padding: 22px 18px; border-radius: 16px; }
+    .form-panel h2{ font-size: 19px; }
+    .form-panel .form-sub{ margin-bottom: 18px; }
+    .field{ margin-bottom: 13px; }
+    .field input, .field select{ padding: 12px 13px; }
+    .trust-strip{ padding: 28px 0 40px; }
+    .trust-strip-inner{ gap: 14px; }
+    .trust-strip-label{ font-size: 11px; }
+    /* three compact badges sharing one row, no scroll */
+    .badge-row{
+      flex-wrap: nowrap;
+      width: 100%;
+      gap: 7px;
+    }
+    .badge-pill{
+      flex: 1 1 0;
+      min-width: 0;
+      justify-content: center;
+      text-align: center;
+      gap: 6px;
+      font-size: 10.5px;
+      line-height: 1.25;
+      padding: 8px 7px;
+    }
+    .badge-pill .ic{ flex: 0 0 auto; width: 14px; height: 14px; font-size: 9px; }
+  }
+
+  @media (max-width: 380px){
+    .phone-group{ grid-template-columns: 96px 1fr; }
+    .hero h1{ font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="grain"></div>
+
+<div class="wrap">
+
+  <!-- NO NAVIGATION — this is the entire point. One path: the form. -->
+  <div class="topstrip">
+    <div class="logo">Groww<span>Stacks</span></div>
+    <div class="trust-chip">
+      <span class="dot"></span>
+      Anthropic Certified<span class="chip-long">&nbsp;Services Partner</span>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="kicker">Free 30-Minute Technical Audit</div>
+      <h1>Get a Claude Code implementation plan <em>built for your stack.</em></h1>
+      <p class="hero-sub">
+        Talk to a Certified Claude Code architect about your codebase,
+        get a scoped plan and timeline — no generic sales call, no obligation.
+      </p>
+
+      <div class="proof-row">
+        <div class="proof-item">
+          <span class="num">2,000+</span>
+          <span class="label">Projects delivered</span>
+        </div>
+        <div class="proof-item">
+          <span class="num">10x</span>
+          <span class="label">Faster delivery</span>
+        </div>
+        <div class="proof-item">
+          <span class="num">50+</span>
+          <span class="label">Apps shipped</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM — above the fold, no click required to reach it -->
+    <div class="form-panel">
+      <h2>Book your free audit</h2>
+      <p class="form-sub">A Claude Code architect responds within one business day.</p>
+
+      <form id="consult-form" action="/thank-you/claude-consultation" method="POST">
+        <div class="field">
+          <label for="fullname">Full name <span class="req">*</span></label>
+          <input type="text" id="fullname" name="full_name" placeholder="Jordan Reyes" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jordan@company.com" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number <span class="req">*</span></label>
+          <div class="phone-group">
+            <div class="cc" id="cc">
+              <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false">
+                <span id="ccLabel">US +1</span>
+                <svg class="cc-caret" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </button>
+              <input type="hidden" name="country_code" id="ccValue" value="+1">
+              <div class="cc-panel" id="ccPanel" role="listbox" aria-label="Country code">
+                <div class="cc-search-wrap">
+                  <input type="text" class="cc-search" id="ccSearch" placeholder="Search country…" autocomplete="off">
+                </div>
+                <ul class="cc-list" id="ccList"></ul>
+                <div class="cc-empty" id="ccEmpty" hidden>No match</div>
+              </div>
+            </div>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company name" required>
+        </div>
+
+        <div class="field">
+          <label for="need">What do you need help with?</label>
+          <select id="need" name="need" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="new-build">New AI/automation build</option>
+            <option value="claude-integration">Claude Code integration</option>
+            <option value="existing-fix">Fixing an existing implementation</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Book My Free Audit →</button>
+        <p class="form-microcopy">No spam. No obligation. 30 minutes, one time.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Below fold: trust reinforcement only, still zero navigation/exit links -->
+  <section class="trust-strip">
+    <div class="trust-strip-inner">
+      <span class="trust-strip-label">Trusted by teams building on</span>
+      <div class="badge-row">
+        <div class="badge-pill"><span class="ic">A</span> Anthropic Certified Team</div>
+        <div class="badge-pill"><span class="ic">M</span> Make.com Platinum Partner</div>
+        <div class="badge-pill"><span class="ic">$</span> $0 Platform Lock-In</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // name, 2-letter abbreviation, dial code
+  var COUNTRIES = [
+    ["United States","US","+1"],["Afghanistan","AF","+93"],["Albania","AL","+355"],
+    ["Algeria","DZ","+213"],["Andorra","AD","+376"],["Angola","AO","+244"],
+    ["Antigua and Barbuda","AG","+1268"],["Argentina","AR","+54"],["Armenia","AM","+374"],
+    ["Aruba","AW","+297"],["Australia","AU","+61"],["Austria","AT","+43"],
+    ["Azerbaijan","AZ","+994"],["Bahamas","BS","+1242"],["Bahrain","BH","+973"],
+    ["Bangladesh","BD","+880"],["Barbados","BB","+1246"],["Belarus","BY","+375"],
+    ["Belgium","BE","+32"],["Belize","BZ","+501"],["Benin","BJ","+229"],
+    ["Bhutan","BT","+975"],["Bolivia","BO","+591"],["Bosnia and Herzegovina","BA","+387"],
+    ["Botswana","BW","+267"],["Brazil","BR","+55"],["Brunei","BN","+673"],
+    ["Bulgaria","BG","+359"],["Burkina Faso","BF","+226"],["Burundi","BI","+257"],
+    ["Cambodia","KH","+855"],["Cameroon","CM","+237"],["Canada","CA","+1"],
+    ["Cape Verde","CV","+238"],["Central African Republic","CF","+236"],["Chad","TD","+235"],
+    ["Chile","CL","+56"],["China","CN","+86"],["Colombia","CO","+57"],
+    ["Comoros","KM","+269"],["Congo","CG","+242"],["Congo (DRC)","CD","+243"],
+    ["Costa Rica","CR","+506"],["Côte d'Ivoire","CI","+225"],["Croatia","HR","+385"],
+    ["Cuba","CU","+53"],["Cyprus","CY","+357"],["Czechia","CZ","+420"],
+    ["Denmark","DK","+45"],["Djibouti","DJ","+253"],["Dominica","DM","+1767"],
+    ["Dominican Republic","DO","+1809"],["Ecuador","EC","+593"],["Egypt","EG","+20"],
+    ["El Salvador","SV","+503"],["Equatorial Guinea","GQ","+240"],["Eritrea","ER","+291"],
+    ["Estonia","EE","+372"],["Eswatini","SZ","+268"],["Ethiopia","ET","+251"],
+    ["Fiji","FJ","+679"],["Finland","FI","+358"],["France","FR","+33"],
+    ["Gabon","GA","+241"],["Gambia","GM","+220"],["Georgia","GE","+995"],
+    ["Germany","DE","+49"],["Ghana","GH","+233"],["Greece","GR","+30"],
+    ["Grenada","GD","+1473"],["Guatemala","GT","+502"],["Guinea","GN","+224"],
+    ["Guinea-Bissau","GW","+245"],["Guyana","GY","+592"],["Haiti","HT","+509"],
+    ["Honduras","HN","+504"],["Hong Kong","HK","+852"],["Hungary","HU","+36"],
+    ["Iceland","IS","+354"],["India","IN","+91"],["Indonesia","ID","+62"],
+    ["Iran","IR","+98"],["Iraq","IQ","+964"],["Ireland","IE","+353"],
+    ["Israel","IL","+972"],["Italy","IT","+39"],["Jamaica","JM","+1876"],
+    ["Japan","JP","+81"],["Jordan","JO","+962"],["Kazakhstan","KZ","+7"],
+    ["Kenya","KE","+254"],["Kiribati","KI","+686"],["Kuwait","KW","+965"],
+    ["Kyrgyzstan","KG","+996"],["Laos","LA","+856"],["Latvia","LV","+371"],
+    ["Lebanon","LB","+961"],["Lesotho","LS","+266"],["Liberia","LR","+231"],
+    ["Libya","LY","+218"],["Liechtenstein","LI","+423"],["Lithuania","LT","+370"],
+    ["Luxembourg","LU","+352"],["Macau","MO","+853"],["Madagascar","MG","+261"],
+    ["Malawi","MW","+265"],["Malaysia","MY","+60"],["Maldives","MV","+960"],
+    ["Mali","ML","+223"],["Malta","MT","+356"],["Marshall Islands","MH","+692"],
+    ["Mauritania","MR","+222"],["Mauritius","MU","+230"],["Mexico","MX","+52"],
+    ["Micronesia","FM","+691"],["Moldova","MD","+373"],["Monaco","MC","+377"],
+    ["Mongolia","MN","+976"],["Montenegro","ME","+382"],["Morocco","MA","+212"],
+    ["Mozambique","MZ","+258"],["Myanmar","MM","+95"],["Namibia","NA","+264"],
+    ["Nauru","NR","+674"],["Nepal","NP","+977"],["Netherlands","NL","+31"],
+    ["New Zealand","NZ","+64"],["Nicaragua","NI","+505"],["Niger","NE","+227"],
+    ["Nigeria","NG","+234"],["North Korea","KP","+850"],["North Macedonia","MK","+389"],
+    ["Norway","NO","+47"],["Oman","OM","+968"],["Pakistan","PK","+92"],
+    ["Palau","PW","+680"],["Palestine","PS","+970"],["Panama","PA","+507"],
+    ["Papua New Guinea","PG","+675"],["Paraguay","PY","+595"],["Peru","PE","+51"],
+    ["Philippines","PH","+63"],["Poland","PL","+48"],["Portugal","PT","+351"],
+    ["Qatar","QA","+974"],["Romania","RO","+40"],["Russia","RU","+7"],
+    ["Rwanda","RW","+250"],["Saint Kitts and Nevis","KN","+1869"],["Saint Lucia","LC","+1758"],
+    ["Saint Vincent and the Grenadines","VC","+1784"],["Samoa","WS","+685"],["San Marino","SM","+378"],
+    ["São Tomé and Príncipe","ST","+239"],["Saudi Arabia","SA","+966"],["Senegal","SN","+221"],
+    ["Serbia","RS","+381"],["Seychelles","SC","+248"],["Sierra Leone","SL","+232"],
+    ["Singapore","SG","+65"],["Slovakia","SK","+421"],["Slovenia","SI","+386"],
+    ["Solomon Islands","SB","+677"],["Somalia","SO","+252"],["South Africa","ZA","+27"],
+    ["South Korea","KR","+82"],["South Sudan","SS","+211"],["Spain","ES","+34"],
+    ["Sri Lanka","LK","+94"],["Sudan","SD","+249"],["Suriname","SR","+597"],
+    ["Sweden","SE","+46"],["Switzerland","CH","+41"],["Syria","SY","+963"],
+    ["Taiwan","TW","+886"],["Tajikistan","TJ","+992"],["Tanzania","TZ","+255"],
+    ["Thailand","TH","+66"],["Timor-Leste","TL","+670"],["Togo","TG","+228"],
+    ["Tonga","TO","+676"],["Trinidad and Tobago","TT","+1868"],["Tunisia","TN","+216"],
+    ["Turkey","TR","+90"],["Turkmenistan","TM","+993"],["Tuvalu","TV","+688"],
+    ["Uganda","UG","+256"],["Ukraine","UA","+380"],["United Arab Emirates","AE","+971"],
+    ["United Kingdom","UK","+44"],["Uruguay","UY","+598"],["Uzbekistan","UZ","+998"],
+    ["Vanuatu","VU","+678"],["Vatican City","VA","+379"],["Venezuela","VE","+58"],
+    ["Vietnam","VN","+84"],["Yemen","YE","+967"],["Zambia","ZM","+260"],
+    ["Zimbabwe","ZW","+263"]
+  ];
+
+  var cc = document.getElementById('cc');
+  var btn = document.getElementById('ccBtn');
+  var panel = document.getElementById('ccPanel');
+  var label = document.getElementById('ccLabel');
+  var valueInput = document.getElementById('ccValue');
+  var search = document.getElementById('ccSearch');
+  var list = document.getElementById('ccList');
+  var empty = document.getElementById('ccEmpty');
+  var activeIndex = -1;
+  var visible = [];
+
+  function render(filter){
+    filter = (filter || '').trim().toLowerCase();
+    list.innerHTML = '';
+    visible = [];
+    COUNTRIES.forEach(function(c){
+      var name = c[0], abbr = c[1], code = c[2];
+      if(filter &&
+         name.toLowerCase().indexOf(filter) === -1 &&
+         abbr.toLowerCase().indexOf(filter) === -1 &&
+         code.indexOf(filter) === -1){
+        return;
+      }
+      var li = document.createElement('li');
+      li.setAttribute('role','option');
+      li.dataset.code = code;
+      li.dataset.abbr = abbr;
+      li.innerHTML = '<span class="name">'+name+'</span><span class="code">'+code+'</span>';
+      if(valueInput.value === code && label.textContent === abbr+' '+code){
+        li.classList.add('selected');
+      }
+      li.addEventListener('click', function(){ choose(abbr, code); });
+      list.appendChild(li);
+      visible.push(li);
+    });
+    empty.hidden = visible.length > 0;
+    activeIndex = -1;
+  }
+
+  function choose(abbr, code){
+    label.textContent = abbr + ' ' + code;
+    valueInput.value = code;
+    close();
+  }
+
+  function open(){
+    cc.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    render('');
+    search.value = '';
+    setTimeout(function(){ search.focus(); }, 0);
+  }
+  function close(){
+    cc.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    activeIndex = -1;
+  }
+  function toggle(){ cc.classList.contains('open') ? close() : open(); }
+
+  function setActive(i){
+    if(!visible.length) return;
+    if(activeIndex >= 0 && visible[activeIndex]) visible[activeIndex].classList.remove('active');
+    activeIndex = (i + visible.length) % visible.length;
+    var el = visible[activeIndex];
+    el.classList.add('active');
+    el.scrollIntoView({ block: 'nearest' });
+  }
+
+  btn.addEventListener('click', toggle);
+
+  search.addEventListener('input', function(){ render(search.value); });
+  search.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowDown'){ e.preventDefault(); setActive(activeIndex + 1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); setActive(activeIndex - 1); }
+    else if(e.key === 'Enter'){
+      e.preventDefault();
+      var el = visible[activeIndex] || visible[0];
+      if(el) choose(el.dataset.abbr, el.dataset.code);
+    }
+    else if(e.key === 'Escape'){ close(); btn.focus(); }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!cc.contains(e.target)) close();
+  });
+})();
+</script>
+
+</body>
+</html>
