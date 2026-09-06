@@ -1,6 +1,8 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Master Claude in 3 Hours · Free Live Webinar · Growwstacks</title><link rel="icon" type="image/png" data-image-key="BRANDING.favicon" href="">
-
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Free 3-hour live webinar — Master Claude. Learn. Build. Apply. With AI that thinks. Limited to the first 100 registrations.">
+<!-- intl-tel-input CSS (required for the country flag/dial-code dropdown to render) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@26.5.0/build/css/intlTelInput.css">
 <style>
 :root{--paper:#F0EEE6;--card:#FFFFFF;--ink:#1D1B17;--body:#2E2A24;--mut:#6E685C;
 --terra:#C0562F;--terra2:#D97757;--line:#E4DFD3;--tint:#F5E7DE;--code:#FBF3ED;
@@ -105,6 +107,17 @@ input.bad{border-color:var(--red);background:#fdf0ee}
 .done p.sub{font-size:12.5px;color:var(--mut)}
 .done .at{font-weight:700;color:var(--ink)}
 
+/* intl-tel-input: make its flag/dial-code widget match the existing input styling exactly */
+.iti{width:100%}
+.iti input.iti__tel-input{width:100%;font-family:inherit;font-size:15px;padding:11px 13px 11px 90px;
+  border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);outline:none;transition:.15s}
+.iti input.iti__tel-input:focus{border-color:var(--terra2);background:#fff;box-shadow:0 0 0 3px var(--tint)}
+.iti input.iti__tel-input.bad{border-color:var(--red);background:#fdf0ee}
+/* phone is type="number" now — hide the native spinner so nothing visually changes */
+.iti input.iti__tel-input::-webkit-outer-spin-button,
+.iti input.iti__tel-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.iti input.iti__tel-input[type="number"]{-moz-appearance:textfield}
+
 @media(max-width:980px){
   .split{grid-template-columns:1fr;gap:30px;text-align:center}
   /* stacked: form first, pitch below */
@@ -190,7 +203,7 @@ input.bad{border-color:var(--red);background:#fdf0ee}
               </div>
               <div class="field">
                 <label for="phone">Phone number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" required>
+                <input id="phone" name="phone" type="number" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" required>
                 <div class="err" id="err-phone"></div>
               </div>
               <button class="btn" id="submitBtn" type="submit">Confirm my seat &rarr;</button>
@@ -218,7 +231,6 @@ input.bad{border-color:var(--red);background:#fdf0ee}
 
 <p class="foot">Unlock the full potential of Claude</p>
 
-  
 <!-- SCRIPTS -->
 <script src="./_shared/site-config.js" defer></script>
 <script src="./_shared/page-builder.js" defer></script>
@@ -227,6 +239,9 @@ input.bad{border-color:var(--red);background:#fdf0ee}
 <script src="./assets/js/index.js" defer></script>
 <script src="./assets/js/schema.js" defer></script>
 <script src="/analytics-loader.js" defer></script>
+
+<!-- intl-tel-input: adds the country dial-code picker to the existing #phone input -->
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@26.5.0/build/js/intlTelInput.min.js"></script>
 
 <script>
 (function(){
@@ -249,6 +264,14 @@ input.bad{border-color:var(--red);background:#fdf0ee}
     phone: document.getElementById("phone")
   };
 
+  // Initialize the country-code picker on the existing phone input.
+  // separateDialCode shows the "+91" style code next to the flag, without
+  // altering any markup, styling, or the rest of the form.
+  var iti = window.intlTelInput(f.phone, {
+    initialCountry: "in",
+    separateDialCode: true
+  });
+
   function setErr(key, text){
     var el = document.getElementById("err-" + key);
     el.textContent = text || "";
@@ -259,27 +282,31 @@ input.bad{border-color:var(--red);background:#fdf0ee}
   function showMsg(text){ msg.textContent = text; msg.className = "msg on"; }
   function clearMsg(){ msg.className = "msg"; msg.textContent = ""; }
 
-  // Phone check is deliberately loose — 8–15 digits after stripping spaces,
-  // dashes, brackets and a leading +. Anything stricter rejects legitimate
-  // international numbers, and the webhook can normalise properly downstream.
-  function digitsOf(v){ return v.replace(/[^0-9]/g, ""); }
+  // phone is type="number", so its value is digits only — no "+", spaces or
+  // dashes can ever land in it. Strip anything non-numeric just in case and
+  // check length instead of relying on iti's text-formatting helpers.
+  function digitsOf(v){ return String(v || "").replace(/[^0-9]/g, ""); }
 
   function validate(){
     clearErrs();
     var ok = true;
     var name = f.name.value.trim();
     var email = f.email.value.trim();
-    var phone = f.phone.value.trim();
+    var digits = digitsOf(f.phone.value);
 
     if (name.length < 2){ setErr("name", "Please enter your name."); ok = false; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
       setErr("email", "Please enter a valid email address."); ok = false;
     }
-    var d = digitsOf(phone);
-    if (d.length < 8 || d.length > 15){
+
+    if (digits.length < 6 || digits.length > 14){
       setErr("phone", "Please enter a valid phone number."); ok = false;
     }
-    return ok ? { name: name, email: email, phone: phone } : null;
+
+    var dialCode = (iti.getSelectedCountryData && iti.getSelectedCountryData().dialCode) || "";
+    var fullPhone = digits ? ("+" + dialCode + " " + digits) : "";
+
+    return ok ? { name: name, email: email, phone: fullPhone } : null;
   }
 
   form.addEventListener("submit", async function(e){
@@ -317,6 +344,7 @@ input.bad{border-color:var(--red);background:#fdf0ee}
       fState.style.display = "none";
       dState.classList.add("on");
       form.reset();
+      if (iti.setCountry) iti.setCountry("in");
     } catch (err) {
       showMsg("Couldn't submit right now. Please check your connection and try again.");
     } finally {
