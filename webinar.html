@@ -340,13 +340,12 @@ input.bad{border-color:var(--red);background:#fdf0ee}
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
 
-      document.getElementById("doneEmail").textContent = data.email;
-      fState.style.display = "none";
-      dState.classList.add("on");
-      form.reset();
-      if (iti.setCountry) iti.setCountry("in");
+      // Success → redirect to the thank-you page, passing the email along
+      window.location.href = "./thank-you-webinar.html";
     } catch (err) {
       showMsg("Couldn't submit right now. Please check your connection and try again.");
+      btn.disabled = false;
+      btn.innerHTML = "Confirm my seat →";
     } finally {
       btn.disabled = false;
       btn.innerHTML = "Confirm my seat →";
